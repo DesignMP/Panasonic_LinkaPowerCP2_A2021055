@@ -1,0 +1,8 @@
+VAR
+	gAlarmXCore : {REDUND_UNREPLICABLE} MpComIdentType; (*#1"D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5APC2100_BY44_000\mappServices\Config_4.mpalarmxcore" #2"1" #3"1"*)
+	gAlarmXHistory : {REDUND_UNREPLICABLE} MpComIdentType; (*#1"D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5APC2100_BY44_000\mappServices\Config_3.mpalarmxhistory" #2"1" #3"1"*)
+	gRemPremenneP1 : {REDUND_UNREPLICABLE} MpComIdentType; (*#1"D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5APC2100_BY44_000\mappServices\Config.mprecipexml" #2"1" #3"1"*)
+	gRemPremenneP2 : {REDUND_UNREPLICABLE} MpComIdentType; (*#1"D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5APC2100_BY44_000\mappServices\Config_1.mprecipexml" #2"1" #3"1"*)
+	gRemPremenneP34 : {REDUND_UNREPLICABLE} MpComIdentType; (*#1"D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5APC2100_BY44_000\mappServices\Config_2.mprecipexml" #2"1" #3"1"*)
+	gUserXml : {REDUND_UNREPLICABLE} MpComIdentType; (*#1"D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5APC2100_BY44_000\mappServices\Config_5.mprecipexml" #2"1" #3"1"*)
+END_VAR

@@ -1,0 +1,1329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BuildReasons>
+  <Rule ID=".mappView_Clean_TransferIatr_PLC">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID=".mappView_Clean_Build">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID=".mappView_Clean_TransferIatr_Client">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID=".mappView_Clean_Data">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID=".mappView_Clean_TransferData_Client">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID=".mappView_Clean_TransferData_PLC">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID=".mappView_Clean_Media">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\asnxdb1.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\favicon.ico">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\index.html">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\types\area._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\brease\iatc\brvisu\brease._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\brease\iat\build\jsbuild._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\transformations_copy._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\server\serverdiagnostics._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\iat_media.job._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\duplicatethemesfinder._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\duplicatestylessetsfinder._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\duplicatestylesfinder._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\duplicatebindingslistsetsfinder._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\arconfig.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_mapping\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_mapping\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_mapping\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_skrutse\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_mapping\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_mapping\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_mapping\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_mapping\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_mapping\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_mapping\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_skrutse\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_skrutse\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_skrutko\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_mapping\p1_mapping.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_skrutko\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_main\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_skrutko\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_mapping.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_mapping\p2_mapping.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_skrutko\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_mapping\p3_mapping.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_skrutse\p1_skrutse.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pane\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_skrutko\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_skrutko\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_main\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_main\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_skrutko\p2_skrutko.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan1\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan1\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan1\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pane\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pane\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_mapping.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_main\users_main.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan2\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_skrutko\p3_skrutko.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan2\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid_prg\rfid_prg.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan2\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid_prg\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid_prg\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_mapping.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_skrutse.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan1\users_pan1.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie10\blikanie100ms.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pane\users_pane.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie10\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie20\blikanie200ms.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie10\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan2\users_pan2.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie20\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_main\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie20\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid_prg\rfid_prg.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_skrutko.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_main\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_dopravn\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_dopravn\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_main\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_dopravn\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_skrutko.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_main.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie10\blikanie10.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_vytah\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie20\blikanie20.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_spodnys\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_vytah\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_spodnys\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_main\p1_main.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_stopers\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_vytah\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_dopravn\p1_dopravn.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pane.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_spodnys\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_srobova\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_stopers\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_stopers\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_srobova\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_srobova\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan1.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\users_pan2.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_vytah\p1_vytah.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_robot\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_stopers\p1_stopers.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid_prg.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_robot\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_robot\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_akumula\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_spodnys\p1_spodnys.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_akumula\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_main\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_akumula\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_srobova\p1_srobova.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_main\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_dopravn\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_main\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_dopravn\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_dopravn\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie10.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie20.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_main.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_main\p2_main.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_spodnys\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_spodnys\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_spodnys\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_robot\p1_robot.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperz\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_akumula\p1_akumula.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zakltes\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperz\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_dopravn\p2_dopravn.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperz\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperm\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zakltes\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zakltes\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperm\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_dopravn.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperm\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_vytah.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_spodnys\p2_spodnys.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_akumsto\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_akumsto\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_akumsto\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_spodnys.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zakltes\p2_zakltes.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_robot\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_robot\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_robot\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperz\p2_stoperz.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stopers\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperm\p2_stoperm.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_srobova\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stopers\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_stopers.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stopers\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_srobova\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_srobova\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_akumsto\p2_akumsto.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoper1\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_srobova.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoper1\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_robot\p2_robot.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoper1\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zvarani\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zvarani\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zvarani\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stopers\p2_stopers.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_cisteni\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_cisteni\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_cisteni\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_robot.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_srobova\p2_srobova.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_main\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_main\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_main\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p1_akumula.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoper1\p2_stoper1.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_dopravn\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_dopravn\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_dopravn\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_main.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zvarani\p2_zvarani.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_spodnys\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_cisteni\p2_cisteni.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_spodnys\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_stopers\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_spodnys\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_stopers\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_main\p3_main.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_stopers\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_srobova\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_srobova\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_srobova\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_dopravn.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_dopravn\p3_dopravn.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_hv_test\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_hv_test\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_spodnys.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_hv_test\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\asnxdb2.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_spodnys\p3_spodnys.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperz.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizka\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_stopers\p3_stopers.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizka\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakage\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizka\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_srobova\p3_srobova.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk2\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakage\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk2\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakage\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk2\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk1\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk1\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk1\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zakltes.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_hv_test\p3_hv_test.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakag1\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoperm.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakag1\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakag1\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizka\p3_zdvizka.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk3\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakage\p3_leakage.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk3\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_main\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_dopravn\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_spodnys\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk2\p3_zdvizk2.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk3\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_spodnys\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_main\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_dopravn\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk1\p3_zdvizk1.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_dopravn\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_main\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakag1\p3_leakag1.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_spodnys\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_akumsto.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcny\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcny\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcny\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_robot.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk3\p3_zdvizk3.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizka\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizka\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizka\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stopers.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_dopravn\p4_dopravn.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcn1\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizk1\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_main\p4_main.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizk1\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcn1\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_spodnys\p4_spodnys.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_stopere\main.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizk1\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcn1\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcny\p4_funkcny.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_srobova.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_stopere\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie50\blikanie500ms.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie50\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_stopere\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie50\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizka\p4_zdvizka.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie1s\blikanie1s.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie1s\_bur_pvdef.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie1s\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_stoper1.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie50\blikanie50.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_zvarani.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\ashwac.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sc\sequencecontrol.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\ieccheck\ieccheck.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclienttester.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcn1\p4_funkcn1.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizk1\p4_zdvizk1.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sc\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\ieccheck\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_stopere\p4_stopere.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie1s\blikanie1s.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclienttrace.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p2_cisteni.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_main.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_dopravn.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sc\sc.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sc.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\ieccheck\ieccheck.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\ieccheck.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_spodnys.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclientsplitter.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclientxor.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_stopers.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclientnod.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclientedge.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_srobova.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclientnewcsventry.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_hv_test.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclientnewloggerentry.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizka.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakage.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclientftp.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcpclientsc.c.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\banner\banneriolink.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\banner\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk2.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid_heads\sickheads.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\banner\banner.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\banner.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid_heads\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk1.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\atlascopco\prevodmomentu.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\atlascopco\round.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\atlascopco\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_leakag1.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p3_zdvizk3.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid_heads\rfid_heads.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid_heads.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\myconvert\usinttouint.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_main.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\atlascopco\atlascopco.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\myconvert\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\atlascopco.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp\sktcp.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sktcp.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_dopravn.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\myconvert\myconvert.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\myconvert.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_spodnys.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\tp_init.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\tp_info.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\tp_unlock.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\tp_lock.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\tp_pwprotect.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcny.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\tp_onoff.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\tp_crc.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\tp_write.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\skrutsety\pickandplace.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\tp_read.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\skrutsety\maticaset.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\.mappview_prerequisites._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\skrutsety\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizka.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\roca_festo\festodrivers.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\roca_festo\twouinttoreal.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\roca_festo\realtotwouint.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\roca_festo\linear_scaling.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_funkcn1.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\roca_festo\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\area_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\body_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\skrutsety\skrutsety.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\skrutsety.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_zdvizk1.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid\rfid.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\rfid.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\changepassworddialog_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\p4_stopere.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\dialog_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\roca_festo\roca_festo.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\roca_festo.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\elementfocus_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\focus_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie50.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\messagebox_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\modaldimmer_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\blikanie1s.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\page_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\scrollbar_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\selection_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\startupprogressbar_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\tableconfigurationdialog_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\types\tooltip_default.scss.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\transformations\eventbinding\parametertypemapping.xml">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\widgets\brease\common\busyindicatorhandler\libs\busyindicatorhandler.js._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\validateeventbindings._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\server\__systemvariables.sessionvar">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\themes\grunt.themescsso._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\css\brease_core.css">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\screwload\screwloading.st.o">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\screwload\a.out">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\mvloader.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\mcowebsc.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\udbdef.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\tcdata\tcdata.imx">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\mcbase.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\standard.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\cotrace.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\operator.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\screwload\screwload.ox">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sys_lib.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\asbrstr.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\asieccon.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\screwload.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\astime.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\aszip.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\fileio.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\runtime.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\asusb.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\dvframe.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\astcp.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\asstring.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\mprecipe.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\mpbase.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\mpalarmx.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\widgets\brease\messagebox\meta\messagebox_copied.markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\widgets\brease\window\meta\window_copied.markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\widgets\brease\dialogwindow\meta\dialogwindow_copied.markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\widgets\brease\numpad\meta\numpad_copied.markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\widgets\brease\keyboard\meta\keyboard_copied.markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\brvisu\widgets\brease\datetimepicker\meta\datetimepicker_copied.markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\.mappview_widgetsfinished._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\role.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\user.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\validatebindings._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\grunt.breaserelease._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\fwrules.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\config.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\config_1.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\duplicatebindingsfinder._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\config_2.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\config_3.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\config_4.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\config_5.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\tcdata\tcdata.s18d">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\iomap.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\sysconf.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\asfw.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\tcdata.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\.mappview\data\wwwroot\grunt.breasecsso._markerfile">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5apc2100_by44_000\ashwd.br">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID=".mappView_Build">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID=".mappView_FullBuild">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="#cpu_tp.mak">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\binaries\config2\5apc2100_by44_000\transfer.lst">
+    <BuildReason>Rebuild.</BuildReason>
+  </Rule>
+</BuildReasons>
