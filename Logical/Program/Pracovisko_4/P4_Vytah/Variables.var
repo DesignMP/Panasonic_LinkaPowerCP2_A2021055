@@ -1,0 +1,8 @@
+VAR
+	PocetTrigrovKamery : USINT := 0;
+	PocetDopytovNaServer : USINT := 0;
+	CisloFotky : USINT := 0;
+	TestovaciKus : BOOL := 0;
+	i : USINT := 0;
+	Stav_VlozenaPaletka : BOOL := 0;
+END_VAR

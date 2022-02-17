@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">P2_ProfinetMaster.dtm</Object>
+    <Object Type="Package">P2_ProfinetMaster_IF1</Object>
+    <Object Type="Package">P2_Robot_IRB1200</Object>
+    <Object Type="Package">P2_MaticovackaM4</Object>
+    <Object Type="Package">P2_SkrutkovackaM6</Object>
+    <Object Type="Package">P2_SkrutkovackaM4</Object>
+    <Object Type="Package">P2_SkrutkovackaM5</Object>
+    <Object Type="Package">P2_SafetyMaster</Object>
+    <Object Type="Package">P2_IOmaster</Object>
+    <Object Type="Package">P2_CAM_8</Object>
+    <Object Type="Package">P2_CAM_9</Object>
+    <Object Type="Package">P1_Robot_IRB120_R1</Object>
+    <Object Type="Package">P1_SkrutkovackaK30</Object>
+    <Object Type="Package">P1_SkrutkovackaM5</Object>
+    <Object Type="Package">P1_SkrutkovackaM4</Object>
+    <Object Type="Package">P1_IOmaster</Object>
+    <Object Type="Package">P1_CAM_1</Object>
+    <Object Type="Package">P1_CAM_2</Object>
+  </Objects>
+</Package>

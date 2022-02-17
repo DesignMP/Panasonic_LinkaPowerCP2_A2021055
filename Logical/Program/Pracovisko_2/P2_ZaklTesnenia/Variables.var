@@ -1,0 +1,7 @@
+VAR
+	PocetZatlaceni : USINT := 0;
+	Stav_ZvihPoINIT : BOOL := 0;
+	Stav_PojazdPoINIT : BOOL := 0;
+	PocetTrigrovKamery : USINT := 0;
+	i : USINT := 0;
+END_VAR

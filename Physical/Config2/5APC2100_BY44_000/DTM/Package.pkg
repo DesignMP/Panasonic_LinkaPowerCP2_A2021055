@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package">P2_ProfinetMaster</Object>
+    <Object Type="File">P1_ServoZdvihuVstupVytahu.dtmexp</Object>
+    <Object Type="File">P1_ServoManipOsX.dtmexp</Object>
+    <Object Type="File">P1_ServoManipOsY.dtmexp</Object>
+    <Object Type="File">P1_ServoManipOsZ_M5.dtmexp</Object>
+    <Object Type="File">P1_ServoManipOsZ_M4.dtmexp</Object>
+    <Object Type="Package">P3_Profinet</Object>
+  </Objects>
+</Package>

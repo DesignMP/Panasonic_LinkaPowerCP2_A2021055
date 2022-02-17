@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExternalHardware>
+  <Modules>
+    <Module ModuleID="FBE.00000230_UR20_FBC_PL" Version="1.0" OrderNumber="UR20-FBC-PL">
+      <SourceFile OriginalFile="00000230_UR20_FBC_PL.xdd" TranslationFile="D0EVT8AS.ext" />
+      <SourceFile OriginalFile="CP_PL.png" TranslationFile="KB7MPJVB.ext" />
+      <SourceFile OriginalFile="UR20.ico" TranslationFile="BAQDFVPK.ext" />
+    </Module>
+    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.ENERGY V1.4" Version="1.4" OrderNumber="ENERGY V1.4">
+      <SourceFile OriginalFile="GSDML-V2.33-ABB-Robotics-Robot-Device-20180814.xml" TranslationFile="JT3S60AW.ext" />
+    </Module>
+    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT">
+      <SourceFile OriginalFile="GSDML-V2.3-PowerFocus6000-PRT-20141024.xml" TranslationFile="L4HQS2M8.ext" />
+    </Module>
+    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4">
+      <SourceFile OriginalFile="GSDML-V2.3-wenglor-wenglor ident-20161007-112500.xml" TranslationFile="1U3V2OIG.ext" />
+    </Module>
+    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1">
+      <SourceFile OriginalFile="GSDML-V2.34-Festo-CMMT-AS-20200204.xml" TranslationFile="OS4W16OX.ext" />
+    </Module>
+    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" Version="1.0.0" OrderNumber="CPX-AP-I V1">
+      <SourceFile OriginalFile="GSDML-V2.34-Festo-CPX-AP-I-20200205.xml" TranslationFile="C325KD2U.ext" />
+    </Module>
+    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.PSR-M-GW-PN" Version="0.0.0.0" OrderNumber="PSR-M-GW-PN">
+      <SourceFile OriginalFile="GSDML-V2.33-Phoenix Contact-PSR M GW PN V1.0-20200129.xml" TranslationFile="EYTC82RT.ext" />
+    </Module>
+    <Module ModuleID="FBE.000002EE_EB80D1" Version="1.0" OrderNumber="EB80">
+      <SourceFile OriginalFile="000002EE_EB80D1.xdd" TranslationFile="T4JBGUA3.ext" />
+      <SourceFile OriginalFile="EB80.front.png" TranslationFile="HQ46S06C.ext" />
+      <SourceFile OriginalFile="hw_pl.ico" TranslationFile="66N33O0N.ext" />
+    </Module>
+    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.COMX 100XX-RE$002FPNS V3.4.19 - V3.4.x" Version="3.4.19" OrderNumber="COMX 100XX-RE/PNS V3.4.19 - V3.4.x">
+      <SourceFile OriginalFile="GSDML-V2.3-HILSCHER-COMX 100XX-RE PNS-20130806.xml" TranslationFile="4PN16XNY.ext" />
+    </Module>
+    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.Control Unit V2.2" Version="3.14.0" OrderNumber="Control Unit V2.2">
+      <SourceFile OriginalFile="GSDML-V2.35-WENGLOR-WENGLOR IDENT-20200422.xml" TranslationFile="3ILMUUB1.ext" />
+    </Module>
+  </Modules>
+</ExternalHardware>

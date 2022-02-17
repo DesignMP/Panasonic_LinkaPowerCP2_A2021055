@@ -1,0 +1,22 @@
+VAR
+	SC_OvlCentrovacky : SequenceControlTyp;
+	Centrovacku_VYSUN : BOOL;
+	Centrovacku_ZASUN : BOOL;
+	i : USINT;
+	VysunutieSkrutkovacky_OK : BOOL := 0;
+	PocetTrigrovKamery : USINT := 0;
+	PocetDopytovNaServer : USINT := 0;
+	PocetZopakovaniOdobratia : USINT := 0;
+	TestovaciKus : BOOL := 0;
+	P1_Skrutk_45F_LavaK30_Vysunutie : REAL := 0.0;
+	P1_Skrutk_45F_PravaK30_Vysunutie : REAL := 0.0;
+	P1_Skrutk_45F_PrednaM4_Vysunutie : REAL := 0.0;
+	P1_Skrutk_45F_ZadnaM4_Vysunutie : REAL := 0.0;
+	CisloFotky : USINT := 0;
+	P1_Skrutk_45F_DPS_M4_Vysunutie : REAL := 0.0;
+	P1_Skrutk_5H_LavaK30_Vysunutie : REAL := 0.0;
+	P1_Skrutk_5H_PravaK30_Vysunutie : REAL := 0.0;
+	P1_Skrutk_5H_StrednaM5_Vysunutie : REAL := 0.0;
+	P1_Skrutk_5H_LavaM5_Vysunutie : REAL := 0.0;
+	P1_Skrutk_5H_PravaM5_Vysunutie : REAL := 0.0;
+END_VAR

@@ -1,0 +1,8 @@
+VAR
+	FazaNavratu : USINT := 0;
+	PocetCisteniSkrutkovacky : USINT := 0;
+	CasSrobovania_1 : REAL := 0.0;
+	CasSrobovania_2 : REAL := 0.0;
+	SkrutkovanieK40_Ukoncene : BOOL := 0;
+	SkrutkovanieM5_Ukoncene : BOOL := 0;
+END_VAR

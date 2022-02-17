@@ -1,0 +1,18 @@
+VAR
+	SC_OvlCentrovacky : SequenceControlTyp;
+	Centrovacku_VYSUN : BOOL;
+	Centrovacku_ZASUN : BOOL;
+	i : USINT;
+	SC_OvlHornehoPritlaku : SequenceControlTyp := (0);
+	HornyPritlak_VYSUN : BOOL := FALSE;
+	HornyPritlak_ZASUN : BOOL := FALSE;
+	CasPneniaREAL : REAL;
+	CasStabilizacieREAL : REAL;
+	TlakPlneniaREAL : REAL;
+	ToleranciaREAL : REAL;
+	TlakUnikuREAL : REAL;
+	PocetDopytovNaServer : USINT := 0;
+	PocetOpakovaniTestu : USINT := 0;
+	TestovaciKus : BOOL := 0;
+	OpakovanyTest : BOOL := 0;
+END_VAR

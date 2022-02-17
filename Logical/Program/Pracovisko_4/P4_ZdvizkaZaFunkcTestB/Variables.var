@@ -1,0 +1,6 @@
+VAR
+	SC_OvlZdvizky : SequenceControlTyp;
+	Zdvizku_VYSUN : BOOL;
+	Zdvizku_ZASUN : BOOL;
+	Zdvizku_VYSTRED : BOOL := FALSE;
+END_VAR

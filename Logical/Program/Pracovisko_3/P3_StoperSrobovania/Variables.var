@@ -1,0 +1,15 @@
+VAR
+	SC_OvlCentrovacky : SequenceControlTyp;
+	Centrovacku_VYSUN : BOOL;
+	Centrovacku_ZASUN : BOOL;
+	i : USINT;
+	VysunutieSkrutkovacky_OK : BOOL := 0;
+	PocetTrigrovKamery : USINT := 0;
+	PocetDopytovNaServer : USINT := 0;
+	CisloFotky : USINT := 0;
+	TestovaciKus : BOOL := 0;
+	SkrutkaM5_Zahodena : BOOL := 0;
+	P3_Skrutk_45F_StredK40_Vysunutie : REAL := 0.0;
+	P3_Skrutk_45F_StredM5_Vysunutie : REAL := 0.0;
+	P3_Skrutk_5H_StredM5_Vysunutie : REAL := 0.0;
+END_VAR

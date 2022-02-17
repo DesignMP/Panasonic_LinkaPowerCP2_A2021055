@@ -1,0 +1,15 @@
+VAR
+	Convert_0 : UsintToUint := (0);
+	SC_OvlCentrovacky : SequenceControlTyp;
+	Centrovacku_VYSUN : BOOL;
+	Centrovacku_ZASUN : BOOL;
+	i : USINT;
+	VysunutieSkrutkovacky_OK : BOOL;
+	PocetTrigrovKamery : USINT := 0;
+	PocetDopytovNaServer : USINT := 0;
+	TestovaciKus : BOOL := 0;
+	M4_PrevodMomentu : PrevodMomentu;
+	CisloFotky : USINT := 0;
+	CasSrobovania : REAL := 0.0;
+	P2_Maticovacka_5H_Vysunutie : REAL := 0.0;
+END_VAR

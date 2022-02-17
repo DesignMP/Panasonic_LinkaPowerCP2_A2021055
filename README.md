@@ -1,1 +1,0 @@
-Panasonic_LinkaPowerCP2_A2021055

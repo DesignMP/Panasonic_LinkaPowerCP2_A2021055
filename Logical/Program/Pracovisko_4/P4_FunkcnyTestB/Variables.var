@@ -1,0 +1,19 @@
+VAR
+	SC_OvlCentrovacky : SequenceControlTyp;
+	Centrovacku_VYSUN : BOOL;
+	Centrovacku_ZASUN : BOOL;
+	SC_OvlSpodnychKontaktov : SequenceControlTyp;
+	SpodneKontakty_VYSUN : BOOL;
+	SpodneKontakty_ZASUN : BOOL;
+	SC_OvlHornychKontaktov : SequenceControlTyp;
+	HorneKontakty_VYSUN : BOOL;
+	HorneKontakty_ZASUN : BOOL;
+	i : USINT;
+	TestovaciKus : BOOL := 0;
+	SC_OvlTesteraFT : SequenceControlTyp;
+	SKTcpClientTester_0 : SKTcpClientTester;
+	dataStr : STRING[32];
+	PocetDopytovNaTester : USINT := 0;
+	Cas_FunkcnyTestB : TON;
+	NameranyCasFunkcnehoTestuB : TIME := T#0S;
+END_VAR

@@ -1,0 +1,247 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * File: Global.var
+ * Author: Martin
+ * Created: February 11, 2016
+ ********************************************************************
+ * Global variables of project Zamazat_1
+ ********************************************************************)
+(******************Blikaèe*****************************)
+VAR
+	Blikac100ms : BOOL;
+	Blikac200ms : BOOL;
+	Blikac500ms : BOOL;
+	Blikac1s : BOOL;
+END_VAR
+(********************Safety**********************************)
+VAR
+	Safety : Safety_typ := (0);
+END_VAR
+(********************Vizualizacia*****************************)
+VAR
+	Vizu : Vizu_typ;
+	P1_Vizu : P1_Vizu_typ;
+	P2_Vizu : P2_Vizu_typ;
+	P34_Vizu : P34_Vizu_typ;
+END_VAR
+(**************Remanentné premenné*********)
+VAR
+	P1_RemPremenne : P1_RemPremenne_typ;
+	P2_RemPremenne : P2_RemPremenne_typ;
+	P34_RemPremenne : P34_RemPremenne_typ;
+	MpRecipeXml_P1 : MpRecipeXml := (0);
+	MpRecipeRegPar_P1 : MpRecipeRegPar := (0);
+	MpRecipeUI_P1 : MpRecipeUI;
+	P1_UlozPremenne : BOOL;
+	P1_NacitajPremenne : BOOL;
+	MpRecipeXml_P2 : MpRecipeXml := (0);
+	MpRecipeRegPar_P2 : MpRecipeRegPar := (0);
+	MpRecipeUI_P2 : MpRecipeUI;
+	P2_UlozPremenne : BOOL;
+	P2_NacitajPremenne : BOOL;
+	MpRecipeXml_P34 : MpRecipeXml := (0);
+	MpRecipeRegPar_P34 : MpRecipeRegPar := (0);
+	MpRecipeUI_P34 : MpRecipeUI;
+	P34_UlozPremenne : BOOL;
+	P34_NacitajPremenne : BOOL;
+END_VAR
+(*************Tracebility***********************)
+VAR
+	TRCB_P1_Vytah_ST1 : KOM_Server_typ;
+	TRCB_P1_Srobovanie_ST2 : KOM_Server_typ;
+	TRCB_P2_ZakladacTesnenia_ST3 : KOM_Server_typ;
+	TRCB_P2_Maticovacka_ST4 : KOM_Server_typ;
+	TRCB_P2_Srobovanie_ST5 : KOM_Server_typ;
+	TRCB_P2_Zvaranie_ST6 : KOM_Server_typ;
+	TRCB_P3_Srobovanie_ST7 : KOM_Server_typ;
+	TRCB_P3_LeakageTestA_ST8A : KOM_Server_typ;
+	TRCB_P3_LeakageTestB_ST8B : KOM_Server_typ;
+	TRCB_P4_Etiketovacka_ST9 : KOM_Server_typ;
+	TRCB_P4_Vytah_ST10 : KOM_Server_typ;
+	TRCB_P1_Srobov_OpatovnyDopyt : BOOL;
+	TRCB_P1_Srobov_PaletkaNG : BOOL;
+	TRCB_P2_ZaklTesn_OpatovnyDopyt : BOOL;
+	TRCB_P2_ZaklTesn_PaletkaNG : BOOL;
+	TRCB_P2_Maticov_OpatovnyDopyt : BOOL;
+	TRCB_P2_Maticov_PaletkaNG : BOOL;
+	TRCB_P2_Srobov_OpatovnyDopyt : BOOL;
+	TRCB_P2_Srobov_PaletkaNG : BOOL;
+	TRCB_P2_Zvaranie_OpatovnyDopyt : BOOL;
+	TRCB_P2_Zvaranie_PaletkaNG : BOOL;
+	TRCB_P3_Srobov_OpatovnyDopyt : BOOL;
+	TRCB_P3_Srobov_PaletkaNG : BOOL;
+	TRCB_P3_LeakTestA_OpatovnyDopyt : BOOL;
+	TRCB_P3_LeakTestA_PaletkaNG : BOOL;
+	TRCB_P3_LeakTestB_OpatovnyDopyt : BOOL;
+	TRCB_P3_LeakTestB_PaletkaNG : BOOL;
+	TRCB_P4_Etiketov_OpatovnyDopyt : BOOL;
+	TRCB_P4_Etiketov_PaletkaNG : BOOL;
+	TRCB_P4_Vytah_OpatovnyDopyt : BOOL;
+	TRCB_P4_Vytah_PaletkaNG : BOOL;
+END_VAR
+(*****************Kamery***********************************)
+VAR
+	CAM2 : CAM2_typ; (*P1_ST1_Vytah - kontrola kusov na paletke*)
+	CAM3 : CAM3_typ; (*P1_ST1_Vytah - kontrola QR kódu DPS*)
+	CAM4 : CAM4_typ; (*P1_ST1_Vytah - kontrola klipov krytu DPS*)
+	CAM5 : CAM5_typ; (*P1_ST1_Vytah - kontrola QR kódu PowerCP*)
+	CAM6 : CAM6_typ; (*P1_ST2_StoperSkrutkovania - Kontrola paletky*)
+	CAM1 : CAM1_typ; (*P2_ST1_ZaklTesnenia - Kontrola tesnenia a QR kódu Power CP*)
+	CAM7 : CAM7_typ; (*P2_ST1_StoperZaklTesnenia - Kontrola Power CP a QR kódu filtra*)
+	CAM8 : CAM8_typ; (*P2_ST1_StoperZaklTesnenia - Kontrola spodného QR kódu Power CP*)
+	CAM9 : CAM9_typ; (*P2_ST2_StoperMaticovacky - Kontrola paletky*)
+	CAM10 : CAM10_typ; (*P2_ST3_StoperSkrutkovania - Kontrola paletky*)
+	CAM11 : CAM11_typ; (*P2_ST4_StoperZvarania - Kontrola pravého MV case*)
+	CAM12 : CAM12_typ; (*P2_ST4_StoperZvarania - Kontrola lavého MV case a Power CP*)
+	CAM17 : CAM17_typ; (*P2_ST1_StoperZaklTesnenia - Kontrola paletky*)
+	CAM13 : CAM13_typ; (*P3_ST1_StoperSkrutkovania - Kontrola paletky*)
+	CAM14 : CAM14_typ; (*P4_ST3_StoperEtiketovania - kontrola QR kodu na Power CP*)
+	CAM15 : CAM15_typ; (*P4_ST3_StoperEtiketovania - kontrola nalepenej etikety*)
+	CAM16 : CAM16_typ; (*P4_ST4_Vytah - kontrola paletky*)
+	ControlUnit : ControlUnit_typ;
+END_VAR
+(***************Odosielanie fotiek na server**************************)
+VAR
+	FTP_CAM1 : FTP_Kamery_typ; (*ST3 - zakladanie tesnenia - kontrola tesnenia*)
+	FTP_CAM2 : FTP_Kamery_typ; (*ST1 - výtah - kontrola paletky*)
+	FTP_CAM3 : FTP_Kamery_typ; (*ST1 - výtah - kontrola QR kodu DPS modely 4F a 5F*)
+	FTP_CAM4 : FTP_Kamery_typ; (*ST1 - výtah - kontrola krytu DPS modely 4F a 5F*)
+	FTP_CAM5 : FTP_Kamery_typ; (*ST1 - výtah - kontrola QR kodu Power CP*)
+	FTP_CAM6 : FTP_Kamery_typ; (*ST2 - srobovanie - kontrola paletky*)
+	FTP_CAM7 : FTP_Kamery_typ; (*ST3 - zakladanie tesnenia - kontrola filtra 5H*)
+	FTP_CAM8 : FTP_Kamery_typ; (*ST3 - zakladanie tesnenia - kontrola QR kodu Power CP*)
+	FTP_CAM9 : FTP_Kamery_typ; (*ST4 - maticovacka - kontrola paletky*)
+	FTP_CAM10 : FTP_Kamery_typ; (*ST5 - srobovanie - kontrola paletky*)
+	FTP_CAM11 : FTP_Kamery_typ; (*ST6 - zváranie - kontrola Power CP*)
+	FTP_CAM12 : FTP_Kamery_typ; (*ST6 - zváranie - kontrola paletky*)
+	FTP_CAM13 : FTP_Kamery_typ; (*ST7 - srobovanie - kontrola paletky*)
+	FTP_CAM14 : FTP_Kamery_typ; (*ST9 - etiketovacka - kontrola QR kodu Power CP*)
+	FTP_CAM15 : FTP_Kamery_typ; (*ST9 - etiketovacka - kontrola etikety*)
+	FTP_CAM16 : FTP_Kamery_typ; (*ST10 - vytah - kontrola paletky*)
+	FTP_CAM17 : FTP_Kamery_typ; (*ST3 - zakladanie tesnenia - kontrola paletky*)
+END_VAR
+(******************Premenné linky***************************)
+VAR RETAIN
+	Paletka : ARRAY[0..20] OF Paletka_typ := [21((0))];
+END_VAR
+VAR
+	Linka : Linka_typ := (0);
+	Reports : Reports_typ;
+	P1_Pracovisko : P1_Pracovisko_typ := (0);
+	P1_Vytah : P1_Vytah_typ := (0);
+	SC_P1_Vytah : SequenceControlTyp := (0);
+	P1_Dopravniky : P1_Dopravniky_typ := (0);
+	SC_P1_Dopravniky : SequenceControlTyp := (0);
+	P1_SpodnyStoper : P1_SpodnyStoper_typ := (0);
+	SC_P1_SpodnyStoper : SequenceControlTyp := (0);
+	P1_StoperSrobovania : P1_StoperSrobovania_typ := (0);
+	SC_P1_StoperSrobovania : SequenceControlTyp := (0);
+	P1_Srobovanie : P1_Srobovanie_typ := (0);
+	SC_P1_Srobovanie : SequenceControlTyp := (0);
+	P1_AkumulacnyStoper : P1_AkumulacnyStoper_typ := (0);
+	SC_P1_AkumulacnyStoper : SequenceControlTyp := (0);
+	P1_Robot : P1_Robot_typ := (0);
+	SC_P1_Robot : SequenceControlTyp := (0);
+	P2_Pracovisko : P2_Pracovisko_typ := (0);
+	P2_Dopravniky : P2_Dopravniky_typ := (0);
+	SC_P2_Dopravniky : SequenceControlTyp := (0);
+	P2_SpodnyStoper : P2_SpodnyStoper_typ := (0);
+	SC_P2_SpodnyStoper : SequenceControlTyp := (0);
+	P2_StoperZaklTesnenia : P2_StoperZaklTesnenia_typ;
+	SC_P2_StoperZaklTesnenia : SequenceControlTyp;
+	P2_ZakladacTesnenia : P2_ZakladacTesnenia_typ;
+	SC_P2_ZakladacTesnenia : SequenceControlTyp;
+	P2_StoperMaticovacky : P2_StoperMaticovacky_typ;
+	SC_P2_StoperMaticovacky : SequenceControlTyp;
+	P2_AkumulacnyStoper : P2_AkumulacnyStoper_typ := (0);
+	SC_P2_AkumulacnyStoper : SequenceControlTyp := (0);
+	P2_StoperSrobovania : P2_StoperSrobovania_typ := (0);
+	SC_P2_StoperSrobovania : SequenceControlTyp := (0);
+	P2_Srobovanie : P2_Srobovanie_typ := (0);
+	SC_P2_Srobovanie : SequenceControlTyp := (0);
+	P2_Robot : P2_Robot_typ := (0);
+	SC_P2_Robot : SequenceControlTyp := (0);
+	P2_StoperZvarania : P2_StoperZvarania_typ := (0);
+	SC_P2_StoperZvarania : SequenceControlTyp := (0);
+	P2_Zvaranie : P2_Zvaranie_typ;
+	SC_P2_Zvaranie : SequenceControlTyp;
+	P2_Cistenie : P2_Cistenie_typ;
+	SC_P2_Cistenie : SequenceControlTyp;
+	P3_Pracovisko : P3_Pracovisko_typ := (0);
+	P3_Dopravniky : P3_Dopravniky_typ := (0);
+	SC_P3_Dopravniky : SequenceControlTyp := (0);
+	P3_SpodnyStoper : P3_SpodnyStoper_typ := (0);
+	SC_P3_SpodnyStoper : SequenceControlTyp := (0);
+	P3_StoperSrobovania : P3_StoperSrobovania_typ := (0);
+	SC_P3_StoperSrobovania : SequenceControlTyp := (0);
+	P3_Srobovanie : P3_Srobovanie_typ := (0);
+	SC_P3_Srobovanie : SequenceControlTyp := (0);
+	P3_HV_Test : P3_HV_Test_typ := (0);
+	SC_P3_HV_Test : SequenceControlTyp := (0);
+	P3_ZdvizkaPredLeakTestA : P3_ZdvizkaPredLeakTestA_typ := (0);
+	SC_P3_ZdvizkaPredLeakTestA : SequenceControlTyp := (0);
+	P3_ZdvizkaPredLeakTestB : P3_ZdvizkaPredLeakTestB_typ := (0);
+	SC_P3_ZdvizkaPredLeakTestB : SequenceControlTyp := (0);
+	P3_LeakageTestA : P3_LeakageTestA_typ;
+	SC_P3_LeakageTestA : SequenceControlTyp;
+	AteqLeakageTester_A : AteqTester_typ;
+	P3_LeakageTestB : P3_LeakageTestB_typ;
+	SC_P3_LeakageTestB : SequenceControlTyp;
+	AteqLeakageTester_B : AteqTester_typ;
+	P3_ZdvizkaZaLeakTestA : P3_ZdvizkaZaLeakTestA_typ := (0);
+	SC_P3_ZdvizkaZaLeakTestA : SequenceControlTyp := (0);
+	P3_ZdvizkaZaLeakTestB : P3_ZdvizkaZaLeakTestB_typ := (0);
+	SC_P3_ZdvizkaZaLeakTestB : SequenceControlTyp := (0);
+	P4_Pracovisko : P4_Pracovisko_typ := (0);
+	P4_Dopravniky : P4_Dopravniky_typ := (0);
+	SC_P4_Dopravniky : SequenceControlTyp := (0);
+	P4_SpodnyStoper : P4_SpodnyStoper_typ := (0);
+	SC_P4_SpodnyStoper : SequenceControlTyp := (0);
+	P4_FunkcnyTestA : P4_FunkcnyTestA_typ;
+	SC_P4_FunkcnyTestA : SequenceControlTyp;
+	P4_FunkcnyTestB : P4_FunkcnyTestB_typ;
+	SC_P4_FunkcnyTestB : SequenceControlTyp;
+	P4_ZdvizkaZaFunkcTestA : P4_ZdvizkaZaFunkcTestA_typ := (0);
+	SC_P4_ZdvizkaZaFunkcTestA : SequenceControlTyp := (0);
+	P4_ZdvizkaZaFunkcTestB : P4_ZdvizkaZaFunkcTestB_typ := (0);
+	SC_P4_ZdvizkaZaFunkcTestB : SequenceControlTyp := (0);
+	P4_Etiketovacka : P4_Etiketovacka_typ;
+	SC_P4_Etiketovacka : SequenceControlTyp;
+	P4_Vytah : P4_Vytah_typ;
+	SC_P4_Vytah : SequenceControlTyp;
+END_VAR
+(********************Príznaky********************************)
+VAR
+	P1_Vytah_KAM_Result_Ignoruj : BOOL;
+	P1_Srobov_KAM_Result_OK : BOOL := 0;
+	P1_Srobov_KAM_Result_NG : BOOL := 0;
+	P1_Srobov_KAM_Result_Ignoruj : BOOL := FALSE;
+	P1_Srobov_K30_Result_OFF : BOOL := 0;
+	P1_Srobov_M4_Result_OFF : BOOL := 0;
+	P1_Srobov_M5_Result_OFF : BOOL := 0;
+	P2_ZaklTesn_KAM_Result_Ignoruj : BOOL;
+	P2_Maticov_KAM_Result_OK : BOOL;
+	P2_Maticov_KAM_Result_NG : BOOL;
+	P2_Maticov_KAM_Result_Ignoruj : BOOL;
+	P2_Maticov_MaticaM4_Result_OFF : BOOL := FALSE;
+	P2_Srobov_KAM_Result_OK : BOOL;
+	P2_Srobov_KAM_Result_NG : BOOL;
+	P2_Srobov_KAM_Result_Ignoruj : BOOL;
+	P2_Srobov_M6_Result_OFF : BOOL := FALSE;
+	P2_Srobov_M5_Result_OFF : BOOL := FALSE;
+	P2_Srobov_M4_Result_OFF : BOOL := FALSE;
+	P2_Zvaranie_KAM_Result_NG : BOOL;
+	P2_Zvaranie_KAM_Result_OK : BOOL;
+	P3_Srobov_KAM_Result_Ignoruj : BOOL;
+	P3_Srobov_KAM_Result_OK : BOOL;
+	P3_Srobov_KAM_Result_NG : BOOL;
+	P3_Srobov_K40_Result_OFF : BOOL := FALSE;
+	P3_Srobov_M5_Result_OFF : BOOL := FALSE;
+	P4_Etiketov_KAM_Result_OK : BOOL;
+	P4_Etiketov_KAM_Result_NG : BOOL;
+	P4_Etiketov_KAM_Result_Ignoruj : BOOL;
+	P4_Vytah_KAM_Result_NG : BOOL;
+	P4_Vytah_KAM_Result_OK : BOOL;
+	P4_Vytah_KAM_Result_Ignoruj : BOOL;
+END_VAR

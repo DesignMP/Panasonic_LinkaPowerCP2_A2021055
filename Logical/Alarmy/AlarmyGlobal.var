@@ -1,0 +1,11 @@
+VAR
+	NastalaPorucha : BOOL;
+	P1_AlarmyVizu : AlarmyVizu_typ;
+	P2_AlarmyVizu : AlarmyVizu_typ;
+	P34_AlarmyVizu : AlarmyVizu_typ;
+	P1_Alarmy : ARRAY[100..199] OF BOOL;
+	P2_Alarmy : ARRAY[200..299] OF BOOL;
+	P34_Alarmy : ARRAY[300..499] OF BOOL;
+	MpAlarmXCore_1 : MpAlarmXCore;
+	MpAlarmXHistory_1 : MpAlarmXHistory;
+END_VAR

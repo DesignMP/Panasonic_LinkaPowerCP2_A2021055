@@ -1,0 +1,11 @@
+VAR
+	SC_OvlCentrovacky : SequenceControlTyp;
+	Centrovacku_VYSUN : BOOL;
+	Centrovacku_ZASUN : BOOL;
+	i : USINT;
+	PocetDopytovNaServer : USINT := 0;
+	PocetTrigrovKamery : USINT := 0;
+	CisloFotky : USINT := 0;
+	TestovaciKus : BOOL := 0;
+	PocetZopakovaniOdobratia : USINT := 0;
+END_VAR
