@@ -321,7 +321,11 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;	
 			
-			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM7.STAV.Command_READY THEN
+			IF Linka.P2_Kamery_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 120;
+			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM7.STAV.Command_READY THEN
 				CAM7.CMD.Triger:= TRUE;
 				SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
@@ -469,8 +473,11 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
             
-			
-			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM1.STAV.Command_READY THEN
+			IF Linka.P2_Kamery_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 180;
+			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM1.STAV.Command_READY THEN
 				CAM1.CMD.Triger:= TRUE;
 				SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
@@ -625,7 +632,15 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
             
-			IF NOT SC_P2_ZakladacTesnenia.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				IF CAM1.PAR.ResultFotky = 'PASS' THEN
+					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+					SC_P2_ZakladacTesnenia.Step:= 150;
+				ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
+					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+					SC_P2_ZakladacTesnenia.Step:= 105;
+				END_IF
+			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 THEN
 				FTP_CAM1.CMD.VymazFotku:= TRUE;
 				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
 			END_IF	
@@ -861,8 +876,11 @@ PROGRAM _CYCLIC
 			
             P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
 			
-			
-			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM1.STAV.Command_READY THEN
+			IF Linka.P2_Kamery_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 180;
+			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM1.STAV.Command_READY THEN
 				CAM1.CMD.Triger:= TRUE;
 				SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
@@ -986,8 +1004,11 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.StepName:='178 - Automaticky Rezim - vymazanie fotky kamery CAM1';
 			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#200ms;
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-			            
-			IF NOT SC_P2_ZakladacTesnenia.Switch1 THEN
+			
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 105;
+			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 THEN
 				FTP_CAM1.CMD.VymazFotku:= TRUE;
 				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
 			END_IF	

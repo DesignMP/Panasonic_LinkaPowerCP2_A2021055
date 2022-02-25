@@ -379,11 +379,11 @@ PROGRAM _CYCLIC
 	
 	//Príznak HW zakladaèa tesnenia OK//
 	IF P2_Pracovisko.IN.TlakVzduchu_OK AND
-		P2_Pracovisko.IN.ModulFesto_IO_OK AND
-		P2_Pracovisko.IN.ModulWeidmuller_IO_OK AND
-		P2_Pracovisko.IN.ServoZaklTesneniaPojazd_OK AND
-		P2_Pracovisko.IN.ServoZaklTesneniaZdvih_OK AND
-		P2_Pracovisko.IN.VentilovyTerminal_OK THEN
+		P2_Pracovisko.IN.ModulFesto_IO_KomOK AND
+		P2_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
+		P2_Pracovisko.IN.ServoZaklTesneniaPojazd_KomOK AND
+		P2_Pracovisko.IN.ServoZaklTesneniaZdvih_KomOK AND
+		P2_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P2_Pracovisko.STAV.HardwareZaklTesnenia_OK:= TRUE;
 	ELSE	
 		P2_Pracovisko.STAV.HardwareZaklTesnenia_OK:= FALSE;
@@ -392,21 +392,21 @@ PROGRAM _CYCLIC
 	
 	//Príznak HW Bunky OK//
 	IF P2_Pracovisko.IN.TlakVzduchu_OK AND
-		P2_Pracovisko.IN.ModulFesto_IO_OK AND
-		P2_Pracovisko.IN.ModulWeidmuller_IO_OK AND
-		P2_Pracovisko.IN.Robot_OK AND
-		P2_Pracovisko.IN.Maticovacka_M4_OK AND
-		P2_Pracovisko.IN.ServoManipulatorOsX_OK AND
-		P2_Pracovisko.IN.ServoManipulatorOsY_OK AND
-		P2_Pracovisko.IN.ServoManipulatorOsZ_M4_OK AND
-		P2_Pracovisko.IN.ServoZvaraniaOsZ_OK AND
-		P2_Pracovisko.IN.Skrutkovacka_M4_OK AND
-		P2_Pracovisko.IN.Skrutkovacka_M5_OK AND
-		P2_Pracovisko.IN.Skrutkovacka_M6_OK AND
-		P2_Pracovisko.IN.VentilovyTerminal_OK AND
-		P2_Pracovisko.IN.SmartKamera8_OK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_OK AND
-		P2_Pracovisko.IN.SmartKamera9_OK THEN
+		P2_Pracovisko.IN.ModulFesto_IO_KomOK AND
+		P2_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
+		P2_Pracovisko.IN.Robot_KomOK AND
+		P2_Pracovisko.IN.Maticovacka_M4_KomOK AND
+		P2_Pracovisko.IN.ServoManipulatorOsX_KomOK AND
+		P2_Pracovisko.IN.ServoManipulatorOsY_KomOK AND
+		P2_Pracovisko.IN.ServoManipulatorOsZ_M4_KomOK AND
+		P2_Pracovisko.IN.ServoZvaraniaOsZ_KomOK AND
+		P2_Pracovisko.IN.Skrutkovacka_M4_KomOK AND
+		P2_Pracovisko.IN.Skrutkovacka_M5_KomOK AND
+		P2_Pracovisko.IN.Skrutkovacka_M6_KomOK AND
+		P2_Pracovisko.IN.VentilovyTerminal_KomOK AND
+		P2_Pracovisko.IN.SmartKamera8_KomOK AND
+		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+		P2_Pracovisko.IN.SmartKamera9_KomOK THEN
 		P2_Pracovisko.STAV.HardwareBunky_OK:= TRUE;
 	ELSE	
 		P2_Pracovisko.STAV.HardwareBunky_OK:= FALSE;

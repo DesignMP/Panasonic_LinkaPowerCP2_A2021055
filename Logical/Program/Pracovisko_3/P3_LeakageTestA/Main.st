@@ -89,7 +89,7 @@ PROGRAM _CYCLIC
 			END_IF
 			
 		
-		//********************************************************Inicializácia****************************************************************************//
+			//********************************************************Inicializácia****************************************************************************//
 	
 		2:
 			SC_P3_LeakageTestA.StepName:='2 - Inicializacia - cakam na spustenie inicializacie';
@@ -251,9 +251,9 @@ PROGRAM _CYCLIC
 					SC_P3_LeakageTestA.Step:= 560;
 				END_IF	
 			ELSIF Paletka[i].STAV.StavPaletky = 'REV' AND Paletka[i].STAV.CisloRevorkovejStanice <> 'ST_8A,8B' THEN
-					P3_LeakageTestA.STAV.PoINIT:= TRUE;
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 560;
+				P3_LeakageTestA.STAV.PoINIT:= TRUE;
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 560;
 			ELSIF Paletka[i].STAV.StavPaletky = 'OK' THEN
 				IF P3_LeakageTestA.STAV.Tester_ON THEN
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
@@ -286,7 +286,7 @@ PROGRAM _CYCLIC
 			
 	
 		
-		//********************************************************Automatický režim****************************************************************************//
+			//********************************************************Automatický režim****************************************************************************//
 		
 		100:  
 			SC_P3_LeakageTestA.StepName:='100 - Automaticky Rezim - cakam na príchod paletky na stoper';
@@ -396,7 +396,10 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
 			SC_P3_LeakageTestA.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P3_LeakageTestA.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 120;
+			ELSIF NOT SC_P3_LeakageTestA.Switch1 THEN
 				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
 			END_IF 
@@ -527,7 +530,7 @@ PROGRAM _CYCLIC
 			END_IF	
 		
 			
-	//Zatvorenie Leakage testera//		
+			//Zatvorenie Leakage testera//		
 			
 		
 		120:
@@ -604,10 +607,10 @@ PROGRAM _CYCLIC
 		130:
 			SC_P3_LeakageTestA.StepName:='130 - Automaticky Rezim - spustenie testera';
 			SC_P3_LeakageTestA.IdleTime.PT:= T#4s800ms;
-			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
+			SC_P3_LeakageTestA.AlarmTime.PT:= T#2s;
 		    
 		
-			IF NOT SC_P3_LeakageTestA.Switch1 AND AteqLeakageTester_A.Stav_READY THEN
+			IF NOT SC_P3_LeakageTestA.Switch1 AND AteqLeakageTester_A.Stav_READY AND NOT Linka.KOM_Panatrace_OFF THEN
 				AteqLeakageTester_A.START_Testovania:= TRUE;
 				SC_P3_LeakageTestA.IdleTime.IN:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
@@ -678,7 +681,7 @@ PROGRAM _CYCLIC
 				SC_P3_LeakageTestA.Step:= 150;
 			END_IF
 		
-	//Otvorenie Leakage testera//	
+			//Otvorenie Leakage testera//	
 		
 		
 		150:
@@ -775,7 +778,10 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
 			SC_P3_LeakageTestA.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P3_LeakageTestA.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 560;
+			ELSIF NOT SC_P3_LeakageTestA.Switch1 THEN
 				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
 			END_IF 
@@ -856,7 +862,7 @@ PROGRAM _CYCLIC
 				END_IF	
 			END_IF
 		
-		//***************************Vyvezenie paletky**********************************************//	
+			//***************************Vyvezenie paletky**********************************************//	
 		
 		
 		560:
@@ -935,7 +941,7 @@ PROGRAM _CYCLIC
 			END_IF
 		
 		
-		//Otváranie a zatváranie testera//
+			//Otváranie a zatváranie testera//
 			IF P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START THEN
 				IF P3_LeakageTestA.RFID_hlava.PritomnostPaletky THEN 
 					SC_P3_LeakageTestA.ResetStep:= TRUE;

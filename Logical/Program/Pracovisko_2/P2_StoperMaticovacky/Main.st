@@ -114,7 +114,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#4s;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;	
 			
-			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+				SC_P2_StoperMaticovacky.Step:= 10;
+			ELSIF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				FTP_CAM9.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF	
@@ -328,7 +331,11 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#5s;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
+			IF Linka.P2_Kamery_OFF THEN
+				P2_StoperMaticovacky.STAV.PoINIT:= TRUE;
+				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+				SC_P2_StoperMaticovacky.Step:= 135;
+			ELSIF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				CAM9.CMD.Triger:= TRUE;
 				SC_P2_StoperMaticovacky.IdleTime.IN:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
@@ -396,8 +403,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#200ms;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;
 		
-            			
-			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+				SC_P2_StoperMaticovacky.Step:= 55;
+			ELSIF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				FTP_CAM9.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF	
@@ -548,7 +557,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#200ms;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+				SC_P2_StoperMaticovacky.Step:= 118;
+			ELSIF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				TRCB_P2_Maticovacka_ST4.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF 
@@ -678,7 +690,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#5s;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
+			IF Linka.P2_Kamery_OFF THEN
+				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+				SC_P2_StoperMaticovacky.Step:= 130;
+			ELSIF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				CAM9.CMD.Triger:= TRUE;
 				SC_P2_StoperMaticovacky.IdleTime.IN:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
@@ -770,8 +785,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#200ms;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;
 		
-            			
-			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+				SC_P2_StoperMaticovacky.Step:= 132;
+			ELSIF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				FTP_CAM9.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF	
@@ -920,13 +937,20 @@ PROGRAM _CYCLIC
 			
 			IF P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.MaticaPripravena THEN
 				P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu:= FALSE;
-				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
-				SC_P2_StoperMaticovacky.Step:= 145;
+				IF Linka.P2_SkrutkovanieResult_OFF THEN
+					SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+					SC_P2_StoperMaticovacky.Step:= 148;
+				ELSE	
+					SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+					SC_P2_StoperMaticovacky.Step:= 145;
+				END_IF	
 			ELSIF P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.ERROR THEN
 				P2_Alarmy[298]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST2:= TRUE;	
 			END_IF
 	
+				
+			
 	
 		145:
 			SC_P2_StoperMaticovacky.StepName:='145 - Automaticky Rezim - kontrola vysledkov skrutkovania matice M4';
@@ -994,7 +1018,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#5s;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
+			IF Linka.P2_Kamery_OFF THEN
+				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+				SC_P2_StoperMaticovacky.Step:= 540;
+			ELSIF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				CAM9.CMD.Triger:= TRUE;
 				SC_P2_StoperMaticovacky.IdleTime.IN:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
@@ -1093,14 +1120,16 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#200ms;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;
 			
-			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+				SC_P2_StoperMaticovacky.Step:= 545; 
+			ELSIF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				FTP_CAM9.INPUTS.QRkodPowerCP:= Paletka[i].PAR.QRkodPowerCP;
 				CisloFotky:= CisloFotky + 1;
 				FTP_CAM9.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
 				FTP_CAM9.INPUTS.Result:= CAM9.PAR.ResultFotky;
 				Reports.Kamery.P2_CAM9_KontrolaPaletky:= CAM9.PAR.ResultFotky;	
-			           
-				FTP_CAM9.CMD.OdosliFotku:= TRUE;
+			    FTP_CAM9.CMD.OdosliFotku:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF
           
@@ -1143,7 +1172,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#200ms;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
+				SC_P2_StoperMaticovacky.Step:= 560;
+			ELSIF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				TRCB_P2_Maticovacka_ST4.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF 

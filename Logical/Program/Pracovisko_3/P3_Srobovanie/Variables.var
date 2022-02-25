@@ -5,4 +5,6 @@ VAR
 	CasSrobovania_2 : REAL := 0.0;
 	SkrutkovanieK40_Ukoncene : BOOL := 0;
 	SkrutkovanieM5_Ukoncene : BOOL := 0;
+	M5_PrevodMomentu : PrevodMomentu;
+	K40_PrevodMomentu : PrevodMomentu;
 END_VAR

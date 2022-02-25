@@ -502,17 +502,17 @@ PROGRAM _CYCLIC
 		
 	//Príznak HW Bunky OK//
 	IF P3_Pracovisko.IN.TlakVzduchu_OK AND
-		P3_Pracovisko.IN.ModulFesto_IO_OK AND
-		P3_Pracovisko.IN.ModulWeidmuller_IO_OK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_OK AND
-		P3_Pracovisko.IN.LeakageTesterA_OK AND
-		P3_Pracovisko.IN.LeakageTesterB_OK AND
-		P3_Pracovisko.IN.ServoManipulatorOsY_OK AND
-		P3_Pracovisko.IN.ServoManipulatorOsZ_M5_OK AND
-		P3_Pracovisko.IN.Skrutkovacka_K40_OK AND
-		P3_Pracovisko.IN.Skrutkovacka_M5_OK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_OK AND
-		P3_Pracovisko.IN.VentilovyTerminal_OK THEN
+		P3_Pracovisko.IN.ModulFesto_IO_KomOK AND
+		P3_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
+		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+		P3_Pracovisko.IN.LeakageTesterA_KomOK AND
+		P3_Pracovisko.IN.LeakageTesterB_KomOK AND
+		P3_Pracovisko.IN.ServoManipulatorOsY_KomOK AND
+		P3_Pracovisko.IN.ServoManipulatorOsZ_M5_KomOK AND
+		P3_Pracovisko.IN.Skrutkovacka_K40_KomOK AND
+		P3_Pracovisko.IN.Skrutkovacka_M5_KomOK AND
+		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+		P3_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P3_Pracovisko.STAV.HardwareBunky_OK:= TRUE;
 	ELSE	
 		P3_Pracovisko.STAV.HardwareBunky_OK:= FALSE;

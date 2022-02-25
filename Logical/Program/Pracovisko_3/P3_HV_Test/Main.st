@@ -447,16 +447,24 @@ PROGRAM _CYCLIC
 				END_IF	
 			END_IF
 		
+	
 		
 		130:
 			SC_P3_HV_Test.StepName:='130 - Automaticky Rezim - spustenie testera';
-			SC_P3_HV_Test.IdleTime.PT:= T#1s;
+			SC_P3_HV_Test.IdleTime.PT:= T#2s;
 			SC_P3_HV_Test.AlarmTime.PT:= T#5s;
 		
-			P3_HV_Test.STAV.Vysledok_HV_Testu:= '';
-			P3_HV_Test.CMD.StartTestovania:= TRUE;
-			SC_P3_HV_Test.ResetStep:= TRUE;
-			SC_P3_HV_Test.Step:= 133;
+			SC_P3_HV_Test.IdleTime.IN:= TRUE;
+			
+			IF Linka.KOM_Panatrace_OFF AND SC_P3_HV_Test.IdleTime.Q THEN
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 140;
+			ELSIF NOT Linka.KOM_Panatrace_OFF THEN	
+				P3_HV_Test.STAV.Vysledok_HV_Testu:= '';
+				P3_HV_Test.CMD.StartTestovania:= TRUE;
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 133;
+			END_IF	
 		
 		133:
 			SC_P3_HV_Test.StepName:='133 - Automaticky Rezim - cakam na ukoncenie HV testu';

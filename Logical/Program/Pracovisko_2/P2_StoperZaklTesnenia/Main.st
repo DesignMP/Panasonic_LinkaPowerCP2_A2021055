@@ -134,7 +134,11 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
             
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 5;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				FTP_CAM1.CMD.VymazFotku:= TRUE;
 				FTP_CAM17.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
@@ -278,7 +282,7 @@ PROGRAM _CYCLIC
 					P2_StoperZaklTesnenia.STAV.PoINIT:= TRUE;
 					Paletka[i].PAR.StavPowerCP:= 'PASS';
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 140; //*********************************
+					SC_P2_StoperZaklTesnenia.Step:= 140;
 				ELSE
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 					SC_P2_StoperZaklTesnenia.Step:= 38;
@@ -297,7 +301,7 @@ PROGRAM _CYCLIC
 			IF Paletka[i].STAV.OdoslanieFotiek_DONE THEN
 				P2_StoperZaklTesnenia.STAV.PoINIT:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 120;   //**************************************
+				SC_P2_StoperZaklTesnenia.Step:= 120;
 			ELSE
 				P2_StoperZaklTesnenia.STAV.PoINIT:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
@@ -412,7 +416,11 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
 			
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 120;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF 
@@ -585,7 +593,11 @@ PROGRAM _CYCLIC
 			    
 			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
 			
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 AND CAM7.STAV.Command_READY THEN
+			IF Linka.P2_Kamery_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 140;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 AND CAM7.STAV.Command_READY THEN
 				CAM7.CMD.Triger:= TRUE;
 				SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
@@ -696,7 +708,11 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
 			
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 160;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF 
@@ -813,8 +829,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#4s;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;	
 			
-			           
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 105;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				FTP_CAM1.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF	
@@ -869,9 +887,13 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#5s;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
 			
-            P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
+			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
 			
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF Linka.P2_Kamery_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 180;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				CAM8.CMD.Triger:= TRUE;
 				SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
@@ -988,9 +1010,13 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#5s;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
 			
-            P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
+			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
 			
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 AND CAM17.STAV.Command_READY THEN
+			IF Linka.P2_Kamery_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 550;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 AND CAM17.STAV.Command_READY THEN
 				CAM17.CMD.Triger:= TRUE;
 				SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
@@ -1150,8 +1176,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
 			
-			            
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 165;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				FTP_CAM17.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF	
@@ -1165,7 +1193,7 @@ PROGRAM _CYCLIC
 				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
 			END_IF	
 		
-		//******************************************Odoslanie fotiek na server******************************************//	
+			//******************************************Odoslanie fotiek na server******************************************//	
 		
 		540:
 			SC_P2_StoperZaklTesnenia.StepName:='540 - Automaticky Rezim - odoslanie fotky CAM 1 a CAM 17 na server Panasonic'; //CAM1 a CAM 17
@@ -1174,7 +1202,11 @@ PROGRAM _CYCLIC
 		
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
             
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 550;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				FTP_CAM1.INPUTS.QRkodPowerCP:= Paletka[i].PAR.QRkodPowerCP;
 				CisloFotky:= CisloFotky + 1;
 				FTP_CAM1.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
@@ -1219,7 +1251,11 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
 			
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 560;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF 
@@ -1360,7 +1396,7 @@ PROGRAM _CYCLIC
             
 		
 		
-		    //*************************************************Vyvezenie paletky*********************************************************************//		
+			//*************************************************Vyvezenie paletky*********************************************************************//		
 		
 		560:
 			SC_P2_StoperZaklTesnenia.StepName:='560 - Automaticky Rezim - cakam na vyvezenie na stoper maticovacky';

@@ -143,7 +143,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#4s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;	
 			
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 10;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
 				FTP_CAM11.CMD.VymazFotku:= TRUE;
 				FTP_CAM12.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -321,8 +324,19 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;      
             
-		
-			IF NOT SC_P2_StoperZvarania.Switch1 AND CAM12.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
+			IF Linka.P2_Kamery_OFF THEN
+				P2_StoperZvarania.STAV.PoINIT:= TRUE;
+				IF Linka.PAR.ZvolenyModel = '4F' THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 208;
+				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 208;
+				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 407;
+				END_IF   
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM12.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
 				CAM12.CMD.Triger:= TRUE;
 				SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -481,7 +495,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#4s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;	
 			
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 60;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
 				FTP_CAM11.CMD.VymazFotku:= TRUE;
 				FTP_CAM12.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -626,7 +643,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 120;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
 				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF 
@@ -788,8 +808,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
             
-		
-			IF NOT SC_P2_StoperZvarania.Switch1 AND CAM12.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
+			IF Linka.P2_Kamery_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 130;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM12.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
 				CAM12.CMD.Triger:= TRUE;
 				SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -888,6 +910,9 @@ PROGRAM _CYCLIC
 				IF TestovaciKus THEN
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 210;  
+				ELSIF Linka.P2_Kamery_OFF THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 208; 
 				ELSE	
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 200;
@@ -896,7 +921,10 @@ PROGRAM _CYCLIC
 				CAM11.STAV.Results_READY:= FALSE;
 				IF TestovaciKus THEN
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 210;  
+					SC_P2_StoperZvarania.Step:= 210; 
+				ELSIF Linka.P2_Kamery_OFF THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 208; 	
 				ELSE	
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 200;
@@ -904,7 +932,10 @@ PROGRAM _CYCLIC
 			ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
 				IF TestovaciKus THEN
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 545; 	
+					SC_P2_StoperZvarania.Step:= 545;
+				ELSIF Linka.P2_Kamery_OFF THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 407; 
 				ELSE	
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 400; 
@@ -1000,7 +1031,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 208;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
 				FTP_CAM11.CMD.VymazFotku:= TRUE;
 				FTP_CAM12.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -1059,7 +1093,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
+			IF Linka.P2_Kamery_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 219;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
 				CAM11.CMD.Triger:= TRUE;
 				SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -1167,7 +1204,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 219;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
 				FTP_CAM11.INPUTS.QRkodPowerCP:= Paletka[i].PAR.QRkodPowerCP;
 				CisloFotky:= CisloFotky + 1;
 				FTP_CAM11.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
@@ -1273,7 +1313,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 		
-			IF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie  THEN
+			IF Linka.P2_Kamery_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 540; 
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie  THEN
 				CAM11.CMD.Triger:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF	
@@ -1443,7 +1486,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 407;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
 				FTP_CAM11.CMD.VymazFotku:= TRUE;
 				FTP_CAM12.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -1578,7 +1624,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
+			IF Linka.P2_Kamery_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 540; 
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
 				CAM11.CMD.Triger:= TRUE;
 				SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -1677,7 +1726,11 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;		
 			
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
+			
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 545; 
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
 				FTP_CAM11.INPUTS.QRkodPowerCP:= Paletka[i].PAR.QRkodPowerCP;
 				CisloFotky:= CisloFotky + 1;
 				FTP_CAM11.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
@@ -1734,7 +1787,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 560;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
 				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF 

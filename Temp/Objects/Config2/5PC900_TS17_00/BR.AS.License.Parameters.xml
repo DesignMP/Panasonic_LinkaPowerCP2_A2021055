@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Parameters>
+  <Connection>
+    <DeviceParameters>/IF=tcpip /LOPO=11159 /SA=1</DeviceParameters>
+    <ConnectionParameters>/COMT=2500 /RT=1000 /AM=* /DAIP=127.0.0.1 /REPO=11160 /ANSL=1</ConnectionParameters>
+  </Connection>
+  <AsProject>
+    <ApjFullFileName>D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Panasonic_LinkaPowerCP2_A2021055.apj</ApjFullFileName>
+    <ProjectName>Panasonic_LinkaPowerCP2_A2021055</ProjectName>
+    <ActiveConfigurationName>Config2</ActiveConfigurationName>
+    <LicenseDataFolder>D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00</LicenseDataFolder>
+  </AsProject>
+  <General>
+    <DeleteParameterFile>false</DeleteParameterFile>
+  </General>
+</Parameters>

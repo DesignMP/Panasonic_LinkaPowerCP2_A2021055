@@ -461,13 +461,20 @@ PROGRAM _CYCLIC
 		
 		130:
 			SC_P4_FunkcnyTestA.StepName:='130 - Automaticky Rezim - spustenie testera';
-			SC_P4_FunkcnyTestA.IdleTime.PT:= T#1s;
+			SC_P4_FunkcnyTestA.IdleTime.PT:= T#2s;
 			SC_P4_FunkcnyTestA.AlarmTime.PT:= T#5s;
 		
-			P4_FunkcnyTestA.STAV.Vysledok_FV_Testu:= '';
-			P4_FunkcnyTestA.CMD.StartTestovania:= TRUE;
-			SC_P4_FunkcnyTestA.ResetStep:= TRUE;
-			SC_P4_FunkcnyTestA.Step:= 133;
+			SC_P4_FunkcnyTestA.IdleTime.IN:= TRUE;
+			
+			IF Linka.KOM_Panatrace_OFF AND SC_P4_FunkcnyTestA.IdleTime.Q THEN
+				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+				SC_P4_FunkcnyTestA.Step:= 140;
+			ELSIF NOT Linka.KOM_Panatrace_OFF THEN		
+				P4_FunkcnyTestA.STAV.Vysledok_FV_Testu:= '';
+				P4_FunkcnyTestA.CMD.StartTestovania:= TRUE;
+				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+				SC_P4_FunkcnyTestA.Step:= 133;
+			END_IF	
 		
 		
 		133:

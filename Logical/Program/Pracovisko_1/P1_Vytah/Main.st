@@ -325,7 +325,7 @@ PROGRAM _CYCLIC
             P1_Vytah.Banner.IN.ModraLED_ON:= TRUE;           
             
 			
-			IF Linka.Kamery_OFF THEN
+			IF Linka.P1_Kamery_OFF THEN
 				P1_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				P1_Vytah.STAV.PoINIT:= TRUE;
 				SC_P1_Vytah.ResetStep:= TRUE;
@@ -821,7 +821,7 @@ PROGRAM _CYCLIC
 			IF P1_Vytah.KoniecCyklu THEN
 				SC_P1_Vytah.ResetStep:= TRUE;
 				SC_P1_Vytah.Step:= 0;
-			ELSIF Linka.Kamery_OFF THEN
+			ELSIF Linka.P1_Kamery_OFF THEN
 				SC_P1_Vytah.ResetStep:= TRUE;
 				SC_P1_Vytah.Step:= 300;	
 			ELSIF NOT P1_UzivatelPrihlaseny THEN

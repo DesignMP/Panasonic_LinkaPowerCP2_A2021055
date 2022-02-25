@@ -551,8 +551,13 @@ TYPE
 		KoniecCyklu : BOOL;
 		KOM_Panatrace_OFF : BOOL;
 		KOM_FTP_OFF : BOOL;
-		Kamery_OFF : BOOL;
-		SkrutkovanieResult_OFF : BOOL;
+		P1_Kamery_OFF : BOOL;
+		P2_Kamery_OFF : BOOL;
+		P3_Kamery_OFF : BOOL;
+		P4_Kamery_OFF : BOOL;
+		P1_SkrutkovanieResult_OFF : BOOL;
+		P2_SkrutkovanieResult_OFF : BOOL;
+		P3_SkrutkovanieResult_OFF : BOOL;
 	END_STRUCT;
 	Linka_IN_typ : 	STRUCT 
 		New_Member : USINT;
@@ -589,20 +594,20 @@ TYPE
 	END_STRUCT;
 	P1_Pracovisko_IN_typ : 	STRUCT 
 		TlakVzduchu_OK : BOOL; (*S1_5*)
-		ModulWeidmuller_IO_OK : BOOL;
-		VentilovyTerminal_OK : BOOL;
-		Robot_OK : BOOL;
-		Skrutkovacka_K30_OK : BOOL;
-		Skrutkovacka_M5_OK : BOOL;
-		Skrutkovacka_M4_OK : BOOL;
-		ModulFesto_IO_OK : BOOL;
-		SmartKamera3_OK : BOOL;
-		SmartKamera5_OK : BOOL;
-		ServoZdvihuVytahu_OK : BOOL;
-		ServoManipulatorOsX_OK : BOOL;
-		ServoManipulatorOsY_OK : BOOL;
-		ServoManipulatorOsZ_M5_OK : BOOL;
-		ServoManipulatorOsZ_M4_OK : BOOL;
+		ModulWeidmuller_IO_KomOK : BOOL;
+		VentilovyTerminal_KomOK : BOOL;
+		Robot_KomOK : BOOL;
+		Skrutkovacka_K30_KomOK : BOOL;
+		Skrutkovacka_M5_KomOK : BOOL;
+		Skrutkovacka_M4_KomOK : BOOL;
+		ModulFesto_IO_KomOK : BOOL;
+		SmartKamera3_KomOK : BOOL;
+		SmartKamera5_KomOK : BOOL;
+		ServoZdvihuVytahu_KomOK : BOOL;
+		ServoManipulatorOsX_KomOK : BOOL;
+		ServoManipulatorOsY_KomOK : BOOL;
+		ServoManipulatorOsZ_M5_KomOK : BOOL;
+		ServoManipulatorOsZ_M4_KomOK : BOOL;
 		PredneDvere_PritomnostAdaptera : BOOL;
 		ZadneDvere_PritomnostAdaptera : BOOL;
 	END_STRUCT;
@@ -904,6 +909,12 @@ TYPE
 		ManipulOsY_JoggRychlost : REAL;
 		ManipulOsZ_M5_JoggRychlost : REAL;
 		ManipulOsZ_M4_JoggRychlost : REAL;
+		K30_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
+		K30_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		M5_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
+		M5_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		M4_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
+		M4_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
 	END_STRUCT;
 	P1_Srobovanie_STAV_typ : 	STRUCT 
 		RR_Polohovanie_BUSY : BOOL;
@@ -1117,23 +1128,23 @@ TYPE
 	END_STRUCT;
 	P2_Pracovisko_IN_typ : 	STRUCT 
 		TlakVzduchu_OK : BOOL; (*S2_10*)
-		ModulWeidmuller_IO_OK : BOOL;
-		VentilovyTerminal_OK : BOOL;
-		Robot_OK : BOOL;
-		Skrutkovacka_M6_OK : BOOL;
-		Skrutkovacka_M5_OK : BOOL;
-		Skrutkovacka_M4_OK : BOOL;
-		Maticovacka_M4_OK : BOOL;
-		ModulFesto_IO_OK : BOOL;
-		SafetyModul_OK : BOOL;
-		SmartKamera8_OK : BOOL;
-		SmartKamera9_OK : BOOL;
-		ServoManipulatorOsX_OK : BOOL;
-		ServoManipulatorOsY_OK : BOOL;
-		ServoManipulatorOsZ_M4_OK : BOOL;
-		ServoZaklTesneniaPojazd_OK : BOOL;
-		ServoZaklTesneniaZdvih_OK : BOOL;
-		ServoZvaraniaOsZ_OK : BOOL;
+		ModulWeidmuller_IO_KomOK : BOOL;
+		VentilovyTerminal_KomOK : BOOL;
+		Robot_KomOK : BOOL;
+		Skrutkovacka_M6_KomOK : BOOL;
+		Skrutkovacka_M5_KomOK : BOOL;
+		Skrutkovacka_M4_KomOK : BOOL;
+		Maticovacka_M4_KomOK : BOOL;
+		ModulFesto_IO_KomOK : BOOL;
+		SafetyModul_KomOK : BOOL;
+		SmartKamera8_KomOK : BOOL;
+		SmartKamera9_KomOK : BOOL;
+		ServoManipulatorOsX_KomOK : BOOL;
+		ServoManipulatorOsY_KomOK : BOOL;
+		ServoManipulatorOsZ_M4_KomOK : BOOL;
+		ServoZaklTesneniaPojazd_KomOK : BOOL;
+		ServoZaklTesneniaZdvih_KomOK : BOOL;
+		ServoZvaraniaOsZ_KomOK : BOOL;
 		PredneDvereLS_PritomnostAdaptera : BOOL;
 		PredneDverePS_PritomnostAdaptera : BOOL;
 		ZadneDvereLS_PritomnostAdaptera : BOOL;
@@ -1920,16 +1931,16 @@ TYPE
 	END_STRUCT;
 	P3_Pracovisko_IN_typ : 	STRUCT 
 		TlakVzduchu_OK : BOOL; (*S3_7*)
-		ModulWeidmuller_IO_OK : BOOL;
-		VentilovyTerminal_OK : BOOL;
-		Skrutkovacka_K40_OK : BOOL;
-		Skrutkovacka_M5_OK : BOOL;
-		ModulFesto_IO_OK : BOOL;
-		ServoManipulatorOsY_OK : BOOL;
-		ServoManipulatorOsZ_M5_OK : BOOL;
-		Kamery_ControlUnit_OK : BOOL;
-		LeakageTesterA_OK : BOOL;
-		LeakageTesterB_OK : BOOL;
+		ModulWeidmuller_IO_KomOK : BOOL;
+		VentilovyTerminal_KomOK : BOOL;
+		Skrutkovacka_K40_KomOK : BOOL;
+		Skrutkovacka_M5_KomOK : BOOL;
+		ModulFesto_IO_KomOK : BOOL;
+		ServoManipulatorOsY_KomOK : BOOL;
+		ServoManipulatorOsZ_M5_KomOK : BOOL;
+		Kamery_ControlUnit_KomOK : BOOL;
+		LeakageTesterA_KomOK : BOOL;
+		LeakageTesterB_KomOK : BOOL;
 	END_STRUCT;
 	P3_Pracovisko_OUT_typ : 	STRUCT 
 		Majak_ZeleneSvetlo_ON : BOOL;
@@ -2177,6 +2188,10 @@ TYPE
 		RR_IndexPolohovaniaManipulatora : USINT;
 		ManipulOsY_JoggRychlost : REAL;
 		ManipulOsZ_M5_JoggRychlost : REAL;
+		K40_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
+		K40_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		M5_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
+		M5_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
 	END_STRUCT;
 	P3_Srobovanie_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -2543,12 +2558,12 @@ TYPE
 	END_STRUCT;
 	P4_PracoviskoIN_typ : 	STRUCT 
 		TlakVzduchu_OK : BOOL; (*S4_5*)
-		ModulWeidmuller_IO_OK : BOOL;
-		VentilovyTerminal_OK : BOOL;
-		ModulFesto_IO_OK : BOOL;
-		ServoZdvihuVytahu_OK : BOOL;
-		ServoZdvihuAplikatoraEtikiet_OK : BOOL;
-		SmartKamera14_OK : BOOL;
+		ModulWeidmuller_IO_KomOK : BOOL;
+		VentilovyTerminal_KomOK : BOOL;
+		ModulFesto_IO_KomOK : BOOL;
+		ServoZdvihuVytahu_KomOK : BOOL;
+		ServoZdvihuAplikEtikiet_KomOK : BOOL;
+		SmartKamera14_KomOK : BOOL;
 	END_STRUCT;
 	P4_PracoviskoOUT_typ : 	STRUCT 
 		Majak_ZeleneSvetlo_ON : BOOL;

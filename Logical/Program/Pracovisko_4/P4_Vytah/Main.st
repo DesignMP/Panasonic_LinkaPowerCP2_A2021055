@@ -161,7 +161,11 @@ PROGRAM _CYCLIC
 			
 			P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
             
-			IF NOT SC_P4_Vytah.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 4;
+			ELSIF NOT SC_P4_Vytah.Switch1 THEN
 				FTP_CAM16.CMD.VymazFotku:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF	
@@ -483,7 +487,11 @@ PROGRAM _CYCLIC
 			
 			P4_Vytah.Banner.IN.ModraRotujucaLED_ON:= TRUE;
 			
-			IF NOT SC_P4_Vytah.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 118;
+			ELSIF NOT SC_P4_Vytah.Switch1 THEN
 				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF 
@@ -598,7 +606,11 @@ PROGRAM _CYCLIC
             
             P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
             
-			IF NOT SC_P4_Vytah.Switch1 AND CAM16.STAV.Command_READY THEN
+			IF Linka.P4_Kamery_OFF THEN
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 122;
+			ELSIF NOT SC_P4_Vytah.Switch1 AND CAM16.STAV.Command_READY THEN
 				CAM16.CMD.Triger:= TRUE;
 				SC_P4_Vytah.IdleTime.IN:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
@@ -724,7 +736,11 @@ PROGRAM _CYCLIC
             
 			P4_Vytah.Banner.IN.ModraRotujucaLED_ON:= TRUE;
             
-			IF NOT SC_P4_Vytah.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 123;
+			ELSIF NOT SC_P4_Vytah.Switch1 THEN
 				FTP_CAM16.INPUTS.QRkodPowerCP:= Paletka[i].PAR.QRkodPowerCP;
 				CisloFotky:= CisloFotky + 1;
 				FTP_CAM16.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
@@ -756,7 +772,11 @@ PROGRAM _CYCLIC
 			
 			P4_Vytah.Banner.IN.ModraRotujucaLED_ON:= TRUE;
 			
-			IF NOT SC_P4_Vytah.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 130;
+			ELSIF NOT SC_P4_Vytah.Switch1 THEN
 				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF 
@@ -876,7 +896,11 @@ PROGRAM _CYCLIC
 		
             P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
 		
-			IF NOT SC_P4_Vytah.Switch1 AND CAM16.STAV.Command_READY THEN
+			IF Linka.P4_Kamery_OFF THEN
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;	
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 560;
+			ELSIF NOT SC_P4_Vytah.Switch1 AND CAM16.STAV.Command_READY THEN
 				CAM16.CMD.Triger:= TRUE;
 				SC_P4_Vytah.IdleTime.IN:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
@@ -998,6 +1022,10 @@ PROGRAM _CYCLIC
 			
 			P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
             
+			IF Linka.KOM_FTP_OFF THEN
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 140;
 			IF NOT SC_P4_Vytah.Switch1 THEN
 				FTP_CAM16.CMD.VymazFotku:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;

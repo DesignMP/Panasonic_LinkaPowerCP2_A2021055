@@ -19,7 +19,7 @@ PROGRAM _CYCLIC
 	//Volanie podprogramov a knižníc//
 	P3_Srobovanie.ServoManipulOsY();
 	P3_Srobovanie.ServoManipulOsZ_M5();
-		
+	AtlasCopcoKomunikacia;	
 	
 	
 	

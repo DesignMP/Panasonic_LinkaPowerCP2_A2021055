@@ -119,7 +119,10 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.IdleTime.PT:= T#4s;
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
-			IF NOT SC_P3_StoperSrobovania.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P3_StoperSrobovania.ResetStep:= TRUE;
+				SC_P3_StoperSrobovania.Step:= 5;
+			ELSIF NOT SC_P3_StoperSrobovania.Switch1 THEN
 				FTP_CAM13.CMD.VymazFotku:= TRUE;
 				SC_P3_StoperSrobovania.Switch1:= TRUE;
 			END_IF	
@@ -305,7 +308,19 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.IdleTime.PT:= T#5s;
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;   
             
-			IF NOT SC_P3_StoperSrobovania.Switch1 AND CAM13.STAV.Command_READY THEN
+			IF Linka.P3_Kamery_OFF THEN
+				P3_StoperSrobovania.STAV.PoINIT:= TRUE;
+				IF Linka.PAR.ZvolenyModel = '4F' THEN
+					SC_P3_StoperSrobovania.ResetStep:= TRUE;
+					SC_P3_StoperSrobovania.Step:= 130;
+				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+					SC_P3_StoperSrobovania.ResetStep:= TRUE;
+					SC_P3_StoperSrobovania.Step:= 130;
+				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
+					SC_P3_StoperSrobovania.ResetStep:= TRUE;
+					SC_P3_StoperSrobovania.Step:= 350;  
+				END_IF   
+			ELSIF NOT SC_P3_StoperSrobovania.Switch1 AND CAM13.STAV.Command_READY THEN
 				CAM13.CMD.Triger:= TRUE;
 				SC_P3_StoperSrobovania.IdleTime.IN:= TRUE;
 				SC_P3_StoperSrobovania.Switch1:= TRUE;
@@ -393,7 +408,10 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.IdleTime.PT:= T#4s;
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
-			IF NOT SC_P3_StoperSrobovania.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P3_StoperSrobovania.ResetStep:= TRUE;
+				SC_P3_StoperSrobovania.Step:= 58;
+			ELSIF NOT SC_P3_StoperSrobovania.Switch1 THEN
 				FTP_CAM13.CMD.VymazFotku:= TRUE;
 				SC_P3_StoperSrobovania.Switch1:= TRUE;
 			END_IF	
@@ -537,7 +555,10 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P3_StoperSrobovania.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P3_StoperSrobovania.ResetStep:= TRUE;
+				SC_P3_StoperSrobovania.Step:= 118;
+			ELSIF NOT SC_P3_StoperSrobovania.Switch1 THEN
 				TRCB_P3_Srobovanie_ST7.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P3_StoperSrobovania.Switch1:= TRUE;
 			END_IF 
@@ -735,8 +756,13 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
 			IF NOT P3_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
-				SC_P3_StoperSrobovania.ResetStep:= TRUE;
-				SC_P3_StoperSrobovania.Step:= 140;
+				IF Linka.P3_SkrutkovanieResult_OFF THEN
+					SC_P3_StoperSrobovania.ResetStep:= TRUE;
+					SC_P3_StoperSrobovania.Step:= 145;
+				ELSE	
+					SC_P3_StoperSrobovania.ResetStep:= TRUE;
+					SC_P3_StoperSrobovania.Step:= 140;
+				END_IF	
 			END_IF	
 			
 			
@@ -866,8 +892,13 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
 			IF NOT P3_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
-				SC_P3_StoperSrobovania.ResetStep:= TRUE;
-				SC_P3_StoperSrobovania.Step:= 360;
+				IF Linka.P3_SkrutkovanieResult_OFF THEN
+					SC_P3_StoperSrobovania.ResetStep:= TRUE;
+					SC_P3_StoperSrobovania.Step:= 365;
+				ELSE
+					SC_P3_StoperSrobovania.ResetStep:= TRUE;
+					SC_P3_StoperSrobovania.Step:= 360;
+				END_IF	
 			END_IF	
 			
 	           
@@ -999,7 +1030,10 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;
 			SC_P3_StoperSrobovania.IdleTime.IN:= TRUE;
 			
-			IF NOT SC_P3_StoperSrobovania.Switch1 AND CAM13.STAV.Command_READY THEN
+			IF Linka.P3_Kamery_OFF THEN
+				SC_P3_StoperSrobovania.ResetStep:= TRUE;
+				SC_P3_StoperSrobovania.Step:= 540;
+			ELSIF NOT SC_P3_StoperSrobovania.Switch1 AND CAM13.STAV.Command_READY THEN
 				CAM13.CMD.Triger:= TRUE;
 				SC_P3_StoperSrobovania.Switch1:= TRUE;
 			END_IF
@@ -1047,7 +1081,10 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P3_StoperSrobovania.Switch1 THEN		
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P3_StoperSrobovania.ResetStep:= TRUE;
+				SC_P3_StoperSrobovania.Step:= 545;
+			ELSIF NOT SC_P3_StoperSrobovania.Switch1 THEN		
 				FTP_CAM13.INPUTS.QRkodPowerCP:= Paletka[i].PAR.QRkodPowerCP;
 				CisloFotky:= CisloFotky + 1;
 				FTP_CAM13.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
@@ -1098,7 +1135,10 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P3_StoperSrobovania.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P3_StoperSrobovania.ResetStep:= TRUE;
+				SC_P3_StoperSrobovania.Step:= 560;
+			ELSIF NOT SC_P3_StoperSrobovania.Switch1 THEN
 				TRCB_P3_Srobovanie_ST7.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P3_StoperSrobovania.Switch1:= TRUE;
 			END_IF 

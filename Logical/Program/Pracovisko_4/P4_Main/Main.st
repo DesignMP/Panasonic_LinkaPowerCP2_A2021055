@@ -318,11 +318,11 @@ PROGRAM _CYCLIC
 	
 	//Priznak HW Vytahu OK//
 	IF P4_Pracovisko.IN.TlakVzduchu_OK AND
-		P4_Pracovisko.IN.ModulFesto_IO_OK AND
-		P4_Pracovisko.IN.ModulWeidmuller_IO_OK AND
-		P4_Pracovisko.IN.ServoZdvihuVytahu_OK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_OK AND
-		P4_Pracovisko.IN.VentilovyTerminal_OK THEN
+		P4_Pracovisko.IN.ModulFesto_IO_KomOK AND
+		P4_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
+		P4_Pracovisko.IN.ServoZdvihuVytahu_KomOK AND
+		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+		P4_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P4_Pracovisko.STAV.HardwareVytahu_OK:= TRUE;
 	ELSE	
 		P4_Pracovisko.STAV.HardwareVytahu_OK:= FALSE;
@@ -330,12 +330,12 @@ PROGRAM _CYCLIC
 	
 	//Príznak HW Bunky OK//
 	IF P4_Pracovisko.IN.TlakVzduchu_OK AND
-		P4_Pracovisko.IN.ModulFesto_IO_OK AND
-		P4_Pracovisko.IN.ModulWeidmuller_IO_OK AND
-		P4_Pracovisko.IN.ServoZdvihuAplikatoraEtikiet_OK AND
-		P4_Pracovisko.IN.SmartKamera14_OK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_OK AND
-		P4_Pracovisko.IN.VentilovyTerminal_OK THEN
+		P4_Pracovisko.IN.ModulFesto_IO_KomOK AND
+		P4_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
+		P4_Pracovisko.IN.ServoZdvihuAplikEtikiet_KomOK AND
+		P4_Pracovisko.IN.SmartKamera14_KomOK AND
+		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+		P4_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P4_Pracovisko.STAV.HardwareBunky_OK:= TRUE;
 	ELSE	
 		P4_Pracovisko.STAV.HardwareBunky_OK:= FALSE;

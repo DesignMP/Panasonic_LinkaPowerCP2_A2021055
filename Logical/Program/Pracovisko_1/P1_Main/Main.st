@@ -223,13 +223,13 @@ PROGRAM _CYCLIC
 
 	//Priznak HW Vytahu OK//
 	IF P1_Pracovisko.IN.TlakVzduchu_OK AND
-		P1_Pracovisko.IN.ModulFesto_IO_OK AND
-		P1_Pracovisko.IN.ModulWeidmuller_IO_OK AND
-		P1_Pracovisko.IN.ServoZdvihuVytahu_OK AND
-		P1_Pracovisko.IN.SmartKamera3_OK AND
-		P1_Pracovisko.IN.SmartKamera5_OK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_OK AND
-		P1_Pracovisko.IN.VentilovyTerminal_OK THEN
+		P1_Pracovisko.IN.ModulFesto_IO_KomOK AND
+		P1_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
+		P1_Pracovisko.IN.ServoZdvihuVytahu_KomOK AND
+		P1_Pracovisko.IN.SmartKamera3_KomOK AND
+		P1_Pracovisko.IN.SmartKamera5_KomOK AND
+		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+		P1_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P1_Pracovisko.STAV.HardwareVytahu_OK:= TRUE;
 	ELSE	
 		P1_Pracovisko.STAV.HardwareVytahu_OK:= FALSE;
@@ -238,18 +238,18 @@ PROGRAM _CYCLIC
 	
 	//Príznak HW Bunky OK//
 	IF P1_Pracovisko.IN.TlakVzduchu_OK AND
-		P1_Pracovisko.IN.ModulFesto_IO_OK AND
-		P1_Pracovisko.IN.ModulWeidmuller_IO_OK AND
-		P1_Pracovisko.IN.Robot_OK AND
-		P1_Pracovisko.IN.ServoManipulatorOsX_OK AND
-		P1_Pracovisko.IN.ServoManipulatorOsY_OK AND
-		P1_Pracovisko.IN.ServoManipulatorOsZ_M4_OK AND
-		P1_Pracovisko.IN.ServoManipulatorOsZ_M5_OK AND
-		P1_Pracovisko.IN.Skrutkovacka_K30_OK AND
-		P1_Pracovisko.IN.Skrutkovacka_M4_OK AND
-		P1_Pracovisko.IN.Skrutkovacka_M5_OK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_OK AND
-		P1_Pracovisko.IN.VentilovyTerminal_OK THEN
+		P1_Pracovisko.IN.ModulFesto_IO_KomOK AND
+		P1_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
+		P1_Pracovisko.IN.Robot_KomOK AND
+		P1_Pracovisko.IN.ServoManipulatorOsX_KomOK AND
+		P1_Pracovisko.IN.ServoManipulatorOsY_KomOK AND
+		P1_Pracovisko.IN.ServoManipulatorOsZ_M4_KomOK AND
+		P1_Pracovisko.IN.ServoManipulatorOsZ_M5_KomOK AND
+		P1_Pracovisko.IN.Skrutkovacka_K30_KomOK AND
+		P1_Pracovisko.IN.Skrutkovacka_M4_KomOK AND
+		P1_Pracovisko.IN.Skrutkovacka_M5_KomOK AND
+		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+		P1_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P1_Pracovisko.STAV.HardwareBunky_OK:= TRUE;
 	ELSE	
 		P1_Pracovisko.STAV.HardwareBunky_OK:= FALSE;

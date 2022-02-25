@@ -158,7 +158,10 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#4s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 			
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 10;
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
 				FTP_CAM15.CMD.VymazFotku:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
@@ -167,14 +170,14 @@ PROGRAM _CYCLIC
 			IF FTP_CAM15.STATUS.KomunikaciaUkoncena THEN
 				FTP_CAM15.CMD.VymazFotku:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 5;
+				SC_P4_Etiketovacka.Step:= 10;
 			ELSIF FTP_CAM15.STATUS.KomunikaciaError THEN
 				P34_Alarmy[434]:= TRUE;
 				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
 			END_IF	
 		
-		8:
-			SC_P4_Etiketovacka.StepName:='8 - Inicializacia - presun zdvihu aplikatora do pozicie odoberania etikety';
+		10:
+			SC_P4_Etiketovacka.StepName:='10 - Inicializacia - presun zdvihu aplikatora do pozicie odoberania etikety';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
@@ -352,8 +355,11 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#5s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
             
-		
-			IF NOT SC_P4_Etiketovacka.Switch1 AND CAM15.STAV.Command_READY THEN
+			IF Linka.P4_Kamery_OFF THEN
+				P4_Etiketovacka.STAV.PoINIT:= TRUE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 100;
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 AND CAM15.STAV.Command_READY THEN
 				CAM15.CMD.Triger:= TRUE;
 				SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
@@ -414,7 +420,10 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#4s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 			
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 55;
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
 				FTP_CAM15.CMD.VymazFotku:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
@@ -545,7 +554,10 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 118;
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF 
@@ -706,8 +718,10 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#5s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
-			
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF Linka.P4_Kamery_OFF THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 124;
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
 				CAM14.CMD.Triger:= TRUE;
 				P4_Etiketovacka.STAV.PowerCP_ZhodaQRkodu_OK:= FALSE;
 				SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
@@ -813,6 +827,9 @@ PROGRAM _CYCLIC
 			IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 138;
+			ELSIF Linka.KOM_Panatrace_OFF THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 138;	
 			ELSE	
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 127;
@@ -825,6 +842,7 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.StepName:='127 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#10s;	
+			
 			
 			IF NOT SC_P4_Etiketovacka.Switch1 THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
@@ -1181,7 +1199,10 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#5s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
-			IF NOT SC_P4_Etiketovacka.Switch1 AND CAM15.STAV.Command_READY THEN
+			IF Linka.P4_Kamery_OFF THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 540;
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 AND CAM15.STAV.Command_READY THEN
 				CAM15.CMD.Triger:= TRUE;
 				P4_Etiketovacka.STAV.Etiketa_ZhodaQRkodu_OK:= FALSE;
 				SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
@@ -1296,7 +1317,10 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;		
 			
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF Linka.KOM_FTP_OFF THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 545; 
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
 				FTP_CAM15.INPUTS.QRkodPowerCP:= Paletka[i].PAR.QRkodPowerCP;
 				CisloFotky:= CisloFotky + 1;
 				FTP_CAM15.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
@@ -1355,7 +1379,10 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 560;
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF 

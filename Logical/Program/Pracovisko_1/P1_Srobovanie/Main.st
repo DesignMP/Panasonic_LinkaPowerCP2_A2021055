@@ -31,7 +31,7 @@ PROGRAM _CYCLIC
 	P1_Srobovanie.ServoManipulOsY();
 	P1_Srobovanie.ServoManipulOsZ_M4();
 	P1_Srobovanie.ServoManipulOsZ_M5();
-	
+	AtlasCopcoKomunikacia;
 	
 	
 	

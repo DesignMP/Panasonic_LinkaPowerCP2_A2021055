@@ -2,488 +2,670 @@
 <?AutomationStudio FileVersion="4.9"?>
 <BR.AS.HardwareTopology>
   <TimeStamps>
-    <TimeStamp LogicalPath="Config2.Hardware.hw" LastWriteTime="02/17/2022 11:21:16" />
+    <TimeStamp LogicalPath="Config2.Hardware.hw" LastWriteTime="02/25/2022 14:17:40" />
   </TimeStamps>
   <Modules>
-    <Module Name="5APC2100_BY44_000" Type="5APC2100.BY44-000" X="-278" Y="-105" />
-    <Module Name="5ACCIF01.FPSC-001" Type="5ACCIF01.FPSC-001" X="-282" Y="-95" />
-    <Module Name="P1_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="334" Y="82" />
-    <Module Name="P1_Robot_IRB120_R1" Type="FBD.Hilscher.PNIOGenDevDTM2.ENERGY V1.4" X="367" Y="368" />
-    <Module Name="0AC808.9" Type="0AC808.9" X="21" Y="89" />
-    <Module Name="P1_HMI_OP1" Type="6PPT50.156B-10B" X="295" Y="880" />
-    <Module Name="0AC808.9a" Type="0AC808.9" X="-286" Y="187" />
-    <Module Name="P2_Napajanie" Type="X20PS9400" X="554" Y="1578" />
-    <Module Name="X20BB81" Type="X20BB81" X="504" Y="1578" />
-    <Module Name="P2_ProfinetMaster" Type="X20IF10E1-1" X="504" Y="1578" />
-    <Module Name="P2_Powerlink" Type="X20BC1083" X="529" Y="1578" />
-    <Module Name="X20TB12" Type="X20TB12" X="554" Y="1605" />
-    <Module Name="P1_SkrutkovackaM4" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="1012" Y="368" />
-    <Module Name="P1_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="791" Y="368" />
-    <Module Name="P1_SkrutkovackaK30" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="585" Y="368" />
-    <Module Name="P1_CAM_1" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="1570" Y="367" />
-    <Module Name="P1_CAM_2" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="1794" Y="367" />
-    <Module Name="P1_ServoZdvihuVstupVytahu" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="392" Y="624" />
-    <Module Name="P1_ServoManipOsX" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="702" Y="624" />
-    <Module Name="P1_ServoManipOsY" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="961" Y="624" />
-    <Module Name="P1_ServoManipOsZ_M5" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="1260" Y="625" />
-    <Module Name="P1_ServoManipOsZ_M4" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="1597" Y="623" />
-    <Module Name="P1_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" X="1282" Y="368" />
-    <Module Name="P2_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="810" Y="1578" />
-    <Module Name="P2_HMI_OP2" Type="6PPT50.156B-10B" X="295" Y="2457" />
-    <Module Name="P2_Robot_IRB1200" Type="FBD.Hilscher.PNIOGenDevDTM2.ENERGY V1.4" X="457" Y="1906" />
-    <Module Name="P2_MaticovackaM4" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="687" Y="1906" />
-    <Module Name="P2_SkrutkovackaM6" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="922" Y="1906" />
-    <Module Name="P2_SkrutkovackaM4" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="1169" Y="1906" />
-    <Module Name="P2_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="1421" Y="1906" />
-    <Module Name="P2_SafetyMaster" Type="FBD.Hilscher.PNIOGenDevDTM2.PSR-M-GW-PN" X="1652" Y="1906" />
-    <Module Name="P2_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" X="1913" Y="1906" />
-    <Module Name="P2_CAM_8" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="2204" Y="1906" />
-    <Module Name="P2_CAM_9" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="2441" Y="1906" />
+    <Module Name="P1_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="348" Y="89" />
+    <Module Name="P1_Robot_IRB120_R1" Type="FBD.Hilscher.PNIOGenDevDTM2.ENERGY V1.4" X="379" Y="414.488342" />
+    <Module Name="0AC808.9" Type="0AC808.9" X="-60.6177368" Y="175.595947" />
+    <Module Name="P1_HMI_OP1" Type="6PPT50.156B-10B" X="736" Y="1054.946" />
+    <Module Name="0AC808.9a" Type="0AC808.9" X="-270" Y="175.595947" />
+    <Module Name="P2_Napajanie" Type="X20PS9400" X="576.573" Y="1614.16736" />
+    <Module Name="X20BB81" Type="X20BB81" X="526.573" Y="1614.16736" />
+    <Module Name="P2_ProfinetMaster" Type="X20IF10E1-1" X="526.573" Y="1614.16736" />
+    <Module Name="P2_Powerlink" Type="X20BC1083" X="551.573" Y="1614.16736" />
+    <Module Name="X20TB12" Type="X20TB12" X="576.573" Y="1641.16736" />
+    <Module Name="P1_SkrutkovackaM4" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="1001" Y="414.488342" />
+    <Module Name="P1_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="810" Y="414.488342" />
+    <Module Name="P1_SkrutkovackaK30" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="589.573" Y="414.488342" />
+    <Module Name="P1_CAM_3" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="1577.88037" Y="414.488342" />
+    <Module Name="P1_CAM_5" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="1810.88623" Y="414.488342" />
+    <Module Name="P1_ServoZdvihuVstupVytahu" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="435.9359" Y="747.0122" />
+    <Module Name="P1_ServoManipOsX" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="745.9359" Y="747.0122" />
+    <Module Name="P1_ServoManipOsY" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="1004.93591" Y="747.0122" />
+    <Module Name="P1_ServoManipOsZ_M5" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="1303.93591" Y="748.0122" />
+    <Module Name="P1_ServoManipOsZ_M4" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="1640.93591" Y="746.0122" />
+    <Module Name="P1_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" X="1272.40686" Y="414.488342" />
+    <Module Name="P2_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="818" Y="1614.16736" />
+    <Module Name="P2_HMI_OP2" Type="6PPT50.156B-10B" X="792" Y="2462.6333" />
+    <Module Name="P2_Robot_IRB1200" Type="FBD.Hilscher.PNIOGenDevDTM2.ENERGY V1.4" X="495.081177" Y="1974.8219" />
+    <Module Name="P2_MaticovackaM4" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="694" Y="1974.8219" />
+    <Module Name="P2_SkrutkovackaM6" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="937.6953" Y="1974.8219" />
+    <Module Name="P2_SkrutkovackaM4" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="1170" Y="1974.8219" />
+    <Module Name="P2_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="1407.97" Y="1974.8219" />
+    <Module Name="P2_SafetyMaster" Type="FBD.Hilscher.PNIOGenDevDTM2.PSR-M-GW-PN" X="1667.88037" Y="1974.8219" />
+    <Module Name="P2_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" X="1933" Y="1974.8219" />
+    <Module Name="P2_CAM_8" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="2197" Y="1974.8219" />
+    <Module Name="P2_CAM_9" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="2441" Y="1974.8219" />
     <Module Name="P2_ServoManipulatoraOsX" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="442" Y="2182" />
     <Module Name="P2_ServoManipOsY" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="784" Y="2182" />
     <Module Name="P2_ServoManipOsZ_M4" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="1091" Y="2182" />
     <Module Name="P2_ServoZatlTesneniaZdvih" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="1400" Y="2182" />
     <Module Name="P2_ServoZatlTesneniaPojazd" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="1721" Y="2182" />
-    <Module Name="P1_VentilovyTerminal_VT1" Type="FBE.000002EE_EB80D1" X="517" Y="82" />
-    <Module Name="P2_VentilovyTerminal_VT2" Type="FBE.000002EE_EB80D1" X="985" Y="1591" />
+    <Module Name="P1_VentilovyTerminal_VT1" Type="FBE.000002EE_EB80D1" X="507.6283" Y="89" />
+    <Module Name="P2_VentilovyTerminal_VT2" Type="FBE.000002EE_EB80D1" X="971.628845" Y="1614.16736" />
     <Module Name="P2_ServoZatlTesneniaZdvih1" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="2063" Y="2182" />
-    <Module Name="P3_Napajanie" Type="X20PS9400" X="396" Y="3095" />
-    <Module Name="X20BB81a" Type="X20BB81" X="346" Y="3095" />
-    <Module Name="P3_Profinet" Type="X20IF10E1-1" X="346" Y="3095" />
-    <Module Name="P3_Powerlink" Type="X20BC1083" X="371" Y="3095" />
-    <Module Name="X20TB12a" Type="X20TB12" X="396" Y="3122" />
-    <Module Name="P3_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="675" Y="3095" />
-    <Module Name="P3_VentilovyTerminal_VT3" Type="FBE.000002EE_EB80D1" X="934" Y="3095" />
-    <Module Name="P3_SkrutkovackaK40" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="379" Y="3392" />
-    <Module Name="P3_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="646" Y="3392" />
-    <Module Name="P3_ServoManipulatoraOsY" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="379" Y="3595" />
-    <Module Name="P3_ServoManipOsZ_M5" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="736" Y="3595" />
-    <Module Name="P3_AteqLeakageTesterA" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 100XX-RE$002FPNS V3.4.19 - V3.4.x" X="963" Y="3392" />
-    <Module Name="P3_AteqLeakageTesterB" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 100XX-RE$002FPNS V3.4.19 - V3.4.x" X="1298" Y="3392" />
-    <Module Name="P3_KameryControlUnit" Type="FBD.Hilscher.PNIOGenDevDTM2.Control Unit V2.2" X="1629" Y="3392" />
-    <Module Name="P3_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" X="1907" Y="3392" />
+    <Module Name="P3_Napajanie" Type="X20PS9400" X="418" Y="3149.39868" />
+    <Module Name="X20BB81a" Type="X20BB81" X="368" Y="3149.39868" />
+    <Module Name="P3_Profinet" Type="X20IF10E1-1" X="368" Y="3149.39868" />
+    <Module Name="P3_Powerlink" Type="X20BC1083" X="393" Y="3149.39868" />
+    <Module Name="X20TB12a" Type="X20TB12" X="418" Y="3176.39868" />
+    <Module Name="P3_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="665.9699" Y="3128.39868" />
+    <Module Name="P3_VentilovyTerminal_VT3" Type="FBE.000002EE_EB80D1" X="931.485352" Y="3128.39868" />
+    <Module Name="P3_SkrutkovackaK40" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="379" Y="3447.70679" />
+    <Module Name="P3_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" X="651.6997" Y="3447.70679" />
+    <Module Name="P3_ServoManipulatoraOsY" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="565.0758" Y="3725.04" />
+    <Module Name="P3_ServoManipOsZ_M5" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="922.0758" Y="3725.04" />
+    <Module Name="P3_AteqLeakageTesterA" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 100XX-RE$002FPNS V3.4.19 - V3.4.x" X="971.628845" Y="3447.70679" />
+    <Module Name="P3_AteqLeakageTesterB" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 100XX-RE$002FPNS V3.4.19 - V3.4.x" X="1310" Y="3447.70679" />
+    <Module Name="P3_KameryControlUnit" Type="FBD.Hilscher.PNIOGenDevDTM2.Control Unit V2.2" X="1631.79248" Y="3447.70679" />
+    <Module Name="P3_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" X="1935.90063" Y="3447.70679" />
     <Module Name="P4_HMI_OP3" Type="6PPT50.156B-10B" X="321" Y="5757" />
-    <Module Name="P4_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="366" Y="4853" />
-    <Module Name="P4_VentilovyTerminal_VT4" Type="FBE.000002EE_EB80D1" X="605" Y="4853" />
-    <Module Name="P3_IOmaster1" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" X="409" Y="5144" />
+    <Module Name="P4_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="392" Y="4903" />
+    <Module Name="P4_VentilovyTerminal_VT4" Type="FBE.000002EE_EB80D1" X="592" Y="4903" />
+    <Module Name="P3_IOmaster1" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" X="392" Y="5172.64746" />
     <Module Name="P4_ServoAplikatoraEtikietOsZ" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="400" Y="5512" />
     <Module Name="P4_ServoZdvihuVystupVytahu" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" X="764" Y="5512" />
-    <Module Name="P4_CAM_14" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="780" Y="5147" />
+    <Module Name="P4_CAM_14" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" X="780" Y="5172.64746" />
+    <Module Name="5PC910.SX02-00" Type="5PC910.SX02-00" X="-279" Y="-108" />
+    <Module Name="5AC901.BX02-00" Type="5AC901.BX02-00" X="-220" Y="-75" />
+    <Module Name="5ACPCI_XPNM_00" Type="5ACPCI.XPNM-00" X="-215" Y="-33" />
+    <Module Name="5LS182.6-2" Type="5LS182.6-2" X="-215" Y="-62" />
+    <Module Name="5PC900_TS17_00" Type="5PC900.TS17-00" X="-220" Y="-98" />
   </Modules>
   <Links>
-    <Link From="0AC808.9" To="5ACCIF01.FPSC-001" FromPort="ETH1" ToPort="IF1" IsRoutedByUser="False">
-      <Point X="47.525856" Y="100.15683" />
-      <Point X="47.525856" Y="100.15683" />
-      <Point X="47.525856" Y="88.15683" />
-      <Point X="47.525856" Y="-87.94318" />
-      <Point X="-236.667267" Y="-87.94318" />
-      <Point X="-241.667267" Y="-87.94318" />
-      <Point X="-241.667267" Y="-87.94318" />
-    </Link>
     <Link From="0AC808.9" To="P1_IOmodul_PowerlinkMaster" FromPort="ETH2" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="60.525856" Y="100.15683" />
-      <Point X="60.525856" Y="100.15683" />
-      <Point X="60.525856" Y="88.15683" />
-      <Point X="60.525856" Y="75" />
-      <Point X="135" Y="75" />
-      <Point X="135" Y="108.15683" />
-      <Point X="333.828918" Y="108.15683" />
-      <Point X="348.828918" Y="108.15683" />
-      <Point X="348.828918" Y="108.15683" />
+      <Point X="-21.6177368" Y="186.595947" />
+      <Point X="-21.6177368" Y="186.595947" />
+      <Point X="-21.6177368" Y="174.595947" />
+      <Point X="-21.6177368" Y="115" />
+      <Point X="347" Y="115" />
+      <Point X="362" Y="115" />
+      <Point X="362" Y="115" />
     </Link>
-    <Link From="0AC808.9" To="P4_IOmodul_PowerlinkMaster" FromPort="ETH6" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="380.0711" Y="4879.84668" />
-      <Point X="380.0711" Y="4879.84668" />
-      <Point X="365.0711" Y="4879.84668" />
-      <Point X="60" Y="4879.84668" />
-      <Point X="60" Y="133" />
-      <Point X="60" Y="113" />
-      <Point X="60" Y="113" />
-    </Link>
-    <Link From="0AC808.9" To="P3_Powerlink" FromPort="ETH7" ToPort="PLK2" IsRoutedByUser="False">
-      <Point X="385.573" Y="3185.87646" />
-      <Point X="385.573" Y="3185.87646" />
-      <Point X="385.573" Y="3195.87646" />
-      <Point X="385.573" Y="3205" />
-      <Point X="73" Y="3205" />
-      <Point X="73" Y="133" />
-      <Point X="73" Y="113" />
-      <Point X="73" Y="113" />
-    </Link>
-    <Link From="0AC808.9" To="P2_Powerlink" FromPort="ETH8" ToPort="PLK2" IsRoutedByUser="False">
-      <Point X="543.8289" Y="1668.05334" />
-      <Point X="543.8289" Y="1668.05334" />
-      <Point X="543.8289" Y="1678.05334" />
-      <Point X="543.8289" Y="1685" />
-      <Point X="86.525856" Y="1685" />
-      <Point X="86.525856" Y="133.15683" />
-      <Point X="86.525856" Y="113.15683" />
-      <Point X="86.525856" Y="113.15683" />
-    </Link>
-    <Link From="0AC808.9a" To="5APC2100_BY44_000" FromPort="ETH1" ToPort="IF3" IsRoutedByUser="False">
-      <Point X="-282.667267" Y="19.1568222" />
-      <Point X="-282.667267" Y="19.1568222" />
-      <Point X="-282.667267" Y="24.1568222" />
-      <Point X="-282.667267" Y="36.5551147" />
-      <Point X="-260.667267" Y="36.5551147" />
-      <Point X="-260.667267" Y="186.193268" />
-      <Point X="-260.667267" Y="198.193268" />
-      <Point X="-260.667267" Y="198.193268" />
+    <Link From="0AC808.9a" To="5PC910.SX02-00" FromPort="ETH1" ToPort="IF3" IsRoutedByUser="False">
+      <Point X="-244" Y="186.595947" />
+      <Point X="-244" Y="186.595947" />
+      <Point X="-244" Y="174.595947" />
+      <Point X="-244" Y="165" />
+      <Point X="-263.5" Y="165" />
+      <Point X="-263.5" Y="90" />
+      <Point X="-263.5" Y="85" />
+      <Point X="-263.5" Y="85" />
     </Link>
     <Link From="0AC808.9a" To="P4_HMI_OP3" FromPort="ETH6" ToPort="ETH1" IsRoutedByUser="False">
-      <Point X="465.981171" Y="5943.238" />
-      <Point X="465.981171" Y="5943.238" />
-      <Point X="465.981171" Y="5948.238" />
-      <Point X="465.981171" Y="5955" />
-      <Point X="-247" Y="5955" />
-      <Point X="-247" Y="231" />
-      <Point X="-247" Y="211" />
-      <Point X="-247" Y="211" />
+      <Point X="-231" Y="199.595947" />
+      <Point X="-231" Y="199.595947" />
+      <Point X="-231" Y="219.595947" />
+      <Point X="-231" Y="5955" />
+      <Point X="465.9" Y="5955" />
+      <Point X="465.9" Y="5947.3" />
+      <Point X="465.9" Y="5942.3" />
+      <Point X="465.9" Y="5942.3" />
     </Link>
     <Link From="0AC808.9a" To="P2_HMI_OP2" FromPort="ETH7" ToPort="ETH1" IsRoutedByUser="False">
-      <Point X="440.728882" Y="2642.77661" />
-      <Point X="440.728882" Y="2642.77661" />
-      <Point X="440.728882" Y="2646.77661" />
-      <Point X="440.728882" Y="2655" />
-      <Point X="-234" Y="2655" />
-      <Point X="-234" Y="231" />
-      <Point X="-234" Y="211" />
-      <Point X="-234" Y="211" />
+      <Point X="-218" Y="199.595947" />
+      <Point X="-218" Y="199.595947" />
+      <Point X="-218" Y="219.595947" />
+      <Point X="-218" Y="2665" />
+      <Point X="936.9" Y="2665" />
+      <Point X="936.9" Y="2652.93335" />
+      <Point X="936.9" Y="2647.93335" />
+      <Point X="936.9" Y="2647.93335" />
     </Link>
     <Link From="0AC808.9a" To="P1_HMI_OP1" FromPort="ETH8" ToPort="ETH1" IsRoutedByUser="False">
-      <Point X="440.728943" Y="1066.00427" />
-      <Point X="440.728943" Y="1066.00427" />
-      <Point X="440.728943" Y="1070.00427" />
-      <Point X="440.728943" Y="1085" />
-      <Point X="-221.667267" Y="1085" />
-      <Point X="-221.667267" Y="231.193268" />
-      <Point X="-221.667267" Y="211.193268" />
-      <Point X="-221.667267" Y="211.193268" />
+      <Point X="-205" Y="199.595947" />
+      <Point X="-205" Y="199.595947" />
+      <Point X="-205" Y="219.595947" />
+      <Point X="-205" Y="1255" />
+      <Point X="880.9" Y="1255" />
+      <Point X="880.9" Y="1245.24609" />
+      <Point X="880.9" Y="1240.24609" />
+      <Point X="880.9" Y="1240.24609" />
     </Link>
-    <Link From="P1_CAM_1" To="P1_IOmaster" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="1316.3927" Y="407.055634" />
-      <Point X="1316.3927" Y="407.055634" />
-      <Point X="1316.3927" Y="419.055634" />
-      <Point X="1316.3927" Y="425" />
-      <Point X="1385" Y="425" />
-      <Point X="1385" Y="406.062622" />
-      <Point X="1569.57715" Y="406.062622" />
-      <Point X="1589.57715" Y="406.062622" />
-      <Point X="1589.57715" Y="406.062622" />
+    <Link From="P1_CAM_3" To="P1_IOmaster" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="1596.88037" Y="453.488342" />
+      <Point X="1596.88037" Y="453.488342" />
+      <Point X="1576.88037" Y="453.488342" />
+      <Point X="1565" Y="453.488342" />
+      <Point X="1565" Y="475" />
+      <Point X="1306.40686" Y="475" />
+      <Point X="1306.40686" Y="465.488342" />
+      <Point X="1306.40686" Y="453.488342" />
+      <Point X="1306.40686" Y="453.488342" />
     </Link>
-    <Link From="P1_CAM_1" To="P1_CAM_2" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="1605.524" Y="407" />
-      <Point X="1605.524" Y="407" />
-      <Point X="1605.524" Y="419" />
-      <Point X="1605.524" Y="424.062622" />
-      <Point X="1669.57715" Y="424.062622" />
-      <Point X="1669.57715" Y="407" />
-      <Point X="1793.88074" Y="407" />
-      <Point X="1813.88074" Y="407" />
-      <Point X="1813.88074" Y="407" />
+    <Link From="P1_CAM_3" To="P1_CAM_5" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="1611.88037" Y="453.488342" />
+      <Point X="1611.88037" Y="453.488342" />
+      <Point X="1611.88037" Y="465.488342" />
+      <Point X="1611.88037" Y="475" />
+      <Point X="1675" Y="475" />
+      <Point X="1675" Y="453.488342" />
+      <Point X="1809.88623" Y="453.488342" />
+      <Point X="1829.88623" Y="453.488342" />
+      <Point X="1829.88623" Y="453.488342" />
     </Link>
     <Link From="P1_IOmaster" To="P1_SkrutkovackaM4" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="1046" Y="407" />
-      <Point X="1046" Y="407" />
-      <Point X="1046" Y="419" />
-      <Point X="1046" Y="425" />
-      <Point X="1115" Y="425" />
-      <Point X="1115" Y="407.055634" />
-      <Point X="1281.3927" Y="407.055634" />
-      <Point X="1301.3927" Y="407.055634" />
-      <Point X="1301.3927" Y="407.055634" />
+      <Point X="1291.40686" Y="453.488342" />
+      <Point X="1291.40686" Y="453.488342" />
+      <Point X="1271.40686" Y="453.488342" />
+      <Point X="1265" Y="453.488342" />
+      <Point X="1265" Y="475" />
+      <Point X="1035" Y="475" />
+      <Point X="1035" Y="465.488342" />
+      <Point X="1035" Y="453.488342" />
+      <Point X="1035" Y="453.488342" />
     </Link>
     <Link From="P1_IOmodul_PowerlinkMaster" To="P1_VentilovyTerminal_VT1" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="348" Y="143" />
-      <Point X="348" Y="143" />
-      <Point X="333" Y="143" />
-      <Point X="325" Y="143" />
-      <Point X="325" Y="215" />
-      <Point X="395" Y="215" />
-      <Point X="395" Y="191.15683" />
-      <Point X="516.931458" Y="191.15683" />
-      <Point X="536.931458" Y="191.15683" />
-      <Point X="536.931458" Y="191.15683" />
-    </Link>
-    <Link From="P1_Robot_IRB120_R1" To="P2_CAM_9" FromPort="PN1" ToPort="PN2" IsRoutedByUser="True">
-      <Point X="2475.082" Y="1945.89954" />
-      <Point X="2475.082" Y="1945.89954" />
-      <Point X="2475.082" Y="1956.89954" />
-      <Point X="2475.082" Y="1971.1908" />
-      <Point X="2726.014" Y="1971.1908" />
-      <Point X="2726.014" Y="255.1294" />
-      <Point X="386" Y="255.1294" />
-      <Point X="386" Y="419" />
-      <Point X="386" Y="407" />
-      <Point X="386" Y="407" />
+      <Point X="362" Y="150" />
+      <Point X="362" Y="150" />
+      <Point X="347" Y="150" />
+      <Point X="335" Y="150" />
+      <Point X="335" Y="215" />
+      <Point X="415" Y="215" />
+      <Point X="415" Y="198" />
+      <Point X="506.6283" Y="198" />
+      <Point X="526.6283" Y="198" />
+      <Point X="526.6283" Y="198" />
     </Link>
     <Link From="P1_Robot_IRB120_R1" To="P1_SkrutkovackaK30" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="401.6289" Y="407.937347" />
-      <Point X="401.6289" Y="407.937347" />
-      <Point X="401.6289" Y="419.937347" />
-      <Point X="401.6289" Y="429.19696" />
-      <Point X="462.8" Y="429.19696" />
-      <Point X="462.8" Y="407.9373" />
-      <Point X="584.6289" Y="407.9373" />
-      <Point X="604.6289" Y="407.9373" />
-      <Point X="604.6289" Y="407.9373" />
+      <Point X="413" Y="453.488342" />
+      <Point X="413" Y="453.488342" />
+      <Point X="413" Y="465.488342" />
+      <Point X="413" Y="475" />
+      <Point X="475" Y="475" />
+      <Point X="475" Y="453.488342" />
+      <Point X="588.573" Y="453.488342" />
+      <Point X="608.573" Y="453.488342" />
+      <Point X="608.573" Y="453.488342" />
     </Link>
     <Link From="P1_SkrutkovackaK30" To="P1_SkrutkovackaM5" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="619.6289" Y="407.9373" />
-      <Point X="619.6289" Y="407.9373" />
-      <Point X="619.6289" Y="419.9373" />
-      <Point X="619.6289" Y="429.19696" />
-      <Point X="682.8" Y="429.19696" />
-      <Point X="682.8" Y="407.937347" />
-      <Point X="790.6303" Y="407.937347" />
-      <Point X="810.6303" Y="407.937347" />
-      <Point X="810.6303" Y="407.937347" />
+      <Point X="623.573" Y="453.488342" />
+      <Point X="623.573" Y="453.488342" />
+      <Point X="623.573" Y="465.488342" />
+      <Point X="623.573" Y="475" />
+      <Point X="685" Y="475" />
+      <Point X="685" Y="453.488342" />
+      <Point X="809" Y="453.488342" />
+      <Point X="829" Y="453.488342" />
+      <Point X="829" Y="453.488342" />
     </Link>
     <Link From="P1_SkrutkovackaM4" To="P1_SkrutkovackaM5" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="825.6303" Y="407.937347" />
-      <Point X="825.6303" Y="407.937347" />
-      <Point X="825.6303" Y="419.937347" />
-      <Point X="825.6303" Y="429.19696" />
-      <Point X="892.8" Y="429.19696" />
-      <Point X="892.8" Y="407.937347" />
-      <Point X="1011.71246" Y="407.937347" />
-      <Point X="1031.7124" Y="407.937347" />
-      <Point X="1031.7124" Y="407.937347" />
+      <Point X="1020" Y="453.488342" />
+      <Point X="1020" Y="453.488342" />
+      <Point X="1000" Y="453.488342" />
+      <Point X="995" Y="453.488342" />
+      <Point X="995" Y="475" />
+      <Point X="844" Y="475" />
+      <Point X="844" Y="465.488342" />
+      <Point X="844" Y="453.488342" />
+      <Point X="844" Y="453.488342" />
     </Link>
     <Link From="P2_CAM_8" To="P2_IOmaster" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="1947.49634" Y="1945.89954" />
-      <Point X="1947.49634" Y="1945.89954" />
-      <Point X="1947.49634" Y="1956.89954" />
-      <Point X="1947.49634" Y="1965" />
-      <Point X="2015" Y="1965" />
-      <Point X="2015" Y="1945.89954" />
-      <Point X="2203.96338" Y="1945.89954" />
-      <Point X="2223.96338" Y="1945.89954" />
-      <Point X="2223.96338" Y="1945.89954" />
+      <Point X="2216" Y="2013.8219" />
+      <Point X="2216" Y="2013.8219" />
+      <Point X="2196" Y="2013.8219" />
+      <Point X="2185" Y="2013.8219" />
+      <Point X="2185" Y="2035" />
+      <Point X="1967" Y="2035" />
+      <Point X="1967" Y="2025.8219" />
+      <Point X="1967" Y="2013.8219" />
+      <Point X="1967" Y="2013.8219" />
     </Link>
     <Link From="P2_CAM_8" To="P2_CAM_9" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="2238.96338" Y="1945.89954" />
-      <Point X="2238.96338" Y="1945.89954" />
-      <Point X="2238.96338" Y="1956.89954" />
-      <Point X="2238.96338" Y="1965" />
-      <Point X="2305" Y="1965" />
-      <Point X="2305" Y="1945.89954" />
-      <Point X="2440.082" Y="1945.89954" />
-      <Point X="2460.082" Y="1945.89954" />
-      <Point X="2460.082" Y="1945.89954" />
+      <Point X="2231" Y="2013.8219" />
+      <Point X="2231" Y="2013.8219" />
+      <Point X="2231" Y="2025.8219" />
+      <Point X="2231" Y="2035" />
+      <Point X="2295" Y="2035" />
+      <Point X="2295" Y="2013.8219" />
+      <Point X="2440" Y="2013.8219" />
+      <Point X="2460" Y="2013.8219" />
+      <Point X="2460" Y="2013.8219" />
     </Link>
     <Link From="P2_IOmaster" To="P2_SafetyMaster" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="1686.96484" Y="1945.89941" />
-      <Point X="1686.96484" Y="1945.89941" />
-      <Point X="1686.96484" Y="1957.89941" />
-      <Point X="1686.96484" Y="1965" />
-      <Point X="1755" Y="1965" />
-      <Point X="1755" Y="1945.89954" />
-      <Point X="1912.49634" Y="1945.89954" />
-      <Point X="1932.49634" Y="1945.89954" />
-      <Point X="1932.49634" Y="1945.89954" />
-    </Link>
-    <Link From="P2_IOmodul_PowerlinkMaster" To="P2_Powerlink" FromPort="PLK1" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="543" Y="1653" />
-      <Point X="534.75" Y="1653" />
-      <Point X="534.75" Y="1678" />
-      <Point X="534.75" Y="1692" />
-      <Point X="575" Y="1692" />
-      <Point X="575" Y="1604.05334" />
-      <Point X="809" Y="1604.05334" />
-      <Point X="824" Y="1604.05334" />
-      <Point X="824" Y="1604.05334" />
-    </Link>
-    <Link From="P2_IOmodul_PowerlinkMaster" To="P2_VentilovyTerminal_VT2" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="824" Y="1639" />
-      <Point X="824" Y="1639" />
-      <Point X="809" Y="1639" />
-      <Point X="805" Y="1639" />
-      <Point X="805" Y="1700" />
-      <Point X="984" Y="1700" />
-      <Point X="1004" Y="1700" />
-      <Point X="1004" Y="1700" />
+      <Point X="1952" Y="2013.8219" />
+      <Point X="1952" Y="2013.8219" />
+      <Point X="1932" Y="2013.8219" />
+      <Point X="1925" Y="2013.8219" />
+      <Point X="1925" Y="2035" />
+      <Point X="1701.88037" Y="2035" />
+      <Point X="1701.88037" Y="2025.8219" />
+      <Point X="1701.88037" Y="2013.8219" />
+      <Point X="1701.88037" Y="2013.8219" />
     </Link>
     <Link From="P2_MaticovackaM4" To="P2_Robot_IRB1200" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="491" Y="1945.89941" />
-      <Point X="491" Y="1945.89941" />
-      <Point X="491" Y="1957.89941" />
-      <Point X="491" Y="1965" />
-      <Point X="555" Y="1965" />
-      <Point X="555" Y="1945.89941" />
-      <Point X="686.8289" Y="1945.89941" />
-      <Point X="706.8289" Y="1945.89941" />
-      <Point X="706.8289" Y="1945.89941" />
+      <Point X="713" Y="2013.8219" />
+      <Point X="713" Y="2013.8219" />
+      <Point X="693" Y="2013.8219" />
+      <Point X="685" Y="2013.8219" />
+      <Point X="685" Y="2035" />
+      <Point X="529.0812" Y="2035" />
+      <Point X="529.0812" Y="2025.8219" />
+      <Point X="529.0812" Y="2013.8219" />
+      <Point X="529.0812" Y="2013.8219" />
     </Link>
     <Link From="P2_MaticovackaM4" To="P2_SkrutkovackaM6" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="721.8289" Y="1945.89941" />
-      <Point X="721.8289" Y="1945.89941" />
-      <Point X="721.8289" Y="1957.89941" />
-      <Point X="721.8289" Y="1965" />
-      <Point X="785" Y="1965" />
-      <Point X="785" Y="1945.89941" />
-      <Point X="921" Y="1945.89941" />
-      <Point X="941" Y="1945.89941" />
-      <Point X="941" Y="1945.89941" />
-    </Link>
-    <Link From="P2_ProfinetMaster" To="P2_Robot_IRB1200" FromPort="IF1" ToPort="PN1" IsRoutedByUser="True">
-      <Point X="518" Y="1669" />
-      <Point X="518" Y="1669" />
-      <Point X="518" Y="1678" />
-      <Point X="518" Y="1758.28845" />
-      <Point X="400.627869" Y="1758.28845" />
-      <Point X="400.627869" Y="1963.67542" />
-      <Point X="476" Y="1963.67542" />
-      <Point X="476" Y="1957.89941" />
-      <Point X="476" Y="1945.89941" />
-      <Point X="476" Y="1945.89941" />
+      <Point X="728" Y="2013.8219" />
+      <Point X="728" Y="2013.8219" />
+      <Point X="728" Y="2025.8219" />
+      <Point X="728" Y="2035" />
+      <Point X="795" Y="2035" />
+      <Point X="795" Y="2013.8219" />
+      <Point X="936.6953" Y="2013.8219" />
+      <Point X="956.6953" Y="2013.8219" />
+      <Point X="956.6953" Y="2013.8219" />
     </Link>
     <Link From="P2_SafetyMaster" To="P2_SkrutkovackaM5" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="1455.82324" Y="1945.89941" />
-      <Point X="1455.82324" Y="1945.89941" />
-      <Point X="1455.82324" Y="1957.89941" />
-      <Point X="1455.82324" Y="1965" />
-      <Point X="1525" Y="1965" />
-      <Point X="1525" Y="1945.89941" />
-      <Point X="1651.96484" Y="1945.89941" />
-      <Point X="1671.96484" Y="1945.89941" />
-      <Point X="1671.96484" Y="1945.89941" />
+      <Point X="1686.88037" Y="2013.8219" />
+      <Point X="1686.88037" Y="2013.8219" />
+      <Point X="1666.88037" Y="2013.8219" />
+      <Point X="1655" Y="2013.8219" />
+      <Point X="1655" Y="2035" />
+      <Point X="1441.97" Y="2035" />
+      <Point X="1441.97" Y="2025.8219" />
+      <Point X="1441.97" Y="2013.8219" />
+      <Point X="1441.97" Y="2013.8219" />
     </Link>
     <Link From="P2_SkrutkovackaM4" To="P2_SkrutkovackaM6" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="956" Y="1945.89941" />
-      <Point X="956" Y="1945.89941" />
-      <Point X="956" Y="1957.89941" />
-      <Point X="956" Y="1965" />
-      <Point X="1025" Y="1965" />
-      <Point X="1025" Y="1945.89941" />
-      <Point X="1168.73218" Y="1945.89941" />
-      <Point X="1188.73218" Y="1945.89941" />
-      <Point X="1188.73218" Y="1945.89941" />
+      <Point X="1189" Y="2013.8219" />
+      <Point X="1189" Y="2013.8219" />
+      <Point X="1169" Y="2013.8219" />
+      <Point X="1165" Y="2013.8219" />
+      <Point X="1165" Y="2035" />
+      <Point X="971.6953" Y="2035" />
+      <Point X="971.6953" Y="2025.8219" />
+      <Point X="971.6953" Y="2013.8219" />
+      <Point X="971.6953" Y="2013.8219" />
     </Link>
     <Link From="P2_SkrutkovackaM4" To="P2_SkrutkovackaM5" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="1203.73218" Y="1945.89941" />
-      <Point X="1203.73218" Y="1945.89941" />
-      <Point X="1203.73218" Y="1957.89941" />
-      <Point X="1203.73218" Y="1965" />
-      <Point X="1265" Y="1965" />
-      <Point X="1265" Y="1945.89941" />
-      <Point X="1420.82324" Y="1945.89941" />
-      <Point X="1440.82324" Y="1945.89941" />
-      <Point X="1440.82324" Y="1945.89941" />
+      <Point X="1204" Y="2013.8219" />
+      <Point X="1204" Y="2013.8219" />
+      <Point X="1204" Y="2025.8219" />
+      <Point X="1204" Y="2035" />
+      <Point X="1275" Y="2035" />
+      <Point X="1275" Y="2013.8219" />
+      <Point X="1406.97" Y="2013.8219" />
+      <Point X="1426.97" Y="2013.8219" />
+      <Point X="1426.97" Y="2013.8219" />
     </Link>
-    <Link From="P3_AteqLeakageTesterA" To="P3_SkrutkovackaM5" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="680.470642" Y="3431.0542" />
-      <Point X="680.470642" Y="3431.0542" />
-      <Point X="680.470642" Y="3443.0542" />
-      <Point X="680.470642" Y="3455" />
-      <Point X="745" Y="3455" />
-      <Point X="745" Y="3431.0542" />
-      <Point X="962" Y="3431.0542" />
-      <Point X="982" Y="3431.0542" />
-      <Point X="982" Y="3431.0542" />
+    <Link From="5LS182.6-2" To="0AC808.9" FromPort="IF1" ToPort="ETH1" IsRoutedByUser="False">
+      <Point X="-174" Y="-54" />
+      <Point X="-174" Y="-54" />
+      <Point X="-164" Y="-54" />
+      <Point X="-34.6177368" Y="-54" />
+      <Point X="-34.6177368" Y="174.595947" />
+      <Point X="-34.6177368" Y="186.595947" />
+      <Point X="-34.6177368" Y="186.595947" />
     </Link>
-    <Link From="P3_AteqLeakageTesterA" To="P3_AteqLeakageTesterB" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="997" Y="3431.0542" />
-      <Point X="997" Y="3431.0542" />
-      <Point X="997" Y="3443.0542" />
-      <Point X="997" Y="3455" />
-      <Point X="1065" Y="3455" />
-      <Point X="1065" Y="3431.0542" />
-      <Point X="1297" Y="3431.0542" />
-      <Point X="1317" Y="3431.0542" />
-      <Point X="1317" Y="3431.0542" />
+    <Link From="P2_Powerlink" To="0AC808.9" FromPort="PLK2" ToPort="ETH5" IsRoutedByUser="False">
+      <Point X="565.573" Y="1704.16736" />
+      <Point X="565.573" Y="1704.16736" />
+      <Point X="565.573" Y="1714.16736" />
+      <Point X="565.573" Y="1732" />
+      <Point X="-34.6177368" Y="1732" />
+      <Point X="-34.6177368" Y="219.595947" />
+      <Point X="-34.6177368" Y="199.595947" />
+      <Point X="-34.6177368" Y="199.595947" />
     </Link>
-    <Link From="P3_AteqLeakageTesterB" To="P3_KameryControlUnit" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="1332" Y="3431.0542" />
-      <Point X="1332" Y="3431.0542" />
-      <Point X="1332" Y="3443.0542" />
-      <Point X="1332" Y="3455" />
-      <Point X="1395" Y="3455" />
-      <Point X="1395" Y="3431.0542" />
-      <Point X="1628.76526" Y="3431.0542" />
-      <Point X="1648.76526" Y="3431.0542" />
-      <Point X="1648.76526" Y="3431.0542" />
+    <Link From="P2_Powerlink" To="P2_IOmodul_PowerlinkMaster" FromPort="PLK1" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="565.573" Y="1689.16736" />
+      <Point X="557.323" Y="1689.16736" />
+      <Point X="557.323" Y="1714.16736" />
+      <Point X="557.323" Y="1725" />
+      <Point X="595" Y="1725" />
+      <Point X="595" Y="1640.16736" />
+      <Point X="817" Y="1640.16736" />
+      <Point X="832" Y="1640.16736" />
+      <Point X="832" Y="1640.16736" />
     </Link>
-    <Link From="P3_IOmaster" To="P3_KameryControlUnit" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="1663.76526" Y="3431.0542" />
-      <Point X="1663.76526" Y="3431.0542" />
-      <Point X="1663.76526" Y="3443.0542" />
-      <Point X="1663.76526" Y="3455" />
-      <Point X="1725" Y="3455" />
-      <Point X="1725" Y="3431.0542" />
-      <Point X="1906.82043" Y="3431.0542" />
-      <Point X="1926.82043" Y="3431.0542" />
-      <Point X="1926.82043" Y="3431.0542" />
+    <Link From="P2_IOmodul_PowerlinkMaster" To="P2_VentilovyTerminal_VT2" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="832" Y="1675.16736" />
+      <Point X="832" Y="1675.16736" />
+      <Point X="817" Y="1675.16736" />
+      <Point X="805" Y="1675.16736" />
+      <Point X="805" Y="1745" />
+      <Point X="885" Y="1745" />
+      <Point X="885" Y="1723.16736" />
+      <Point X="970.628845" Y="1723.16736" />
+      <Point X="990.628845" Y="1723.16736" />
+      <Point X="990.628845" Y="1723.16736" />
     </Link>
-    <Link From="P3_IOmaster" To="P3_IOmaster1" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="1941.82043" Y="3431.0542" />
-      <Point X="1941.82043" Y="3431.0542" />
-      <Point X="1941.82043" Y="3443.0542" />
-      <Point X="1941.82043" Y="5205" />
-      <Point X="428.573" Y="5205" />
-      <Point X="428.573" Y="5195.331" />
-      <Point X="428.573" Y="5183.331" />
-      <Point X="428.573" Y="5183.331" />
+    <Link From="P3_Powerlink" To="0AC808.9" FromPort="PLK2" ToPort="ETH6" IsRoutedByUser="False">
+      <Point X="407" Y="3239.39868" />
+      <Point X="407" Y="3239.39868" />
+      <Point X="407" Y="3249.39868" />
+      <Point X="407" Y="3255" />
+      <Point X="-21.6177368" Y="3255" />
+      <Point X="-21.6177368" Y="219.595947" />
+      <Point X="-21.6177368" Y="199.595947" />
+      <Point X="-21.6177368" Y="199.595947" />
     </Link>
-    <Link From="P3_IOmodul_PowerlinkMaster" To="P3_Powerlink" FromPort="PLK1" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="689" Y="3121.87646" />
-      <Point X="689" Y="3121.87646" />
-      <Point X="674" Y="3121.87646" />
-      <Point X="665" Y="3121.87646" />
-      <Point X="665" Y="3212" />
-      <Point X="377.323" Y="3212" />
-      <Point X="377.323" Y="3195.87646" />
-      <Point X="377.323" Y="3170.87646" />
-      <Point X="385.573" Y="3170.87646" />
+    <Link From="P3_Powerlink" To="P3_IOmodul_PowerlinkMaster" FromPort="PLK1" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="407" Y="3224.39868" />
+      <Point X="398.75" Y="3224.39868" />
+      <Point X="398.75" Y="3249.39868" />
+      <Point X="398.75" Y="3262" />
+      <Point X="445" Y="3262" />
+      <Point X="445" Y="3154.39868" />
+      <Point X="664.9699" Y="3154.39868" />
+      <Point X="679.9699" Y="3154.39868" />
+      <Point X="679.9699" Y="3154.39868" />
     </Link>
     <Link From="P3_IOmodul_PowerlinkMaster" To="P3_VentilovyTerminal_VT3" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="689" Y="3156.87646" />
-      <Point X="689" Y="3156.87646" />
-      <Point X="674" Y="3156.87646" />
-      <Point X="658" Y="3156.87646" />
-      <Point X="658" Y="3225" />
-      <Point X="735" Y="3225" />
-      <Point X="735" Y="3204.87646" />
-      <Point X="933.5627" Y="3204.87646" />
-      <Point X="953.5627" Y="3204.87646" />
-      <Point X="953.5627" Y="3204.87646" />
-    </Link>
-    <Link From="P3_Profinet" To="P3_SkrutkovackaK40" FromPort="IF1" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="398.828918" Y="3431.0542" />
-      <Point X="398.828918" Y="3431.0542" />
-      <Point X="398.828918" Y="3443.0542" />
-      <Point X="398.828918" Y="3455" />
-      <Point X="360.573" Y="3455" />
-      <Point X="360.573" Y="3195.87646" />
-      <Point X="360.573" Y="3186.87646" />
-      <Point X="360.573" Y="3186.87646" />
-    </Link>
-    <Link From="P3_SkrutkovackaK40" To="P3_SkrutkovackaM5" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="665.470642" Y="3431.0542" />
-      <Point X="665.470642" Y="3431.0542" />
-      <Point X="645.470642" Y="3431.0542" />
-      <Point X="635" Y="3431.0542" />
-      <Point X="635" Y="3455" />
-      <Point X="413.828918" Y="3455" />
-      <Point X="413.828918" Y="3443.0542" />
-      <Point X="413.828918" Y="3431.0542" />
-      <Point X="413.828918" Y="3431.0542" />
+      <Point X="679.9699" Y="3189.39868" />
+      <Point X="679.9699" Y="3189.39868" />
+      <Point X="664.9699" Y="3189.39868" />
+      <Point X="655" Y="3189.39868" />
+      <Point X="655" Y="3255" />
+      <Point X="725" Y="3255" />
+      <Point X="725" Y="3237.39868" />
+      <Point X="930.485352" Y="3237.39868" />
+      <Point X="950.485352" Y="3237.39868" />
+      <Point X="950.485352" Y="3237.39868" />
     </Link>
     <Link From="P4_IOmodul_PowerlinkMaster" To="P4_VentilovyTerminal_VT4" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="380.0711" Y="4914.84668" />
-      <Point X="380.0711" Y="4914.84668" />
-      <Point X="365.0711" Y="4914.84668" />
-      <Point X="355" Y="4914.84668" />
-      <Point X="355" Y="4985" />
-      <Point X="425" Y="4985" />
-      <Point X="425" Y="4962.84668" />
-      <Point X="604.0101" Y="4962.84668" />
-      <Point X="624.0101" Y="4962.84668" />
-      <Point X="624.0101" Y="4962.84668" />
+      <Point X="406" Y="4964" />
+      <Point X="406" Y="4964" />
+      <Point X="391" Y="4964" />
+      <Point X="385" Y="4964" />
+      <Point X="385" Y="5035" />
+      <Point X="455" Y="5035" />
+      <Point X="455" Y="5012" />
+      <Point X="591" Y="5012" />
+      <Point X="611" Y="5012" />
+      <Point X="611" Y="5012" />
+    </Link>
+    <Link From="P4_IOmodul_PowerlinkMaster" To="0AC808.9" FromPort="PLK1" ToPort="ETH7" IsRoutedByUser="False">
+      <Point X="406" Y="4929" />
+      <Point X="406" Y="4929" />
+      <Point X="391" Y="4929" />
+      <Point X="-8.617737" Y="4929" />
+      <Point X="-8.617737" Y="219.595947" />
+      <Point X="-8.617737" Y="199.595947" />
+      <Point X="-8.617737" Y="199.595947" />
+    </Link>
+    <Link From="P3_SkrutkovackaK40" To="P3_SkrutkovackaM5" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="413" Y="3486.70679" />
+      <Point X="413" Y="3486.70679" />
+      <Point X="413" Y="3498.70679" />
+      <Point X="413" Y="3505" />
+      <Point X="475" Y="3505" />
+      <Point X="475" Y="3486.70679" />
+      <Point X="650.6997" Y="3486.70679" />
+      <Point X="670.6997" Y="3486.70679" />
+      <Point X="670.6997" Y="3486.70679" />
+    </Link>
+    <Link From="P1_ServoZdvihuVstupVytahu" To="5ACPCI_XPNM_00" FromPort="PN1" ToPort="IF1" IsRoutedByUser="True">
+      <Point X="454.9359" Y="786.0122" />
+      <Point X="454.9359" Y="786.0122" />
+      <Point X="454.9359" Y="798.0122" />
+      <Point X="454.9359" Y="807.560669" />
+      <Point X="131.634262" Y="807.560669" />
+      <Point X="131.634262" Y="-25" />
+      <Point X="-164" Y="-25" />
+      <Point X="-174" Y="-25" />
+      <Point X="-174" Y="-25" />
+    </Link>
+    <Link From="P1_ServoZdvihuVstupVytahu" To="P1_ServoManipOsX" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="469.9359" Y="786.0122" />
+      <Point X="469.9359" Y="786.0122" />
+      <Point X="469.9359" Y="798.0122" />
+      <Point X="469.9359" Y="805" />
+      <Point X="535" Y="805" />
+      <Point X="535" Y="786.0122" />
+      <Point X="744.9359" Y="786.0122" />
+      <Point X="764.9359" Y="786.0122" />
+      <Point X="764.9359" Y="786.0122" />
+    </Link>
+    <Link From="P1_ServoManipOsX" To="P1_ServoManipOsY" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="779.9359" Y="786.0122" />
+      <Point X="779.9359" Y="786.0122" />
+      <Point X="779.9359" Y="798.0122" />
+      <Point X="779.9359" Y="805" />
+      <Point X="845" Y="805" />
+      <Point X="845" Y="786.0122" />
+      <Point X="1003.93591" Y="786.0122" />
+      <Point X="1023.93591" Y="786.0122" />
+      <Point X="1023.93591" Y="786.0122" />
+    </Link>
+    <Link From="P1_ServoManipOsY" To="P1_ServoManipOsZ_M5" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="1038.93591" Y="786.0122" />
+      <Point X="1038.93591" Y="786.0122" />
+      <Point X="1038.93591" Y="798.0122" />
+      <Point X="1038.93591" Y="805" />
+      <Point X="1105" Y="805" />
+      <Point X="1105" Y="787.0122" />
+      <Point X="1302.93591" Y="787.0122" />
+      <Point X="1322.93591" Y="787.0122" />
+      <Point X="1322.93591" Y="787.0122" />
+    </Link>
+    <Link From="P1_ServoManipOsZ_M5" To="P1_ServoManipOsZ_M4" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="1337.93591" Y="787.0122" />
+      <Point X="1337.93591" Y="787.0122" />
+      <Point X="1337.93591" Y="799.0122" />
+      <Point X="1337.93591" Y="805" />
+      <Point X="1405" Y="805" />
+      <Point X="1405" Y="785.0122" />
+      <Point X="1639.93591" Y="785.0122" />
+      <Point X="1659.93591" Y="785.0122" />
+      <Point X="1659.93591" Y="785.0122" />
+    </Link>
+    <Link From="P1_ServoManipOsZ_M4" To="P2_ServoZatlTesneniaZdvih1" FromPort="PN2" ToPort="PN2" IsRoutedByUser="True">
+      <Point X="1674.93591" Y="785.0122" />
+      <Point X="1674.93591" Y="785.0122" />
+      <Point X="1674.93591" Y="797.0122" />
+      <Point X="1674.93591" Y="805" />
+      <Point X="2779.12671" Y="805" />
+      <Point X="2779.12671" Y="2253.43066" />
+      <Point X="2097" Y="2253.43066" />
+      <Point X="2097" Y="2233" />
+      <Point X="2097" Y="2221" />
+      <Point X="2097" Y="2221" />
+    </Link>
+    <Link From="P2_ServoZatlTesneniaZdvih1" To="P2_ServoZatlTesneniaPojazd" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="2082" Y="2221" />
+      <Point X="2082" Y="2221" />
+      <Point X="2062" Y="2221" />
+      <Point X="2055" Y="2221" />
+      <Point X="2055" Y="2245" />
+      <Point X="1755" Y="2245" />
+      <Point X="1755" Y="2233" />
+      <Point X="1755" Y="2221" />
+      <Point X="1755" Y="2221" />
+    </Link>
+    <Link From="P2_ServoZatlTesneniaPojazd" To="P2_ServoZatlTesneniaZdvih" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="1740" Y="2221" />
+      <Point X="1740" Y="2221" />
+      <Point X="1720" Y="2221" />
+      <Point X="1715" Y="2221" />
+      <Point X="1715" Y="2245" />
+      <Point X="1434" Y="2245" />
+      <Point X="1434" Y="2233" />
+      <Point X="1434" Y="2221" />
+      <Point X="1434" Y="2221" />
+    </Link>
+    <Link From="P2_ServoZatlTesneniaZdvih" To="P2_ServoManipOsZ_M4" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="1419" Y="2221" />
+      <Point X="1419" Y="2221" />
+      <Point X="1399" Y="2221" />
+      <Point X="1395" Y="2221" />
+      <Point X="1395" Y="2245" />
+      <Point X="1125" Y="2245" />
+      <Point X="1125" Y="2233" />
+      <Point X="1125" Y="2221" />
+      <Point X="1125" Y="2221" />
+    </Link>
+    <Link From="P2_ServoManipOsZ_M4" To="P2_ServoManipOsY" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="1110" Y="2221" />
+      <Point X="1110" Y="2221" />
+      <Point X="1090" Y="2221" />
+      <Point X="1085" Y="2221" />
+      <Point X="1085" Y="2245" />
+      <Point X="818" Y="2245" />
+      <Point X="818" Y="2233" />
+      <Point X="818" Y="2221" />
+      <Point X="818" Y="2221" />
+    </Link>
+    <Link From="P2_ServoManipOsY" To="P2_ServoManipulatoraOsX" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="803" Y="2221" />
+      <Point X="803" Y="2221" />
+      <Point X="783" Y="2221" />
+      <Point X="775" Y="2221" />
+      <Point X="775" Y="2245" />
+      <Point X="476" Y="2245" />
+      <Point X="476" Y="2233" />
+      <Point X="476" Y="2221" />
+      <Point X="476" Y="2221" />
+    </Link>
+    <Link From="P3_Profinet" To="P3_SkrutkovackaK40" FromPort="IF1" ToPort="PN1" IsRoutedByUser="True">
+      <Point X="382" Y="3240.39868" />
+      <Point X="382" Y="3240.39868" />
+      <Point X="382" Y="3249.39868" />
+      <Point X="382" Y="3288.30322" />
+      <Point X="283.66452" Y="3288.30322" />
+      <Point X="283.66452" Y="3498.974" />
+      <Point X="398" Y="3498.974" />
+      <Point X="398" Y="3498.70679" />
+      <Point X="398" Y="3486.70679" />
+      <Point X="398" Y="3486.70679" />
+    </Link>
+    <Link From="P3_SkrutkovackaM5" To="P3_AteqLeakageTesterA" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="685.6997" Y="3486.70679" />
+      <Point X="685.6997" Y="3486.70679" />
+      <Point X="685.6997" Y="3498.70679" />
+      <Point X="685.6997" Y="3505" />
+      <Point X="755" Y="3505" />
+      <Point X="755" Y="3486.70679" />
+      <Point X="970.628845" Y="3486.70679" />
+      <Point X="990.628845" Y="3486.70679" />
+      <Point X="990.628845" Y="3486.70679" />
+    </Link>
+    <Link From="P3_AteqLeakageTesterA" To="P3_AteqLeakageTesterB" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="1005.62885" Y="3486.70679" />
+      <Point X="1005.62885" Y="3486.70679" />
+      <Point X="1005.62885" Y="3498.70679" />
+      <Point X="1005.62885" Y="3505" />
+      <Point X="1075" Y="3505" />
+      <Point X="1075" Y="3486.70679" />
+      <Point X="1309" Y="3486.70679" />
+      <Point X="1329" Y="3486.70679" />
+      <Point X="1329" Y="3486.70679" />
+    </Link>
+    <Link From="P3_AteqLeakageTesterB" To="P3_KameryControlUnit" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="1344" Y="3486.70679" />
+      <Point X="1344" Y="3486.70679" />
+      <Point X="1344" Y="3498.70679" />
+      <Point X="1344" Y="3505" />
+      <Point X="1415" Y="3505" />
+      <Point X="1415" Y="3486.70679" />
+      <Point X="1630.79248" Y="3486.70679" />
+      <Point X="1650.79248" Y="3486.70679" />
+      <Point X="1650.79248" Y="3486.70679" />
+    </Link>
+    <Link From="P3_KameryControlUnit" To="P3_IOmaster" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="1665.79248" Y="3486.70679" />
+      <Point X="1665.79248" Y="3486.70679" />
+      <Point X="1665.79248" Y="3498.70679" />
+      <Point X="1665.79248" Y="3505" />
+      <Point X="1735" Y="3505" />
+      <Point X="1735" Y="3486.70679" />
+      <Point X="1934.90063" Y="3486.70679" />
+      <Point X="1954.90063" Y="3486.70679" />
+      <Point X="1954.90063" Y="3486.70679" />
+    </Link>
+    <Link From="P2_ServoManipulatoraOsX" To="P3_ServoManipulatoraOsY" FromPort="PN1" ToPort="PN1" IsRoutedByUser="True">
+      <Point X="461" Y="2221" />
+      <Point X="461" Y="2221" />
+      <Point X="461" Y="2233" />
+      <Point X="461" Y="2252" />
+      <Point X="165.5219" Y="2252" />
+      <Point X="165.5219" Y="3802.63574" />
+      <Point X="584.0758" Y="3802.63574" />
+      <Point X="584.0758" Y="3776.04" />
+      <Point X="584.0758" Y="3764.04" />
+      <Point X="584.0758" Y="3764.04" />
+    </Link>
+    <Link From="P3_ServoManipulatoraOsY" To="P3_ServoManipOsZ_M5" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="599.0758" Y="3764.04" />
+      <Point X="599.0758" Y="3764.04" />
+      <Point X="599.0758" Y="3776.04" />
+      <Point X="599.0758" Y="3785" />
+      <Point X="665" Y="3785" />
+      <Point X="665" Y="3764.04" />
+      <Point X="921.0758" Y="3764.04" />
+      <Point X="941.0758" Y="3764.04" />
+      <Point X="941.0758" Y="3764.04" />
+    </Link>
+    <Link From="P3_IOmaster" To="P4_CAM_14" FromPort="PN2" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="1969.90063" Y="3486.70679" />
+      <Point X="1969.90063" Y="3486.70679" />
+      <Point X="1969.90063" Y="3498.70679" />
+      <Point X="1969.90063" Y="5235" />
+      <Point X="814" Y="5235" />
+      <Point X="814" Y="5223.64746" />
+      <Point X="814" Y="5211.64746" />
+      <Point X="814" Y="5211.64746" />
+    </Link>
+    <Link From="P4_CAM_14" To="P3_IOmaster1" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="799" Y="5211.64746" />
+      <Point X="799" Y="5211.64746" />
+      <Point X="779" Y="5211.64746" />
+      <Point X="775" Y="5211.64746" />
+      <Point X="775" Y="5235" />
+      <Point X="426" Y="5235" />
+      <Point X="426" Y="5223.64746" />
+      <Point X="426" Y="5211.64746" />
+      <Point X="426" Y="5211.64746" />
+    </Link>
+    <Link From="P3_ServoManipOsZ_M5" To="P4_ServoZdvihuVystupVytahu" FromPort="PN2" ToPort="PN2" IsRoutedByUser="True">
+      <Point X="956.0758" Y="3764.04" />
+      <Point X="956.0758" Y="3764.04" />
+      <Point X="956.0758" Y="3776.04" />
+      <Point X="956.0758" Y="5617.02344" />
+      <Point X="798" Y="5617.02344" />
+      <Point X="798" Y="5563" />
+      <Point X="798" Y="5551" />
+      <Point X="798" Y="5551" />
+    </Link>
+    <Link From="P4_ServoZdvihuVystupVytahu" To="P4_ServoAplikatoraEtikietOsZ" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="783" Y="5551" />
+      <Point X="783" Y="5551" />
+      <Point X="763" Y="5551" />
+      <Point X="755" Y="5551" />
+      <Point X="755" Y="5575" />
+      <Point X="434" Y="5575" />
+      <Point X="434" Y="5563" />
+      <Point X="434" Y="5551" />
+      <Point X="434" Y="5551" />
+    </Link>
+    <Link From="P1_Robot_IRB120_R1" To="P2_CAM_9" FromPort="PN1" ToPort="PN2" IsRoutedByUser="True">
+      <Point X="398" Y="453.488342" />
+      <Point X="398" Y="453.488342" />
+      <Point X="398" Y="465.488342" />
+      <Point X="398" Y="475" />
+      <Point X="338.045074" Y="475" />
+      <Point X="338.045074" Y="2078.11914" />
+      <Point X="2475" Y="2078.11914" />
+      <Point X="2475" Y="2025.8219" />
+      <Point X="2475" Y="2013.8219" />
+      <Point X="2475" Y="2013.8219" />
+    </Link>
+    <Link From="P2_ProfinetMaster" To="P2_Robot_IRB1200" FromPort="IF1" ToPort="PN1" IsRoutedByUser="True">
+      <Point X="540.573" Y="1705.16736" />
+      <Point X="540.573" Y="1705.16736" />
+      <Point X="540.573" Y="1714.16736" />
+      <Point X="540.573" Y="1780.68323" />
+      <Point X="396.878876" Y="1780.68323" />
+      <Point X="396.878876" Y="2032.24878" />
+      <Point X="514.0812" Y="2032.24878" />
+      <Point X="514.0812" Y="2025.8219" />
+      <Point X="514.0812" Y="2013.8219" />
+      <Point X="514.0812" Y="2013.8219" />
     </Link>
   </Links>
   <InfoElements>
-    <InfoElementText Id="Textbox_1" X="295.828918" Y="154.676208" Width="2650.33374" Height="1181.30151">
+    <InfoElementText Id="Textbox_1" X="252.094482" Y="-94.87788" Width="2694.068" Height="1430.85571">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Stanica - 1</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
@@ -530,14 +712,14 @@ NodNumber:2</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_9" X="346.572968" Y="821.22345" Width="214.926117" Height="59.4808044">
+    <InfoElementText Id="Textbox_9" X="787.573" Y="996.1695" Width="214.926117" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P1_Operačný panel_OP1
 IPadresa:0.0.0.0</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_11" X="253.235657" Y="1353.1272" Width="2666.715" Height="1333.74829">
+    <InfoElementText Id="Textbox_11" X="253.235657" Y="1353.1272" Width="2666.715" Height="1468.15259">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Stanica - 2</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
@@ -563,35 +745,35 @@ IPadresa:0.0.0.0</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_15" X="334" Y="566.910034" Width="242.883789" Height="59">
+    <InfoElementText Id="Textbox_15" X="377.9359" Y="689.922241" Width="242.883789" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P1_ServoZdvihuVstupVytahu
 IPadresa:0.0.0.0</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_16" X="622" Y="565.972656" Width="219.95166" Height="59">
+    <InfoElementText Id="Textbox_16" X="665.9359" Y="688.984863" Width="219.95166" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P1_ServoManipulatorOsX
 IPadresa:0.0.0.0</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_17" X="912.5956" Y="565.972656" Width="218.889648" Height="59">
+    <InfoElementText Id="Textbox_17" X="956.5315" Y="688.984863" Width="218.889648" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P1_ServoManipulatorOsY
 IPadresa:0.0.0.0</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_18" X="1192.40857" Y="566.910034" Width="279.9699" Height="59">
+    <InfoElementText Id="Textbox_18" X="1236.34448" Y="689.922241" Width="279.9699" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P1_ServoManipulatorOsZ_M5
 IPadresa:0.0.0.0</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_19" X="1522.43713" Y="565.0353" Width="272.1399" Height="59">
+    <InfoElementText Id="Textbox_19" X="1566.373" Y="688.0475" Width="272.1399" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P1_ServoManipulatorOsZ_M4
 IPadresa:0.0.0.0</Text>
@@ -619,7 +801,7 @@ NodNumber:5</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_25" X="360.001862" Y="2397.99585" Width="208.701752" Height="59.4808044">
+    <InfoElementText Id="Textbox_25" X="857.001831" Y="2403.62915" Width="208.701752" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P2_Operačný panel_OP2
 IPadresa:0.0.0.0</Text>
@@ -776,14 +958,14 @@ IPadresa:0.0.0.0</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_50" X="305.0301" Y="3536.61133" Width="279.9699" Height="59">
+    <InfoElementText Id="Textbox_50" X="491.1059" Y="3666.65137" Width="279.9699" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P3_ServoManipulatorOsY
 IPadresa:0.0.0.0</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_51" X="649.8601" Y="3536.61133" Width="272.1399" Height="59">
+    <InfoElementText Id="Textbox_51" X="835.9359" Y="3666.65137" Width="272.1399" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P3_ServoManipulatorOsZ_M5
 IPadresa:0.0.0.0</Text>

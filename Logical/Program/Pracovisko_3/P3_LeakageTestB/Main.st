@@ -396,7 +396,10 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestB.IdleTime.PT:= T#200ms;
 			SC_P3_LeakageTestB.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P3_LeakageTestB.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P3_LeakageTestB.ResetStep:= TRUE;
+				SC_P3_LeakageTestB.Step:= 120;
+			ELSIF NOT SC_P3_LeakageTestB.Switch1 THEN
 				TRCB_P3_LeakageTestB_ST8B.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P3_LeakageTestB.Switch1:= TRUE;
 			END_IF 
@@ -775,7 +778,10 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestB.IdleTime.PT:= T#200ms;
 			SC_P3_LeakageTestB.AlarmTime.PT:= T#10s;	
 			
-			IF NOT SC_P3_LeakageTestB.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P3_LeakageTestB.ResetStep:= TRUE;
+				SC_P3_LeakageTestB.Step:= 560;
+			ELSIF NOT SC_P3_LeakageTestB.Switch1 THEN
 				TRCB_P3_LeakageTestB_ST8B.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P3_LeakageTestB.Switch1:= TRUE;
 			END_IF 
