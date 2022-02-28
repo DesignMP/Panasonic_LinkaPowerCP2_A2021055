@@ -24,16 +24,16 @@
     <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.PSR-M-GW-PN" Version="0.0.0.0" OrderNumber="PSR-M-GW-PN">
       <SourceFile OriginalFile="GSDML-V2.33-Phoenix Contact-PSR M GW PN V1.0-20200129.xml" TranslationFile="EYTC82RT.ext" />
     </Module>
-    <Module ModuleID="FBE.000002EE_EB80D1" Version="1.0" OrderNumber="EB80">
-      <SourceFile OriginalFile="000002EE_EB80D1.xdd" TranslationFile="T4JBGUA3.ext" />
-      <SourceFile OriginalFile="EB80.front.png" TranslationFile="HQ46S06C.ext" />
-      <SourceFile OriginalFile="hw_pl.ico" TranslationFile="66N33O0N.ext" />
-    </Module>
     <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.COMX 100XX-RE$002FPNS V3.4.19 - V3.4.x" Version="3.4.19" OrderNumber="COMX 100XX-RE/PNS V3.4.19 - V3.4.x">
       <SourceFile OriginalFile="GSDML-V2.3-HILSCHER-COMX 100XX-RE PNS-20130806.xml" TranslationFile="4PN16XNY.ext" />
     </Module>
     <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.Control Unit V2.2" Version="3.14.0" OrderNumber="Control Unit V2.2">
       <SourceFile OriginalFile="GSDML-V2.35-WENGLOR-WENGLOR IDENT-20200422.xml" TranslationFile="3ILMUUB1.ext" />
+    </Module>
+    <Module ModuleID="FBE.000002EE_EB80" Version="1.0" OrderNumber="EB80">
+      <SourceFile OriginalFile="000002EE_EB80.xdd" TranslationFile="KUAE1WRO.ext" />
+      <SourceFile OriginalFile="EB80.front.png" TranslationFile="L08STLL2.ext" />
+      <SourceFile OriginalFile="hw_pl.ico" TranslationFile="2K1GOYRK.ext" />
     </Module>
   </Modules>
 </ExternalHardware>

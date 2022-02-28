@@ -587,6 +587,7 @@ TYPE
 		STAV : P1_Pracovisko_STAV_typ;
 		COM_Weidmuller : P1_COM_Weidmuller_typ;
 		COM_Festo : P1_COM_Festo_typ;
+		COM_VentilovyTerminal : ARRAY[0..5]OF USINT;
 		Automat : BOOL;
 		Manual : BOOL;
 		Reset : BOOL;
@@ -1924,6 +1925,7 @@ TYPE
 		STAV : P3_Pracovisko_STAV_typ;
 		COM_Weidmuller : P3_COM_Weidmuller_typ;
 		COM_Festo : P3_COM_Festo_typ;
+		COM_VentilovyTerminal : ARRAY[0..5]OF USINT;
 		Automat : BOOL;
 		Manual : BOOL;
 		Reset : BOOL;

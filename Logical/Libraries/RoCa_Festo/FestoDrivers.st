@@ -226,6 +226,21 @@ FUNCTION_BLOCK ServoDriver
 		Step:=0;
 	END_IF
 	
+	//Ready
+	IF Step =100 OR Step=112 THEN
+		IF IN.FaultPresent_Bit3=1 THEN Status.Ready:=0; ELSE Status.Ready:=1; END_IF
+	ELSE
+		Status.Ready:=0;
+	END_IF
+		
+	//In position2
+	IF (Parameters.Position>=Status.ActPosition-0.05) AND (Parameters.Position<=Status.ActPosition+0.05)THEN
+		Status.InPosition2:=1;
+	ELSE
+		Status.InPosition2:=0;
+	END_IF 
+	
+	
 	//krokovy automat
 	CASE Step OF
 		0: Info:="Vypnute";
@@ -253,6 +268,7 @@ FUNCTION_BLOCK ServoDriver
 			OUT.TraverseToFixedEndstop_Bit8:=0;
 			
 			Status.Ready:=0;
+			Status.InPosition:=0;
 			
 			IF Command.PowerON=1 THEN
 				Step:=Step+1;
@@ -342,17 +358,21 @@ FUNCTION_BLOCK ServoDriver
 			
 		
 		100:Info:="Pripraveny cakam na povel";
-			IF IN.FaultPresent_Bit3=1 THEN Status.Ready:=0; ELSE Status.Ready:=1; END_IF
+		
 			
 			OUT_forMapping.MDI_acceleration:=REAL_TO_UINT(Parameters.Acc*163.839989933671);
 			OUT_forMapping.MDI_decceleration:=REAL_TO_UINT(Parameters.Dcc*163.839989933671);
 			OUT_forMapping.MDI_velocity:=REAL_TO_UDINT(Parameters.Velocity*1000);
 			OUT.ActivateSoftLimitSwitch_Bit14:=1;
 			
-			IF Command.MovePosition=1 THEN
+			IF Command.MovePosition=1 AND IN.TraversingTaskAck_Bit12=0 THEN
 				OUT.AbsolutePositioning_Bit8:=1;
 				OUT_forMapping.MDI_target_position:=REAL_TO_UDINT(Parameters.Position*100);
-				Step:=110;
+				IF (Parameters.Position>=Status.ActPosition-0.05) AND (Parameters.Position<=Status.ActPosition+0.05) THEN
+					Step:=113;
+				ELSE
+					Step:=110;
+				END_IF
 			ELSIF Command.MoveAdditive=1 THEN
 				OUT.AbsolutePositioning_Bit8:=0;
 				OUT_forMapping.MDI_target_position:=REAL_TO_UDINT(Parameters.Distance*100);
@@ -369,27 +389,34 @@ FUNCTION_BLOCK ServoDriver
 			IF IN.TraversingTaskAck_Bit12=1 THEN
 				Step:=Step+1;
 			END_IF
+			
+		111:Info:="Cakam na potvrdenie pohyboveho prikazu";
+			IF IN.TraversingCommandActive_Bit15=1 THEN
+				Step:=Step+1;
+			END_IF
+			
 		
-		111:Info:="Cakam kym servo napolohuje";
-			IF IN.TargetPositionReached_Bit10=1 THEN
+		112:Info:="Cakam kym servo napolohuje";
+			IF EDGEPOS (IN.TargetPositionReached_Bit10=1) THEN
 				OUT.ActivateTraversingTask_Bit6:=0;
 				Step:=Step+1;
 			ELSIF EDGEPOS (Command.MovePosition=1) THEN			
 				OUT.ActivateTraversingTask_Bit6:=0;
-				Step:=113;
+				Step:=114;
 			END_IF
 		
-		112:Info:="Cakam na zrusenie poziadavky na polohovanie";
+		113:Info:="Cakam na zrusenie poziadavky na polohovanie";
 			Status.InPosition:=1;
 			IF Command.MovePosition=0 THEN
 				Status.InPosition:=0;
 				Step:=199;
 			END_IF
 			
-		113:Info:="Cakam kym servo prerusi ulohu";	
+		114:Info:="Cakam kym servo prerusi ulohu";	
 			IF IN.TraversingTaskAck_Bit12=0 THEN
 				Step:=199;
 			END_IF
+						
 			
 			// move addition
 		120:Info:="Cakam na potvrdenie pohyboveho prikazu";

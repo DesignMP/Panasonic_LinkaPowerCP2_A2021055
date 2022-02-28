@@ -1334,7 +1334,7 @@
                 <SubmoduleItem ID="IDS_TELEGRAM_111" SubmoduleIdentNumber="0x0000006F" API="14848" MayIssueProcessAlarm="true">
                     <IOData>
                         <Input Consistency="All items consistency">
-                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="false">
                                 <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
                                 <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
                                 <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
@@ -1352,7 +1352,7 @@
                                 <BitDataItem BitOffset="14" TextId="IDIO_AxisAccelerated"/>
                                 <BitDataItem BitOffset="15" TextId="IDIO_AxisDecelerated"/>
                             </DataItem>
-                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_ZSW1" UseAsBits="true">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_ZSW1" UseAsBits="false">
                                 <BitDataItem BitOffset="0" TextId="IDIO_ActiveTraversingBlockBit0"/>
                                 <BitDataItem BitOffset="1" TextId="IDIO_ActiveTraversingBlockBit1"/>
                                 <BitDataItem BitOffset="2" TextId="IDIO_ActiveTraversingBlockBit2"/>
@@ -1367,7 +1367,7 @@
                                 <BitDataItem BitOffset="13" TextId="IDIO_TraversingBlockActive"/>
                                 <BitDataItem BitOffset="15" TextId="IDIO_MDIActive"/>
                             </DataItem>
-                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_ZSW2" UseAsBits="true">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_ZSW2" UseAsBits="false">
                                 <BitDataItem BitOffset="0" TextId="IDIO_TrackingModeActive"/>
                                 <BitDataItem BitOffset="1" TextId="IDIO_VelocityLimitingActive"/>
                                 <BitDataItem BitOffset="2" TextId="IDIO_SetpointAvailable"/>
@@ -1384,11 +1384,11 @@
                                 <BitDataItem BitOffset="14" TextId="IDIO_MoveToFixedStopActive"/>
                                 <BitDataItem BitOffset="15" TextId="IDIO_TraversingCommandActive"/>
                             </DataItem>
-                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2" UseAsBits="true">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2" UseAsBits="false">
                                 <BitDataItem BitOffset="8" TextId="IDIO_MoveToFixedStopActiveZSW2"/>
                                 <BitDataItem BitOffset="11" TextId="IDIO_PulsesEnable"/>
                             </DataItem>
-                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MELDW" UseAsBits="true">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MELDW" UseAsBits="false">
                                 <BitDataItem BitOffset="0" TextId="IDIO_RampFunctionCompleted"/>
                                 <BitDataItem BitOffset="1" TextId="IDIO_TorqueUtilization"/>
                                 <BitDataItem BitOffset="2" TextId="IDIO_RpmLowerThreshold"/>
@@ -1408,7 +1408,7 @@
                             <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_USER"/>
                         </Input>
                         <Output Consistency="All items consistency">
-                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="false">
                                 <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
                                 <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
                                 <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
@@ -1423,7 +1423,7 @@
                                 <BitDataItem BitOffset="11" TextId="IDIO_StartHomingProcedure"/>
                                 <BitDataItem BitOffset="12" TextId="IDIO_OpenHoldingBrake"/>
                             </DataItem>
-                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_STW1" UseAsBits="true">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_STW1" UseAsBits="false">
                                 <BitDataItem BitOffset="0" TextId="IDIO_TraversingBlockSelectionBit0"/>
                                 <BitDataItem BitOffset="1" TextId="IDIO_TraversingBlockSelectionBit1"/>
                                 <BitDataItem BitOffset="2" TextId="IDIO_TraversingBlockSelectionBit2"/>
@@ -1436,14 +1436,14 @@
                                 <BitDataItem BitOffset="10" TextId="IDIO_NegativeModuloPositioningDirection"/>
                                 <BitDataItem BitOffset="15" TextId="IDIO_MDISelection"/>
                             </DataItem>
-                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_STW2" UseAsBits="true">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_STW2" UseAsBits="false">
                                 <BitDataItem BitOffset="5" TextId="IDIO_JoggingIncremental"/>
                                 <BitDataItem BitOffset="10" TextId="IDIO_TouchProbeSelection"/>
                                 <BitDataItem BitOffset="11" TextId="IDIO_TouchProbeEdgeSelection"/>
                                 <BitDataItem BitOffset="14" TextId="IDIO_ActivateSoftwareLimitSwitch"/>
                                 <BitDataItem BitOffset="15" TextId="IDIO_ActivateHardwareLimitSwitch"/>
                             </DataItem>
-                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2" UseAsBits="true">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2" UseAsBits="false">
                                 <BitDataItem BitOffset="8" TextId="IDIO_TraverseToFixedEndstop"/>
                             </DataItem>
                             <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_OVERRIDE"/>

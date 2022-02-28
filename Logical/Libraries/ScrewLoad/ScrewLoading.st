@@ -15,7 +15,7 @@ FUNCTION_BLOCK ScrewLoading
 	END_IF
 	
 	//Mapovanie ovladania
-	IN.Brzda.PodajSkrutku:=Cmd.PodajSkrutku;
+	IN.Brzda.VyziadanieSkrutky:=Cmd.PodajSkrutku;
 	Status.SkrutkaPripravena:=OUT.Brzda.SktutkaPodana;
 
 	//Run signal
@@ -93,6 +93,7 @@ FUNCTION_BLOCK ScrewLoading
 			IF IN.Brzda.PodajSkrutku=1 AND IN.Brzda.ZakladnaPoloha=0 THEN
 				Internal.Brzda.T_PresunBrzdy.IN:=0;
 				Internal.Brzda.T_PreletSkrutky.IN:=1;
+				OUT.Brzda.NastrelenieSkrutky:=1;
 				Internal.Step.Brzda:=Internal.Step.Brzda+1;
 			ELSIF Internal.Brzda.T_PresunBrzdy.Q=1 THEN
 				OUT.Brzda.ZakladnaPoloha:=0;
@@ -103,10 +104,12 @@ FUNCTION_BLOCK ScrewLoading
 		
 		103: Internal.Status.Brzda:="Automat - Cakam na prelet skrutky";
 			IF IN.Brzda.PreletSkrutky=1 THEN
+				OUT.Brzda.NastrelenieSkrutky:=0;
 				OUT.Brzda.ZakladnaPoloha:=1;
 				OUT.Brzda.PodajSkrutku:=0;
 				Internal.Brzda.T_PreletSkrutky.IN:=0;
 			ELSIF Internal.Brzda.T_PreletSkrutky.Q=1 THEN
+				OUT.Brzda.NastrelenieSkrutky:=0;
 				OUT.Brzda.ZakladnaPoloha:=0;
 				OUT.Brzda.PodajSkrutku:=0;
 				Internal.Brzda.T_PreletSkrutky.IN:=0;
@@ -284,9 +287,14 @@ FUNCTION_BLOCK ScrewLoading
 		250: Internal.Status.VibracnyHrniec:="Manual";
 	END_CASE
 		
+	IF IN.VibracnyHrniec.VibracnaListaZaplnena=1 AND Internal.Step.VibracnyHrniec>99 THEN
+		OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek:=1;
+	ELSE 
+		OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek:=0;
+	END_IF
 				
 	//---Casovace-------------------------------------------------------------------------------
-	Internal.Brzda.T_CasCisteniaSkrutky.PT:=T#2s;//REAL_TO_TIME(Visu.Premenne.);
+	Internal.Brzda.T_CasCisteniaSkrutky.PT:=T#1s;//REAL_TO_TIME(Visu.Premenne.);
 	Internal.Brzda.T_CasCisteniaSkrutky();
 	
 	Internal.Brzda.T_PreletSkrutky.PT:=T#5s;//REAL_TO_TIME(Visu.Premenne.);
@@ -298,7 +306,10 @@ FUNCTION_BLOCK ScrewLoading
 	Internal.VibracnyHrniec.T_PreletSkrutky.PT:=T#2s;//REAL_TO_TIME(Visu.Premenne.);
 	Internal.VibracnyHrniec.T_PreletSkrutky();
 	
-	Internal.VibracnyHrniec.T_ZapnutieTriediacehoVzduchu.PT:=T#1s;//REAL_TO_TIME(Visu.Premenne.);
+	Internal.VibracnyHrniec.T_ZapnutieTriediacehoVzduchu.PT:=T#0.5s;//REAL_TO_TIME(Visu.Premenne.);
 	Internal.VibracnyHrniec.T_ZapnutieTriediacehoVzduchu();
+	
+	Internal.VibracnyHrniec.T_Zaplnenie.PT:=T#0.5s;//REAL_TO_TIME(Visu.Premenne.);
+	Internal.VibracnyHrniec.T_Zaplnenie();
 	
 END_FUNCTION_BLOCK

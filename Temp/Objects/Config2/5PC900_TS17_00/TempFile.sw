@@ -5,9 +5,7 @@
     <Task Name="P1_Mapping" Source="Program.Pracovisko_1.P1_Mapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_Mapping" Source="Program.Pracovisko_2.P2_Mapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P3_Mapping" Source="Program.Pracovisko_3.P3_Mapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P1_SkrutSe" Source="Program.Pracovisko_1.P1_SkrutkovacieSety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P2_Skrutko" Source="Program.Pracovisko_2.P2_SkrutkovacieSety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P3_Skrutko" Source="Program.Pracovisko_3.P3_SkrutkovacieSety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P4_Mappin1" Source="Program.Pracovisko_4.P4_Mapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_SkrutSe" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2">
@@ -63,8 +61,12 @@
     <Task Name="P4_Funkcn1" Source="Program.Pracovisko_4.P4_FunkcnyTestB.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P4_Zdvizk1" Source="Program.Pracovisko_4.P4_ZdvizkaZaFunkcTestB.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P4_StoperE" Source="Program.Pracovisko_4.P4_StoperEtiketovania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P4_Mapping" Source="Program.Pracovisko_4.P4_Mapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5">
+    <Task Name="P1_Remanen" Source="RemanentnePremenne.P1_RemanentnePremenne.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P2_Remanen" Source="RemanentnePremenne.P2_RemanentnePremenne.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P34_Remane" Source="RemanentnePremenne.P34_RemanentnePremenne.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Blikanie50" Source="Blikace.Blikanie500ms.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#6">
@@ -97,6 +99,7 @@
     <BinaryObject Name="asnxdb2" Source="" Memory="SystemROM" Language="Binary" />
     <BinaryObject Name="Config_1" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_5" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="asnxdb3" Source="" Memory="SystemROM" Language="Binary" />
   </Binaries>
   <Libraries>
     <LibraryObject Name="SC" Source="Libraries.SC.lby" Memory="UserROM" Language="IEC" Debugging="true" />

@@ -5,7 +5,21 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	(* Insert code here *)
+	
+	
+	
+	
+	
+	
+	
+	
+	//Volanie knižnic//
+	P2_StoperMaticovacky.SkrutSet_MaticaM4();
+	P2_Srobovanie.SkrutSet_M4(); 
+	P2_Srobovanie.SkrutSet_M5(); 
+	P2_Srobovanie.SkrutSet_M6(); 
+	
+	
 	 
 END_PROGRAM
 

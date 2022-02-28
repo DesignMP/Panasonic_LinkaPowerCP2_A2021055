@@ -40,40 +40,16 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Mapping_IO\Variables.var" />
     </Task>
     <Task
-      Name="P1_SkrutSe"
+      Name="P4_Mappin1"
       Disable="false"
-      Source="Program.Pracovisko_1.P1_SkrutkovacieSety"
+      Source="Program.Pracovisko_4.P4_Mapping_IO"
       Language="IEC">
       <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_SkrutSe\Main.st.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_Mappin1\Main.st.var" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_SkrutkovacieSety\Types.typ" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Mapping_IO\Types.typ" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_SkrutkovacieSety\Variables.var" />
-    </Task>
-    <Task
-      Name="P2_Skrutko"
-      Disable="false"
-      Source="Program.Pracovisko_2.P2_SkrutkovacieSety"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Skrutko\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_SkrutkovacieSety\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_SkrutkovacieSety\Variables.var" />
-    </Task>
-    <Task
-      Name="P3_Skrutko"
-      Disable="false"
-      Source="Program.Pracovisko_3.P3_SkrutkovacieSety"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P3_Skrutko\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_SkrutkovacieSety\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_SkrutkovacieSety\Variables.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Mapping_IO\Variables.var" />
     </Task>
   </TaskClass>
   <TaskClass
@@ -790,9 +766,57 @@
       <InternalFile
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\OvlOtacaniaAplikatora.st.var" />
     </Task>
+    <Task
+      Name="P4_Mapping"
+      Disable="false"
+      Source="Program.Pracovisko_4.P4_Mapping_IO"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_Mapping\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Mapping_IO\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Mapping_IO\Variables.var" />
+    </Task>
   </TaskClass>
   <TaskClass
     Name="Cyclic#5">
+    <Task
+      Name="P1_Remanen"
+      Disable="false"
+      Source="RemanentnePremenne.P1_RemanentnePremenne"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Remanen\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\RemanentnePremenne\P1_RemanentnePremenne\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\RemanentnePremenne\P1_RemanentnePremenne\Variables.var" />
+    </Task>
+    <Task
+      Name="P2_Remanen"
+      Disable="false"
+      Source="RemanentnePremenne.P2_RemanentnePremenne"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Remanen\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\RemanentnePremenne\P2_RemanentnePremenne\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\RemanentnePremenne\P2_RemanentnePremenne\Variables.var" />
+    </Task>
+    <Task
+      Name="P34_Remane"
+      Disable="false"
+      Source="RemanentnePremenne.P34_RemanentnePremenne"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P34_Remane\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\RemanentnePremenne\P34_RemanentnePremenne\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\RemanentnePremenne\P34_RemanentnePremenne\Variables.var" />
+    </Task>
     <Task
       Name="Blikanie50"
       Disable="false"

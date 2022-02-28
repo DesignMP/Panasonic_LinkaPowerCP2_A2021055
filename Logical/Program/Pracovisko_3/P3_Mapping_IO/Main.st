@@ -370,6 +370,82 @@ PROGRAM _CYCLIC
 	
 	
 	
+	//************************************Ventilový terminál*******************************************//
+	
+	//1-8
+	P3_Pracovisko.COM_VentilovyTerminal[0].0;
+	P3_Pracovisko.COM_VentilovyTerminal[0].1;
+	P3_Pracovisko.COM_VentilovyTerminal[0].2;
+	P3_Pracovisko.COM_VentilovyTerminal[0].3;
+	P3_Pracovisko.COM_VentilovyTerminal[0].4;
+	P3_Pracovisko.COM_VentilovyTerminal[0].5;
+	P3_Pracovisko.COM_VentilovyTerminal[0].6;
+	P3_Pracovisko.COM_VentilovyTerminal[0].7;
+	
+	
+	//9-16
+	P3_Pracovisko.COM_VentilovyTerminal[1].0;
+	P3_Pracovisko.COM_VentilovyTerminal[1].1;
+	P3_Pracovisko.COM_VentilovyTerminal[1].2;
+	P3_Pracovisko.COM_VentilovyTerminal[1].3;
+	P3_Pracovisko.COM_VentilovyTerminal[1].4;
+	P3_Pracovisko.COM_VentilovyTerminal[1].5;
+	P3_Pracovisko.COM_VentilovyTerminal[1].6;
+	P3_Pracovisko.COM_VentilovyTerminal[1].7;
+	
+	//17-24
+	P3_Pracovisko.COM_VentilovyTerminal[2].0;
+	P3_Pracovisko.COM_VentilovyTerminal[2].1;
+	P3_Pracovisko.COM_VentilovyTerminal[2].2;
+	P3_Pracovisko.COM_VentilovyTerminal[2].3;
+	P3_Pracovisko.COM_VentilovyTerminal[2].4;
+	P3_Pracovisko.COM_VentilovyTerminal[2].5;
+	P3_Pracovisko.COM_VentilovyTerminal[2].6;
+	P3_Pracovisko.COM_VentilovyTerminal[2].7;
+	
+	
+	//25-32
+	P3_Pracovisko.COM_VentilovyTerminal[3].0;
+	P3_Pracovisko.COM_VentilovyTerminal[3].1;
+	P3_Pracovisko.COM_VentilovyTerminal[3].2;
+	P3_Pracovisko.COM_VentilovyTerminal[3].3;
+	P3_Pracovisko.COM_VentilovyTerminal[3].4;
+	P3_Pracovisko.COM_VentilovyTerminal[3].5;
+	P3_Pracovisko.COM_VentilovyTerminal[3].6;
+	P3_Pracovisko.COM_VentilovyTerminal[3].7;
+	
+	
+	//33-40
+	P3_Pracovisko.COM_VentilovyTerminal[4].0;
+	P3_Pracovisko.COM_VentilovyTerminal[4].1;
+	P3_Pracovisko.COM_VentilovyTerminal[4].2;
+	P3_Pracovisko.COM_VentilovyTerminal[4].3;
+	P3_Pracovisko.COM_VentilovyTerminal[4].4;
+	P3_Pracovisko.COM_VentilovyTerminal[4].5;
+	P3_Pracovisko.COM_VentilovyTerminal[4].6;
+	P3_Pracovisko.COM_VentilovyTerminal[4].7;
+	
+	//41-48
+	P3_Pracovisko.COM_VentilovyTerminal[5].0;
+	P3_Pracovisko.COM_VentilovyTerminal[5].1;
+	P3_Pracovisko.COM_VentilovyTerminal[5].2;
+	P3_Pracovisko.COM_VentilovyTerminal[5].3;
+	P3_Pracovisko.COM_VentilovyTerminal[5].4;
+	P3_Pracovisko.COM_VentilovyTerminal[5].5;
+	P3_Pracovisko.COM_VentilovyTerminal[5].6;
+	P3_Pracovisko.COM_VentilovyTerminal[5].7;
+	
+	
+	
+	//Volanie knižníc//
+	P3_Srobovanie.SkrutSet_K40(); 
+	P3_Srobovanie.SkrutSet_M5(); 
+
+	
+	
+	
+	
+	
 END_PROGRAM
 
 PROGRAM _EXIT

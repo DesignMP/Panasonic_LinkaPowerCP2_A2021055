@@ -221,6 +221,7 @@ TYPE
 		WarningMessage : WSTRING[80];
 		ErrorMessage : WSTRING[80];
 		InTorque : BOOL;
+		InPosition2 : BOOL;
 		InPosition : BOOL;
 		StandStill : BOOL;
 		Warning : BOOL;

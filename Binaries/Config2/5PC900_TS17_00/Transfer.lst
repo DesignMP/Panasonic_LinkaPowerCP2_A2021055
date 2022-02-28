@@ -5,6 +5,10 @@
   <Hardware Target="SG4"/>
   <Operation Delete="Blikanie1s.br"/>
   <Operation Delete="Blikanie50.br"/>
+  <Operation Delete="P34_Remane.br"/>
+  <Operation Delete="P2_Remanen.br"/>
+  <Operation Delete="P1_Remanen.br"/>
+  <Operation Delete="P4_Mapping.br"/>
   <Operation Delete="P4_StoperE.br"/>
   <Operation Delete="P4_Zdvizk1.br"/>
   <Operation Delete="P4_Funkcn1.br"/>
@@ -53,9 +57,7 @@
   <Operation Delete="Users_Pan1.br"/>
   <Operation Delete="Users_Pane.br"/>
   <Operation Delete="Users_Main.br"/>
-  <Operation Delete="P3_Skrutko.br"/>
-  <Operation Delete="P2_Skrutko.br"/>
-  <Operation Delete="P1_SkrutSe.br"/>
+  <Operation Delete="P4_Mappin1.br"/>
   <Operation Delete="P3_Mapping.br"/>
   <Operation Delete="P2_Mapping.br"/>
   <Operation Delete="P1_Mapping.br"/>
@@ -149,9 +151,7 @@
   <Operation Download="P1_Mapping.br" Memory="UserROM"/>
   <Operation Download="P2_Mapping.br" Memory="UserROM"/>
   <Operation Download="P3_Mapping.br" Memory="UserROM"/>
-  <Operation Download="P1_SkrutSe.br" Memory="UserROM"/>
-  <Operation Download="P2_Skrutko.br" Memory="UserROM"/>
-  <Operation Download="P3_Skrutko.br" Memory="UserROM"/>
+  <Operation Download="P4_Mappin1.br" Memory="UserROM"/>
   <Operation Download="Users_Main.br" Memory="UserROM"/>
   <Operation Download="Users_Pane.br" Memory="UserROM"/>
   <Operation Download="Users_Pan1.br" Memory="UserROM"/>
@@ -200,6 +200,10 @@
   <Operation Download="P4_Funkcn1.br" Memory="UserROM"/>
   <Operation Download="P4_Zdvizk1.br" Memory="UserROM"/>
   <Operation Download="P4_StoperE.br" Memory="UserROM"/>
+  <Operation Download="P4_Mapping.br" Memory="UserROM"/>
+  <Operation Download="P1_Remanen.br" Memory="UserROM"/>
+  <Operation Download="P2_Remanen.br" Memory="UserROM"/>
+  <Operation Download="P34_Remane.br" Memory="UserROM"/>
   <Operation Download="Blikanie50.br" Memory="UserROM"/>
   <Operation Download="Blikanie1s.br" Memory="UserROM"/>
 </Transfer>

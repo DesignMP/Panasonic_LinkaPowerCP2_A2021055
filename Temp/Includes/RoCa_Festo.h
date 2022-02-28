@@ -211,6 +211,7 @@ typedef struct StatusStruc
 {	plcwstring WarningMessage[81];
 	plcwstring ErrorMessage[81];
 	plcbit InTorque;
+	plcbit InPosition2;
 	plcbit InPosition;
 	plcbit StandStill;
 	plcbit Warning;
@@ -325,6 +326,7 @@ typedef struct ServoDriver
 	plcbit zzEdge00002;
 	plcbit zzEdge00003;
 	plcbit zzEdge00004;
+	plcbit zzEdge00005;
 } ServoDriver_typ;
 
 typedef struct Linear_scaling

@@ -1,9 +1,0 @@
-{
-  global:
-    ServoDriver;
-    twoUINTtoREAL;
-    REALtoTwoUINT;
-    Linear_scaling;
-  local:
-    *;
- };
