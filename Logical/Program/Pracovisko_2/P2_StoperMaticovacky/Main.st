@@ -77,7 +77,13 @@ PROGRAM _CYCLIC
 			PocetDopytovNaServer:= 0;
 			CasSrobovania:= 0;
             
-			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Pracovisko.STAV.Porucha_ST2 AND NOT P2_Pracovisko.STAV.Porucha_ST3 AND NOT P2_Pracovisko.STAV.Porucha_ST4 AND NOT P2_Pracovisko.STAV.Porucha_ST5 THEN
+			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND 
+				Safety.STAV.P2_ZonaBunky_AKTIVNA AND
+				P2_Pracovisko.STAV.HardwareBunky_OK AND
+				NOT P2_Pracovisko.STAV.Porucha_ST2 AND
+				NOT P2_Pracovisko.STAV.Porucha_ST3 AND
+				NOT P2_Pracovisko.STAV.Porucha_ST4 AND
+				NOT P2_Pracovisko.STAV.Porucha_ST5 THEN
 				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
 				SC_P2_StoperMaticovacky.Step:= 1;
 			END_IF

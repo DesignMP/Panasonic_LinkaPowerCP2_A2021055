@@ -36,6 +36,7 @@ PROGRAM _CYCLIC
 						
 			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
 				Safety.STAV.P4_ZonaBunky_AKTIVNA AND
+				P4_Pracovisko.STAV.HardwareBunky_OK AND
 				NOT P4_Pracovisko.STAV.Porucha_ST1 AND
 				NOT P4_Pracovisko.STAV.Porucha_ST2 AND
 				NOT P4_Pracovisko.STAV.Porucha_ST3 AND

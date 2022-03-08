@@ -123,6 +123,15 @@
         <Parameter ID="FuncParam2" Value="0x2" Type="UDINT" />
         <Parameter ID="CyclicUpdate" Value="1" Type="UDINT" />
       </Channel>
+      <Channel ID="StorageWear">
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="10" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="UINT" />
+        <Parameter ID="ChannelType" Value="GenericFuncCall" />
+        <Parameter ID="Function" Value="storageDpWear" />
+        <Parameter ID="CyclicUpdate" Value="1" Type="UDINT" />
+      </Channel>
     </Resource>
     <Resource ID="IF1">
       <Parameter ID="IoBase0" Value="0x3f8" Type="UDINT" />
@@ -164,6 +173,7 @@
       </Resource>
       <Resource ID="SDL">
         <Parameter ID="OfferedBus" Value="SDL" />
+        <Parameter ID="ConnectionType" Value="SDL" />
         <Parameter ID="BusPrefix" Value="DS" />
         <Parameter ID="Transparent" Value="1" Type="UDINT" />
         <Parameter ID="BusMinSlot" Value="1" Type="UDINT" />
@@ -296,6 +306,20 @@
         <Parameter ID="Address" Value="0x8000000C" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
         <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="MinimalLatencyInputMargin">
+        <Filter Value="(Operation='EPL-V2')" />
+        <Parameter ID="Ext" Value="/INFO" />
+        <Parameter ID="Address" Value="0x8000000D" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="FailedMinimalLatencyInputCount">
+        <Filter Value="(Operation='EPL-V2')" />
+        <Parameter ID="Ext" Value="/INFO" />
+        <Parameter ID="Address" Value="0x8000000E" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="UDINT" />
       </Channel>
     </Resource>
     <Resource ID="SRAM">
@@ -886,7 +910,7 @@
         <Parameter ID="Type" Value="UINT" />
       </Channel>
       <Channel ID="BusModuleId">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0x80000180" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -894,7 +918,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="ModeOfOperation">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0x80000181" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -902,7 +926,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="ModeOfOperationChangeTime">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0xC0000181" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -910,7 +934,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="NrOfResets">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0x80000182" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -918,7 +942,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="NrOfResetsChangeTime">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0xC0000182" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -926,7 +950,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="NrOfInits">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0x80000183" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -934,7 +958,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="NrOfInitsChangeTime">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0xC0000183" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -942,7 +966,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="NrOfFwUpdates">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0x80000184" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -950,7 +974,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="NrOfFwUpdatesChangeTime">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0xC0000184" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -958,7 +982,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="ModuleNoComm">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0x80000185" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -966,7 +990,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="ModuleNoCommChangeTime">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0xC0000185" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -974,7 +998,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="ModuleCommError">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0x80000186" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -982,7 +1006,7 @@
         <Parameter ID="Diagnose" Value="/DIAG" />
       </Channel>
       <Channel ID="ModuleCommErrorChangeTime">
-        <Filter Value="NOT (ARIOMasterBus='CANIO')" />
+        <Filter Value="NOT (ARIOMasterBus='CANIO') AND (MasterIF::X2XMode!='1')" />
         <Parameter ID="Ext" Value="/INFO" />
         <Parameter ID="Address" Value="0xC0000186" Type="UDINT" />
         <Parameter ID="Direction" Value="IN" />
@@ -1118,6 +1142,25 @@
           <Parameter ID="Transparent" Value="1" Type="UDINT" />
           <Parameter ID="PortNo" Value="7" />
         </Resource>
+        <Resource ID="INTERNSDLVIRTUALUSBPORT">
+          <Parameter ID="Transparent" Value="1" Type="UDINT" />
+          <Parameter ID="PortNo" Value="6" />
+          <Parameter ID="LinkToSubTree" Value="PCI.SDL" />
+          <Parameter ID="OfferedConnection" Value="USBHUB" />
+        </Resource>
+        <Resource ID="EXTERNSDLVIRTUALUSBPORT">
+          <Parameter ID="Transparent" Value="1" Type="UDINT" />
+          <Parameter ID="PortNo" Value="8" />
+          <Parameter ID="LinkToSubTree" Value="PCI.SDLIF" />
+          <Parameter ID="OfferedConnection" Value="USBHUB" />
+        </Resource>
+      </Resource>
+      <Resource ID="SDLIF">
+        <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        <Parameter ID="OfferedBus" Value="DLSLOT" />
+        <Slot ID="SL3">
+          <Parameter ID="MtcxIndex" Value="3" Type="UDINT" />
+        </Slot>
       </Resource>
     </Resource>
   </Hardware>

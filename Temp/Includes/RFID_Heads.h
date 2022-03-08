@@ -25,6 +25,7 @@ typedef struct SickHeads
 	unsigned char Mapping_OUT[8];
 	/* VAR (analog) */
 	unsigned char Step;
+	struct TON AlarmTime;
 	/* VAR_INPUT (digital) */
 	plcbit CitaciuHlavu_VYPNI;
 	plcbit PrecitajChipRFID;

@@ -211,7 +211,6 @@ typedef struct StatusStruc
 {	plcwstring WarningMessage[81];
 	plcwstring ErrorMessage[81];
 	plcbit InTorque;
-	plcbit InPosition2;
 	plcbit InPosition;
 	plcbit StandStill;
 	plcbit Warning;

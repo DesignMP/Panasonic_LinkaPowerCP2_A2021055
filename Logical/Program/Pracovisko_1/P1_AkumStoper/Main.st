@@ -20,7 +20,7 @@ PROGRAM _CYCLIC
 		P1_AkumulacnyStoper.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P1_AkumulacnyStoper.Step:= 0;
-	ELSIF Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
+	ELSIF NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
 		SC_P1_AkumulacnyStoper.Step:= 0;
 	END_IF
 	
@@ -39,7 +39,7 @@ PROGRAM _CYCLIC
 			P1_AkumulacnyStoper.OUT.ZasunStoper:= FALSE;
 			
 						
-			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.STAV.Porucha_ST2 AND NOT P1_Pracovisko.STAV.Porucha_ST3 THEN
+			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND Safety.STAV.P1_ZonaBunky_AKTIVNA AND P1_Pracovisko.STAV.HardwareBunky_OK AND NOT P1_Pracovisko.STAV.Porucha_ST2 AND NOT P1_Pracovisko.STAV.Porucha_ST3 THEN
 				SC_P1_AkumulacnyStoper.ResetStep:= TRUE;
 				SC_P1_AkumulacnyStoper.Step:= 1;
 			END_IF

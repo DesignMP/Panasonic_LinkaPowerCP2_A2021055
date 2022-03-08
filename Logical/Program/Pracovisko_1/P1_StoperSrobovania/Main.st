@@ -114,7 +114,7 @@ PROGRAM _CYCLIC
 			P1_StoperSrobovania.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P1_Vytah.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			            
-			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.STAV.Porucha_ST2 AND NOT P1_Pracovisko.STAV.Porucha_ST3 THEN
+			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND Safety.STAV.P1_ZonaBunky_AKTIVNA AND P1_Pracovisko.STAV.HardwareBunky_OK AND NOT P1_Pracovisko.STAV.Porucha_ST2 AND NOT P1_Pracovisko.STAV.Porucha_ST3 THEN
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 1;
 			END_IF

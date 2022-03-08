@@ -17,7 +17,7 @@ FUNCTION_BLOCK PickAndPlace
 		OUT.ZhadzovaciVzduch_RUN:= FALSE;
 	END_IF	
 	
-	Internal.CasZaplneniaZasobnika.PT:= T#1s;
+	Internal.CasZaplneniaZasobnika.PT:= T#3s;
 	Internal.CasZaplneniaZasobnika();
 	
 	
@@ -106,9 +106,12 @@ FUNCTION_BLOCK PickAndPlace
 			OUT.OtocPodavac_NaVstup:= TRUE;
 			Internal.AlarmTime_3s.IN:= TRUE;
 			
-			IF IN.PodavacOtoceny_VSTUP THEN
+			Internal.IdleTime_1s.IN:= IN.PodavacOtoceny_VSTUP;
+			
+			IF Internal.IdleTime_1s.Q THEN
 				OUT.OtocPodavac_NaVstup:= FALSE;
 				Internal.AlarmTime_3s.IN:= FALSE;
+				Internal.IdleTime_1s.IN:= FALSE;
 				Step:= 15;
 			ELSIF Internal.AlarmTime_3s.Q THEN
 				STAV.ERROR:= TRUE;
@@ -138,9 +141,12 @@ FUNCTION_BLOCK PickAndPlace
 			OUT.OtocPodavac_NaVystup:= TRUE;
 			Internal.AlarmTime_3s.IN:= TRUE;
 			
-			IF IN.PodavacOtoceny_VYSTUP AND IN.Podavac_SkrutkaNaVystupe THEN
+			Internal.IdleTime_1s.IN:= IN.PodavacOtoceny_VYSTUP;
+			
+			IF Internal.IdleTime_1s.Q AND IN.Podavac_SkrutkaNaVystupe THEN
 				OUT.VibropohonListy_RUN:= FALSE;
 				OUT.OtocPodavac_NaVystup:= FALSE;
+				Internal.IdleTime_1s.IN:= FALSE;
 				Step:= 0;
 			ELSIF Internal.AlarmTime_3s.Q THEN
 				STAV.ERROR:= TRUE;
@@ -180,8 +186,11 @@ FUNCTION_BLOCK PickAndPlace
 			OUT.OtocPodavac_NaVystup:= TRUE;
 			Internal.AlarmTime_3s.IN:= TRUE;
 			
-			IF IN.PodavacOtoceny_VYSTUP AND IN.Podavac_SkrutkaNaVystupe THEN
+			Internal.IdleTime_1s.IN:= IN.PodavacOtoceny_VYSTUP;
+			
+			IF Internal.IdleTime_1s.Q AND IN.Podavac_SkrutkaNaVystupe THEN
 				OUT.OtocPodavac_NaVystup:= FALSE;
+				Internal.IdleTime_1s.IN:= FALSE;
 				Step:= 0;
 			ELSIF Internal.AlarmTime_3s.Q THEN
 				STAV.ERROR:= TRUE;

@@ -10,6 +10,9 @@ FUNCTION_BLOCK SickHeads
 	Mapping_OUT[3].0:= TRUE;
 	
 	
+	AlarmTime.PT:= T#3s;
+	AlarmTime();
+	
 	
 	CASE Step OF
 		
@@ -21,6 +24,7 @@ FUNCTION_BLOCK SickHeads
 			Mapping_OUT[0].2:= 	FALSE;
 			Mapping_OUT[0].7:= 	FALSE;
 			PrecitaneCisloPaletky:= 0;
+			AlarmTime.IN:= FALSE;
 			IF NOT PrecitajChipRFID AND NOT ZapisNaChipRFID THEN
 				Step:= 1;
 			END_IF	
@@ -37,12 +41,13 @@ FUNCTION_BLOCK SickHeads
 			Mapping_OUT[0].1:= 	TRUE;
 			Mapping_OUT[0].2:= 	FALSE;
 			Mapping_OUT[0].7:= 	TRUE;
+			AlarmTime.IN:= TRUE;
 			
 			IF Mapping_IN[0].0 AND Mapping_IN[0].1 AND NOT Mapping_IN[0].2 AND Mapping_IN[0].7 THEN
 				PrecitaneCisloPaletky:= Mapping_IN[4];
 				Stav_CitanieZapis_OK:= TRUE;
 				Step:= 11;
-			ELSE
+			ELSIF AlarmTime.Q THEN
 				Stav_CitanieZapis_NG:= TRUE;
 				Step:= 11;
 			END_IF	
@@ -59,11 +64,12 @@ FUNCTION_BLOCK SickHeads
 			Mapping_OUT[0].2:= 	TRUE;
 			Mapping_OUT[4]:= ZadaneCisloPaletky;
 			Mapping_OUT[0].7:= 	TRUE;
+			AlarmTime.IN:= TRUE;
 		
 			IF NOT Mapping_IN[0].0 AND NOT Mapping_IN[0].1 AND Mapping_IN[0].2 AND Mapping_IN[0].7 THEN
 				Stav_CitanieZapis_OK:= TRUE;
 				Step:= 21;
-			ELSE 
+			ELSIF AlarmTime.Q THEN 
 				Stav_CitanieZapis_NG:= TRUE;
 				Step:= 21;
 			END_IF	

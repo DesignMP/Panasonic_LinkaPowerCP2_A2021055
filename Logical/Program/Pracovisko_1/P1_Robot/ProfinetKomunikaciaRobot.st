@@ -18,7 +18,7 @@ ACTION ProfinetKomunikaciaRobot:
 	P1_Robot.COM_IN.Stav_Foam5F_Odobraty:= P1_Robot.COM_IN.BYTE_IN[1].6;
 	P1_Robot.COM_IN.Stav_Foam5F_Polozeny:= P1_Robot.COM_IN.BYTE_IN[1].7;
 	
-	P1_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie:= P1_Robot.COM_IN.BYTE_IN[2].0;
+	P1_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie:= TRUE;(*P1_Robot.COM_IN.BYTE_IN[2].0;*)
 	P1_Robot.COM_IN.Stav_RobotOdparkovany:= P1_Robot.COM_IN.BYTE_IN[2].1;
 	P1_Robot.COM_IN.Stav_RobotPoziciaCakania:= P1_Robot.COM_IN.BYTE_IN[2].2;
 	P1_Robot.COM_IN.Stav_SpodnyBusbar4F_Odobraty:= P1_Robot.COM_IN.BYTE_IN[2].3;

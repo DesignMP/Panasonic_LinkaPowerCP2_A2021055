@@ -20,9 +20,9 @@ PROGRAM _CYCLIC
 	//***********Karta AB 1.3 8DI***************//
 	P1_Dopravniky.IN.StavRiadeniaDopravBunky_READY := P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.0;
 	P1_Dopravniky.IN.StavRiadeniaVratnehoDoprav_READY := P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.1;
-	P1_Vytah.IN.TeplotaMotoraDopravVytahu_NG := P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.2;
-	P1_Dopravniky.IN.TeplotaMotoraDopravBunky_NG := P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.3;
-	P1_Dopravniky.IN.TeplotaMotoraVratnehoDoprav_NG := P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.4;
+	P1_Vytah.IN.TeplotaMotoraDopravVytahu_OK := P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.2;
+	P1_Dopravniky.IN.TeplotaMotoraDopravBunky_OK := P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.3;
+	P1_Dopravniky.IN.TeplotaMotoraVratnehoDoprav_OK := P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.4;
 	P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.5;
 	P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.6;
 	P1_Srobovanie.IN.NapajanieZasobnikaK30_OK := P1_Pracovisko.COM_Weidmuller.AB1_3_8DI.7;

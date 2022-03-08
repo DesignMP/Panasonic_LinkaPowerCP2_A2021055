@@ -17,5 +17,6 @@
 	END_VAR
 	VAR
 		Step : USINT;
+		AlarmTime : TON;
 	END_VAR
 END_FUNCTION_BLOCK

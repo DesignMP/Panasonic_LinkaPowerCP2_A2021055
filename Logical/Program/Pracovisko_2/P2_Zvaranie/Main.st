@@ -75,6 +75,7 @@ PROGRAM _CYCLIC
 			
 			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
 				Safety.STAV.P2_ZonaBunky_AKTIVNA AND
+				P2_Pracovisko.STAV.HardwareBunky_OK AND
 				NOT P2_Pracovisko.STAV.Porucha_ST2 AND
 				NOT P2_Pracovisko.STAV.Porucha_ST3 AND
 				NOT P2_Pracovisko.STAV.Porucha_ST4 AND
@@ -120,9 +121,9 @@ PROGRAM _CYCLIC
 			P2_Robot.COM_OUT.Zvaranie_BezpecnaPozicia:= FALSE;
 			
 			
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZdvihu/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= 1.0;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 0;
 			
@@ -222,9 +223,9 @@ PROGRAM _CYCLIC
 			SC_P2_Zvaranie.IdleTime.PT:= T#200ms;
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;	
 			
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZdvihu/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= 1.0;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 234;
 			
@@ -288,9 +289,9 @@ PROGRAM _CYCLIC
 			SC_P2_Zvaranie.IdleTime.PT:= T#200ms;   
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;
 			
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZvarania/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= P2_RemPremenne.P2_Zvaranie_MomentZvarania;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 280;
 			
@@ -300,7 +301,7 @@ PROGRAM _CYCLIC
 				SC_P2_Zvaranie.Switch1:= TRUE;
 			END_IF	
 				
-			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition) THEN
+			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InTorque) THEN
 				Reports.Zvaranie.Moment.PravyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActTorque);
 				Reports.Zvaranie.Vyska.PravyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActPosition);
 				Reports.Zvaranie.Frekvencia:= '80';
@@ -317,9 +318,9 @@ PROGRAM _CYCLIC
 			SC_P2_Zvaranie.IdleTime.PT:= T#200ms;
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;	
 			
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZdvihu/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= 1.0;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 234;
 			
@@ -400,9 +401,9 @@ PROGRAM _CYCLIC
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;
 			
           	
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZvarania/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= P2_RemPremenne.P2_Zvaranie_MomentZvarania;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 280;
 			
@@ -412,7 +413,7 @@ PROGRAM _CYCLIC
 				SC_P2_Zvaranie.Switch1:= TRUE;
 			END_IF	
 				
-			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition) THEN
+			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InTorque) THEN
 				Reports.Zvaranie.Moment.LavyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActTorque);
 				Reports.Zvaranie.Vyska.LavyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActPosition);
 				Reports.Zvaranie.Frekvencia:= '80';
@@ -440,9 +441,9 @@ PROGRAM _CYCLIC
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;	
 			
 				
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZdvihu/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= 1.0;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 0;
 			
@@ -497,9 +498,9 @@ PROGRAM _CYCLIC
 			
 		     
 			
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZdvihu/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= 1.0;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 200;
 			
@@ -531,9 +532,9 @@ PROGRAM _CYCLIC
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;
 			
 			
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZatlacania/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= P2_RemPremenne.P2_Zvaranie_MomentZatlacania;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 280;
 			
@@ -543,7 +544,7 @@ PROGRAM _CYCLIC
 				SC_P2_Zvaranie.Switch1:= TRUE;
 			END_IF	
 				
-			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition) THEN
+			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InTorque) THEN
 				P2_Zvaranie.ServoZdvihuZvarania.Command.MovePosition:= FALSE;
 				SC_P2_Zvaranie.ResetStep:= TRUE;
 				SC_P2_Zvaranie.Step:= 206;
@@ -568,9 +569,9 @@ PROGRAM _CYCLIC
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;	
 			
 				
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 0.1;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Acc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Dcc:= 1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZdvihu/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= 1.0;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 0;
 			
@@ -629,7 +630,7 @@ PROGRAM _CYCLIC
 		
 		
 			//Parametre serva pre jogging//
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Jog.Acc:= 0.1;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Jog.Acc:= 1;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Jog.Velocity:= P2_Zvaranie.PAR.ZdvihZvarania_JoggRychlost;
 			P2_Zvaranie.ServoZdvihuZvarania.Command.TorqueLimitation:= TRUE;
 						

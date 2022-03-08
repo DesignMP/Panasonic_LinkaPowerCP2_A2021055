@@ -12,16 +12,16 @@ extern "C"
 
 #include <runtime.h>
 
-#ifndef _IEC_CONST
-#define _IEC_CONST _WEAK const
+#ifndef _BUR_PUBLIC
+#define _BUR_PUBLIC
 #endif
-
 /* Constants */
 #ifdef _REPLACE_CONST
  #define timERR_AR 33213U
  #define timERR_INVALID_DTSTRUCTURE 33212U
  #define timERR_INVALID_LEN 33211U
  #define timERR_INVALID_PARAMETER 33210U
+ #define timREDUND_INTERFACE 3U
  #define timTIME_SERVER 2U
  #define timREAL_TIME_CLOCK 1U
  #define timNO_DST 3U
@@ -33,20 +33,24 @@ extern "C"
  #define timEXSETTIME_NO_OPTION 0U
  #define timEXSETTIME_NO_LOGENTRY 1U
 #else
- _IEC_CONST unsigned short timERR_AR = 33213U;
- _IEC_CONST unsigned short timERR_INVALID_DTSTRUCTURE = 33212U;
- _IEC_CONST unsigned short timERR_INVALID_LEN = 33211U;
- _IEC_CONST unsigned short timERR_INVALID_PARAMETER = 33210U;
- _IEC_CONST unsigned char timTIME_SERVER = 2U;
- _IEC_CONST unsigned char timREAL_TIME_CLOCK = 1U;
- _IEC_CONST unsigned char timNO_DST = 3U;
- _IEC_CONST unsigned char timDAYLIGHT_SAVING_TIME = 2U;
- _IEC_CONST unsigned char timNORMAL_TIME = 1U;
- _IEC_CONST signed long TIME_MAX = 2073600000;
- _IEC_CONST signed long TIME_MIN = -2073600000;
- _IEC_CONST unsigned long DATE_AND_TIME_MAX = 4102444799U;
- _IEC_CONST unsigned char timEXSETTIME_NO_OPTION = 0U;
- _IEC_CONST unsigned char timEXSETTIME_NO_LOGENTRY = 1U;
+ #ifndef _GLOBAL_CONST
+   #define _GLOBAL_CONST _WEAK const
+ #endif
+ _GLOBAL_CONST unsigned short timERR_AR;
+ _GLOBAL_CONST unsigned short timERR_INVALID_DTSTRUCTURE;
+ _GLOBAL_CONST unsigned short timERR_INVALID_LEN;
+ _GLOBAL_CONST unsigned short timERR_INVALID_PARAMETER;
+ _GLOBAL_CONST unsigned char timREDUND_INTERFACE;
+ _GLOBAL_CONST unsigned char timTIME_SERVER;
+ _GLOBAL_CONST unsigned char timREAL_TIME_CLOCK;
+ _GLOBAL_CONST unsigned char timNO_DST;
+ _GLOBAL_CONST unsigned char timDAYLIGHT_SAVING_TIME;
+ _GLOBAL_CONST unsigned char timNORMAL_TIME;
+ _GLOBAL_CONST signed long TIME_MAX;
+ _GLOBAL_CONST signed long TIME_MIN;
+ _GLOBAL_CONST unsigned long DATE_AND_TIME_MAX;
+ _GLOBAL_CONST unsigned char timEXSETTIME_NO_OPTION;
+ _GLOBAL_CONST unsigned char timEXSETTIME_NO_LOGENTRY;
 #endif
 
 
@@ -304,38 +308,54 @@ typedef struct DstGetInfo
 	plcbit enable;
 } DstGetInfo_typ;
 
+typedef struct DstGetInfoDT
+{
+	/* VAR_INPUT (analog) */
+	plcdt DT1;
+	/* VAR_OUTPUT (analog) */
+	unsigned char dstState;
+	unsigned short status;
+	/* VAR (analog) */
+	unsigned short i_state;
+	unsigned short i_result;
+	unsigned long i_tmp;
+	/* VAR_INPUT (digital) */
+	plcbit enable;
+} DstGetInfoDT_typ;
+
 
 
 /* Prototyping of functions and function blocks */
-void DTExSetTime(struct DTExSetTime* inst);
-void DTSetTime(struct DTSetTime* inst);
-void DTGetTime(struct DTGetTime* inst);
-void UtcDTGetTime(struct UtcDTGetTime* inst);
-void UtcDTSetTime(struct UtcDTSetTime* inst);
-void UtcDTExSetTime(struct UtcDTExSetTime* inst);
-void DTStructureGetTime(struct DTStructureGetTime* inst);
-void DTStructureSetTime(struct DTStructureSetTime* inst);
-void DTStructureExSetTime(struct DTStructureExSetTime* inst);
-void UtcDTStructureGetTime(struct UtcDTStructureGetTime* inst);
-void UtcDTStructureSetTime(struct UtcDTStructureSetTime* inst);
-void UtcDTStructureExSetTime(struct UtcDTStructureExSetTime* inst);
-void UtcDT_TO_LocalDTStructure(struct UtcDT_TO_LocalDTStructure* inst);
-void LocalDT_TO_UtcDTStructure(struct LocalDT_TO_UtcDTStructure* inst);
-void UtcDTStructure_TO_LocalDT(struct UtcDTStructure_TO_LocalDT* inst);
-void LocalDTStructure_TO_UtcDT(struct LocalDTStructure_TO_UtcDT* inst);
-void TimeDeviceGetInfo(struct TimeDeviceGetInfo* inst);
-void DstGetInfo(struct DstGetInfo* inst);
-plctime clock_ms();
-unsigned long ascTIMEStructure(unsigned long pTIMEStructure, unsigned long pStr, unsigned long len);
-unsigned long ascDTStructure(unsigned long pDTStructure, unsigned long pStr, unsigned long len);
-unsigned long ascTIME(plctime TIME1, unsigned long pStr, unsigned long len);
-unsigned long ascDT(plcdt DT1, unsigned long pStr, unsigned long len);
-plctime TIMEStructure_TO_TIME(unsigned long pTIMEStructure);
-unsigned long TIME_TO_TIMEStructure(plctime TIME1, unsigned long pTIMEStructure);
-plcdt DTStructure_TO_DT(unsigned long pDTStructure);
-unsigned long DT_TO_DTStructure(plcdt DT1, unsigned long pDTStructure);
-unsigned long DiffT(plctime TIME2, plctime TIME1);
-unsigned long DiffDT(plcdt DT2, plcdt DT1);
+_BUR_PUBLIC void DTExSetTime(struct DTExSetTime* inst);
+_BUR_PUBLIC void DTSetTime(struct DTSetTime* inst);
+_BUR_PUBLIC void DTGetTime(struct DTGetTime* inst);
+_BUR_PUBLIC void UtcDTGetTime(struct UtcDTGetTime* inst);
+_BUR_PUBLIC void UtcDTSetTime(struct UtcDTSetTime* inst);
+_BUR_PUBLIC void UtcDTExSetTime(struct UtcDTExSetTime* inst);
+_BUR_PUBLIC void DTStructureGetTime(struct DTStructureGetTime* inst);
+_BUR_PUBLIC void DTStructureSetTime(struct DTStructureSetTime* inst);
+_BUR_PUBLIC void DTStructureExSetTime(struct DTStructureExSetTime* inst);
+_BUR_PUBLIC void UtcDTStructureGetTime(struct UtcDTStructureGetTime* inst);
+_BUR_PUBLIC void UtcDTStructureSetTime(struct UtcDTStructureSetTime* inst);
+_BUR_PUBLIC void UtcDTStructureExSetTime(struct UtcDTStructureExSetTime* inst);
+_BUR_PUBLIC void UtcDT_TO_LocalDTStructure(struct UtcDT_TO_LocalDTStructure* inst);
+_BUR_PUBLIC void LocalDT_TO_UtcDTStructure(struct LocalDT_TO_UtcDTStructure* inst);
+_BUR_PUBLIC void UtcDTStructure_TO_LocalDT(struct UtcDTStructure_TO_LocalDT* inst);
+_BUR_PUBLIC void LocalDTStructure_TO_UtcDT(struct LocalDTStructure_TO_UtcDT* inst);
+_BUR_PUBLIC void TimeDeviceGetInfo(struct TimeDeviceGetInfo* inst);
+_BUR_PUBLIC void DstGetInfo(struct DstGetInfo* inst);
+_BUR_PUBLIC void DstGetInfoDT(struct DstGetInfoDT* inst);
+_BUR_PUBLIC plctime clock_ms(void);
+_BUR_PUBLIC unsigned long ascTIMEStructure(unsigned long pTIMEStructure, unsigned long pStr, unsigned long len);
+_BUR_PUBLIC unsigned long ascDTStructure(unsigned long pDTStructure, unsigned long pStr, unsigned long len);
+_BUR_PUBLIC unsigned long ascTIME(plctime TIME1, unsigned long pStr, unsigned long len);
+_BUR_PUBLIC unsigned long ascDT(plcdt DT1, unsigned long pStr, unsigned long len);
+_BUR_PUBLIC plctime TIMEStructure_TO_TIME(unsigned long pTIMEStructure);
+_BUR_PUBLIC unsigned long TIME_TO_TIMEStructure(plctime TIME1, unsigned long pTIMEStructure);
+_BUR_PUBLIC plcdt DTStructure_TO_DT(unsigned long pDTStructure);
+_BUR_PUBLIC unsigned long DT_TO_DTStructure(plcdt DT1, unsigned long pDTStructure);
+_BUR_PUBLIC unsigned long DiffT(plctime TIME2, plctime TIME1);
+_BUR_PUBLIC unsigned long DiffDT(plcdt DT2, plcdt DT1);
 
 
 #ifdef __cplusplus
@@ -343,4 +363,3 @@ unsigned long DiffDT(plcdt DT2, plcdt DT1);
 #endif
 #endif /* _ASTIME_ */
 
-                                                           

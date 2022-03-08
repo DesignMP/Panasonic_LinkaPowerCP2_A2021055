@@ -285,17 +285,17 @@ TYPE
 		P1_Srob5F_PozX_ZadnejSkrutkyM4 : REAL;
 		P1_Srob5F_PozY_ZadnejSkrutkyM4 : REAL;
 		P1_Srob45F_Mom_ZadnejSkrutkyM4 : REAL;
-		P1_Srob45F_Rychl_ZadnejSkrutkyM4 : REAL;
+		P1_Srob45F_Rychl_ZadnejSkrutkyM4 : REAL; (*mm/s*)
 		P1_Srob4F_PozX_PrednejSkrutkyM4 : REAL;
 		P1_Srob4F_PozY_PrednejSkrutkyM4 : REAL;
 		P1_Srob5F_PozX_PrednejSkrutkyM4 : REAL;
 		P1_Srob5F_PozY_PrednejSkrutkyM4 : REAL;
 		P1_Srob45F_Mom_PrednejSkrutkyM4 : REAL;
-		P1_Srob45F_Rychl_PredneSkrutkyM4 : REAL;
+		P1_Srob45F_Rychl_PredneSkrutkyM4 : REAL; (*mm/s*)
 		P1_Srob45F_PozX_SkrutkyDPS_M4 : REAL;
 		P1_Srob45F_PozY_SkrutkyDPS_M4 : REAL;
 		P1_Srob45F_Mom_SkrutkyDPS_M4 : REAL;
-		P1_Srob45F_Rychl_SkrutkyDPS_M4 : REAL;
+		P1_Srob45F_Rychl_SkrutkyDPS_M4 : REAL; (*mm/s*)
 		P1_Srob5H_PozX_LavejSkrutkyK30 : REAL;
 		P1_Srob5H_PozY_LavejSkrutkyK30 : REAL;
 		P1_Srob5H_PozX_PravejSkrutkyK30 : REAL;
@@ -303,28 +303,26 @@ TYPE
 		P1_Srob5H_PozX_LavejSkrutkyM5 : REAL;
 		P1_Srob5H_PozY_LavejSkrutkyM5 : REAL;
 		P1_Srob5H_Mom_LavejSkrutkyM5 : REAL;
-		P1_Srob5H_Rychl_LavejSkrutkyM5 : REAL;
+		P1_Srob5H_Rychl_LavejSkrutkyM5 : REAL; (*mm/s*)
 		P1_Srob5H_PozX_StrednejSkrutkyM5 : REAL;
 		P1_Srob5H_PozY_StrednejSkrutkyM5 : REAL;
 		P1_Srob5H_Mom_StrednejSkrutkyM5 : REAL;
-		P1_Srob5H_Rychl_StredneSkrutkyM5 : REAL;
+		P1_Srob5H_Rychl_StredneSkrutkyM5 : REAL; (*mm/s*)
 		P1_Srob5H_PozX_PravejSkrutkyM5 : REAL;
 		P1_Srob5H_PozY_PravejSkrutkyM5 : REAL;
 		P1_Srob5H_Mom_PravejSkrutkyM5 : REAL;
-		P1_Srob5H_Rychl_PravejSkrutkyM5 : REAL;
+		P1_Srob5H_Rychl_PravejSkrutkyM5 : REAL; (*mm/s*)
 		P1_Srob_PozX_OdobratSkrutkyM5 : REAL;
 		P1_Srob_PozY_OdobratSkrutkyM5 : REAL;
-		P1_Srob_Mom_OdobratSkrutkyM5 : REAL;
-		P1_Srob_Rychl_OdobratSkrutkyM5 : REAL;
 		P1_Srob_PozX_OdobratSkrutkyM4 : REAL;
 		P1_Srob_PozY_OdobratSkrutkyM4 : REAL;
-		P1_Srob_Mom_OdobratSkrutkyM4 : REAL;
-		P1_Srob_Rychl_OdobratSkrutkyM4 : REAL;
-		P1_Vytah_RychlostZdvihu : REAL;
+		P1_Vytah_RychlostZdvihu : REAL; (*mm/s*)
 		P1_Vytah_PoziciaNakladania : REAL;
 		P1_Vytah_PoziciaVykladania : REAL;
-		P1_ManipSrob_OsX_Rychlost : REAL;
-		P1_ManipSrob_OsY_Rychlost : REAL;
+		P1_ManipSrob_OsX_Rychlost : REAL; (*mm/s*)
+		P1_ManipSrob_OsY_Rychlost : REAL; (*mm/s*)
+		P1_ManipSrob_OsZ_M4_Rychlost : REAL; (*mm/s*)
+		P1_ManipSrob_OsZ_M5_Rychlost : REAL; (*mm/s*)
 		P1_Srob45F_LavaK30_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
 		P1_Srob45F_LavaK30_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 		P1_Srob45F_PravaK30_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
@@ -347,7 +345,7 @@ TYPE
 		P1_Srob5H_PravaM5_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 	END_STRUCT;
 	P2_RemPremenne_typ : 	STRUCT 
-		P2_ZaklTesnenia_Zdvih_Rychlost : REAL;
+		P2_ZaklTesnenia_Zdvih_Rychlost : REAL; (*mm/s*)
 		P2_ZaklTesn_Zdvih_PozZatlacenia : REAL;
 		P2_ZaklTesn_Pojazd_RychlVysun : REAL;
 		P2_ZaklTesn_Pojazd_RychlZasun : REAL;
@@ -361,11 +359,11 @@ TYPE
 		P2_Srob4F_PozX_LavejSkrutkyM4 : REAL;
 		P2_Srob4F_PozY_LavejSkrutkyM4 : REAL;
 		P2_Srob45F_Mom_LavejSkrutkyM4 : REAL;
-		P2_Srob45F_Rychl_LavejSkrutkyM4 : REAL;
+		P2_Srob45F_Rychl_LavejSkrutkyM4 : REAL; (*mm/s*)
 		P2_Srob4F_PozX_PravejSkrutkyM4 : REAL;
 		P2_Srob4F_PozY_PravejSkrutkyM4 : REAL;
 		P2_Srob45F_Mom_PravejSkrutkyM4 : REAL;
-		P2_Srob45F_Rychl_PravejSkrutkyM4 : REAL;
+		P2_Srob45F_Rychl_PravejSkrutkyM4 : REAL; (*mm/s*)
 		P2_Srob5F_PozX_LavejSkrutkyM6 : REAL;
 		P2_Srob5F_PozY_LavejSkrutkyM6 : REAL;
 		P2_Srob5F_PozX_PravejSkrutkyM6 : REAL;
@@ -381,21 +379,20 @@ TYPE
 		P2_Srob5H_PozX_SkrutkyM4 : REAL;
 		P2_Srob5H_PozY_SkrutkyM4 : REAL;
 		P2_Srob5H_Mom_SkrutkyM4 : REAL;
-		P2_Srob5H_Rychl_SkrutkyM4 : REAL;
+		P2_Srob5H_Rychl_SkrutkyM4 : REAL; (*mm/s*)
 		P2_Srob_PozX_OdobratSkrutkyM4 : REAL;
 		P2_Srob_PozY_OdobratSkrutkyM4 : REAL;
-		P2_Srob_Mom_OdobratSkrutkyM4 : REAL;
-		P2_Srob_Rychl_OdobratSkrutkyM4 : REAL;
 		P2_ManipSrob_OsX_Rychlost : REAL;
 		P2_ManipSrob_OsY_Rychlost : REAL;
+		P2_ManipSrob_OsZ_M4_Rychlost : REAL; (*mm/s*)
 		P2_Zvaranie_MomentZvarania : REAL;
-		P2_Zvaranie_RychlostZvarania : REAL;
+		P2_Zvaranie_RychlostZvarania : REAL; (*mm/s*)
 		P2_Zvaranie_CasZvarania : TIME;
-		P2_ZdvihZvarania_Rychlost : REAL;
+		P2_Zvaranie_RychlostZdvihu : REAL; (*mm/s*)
 		P2_ZaklTesnenia_MomentPritlaku : REAL;
-		P2_ZaklTesnenia_RychlostPritlaku : REAL;
-		P2_ZaklTesnenia_RychlVysunutia : REAL;
-		P2_ZaklTesnenia_RychlZasunutia : REAL;
+		P2_ZaklTesnenia_RychlostPritlaku : REAL; (*mm/s*)
+		P2_ZaklTesnenia_RychlVysunutia : REAL; (*mm/s*)
+		P2_ZaklTesnenia_RychlZasunutia : REAL; (*mm/s*)
 		P2_Srob45F_LavaM6_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
 		P2_Srob45F_LavaM6_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 		P2_Srob45F_PravaM6_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
@@ -413,30 +410,29 @@ TYPE
 		P2_Maticovacka_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
 		P2_Maticovacka_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 		P2_Zvaranie_MomentZatlacania : REAL;
-		P2_Zvaranie_RychlostZatlacania : REAL;
+		P2_Zvaranie_RychlostZatlacania : REAL; (*mm/s*)
 		P2_Zvaranie_CasZatlacania : TIME;
 	END_STRUCT;
 	P34_RemPremenne_typ : 	STRUCT 
-		P3_ManipSrob_OsY_Rychlost : REAL;
-		P4_Vytah_RychlostZdvihu : REAL;
+		P3_ManipSrob_OsY_Rychlost : REAL; (*mm/s*)
+		P3_ManipSrob_OsZ_M5_Rychlost : REAL; (*mm/s*)
+		P4_Vytah_RychlostZdvihu : REAL; (*mm/s*)
 		P4_Vytah_PoziciaNakladania : REAL;
 		P4_Vytah_PoziciaVykladania : REAL;
-		P4_ZdvihEtiketovacky_Rychlost : REAL;
+		P4_ZdvihEtiketovacky_Rychlost : REAL; (*mm/s*)
 		P4_Etiketovacka_PozEtikety_4F : REAL;
 		P4_Etiketovacka_PozEtikety_5F : REAL;
 		P4_Etiketovacka_PozEtikety_5H : REAL;
 		P4_Etiketovacka_PozOdoberEtikety : REAL;
-		P4_Etiketov_RychlZdvihuAplikat : REAL;
+		P4_Etiketov_RychlZdvihuAplikat : REAL; (*mm/s*)
 		P3_Srob45F_PozY_Skrutkovania : REAL;
 		P3_Srob5H_PozY_Skrutkovania : REAL;
 		P3_Srob_PozY_HV_Test : REAL;
 		P3_Srob_PozY_OdobratSkrutkyM5 : REAL;
-		P3_Srob_Mom_OdobratSkrutkyM5 : REAL;
-		P3_Srob_Rychl_OdobratSkrutkyM5 : REAL;
 		P3_Srob45F_Mom_SkrutkyM5 : REAL;
-		P3_Srob45F_Rychl_SkrutkyM5 : REAL;
+		P3_Srob45F_Rychl_SkrutkyM5 : REAL; (*mm/s*)
 		P3_Srob5H_Mom_SkrutkyM5 : REAL;
-		P3_Srob5H_Rychl_SkrutkyM5 : REAL;
+		P3_Srob5H_Rychl_SkrutkyM5 : REAL; (*mm/s*)
 		P3_Srob45F_K40_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
 		P3_Srob45F_K40_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 		P3_Srob45F_M5_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
@@ -700,7 +696,7 @@ TYPE
 		Zdvih_HornyLimSnimac : BOOL; (*IS1_17*)
 		Zdvih_SpodnyLimSnimac : BOOL; (*IS1_16*)
 		StavRiadeniaDopravVytahu_READY : BOOL; (*M1_11*)
-		TeplotaMotoraDopravVytahu_NG : BOOL; (*M1_11*)
+		TeplotaMotoraDopravVytahu_OK : BOOL; (*M1_11*)
 	END_STRUCT;
 	P1_Vytah_OUT_typ : 	STRUCT 
 		DopravnikChod_VPRED : BOOL; (*M1_11*)
@@ -764,8 +760,8 @@ TYPE
 	P1_Dopravniky_IN_typ : 	STRUCT 
 		StavRiadeniaVratnehoDoprav_READY : BOOL; (*M1_13*)
 		StavRiadeniaDopravBunky_READY : BOOL; (*M1_12*)
-		TeplotaMotoraVratnehoDoprav_NG : BOOL; (*M1_13*)
-		TeplotaMotoraDopravBunky_NG : BOOL; (*M1_12*)
+		TeplotaMotoraVratnehoDoprav_OK : BOOL; (*M1_13*)
+		TeplotaMotoraDopravBunky_OK : BOOL; (*M1_12*)
 	END_STRUCT;
 	P1_Dopravniky_OUT_typ : 	STRUCT 
 		DopravnikBunky_ON : BOOL; (*M1_12*)
@@ -1202,8 +1198,8 @@ TYPE
 	P2_Dopravniky_IN_typ : 	STRUCT 
 		StavRiadeniaVratnehoDoprav_READY : BOOL; (*M2_13*)
 		StavRiadeniaDopravBunky_READY : BOOL; (*M2_12*)
-		TeplotaMotoraVratnehoDoprav_NG : BOOL; (*M2_13*)
-		TeplotaMotoraDopravBunky_NG : BOOL; (*M2_12*)
+		TeplotaMotoraVratnehoDoprav_OK : BOOL; (*M2_13*)
+		TeplotaMotoraDopravBunky_OK : BOOL; (*M2_12*)
 	END_STRUCT;
 	P2_Dopravniky_OUT_typ : 	STRUCT 
 		DopravnikBunky_ON : BOOL; (*M2_12*)
@@ -2034,11 +2030,11 @@ TYPE
 		StavRiadZadnDopravBunky_READY : BOOL; (*M3_11*)
 		StavRiadeniaPriecnDoprav1_READY : BOOL; (*M3_9*)
 		StavRiadeniaPriecnDoprav2_READY : BOOL; (*M3_10*)
-		TeplotaMotoraVratnehoDoprav_NG : BOOL; (*M3_12*)
-		TeplotaMotoraPredDopravBunky_NG : BOOL; (*M3_8*)
-		TeplotaMotoraZadnDopravBunky_NG : BOOL; (*M3_11*)
-		TeplotaMotoraPriecnDoprav1_NG : BOOL; (*M3_9*)
-		TeplotaMotoraPriecnDoprav2_NG : BOOL; (*M3_10*)
+		TeplotaMotoraVratnehoDoprav_OK : BOOL; (*M3_12*)
+		TeplotaMotoraPredDopravBunky_OK : BOOL; (*M3_8*)
+		TeplotaMotoraZadnDopravBunky_OK : BOOL; (*M3_11*)
+		TeplotaMotoraPriecnDoprav1_OK : BOOL; (*M3_9*)
+		TeplotaMotoraPriecnDoprav2_OK : BOOL; (*M3_10*)
 	END_STRUCT;
 	P3_Dopravniky_OUT_typ : 	STRUCT 
 		PrednyDopravnikBunky_ON : BOOL; (*M3_8*)
@@ -2617,10 +2613,10 @@ TYPE
 		StavRiadZadnDopravBunky_READY : BOOL; (*M4_6*)
 		StavRiadeniaPriecnDoprav_READY : BOOL; (*M4_5*)
 		StavRiadeniaVratnehoDoprav_READY : BOOL; (*M4_7*)
-		TeplotaMotoraPredDopravBunky_NG : BOOL; (*M4_4*)
-		TeplotaMotoraZadnDopravBunky_NG : BOOL; (*M4_6*)
-		TeplotaMotoraPriecnDoprav_NG : BOOL; (*M4_5*)
-		TeplotaMotoraVratnehoDoprav_NG : BOOL; (*M4_7*)
+		TeplotaMotoraPredDopravBunky_OK : BOOL; (*M4_4*)
+		TeplotaMotoraZadnDopravBunky_OK : BOOL; (*M4_6*)
+		TeplotaMotoraPriecnDoprav_OK : BOOL; (*M4_5*)
+		TeplotaMotoraVratnehoDoprav_OK : BOOL; (*M4_7*)
 	END_STRUCT;
 	P4_Dopravniky_OUT_typ : 	STRUCT 
 		VratnyDopravnik_ON : BOOL; (*M4_7*)
@@ -2931,7 +2927,7 @@ TYPE
 		ZdvihVytahu_HornyLimitnySnimac : BOOL; (*IS4_2*)
 		ZdvihVytahu_SpodnyLimitnySnimac : BOOL; (*IS4_1*)
 		StavRiadeniaDopravVytahu_READY : BOOL; (*M4_3*)
-		TeplotaMotoraDopravVytahu_NG : BOOL; (*M4_3*)
+		TeplotaMotoraDopravVytahu_OK : BOOL; (*M4_3*)
 	END_STRUCT;
 	P4_Vytah_OUT_typ : 	STRUCT 
 		DopravnikChod_VPRED : BOOL; (*M4_3*)

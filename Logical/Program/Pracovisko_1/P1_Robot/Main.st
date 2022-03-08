@@ -47,7 +47,7 @@ PROGRAM _CYCLIC
 			ELSE	
 				P1_Robot.COM_OUT.StopProgramu:= FALSE;
 			END_IF	
-			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND NOT P1_Pracovisko.STAV.Porucha_ST2 AND NOT P1_Robot.COM_IN.Stav_ProgramRUN THEN
+			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND NOT P1_Pracovisko.STAV.Porucha_ST2 AND NOT P1_Robot.COM_IN.Stav_ProgramRUN AND P1_Pracovisko.STAV.HardwareBunky_OK THEN
 				P1_Robot.COM_OUT.StopProgramu:= FALSE;
 				SC_P1_Robot.ResetStep:= TRUE;
 				SC_P1_Robot.Step:= 1;

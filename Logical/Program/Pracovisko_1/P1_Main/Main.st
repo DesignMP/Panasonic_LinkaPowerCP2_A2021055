@@ -226,9 +226,9 @@ PROGRAM _CYCLIC
 		P1_Pracovisko.IN.ModulFesto_IO_KomOK AND
 		P1_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
 		P1_Pracovisko.IN.ServoZdvihuVytahu_KomOK AND
-		P1_Pracovisko.IN.SmartKamera3_KomOK AND
-		P1_Pracovisko.IN.SmartKamera5_KomOK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+//		P1_Pracovisko.IN.SmartKamera3_KomOK AND
+//		P1_Pracovisko.IN.SmartKamera5_KomOK AND
+//		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
 		P1_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P1_Pracovisko.STAV.HardwareVytahu_OK:= TRUE;
 	ELSE	
@@ -240,7 +240,7 @@ PROGRAM _CYCLIC
 	IF P1_Pracovisko.IN.TlakVzduchu_OK AND
 		P1_Pracovisko.IN.ModulFesto_IO_KomOK AND
 		P1_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
-		P1_Pracovisko.IN.Robot_KomOK AND
+		(*P1_Pracovisko.IN.Robot_KomOK AND*)
 		P1_Pracovisko.IN.ServoManipulatorOsX_KomOK AND
 		P1_Pracovisko.IN.ServoManipulatorOsY_KomOK AND
 		P1_Pracovisko.IN.ServoManipulatorOsZ_M4_KomOK AND
@@ -269,10 +269,10 @@ PROGRAM _CYCLIC
 	//*****************************Zapnutie osvetlenia pracoviska*********************************************************//
 	P1_Pracovisko.OUT.OsvetlenieBunky_ON:= TRUE;
 		
-	//	P2_Pracovisko.OUT.Osvetlenie_CAM1:= TRUE;
-	//	P2_Pracovisko.OUT.Osvetlenie_CAM7_CAM17:= TRUE;
-	//	P2_Pracovisko.OUT.Osvetlenie_CAM10:= TRUE;
-	//	P2_Pracovisko.OUT.Osvetlenie_CAM11:= TRUE;
+		P2_Pracovisko.OUT.Osvetlenie_CAM1;
+		P2_Pracovisko.OUT.Osvetlenie_CAM7_CAM17;
+		P2_Pracovisko.OUT.Osvetlenie_CAM10;
+		P2_Pracovisko.OUT.Osvetlenie_CAM11;
 	
 	
 	

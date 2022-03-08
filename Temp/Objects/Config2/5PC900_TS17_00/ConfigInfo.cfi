@@ -55,64 +55,32 @@
   <TaskClass
     Name="Cyclic#2">
     <Task
-      Name="Users_Main"
+      Name="P1_Vytah"
       Disable="false"
-      Source="Uzivatelia.Users_Main"
+      Source="Program.Pracovisko_1.P1_Vytah"
       Language="IEC">
       <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\Users_Main\Main.st.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Vytah\Main.st.var" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\Users_Main\Types.typ" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Vytah\Types.typ" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\Users_Main\Variables.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Vytah\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Vytah\IOLinkKomunikacia.st.var" />
     </Task>
     <Task
-      Name="Users_Pane"
+      Name="P1_Srobova"
       Disable="false"
-      Source="Uzivatelia.Users_Panel1"
+      Source="Program.Pracovisko_1.P1_Srobovanie"
       Language="IEC">
       <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\Users_Pane\Main.st.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Srobova\Main.st.var" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\Users_Panel1\Types.typ" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Srobovanie\Types.typ" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\Users_Panel1\Variables.var" />
-    </Task>
-    <Task
-      Name="Users_Pan1"
-      Disable="false"
-      Source="Uzivatelia.Users_Panel2"
-      Language="IEC">
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Srobovanie\Variables.var" />
       <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\Users_Pan1\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\Users_Panel2\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\Users_Panel2\Variables.var" />
-    </Task>
-    <Task
-      Name="Users_Pan2"
-      Disable="false"
-      Source="Uzivatelia.Users_Panel3"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\Users_Pan2\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\Users_Panel3\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\Users_Panel3\Variables.var" />
-    </Task>
-    <Task
-      Name="RFID_Prg"
-      Disable="false"
-      Source="Uzivatelia.RFID_Prg"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\RFID_Prg\RFID_Prg.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\RFID_Prg\RFID_Prg.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Uzivatelia\RFID_Prg\RFID_Prg.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Srobova\AtlasCopcoKomunikacia.st.var" />
     </Task>
   </TaskClass>
   <TaskClass
@@ -128,6 +96,20 @@
   </TaskClass>
   <TaskClass
     Name="Cyclic#4">
+    <Task
+      Name="Main"
+      Disable="false"
+      Source="Program.Linka.Main"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\Main\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Linka\Main\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Linka\Main\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\Main\ProfinetKomunikaciaCU.st.var" />
+    </Task>
     <Task
       Name="Blikanie20"
       Disable="false"
@@ -171,20 +153,6 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Dopravniky\Variables.var" />
     </Task>
     <Task
-      Name="P1_Vytah"
-      Disable="false"
-      Source="Program.Pracovisko_1.P1_Vytah"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Vytah\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Vytah\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Vytah\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Vytah\IOLinkKomunikacia.st.var" />
-    </Task>
-    <Task
       Name="P1_SpodnyS"
       Disable="false"
       Source="Program.Pracovisko_1.P1_SpodnyStoper"
@@ -211,20 +179,6 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_StoperS\IOLinkKomunikacia.st.var" />
       <InternalFile
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_StoperS\OvlCentrovacky.st.var" />
-    </Task>
-    <Task
-      Name="P1_Srobova"
-      Disable="false"
-      Source="Program.Pracovisko_1.P1_Srobovanie"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Srobova\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Srobovanie\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Srobovanie\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Srobova\AtlasCopcoKomunikacia.st.var" />
     </Task>
     <Task
       Name="P1_Robot"
@@ -254,7 +208,7 @@
     </Task>
     <Task
       Name="P2_Main"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_Main"
       Language="IEC">
       <InternalFile
@@ -282,7 +236,7 @@
     </Task>
     <Task
       Name="P2_Dopravn"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_Dopravniky"
       Language="IEC">
       <InternalFile
@@ -294,7 +248,7 @@
     </Task>
     <Task
       Name="P2_SpodnyS"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_SpodnyStoper"
       Language="IEC">
       <InternalFile
@@ -306,7 +260,7 @@
     </Task>
     <Task
       Name="P2_StoperZ"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_StoperZaklTesnenia"
       Language="IEC">
       <InternalFile
@@ -320,7 +274,7 @@
     </Task>
     <Task
       Name="P2_ZaklTes"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_ZaklTesnenia"
       Language="IEC">
       <InternalFile
@@ -332,7 +286,7 @@
     </Task>
     <Task
       Name="P2_StoperM"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_StoperMaticovacky"
       Language="IEC">
       <InternalFile
@@ -350,7 +304,7 @@
     </Task>
     <Task
       Name="P2_AkumSto"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_AkumStoper"
       Language="IEC">
       <InternalFile
@@ -362,7 +316,7 @@
     </Task>
     <Task
       Name="P2_Robot"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_Robot"
       Language="IEC">
       <InternalFile
@@ -376,7 +330,7 @@
     </Task>
     <Task
       Name="P2_StoperS"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_StoperSrobovania"
       Language="IEC">
       <InternalFile
@@ -392,7 +346,7 @@
     </Task>
     <Task
       Name="P2_Srobova"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_Srobovanie"
       Language="IEC">
       <InternalFile
@@ -404,7 +358,7 @@
     </Task>
     <Task
       Name="P2_Stoper1"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_StoperZvarania"
       Language="IEC">
       <InternalFile
@@ -420,7 +374,7 @@
     </Task>
     <Task
       Name="P2_Zvarani"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_Zvaranie"
       Language="IEC">
       <InternalFile
@@ -434,7 +388,7 @@
     </Task>
     <Task
       Name="P2_Cisteni"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_2.P2_Cistenie"
       Language="IEC">
       <InternalFile
@@ -448,7 +402,7 @@
     </Task>
     <Task
       Name="P3_Main"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_Main"
       Language="IEC">
       <InternalFile
@@ -462,7 +416,7 @@
     </Task>
     <Task
       Name="P3_Dopravn"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_Dopravniky"
       Language="IEC">
       <InternalFile
@@ -474,7 +428,7 @@
     </Task>
     <Task
       Name="P3_SpodnyS"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_SpodnyStoper"
       Language="IEC">
       <InternalFile
@@ -486,7 +440,7 @@
     </Task>
     <Task
       Name="P3_StoperS"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_StoperSrobovania"
       Language="IEC">
       <InternalFile
@@ -502,7 +456,7 @@
     </Task>
     <Task
       Name="P3_Srobova"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_Srobovanie"
       Language="IEC">
       <InternalFile
@@ -516,7 +470,7 @@
     </Task>
     <Task
       Name="P3_HV_Test"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_HV_Test"
       Language="IEC">
       <InternalFile
@@ -538,7 +492,7 @@
     </Task>
     <Task
       Name="P3_Zdvizka"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestA"
       Language="IEC">
       <InternalFile
@@ -552,7 +506,7 @@
     </Task>
     <Task
       Name="P3_Leakage"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_LeakageTestA"
       Language="IEC">
       <InternalFile
@@ -572,7 +526,7 @@
     </Task>
     <Task
       Name="P3_Zdvizk2"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestA"
       Language="IEC">
       <InternalFile
@@ -586,7 +540,7 @@
     </Task>
     <Task
       Name="P3_Zdvizk1"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestB"
       Language="IEC">
       <InternalFile
@@ -600,7 +554,7 @@
     </Task>
     <Task
       Name="P3_Leakag1"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_LeakageTestB"
       Language="IEC">
       <InternalFile
@@ -620,7 +574,7 @@
     </Task>
     <Task
       Name="P3_Zdvizk3"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestB"
       Language="IEC">
       <InternalFile
@@ -634,7 +588,7 @@
     </Task>
     <Task
       Name="P4_Main"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_4.P4_Main"
       Language="IEC">
       <InternalFile
@@ -652,7 +606,7 @@
     </Task>
     <Task
       Name="P4_Dopravn"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_4.P4_Dopravniky"
       Language="IEC">
       <InternalFile
@@ -664,7 +618,7 @@
     </Task>
     <Task
       Name="P4_SpodnyS"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_4.P4_SpodnyStoper"
       Language="IEC">
       <InternalFile
@@ -676,7 +630,7 @@
     </Task>
     <Task
       Name="P4_Funkcny"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_4.P4_FunkcnyTestA"
       Language="IEC">
       <InternalFile
@@ -698,7 +652,7 @@
     </Task>
     <Task
       Name="P4_Zdvizka"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_4.P4_ZdvizkaZaFunkcTestA"
       Language="IEC">
       <InternalFile
@@ -712,7 +666,7 @@
     </Task>
     <Task
       Name="P4_Funkcn1"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_4.P4_FunkcnyTestB"
       Language="IEC">
       <InternalFile
@@ -734,7 +688,7 @@
     </Task>
     <Task
       Name="P4_Zdvizk1"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_4.P4_ZdvizkaZaFunkcTestB"
       Language="IEC">
       <InternalFile
@@ -748,7 +702,7 @@
     </Task>
     <Task
       Name="P4_StoperE"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_4.P4_StoperEtiketovania"
       Language="IEC">
       <InternalFile
@@ -768,7 +722,7 @@
     </Task>
     <Task
       Name="P4_Mapping"
-      Disable="false"
+      Disable="true"
       Source="Program.Pracovisko_4.P4_Mapping_IO"
       Language="IEC">
       <InternalFile

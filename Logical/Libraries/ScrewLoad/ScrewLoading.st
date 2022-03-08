@@ -39,6 +39,7 @@ FUNCTION_BLOCK ScrewLoading
 			OUT.Brzda.OdsavanieNecistot:=0;
 			OUT.Brzda.PodajSkrutku:=0;
 			OUT.Brzda.ZakladnaPoloha:=0;
+			OUT.Brzda.SktutkaPodana:=0;
 			
 			Internal.Brzda.T_CasCisteniaSkrutky.IN:=0;
 			Internal.Brzda.T_PreletSkrutky.IN:=0;

@@ -38,7 +38,7 @@ PROGRAM _CYCLIC
 			P4_SpodnyStoper.OUT.ZasunStoper:= FALSE;
 			
 						
-			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND Safety.STAV.P4_ZonaBunky_AKTIVNA  THEN
+			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND Safety.STAV.P4_ZonaBunky_AKTIVNA AND P4_Pracovisko.STAV.HardwareBunky_OK THEN
 				SC_P4_SpodnyStoper.ResetStep:= TRUE;
 				SC_P4_SpodnyStoper.Step:= 1;
 			END_IF

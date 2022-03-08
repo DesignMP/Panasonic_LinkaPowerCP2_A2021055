@@ -119,6 +119,7 @@ PROGRAM _CYCLIC
 			
 			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
 				Safety.STAV.P4_ZonaBunky_AKTIVNA AND
+				P4_Pracovisko.STAV.HardwareBunky_OK AND
 				NOT P4_Pracovisko.STAV.Porucha_ST1 AND
 				NOT P4_Pracovisko.STAV.Porucha_ST2 AND
 				NOT P4_Pracovisko.STAV.Porucha_ST3 AND
@@ -182,9 +183,9 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
 		
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Acc:= 0.1;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Dcc:= 0.1;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Acc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Dcc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Torque:= 1.0;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P34_RemPremenne.P4_Etiketovacka_PozOdoberEtikety;
 			
@@ -985,9 +986,9 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
 			
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Acc:= 0.1;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Dcc:= 0.1;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Acc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Dcc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Torque:= 1.0;
 			IF Linka.PAR.ZvolenyModel = '4F' THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P34_RemPremenne.P4_Etiketovacka_PozEtikety_4F;
@@ -1082,9 +1083,9 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Acc:= 0.1;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Dcc:= 0.1;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Acc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Dcc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Torque:= 1.0;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P4_Etiketovacka.ServoZdvihuAplikatora.Status.ActPosition - 7;
 			
@@ -1169,9 +1170,9 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Acc:= 0.1;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Dcc:= 0.1;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Acc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Dcc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Torque:= 1.0;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P34_RemPremenne.P4_Etiketovacka_PozOdoberEtikety;
 			
@@ -1523,7 +1524,7 @@ PROGRAM _CYCLIC
 		
 		
 			//Parametre serva pre jogging//
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Jog.Acc:= 0.1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Jog.Acc:= 1;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Jog.Velocity:= P4_Etiketovacka.PAR.ZdvihAplikatora_JoggRychlost;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Command.TorqueLimitation:= TRUE;
 		

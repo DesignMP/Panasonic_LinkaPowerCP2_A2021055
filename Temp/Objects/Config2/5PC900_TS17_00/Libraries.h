@@ -1,20 +1,24 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _LIBRARIES_20220228151558_
-#define _LIBRARIES_20220228151558_
+#ifndef _LIBRARIES_20220307155248_
+#define _LIBRARIES_20220307155248_
 
 __asm__(".section \".plc\"");
 
 /* Used IEC files */
-__asm__(".ascii \"iecfile \\\"Logical/Libraries/Runtime/runtime.var\\\" scope \\\"global\\\"\\n\"");
-__asm__(".ascii \"iecfile \\\"Logical/Libraries/Runtime/runtime.typ\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/Runtime/runtime.fun\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/Runtime/runtime.typ\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/Runtime/runtime.var\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/Operator/operator.fun\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/Operator/operator.typ\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/Operator/operator.var\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/AsIecCon/AsIecCon.fun\\\" scope \\\"global\\\"\\n\"");
-__asm__(".ascii \"iecfile \\\"Logical/Libraries/astime/astime.var\\\" scope \\\"global\\\"\\n\"");
-__asm__(".ascii \"iecfile \\\"Logical/Libraries/astime/astime.typ\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/AsIecCon/AsIecCon.typ\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/AsIecCon/AsIecCon.var\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/astime/astime.fun\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/astime/astime.typ\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/astime/astime.var\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/standard/standard.fun\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/standard/standard.typ\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/standard/standard.var\\\" scope \\\"global\\\"\\n\"");
@@ -31,10 +35,6 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/sys_lib/sys_lib.var\\\" scope \\
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/SC/Types.typ\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/SC/Constants.var\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/SC/SC.fun\\\" scope \\\"global\\\"\\n\"");
-__asm__(".ascii \"iecfile \\\"Logical/Libraries/McBase/McBase.typ\\\" scope \\\"global\\\"\\n\"");
-__asm__(".ascii \"iecfile \\\"Logical/Libraries/McBase/McBase.fun\\\" scope \\\"global\\\"\\n\"");
-__asm__(".ascii \"iecfile \\\"Logical/Libraries/McBase/McBase.var\\\" scope \\\"global\\\"\\n\"");
-__asm__(".ascii \"iecfile \\\"Logical/Libraries/McBase/McBaseCfg.typ\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/AsZip/AsZip.fun\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/AsZip/AsZip.typ\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/AsZip/AsZip.var\\\" scope \\\"global\\\"\\n\"");
@@ -90,6 +90,10 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/CoTrace/CoTrace.var\\\" scope \\
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/ScrewLoad/Types.typ\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/ScrewLoad/Constants.var\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/ScrewLoad/ScrewLoad.fun\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/McBase/McBase.typ\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/McBase/McBase.fun\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/McBase/McBase.var\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/McBase/McBaseCfg.typ\\\" scope \\\"global\\\"\\n\"");
 
 /* Exported library functions and function blocks */
 #ifdef _RUNTIME_EXPORT
@@ -98,10 +102,25 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/ScrewLoad/ScrewLoad.fun\\\" scop
 	__asm__(".ascii \"plcexport \\\"rf_trig\\\" FUB\\n\"");
 	__asm__(".ascii \"plcexport \\\"GetTime\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"SFCActionControl\\\" FUB\\n\"");
+	__asm__(".ascii \"plcexport \\\"SFCAC2\\\" FUB\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealTan\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealAtan\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealAsin\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealAcos\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealExp\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealLn\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealLog\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealExpt\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealAbs\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealSin\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealCos\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"RealSqrt\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"SFCAC3\\\" FUB\\n\"");
 #endif
 #ifdef _OPERATOR_EXPORT
 	__asm__(".ascii \"plcexport \\\"SIZEOF\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"ADR\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"ADRINST\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"SHR\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"ROR\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"ROL\\\" FUN\\n\"");
@@ -511,6 +530,7 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/ScrewLoad/ScrewLoad.fun\\\" scop
 	__asm__(".ascii \"plcexport \\\"DiffDT\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"TimeDeviceGetInfo\\\" FUB\\n\"");
 	__asm__(".ascii \"plcexport \\\"DstGetInfo\\\" FUB\\n\"");
+	__asm__(".ascii \"plcexport \\\"DstGetInfoDT\\\" FUB\\n\"");
 #endif
 #ifdef _STANDARD_EXPORT
 	__asm__(".ascii \"plcexport \\\"RF_TRIG\\\" FUB\\n\"");
@@ -541,6 +561,7 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/ScrewLoad/ScrewLoad.fun\\\" scop
 #ifdef _ASBRSTR_EXPORT
 	__asm__(".ascii \"plcexport \\\"brsftoa\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"brsatof\\\" FUN\\n\"");
+	__asm__(".ascii \"plcexport \\\"brsatod\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"brsitoa\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"brsatoi\\\" FUN\\n\"");
 	__asm__(".ascii \"plcexport \\\"brsmemset\\\" FUN\\n\"");
@@ -687,11 +708,6 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/ScrewLoad/ScrewLoad.fun\\\" scop
 #ifdef _SC_EXPORT
 	__asm__(".ascii \"plcexport \\\"SequenceControl\\\" FUN\\n\"");
 #endif
-#ifdef _MCBASE_EXPORT
-	__asm__(".ascii \"plcexport \\\"MC_BR_ProcessConfig\\\" FUB\\n\"");
-	__asm__(".ascii \"plcexport \\\"MC_BR_ProcessParam\\\" FUB\\n\"");
-	__asm__(".ascii \"plcexport \\\"MC_BR_GetCoordSystemIdent\\\" FUB\\n\"");
-#endif
 #ifdef _ASZIP_EXPORT
 	__asm__(".ascii \"plcexport \\\"zipArchive\\\" FUB\\n\"");
 	__asm__(".ascii \"plcexport \\\"zipExtract\\\" FUB\\n\"");
@@ -829,9 +845,14 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/ScrewLoad/ScrewLoad.fun\\\" scop
 #ifdef _SCREWLOAD_EXPORT
 	__asm__(".ascii \"plcexport \\\"ScrewLoading\\\" FUB\\n\"");
 #endif
+#ifdef _MCBASE_EXPORT
+	__asm__(".ascii \"plcexport \\\"MC_BR_ProcessConfig\\\" FUB\\n\"");
+	__asm__(".ascii \"plcexport \\\"MC_BR_ProcessParam\\\" FUB\\n\"");
+	__asm__(".ascii \"plcexport \\\"MC_BR_GetCoordSystemIdent\\\" FUB\\n\"");
+#endif
 
 __asm__(".previous");
 
 
-#endif /* _LIBRARIES_20220228151558_ */
+#endif /* _LIBRARIES_20220307155248_ */
 

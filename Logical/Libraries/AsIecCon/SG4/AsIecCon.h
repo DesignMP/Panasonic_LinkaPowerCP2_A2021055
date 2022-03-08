@@ -1,55 +1,54 @@
-/* Automation Studio Generated Header File, Format Version 1.00 */
-/* do not change */
-#ifndef ASIECCON_H_
-#define ASIECCON_H_
+/* Automation Studio generated header file */
+/* Do not edit ! */
+
+#ifndef _ASIECCON_
+#define _ASIECCON_
 #ifdef __cplusplus
-extern "C" {
+extern "C" 
+{
 #endif
-                                           
 
-#include <bur/plc.h>
+#include <bur/plctypes.h>
 
+#ifndef _BUR_PUBLIC
+#define _BUR_PUBLIC
+#endif
 
-
-/* Constants */
-
-
-/* Datatypes */
-
-
-/* Datatypes of function blocks */
 
 
 /* Prototyping of functions and function blocks */
-signed short H_TO_NINT(signed short IN);
-unsigned short H_TO_NUINT(unsigned short IN);
-signed long H_TO_NDINT(signed long IN);
-unsigned long H_TO_NUDINT(unsigned long IN);
-float H_TO_NREAL(float IN);
-plctime H_TO_NTIME(plctime IN);
-DATE_AND_TIME H_TO_NDT(DATE_AND_TIME IN);
-DATE H_TO_NDATE(DATE IN);
-TOD H_TO_NTOD(TOD IN);
-signed short N_TO_HINT(signed short IN);
-unsigned short N_TO_HUINT(unsigned short IN);
-signed long N_TO_HDINT(signed long IN);
-unsigned long N_TO_HUDINT(unsigned long IN);
-float N_TO_HREAL(float IN);
-plctime N_TO_HTIME(plctime IN);
-DATE_AND_TIME N_TO_HDT(DATE_AND_TIME IN);
-DATE N_TO_HDATE(DATE IN);
-TOD N_TO_HTOD(TOD IN);
-signed short swapINT(signed short IN);
-unsigned short swapUINT(unsigned short IN);
-WORD swapWORD(WORD IN);
-signed long swapDINT(signed long IN);
-unsigned long swapUDINT(unsigned long IN);
-DWORD swapDWORD(DWORD IN);
-TIME swapTIME(TIME IN);
-DATE_AND_TIME swapDT(DATE_AND_TIME IN);
-DATE swapDATE(DATE IN);
-TOD swapTOD(TOD IN);
-float swapREAL(float IN);
+_BUR_PUBLIC signed short H_TO_NINT(signed short IN);
+_BUR_PUBLIC unsigned short H_TO_NUINT(unsigned short IN);
+_BUR_PUBLIC signed long H_TO_NDINT(signed long IN);
+_BUR_PUBLIC unsigned long H_TO_NUDINT(unsigned long IN);
+_BUR_PUBLIC float H_TO_NREAL(float IN);
+_BUR_PUBLIC double H_TO_NLREAL(double IN);
+_BUR_PUBLIC plctime H_TO_NTIME(plctime IN);
+_BUR_PUBLIC DATE_AND_TIME H_TO_NDT(DATE_AND_TIME IN);
+_BUR_PUBLIC DATE H_TO_NDATE(DATE IN);
+_BUR_PUBLIC TOD H_TO_NTOD(TOD IN);
+_BUR_PUBLIC signed short N_TO_HINT(signed short IN);
+_BUR_PUBLIC unsigned short N_TO_HUINT(unsigned short IN);
+_BUR_PUBLIC signed long N_TO_HDINT(signed long IN);
+_BUR_PUBLIC unsigned long N_TO_HUDINT(unsigned long IN);
+_BUR_PUBLIC float N_TO_HREAL(float IN);
+_BUR_PUBLIC double N_TO_HLREAL(double IN);
+_BUR_PUBLIC plctime N_TO_HTIME(plctime IN);
+_BUR_PUBLIC DATE_AND_TIME N_TO_HDT(DATE_AND_TIME IN);
+_BUR_PUBLIC DATE N_TO_HDATE(DATE IN);
+_BUR_PUBLIC TOD N_TO_HTOD(TOD IN);
+_BUR_PUBLIC signed short swapINT(signed short IN);
+_BUR_PUBLIC unsigned short swapUINT(unsigned short IN);
+_BUR_PUBLIC WORD swapWORD(WORD IN);
+_BUR_PUBLIC signed long swapDINT(signed long IN);
+_BUR_PUBLIC unsigned long swapUDINT(unsigned long IN);
+_BUR_PUBLIC DWORD swapDWORD(DWORD IN);
+_BUR_PUBLIC TIME swapTIME(TIME IN);
+_BUR_PUBLIC DATE_AND_TIME swapDT(DATE_AND_TIME IN);
+_BUR_PUBLIC DATE swapDATE(DATE IN);
+_BUR_PUBLIC TOD swapTOD(TOD IN);
+_BUR_PUBLIC float swapREAL(float IN);
+_BUR_PUBLIC double swapLREAL(double IN);
 
 /* The interface declarations of the AsIecCon functions are not included here
  * because they are inline in IEC languages. The x_TO_STRING and the
@@ -58,5 +57,5 @@ float swapREAL(float IN);
 #ifdef __cplusplus
 };
 #endif
-#endif /* ASIECCON_H_ */
+#endif /* _ASIECCON_ */
 

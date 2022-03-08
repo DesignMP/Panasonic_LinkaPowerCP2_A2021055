@@ -2,8 +2,9 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="Package">P2_ProfinetMaster</Object>
     <Object Type="Package">P3_Profinet</Object>
     <Object Type="Package">5ACPCI_XPNM_00</Object>
+    <Object Type="Package">X20IF10E1_1</Object>
+    <Object Type="Package">X20IF10E1_1a</Object>
   </Objects>
 </Package>

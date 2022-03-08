@@ -98,7 +98,7 @@ PROGRAM _CYCLIC
 			TestovaciKus:= FALSE;
 			P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG:= FALSE;
             
-			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND NOT P2_Pracovisko.STAV.Porucha_ST1 THEN
+			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND P2_Pracovisko.STAV.HardwareZaklTesnenia_OK AND NOT P2_Pracovisko.STAV.Porucha_ST1 THEN
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 1;
 			END_IF

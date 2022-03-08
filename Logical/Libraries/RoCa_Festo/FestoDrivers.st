@@ -233,12 +233,6 @@ FUNCTION_BLOCK ServoDriver
 		Status.Ready:=0;
 	END_IF
 		
-	//In position2
-	IF (Parameters.Position>=Status.ActPosition-0.05) AND (Parameters.Position<=Status.ActPosition+0.05)THEN
-		Status.InPosition2:=1;
-	ELSE
-		Status.InPosition2:=0;
-	END_IF 
 	
 	
 	//krokovy automat

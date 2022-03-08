@@ -8,13 +8,13 @@
     <Connection Connector="ETH2" TargetModule="P1_IOmodul_PowerlinkMaster" TargetConnector="PLK1">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
-    <Connection Connector="ETH5" TargetModule="P2_Powerlink" TargetConnector="PLK2">
-      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
-    </Connection>
     <Connection Connector="ETH6" TargetModule="P3_Powerlink" TargetConnector="PLK2">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
     <Connection Connector="ETH7" TargetModule="P4_IOmodul_PowerlinkMaster" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="ETH8" TargetModule="X20BC1083" TargetConnector="PLK1">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
   </Module>
@@ -38,7 +38,7 @@
   <Module Name="5ACPCI_XPNM_00" Type="5ACPCI.XPNM-00" Version="1.3.1.0">
     <Connection Connector="SL" TargetModule="5AC901.BX02-00" TargetConnector="SL2" />
     <Connector Name="IF1">
-      <Parameter ID="DtmId" Value="aab3c360-8630-4ec4-ba0c-dd0715ea937a" />
+      <Parameter ID="DtmId" Value="76d38239-9afe-4cd3-9f29-6d67ad09a703" />
     </Connector>
     <Parameter ID="ConfigFile" Value="5ACPCI_XPNM_00.dtm" />
     <Parameter ID="ConfigModule" Value="asnxdb3" />
@@ -47,20 +47,20 @@
   <Module Name="5LS182.6-2" Type="5LS182.6-2" Version="1.9.0.0">
     <Connection Connector="SL" TargetModule="5AC901.BX02-00" TargetConnector="SL1" />
     <Connector Name="IF1">
-      <Parameter ID="EplNatSubnet" Value="192.168.102.0" />
+      <Parameter ID="MtuSize" Value="800" />
     </Connector>
     <Parameter ID="Supervision" Value="off" />
   </Module>
   <Module Name="5PC900_TS17_00" Type="5PC900.TS17-00" Version="2.1.0.0">
     <Connection Connector="SY" TargetModule="5PC910.SX02-00" TargetConnector="SY1" />
-    <Parameter ID="ConfigurationID" Value="PrazdnyProject_Config2" />
+    <Parameter ID="ConfigurationID" Value="LinkaPowerCP2_A2021055" />
     <Parameter ID="UserPartitionSize" Value="500" />
     <Parameter ID="UserRamDevice" Value="PCI.1.LS182.SRAM" />
     <Parameter ID="UserRamSize" Value="10000" />
     <Parameter ID="RemMemDevice" Value="PCI.1.LS182.SRAM" />
     <Parameter ID="RemMemSize" Value="54000" />
     <Parameter ID="PermanentPvSize" Value="20000" />
-    <Parameter ID="RemanentGlobalPvSize" Value="4096" />
+    <Parameter ID="RemanentGlobalPvSize" Value="6027" />
     <Parameter ID="VolatileGlobalPvSize" Value="300000" />
     <Parameter ID="RebootReset" Value="1" />
     <Parameter ID="TimerDeviceType" Value="EPLX2X" />
@@ -68,6 +68,7 @@
     <Parameter ID="TaskClassIdleTime" Value="2000" />
     <Parameter ID="Cyclic1Duration" Value="4000" />
     <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic2Duration" Value="10000" />
     <Parameter ID="Cyclic2Tolerance" Value="0" />
     <Parameter ID="Cyclic3Tolerance" Value="0" />
     <Parameter ID="Cyclic5Duration" Value="250000" />
@@ -115,6 +116,7 @@
       <Parameter ID="Mode" Value="Manual" />
       <Parameter ID="InternetAddress" Value="192.168.1.2" />
       <Parameter ID="SubnetMask" Value="255.255.255.0" />
+      <Parameter ID="ActivateSnmp" Value="2" />
     </Connector>
     <Connector Name="IF4">
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
@@ -136,13 +138,21 @@
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
     </Connector>
   </Module>
-  <Module Name="P1_CAM_3" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p1-wenglor-camera3">
+  <Module Name="P1_CAM_3" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p1-smartkamera-cam3">
     <Connection Connector="PN1" TargetModule="P1_IOmaster" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="9a0b60b8-4e07-4a57-9bab-d0c5e4369e7e" />
+    <Parameter ID="DtmId" Value="8d799445-c4b4-474a-8d2d-bad427bf2790" />
+    <Group ID="ChannelBlocks_f4f78ce5-57c8-4fd1-be47-6a5ccd450a3d" Description="Project Number &lt;Slot 1&gt;" />
+    <Group ID="IO_OutputImage_f4f78ce5-57c8-4fd1-be47-6a5ccd450a3d" Description="1 Byte(s)" />
+    <Group ID="ChannelBlocks_d2ed86b4-49a6-4cf8-937e-adc73b72ce3f" Description="State &lt;Slot 2&gt;" />
+    <Group ID="IO_InputImage_d2ed86b4-49a6-4cf8-937e-adc73b72ce3f" Description="4 Byte(s)" />
   </Module>
-  <Module Name="P1_CAM_5" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p1-wenglor-camera5">
+  <Module Name="P1_CAM_5" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p1-smartkamera-cam5">
     <Connection Connector="PN1" TargetModule="P1_CAM_3" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="70f7d6a3-254d-427b-9c94-f5477c1bcfa2" />
+    <Parameter ID="DtmId" Value="4602566f-a5b9-483d-9f8a-b66576bbf8d4" />
+    <Group ID="ChannelBlocks_a30acc6b-20d8-4a21-88b2-4ee25b1f7fa2" Description="Project Number &lt;Slot 1&gt;" />
+    <Group ID="IO_OutputImage_a30acc6b-20d8-4a21-88b2-4ee25b1f7fa2" Description="1 Byte(s)" />
+    <Group ID="ChannelBlocks_aa01108e-61d6-4909-8c56-bda148f5ace1" Description="State &lt;Slot 2&gt;" />
+    <Group ID="IO_InputImage_aa01108e-61d6-4909-8c56-bda148f5ace1" Description="4 Byte(s)" />
   </Module>
   <Module Name="P1_HMI_OP1" Type="6PPT50.156B-10B" Version="1.3.8.0">
     <Connection Connector="ETH1" TargetModule="0AC808.9a" TargetConnector="ETH8" NodeNumber="100">
@@ -156,9 +166,9 @@
     <Parameter ID="PasswordService" Value="" />
     <Parameter ID="VncRefreshRate" Value="100" />
   </Module>
-  <Module Name="P1_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" Version="1.0.0" OrderNumber="CPX-AP-I V1" VendorAddress="p1-festo-io-master">
+  <Module Name="P1_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" Version="1.0.0" OrderNumber="CPX-AP-I V1" VendorAddress="p1-io-master">
     <Connection Connector="PN1" TargetModule="P1_SkrutkovackaM4" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="10172aca-de15-4f55-995e-bcfe9418220e" />
+    <Parameter ID="DtmId" Value="26335250-a646-4198-ac36-ce62f6349f6b" />
   </Module>
   <Module Name="P1_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" Version="1.0" OrderNumber="UR20-FBC-PL">
     <Connection Connector="PLK1" TargetModule="0AC808.9" TargetConnector="ETH2" NodeNumber="1">
@@ -180,106 +190,54 @@
   </Module>
   <Module Name="P1_Robot_IRB120_R1" Type="FBD.Hilscher.PNIOGenDevDTM2.ENERGY V1.4" Version="1.4" OrderNumber="ENERGY V1.4" VendorAddress="p1-robot">
     <Connection Connector="PN1" TargetModule="P2_CAM_9" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="9b5c6205-e1e2-4ab0-9c49-5aadc9f4165c" />
-    <Group ID="ChannelBlocks_93a54106-3146-4f68-9b34-4d8abc4ec544" Description="DI 64 bytes &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_93a54106-3146-4f68-9b34-4d8abc4ec544" Description="64 Byte(s)" />
-    <Group ID="ChannelBlocks_2737e086-f9d2-4305-8922-167610225185" Description="DO 64 bytes &lt;Slot 2&gt;" />
-    <Group ID="IO_OutputImage_2737e086-f9d2-4305-8922-167610225185" Description="64 Byte(s)" />
+    <Parameter ID="DtmId" Value="ffad80e9-4c1f-434b-8d20-57cd6186bb93" />
   </Module>
   <Module Name="P1_ServoManipOsX" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p1-manipul-osx">
     <Connection Connector="PN1" TargetModule="P1_ServoZdvihuVstupVytahu" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="30e85557-93e8-4a53-a769-0d5659fa393d" />
-    <Group ID="ChannelBlocks_8ccef0ab-b0cd-44c5-8be6-f92fcc3e2ac2" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_8ccef0ab-b0cd-44c5-8be6-f92fcc3e2ac2" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_8ccef0ab-b0cd-44c5-8be6-f92fcc3e2ac2" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="3b8b80c9-c9a8-49e1-b252-8891bb1100aa" />
+    <Group ID="ChannelBlocks_841c31af-c5cc-482c-aab1-93e56df835a2" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_841c31af-c5cc-482c-aab1-93e56df835a2" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_841c31af-c5cc-482c-aab1-93e56df835a2" Description="56 Byte(s)" />
   </Module>
   <Module Name="P1_ServoManipOsY" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p1-manipul-osy">
     <Connection Connector="PN1" TargetModule="P1_ServoManipOsX" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="677b42fa-7522-44f5-8ca9-ca3b86a3b962" />
-    <Group ID="ChannelBlocks_d6f1d5a1-cf0a-45c3-baf0-3f8807159a79" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_d6f1d5a1-cf0a-45c3-baf0-3f8807159a79" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_d6f1d5a1-cf0a-45c3-baf0-3f8807159a79" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="bdc1028f-d094-45b0-954d-634983a0f7f9" />
+    <Group ID="ChannelBlocks_a8f47e1f-c8af-4056-a1d0-4e13a1618061" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_a8f47e1f-c8af-4056-a1d0-4e13a1618061" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_a8f47e1f-c8af-4056-a1d0-4e13a1618061" Description="56 Byte(s)" />
   </Module>
   <Module Name="P1_ServoManipOsZ_M4" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p1-manipul-osz-m4">
     <Connection Connector="PN1" TargetModule="P1_ServoManipOsZ_M5" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="7501cba8-6dc1-40b1-81fb-dbd8b7f3213f" />
-    <Group ID="ChannelBlocks_c259ba91-dd6c-4a73-9868-26422c3f93b8" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_c259ba91-dd6c-4a73-9868-26422c3f93b8" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_c259ba91-dd6c-4a73-9868-26422c3f93b8" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="b34b2cf5-2622-409a-ba53-84b8b2d860e7" />
+    <Group ID="ChannelBlocks_e340b0e3-d55d-480c-8063-13c30a870f07" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_e340b0e3-d55d-480c-8063-13c30a870f07" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_e340b0e3-d55d-480c-8063-13c30a870f07" Description="56 Byte(s)" />
   </Module>
   <Module Name="P1_ServoManipOsZ_M5" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p1-manipul-osz-m5">
     <Connection Connector="PN1" TargetModule="P1_ServoManipOsY" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="9859863a-5eef-436f-b13b-97638947e4ce" />
-    <Group ID="ChannelBlocks_045ff401-30a1-4d1a-8442-302823244b5a" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_045ff401-30a1-4d1a-8442-302823244b5a" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_045ff401-30a1-4d1a-8442-302823244b5a" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="3c3119a3-e572-466c-91f5-9eeb5384a25d" />
+    <Group ID="ChannelBlocks_0dcb6aa9-e4c1-49dc-b5a6-4b4042743af0" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_0dcb6aa9-e4c1-49dc-b5a6-4b4042743af0" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_0dcb6aa9-e4c1-49dc-b5a6-4b4042743af0" Description="56 Byte(s)" />
   </Module>
   <Module Name="P1_ServoZdvihuVstupVytahu" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p1-vytah">
     <Connection Connector="PN1" TargetModule="5ACPCI_XPNM_00" TargetConnector="IF1" />
-    <Parameter ID="DtmId" Value="c22a231f-2843-40a8-ae10-4157c153cae8" />
-    <Group ID="ChannelBlocks_c92e2b32-7a4e-4ce9-b8b9-fac205496fc1" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_c92e2b32-7a4e-4ce9-b8b9-fac205496fc1" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_c92e2b32-7a4e-4ce9-b8b9-fac205496fc1" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="1e8bc8b4-2ea7-49ba-9a3f-71fb342f25f8" />
+    <Group ID="ChannelBlocks_d00289da-b519-4d47-8b7e-b48fee13f8cb" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_d00289da-b519-4d47-8b7e-b48fee13f8cb" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_d00289da-b519-4d47-8b7e-b48fee13f8cb" Description="56 Byte(s)" />
   </Module>
   <Module Name="P1_SkrutkovackaK30" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="p1-skrutkovacka-k30">
     <Connection Connector="PN1" TargetModule="P1_Robot_IRB120_R1" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="e8dad3d3-ee2c-4957-920c-90b99cdc95f5" />
-    <Group ID="ChannelBlocks_0ca40b54-8e09-43f3-8502-9acee4f7958e" Description="Input 4 word &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_0ca40b54-8e09-43f3-8502-9acee4f7958e" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_fe5f6e56-8996-460e-ac47-417e3fcc9686" Description="Input 4 word &lt;Slot 2&gt;" />
-    <Group ID="IO_InputImage_fe5f6e56-8996-460e-ac47-417e3fcc9686" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_5a821824-9cd3-4518-9d90-94f963d9f2d1" Description="Input 4 word &lt;Slot 3&gt;" />
-    <Group ID="IO_InputImage_5a821824-9cd3-4518-9d90-94f963d9f2d1" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_ab52e631-966b-4fe1-b706-be8e51f75407" Description="Input 4 word &lt;Slot 4&gt;" />
-    <Group ID="IO_InputImage_ab52e631-966b-4fe1-b706-be8e51f75407" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_5a852d66-306f-4aab-b19a-d9a24af9569b" Description="Output 4 word &lt;Slot 5&gt;" />
-    <Group ID="IO_OutputImage_5a852d66-306f-4aab-b19a-d9a24af9569b" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_edda72b9-ea6c-40c9-9d63-74160a7c9194" Description="Output 4 word &lt;Slot 6&gt;" />
-    <Group ID="IO_OutputImage_edda72b9-ea6c-40c9-9d63-74160a7c9194" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_743d574f-4909-4dcd-8d41-367d385be83d" Description="Output 4 word &lt;Slot 7&gt;" />
-    <Group ID="IO_OutputImage_743d574f-4909-4dcd-8d41-367d385be83d" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_cc00a39c-0608-49c1-bb84-ab471741404a" Description="Output 4 word &lt;Slot 8&gt;" />
-    <Group ID="IO_OutputImage_cc00a39c-0608-49c1-bb84-ab471741404a" Description="8 Byte(s)" />
+    <Parameter ID="DtmId" Value="89c9f7b4-c496-442a-8a9a-464c80cfe258" />
   </Module>
   <Module Name="P1_SkrutkovackaM4" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="p1-skrutkovacka-m4">
     <Connection Connector="PN1" TargetModule="P1_SkrutkovackaM5" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="f64ed5be-4aa8-458e-86fe-7d42286ab1f4" />
-    <Group ID="ChannelBlocks_106b90cd-0c24-48cc-90e4-c14bcb6e0ce9" Description="Input 4 word &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_106b90cd-0c24-48cc-90e4-c14bcb6e0ce9" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_338ecfbd-c8fa-445e-bb3c-34bb5db72249" Description="Input 4 word &lt;Slot 2&gt;" />
-    <Group ID="IO_InputImage_338ecfbd-c8fa-445e-bb3c-34bb5db72249" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_c1b7011b-6f5f-4651-b47b-c44ab678471b" Description="Input 4 word &lt;Slot 3&gt;" />
-    <Group ID="IO_InputImage_c1b7011b-6f5f-4651-b47b-c44ab678471b" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_ef76cbb1-2e30-495f-9c1a-424d866e39c7" Description="Input 4 word &lt;Slot 4&gt;" />
-    <Group ID="IO_InputImage_ef76cbb1-2e30-495f-9c1a-424d866e39c7" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_fb2852b6-9f3f-4b11-89f8-86edb49caa70" Description="Output 4 word &lt;Slot 5&gt;" />
-    <Group ID="IO_OutputImage_fb2852b6-9f3f-4b11-89f8-86edb49caa70" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_ea55bbbb-1f72-43b6-a48e-5bbc1fb64c45" Description="Output 4 word &lt;Slot 6&gt;" />
-    <Group ID="IO_OutputImage_ea55bbbb-1f72-43b6-a48e-5bbc1fb64c45" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_d04ec4e8-dac2-4179-bd04-0332ec938997" Description="Output 4 word &lt;Slot 7&gt;" />
-    <Group ID="IO_OutputImage_d04ec4e8-dac2-4179-bd04-0332ec938997" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_197bf685-df9c-4da4-a88a-b4878a29f746" Description="Output 4 word &lt;Slot 8&gt;" />
-    <Group ID="IO_OutputImage_197bf685-df9c-4da4-a88a-b4878a29f746" Description="8 Byte(s)" />
+    <Parameter ID="DtmId" Value="548d92b6-b665-43fe-8a4a-5242e66affb7" />
   </Module>
   <Module Name="P1_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="p1-skrutkovacka-m5">
     <Connection Connector="PN1" TargetModule="P1_SkrutkovackaK30" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="db2a152e-05dc-4e2b-bd32-b9ef44a53057" />
-    <Group ID="ChannelBlocks_d5701e32-bf1a-4ffe-abae-f877da79b6ab" Description="Input 4 word &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_d5701e32-bf1a-4ffe-abae-f877da79b6ab" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_d30576f8-c417-4fbc-a5f6-437db0e2c225" Description="Input 4 word &lt;Slot 2&gt;" />
-    <Group ID="IO_InputImage_d30576f8-c417-4fbc-a5f6-437db0e2c225" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_020f7c8d-3637-46b4-a34b-69b3214df846" Description="Input 4 word &lt;Slot 3&gt;" />
-    <Group ID="IO_InputImage_020f7c8d-3637-46b4-a34b-69b3214df846" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_6e703f2f-6f44-4e03-967b-762ad75df87e" Description="Input 4 word &lt;Slot 4&gt;" />
-    <Group ID="IO_InputImage_6e703f2f-6f44-4e03-967b-762ad75df87e" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_cae9b84b-9aa7-4af4-b7b0-96de129aac8b" Description="Output 4 word &lt;Slot 5&gt;" />
-    <Group ID="IO_OutputImage_cae9b84b-9aa7-4af4-b7b0-96de129aac8b" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_c45c3cdb-f4b6-4162-ac15-ac11fd13c02b" Description="Output 4 word &lt;Slot 6&gt;" />
-    <Group ID="IO_OutputImage_c45c3cdb-f4b6-4162-ac15-ac11fd13c02b" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_25f1a241-26bd-4931-8b46-5860cbc3c8af" Description="Output 4 word &lt;Slot 7&gt;" />
-    <Group ID="IO_OutputImage_25f1a241-26bd-4931-8b46-5860cbc3c8af" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_45c04694-345c-40b7-bb8d-9ab050eaa631" Description="Output 4 word &lt;Slot 8&gt;" />
-    <Group ID="IO_OutputImage_45c04694-345c-40b7-bb8d-9ab050eaa631" Description="8 Byte(s)" />
+    <Parameter ID="DtmId" Value="a1689f55-0b66-4aa4-8904-dccbfd8c194d" />
   </Module>
   <Module Name="P1_VentilovyTerminal_VT1" Type="FBE.000002EE_EB80" Version="1.0" OrderNumber="EB80">
     <Connection Connector="PLK1" TargetModule="P1_IOmodul_PowerlinkMaster" TargetConnector="PLK2" NodeNumber="2">
@@ -287,13 +245,21 @@
     </Connection>
     <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="P2_CAM_8" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p2-wenglor-camera8">
+  <Module Name="P2_CAM_8" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p2-smartkamera-cam8">
     <Connection Connector="PN1" TargetModule="P2_IOmaster" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="85ebd396-7e7a-4cb7-bee3-9ca9df78139f" />
+    <Parameter ID="DtmId" Value="786a77e4-dda0-4751-ab15-cbad1af187ad" />
+    <Group ID="ChannelBlocks_5527bd94-b227-4126-a6b0-11d6e1c4501f" Description="Project Number &lt;Slot 1&gt;" />
+    <Group ID="IO_OutputImage_5527bd94-b227-4126-a6b0-11d6e1c4501f" Description="1 Byte(s)" />
+    <Group ID="ChannelBlocks_3e0495dd-672f-4b30-808f-875ee42918c3" Description="State &lt;Slot 2&gt;" />
+    <Group ID="IO_InputImage_3e0495dd-672f-4b30-808f-875ee42918c3" Description="4 Byte(s)" />
   </Module>
-  <Module Name="P2_CAM_9" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p2-wenglor-camera9">
+  <Module Name="P2_CAM_9" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p2-smartkamera-cam9">
     <Connection Connector="PN1" TargetModule="P2_CAM_8" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="b981144f-c0d3-49db-bc60-6866b0f3dd66" />
+    <Parameter ID="DtmId" Value="36bd1365-8543-4c1b-855f-fc2cd9911a03" />
+    <Group ID="ChannelBlocks_cb980228-8f70-4d81-8c21-4940e49181e0" Description="Project Number &lt;Slot 1&gt;" />
+    <Group ID="IO_OutputImage_cb980228-8f70-4d81-8c21-4940e49181e0" Description="1 Byte(s)" />
+    <Group ID="ChannelBlocks_aaebd359-6cae-4025-9eba-a6d77919f9bb" Description="State &lt;Slot 2&gt;" />
+    <Group ID="IO_InputImage_aaebd359-6cae-4025-9eba-a6d77919f9bb" Description="4 Byte(s)" />
   </Module>
   <Module Name="P2_HMI_OP2" Type="6PPT50.156B-10B" Version="1.3.8.0">
     <Connection Connector="ETH1" TargetModule="0AC808.9a" TargetConnector="ETH7" NodeNumber="101">
@@ -307,12 +273,12 @@
     <Parameter ID="PasswordService" Value="" />
     <Parameter ID="VncRefreshRate" Value="100" />
   </Module>
-  <Module Name="P2_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" Version="1.0.0" OrderNumber="CPX-AP-I V1" VendorAddress="p2-festo-io-master">
+  <Module Name="P2_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" Version="1.0.0" OrderNumber="CPX-AP-I V1" VendorAddress="p2-io-master">
     <Connection Connector="PN1" TargetModule="P2_SafetyMaster" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="b6bc1d65-3eba-449e-8a86-d1f18daae4bc" />
+    <Parameter ID="DtmId" Value="de8a91be-700f-434a-99bc-d64624b0b07f" />
   </Module>
   <Module Name="P2_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" Version="1.0" OrderNumber="UR20-FBC-PL">
-    <Connection Connector="PLK1" TargetModule="P2_Powerlink" TargetConnector="PLK1" NodeNumber="4">
+    <Connection Connector="PLK1" TargetModule="X20BC1083" TargetConnector="PLK2" NodeNumber="4">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
     <Connection Connector="PLK2" TargetModule="P2_VentilovyTerminal_VT2" TargetConnector="PLK1" NodeNumber="4">
@@ -331,7 +297,7 @@
   </Module>
   <Module Name="P2_MaticovackaM4" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="p2-maticovacka-m4">
     <Connection Connector="PN1" TargetModule="P2_Robot_IRB1200" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="a45d510b-005c-4b07-b383-ca16109fd875" />
+    <Parameter ID="DtmId" Value="116eb687-be9b-482d-9b09-1d5e75e34977" />
     <Group ID="ChannelBlocks_0ca40b54-8e09-43f3-8502-9acee4f7958e" Description="Input 4 word &lt;Slot 1&gt;" />
     <Group ID="IO_InputImage_0ca40b54-8e09-43f3-8502-9acee4f7958e" Description="8 Byte(s)" />
     <Group ID="ChannelBlocks_fe5f6e56-8996-460e-ac47-417e3fcc9686" Description="Input 4 word &lt;Slot 2&gt;" />
@@ -349,87 +315,63 @@
     <Group ID="ChannelBlocks_cc00a39c-0608-49c1-bb84-ab471741404a" Description="Output 4 word &lt;Slot 8&gt;" />
     <Group ID="IO_OutputImage_cc00a39c-0608-49c1-bb84-ab471741404a" Description="8 Byte(s)" />
   </Module>
-  <Module Name="P2_Napajanie" Type="X20PS9400" Version="1.8.0.0">
-    <Connection Connector="SS1" TargetModule="X20TB12" TargetConnector="SS" />
-    <Connection Connector="PS" TargetModule="X20BB81" TargetConnector="PS1" />
-    <Parameter ID="Supervision" Value="off" />
-  </Module>
-  <Module Name="P2_Powerlink" Type="X20BC1083" Version="2.14.0.0">
-    <Connection Connector="PLK1" TargetModule="P2_IOmodul_PowerlinkMaster" TargetConnector="PLK1" NodeNumber="3">
-      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
-    </Connection>
-    <Connection Connector="PLK2" TargetModule="0AC808.9" TargetConnector="ETH5" NodeNumber="3">
-      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
-    </Connection>
-    <Connection Connector="SL" TargetModule="X20BB81" TargetConnector="SL1" />
-    <Parameter ID="Supervision" Value="off" />
-  </Module>
-  <Module Name="P2_ProfinetMaster" Type="X20IF10E1-1" Version="1.4.0.0">
-    <Connection Connector="SS" TargetModule="X20BB81" TargetConnector="SS1" />
-    <Connector Name="IF1">
-      <Parameter ID="DtmId" Value="8e4ab405-43c1-4c27-85b4-f78adde7b77f" />
-    </Connector>
-    <Parameter ID="ConfigFile" Value="P2_ProfinetMaster.dtm" />
-    <Parameter ID="ConfigModule" Value="asnxdb1" />
-    <Parameter ID="CycleTime" Value="4000" />
-  </Module>
   <Module Name="P2_Robot_IRB1200" Type="FBD.Hilscher.PNIOGenDevDTM2.ENERGY V1.4" Version="1.4" OrderNumber="ENERGY V1.4" VendorAddress="p2-robot">
-    <Connection Connector="PN1" TargetModule="P2_ProfinetMaster" TargetConnector="IF1" />
-    <Parameter ID="DtmId" Value="61f98885-aef5-4a3c-8064-ad5ec41076f9" />
-    <Group ID="ChannelBlocks_8eed5672-7787-4322-8b8d-2adee5608db4" Description="DI 64 bytes &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_8eed5672-7787-4322-8b8d-2adee5608db4" Description="64 Byte(s)" />
-    <Group ID="ChannelBlocks_738cd7d3-ba74-4281-a52e-b166dfe4ef61" Description="DO 64 bytes &lt;Slot 2&gt;" />
-    <Group ID="IO_OutputImage_738cd7d3-ba74-4281-a52e-b166dfe4ef61" Description="64 Byte(s)" />
+    <Connection Connector="PN1" TargetModule="X20IF10E1_1" TargetConnector="IF1" />
+    <Parameter ID="DtmId" Value="1615462b-eef1-46bd-b4e5-023208b22c51" />
+    <Group ID="ChannelBlocks_10545005-9614-4f1b-90ac-a74d9c10d811" Description="DI 64 bytes &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_10545005-9614-4f1b-90ac-a74d9c10d811" Description="64 Byte(s)" />
+    <Group ID="ChannelBlocks_823047b6-b3c7-41e0-a388-b785996a061f" Description="DO 64 bytes &lt;Slot 2&gt;" />
+    <Group ID="IO_OutputImage_823047b6-b3c7-41e0-a388-b785996a061f" Description="64 Byte(s)" />
   </Module>
-  <Module Name="P2_SafetyMaster" Type="FBD.Hilscher.PNIOGenDevDTM2.PSR-M-GW-PN" Version="0.0.0.0" OrderNumber="PSR-M-GW-PN" VendorAddress="p2-safety-plc">
+  <Module Name="P2_SafetyMaster" Type="FBD.Hilscher.PNIOGenDevDTM2.PSR-M-GW-PN" Version="0.0.0.0" OrderNumber="PSR-M-GW-PN" VendorAddress="safety-plc">
     <Connection Connector="PN1" TargetModule="P2_SkrutkovackaM5" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="69faa73e-2e28-4998-adcc-314770856f4f" />
+    <Parameter ID="DtmId" Value="0034b300-4d3b-4f9f-aa36-3a223184c591" />
   </Module>
   <Module Name="P2_ServoManipOsX" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p2-manipul-osx">
     <Connection Connector="PN1" TargetModule="P1_ServoManipOsZ_M4" TargetConnector="PN2" NodeNumber="6" />
-    <Parameter ID="DtmId" Value="d4ef7493-b2a7-460c-9b8f-5637125f47f6" />
-    <Group ID="ChannelBlocks_9dfbb1ac-e1e4-4ffb-a979-97be49b95844" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_9dfbb1ac-e1e4-4ffb-a979-97be49b95844" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_9dfbb1ac-e1e4-4ffb-a979-97be49b95844" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="9eea25f9-2637-4fa4-9bb4-7ed4b9f271fa" />
+    <Group ID="ChannelBlocks_58535635-c5a9-4d0a-bbef-17b0cc2b7663" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_58535635-c5a9-4d0a-bbef-17b0cc2b7663" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_58535635-c5a9-4d0a-bbef-17b0cc2b7663" Description="56 Byte(s)" />
   </Module>
   <Module Name="P2_ServoManipOsY" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p2-manipul-osy">
     <Connection Connector="PN1" TargetModule="P2_ServoManipOsX" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="ee743a86-12af-4454-aaec-9210ffc266be" />
-    <Group ID="ChannelBlocks_2c5ce5ff-9127-423a-9719-764028f712e1" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_2c5ce5ff-9127-423a-9719-764028f712e1" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_2c5ce5ff-9127-423a-9719-764028f712e1" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="54f16a47-23be-483e-9f33-9030cfa5b8bf" />
+    <Group ID="ChannelBlocks_53adaec6-21f8-4b3c-9ac9-1f028448c1d9" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_53adaec6-21f8-4b3c-9ac9-1f028448c1d9" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_53adaec6-21f8-4b3c-9ac9-1f028448c1d9" Description="56 Byte(s)" />
   </Module>
   <Module Name="P2_ServoManipOsZ_M4" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p2-manipul-osz-m4">
     <Connection Connector="PN1" TargetModule="P2_ServoManipOsY" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="24e25e50-96ec-44a8-b438-cd7d66fb03a0" />
-    <Group ID="ChannelBlocks_f8ef61df-bc38-496a-a4a7-af7ae3b71113" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_f8ef61df-bc38-496a-a4a7-af7ae3b71113" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_f8ef61df-bc38-496a-a4a7-af7ae3b71113" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="53578ae0-a5b3-4651-a797-7b44f01986a1" />
+    <Group ID="ChannelBlocks_c38791b1-93cd-470c-a3c9-40f2aa160fb1" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_c38791b1-93cd-470c-a3c9-40f2aa160fb1" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_c38791b1-93cd-470c-a3c9-40f2aa160fb1" Description="56 Byte(s)" />
   </Module>
   <Module Name="P2_ServoZatlTesneniaPojazd" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p2-zakltesnenia-pojazd">
     <Connection Connector="PN1" TargetModule="P2_ServoZatlTesneniaZdvih" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="634fe5c4-f43d-49ec-9737-6c96e21fc50b" />
-    <Group ID="ChannelBlocks_24966813-cfc4-4658-9f6b-57945c0371aa" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_24966813-cfc4-4658-9f6b-57945c0371aa" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_24966813-cfc4-4658-9f6b-57945c0371aa" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="d777b81d-b5d3-45c1-a490-0b648503ae28" />
+    <Group ID="ChannelBlocks_a440ee16-ecdf-4ca6-9f04-4f887f8ac527" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_a440ee16-ecdf-4ca6-9f04-4f887f8ac527" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_a440ee16-ecdf-4ca6-9f04-4f887f8ac527" Description="56 Byte(s)" />
   </Module>
   <Module Name="P2_ServoZatlTesneniaZdvih" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p2-zakltesnenia-zdvih">
     <Connection Connector="PN1" TargetModule="P2_ServoManipOsZ_M4" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="c81cbf78-1564-4b35-94ea-9ef9d7c85169" />
-    <Group ID="ChannelBlocks_38b65b67-cdef-4f80-95b8-c81eecb64d37" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_38b65b67-cdef-4f80-95b8-c81eecb64d37" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_38b65b67-cdef-4f80-95b8-c81eecb64d37" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="966917db-e6b7-4bb9-b3eb-7cae1c20eec4" />
+    <Group ID="ChannelBlocks_1bafd7e5-9745-4dbf-8a9c-567ba32b1f4a" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_1bafd7e5-9745-4dbf-8a9c-567ba32b1f4a" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_1bafd7e5-9745-4dbf-8a9c-567ba32b1f4a" Description="56 Byte(s)" />
   </Module>
   <Module Name="P2_ServoZvaraniaOsZ" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p2-zvaranie-osz">
     <Connection Connector="PN1" TargetModule="P2_ServoZatlTesneniaPojazd" TargetConnector="PN2" NodeNumber="11" />
-    <Parameter ID="DtmId" Value="af16560d-f059-4b3d-9bba-1b347e0c1063" />
-    <Group ID="ChannelBlocks_5b6e8cbd-ad44-40c8-989f-60c5b047d32b" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_5b6e8cbd-ad44-40c8-989f-60c5b047d32b" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_5b6e8cbd-ad44-40c8-989f-60c5b047d32b" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="be0b5f6e-6cad-4a75-ace5-d05d67c71682" />
+    <Group ID="ChannelBlocks_d67862cd-b908-42cb-8a78-3e9f45752c01" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_d67862cd-b908-42cb-8a78-3e9f45752c01" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_d67862cd-b908-42cb-8a78-3e9f45752c01" Description="56 Byte(s)" />
   </Module>
   <Module Name="P2_SkrutkovackaM4" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="p2-skrutkovacka-m4">
     <Connection Connector="PN1" TargetModule="P2_SkrutkovackaM6" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="a837c08a-1d06-4e39-ba7f-15a9155381ec" />
+    <Parameter ID="DtmId" Value="e4ec6b4f-7b45-4e34-9ea6-30e4efd1a008" />
     <Group ID="ChannelBlocks_106b90cd-0c24-48cc-90e4-c14bcb6e0ce9" Description="Input 4 word &lt;Slot 1&gt;" />
     <Group ID="IO_InputImage_106b90cd-0c24-48cc-90e4-c14bcb6e0ce9" Description="8 Byte(s)" />
     <Group ID="ChannelBlocks_338ecfbd-c8fa-445e-bb3c-34bb5db72249" Description="Input 4 word &lt;Slot 2&gt;" />
@@ -449,7 +391,7 @@
   </Module>
   <Module Name="P2_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="p2-skrutkovacka-m5">
     <Connection Connector="PN1" TargetModule="P2_SkrutkovackaM4" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="129b9218-11a5-4752-93cd-f0db3fc0617b" />
+    <Parameter ID="DtmId" Value="e1976eee-f575-48fb-83c2-a8b8959ac7b7" />
     <Group ID="ChannelBlocks_106b90cd-0c24-48cc-90e4-c14bcb6e0ce9" Description="Input 4 word &lt;Slot 1&gt;" />
     <Group ID="IO_InputImage_106b90cd-0c24-48cc-90e4-c14bcb6e0ce9" Description="8 Byte(s)" />
     <Group ID="ChannelBlocks_338ecfbd-c8fa-445e-bb3c-34bb5db72249" Description="Input 4 word &lt;Slot 2&gt;" />
@@ -469,7 +411,7 @@
   </Module>
   <Module Name="P2_SkrutkovackaM6" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="p2-skrutkovacka-m6">
     <Connection Connector="PN1" TargetModule="P2_MaticovackaM4" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="f7b426c5-c8c5-4e6f-894c-abb94f367415" />
+    <Parameter ID="DtmId" Value="52d12cb2-6530-4f58-829e-3995012cfb5a" />
     <Group ID="ChannelBlocks_d5701e32-bf1a-4ffe-abae-f877da79b6ab" Description="Input 4 word &lt;Slot 1&gt;" />
     <Group ID="IO_InputImage_d5701e32-bf1a-4ffe-abae-f877da79b6ab" Description="8 Byte(s)" />
     <Group ID="ChannelBlocks_d30576f8-c417-4fbc-a5f6-437db0e2c225" Description="Input 4 word &lt;Slot 2&gt;" />
@@ -493,21 +435,21 @@
     </Connection>
     <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="P3_AteqLeakageTesterA" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 100XX-RE$002FPNS V3.4.19 - V3.4.x" Version="3.4.19" OrderNumber="COMX 100XX-RE/PNS V3.4.19 - V3.4.x" VendorAddress="comx100repns">
+  <Module Name="P3_AteqLeakageTesterA" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 51XX-RE$002FPNS V3.5.35 - V3.x" Version="V3.x" OrderNumber="COMX 51XX-RE/PNS V3.5.35 - V3.x" VendorAddress="comx51repns">
     <Connection Connector="PN1" TargetModule="P3_SkrutkovackaM5" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="57990e2a-ac9e-4ea4-90ae-602c273f378a" />
+    <Parameter ID="DtmId" Value="56f63374-8b27-4717-b655-1f82ea8095fd" />
   </Module>
-  <Module Name="P3_AteqLeakageTesterB" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 100XX-RE$002FPNS V3.4.19 - V3.4.x" Version="3.4.19" OrderNumber="COMX 100XX-RE/PNS V3.4.19 - V3.4.x" VendorAddress="comx100repns-001">
+  <Module Name="P3_AteqLeakageTesterB" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 51XX-RE$002FPNS V3.5.35 - V3.x" Version="V3.x" OrderNumber="COMX 51XX-RE/PNS V3.5.35 - V3.x" VendorAddress="comx51repns-001">
     <Connection Connector="PN1" TargetModule="P3_AteqLeakageTesterA" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="8cfff819-1572-45af-a244-9cb7e4310bb8" />
+    <Parameter ID="DtmId" Value="9853e978-1a9e-4a95-9fd1-d1a19b643ae5" />
   </Module>
-  <Module Name="P3_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" Version="1.0.0" OrderNumber="CPX-AP-I V1" VendorAddress="ap-i-pn">
+  <Module Name="P3_IOmaster" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" Version="1.0.0" OrderNumber="CPX-AP-I V1" VendorAddress="p3-io-master">
     <Connection Connector="PN1" TargetModule="P3_KameryControlUnit" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="923c51a5-6fd1-4d2a-8e24-6eb3c2ed481b" />
+    <Parameter ID="DtmId" Value="9ae6a815-6ebd-4cd3-a868-013fcf11dd80" />
   </Module>
-  <Module Name="P3_IOmaster1" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" Version="1.0.0" OrderNumber="CPX-AP-I V1" VendorAddress="ap-i-pn-002">
+  <Module Name="P3_IOmaster1" Type="FBD.Hilscher.PNIOGenDevDTM2.CPX-AP-I V1" Version="1.0.0" OrderNumber="CPX-AP-I V1" VendorAddress="p4-io-master">
     <Connection Connector="PN1" TargetModule="P3_IOmaster" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="3657a7a9-c295-4ae4-9ef3-12980d5a71f2" />
+    <Parameter ID="DtmId" Value="6680ef39-e4a4-43a2-9995-9290ca22e543" />
   </Module>
   <Module Name="P3_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" Version="1.0" OrderNumber="UR20-FBC-PL">
     <Connection Connector="PLK1" TargetModule="P3_Powerlink" TargetConnector="PLK1" NodeNumber="7">
@@ -526,9 +468,9 @@
     <Parameter ID="p6200s02_direction" Value="wo" />
     <Parameter ID="p6200s03_direction" Value="wo" />
   </Module>
-  <Module Name="P3_KameryControlUnit" Type="FBD.Hilscher.PNIOGenDevDTM2.Control Unit V2.2" Version="3.14.0" OrderNumber="Control Unit V2.2" VendorAddress="control-unit">
+  <Module Name="P3_KameryControlUnit" Type="FBD.Hilscher.PNIOGenDevDTM2.Control Unit V2.2" Version="3.14.0" OrderNumber="Control Unit V2.2" VendorAddress="kamery-controlunit">
     <Connection Connector="PN1" TargetModule="P3_AteqLeakageTesterB" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="293725db-7fc1-417f-954c-0bf5fd53ebb3" />
+    <Parameter ID="DtmId" Value="33bc6c87-82e8-4ce4-b4c5-9d6abac99463" />
   </Module>
   <Module Name="P3_Napajanie" Type="X20PS9400" Version="1.8.0.0">
     <Connection Connector="SS1" TargetModule="X20TB12a" TargetConnector="SS" />
@@ -545,52 +487,27 @@
     <Connection Connector="SL" TargetModule="X20BB81a" TargetConnector="SL1" />
     <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="P3_Profinet" Type="X20IF10E1-1" Version="1.4.0.0">
-    <Connection Connector="SS" TargetModule="X20BB81a" TargetConnector="SS1" />
-    <Connector Name="IF1">
-      <Parameter ID="DtmId" Value="0c98b4d0-5b4b-4bb1-8417-06c079b64d43" />
-    </Connector>
-    <Parameter ID="ConfigFile" Value="P3_Profinet.dtm" />
-    <Parameter ID="ConfigModule" Value="asnxdb2" />
-    <Parameter ID="CycleTime" Value="4000" />
-  </Module>
   <Module Name="P3_ServoManipOsZ_M5" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p3-manipul-osz-m5">
     <Connection Connector="PN1" TargetModule="P3_ServoManipulatoraOsY" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="189d0bc1-5fde-4769-9980-fbc8f4ec3cf7" />
-    <Group ID="ChannelBlocks_82a98990-3fa1-48e5-acaa-270de18bef9a" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_82a98990-3fa1-48e5-acaa-270de18bef9a" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_82a98990-3fa1-48e5-acaa-270de18bef9a" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="5c844912-d169-4963-b1b8-f1d93a65411a" />
+    <Group ID="ChannelBlocks_89281a79-239d-407a-9578-39c566f5431b" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_89281a79-239d-407a-9578-39c566f5431b" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_89281a79-239d-407a-9578-39c566f5431b" Description="56 Byte(s)" />
   </Module>
   <Module Name="P3_ServoManipulatoraOsY" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p3-manipul-osy">
     <Connection Connector="PN1" TargetModule="P2_ServoZvaraniaOsZ" TargetConnector="PN2" NodeNumber="12" />
-    <Parameter ID="DtmId" Value="90b865fc-95a3-4877-aa8a-373b0bd5e518" />
-    <Group ID="ChannelBlocks_48a198fd-6351-4de0-8387-2c1ff622b091" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_48a198fd-6351-4de0-8387-2c1ff622b091" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_48a198fd-6351-4de0-8387-2c1ff622b091" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="8432df2f-3695-4bac-bdb8-f67fb08b66cd" />
+    <Group ID="ChannelBlocks_a00d1edd-57a0-4dca-8745-b252fc20356d" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_a00d1edd-57a0-4dca-8745-b252fc20356d" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_a00d1edd-57a0-4dca-8745-b252fc20356d" Description="56 Byte(s)" />
   </Module>
-  <Module Name="P3_SkrutkovackaK40" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="powerfocus6000">
-    <Connection Connector="PN1" TargetModule="P3_Profinet" TargetConnector="IF1" />
-    <Parameter ID="DtmId" Value="a66f5b13-5880-4679-9878-54302ae56256" />
-    <Group ID="ChannelBlocks_d12b36f8-57d5-48a2-9d21-d4d4019bc393" Description="Input 4 word &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_d12b36f8-57d5-48a2-9d21-d4d4019bc393" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_d868b637-9f9f-498f-b091-3a24eee31f04" Description="Input 4 word &lt;Slot 2&gt;" />
-    <Group ID="IO_InputImage_d868b637-9f9f-498f-b091-3a24eee31f04" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_3d92954e-7398-4731-b8b9-28fd8ae3ddbe" Description="Input 4 word &lt;Slot 3&gt;" />
-    <Group ID="IO_InputImage_3d92954e-7398-4731-b8b9-28fd8ae3ddbe" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_bf7c59fd-0dda-4074-848e-ae7de565d8e7" Description="Input 4 word &lt;Slot 4&gt;" />
-    <Group ID="IO_InputImage_bf7c59fd-0dda-4074-848e-ae7de565d8e7" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_0efbf080-79df-4366-8d5d-c50059653348" Description="Output 4 word &lt;Slot 5&gt;" />
-    <Group ID="IO_OutputImage_0efbf080-79df-4366-8d5d-c50059653348" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_9250006c-8553-4e17-b0a3-d391bcfded1f" Description="Output 4 word &lt;Slot 6&gt;" />
-    <Group ID="IO_OutputImage_9250006c-8553-4e17-b0a3-d391bcfded1f" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_65e65c7f-9005-4a63-b819-7c3f3bc9ad87" Description="Output 4 word &lt;Slot 7&gt;" />
-    <Group ID="IO_OutputImage_65e65c7f-9005-4a63-b819-7c3f3bc9ad87" Description="8 Byte(s)" />
-    <Group ID="ChannelBlocks_4465b8b4-f44e-4104-a9cf-d0478af7ad9e" Description="Output 4 word &lt;Slot 8&gt;" />
-    <Group ID="IO_OutputImage_4465b8b4-f44e-4104-a9cf-d0478af7ad9e" Description="8 Byte(s)" />
+  <Module Name="P3_SkrutkovackaK40" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="p3-skrutkovacka-k40">
+    <Connection Connector="PN1" TargetModule="X20IF10E1_1a" TargetConnector="IF1" />
+    <Parameter ID="DtmId" Value="1bed4d8a-91e8-482a-8966-485eae355bcd" />
   </Module>
-  <Module Name="P3_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="powerfocus6000-001">
+  <Module Name="P3_SkrutkovackaM5" Type="FBD.Hilscher.PNIOGenDevDTM2.RT" Version="0.0.0.0" OrderNumber="RT" VendorAddress="p3-skrutkovacka-m5">
     <Connection Connector="PN1" TargetModule="P3_SkrutkovackaK40" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="5c57affc-cc4c-419f-b2e0-d07bec47acee" />
+    <Parameter ID="DtmId" Value="9f700220-f36c-494a-8d38-6e91106aa118" />
   </Module>
   <Module Name="P3_VentilovyTerminal_VT3" Type="FBE.000002EE_EB80" Version="1.0" OrderNumber="EB80">
     <Connection Connector="PLK1" TargetModule="P3_IOmodul_PowerlinkMaster" TargetConnector="PLK2" NodeNumber="8">
@@ -598,9 +515,13 @@
     </Connection>
     <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="P4_CAM_14" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="weqube-001">
+  <Module Name="P4_CAM_14" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p4-smartkamera-cam14">
     <Connection Connector="PN1" TargetModule="P3_IOmaster1" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="c81a9081-f236-454a-b746-a215bd99e1e8" />
+    <Parameter ID="DtmId" Value="c0e9c1a5-f33f-476e-b24b-106c44f10b5c" />
+    <Group ID="ChannelBlocks_69ac5036-a0c8-4487-939a-94808e052feb" Description="Project Number &lt;Slot 1&gt;" />
+    <Group ID="IO_OutputImage_69ac5036-a0c8-4487-939a-94808e052feb" Description="1 Byte(s)" />
+    <Group ID="ChannelBlocks_43170d34-1ff3-47db-95cd-a513e23710f6" Description="State &lt;Slot 2&gt;" />
+    <Group ID="IO_InputImage_43170d34-1ff3-47db-95cd-a513e23710f6" Description="4 Byte(s)" />
   </Module>
   <Module Name="P4_HMI_OP3" Type="6PPT50.156B-10B" Version="1.3.8.0">
     <Connection Connector="ETH1" TargetModule="0AC808.9a" TargetConnector="ETH6" NodeNumber="102">
@@ -632,17 +553,17 @@
   </Module>
   <Module Name="P4_ServoAplikatoraEtikietOsZ" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p4-etiketovanie-osz">
     <Connection Connector="PN1" TargetModule="P3_ServoManipOsZ_M5" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="e645ae7c-64a6-481d-97d4-eb97ebabe375" />
-    <Group ID="ChannelBlocks_23572b66-8b31-4a4e-856d-6853c1562535" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_23572b66-8b31-4a4e-856d-6853c1562535" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_23572b66-8b31-4a4e-856d-6853c1562535" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="fba432a0-b423-42a9-8bee-347498839a6e" />
+    <Group ID="ChannelBlocks_a661ea57-88d3-432e-a823-013ea4b20953" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_a661ea57-88d3-432e-a823-013ea4b20953" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_a661ea57-88d3-432e-a823-013ea4b20953" Description="56 Byte(s)" />
   </Module>
   <Module Name="P4_ServoZdvihuVystupVytahu" Type="FBD.Hilscher.PNIOGenDevDTM2.CMMT-AS V1" Version="0.0.0.0" OrderNumber="CMMT-AS V1" VendorAddress="p4-vytah">
     <Connection Connector="PN1" TargetModule="P4_ServoAplikatoraEtikietOsZ" TargetConnector="PN2" />
-    <Parameter ID="DtmId" Value="a31336b7-827d-4639-9352-a4b45a2912fe" />
-    <Group ID="ChannelBlocks_5dbc869f-e451-46cf-8b14-6069e5428d6d" Description="DO SERVO &lt;Slot 1&gt;" />
-    <Group ID="IO_InputImage_5dbc869f-e451-46cf-8b14-6069e5428d6d" Description="4 Byte(s)" />
-    <Group ID="IO_OutputImage_5dbc869f-e451-46cf-8b14-6069e5428d6d" Description="29 Bit(s)" />
+    <Parameter ID="DtmId" Value="3003a641-89c7-4e8a-a021-b864a1e88a49" />
+    <Group ID="ChannelBlocks_fadd5460-73a0-49f2-8b13-7394b729eaf7" Description="DO SERVO &lt;Slot 1&gt;" />
+    <Group ID="IO_InputImage_fadd5460-73a0-49f2-8b13-7394b729eaf7" Description="56 Byte(s)" />
+    <Group ID="IO_OutputImage_fadd5460-73a0-49f2-8b13-7394b729eaf7" Description="56 Byte(s)" />
   </Module>
   <Module Name="P4_VentilovyTerminal_VT4" Type="FBE.000002EE_EB80" Version="1.0" OrderNumber="EB80">
     <Connection Connector="PLK1" TargetModule="P4_IOmodul_PowerlinkMaster" TargetConnector="PLK2" NodeNumber="10">
@@ -652,6 +573,39 @@
   </Module>
   <Module Name="X20BB81" Type="X20BB81" Version="1.1.0.0" />
   <Module Name="X20BB81a" Type="X20BB81" Version="1.1.0.0" />
+  <Module Name="X20BC1083" Type="X20BC1083" Version="2.14.0.0">
+    <Connection Connector="PLK1" TargetModule="0AC808.9" TargetConnector="ETH8" NodeNumber="3">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="P2_IOmodul_PowerlinkMaster" TargetConnector="PLK1" NodeNumber="3">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="SL" TargetModule="X20BB81" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20IF10E1_1" Type="X20IF10E1-1" Version="1.4.0.0">
+    <Connection Connector="SS" TargetModule="X20BB81" TargetConnector="SS1" />
+    <Connector Name="IF1">
+      <Parameter ID="DtmId" Value="f69dda05-cf2d-4af6-9b00-bb18e0954814" />
+    </Connector>
+    <Parameter ID="ConfigFile" Value="X20IF10E1_1.dtm" />
+    <Parameter ID="ConfigModule" Value="asnxdb1" />
+    <Parameter ID="CycleTime" Value="4000" />
+  </Module>
+  <Module Name="X20IF10E1_1a" Type="X20IF10E1-1" Version="1.4.0.0">
+    <Connection Connector="SS" TargetModule="X20BB81a" TargetConnector="SS1" />
+    <Connector Name="IF1">
+      <Parameter ID="DtmId" Value="9a6c85cd-833b-4d2e-bfde-11529df661f1" />
+    </Connector>
+    <Parameter ID="ConfigFile" Value="X20IF10E1_1a.dtm" />
+    <Parameter ID="ConfigModule" Value="asnxdb2" />
+    <Parameter ID="CycleTime" Value="4000" />
+  </Module>
+  <Module Name="X20PS9400" Type="X20PS9400" Version="1.8.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="X20BB81" TargetConnector="PS1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
   <Module Name="X20TB12" Type="X20TB12" Version="1.0.0.0" />
   <Module Name="X20TB12a" Type="X20TB12" Version="1.0.0.0" />
 </Hardware>
