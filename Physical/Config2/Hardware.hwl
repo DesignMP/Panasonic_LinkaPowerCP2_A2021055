@@ -2,7 +2,7 @@
 <?AutomationStudio FileVersion="4.9"?>
 <BR.AS.HardwareTopology>
   <TimeStamps>
-    <TimeStamp LogicalPath="Config2.Hardware.hw" LastWriteTime="03/07/2022 09:11:16" />
+    <TimeStamp LogicalPath="Config2.Hardware.hw" LastWriteTime="03/09/2022 08:09:39" />
   </TimeStamps>
   <Modules>
     <Module Name="P1_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="348" Y="89" />
@@ -502,6 +502,39 @@
       <Point X="1228" Y="1674" />
       <Point X="1228" Y="1674" />
     </Link>
+    <Link From="P3_AteqLeakageTesterA" To="P3_SkrutkovackaM5" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
+      <Point X="1120" Y="3004" />
+      <Point X="1120" Y="3004" />
+      <Point X="1100" Y="3004" />
+      <Point X="1095" Y="3004" />
+      <Point X="1095" Y="3025" />
+      <Point X="836" Y="3025" />
+      <Point X="836" Y="3016" />
+      <Point X="836" Y="3004" />
+      <Point X="836" Y="3004" />
+    </Link>
+    <Link From="P3_AteqLeakageTesterA" To="P3_AteqLeakageTesterB" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="1135" Y="3004" />
+      <Point X="1135" Y="3004" />
+      <Point X="1135" Y="3016" />
+      <Point X="1135" Y="3025" />
+      <Point X="1205" Y="3025" />
+      <Point X="1205" Y="3004" />
+      <Point X="1453" Y="3004" />
+      <Point X="1473" Y="3004" />
+      <Point X="1473" Y="3004" />
+    </Link>
+    <Link From="P3_AteqLeakageTesterB" To="P3_KameryControlUnit" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
+      <Point X="1488" Y="3004" />
+      <Point X="1488" Y="3004" />
+      <Point X="1488" Y="3016" />
+      <Point X="1488" Y="3025" />
+      <Point X="1555" Y="3025" />
+      <Point X="1555" Y="3004" />
+      <Point X="1767" Y="3004" />
+      <Point X="1787" Y="3004" />
+      <Point X="1787" Y="3004" />
+    </Link>
     <Link From="P3_IOmaster" To="P3_KameryControlUnit" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
       <Point X="1802" Y="3004" />
       <Point X="1802" Y="3004" />
@@ -619,39 +652,6 @@
       <Point X="354.2727" Y="5836.172" />
       <Point X="374.2727" Y="5836.172" />
       <Point X="374.2727" Y="5836.172" />
-    </Link>
-    <Link From="P3_AteqLeakageTesterA" To="P3_SkrutkovackaM5" FromPort="PN1" ToPort="PN2" IsRoutedByUser="False">
-      <Point X="1120" Y="3004" />
-      <Point X="1120" Y="3004" />
-      <Point X="1100" Y="3004" />
-      <Point X="1095" Y="3004" />
-      <Point X="1095" Y="3025" />
-      <Point X="836" Y="3025" />
-      <Point X="836" Y="3016" />
-      <Point X="836" Y="3004" />
-      <Point X="836" Y="3004" />
-    </Link>
-    <Link From="P3_AteqLeakageTesterA" To="P3_AteqLeakageTesterB" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="1135" Y="3004" />
-      <Point X="1135" Y="3004" />
-      <Point X="1135" Y="3016" />
-      <Point X="1135" Y="3025" />
-      <Point X="1205" Y="3025" />
-      <Point X="1205" Y="3004" />
-      <Point X="1453" Y="3004" />
-      <Point X="1473" Y="3004" />
-      <Point X="1473" Y="3004" />
-    </Link>
-    <Link From="P3_AteqLeakageTesterB" To="P3_KameryControlUnit" FromPort="PN2" ToPort="PN1" IsRoutedByUser="False">
-      <Point X="1488" Y="3004" />
-      <Point X="1488" Y="3004" />
-      <Point X="1488" Y="3016" />
-      <Point X="1488" Y="3025" />
-      <Point X="1555" Y="3025" />
-      <Point X="1555" Y="3004" />
-      <Point X="1767" Y="3004" />
-      <Point X="1787" Y="3004" />
-      <Point X="1787" Y="3004" />
     </Link>
   </Links>
   <InfoElements>
@@ -976,10 +976,13 @@ IPadresa:192.168.82.5</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_54" X="1721.79248" Y="2851.30029" Width="192.862915" Height="59">
+    <InfoElementText Id="Textbox_54" X="1721.79248" Y="2787" Width="192.862915" Height="123.300293">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Wenglor - Profinet
 P3_Kamery_ControlUnit
-IPadresa:192.168.82.6</Text>
+IPadresa:192.168.82.6  
+P1_Výtah CAM 2
+P1_Výtah CAM 4
+P1_Srobovanie CAM 6</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>

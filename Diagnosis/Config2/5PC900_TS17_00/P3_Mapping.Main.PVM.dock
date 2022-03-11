@@ -1,0 +1,8 @@
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P3_Mapping 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=4 ASCIIString=0
+                                    name                                     type force                                                            value level type len format place expand specs
+                           P3_Pracovisko                        P3_Pracovisko_typ    0 "                                                               *"    0   24    1    0    0    1         
+                               COM_Festo                         P3_COM_Festo_typ    0 "                                                               *"    1   24    1    0    0    1         
+                          DS3_2_Port1_IN                              USINT[0..1]    0 "                                                               *"    2    5    2    0    0    1         
+                       DS3_2_Port1_IN[0]                                    USINT    1 "                                                             255"    3    5    1   10    0    0         
+                       DS3_2_Port1_IN[1]                                    USINT    1 "                                                             224"    3    5    1   10    0    0         

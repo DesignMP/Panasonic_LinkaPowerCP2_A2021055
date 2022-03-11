@@ -261,7 +261,7 @@ FUNCTION_BLOCK ScrewLoading
 				Internal.VibracnyHrniec.T_Zaplnenie.IN:=0;
 			END_IF
 			
-			IF IN.VibracnyHrniec.VibracnaListaZaplnena=1 AND Internal.VibracnyHrniec.T_Zaplnenie.Q=1 THEN
+			IF IN.VibracnyHrniec.VibracnaListaZaplnena=1 AND Internal.VibracnyHrniec.T_Zaplnenie.Q=1 AND OUT.VibracnyHrniec.ZapniVibromotor THEN
 				OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek:=1;
 			ELSE 
 				OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek:=0;
@@ -288,7 +288,7 @@ FUNCTION_BLOCK ScrewLoading
 		250: Internal.Status.VibracnyHrniec:="Manual";
 	END_CASE
 		
-	IF IN.VibracnyHrniec.VibracnaListaZaplnena=1 AND Internal.Step.VibracnyHrniec>99 THEN
+	IF IN.VibracnyHrniec.VibracnaListaZaplnena=1 AND Internal.Step.VibracnyHrniec>99 AND OUT.VibracnyHrniec.ZapniVibromotor THEN
 		OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek:=1;
 	ELSE 
 		OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek:=0;

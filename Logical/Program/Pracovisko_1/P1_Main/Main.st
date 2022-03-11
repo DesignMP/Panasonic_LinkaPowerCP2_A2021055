@@ -248,6 +248,14 @@ PROGRAM _CYCLIC
 		P1_Pracovisko.IN.Skrutkovacka_K30_KomOK AND
 		P1_Pracovisko.IN.Skrutkovacka_M4_KomOK AND
 		P1_Pracovisko.IN.Skrutkovacka_M5_KomOK AND
+		P1_Srobovanie.IN.NapajanieSkrutkovackyK30_OK AND
+		P1_Srobovanie.IN.NapajanieSkrutkovackyM4_OK AND
+		P1_Srobovanie.IN.NapajanieSkrutkovackyM5_OK AND
+		P1_Srobovanie.IN.NapajanieVibrolistyM4_OK AND
+		P1_Srobovanie.IN.NapajanieVibrolistyM5_OK AND
+		P1_Srobovanie.IN.NapajanieZasobnikaK30_OK AND
+		P1_Srobovanie.IN.NapajanieZasobnikaM4_OK AND
+		P1_Srobovanie.IN.NapajanieZasobnikaM5_OK AND
 		(*P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND*)
 		P1_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P1_Pracovisko.STAV.HardwareBunky_OK:= TRUE;
@@ -268,13 +276,8 @@ PROGRAM _CYCLIC
 		
 	//*****************************Zapnutie osvetlenia pracoviska*********************************************************//
 	P1_Pracovisko.OUT.OsvetlenieBunky_ON:= TRUE;
+	P1_Vytah.OUT.OsvetlenieVytahu_ON:= TRUE;
 		
-		P2_Pracovisko.OUT.Osvetlenie_CAM1;
-		P2_Pracovisko.OUT.Osvetlenie_CAM7_CAM17;
-		P2_Pracovisko.OUT.Osvetlenie_CAM10;
-		P2_Pracovisko.OUT.Osvetlenie_CAM11;
-	
-	
 	
 	
 	//****************************************Ovládanie majáka***********************************************//

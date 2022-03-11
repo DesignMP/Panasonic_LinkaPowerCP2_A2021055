@@ -357,7 +357,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string" >
-      <xs:pattern value="(((#[0-9A-Fa-f]{6})|(#[0-9A-Fa-f]{3})|(rgba\((((25[0-5])|(2[01234][0-9])|([01][0-9][0-9])|([0-9]{1,2})),(\s)?){3}((0\.[0-9]{1,2})|1(\.0)?|0)\)))\s?){1,4}|(transparent)"></xs:pattern>
+      <xs:pattern value="(#[0-9A-Fa-f]{6})|(#[0-9A-Fa-f]{4})|(#[0-9A-Fa-f]{3})|rgba\((((0)*((25[0-5])|(2[0-4][0-9])|(1[0-9][0-9])|([1-9][0-9])|([0-9]))|(0)+),(\s)?){3}((0(\.)?([0-9]){1,2})|0|1(\.0)?)\)|(transparent)"></xs:pattern>
     </xs:restriction>
   </xs:simpleType>
 

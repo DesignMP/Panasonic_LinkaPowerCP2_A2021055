@@ -1,5 +1,5 @@
 VAR
-	FazaNavratu : USINT := 0;
+	FazaNavratu : UINT := 0;
 	PocetCisteniSkrutkovacky : USINT := 0;
 	CasSrobovania_1 : REAL := 0.0;
 	CasSrobovania_2 : REAL := 0.0;

@@ -850,7 +850,7 @@ define(function () {
     };
 
     Utils.isVisible = function (elem) {
-        return !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length);
+        return !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length) && window.getComputedStyle(elem).visibility !== 'hidden';
     };
 
     Utils.addTimestamp = function (url) {

@@ -138,7 +138,7 @@
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
     </Connector>
   </Module>
-  <Module Name="P1_CAM_3" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p1-smartkamera-cam3">
+  <Module Name="P1_CAM_3" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p1-cam3">
     <Connection Connector="PN1" TargetModule="P1_IOmaster" TargetConnector="PN2" />
     <Parameter ID="DtmId" Value="8d799445-c4b4-474a-8d2d-bad427bf2790" />
     <Group ID="ChannelBlocks_f4f78ce5-57c8-4fd1-be47-6a5ccd450a3d" Description="Project Number &lt;Slot 1&gt;" />
@@ -146,7 +146,7 @@
     <Group ID="ChannelBlocks_d2ed86b4-49a6-4cf8-937e-adc73b72ce3f" Description="State &lt;Slot 2&gt;" />
     <Group ID="IO_InputImage_d2ed86b4-49a6-4cf8-937e-adc73b72ce3f" Description="4 Byte(s)" />
   </Module>
-  <Module Name="P1_CAM_5" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p1-smartkamera-cam5">
+  <Module Name="P1_CAM_5" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p1-cam5">
     <Connection Connector="PN1" TargetModule="P1_CAM_3" TargetConnector="PN2" />
     <Parameter ID="DtmId" Value="4602566f-a5b9-483d-9f8a-b66576bbf8d4" />
     <Group ID="ChannelBlocks_a30acc6b-20d8-4a21-88b2-4ee25b1f7fa2" Description="Project Number &lt;Slot 1&gt;" />
@@ -245,7 +245,7 @@
     </Connection>
     <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="P2_CAM_8" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p2-smartkamera-cam8">
+  <Module Name="P2_CAM_8" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p2-cam8">
     <Connection Connector="PN1" TargetModule="P2_IOmaster" TargetConnector="PN2" />
     <Parameter ID="DtmId" Value="786a77e4-dda0-4751-ab15-cbad1af187ad" />
     <Group ID="ChannelBlocks_5527bd94-b227-4126-a6b0-11d6e1c4501f" Description="Project Number &lt;Slot 1&gt;" />
@@ -253,7 +253,7 @@
     <Group ID="ChannelBlocks_3e0495dd-672f-4b30-808f-875ee42918c3" Description="State &lt;Slot 2&gt;" />
     <Group ID="IO_InputImage_3e0495dd-672f-4b30-808f-875ee42918c3" Description="4 Byte(s)" />
   </Module>
-  <Module Name="P2_CAM_9" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p2-smartkamera-cam9">
+  <Module Name="P2_CAM_9" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p2-cam9">
     <Connection Connector="PN1" TargetModule="P2_CAM_8" TargetConnector="PN2" />
     <Parameter ID="DtmId" Value="36bd1365-8543-4c1b-855f-fc2cd9911a03" />
     <Group ID="ChannelBlocks_cb980228-8f70-4d81-8c21-4940e49181e0" Description="Project Number &lt;Slot 1&gt;" />
@@ -435,11 +435,11 @@
     </Connection>
     <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="P3_AteqLeakageTesterA" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 51XX-RE$002FPNS V3.5.35 - V3.x" Version="V3.x" OrderNumber="COMX 51XX-RE/PNS V3.5.35 - V3.x" VendorAddress="comx51repns">
+  <Module Name="P3_AteqLeakageTesterA" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 51XX-RE$002FPNS V3.5.35 - V3.x" Version="V3.x" OrderNumber="COMX 51XX-RE/PNS V3.5.35 - V3.x" VendorAddress="ateqf6002">
     <Connection Connector="PN1" TargetModule="P3_SkrutkovackaM5" TargetConnector="PN2" />
     <Parameter ID="DtmId" Value="56f63374-8b27-4717-b655-1f82ea8095fd" />
   </Module>
-  <Module Name="P3_AteqLeakageTesterB" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 51XX-RE$002FPNS V3.5.35 - V3.x" Version="V3.x" OrderNumber="COMX 51XX-RE/PNS V3.5.35 - V3.x" VendorAddress="comx51repns-001">
+  <Module Name="P3_AteqLeakageTesterB" Type="FBD.Hilscher.PNIOGenDevDTM2.COMX 51XX-RE$002FPNS V3.5.35 - V3.x" Version="V3.x" OrderNumber="COMX 51XX-RE/PNS V3.5.35 - V3.x" VendorAddress="ateqf6003">
     <Connection Connector="PN1" TargetModule="P3_AteqLeakageTesterA" TargetConnector="PN2" />
     <Parameter ID="DtmId" Value="9853e978-1a9e-4a95-9fd1-d1a19b643ae5" />
   </Module>
@@ -515,7 +515,7 @@
     </Connection>
     <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="P4_CAM_14" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p4-smartkamera-cam14">
+  <Module Name="P4_CAM_14" Type="FBD.Hilscher.PNIOGenDevDTM2.weQube V1.4" Version="1.1.4" OrderNumber="weQube V1.4" VendorAddress="p4-cam14">
     <Connection Connector="PN1" TargetModule="P3_IOmaster1" TargetConnector="PN2" />
     <Parameter ID="DtmId" Value="c0e9c1a5-f33f-476e-b24b-106c44f10b5c" />
     <Group ID="ChannelBlocks_69ac5036-a0c8-4487-939a-94808e052feb" Description="Project Number &lt;Slot 1&gt;" />

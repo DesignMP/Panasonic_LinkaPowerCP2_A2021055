@@ -11,6 +11,7 @@
   <TaskClass Name="Cyclic#2">
     <Task Name="P1_Vytah" Source="Program.Pracovisko_1.P1_Vytah.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P1_Srobova" Source="Program.Pracovisko_1.P1_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_Srobova" Source="Program.Pracovisko_3.P3_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#3">
     <Task Name="Blikanie10" Source="Blikace.Blikanie100ms.prg" Memory="UserROM" Language="IEC" Debugging="true" />
@@ -37,18 +38,17 @@
     <Task Name="P2_Stoper1" Source="Program.Pracovisko_2.P2_StoperZvarania.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="P2_Zvarani" Source="Program.Pracovisko_2.P2_Zvaranie.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="P2_Cisteni" Source="Program.Pracovisko_2.P2_Cistenie.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_Main" Source="Program.Pracovisko_3.P3_Main.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_Dopravn" Source="Program.Pracovisko_3.P3_Dopravniky.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_SpodnyS" Source="Program.Pracovisko_3.P3_SpodnyStoper.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_StoperS" Source="Program.Pracovisko_3.P3_StoperSrobovania.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_Srobova" Source="Program.Pracovisko_3.P3_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_HV_Test" Source="Program.Pracovisko_3.P3_HV_Test.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_Zdvizka" Source="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestA.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_Leakage" Source="Program.Pracovisko_3.P3_LeakageTestA.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_Zdvizk2" Source="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestA.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_Zdvizk1" Source="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestB.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_Leakag1" Source="Program.Pracovisko_3.P3_LeakageTestB.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="P3_Zdvizk3" Source="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestB.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="P3_Main" Source="Program.Pracovisko_3.P3_Main.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_Dopravn" Source="Program.Pracovisko_3.P3_Dopravniky.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_SpodnyS" Source="Program.Pracovisko_3.P3_SpodnyStoper.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_StoperS" Source="Program.Pracovisko_3.P3_StoperSrobovania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_HV_Test" Source="Program.Pracovisko_3.P3_HV_Test.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_Zdvizka" Source="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestA.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_Leakage" Source="Program.Pracovisko_3.P3_LeakageTestA.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_Zdvizk2" Source="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestA.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_Zdvizk1" Source="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestB.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_Leakag1" Source="Program.Pracovisko_3.P3_LeakageTestB.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_Zdvizk3" Source="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestB.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P4_Main" Source="Program.Pracovisko_4.P4_Main.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="P4_Dopravn" Source="Program.Pracovisko_4.P4_Dopravniky.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="P4_SpodnyS" Source="Program.Pracovisko_4.P4_SpodnyStoper.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
@@ -129,7 +129,6 @@
     <LibraryObject Name="SkrutSety" Source="Libraries.SkrutSety.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="RoCa_Festo" Source="Libraries.RoCa_Festo.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="ScrewLoad" Source="Libraries.ScrewLoad.lby" Memory="UserROM" Language="IEC" Debugging="true" />
-    <LibraryObject Name="McBase" Source="Libraries.McBase.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="arssl" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </Libraries>

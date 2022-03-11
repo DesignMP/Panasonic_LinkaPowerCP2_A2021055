@@ -403,6 +403,13 @@ function (BreaseEvent,
             TestUtils.resetAppContainer();
         },
 
+        closeAllOverlays: function () {
+            // eslint-disable-next-line no-unused-vars
+            $('.breaseWindow').each(function (i, elem) {
+                brease.callWidget(elem.id, 'onBeforeHide');
+            });
+        },
+
         /**
         * @method loadWidgetClass
         * Load a WidgetClass like it would be loaded at runtime (WidgetClass is then decorated with some meta info) 
@@ -455,32 +462,40 @@ function (BreaseEvent,
         *     });
         *
         * @param {WidgetConfig[]} widgets
-        * @param {String} targetId Either the id of the HTMLElement which should be created to contain the widgets, or id of an already existing target.
+        * @param {String/HTMLElement/jQuery} target Either the id of the HTMLElement which should be created to contain the widgets,  
+        * or id of an already existing target,  
+        * or the target as HTMElement or jquery object.
         * @param {HTMLElement/jQuery/Selector} container Container where the target should be appended (can be null, if target already exists)
         * @param {String} [contentId] contentId for widget creation
         * @param {Object} [objCss] css for the HTMLElement which contains the widgets.
         * @return {Promise} Object with widget instances with key=widgetId and value=instance
         */
-        createWidgetsV3: function (widgets, targetId, container, contentId, objCss) {
+        createWidgetsV3: function (widgets, target, container, contentId, objCss) {
 
             return new Promise(function (resolve, reject) {
                 var callback = jasmine.createSpy(), 
-                    target = $('#' + targetId),
+                    creationTarget, $target,
                     widgetIds = widgets.map(function (item) { return item.id; });
-                    
-                if (target.length > 0) {
-                    target = target[0];
+
+                if (Utils.isString(target)) {
+                    $target = $('#' + target);
                 } else {
-                    target = $('<div id="' + targetId + '" style="height:0px; overflow:hidden;" />').appendTo(container)[0];
-                    if (objCss) {
-                        $(target).css(objCss);    
-                    }
+                    $target = target.jquery !== undefined ? target : $(target);
                 }
+
+                if ($target.length === 0) {
+                    $target = $('<div id="' + target.toString() + '" style="height:0px; overflow:hidden;" />').appendTo(container);
+                }
+                if (objCss) {
+                    $target.css(objCss);    
+                }
+                creationTarget = $target[0];
+                
                 var listener = function (e) {
                     if (widgetIds.indexOf(e.target.id) !== -1) {
                         callback();
                         if (callback.calls.count() === widgets.length) {
-                            target.removeEventListener(BreaseEvent.WIDGET_READY, listener, true);
+                            creationTarget.removeEventListener(BreaseEvent.WIDGET_READY, listener, true);
                             let widgetInstances = {};
                             widgetIds.forEach(id => {
                                 widgetInstances[id] = brease.callWidget(id, 'widget');
@@ -489,12 +504,12 @@ function (BreaseEvent,
                         }
                     }
                 };
-                target.addEventListener(BreaseEvent.WIDGET_READY, listener, true);
+                creationTarget.addEventListener(BreaseEvent.WIDGET_READY, listener, true);
                 try {
                     if (contentId !== undefined) {
-                        brease.uiController.createWidgets(target, widgets.slice(0), true, contentId); 
+                        brease.uiController.createWidgets(creationTarget, widgets.slice(0), true, contentId); 
                     } else {
-                        brease.uiController.createWidgets(target, widgets.slice(0), true); 
+                        brease.uiController.createWidgets(creationTarget, widgets.slice(0), true); 
                     }
                 } catch (e) {
                     console.error('%c' + e, 'color: red');
@@ -669,6 +684,90 @@ function (BreaseEvent,
         },
 
         /**
+         * Creates a promise for a spyOn. Initially the condition is set to calls.count()===1.  
+         * If the promise should be used a second time, the condition can be changed via setCallCondition.  
+         * E.g.
+         * 
+         *    var promisedSpy = TestUtils.promisedSpyOn(wut.renderer, 'refreshScroller');
+         *    wut.setMpLink(telegram);
+         *    await promisedSpy.promise;
+         *    ...
+         *    promisedSpy.setCallCondition(2);
+         *    wut.setMpLink(update);
+         *    await promisedSpy.promise;
+         * 
+         * @param {Object} context object on which should be spied
+         * @param {String} methodName name of method on which should be spied on
+         * @param {Integer} [callCount] number of calls, after which the promise should resolve
+         * @param {Boolean} [callThrough] 
+         * @return {Object}
+         * @return {Promise} return.promise
+         * @return {Object} return.spy
+         * @return {Function} return.setCallCondition
+         */
+        promisedSpyOn: function (context, methodName, callCount = 1, callThrough = false) {
+
+            var obj = {
+                _callFake: function () {
+                    obj.spy.apply(obj.spy, arguments);
+                    if (obj.spy.calls.count() === obj.callCount) {
+                        obj.resolve();
+                    }
+                },
+                setCallCondition: function (n) {
+                    obj.callCount = n;
+                    obj.promise = new Promise(function (resolve) {
+                        obj.resolve = resolve;
+                    });
+                },
+                _init: function (context, methodName, callCount) {
+                    obj.callCount = callCount;
+                    obj.methodName = methodName;
+                    obj.spy = jasmine.createSpy();
+                    obj.promise = new Promise(function (resolve) {
+                        obj.resolve = resolve;
+                        if (callThrough) {
+                            TestUtils.addSpyStrategy('callThroughAndThen');
+                            TestUtils.spyOnCallThroughAndThen(context, methodName, obj._callFake.bind(obj));
+                        } else {
+                            spyOn(context, methodName).and.callFake(obj._callFake.bind(obj));
+                        }
+                    });
+                }
+            };
+            obj._init(context, methodName, callCount);
+
+            return obj;
+        },
+
+        /**
+        * Creates a promise which resolves after two requestAnimationFrame.  
+        * Also usable with an optional callback function 
+        * 
+        * await TestUtils.asyncAnimationFrame()
+        *
+        * or with callback:  
+        *
+        * TestUtils.asyncAnimationFrame(callback)
+        *
+        * @param {Function} [callback]
+        * @returns {Promise}
+        */
+        asyncAnimationFrame: function (callback) {
+            return new Promise(function (resolve) {
+                var fn = function () {
+                    window.requestAnimationFrame(function () {
+                        if (typeof callback === 'function') {
+                            callback();
+                        }
+                        resolve();
+                    });
+                };
+                window.requestAnimationFrame(fn);
+            });
+        },
+
+        /**
          * Create a promise for a event which resolves when the event is fired or timeout occurs.
          * @param {HTMLElement} elem Event target
          * @param {String} event Event type
@@ -786,7 +885,12 @@ function (BreaseEvent,
                 jasmine.addSpyStrategy('callThroughAndThen', function (context, spy, thenFn) {
                     return function () {
                         var result = spy.and.originalFn.apply(context, spy.calls.mostRecent().args);
-                        thenFn.apply(null, arguments);
+                        if (typeof spy.thenFn === 'function') {
+                            spy.thenFn.apply(null, arguments);
+                            spy.thenFn = undefined;
+                        } else {
+                            thenFn.apply(null, arguments);
+                        }
                         return result;
                     };
                 });
@@ -794,14 +898,38 @@ function (BreaseEvent,
         },
         /**
          * @method
-         * shortcut for the spy strategy callThroughAndThen
+         * shortcut for the spy strategy callThroughAndThen  
+         * returns the spy  
+         * e.g.
+         * 
+         *     return new Promise(function (resolve) {
+         *          TestUtils.spyOnCallThroughAndThen(ScrollHelperStub, 'addScrollbars', resolve);
+         *          ScrollManager.add($el[0]);
+         *      })
+         * 
+         * or reset the then-function:
+         * 
+         *     return new Promise(function (resolve) {
+         *                   spy = TestUtils.spyOnCallThroughAndThen(wut.renderer, 'redraw', resolve);
+         *                   wut._editorStyleChanged();
+         *               })
+         *                   .then(function () {
+         *                       return new Promise(function (resolve) {
+         *                           spy.thenFn = resolve; // overwrite the initial then-function to call 'resolve' of second promise
+         *                           
+         *                       });
+         *                   });
+         * 
          * @param {Object} context object on which should be spied
          * @param {String} methodName name of method on which should be spied on
          * @param {Function} thenFn function which should be called after the spy
+         * @return {Function}
          */
         spyOnCallThroughAndThen: function (context, methodName, thenFn) {
             var spy = spyOn(context, methodName);
             spy.and.callThroughAndThen(context, spy, thenFn);
+            spy.thenFn = thenFn;
+            return spy;
         },
 
         asyncSpyOn: function (context, method, config) {
@@ -809,7 +937,7 @@ function (BreaseEvent,
                 if (TestUtils.isSpy(context[method])) {
                     var spy = context[method];
                     spy.calls.reset();
-                    if (config.callThrough) {
+                    if (config && config.callThrough) {
                         spy.and.callFake(function () {
                             spy.and.originalFn.apply(context, spy.calls.mostRecent().args);
                             resolve();
@@ -818,14 +946,15 @@ function (BreaseEvent,
                         spy.and.callFake(resolve);
                     }
                 } else {
-                    if (config.callThrough) {
+                    if (config && config.callThrough) {
                         TestUtils.spyOnCallThroughAndThen(context, method, resolve);
                     } else {
                         spyOn(context, method).and.callFake(resolve);
                     }
                 }
             });
-        }
+        },
+        injectCSS: controllerUtils.injectCSS
     };
     TestUtils.deferStub.call = TestUtils.deferStub._call.bind(TestUtils.deferStub);
     TestUtils.deferStub.release = TestUtils.deferStub._release.bind(TestUtils.deferStub);
@@ -856,7 +985,7 @@ function (BreaseEvent,
             if (!arraysHaveSameMembers(keys1, keys2)) {
                 return {
                     pass: false,
-                    message: 'Objects do not have the same properties'
+                    message: 'Objects do not have the same properties:\nactual:' + JSON.stringify(actual) + '\nexpected:' + JSON.stringify(expected)
                 };
             }
             for (var i = 0; i < keys1.length; i += 1) {

@@ -34,7 +34,7 @@ PROGRAM _CYCLIC
 			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= FALSE;
 			P3_ZdvizkaPredLeakTestB.Manual:= FALSE;
 			P3_ZdvizkaPredLeakTestB.STAV.PoINIT:= FALSE;
-									
+			P3_Dopravniky.OUT.PriecnyDopravnik1_VPRED:= FALSE;						
 			P3_ZdvizkaPredLeakTestB.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P3_ZdvizkaPredLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratB:= FALSE;
 			

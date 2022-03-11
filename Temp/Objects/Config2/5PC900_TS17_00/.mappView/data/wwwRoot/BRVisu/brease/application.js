@@ -78,7 +78,7 @@ function (config, settings, Utils) {
                     'brease/controller/WidgetController', 
                     'brease/model/VisuModel', 
                     'brease/controller/KeyboardManager'], 
-                function (bindingController, connectionController, infoController, actionController, pageController, overlayController, uiController, NumberFormatter, eventController, widgetController, visuModel) {
+                function (bindingController, connectionController, infoController, actionController, pageController, overlayController, uiController, NumberFormatter, eventController, widgetController, visuModel, keyboardManager) {
                     require(['brease/services/MeasurementSystem',
                         'brease/services/Language', 
                         'brease/services/Culture',
@@ -116,7 +116,8 @@ function (config, settings, Utils) {
                                 uiController: uiController,
                                 widgetController: widgetController,
                                 formatter: new NumberFormatter(),
-                                eventController: eventController
+                                eventController: eventController,
+                                keyboardManager: keyboardManager
                             });
                             brease[startMethod](startId);
                         });

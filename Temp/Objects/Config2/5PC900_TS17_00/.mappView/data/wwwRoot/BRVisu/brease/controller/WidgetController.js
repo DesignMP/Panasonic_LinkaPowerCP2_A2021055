@@ -485,8 +485,18 @@ function (Utils, factoryUtils, Enum, BreaseEvent, Queue, WidgetModel) {
         return ids;
     }
 
+    function _isGetter(methodName) {
+        return Utils.isString(methodName) && methodName.indexOf('get') === 0;
+    }
+
     function _methodIsCallable(methodName, widgetState) {
-        return (widgetState === Enum.WidgetState.READY || widgetState === Enum.WidgetState.INITIALIZED || (widgetState === Enum.WidgetState.SUSPENDED && (methodName === 'dispose' || methodName === 'onBeforeDispose' || methodName === 'getSettings')));
+        return (widgetState === Enum.WidgetState.READY || 
+            widgetState === Enum.WidgetState.INITIALIZED || 
+            (widgetState === Enum.WidgetState.SUSPENDED && (
+                methodName === 'dispose' || 
+                methodName === 'onBeforeDispose' || 
+                _isGetter(methodName)
+            )));
     }
 
     return controller;

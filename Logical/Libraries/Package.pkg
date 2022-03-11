@@ -25,11 +25,10 @@
     <Object Type="Library" Language="IEC">MyConvert</Object>
     <Object Type="Library" Language="IEC">SkrutSety</Object>
     <Object Type="Library" Language="IEC">RoCa_Festo</Object>
+    <Object Type="Library" Language="IEC">ScrewLoad</Object>
     <Object Type="Library" Language="Binary" Description="Advanced alarm management">MpAlarmX</Object>
     <Object Type="Library" Language="Binary" Description="Core library for mapp components">MpBase</Object>
     <Object Type="Library" Language="Binary" Description="Recipe management">MpRecipe</Object>
     <Object Type="Library" Language="binary" Description="This library contains functionality to execute traces (to sample numeric values periodically for a defined time-span)">CoTrace</Object>
-    <Object Type="Library" Language="IEC">ScrewLoad</Object>
-    <Object Type="Library" Language="binary" Description="[mapp Motion] Base library">McBase</Object>
   </Objects>
 </Package>

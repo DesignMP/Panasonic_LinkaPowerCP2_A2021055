@@ -262,6 +262,12 @@ define(['brease/enum/EnumObject'], function (EnumObject) {
     * @property {String} ScrollUp='ScrollUp'
     */
     /**
+    * @property {String} ScrollRight='ScrollRight'
+    */
+    /**
+    * @property {String} ScrollLeft='ScrollLeft'
+    */
+    /**
     * @property {String} ScrollDownFast='ScrollDownFast'
     */
     /** 
@@ -275,6 +281,8 @@ define(['brease/enum/EnumObject'], function (EnumObject) {
         Cancel: 'Cancel',
         ScrollDown: 'ScrollDown',
         ScrollUp: 'ScrollUp',
+        ScrollRight: 'ScrollRight',
+        ScrollLeft: 'ScrollLeft',
         ScrollDownFast: 'ScrollDownFast',
         ScrollUpFast: 'ScrollUpFast',
         Close: 'Close'

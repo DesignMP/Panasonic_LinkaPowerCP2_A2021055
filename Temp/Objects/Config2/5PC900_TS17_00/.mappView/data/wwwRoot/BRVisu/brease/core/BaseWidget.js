@@ -199,6 +199,7 @@ function (SuperClass, BreaseEvent, VirtualEvents, Utils, Enum, Types, KeyActions
 
     p._initEditor = function () {
         //override in Widgets if needed
+        this.dispatchEvent(new CustomEvent(BreaseEvent.WIDGET_EDITOR_IF_READY, { bubbles: true }));
     };
 
     p.addClassNames = function (classNames) {
@@ -333,7 +334,7 @@ function (SuperClass, BreaseEvent, VirtualEvents, Utils, Enum, Types, KeyActions
                 return this.events[eventName];
             }
         } else {
-            console.iatWarn('could not create Event');
+            console.iatWarn('could not create Event, className=' + this.settings.className + ', this.elem defined: ' + (this.elem !== null));
             return new EventHandler(EventHandler.DummyType);
         }
     };

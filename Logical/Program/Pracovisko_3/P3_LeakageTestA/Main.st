@@ -84,7 +84,7 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestA.StepName:='1 - Cakam na spustenie vyroby';
 			P3_LeakageTestA.KoniecCyklu:= FALSE;
 			IF P3_LeakageTestA.Automat THEN
-				SC_P3_LeakageTestA.Step:= 2;
+				SC_P3_LeakageTestA.Step:= 33;//2
 			ELSIF P3_LeakageTestA.Manual THEN
 				SC_P3_LeakageTestA.Step:= 700;
 			END_IF
@@ -111,13 +111,11 @@ PROGRAM _CYCLIC
 			
 			
 			IF NOT SC_P3_LeakageTestA.Switch1 THEN
-				P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= TRUE;
 				HornyPritlak_ZASUN:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
 			END_IF
 		
 			IF P3_LeakageTestA.IN.HornyPritlak_ZASUNUTY THEN
-				P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 8;
 			END_IF	
@@ -306,7 +304,7 @@ PROGRAM _CYCLIC
 				SC_P3_LeakageTestA.Step:= 0;
 			ELSIF SC_P3_LeakageTestA.IdleTime.Q THEN
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
-				SC_P3_LeakageTestA.Step:= 101;
+				SC_P3_LeakageTestA.Step:= 560;//101
 			END_IF
 		
 		101:
@@ -558,7 +556,6 @@ PROGRAM _CYCLIC
                         
             
 			IF NOT SC_P3_LeakageTestA.Switch1 THEN
-				P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= TRUE;
 				HornyPritlak_VYSUN:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
 			END_IF
@@ -619,7 +616,6 @@ PROGRAM _CYCLIC
 		
                 
 			IF NOT AteqLeakageTester_A.Stav_READY AND AteqLeakageTester_A.Stav_START_DONE AND NOT AteqLeakageTester_A.VysledokTestovania_OK AND NOT AteqLeakageTester_A.VysledokTestovania_NG AND SC_P3_LeakageTestA.IdleTime.Q THEN
-				P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 133;
 			END_IF	
@@ -706,7 +702,6 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P3_LeakageTestA.Switch1 THEN
-				P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= TRUE;
 				HornyPritlak_ZASUN:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
 			END_IF
@@ -714,7 +709,6 @@ PROGRAM _CYCLIC
 				
 			
 			IF P3_LeakageTestA.IN.HornyPritlak_ZASUNUTY THEN
-				P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 155;
 			END_IF	
@@ -930,7 +924,7 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestA.IdleTime.PT:= T#8s;
 			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
 		
-			P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= TRUE;
+			
 		
 			//Vysunutie spodneho kopita//
 			IF P3_LeakageTestA.CMD.RR_VysunSpodneKopito THEN

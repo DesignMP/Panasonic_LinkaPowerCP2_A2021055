@@ -12,6 +12,7 @@ ACTION OvlHornehoPritlaku:
 			SC_OvlHornehoPritlaku.StepName:= '0 - Nulovanie';
 			HornyPritlak_VYSUN:= FALSE;
 			HornyPritlak_ZASUN:= FALSE;
+			P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= FALSE;
 								
 			IF SC_P3_LeakageTestA.Step <> 0 THEN
 				SC_OvlHornehoPritlaku.ResetStep:= TRUE;
@@ -40,6 +41,7 @@ ACTION OvlHornehoPritlaku:
 			END_IF	
 			
 			IF NOT SC_OvlHornehoPritlaku.Switch1 THEN
+				P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= TRUE;
 				P3_LeakageTestA.OUT.HornyPritlak_ZASUN:= FALSE;
 				P3_LeakageTestA.OUT.HornyPritlak_VYSUN:= TRUE;
 				SC_OvlHornehoPritlaku.Switch1:= TRUE;
@@ -66,6 +68,7 @@ ACTION OvlHornehoPritlaku:
 			END_IF	
 			
 			IF NOT SC_OvlHornehoPritlaku.Switch1 THEN
+				P3_LeakageTestA.OUT.PneuZamok_ODOMKNI:= TRUE;
 				P3_LeakageTestA.OUT.HornyPritlak_VYSUN:= FALSE;
 				P3_LeakageTestA.OUT.HornyPritlak_ZASUN:= TRUE;
 				SC_OvlHornehoPritlaku.Switch1:= TRUE;

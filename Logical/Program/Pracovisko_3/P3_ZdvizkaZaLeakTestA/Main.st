@@ -36,7 +36,8 @@ PROGRAM _CYCLIC
 			P3_ZdvizkaZaLeakTestA.STAV.PoINIT:= FALSE;
 			P3_ZdvizkaZaLeakTestA.OUT.TlmicPaletky_VYSUN:= FALSE;
 			P3_ZdvizkaZaLeakTestA.OUT.TlmicPaletky_ZASUN:= FALSE;
-						
+			P3_Dopravniky.OUT.PriecnyDopravnik2_VPRED:= FALSE;
+			P3_Dopravniky.OUT.PriecnyDopravnik2_VZAD:= FALSE;			
 			P3_ZdvizkaZaLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratA:= FALSE;
 			P3_ZdvizkaZaLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratB:= FALSE;
 			P3_LeakageTestA.STAV.PrebiehaVyvezeniePaletky:= FALSE;
@@ -196,14 +197,14 @@ PROGRAM _CYCLIC
 	
 		18:
 			SC_P3_ZdvizkaZaLeakTestA.StepName:='18 - Inicializacia - vysunutie tlmica paletky';
-			SC_P3_ZdvizkaZaLeakTestA.IdleTime.PT:= T#1s;
+			SC_P3_ZdvizkaZaLeakTestA.IdleTime.PT:= T#500ms;
 			SC_P3_ZdvizkaZaLeakTestA.AlarmTime.PT:= T#5s;
 		
-			SC_P3_ZdvizkaZaLeakTestA.IdleTime.IN:= NOT P3_ZdvizkaZaLeakTestA.IN.TlmicPaletky_ZASUNUTY;
-			
+						
 			IF NOT SC_P3_ZdvizkaZaLeakTestA.Switch1 THEN
 				P3_ZdvizkaZaLeakTestA.OUT.TlmicPaletky_ZASUN:= FALSE;
 				P3_ZdvizkaZaLeakTestA.OUT.TlmicPaletky_VYSUN:= TRUE;
+				SC_P3_ZdvizkaZaLeakTestA.IdleTime.IN:= TRUE;
 				SC_P3_ZdvizkaZaLeakTestA.Switch1:= TRUE;
 			END_IF
 			
@@ -216,7 +217,11 @@ PROGRAM _CYCLIC
 			END_IF		
 			
 			
-				
+		
+			
+			
+			
+			
 			
 			//********************************************************Automatick˝ reûim****************************************************************************//
 		
@@ -225,7 +230,7 @@ PROGRAM _CYCLIC
 			SC_P3_ZdvizkaZaLeakTestA.IdleTime.PT:= T#200ms;
 			SC_P3_ZdvizkaZaLeakTestA.AlarmTime.PT:= T#5s;
 		
-			SC_P3_ZdvizkaZaLeakTestA.IdleTime.IN:= P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky AND P3_ZdvizkaZaLeakTestA.IN.PoziciaPaletky_OK AND P3_ZdvizkaZaLeakTestA.IN.Zdvizka_StrednaPoloha;	
+			SC_P3_ZdvizkaZaLeakTestA.IdleTime.IN:= P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky AND (P3_ZdvizkaZaLeakTestA.IN.PoziciaPaletky_OK OR P3_ZdvizkaZaLeakTestA.IN.TlmicPaletky_ZASUNUTY) AND P3_ZdvizkaZaLeakTestA.IN.Zdvizka_StrednaPoloha;	
 		
 			IF P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky AND P3_ZdvizkaZaLeakTestA.IN.Zdvizka_StrednaPoloha THEN
 				P3_LeakageTestA.STAV.PrebiehaVyvezeniePaletky:= FALSE;
@@ -255,6 +260,9 @@ PROGRAM _CYCLIC
 			ELSIF NOT P4_FunkcnyTestA.STAV.Tester_ON AND P4_FunkcnyTestB.STAV.Tester_ON AND NOT P3_ZdvizkaZaLeakTestB.IN.PritomnostPaletky AND SC_P3_ZdvizkaZaLeakTestB.Step = 100 AND NOT P3_ZdvizkaZaLeakTestB.STAV.PrebiehaVyvezeniePaletkyNaTratA AND NOT P3_LeakageTestB.STAV.PrebiehaVyvezeniePaletky THEN
 				SC_P3_ZdvizkaZaLeakTestA.ResetStep:= TRUE;
 				SC_P3_ZdvizkaZaLeakTestA.Step:= 120;
+			ELSIF NOT P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky THEN
+				SC_P3_ZdvizkaZaLeakTestA.ResetStep:= TRUE;
+				SC_P3_ZdvizkaZaLeakTestA.Step:= 100;
 			END_IF
 		
 			//Vyv·ûanie na traù A//		

@@ -58,7 +58,9 @@ module.exports = function (grunt) {
                 });
                 strMapping = '[' + strMapping + ']';
 
-                js += `brease.setOptionsMapping('{COWI_ID}', '${prop.name}', ${strMapping}, ${parsedDefaultValue});\n`;
+                if (parsedDefaultValue !== 'null' && parsedDefaultValue !== undefined) {
+                    js += `brease.setOptionsMapping('{COWI_ID}', '${prop.name}', ${strMapping}, ${parsedDefaultValue});\n`;
+                }
             }
         }
 

@@ -474,7 +474,7 @@ PROGRAM _CYCLIC
 				SC_P3_StoperSrobovania.Step:= 0;
 			ELSIF SC_P3_StoperSrobovania.IdleTime.Q THEN
 				SC_P3_StoperSrobovania.ResetStep:= TRUE;
-				SC_P3_StoperSrobovania.Step:= 102;
+				SC_P3_StoperSrobovania.Step:= 560;//102
 			END_IF
 		
 			
@@ -759,7 +759,7 @@ PROGRAM _CYCLIC
 			IF NOT P3_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P3_SkrutkovanieResult_OFF THEN
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
-					SC_P3_StoperSrobovania.Step:= 145;
+					SC_P3_StoperSrobovania.Step:= 545;
 				ELSE	
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
 					SC_P3_StoperSrobovania.Step:= 140;
@@ -811,13 +811,13 @@ PROGRAM _CYCLIC
 					Reports.Skrutkovacky.VyslednyReport.P3_SkrutkaK40:= 'PASS';
 					Reports.Skrutkovacky.VyslednyReport.P3_SkrutkaM5:= 'PASS';
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
-					SC_P3_StoperSrobovania.Step:= 145;
+					SC_P3_StoperSrobovania.Step:= 545;
 				ELSE
 					Reports.Skrutkovacky.VyslednyReport.P3_SkrutkaK40:= 'FAIL';
 					Reports.Skrutkovacky.VyslednyReport.P3_SkrutkaM5:= 'FAIL';
 					IF P3_Srobov_K40_Result_OFF THEN
 						SC_P3_StoperSrobovania.ResetStep:= TRUE;
-						SC_P3_StoperSrobovania.Step:= 145;	
+						SC_P3_StoperSrobovania.Step:= 545;	
 					ELSE 	
 						Paletka[i].PAR.StavPowerCP:= 'FAIL';
 						Paletka[i].STAV.StavPaletky:= 'NG';
@@ -830,7 +830,7 @@ PROGRAM _CYCLIC
 				Reports.Skrutkovacky.VyslednyReport.P3_SkrutkaM5:= 'FAIL';
 				IF P3_Srobov_K40_Result_OFF THEN
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
-					SC_P3_StoperSrobovania.Step:= 145;	
+					SC_P3_StoperSrobovania.Step:= 545;	
 				ELSE 
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
@@ -841,28 +841,7 @@ PROGRAM _CYCLIC
 		
 		
 			
-		145:
-			SC_P3_StoperSrobovania.StepName:='145 - Automaticky Rezim - presun manipulatora vzad';
-			SC_P3_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
-			
-			
-			IF NOT SC_P3_StoperSrobovania.Switch1 THEN
-				P3_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
-				SC_P3_StoperSrobovania.Switch1:= TRUE;
-			END_IF
-			
-			IF EDGEPOS(P3_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny) THEN
-				P3_Srobovanie.COM_IN.PresunManipulatora_VZAD:= FALSE;
-				SC_P3_StoperSrobovania.ResetStep:= TRUE;
-				SC_P3_StoperSrobovania.Step:= 545;
-			END_IF
-			
-			
-			
-			
-			
 			
 		
 			//********************************************Model 5H**************************************************************//
@@ -895,7 +874,7 @@ PROGRAM _CYCLIC
 			IF NOT P3_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P3_SkrutkovanieResult_OFF THEN
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
-					SC_P3_StoperSrobovania.Step:= 365;
+					SC_P3_StoperSrobovania.Step:= 545;
 				ELSE
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
 					SC_P3_StoperSrobovania.Step:= 360;
@@ -935,12 +914,12 @@ PROGRAM _CYCLIC
 				IF VysunutieSkrutkovacky_OK THEN
 					Reports.Skrutkovacky.VyslednyReport.P3_SkrutkaM5:= 'PASS';
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
-					SC_P3_StoperSrobovania.Step:= 365;
+					SC_P3_StoperSrobovania.Step:= 545;
 				ELSE
 					Reports.Skrutkovacky.VyslednyReport.P3_SkrutkaM5:= 'FAIL';
 					IF P3_Srobov_M5_Result_OFF THEN
 						SC_P3_StoperSrobovania.ResetStep:= TRUE;
-						SC_P3_StoperSrobovania.Step:= 365;	
+						SC_P3_StoperSrobovania.Step:= 545;	
 					ELSE	
 						Paletka[i].PAR.StavPowerCP:= 'FAIL';
 						Paletka[i].STAV.StavPaletky:= 'NG';
@@ -952,7 +931,7 @@ PROGRAM _CYCLIC
 				Reports.Skrutkovacky.VyslednyReport.P3_SkrutkaM5:= 'FAIL';
 				IF P3_Srobov_M5_Result_OFF THEN
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
-					SC_P3_StoperSrobovania.Step:= 365;	
+					SC_P3_StoperSrobovania.Step:= 545;	
 				ELSE	
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
@@ -962,28 +941,7 @@ PROGRAM _CYCLIC
 			END_IF	
 		
 		
-		365:
-			SC_P3_StoperSrobovania.StepName:='365 - Automaticky Rezim - presun manipulatora vzad';
-			SC_P3_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;
-		
-			
-			
-			IF NOT SC_P3_StoperSrobovania.Switch1 THEN
-				P3_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
-				SC_P3_StoperSrobovania.Switch1:= TRUE;
-			END_IF
-			
-			IF EDGEPOS(P3_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny) THEN
-				P3_Srobovanie.COM_IN.PresunManipulatora_VZAD:= FALSE;
-				SC_P3_StoperSrobovania.ResetStep:= TRUE;
-				SC_P3_StoperSrobovania.Step:= 545;
-			END_IF
-			
-			
-			
-			
-			
+	
 			
 			
 			

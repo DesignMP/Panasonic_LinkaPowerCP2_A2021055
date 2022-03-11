@@ -50,9 +50,10 @@ function (Utils, BreaseEvent, SocketEvent, ClientSystemEvent, Enum, PasswordPoli
         },
 
         getSeparators: function () {
+            // currently static, but could be dynamic in future, like in globalize
             return {
-                dsp: '.',
-                gsp: ','
+                dsp: '.', // decimal separator = string that separates a number from the fractional portion, as in 1.99
+                gsp: ',' // group separator = string that separates number groups, as in 1,000,000
             };
         },
         /**

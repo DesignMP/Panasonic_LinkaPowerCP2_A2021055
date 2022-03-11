@@ -228,7 +228,7 @@ PROGRAM _CYCLIC
 			P2_Srobovanie.ServoManipulOsZ_M4.Command.TorqueLimitation:= TRUE;
 		
 		
-			IF P2_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie THEN
+			IF P2_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie AND P2_Robot.STAV.PoINIT THEN
 				P2_Robot.COM_OUT.ManipSrobovania_BezpecnaPozicia:= FALSE;
 				SC_P2_Srobovanie.ResetStep:= TRUE;
 				SC_P2_Srobovanie.Step:= 3;

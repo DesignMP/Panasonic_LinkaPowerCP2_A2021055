@@ -60,7 +60,7 @@
     IsDeployed="true"
     IsStatic="false"
     UseAsStatic="false"
-    Version="5.16.0" />
+    Version="5.17.0" />
   <Library
     Name="dvframe"
     IsDeployed="true"
@@ -80,29 +80,23 @@
     UseAsStatic="false"
     Version="" />
   <Library
-    Name="McBase"
-    IsDeployed="true"
-    IsStatic="false"
-    UseAsStatic="false"
-    Version="5.16.2" />
-  <Library
     Name="MpAlarmX"
     IsDeployed="true"
     IsStatic="false"
     UseAsStatic="false"
-    Version="5.16.1" />
+    Version="5.17.0" />
   <Library
     Name="MpBase"
     IsDeployed="true"
     IsStatic="false"
     UseAsStatic="false"
-    Version="5.16.0" />
+    Version="5.17.0" />
   <Library
     Name="MpRecipe"
     IsDeployed="true"
     IsStatic="false"
     UseAsStatic="false"
-    Version="5.16.1" />
+    Version="5.17.0" />
   <Library
     Name="MyConvert"
     IsDeployed="true"

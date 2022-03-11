@@ -5,7 +5,9 @@ PROGRAM _INIT
 	Safety.STAV.P1_Vytah_Bariera_AKTIVNA:= TRUE;
 	Safety.STAV.P1_ZonaBunky_AKTIVNA:= TRUE;
 	Safety.STAV.P1_ZonaVytahu_AKTIVNA:= TRUE;
+	Safety.STAV.P3_ZonaBunky_AKTIVNA:= TRUE;
 	Linka.PAR.ZvolenyModel:= '5F';
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -24,8 +26,8 @@ ProfinetKomunikaciaCU;
 	Linka.P2_SkrutkovanieResult_OFF:= TRUE;
 	Linka.P3_SkrutkovanieResult_OFF:= TRUE;
 	P1_UzivatelPrihlaseny:= TRUE;
-	
-	
+	P2_UzivatelPrihlaseny:= TRUE;
+	P34_UzivatelPrihlaseny:= TRUE;
 	
 	
 	

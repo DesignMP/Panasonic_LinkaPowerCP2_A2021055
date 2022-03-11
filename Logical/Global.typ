@@ -416,18 +416,8 @@ TYPE
 	P34_RemPremenne_typ : 	STRUCT 
 		P3_ManipSrob_OsY_Rychlost : REAL; (*mm/s*)
 		P3_ManipSrob_OsZ_M5_Rychlost : REAL; (*mm/s*)
-		P4_Vytah_RychlostZdvihu : REAL; (*mm/s*)
-		P4_Vytah_PoziciaNakladania : REAL;
-		P4_Vytah_PoziciaVykladania : REAL;
-		P4_ZdvihEtiketovacky_Rychlost : REAL; (*mm/s*)
-		P4_Etiketovacka_PozEtikety_4F : REAL;
-		P4_Etiketovacka_PozEtikety_5F : REAL;
-		P4_Etiketovacka_PozEtikety_5H : REAL;
-		P4_Etiketovacka_PozOdoberEtikety : REAL;
-		P4_Etiketov_RychlZdvihuAplikat : REAL; (*mm/s*)
 		P3_Srob45F_PozY_Skrutkovania : REAL;
 		P3_Srob5H_PozY_Skrutkovania : REAL;
-		P3_Srob_PozY_HV_Test : REAL;
 		P3_Srob_PozY_OdobratSkrutkyM5 : REAL;
 		P3_Srob45F_Mom_SkrutkyM5 : REAL;
 		P3_Srob45F_Rychl_SkrutkyM5 : REAL; (*mm/s*)
@@ -439,6 +429,15 @@ TYPE
 		P3_Srob45F_M5_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 		P3_Srob5H_M5_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
 		P3_Srob5H_M5_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
+		P4_Vytah_RychlostZdvihu : REAL; (*mm/s*)
+		P4_Vytah_PoziciaNakladania : REAL;
+		P4_Vytah_PoziciaVykladania : REAL;
+		P4_ZdvihEtiketovacky_Rychlost : REAL; (*mm/s*)
+		P4_Etiketovacka_PozEtikety_4F : REAL;
+		P4_Etiketovacka_PozEtikety_5F : REAL;
+		P4_Etiketovacka_PozEtikety_5H : REAL;
+		P4_Etiketovacka_PozOdoberEtikety : REAL;
+		P4_Etiketov_RychlZdvihuAplikat : REAL; (*mm/s*)
 	END_STRUCT;
 END_TYPE
 
@@ -462,6 +461,7 @@ TYPE
 		P3_SV_PrivodVzduchu_CH1 : BOOL;
 		P3_SV_PrivodVzduchu_CH2 : BOOL;
 		P3_SV_ZonaBunky : BOOL;
+		P3_SV_HV_test : BOOL;
 		P4_SV_PrivodVzduchu_CH1 : BOOL;
 		P4_SV_PrivodVzduchu_CH2 : BOOL;
 		P4_SV_ZonaBunky : BOOL;
@@ -605,8 +605,8 @@ TYPE
 		ServoManipulatorOsY_KomOK : BOOL;
 		ServoManipulatorOsZ_M5_KomOK : BOOL;
 		ServoManipulatorOsZ_M4_KomOK : BOOL;
-		PredneDvere_PritomnostAdaptera : BOOL;
-		ZadneDvere_PritomnostAdaptera : BOOL;
+		PredneDvere_PritomnostAdaptera : BOOL; (*EZ 1.1*)
+		ZadneDvere_PritomnostAdaptera : BOOL; (*EZ 1.2*)
 	END_STRUCT;
 	P1_Pracovisko_OUT_typ : 	STRUCT 
 		Majak_ZeleneSvetlo_ON : BOOL;
@@ -617,8 +617,8 @@ TYPE
 		Osvetlenie_CAM2_ON : BOOL;
 		Osvetlenie_CAM4_ON : BOOL;
 		Osvetlenie_CAM6_ON : BOOL;
-		PredneDvere_ZAMKNI : BOOL;
-		ZadneDvere_ZAMKNI : BOOL;
+		PredneDvere_ZAMKNI : BOOL; (*EZ 1.1*)
+		ZadneDvere_ZAMKNI : BOOL; (*EZ 1.2*)
 	END_STRUCT;
 	P1_Pracovisko_PAR_typ : 	STRUCT 
 		New_Member : USINT;
@@ -701,6 +701,7 @@ TYPE
 	P1_Vytah_OUT_typ : 	STRUCT 
 		DopravnikChod_VPRED : BOOL; (*M1_11*)
 		DopravnikChod_VZAD : BOOL; (*M1_11*)
+		OsvetlenieVytahu_ON : BOOL;
 	END_STRUCT;
 	P1_Vytah_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
@@ -801,6 +802,7 @@ TYPE
 		ZasunStoper : BOOL; (*YV001_VT1*)
 		Centrovanie_VYSUN : BOOL; (*YV002_VT1*)
 		Centrovanie_ZASUN : BOOL; (*YV003_VT1*)
+		OsvetleniePaletky_ON : BOOL;
 	END_STRUCT;
 	P1_StoperSrobovania_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
@@ -877,9 +879,9 @@ TYPE
 		NapajanieSkrutkovackyM4_OK : BOOL;
 		NapajanieSkrutkovackyK30_OK : BOOL;
 		NapajanieSkrutkovackyM5_OK : BOOL;
+		NapajanieZasobnikaK30_OK : BOOL;
 		NapajanieZasobnikaM5_OK : BOOL;
 		NapajanieZasobnikaM4_OK : BOOL;
-		NapajanieZasobnikaK30_OK : BOOL;
 		NapajanieVibrolistyM5_OK : BOOL;
 		NapajanieVibrolistyM4_OK : BOOL;
 	END_STRUCT;
@@ -893,6 +895,7 @@ TYPE
 		Skrutkovacka_M5_Prisavanie_ON : BOOL; (*YV022_VT1*)
 		Skrutkovacka_M5_Prisavanie_OFF : BOOL; (*YV023_VT1*)
 		Skrutkovacka_M5_Odvzdusn_ON : BOOL; (*YV024_VT1*)
+		BodoveOsvetlenie_ON : BOOL;
 	END_STRUCT;
 	P1_Srobovanie_PAR_typ : 	STRUCT 
 		RR_IndexPolohovaniaManipulatora : USINT;
@@ -1122,6 +1125,9 @@ TYPE
 		Manual : BOOL;
 		Reset : BOOL;
 		KoniecCyklu : BOOL;
+		COM_Weidmuller : P2_COM_Weidmuller_typ;
+		COM_Festo : P2_COM_Festo_typ;
+		COM_VentilovyTerminal : ARRAY[0..9]OF USINT;
 	END_STRUCT;
 	P2_Pracovisko_IN_typ : 	STRUCT 
 		TlakVzduchu_OK : BOOL; (*S2_10*)
@@ -1179,6 +1185,48 @@ TYPE
 		HardwareZaklTesnenia_OK : BOOL;
 		SkrutkovackyZasunute : BOOL;
 		UkoncenieCyklu_BUSY : BOOL;
+	END_STRUCT;
+	P2_COM_Weidmuller_typ : 	STRUCT 
+		AB2_5_8DI : USINT;
+		AB2_6_8DI : USINT;
+		AB2_7_8DI : USINT;
+		AB2_8_8DI : USINT;
+		AB2_9_8DO : USINT;
+		AB2_10_8DO : USINT;
+		AB2_12_8DO : USINT;
+		AB2_13_8DO : USINT;
+	END_STRUCT;
+	P2_COM_Festo_typ : 	STRUCT 
+		DI2_1_8DI : ARRAY[0..7]OF BOOL;
+		DI2_2_8DI : ARRAY[0..7]OF BOOL;
+		DI2_3_8DI : ARRAY[0..7]OF BOOL;
+		DI2_4_8DI : ARRAY[0..7]OF BOOL;
+		DI2_5_8DI : ARRAY[0..7]OF BOOL;
+		DI2_6_8DI : ARRAY[0..7]OF BOOL;
+		DI2_7_8DI : ARRAY[0..7]OF BOOL;
+		DI2_8_8DI : ARRAY[0..7]OF BOOL;
+		DM2_1_4DI : ARRAY[0..3]OF BOOL;
+		DM2_1_4DO : ARRAY[0..3]OF BOOL;
+		DS2_1_Port0_IN : ARRAY[0..1]OF USINT;
+		DS2_1_Port0_OUT : ARRAY[0..1]OF USINT;
+		DS2_1_Port1_IN : ARRAY[0..1]OF USINT;
+		DS2_1_Port1_OUT : ARRAY[0..1]OF USINT;
+		DS2_1_Port2_IN : ARRAY[0..1]OF USINT;
+		DS2_1_Port2_OUT : ARRAY[0..1]OF USINT;
+		DS2_1_Port3_IN : ARRAY[0..1]OF USINT;
+		DS2_1_Port3_OUT : ARRAY[0..1]OF USINT;
+		DS2_2_Port0_IN : ARRAY[0..31]OF USINT;
+		DS2_2_Port0_OUT : ARRAY[0..31]OF USINT;
+		DS2_2_Port1_IN : ARRAY[0..31]OF USINT;
+		DS2_2_Port1_OUT : ARRAY[0..31]OF USINT;
+		DS2_2_Port2_IN : ARRAY[0..31]OF USINT;
+		DS2_2_Port2_OUT : ARRAY[0..31]OF USINT;
+		DS2_2_Port3_IN : ARRAY[0..31]OF USINT;
+		DS2_2_Port3_OUT : ARRAY[0..31]OF USINT;
+		DS2_3_Port0_IN : ARRAY[0..15]OF USINT;
+		DS2_3_Port0_OUT : ARRAY[0..15]OF USINT;
+		DS2_3_Port1_IN : ARRAY[0..1]OF USINT;
+		DS2_3_Port1_OUT : ARRAY[0..1]OF USINT;
 	END_STRUCT;
 END_TYPE
 
@@ -1515,8 +1563,8 @@ TYPE
 		NapajanieSkrutkovackyM4_OK : BOOL;
 		NapajanieSkrutkovackyM5_OK : BOOL;
 		NapajanieZasobnikaM6_OK : BOOL;
-		NapajanieZasobnikaM4_OK : BOOL;
 		NapajanieZasobnikaM5_OK : BOOL;
+		NapajanieZasobnikaM4_OK : BOOL;
 		NapajanieVibrolistyM4_OK : BOOL;
 	END_STRUCT;
 	P2_Srobovanie_OUT_typ : 	STRUCT 
@@ -1921,7 +1969,7 @@ TYPE
 		STAV : P3_Pracovisko_STAV_typ;
 		COM_Weidmuller : P3_COM_Weidmuller_typ;
 		COM_Festo : P3_COM_Festo_typ;
-		COM_VentilovyTerminal : ARRAY[0..5]OF USINT;
+		COM_VentilovyTerminal : ARRAY[0..9]OF USINT;
 		Automat : BOOL;
 		Manual : BOOL;
 		Reset : BOOL;
@@ -1939,6 +1987,11 @@ TYPE
 		Kamery_ControlUnit_KomOK : BOOL;
 		LeakageTesterA_KomOK : BOOL;
 		LeakageTesterB_KomOK : BOOL;
+		StavPrepatovejOchrany_OK : BOOL;
+		PredneDvereLave_PritomnAdaptera : BOOL; (*EZ 3.1*)
+		PredneDverePrave_PritomnAdaptera : BOOL; (*EZ 3.2*)
+		ZadneDvereLave_PritomnAdaptera : BOOL; (*EZ 3.3*)
+		ZadneDverePrave_PritomnAdaptera : BOOL; (*EZ 3.4*)
 	END_STRUCT;
 	P3_Pracovisko_OUT_typ : 	STRUCT 
 		Majak_ZeleneSvetlo_ON : BOOL;
@@ -1948,6 +2001,11 @@ TYPE
 		OsvetlenieBunky_ON : BOOL;
 		Osvetlenie_CAM13_ON : BOOL;
 		ZdvizkyPneuZamok_ODOMKNI : BOOL; (*YV166_VT3*)
+		PredneDvereLave_ZAMKNI : BOOL; (*EZ 3.1*)
+		PredneDverePrave_ZAMKNI : BOOL; (*EZ 3.2*)
+		ZadneDvereLave_ZAMKNI : BOOL; (*EZ 3.3*)
+		ZadneDverePrave_ZAMKNI : BOOL; (*EZ 3.4*)
+		Ventilator_ON : BOOL;
 	END_STRUCT;
 	P3_Pracovisko_PAR_typ : 	STRUCT 
 		New_Member : USINT;
@@ -2167,8 +2225,8 @@ TYPE
 		Skrutkovacka_M5_Vakum_OK : BOOL; (*S3_6*)
 		NapajanieSkrutkovackyK40_OK : BOOL;
 		NapajanieSkrutkovackyM5_OK : BOOL;
-		NapajanieZasobnikaM5_OK : BOOL;
 		NapajanieZasobnikaK40_OK : BOOL;
+		NapajanieZasobnikaM5_OK : BOOL;
 		NapajanieVibrolistyM5_OK : BOOL;
 	END_STRUCT;
 	P3_Srobovanie_OUT_typ : 	STRUCT 
@@ -2377,6 +2435,8 @@ TYPE
 	END_STRUCT;
 	P3_LeakageTestA_IN_typ : 	STRUCT 
 		NapajanieTestera_OK : BOOL;
+		HornyPritlak_TlakOK : BOOL; (*S3.8*)
+		HornyPritlak_PneuZamok_Odomknuty : BOOL; (*S3.9*)
 		HornyPritlak_VYSUNUTY : BOOL; (*MS3_16*)
 		HornyPritlak_ZASUNUTY : BOOL; (*MS3_15*)
 		Centrovanie_VYSUNUTE : BOOL; (*IS3_36*)
@@ -2433,6 +2493,8 @@ TYPE
 	END_STRUCT;
 	P3_LeakageTestB_IN_typ : 	STRUCT 
 		NapajanieTestera_OK : BOOL;
+		HornyPritlak_TlakOK : BOOL; (*S3.10*)
+		HornyPritlak_PneuZamok_Odomknuty : BOOL; (*S3.11*)
 		HornyPritlak_VYSUNUTY : BOOL; (*MS3_18*)
 		HornyPritlak_ZASUNUTY : BOOL; (*MS3_17*)
 		Centrovanie_VYSUNUTE : BOOL; (*IS3_38*)

@@ -82,6 +82,20 @@
       <InternalFile
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Srobova\AtlasCopcoKomunikacia.st.var" />
     </Task>
+    <Task
+      Name="P3_Srobova"
+      Disable="false"
+      Source="Program.Pracovisko_3.P3_Srobovanie"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P3_Srobova\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Srobovanie\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Srobovanie\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P3_Srobova\AtlasCopcoKomunikacia.st.var" />
+    </Task>
   </TaskClass>
   <TaskClass
     Name="Cyclic#3">
@@ -402,7 +416,7 @@
     </Task>
     <Task
       Name="P3_Main"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_Main"
       Language="IEC">
       <InternalFile
@@ -416,7 +430,7 @@
     </Task>
     <Task
       Name="P3_Dopravn"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_Dopravniky"
       Language="IEC">
       <InternalFile
@@ -428,7 +442,7 @@
     </Task>
     <Task
       Name="P3_SpodnyS"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_SpodnyStoper"
       Language="IEC">
       <InternalFile
@@ -440,7 +454,7 @@
     </Task>
     <Task
       Name="P3_StoperS"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_StoperSrobovania"
       Language="IEC">
       <InternalFile
@@ -455,22 +469,8 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P3_StoperS\OvlCentrovacky.st.var" />
     </Task>
     <Task
-      Name="P3_Srobova"
-      Disable="true"
-      Source="Program.Pracovisko_3.P3_Srobovanie"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P3_Srobova\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Srobovanie\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Srobovanie\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P3_Srobova\AtlasCopcoKomunikacia.st.var" />
-    </Task>
-    <Task
       Name="P3_HV_Test"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_HV_Test"
       Language="IEC">
       <InternalFile
@@ -492,7 +492,7 @@
     </Task>
     <Task
       Name="P3_Zdvizka"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestA"
       Language="IEC">
       <InternalFile
@@ -506,7 +506,7 @@
     </Task>
     <Task
       Name="P3_Leakage"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_LeakageTestA"
       Language="IEC">
       <InternalFile
@@ -526,7 +526,7 @@
     </Task>
     <Task
       Name="P3_Zdvizk2"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestA"
       Language="IEC">
       <InternalFile
@@ -540,7 +540,7 @@
     </Task>
     <Task
       Name="P3_Zdvizk1"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestB"
       Language="IEC">
       <InternalFile
@@ -554,7 +554,7 @@
     </Task>
     <Task
       Name="P3_Leakag1"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_LeakageTestB"
       Language="IEC">
       <InternalFile
@@ -574,7 +574,7 @@
     </Task>
     <Task
       Name="P3_Zdvizk3"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestB"
       Language="IEC">
       <InternalFile

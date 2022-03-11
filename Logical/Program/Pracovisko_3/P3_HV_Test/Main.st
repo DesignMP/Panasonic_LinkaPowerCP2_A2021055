@@ -45,6 +45,10 @@ PROGRAM _CYCLIC
 			P3_HV_Test.OUT.PritlacenieKontaktovTestera_ON:= FALSE;
 			P3_HV_Test.OUT.PruzenieHornychKontaktov_VYSUN:= FALSE;
 			P3_HV_Test.OUT.PruzenieHornychKontaktov_ZASUN:= TRUE;
+			P3_HV_Test.OUT.HorneKontakty_VYSUN:= FALSE;
+			P3_HV_Test.OUT.HorneKontakty_ZASUN:= TRUE;
+			P3_HV_Test.OUT.SpodneKontakty_VYSUN:= FALSE;
+			P3_HV_Test.OUT.SpodneKontakty_ZASUN:= TRUE;
 			P3_HV_Test.RFID_hlava.PrecitajChipRFID:= FALSE;
 			P3_HV_Test.CMD.RR_OtvorTester:= FALSE;
 			P3_HV_Test.CMD.RR_ZatvorTester:= FALSE;
@@ -291,7 +295,7 @@ PROGRAM _CYCLIC
 				SC_P3_HV_Test.Step:= 0;
 			ELSIF SC_P3_HV_Test.IdleTime.Q THEN
 				SC_P3_HV_Test.ResetStep:= TRUE;
-				SC_P3_HV_Test.Step:= 101;
+				SC_P3_HV_Test.Step:= 560;//101
 			END_IF
 		
 		101:
@@ -603,8 +607,7 @@ PROGRAM _CYCLIC
 			ELSIF NOT P3_ZdvizkaPredLeakTestA.IN.PritomnostPaletky AND
 				SC_P3_ZdvizkaPredLeakTestA.Step = 100 AND
 				NOT P3_HV_Test.STAV.PrebiehaVyvezeniePaletky AND
-				P3_ZdvizkaPredLeakTestA.STAV.PoINIT AND
-				P3_ZdvizkaPredLeakTestB.STAV.PoINIT THEN
+				P3_ZdvizkaPredLeakTestA.STAV.PoINIT THEN
 				P3_HV_Test.OUT.ZasunStoper:= TRUE;
 				P3_HV_Test.STAV.PrebiehaVyvezeniePaletky:= TRUE;
 				SC_P3_HV_Test.ResetStep:= TRUE;

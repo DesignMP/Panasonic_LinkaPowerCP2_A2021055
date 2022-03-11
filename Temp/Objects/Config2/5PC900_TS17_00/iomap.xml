@@ -3310,23 +3310,23 @@
 <LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p2_io_master" Type="BOOL">
 <Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p2_io_master" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveConfig_p2_smartkamera_cam8" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveConfig_p2_smartkamera_cam8" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveConfig_p2_cam8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveConfig_p2_cam8" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveState_p2_smartkamera_cam8" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveState_p2_smartkamera_cam8" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveState_p2_cam8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveState_p2_cam8" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p2_smartkamera_cam8" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p2_smartkamera_cam8" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p2_cam8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p2_cam8" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveConfig_p2_smartkamera_cam9" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveConfig_p2_smartkamera_cam9" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveConfig_p2_cam9" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveConfig_p2_cam9" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveState_p2_smartkamera_cam9" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveState_p2_smartkamera_cam9" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveState_p2_cam9" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveState_p2_cam9" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p2_smartkamera_cam9" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p2_smartkamera_cam9" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p2_cam9" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p2_cam9" Kind="io"/>
 </LN>
 <LN ID="%IX.SL1.IF1.ST3.SS1.SlaveConfig_p1_robot" Type="BOOL">
 <Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveConfig_p1_robot" Kind="io"/>
@@ -3373,23 +3373,23 @@
 <LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p1_io_master" Type="BOOL">
 <Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p1_io_master" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveConfig_p1_smartkamera_cam3" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveConfig_p1_smartkamera_cam3" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveConfig_p1_cam3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveConfig_p1_cam3" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveState_p1_smartkamera_cam3" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveState_p1_smartkamera_cam3" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveState_p1_cam3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveState_p1_cam3" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p1_smartkamera_cam3" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p1_smartkamera_cam3" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p1_cam3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p1_cam3" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveConfig_p1_smartkamera_cam5" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveConfig_p1_smartkamera_cam5" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveConfig_p1_cam5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveConfig_p1_cam5" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveState_p1_smartkamera_cam5" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveState_p1_smartkamera_cam5" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveState_p1_cam5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveState_p1_cam5" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p1_smartkamera_cam5" Type="BOOL">
-<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p1_smartkamera_cam5" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST3.SS1.SlaveDiag_p1_cam5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1" DPName="SlaveDiag_p1_cam5" Kind="io"/>
 </LN>
 <LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST1.ModuleOk" Type="BOOL">
 <Prod Device="SL1.IF1.ST3.SS1.IF1.ST1" DPName="ModuleOk" Kind="io"/>
@@ -3987,6 +3987,1707 @@
 </LN>
 <LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.ModuleOk" Type="BOOL">
 <Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="ModuleOk" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.IN.ModulFesto_IO_KomOK" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module001_Bit_0_Bit_0" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module001_Bit_0_Bit_0" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_1_8DI[0]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module001_Bit_1_Bit_1" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module001_Bit_1_Bit_1" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_1_8DI[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module001_Bit_2_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module001_Bit_2_Bit_2" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_1_8DI[2]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module001_Bit_3_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module001_Bit_3_Bit_3" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_1_8DI[3]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module001_Bit_4_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module001_Bit_4_Bit_4" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_1_8DI[4]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module001_Bit_5_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module001_Bit_5_Bit_5" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_1_8DI[5]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module001_Bit_6_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module001_Bit_6_Bit_6" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_1_8DI[6]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module001_Bit_7_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module001_Bit_7_Bit_7" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_1_8DI[7]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module002_Bit_0_Bit_0" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module002_Bit_0_Bit_0" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_5_8DI[0]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module002_Bit_1_Bit_1" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module002_Bit_1_Bit_1" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_5_8DI[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module002_Bit_2_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module002_Bit_2_Bit_2" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_5_8DI[2]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module002_Bit_3_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module002_Bit_3_Bit_3" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_5_8DI[3]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module002_Bit_4_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module002_Bit_4_Bit_4" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_5_8DI[4]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module002_Bit_5_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module002_Bit_5_Bit_5" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_5_8DI[5]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module002_Bit_6_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module002_Bit_6_Bit_6" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_5_8DI[6]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module002_Bit_7_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module002_Bit_7_Bit_7" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_5_8DI[7]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module003_Bit_0_Bit_0" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module003_Bit_0_Bit_0" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_6_8DI[0]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module003_Bit_1_Bit_1" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module003_Bit_1_Bit_1" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_6_8DI[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module003_Bit_2_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module003_Bit_2_Bit_2" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_6_8DI[2]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module003_Bit_3_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module003_Bit_3_Bit_3" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_6_8DI[3]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module003_Bit_4_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module003_Bit_4_Bit_4" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_6_8DI[4]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module003_Bit_5_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module003_Bit_5_Bit_5" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_6_8DI[5]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module003_Bit_6_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module003_Bit_6_Bit_6" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_6_8DI[6]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module003_Bit_7_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module003_Bit_7_Bit_7" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_6_8DI[7]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module004_Bit_0_Bit_0" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module004_Bit_0_Bit_0" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_7_8DI[0]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module004_Bit_1_Bit_1" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module004_Bit_1_Bit_1" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_7_8DI[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module004_Bit_2_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module004_Bit_2_Bit_2" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_7_8DI[2]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module004_Bit_3_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module004_Bit_3_Bit_3" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_7_8DI[3]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module004_Bit_4_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module004_Bit_4_Bit_4" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_7_8DI[4]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module004_Bit_5_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module004_Bit_5_Bit_5" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_7_8DI[5]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module004_Bit_6_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module004_Bit_6_Bit_6" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_7_8DI[6]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module004_Bit_7_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module004_Bit_7_Bit_7" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_7_8DI[7]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module005_Bit_0_Bit_0" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module005_Bit_0_Bit_0" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_8_8DI[0]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module005_Bit_1_Bit_1" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module005_Bit_1_Bit_1" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_8_8DI[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module005_Bit_2_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module005_Bit_2_Bit_2" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_8_8DI[2]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module005_Bit_3_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module005_Bit_3_Bit_3" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_8_8DI[3]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module005_Bit_4_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module005_Bit_4_Bit_4" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_8_8DI[4]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module005_Bit_5_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module005_Bit_5_Bit_5" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_8_8DI[5]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module005_Bit_6_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module005_Bit_6_Bit_6" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_8_8DI[6]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module005_Bit_7_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module005_Bit_7_Bit_7" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_8_8DI[7]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module006_Bit_0_Bit_0" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module006_Bit_0_Bit_0" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DM2_1_4DI[0]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module006_Bit_1_Bit_1" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module006_Bit_1_Bit_1" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DM2_1_4DI[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module006_Bit_2_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module006_Bit_2_Bit_2" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DM2_1_4DI[2]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module006_Bit_3_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module006_Bit_3_Bit_3" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DM2_1_4DI[3]" Kind="pv"/>
+</LN>
+<LN ID="%QX.SL1.IF1.ST3.SS1.IF1.ST7.Module006_Bit_0_Bit_1" Type="BOOL">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DM2_1_4DO[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module006_Bit_0_Bit_1" Kind="io"/>
+</LN>
+<LN ID="%QX.SL1.IF1.ST3.SS1.IF1.ST7.Module006_Bit_1_Bit_2" Type="BOOL">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DM2_1_4DO[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module006_Bit_1_Bit_2" Kind="io"/>
+</LN>
+<LN ID="%QX.SL1.IF1.ST3.SS1.IF1.ST7.Module006_Bit_2_Bit_3" Type="BOOL">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DM2_1_4DO[2]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module006_Bit_2_Bit_3" Kind="io"/>
+</LN>
+<LN ID="%QX.SL1.IF1.ST3.SS1.IF1.ST7.Module006_Bit_3_Bit_4" Type="BOOL">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DM2_1_4DO[3]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module006_Bit_3_Bit_4" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module007_Bit_0_Bit_0" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module007_Bit_0_Bit_0" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_2_8DI[0]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module007_Bit_1_Bit_1" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module007_Bit_1_Bit_1" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_2_8DI[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module007_Bit_2_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module007_Bit_2_Bit_2" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_2_8DI[2]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module007_Bit_3_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module007_Bit_3_Bit_3" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_2_8DI[3]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module007_Bit_4_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module007_Bit_4_Bit_4" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_2_8DI[4]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module007_Bit_5_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module007_Bit_5_Bit_5" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_2_8DI[5]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module007_Bit_6_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module007_Bit_6_Bit_6" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_2_8DI[6]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module007_Bit_7_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module007_Bit_7_Bit_7" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_2_8DI[7]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module008_Bit_0_Bit_0" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module008_Bit_0_Bit_0" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_3_8DI[0]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module008_Bit_1_Bit_1" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module008_Bit_1_Bit_1" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_3_8DI[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module008_Bit_2_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module008_Bit_2_Bit_2" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_3_8DI[2]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module008_Bit_3_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module008_Bit_3_Bit_3" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_3_8DI[3]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module008_Bit_4_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module008_Bit_4_Bit_4" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_3_8DI[4]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module008_Bit_5_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module008_Bit_5_Bit_5" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_3_8DI[5]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module008_Bit_6_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module008_Bit_6_Bit_6" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_3_8DI[6]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module008_Bit_7_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module008_Bit_7_Bit_7" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_3_8DI[7]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module009_Bit_0_Bit_0" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module009_Bit_0_Bit_0" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_4_8DI[0]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module009_Bit_1_Bit_1" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module009_Bit_1_Bit_1" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_4_8DI[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module009_Bit_2_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module009_Bit_2_Bit_2" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_4_8DI[2]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module009_Bit_3_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module009_Bit_3_Bit_3" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_4_8DI[3]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module009_Bit_4_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module009_Bit_4_Bit_4" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_4_8DI[4]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module009_Bit_5_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module009_Bit_5_Bit_5" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_4_8DI[5]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module009_Bit_6_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module009_Bit_6_Bit_6" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_4_8DI[6]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module009_Bit_7_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module009_Bit_7_Bit_7" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DI2_4_8DI[7]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs001" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs002" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs003" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[2]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs004" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[3]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs005" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs005" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[4]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs006" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs006" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[5]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs007" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs007" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[6]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs008" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs008" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[7]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs009" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs009" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[8]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs010" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs010" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[9]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs011" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs011" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[10]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs012" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs012" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[11]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs013" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs013" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[12]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs014" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs014" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[13]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs015" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs015" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[14]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs016" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs016" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[15]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs017" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs017" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[16]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs018" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs018" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[17]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs019" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs019" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[18]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs020" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs020" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[19]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs021" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs021" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[20]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs022" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs022" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[21]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs023" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs023" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[22]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs024" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs024" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[23]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs025" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs025" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[24]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs026" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs026" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[25]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs027" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs027" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[26]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs028" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs028" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[27]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs029" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs029" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[28]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs030" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs030" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[29]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs031" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs031" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[30]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs032" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs032" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_IN[31]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_NewPar_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_NewPar_Bit_2" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_SubstDev_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_SubstDev_Bit_3" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_PortActive_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_PortActive_Bit_4" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_DevCom_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_DevCom_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_DevErr_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_DevErr_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_PQ_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_PQ_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs033" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs033" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs034" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs034" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs035" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs035" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[2]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs036" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs036" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[3]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs037" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs037" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[4]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs038" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs038" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[5]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs039" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs039" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[6]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs040" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs040" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[7]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs041" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs041" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[8]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs042" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs042" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[9]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs043" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs043" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[10]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs044" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs044" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[11]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs045" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs045" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[12]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs046" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs046" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[13]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs047" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs047" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[14]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs048" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs048" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[15]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs049" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs049" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[16]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs050" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs050" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[17]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs051" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs051" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[18]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs052" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs052" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[19]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs053" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs053" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[20]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs054" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs054" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[21]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs055" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs055" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[22]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs056" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs056" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[23]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs057" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs057" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[24]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs058" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs058" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[25]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs059" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs059" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[26]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs060" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs060" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[27]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs061" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs061" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[28]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs062" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs062" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[29]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs063" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs063" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[30]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs064" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs064" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_IN[31]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_NewPar_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_NewPar_Bit_3" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_SubstDev_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_SubstDev_Bit_4" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_PortActive_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_PortActive_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_DevCom_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_DevCom_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_DevErr_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_DevErr_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_PQ_Bit_8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_PQ_Bit_8" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs065" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs065" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs066" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs066" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs067" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs067" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[2]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs068" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs068" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[3]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs069" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs069" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[4]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs070" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs070" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[5]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs071" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs071" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[6]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs072" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs072" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[7]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs073" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs073" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[8]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs074" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs074" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[9]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs075" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs075" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[10]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs076" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs076" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[11]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs077" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs077" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[12]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs078" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs078" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[13]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs079" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs079" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[14]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs080" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs080" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[15]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs081" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs081" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[16]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs082" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs082" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[17]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs083" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs083" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[18]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs084" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs084" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[19]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs085" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs085" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[20]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs086" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs086" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[21]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs087" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs087" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[22]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs088" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs088" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[23]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs089" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs089" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[24]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs090" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs090" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[25]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs091" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs091" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[26]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs092" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs092" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[27]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs093" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs093" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[28]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs094" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs094" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[29]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs095" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs095" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[30]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs096" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs096" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_IN[31]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_NewPar_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_NewPar_Bit_4" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_SubstDev_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_SubstDev_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_PortActive_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_PortActive_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_DevCom_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_DevCom_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_DevErr_Bit_8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_DevErr_Bit_8" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_PQ_Bit_9" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_PQ_Bit_9" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs097" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs097" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs098" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs098" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs099" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs099" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[2]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs100" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs100" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[3]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs101" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs101" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[4]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs102" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs102" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[5]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs103" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs103" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[6]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs104" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs104" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[7]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs105" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs105" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[8]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs106" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs106" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[9]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs107" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs107" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[10]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs108" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs108" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[11]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs109" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs109" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[12]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs110" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs110" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[13]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs111" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs111" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[14]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs112" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs112" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[15]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs113" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs113" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[16]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs114" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs114" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[17]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs115" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs115" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[18]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs116" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs116" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[19]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs117" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs117" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[20]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs118" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs118" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[21]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs119" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs119" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[22]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs120" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs120" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[23]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs121" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs121" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[24]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs122" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs122" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[25]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs123" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs123" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[26]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs124" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs124" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[27]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs125" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs125" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[28]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs126" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs126" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[29]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs127" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs127" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[30]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Inputs128" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Inputs128" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_IN[31]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_NewPar_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_NewPar_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_SubstDev_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_SubstDev_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_PortActive_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_PortActive_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_DevCom_Bit_8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_DevCom_Bit_8" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_DevErr_Bit_9" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_DevErr_Bit_9" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module010_PQ_Bit_10" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_PQ_Bit_10" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs001" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs002" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs002" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs003" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[2]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs003" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs004" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[3]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs004" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs005" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[4]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs005" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs006" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[5]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs006" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs007" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[6]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs007" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs008" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[7]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs008" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs009" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[8]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs009" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs010" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[9]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs010" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs011" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[10]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs011" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs012" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[11]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs012" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs013" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[12]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs013" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs014" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[13]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs014" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs015" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[14]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs015" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs016" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[15]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs016" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs017" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[16]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs017" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs018" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[17]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs018" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs019" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[18]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs019" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs020" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[19]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs020" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs021" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[20]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs021" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs022" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[21]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs022" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs023" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[22]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs023" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs024" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[23]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs024" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs025" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[24]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs025" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs026" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[25]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs026" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs027" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[26]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs027" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs028" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[27]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs028" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs029" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[28]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs029" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs030" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[29]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs030" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs031" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[30]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs031" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs032" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port0_OUT[31]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs032" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs033" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs033" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs034" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs034" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs035" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[2]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs035" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs036" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[3]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs036" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs037" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[4]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs037" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs038" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[5]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs038" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs039" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[6]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs039" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs040" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[7]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs040" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs041" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[8]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs041" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs042" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[9]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs042" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs043" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[10]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs043" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs044" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[11]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs044" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs045" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[12]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs045" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs046" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[13]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs046" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs047" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[14]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs047" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs048" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[15]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs048" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs049" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[16]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs049" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs050" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[17]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs050" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs051" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[18]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs051" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs052" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[19]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs052" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs053" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[20]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs053" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs054" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[21]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs054" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs055" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[22]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs055" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs056" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[23]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs056" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs057" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[24]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs057" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs058" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[25]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs058" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs059" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[26]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs059" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs060" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[27]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs060" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs061" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[28]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs061" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs062" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[29]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs062" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs063" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[30]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs063" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs064" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port1_OUT[31]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs064" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs065" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs065" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs066" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs066" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs067" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[2]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs067" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs068" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[3]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs068" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs069" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[4]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs069" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs070" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[5]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs070" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs071" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[6]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs071" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs072" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[7]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs072" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs073" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[8]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs073" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs074" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[9]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs074" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs075" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[10]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs075" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs076" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[11]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs076" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs077" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[12]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs077" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs078" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[13]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs078" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs079" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[14]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs079" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs080" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[15]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs080" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs081" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[16]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs081" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs082" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[17]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs082" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs083" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[18]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs083" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs084" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[19]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs084" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs085" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[20]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs085" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs086" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[21]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs086" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs087" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[22]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs087" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs088" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[23]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs088" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs089" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[24]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs089" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs090" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[25]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs090" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs091" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[26]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs091" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs092" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[27]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs092" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs093" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[28]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs093" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs094" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[29]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs094" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs095" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[30]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs095" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs096" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port2_OUT[31]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs096" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs097" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs097" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs098" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs098" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs099" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[2]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs099" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs100" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[3]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs100" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs101" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[4]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs101" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs102" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[5]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs102" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs103" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[6]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs103" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs104" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[7]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs104" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs105" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[8]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs105" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs106" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[9]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs106" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs107" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[10]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs107" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs108" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[11]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs108" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs109" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[12]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs109" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs110" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[13]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs110" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs111" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[14]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs111" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs112" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[15]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs112" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs113" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[16]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs113" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs114" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[17]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs114" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs115" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[18]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs115" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs116" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[19]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs116" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs117" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[20]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs117" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs118" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[21]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs118" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs119" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[22]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs119" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs120" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[23]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs120" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs121" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[24]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs121" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs122" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[25]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs122" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs123" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[26]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs123" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs124" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[27]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs124" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs125" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[28]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs125" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs126" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[29]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs126" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs127" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[30]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs127" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module010_Outputs128" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_2_Port3_OUT[31]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module010_Outputs128" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs001" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs002" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs003" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[2]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs004" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[3]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs005" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs005" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[4]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs006" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs006" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[5]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs007" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs007" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[6]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs008" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs008" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[7]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs009" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs009" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[8]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs010" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs010" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[9]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs011" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs011" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[10]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs012" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs012" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[11]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs013" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs013" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[12]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs014" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs014" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[13]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs015" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs015" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[14]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs016" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs016" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_IN[15]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_NewPar_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_NewPar_Bit_2" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_SubstDev_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_SubstDev_Bit_3" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_PortActive_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_PortActive_Bit_4" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_DevCom_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_DevCom_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_DevErr_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_DevErr_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_PQ_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_PQ_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs017" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs017" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port1_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Inputs018" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Inputs018" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port1_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_NewPar_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_NewPar_Bit_3" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_SubstDev_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_SubstDev_Bit_4" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_PortActive_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_PortActive_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_DevCom_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_DevCom_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_DevErr_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_DevErr_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module011_PQ_Bit_8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_PQ_Bit_8" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs001" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs002" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs002" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs003" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[2]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs003" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs004" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[3]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs004" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs005" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[4]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs005" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs006" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[5]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs006" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs007" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[6]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs007" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs008" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[7]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs008" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs009" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[8]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs009" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs010" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[9]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs010" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs011" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[10]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs011" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs012" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[11]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs012" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs013" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[12]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs013" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs014" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[13]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs014" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs015" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[14]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs015" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs016" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port0_OUT[15]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs016" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs017" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port1_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs017" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module011_Outputs018" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_3_Port1_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module011_Outputs018" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Inputs001" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Inputs002" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_NewPar_Bit_2" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_NewPar_Bit_2" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_SubstDev_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_SubstDev_Bit_3" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_PortActive_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_PortActive_Bit_4" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_DevCom_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_DevCom_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_DevErr_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_DevErr_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_PQ_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_PQ_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Inputs003" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port1_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Inputs004" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port1_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_NewPar_Bit_3" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_NewPar_Bit_3" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_SubstDev_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_SubstDev_Bit_4" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_PortActive_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_PortActive_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_DevCom_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_DevCom_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_DevErr_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_DevErr_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_PQ_Bit_8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_PQ_Bit_8" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Inputs005" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Inputs005" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port2_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Inputs006" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Inputs006" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port2_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_NewPar_Bit_4" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_NewPar_Bit_4" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_SubstDev_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_SubstDev_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_PortActive_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_PortActive_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_DevCom_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_DevCom_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_DevErr_Bit_8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_DevErr_Bit_8" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_PQ_Bit_9" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_PQ_Bit_9" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Inputs007" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Inputs007" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port3_IN[0]" Kind="pv"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Inputs008" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Inputs008" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port3_IN[1]" Kind="pv"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_NewPar_Bit_5" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_NewPar_Bit_5" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_SubstDev_Bit_6" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_SubstDev_Bit_6" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_PortActive_Bit_7" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_PortActive_Bit_7" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_DevCom_Bit_8" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_DevCom_Bit_8" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_DevErr_Bit_9" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_DevErr_Bit_9" Kind="io"/>
+</LN>
+<LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST7.Module012_PQ_Bit_10" Type="BOOL">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_PQ_Bit_10" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port0_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Outputs001" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Outputs002" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port0_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Outputs002" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Outputs003" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port1_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Outputs003" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Outputs004" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port1_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Outputs004" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Outputs005" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port2_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Outputs005" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Outputs006" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port2_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Outputs006" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Outputs007" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port3_OUT[0]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Outputs007" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST7.Module012_Outputs008" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P2_Pracovisko.COM_Festo.DS2_1_Port3_OUT[1]" Kind="pv"/>
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST7" DPName="Module012_Outputs008" Kind="io"/>
 </LN>
 <LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST8.ModuleOk" Type="BOOL">
 <Prod Device="SL1.IF1.ST3.SS1.IF1.ST8" DPName="ModuleOk" Kind="io"/>
@@ -5721,6 +7422,252 @@
 <LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module002_Input_4_Byte004" Type="USINT">
 <Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module002_Input_4_Byte004" Kind="io"/>
 </LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST15.Module003_Output_1_Byte" Type="USINT">
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module003_Output_1_Byte" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte001" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte001" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte002" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte002" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte003" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte003" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte004" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte004" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte005" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte005" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte006" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte006" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte007" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte007" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte008" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte008" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte009" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte009" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte010" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte010" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte011" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte011" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte012" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte012" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte013" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte013" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte014" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte014" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte015" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte015" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte016" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte016" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte017" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte017" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte018" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte018" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte019" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte019" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte020" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte020" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte021" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte021" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte022" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte022" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte023" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte023" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte024" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte024" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte025" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte025" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte026" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte026" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte027" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte027" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte028" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte028" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte029" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte029" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte030" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte030" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte031" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte031" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte032" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte032" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte033" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte033" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte034" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte034" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte035" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte035" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte036" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte036" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte037" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte037" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte038" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte038" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte039" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte039" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte040" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte040" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte041" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte041" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte042" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte042" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte043" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte043" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte044" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte044" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte045" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte045" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte046" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte046" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte047" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte047" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte048" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte048" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte049" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte049" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte050" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte050" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte051" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte051" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte052" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte052" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte053" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte053" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte054" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte054" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte055" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte055" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte056" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte056" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte057" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte057" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte058" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte058" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte059" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte059" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte060" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte060" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte061" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte061" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte062" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte062" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte063" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte063" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module004_Input_64_Byte064" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module004_Input_64_Byte064" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module005_Input_1_Byte" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module005_Input_1_Byte" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte001" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte001" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte002" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte002" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte003" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte003" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte004" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte004" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte005" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte005" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte006" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte006" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte007" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte007" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte008" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte008" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte009" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte009" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte010" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte010" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte011" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte011" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte012" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte012" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte013" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte013" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte014" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte014" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte015" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte015" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST15.Module006_Input_16_Byte016" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST15" DPName="Module006_Input_16_Byte016" Kind="io"/>
+</LN>
 <LN ID="%IX.SL1.IF1.ST3.SS1.IF1.ST16.ModuleOk" Type="BOOL">
 <Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="ModuleOk" Kind="io"/>
 <Cons Device="TC#1-CPYDEV" DPName="P1_Pracovisko.IN.SmartKamera5_KomOK" Kind="pv"/>
@@ -5739,6 +7686,252 @@
 </LN>
 <LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module002_Input_4_Byte004" Type="USINT">
 <Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module002_Input_4_Byte004" Kind="io"/>
+</LN>
+<LN ID="%QB.SL1.IF1.ST3.SS1.IF1.ST16.Module003_Output_1_Byte" Type="USINT">
+<Cons Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module003_Output_1_Byte" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte001" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte001" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte002" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte002" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte003" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte003" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte004" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte004" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte005" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte005" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte006" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte006" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte007" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte007" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte008" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte008" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte009" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte009" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte010" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte010" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte011" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte011" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte012" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte012" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte013" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte013" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte014" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte014" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte015" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte015" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte016" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte016" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte017" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte017" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte018" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte018" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte019" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte019" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte020" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte020" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte021" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte021" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte022" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte022" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte023" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte023" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte024" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte024" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte025" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte025" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte026" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte026" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte027" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte027" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte028" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte028" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte029" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte029" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte030" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte030" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte031" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte031" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte032" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte032" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte033" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte033" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte034" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte034" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte035" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte035" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte036" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte036" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte037" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte037" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte038" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte038" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte039" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte039" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte040" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte040" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte041" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte041" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte042" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte042" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte043" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte043" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte044" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte044" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte045" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte045" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte046" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte046" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte047" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte047" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte048" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte048" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte049" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte049" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte050" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte050" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte051" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte051" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte052" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte052" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte053" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte053" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte054" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte054" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte055" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte055" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte056" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte056" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte057" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte057" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte058" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte058" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte059" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte059" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte060" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte060" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte061" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte061" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte062" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte062" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte063" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte063" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module004_Input_64_Byte064" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module004_Input_64_Byte064" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module005_Input_1_Byte" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module005_Input_1_Byte" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte001" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte001" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte002" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte002" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte003" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte003" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte004" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte004" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte005" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte005" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte006" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte006" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte007" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte007" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte008" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte008" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte009" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte009" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte010" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte010" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte011" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte011" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte012" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte012" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte013" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte013" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte014" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte014" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte015" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte015" Kind="io"/>
+</LN>
+<LN ID="%IB.SL1.IF1.ST3.SS1.IF1.ST16.Module006_Input_16_Byte016" Type="USINT">
+<Prod Device="SL1.IF1.ST3.SS1.IF1.ST16" DPName="Module006_Input_16_Byte016" Kind="io"/>
 </LN>
 <LN ID="%IX.SL1.IF1.ST3.IF1.ST1.ModuleOk" Type="BOOL">
 <Prod Device="SL1.IF1.ST3.IF1.ST1" DPName="ModuleOk" Kind="io"/>
@@ -7567,32 +9760,32 @@
 <LN ID="%IX.SL1.IF1.ST6.SS1.SlaveDiag_p4_io_master" Type="BOOL">
 <Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveDiag_p4_io_master" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveConfig_p4_smartkamera_cam14" Type="BOOL">
-<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveConfig_p4_smartkamera_cam14" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveConfig_p4_cam14" Type="BOOL">
+<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveConfig_p4_cam14" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveState_p4_smartkamera_cam14" Type="BOOL">
-<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveState_p4_smartkamera_cam14" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveState_p4_cam14" Type="BOOL">
+<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveState_p4_cam14" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveDiag_p4_smartkamera_cam14" Type="BOOL">
-<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveDiag_p4_smartkamera_cam14" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveDiag_p4_cam14" Type="BOOL">
+<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveDiag_p4_cam14" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveConfig_comx51repns" Type="BOOL">
-<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveConfig_comx51repns" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveConfig_ateqf6002" Type="BOOL">
+<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveConfig_ateqf6002" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveState_comx51repns" Type="BOOL">
-<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveState_comx51repns" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveState_ateqf6002" Type="BOOL">
+<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveState_ateqf6002" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveDiag_comx51repns" Type="BOOL">
-<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveDiag_comx51repns" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveDiag_ateqf6002" Type="BOOL">
+<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveDiag_ateqf6002" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveConfig_comx51repns_001" Type="BOOL">
-<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveConfig_comx51repns_001" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveConfig_ateqf6003" Type="BOOL">
+<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveConfig_ateqf6003" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveState_comx51repns_001" Type="BOOL">
-<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveState_comx51repns_001" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveState_ateqf6003" Type="BOOL">
+<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveState_ateqf6003" Kind="io"/>
 </LN>
-<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveDiag_comx51repns_001" Type="BOOL">
-<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveDiag_comx51repns_001" Kind="io"/>
+<LN ID="%IX.SL1.IF1.ST6.SS1.SlaveDiag_ateqf6003" Type="BOOL">
+<Prod Device="SL1.IF1.ST6.SS1" DPName="SlaveDiag_ateqf6003" Kind="io"/>
 </LN>
 <LN ID="%IX.SL1.IF1.ST6.SS1.IF1.ST1.ModuleOk" Type="BOOL">
 <Prod Device="SL1.IF1.ST6.SS1.IF1.ST1" DPName="ModuleOk" Kind="io"/>
@@ -12579,12 +14772,15 @@
 <Cons Device="SL1.IF1.ST8" DPName="ValveCoils41_48_I2000_S06" Kind="io"/>
 </LN>
 <LN ID="%QB.SL1.IF1.ST8.ValveCoils49_56_I2000_S07" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P3_Pracovisko.COM_VentilovyTerminal[6]" Kind="pv"/>
 <Cons Device="SL1.IF1.ST8" DPName="ValveCoils49_56_I2000_S07" Kind="io"/>
 </LN>
 <LN ID="%QB.SL1.IF1.ST8.ValveCoils57_64_I2000_S08" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P3_Pracovisko.COM_VentilovyTerminal[7]" Kind="pv"/>
 <Cons Device="SL1.IF1.ST8" DPName="ValveCoils57_64_I2000_S08" Kind="io"/>
 </LN>
 <LN ID="%QB.SL1.IF1.ST8.ValveCoils65_72_I2000_S09" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="P3_Pracovisko.COM_VentilovyTerminal[8]" Kind="pv"/>
 <Cons Device="SL1.IF1.ST8" DPName="ValveCoils65_72_I2000_S09" Kind="io"/>
 </LN>
 <LN ID="%QB.SL1.IF1.ST8.ValveCoils73_80_I2000_S0A" Type="USINT">

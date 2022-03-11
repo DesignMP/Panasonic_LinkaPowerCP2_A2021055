@@ -208,6 +208,7 @@ function (Client, Utils, BreaseEvent, SocketEvent, SystemGestures, VirtualEvents
                 * @readonly
                 */
         _definePublicMethod(this, 'uiController', _controller);
+        _definePublicMethod(this, 'keyboardManager', _controller);
 
         _definePublicMethod(this, 'focusManager', { focusManager: focusManager });
     }

@@ -11,10 +11,10 @@ PROGRAM _CYCLIC
 	P1_Srobovanie.IN.NapajanieSkrutkovackyK30_OK :=  P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.0;
 	P1_Srobovanie.IN.NapajanieSkrutkovackyM5_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.1;
 	P1_Srobovanie.IN.NapajanieSkrutkovackyM4_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.2;
-	P1_Srobovanie.SkrutSet_M4.IN.NapajanieZasobnika_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.3;
-	P1_Srobovanie.SkrutSet_M4.IN.NapajanieVibrolisty_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.4;
-	P1_Srobovanie.SkrutSet_M5.IN.NapajanieZasobnika_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.5;
-	P1_Srobovanie.SkrutSet_M5.IN.NapajanieVibrolisty_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.6;
+	P1_Srobovanie.IN.NapajanieZasobnikaM4_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.3;
+	P1_Srobovanie.IN.NapajanieVibrolistyM4_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.4;
+	P1_Srobovanie.IN.NapajanieZasobnikaM5_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.5;
+	P1_Srobovanie.IN.NapajanieVibrolistyM5_OK := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.6;
 	P1_Vytah.IN.StavRiadeniaDopravVytahu_READY := P1_Pracovisko.COM_Weidmuller.AB1_2_8DI.7;
 	
 	//***********Karta AB 1.3 8DI***************//
@@ -75,19 +75,19 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.1;
 	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.2;
 	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.3;
-	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.4;
-	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.5;
-	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.6;
+	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.4:= P1_Vytah.OUT.OsvetlenieVytahu_ON;
+	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.5:= P1_Pracovisko.OUT.Osvetlenie_CAM4_ON;
+	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.6:= P1_Pracovisko.OUT.Osvetlenie_CAM6_ON;
 	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.7 := P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.ZapniVibromotor;
 	
 		
 	//**********Karta AB 1.10 8DO***************//
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.0;
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.1;
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.2;
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.3;
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.4;
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.5;
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.0;  //Safety resety
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.1; //Safety resety
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.2; //Safety resety
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.3; //Safety resety
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.4:= P1_StoperSrobovania.OUT.OsvetleniePaletky_ON;
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.5:= P1_Srobovanie.OUT.BodoveOsvetlenie_ON;
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.6;
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.7;
 	

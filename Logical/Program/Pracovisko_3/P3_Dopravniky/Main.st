@@ -91,10 +91,7 @@ PROGRAM _CYCLIC
 				P3_HV_Test.RFID_hlava.PritomnostPaletky AND
 				P3_LeakageTestA.RFID_hlava.PritomnostPaletky AND
 				P3_LeakageTestB.RFID_hlava.PritomnostPaletky AND
-				P3_SpodnyStoper.IN.PritomnostPaletky AND
-				P3_ZdvizkaPredLeakTestA.IN.PritomnostPaletky AND
-				P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky AND
-				P3_ZdvizkaZaLeakTestB.IN.PritomnostPaletky THEN
+				P3_SpodnyStoper.IN.PritomnostPaletky THEN
 				SC_P3_Dopravniky.ResetStep:= TRUE;
 				SC_P3_Dopravniky.Step:= 5;
 			ELSE
@@ -113,17 +110,6 @@ PROGRAM _CYCLIC
 				IF NOT P3_SpodnyStoper.IN.PritomnostPaletky THEN
 					P3_SpodnyStoper.OUT.ZasunStoper:= TRUE;
 				END_IF
-				IF NOT P3_ZdvizkaPredLeakTestA.IN.PritomnostPaletky THEN
-					P3_ZdvizkaPredLeakTestA.OUT.TlmicPaletky_VYSUN:= TRUE;
-				END_IF	
-				IF NOT P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky THEN
-					P3_ZdvizkaZaLeakTestA.OUT.TlmicPaletky_ZASUN:= FALSE;
-					P3_ZdvizkaZaLeakTestA.OUT.TlmicPaletky_VYSUN:= TRUE;
-				END_IF
-				IF NOT P3_ZdvizkaZaLeakTestB.IN.PritomnostPaletky THEN
-					P3_ZdvizkaZaLeakTestB.OUT.TlmicPaletky_ZASUN:= FALSE;
-					P3_ZdvizkaZaLeakTestB.OUT.TlmicPaletky_VYSUN:= TRUE;
-				END_IF
 				SC_P3_Dopravniky.IdleTime.IN:= TRUE;
 			END_IF	
 			
@@ -133,9 +119,6 @@ PROGRAM _CYCLIC
 				P3_LeakageTestA.OUT.ZasunStoper:= FALSE;
 				P3_LeakageTestB.OUT.ZasunStoper:= FALSE;
 				P3_SpodnyStoper.OUT.ZasunStoper:= FALSE;
-				P3_ZdvizkaPredLeakTestA.OUT.TlmicPaletky_VYSUN:= FALSE;
-				P3_ZdvizkaZaLeakTestA.OUT.TlmicPaletky_VYSUN:= FALSE;
-				P3_ZdvizkaZaLeakTestB.OUT.TlmicPaletky_VYSUN:= FALSE;
 				SC_P3_Dopravniky.ResetStep:= TRUE;
 				SC_P3_Dopravniky.Step:= 5;
 			END_IF	
@@ -147,8 +130,8 @@ PROGRAM _CYCLIC
 		
 			P3_Dopravniky.OUT.PrednyDopravnikBunky_ON:= TRUE;
 			P3_Dopravniky.OUT.ZadnyDopravnikBunky_ON:= TRUE;
-			P3_Dopravniky.OUT.VratnyDopravnik_ON:= TRUE;
-			SC_P2_Dopravniky.IdleTime.IN:= TRUE;
+			(*P3_Dopravniky.OUT.VratnyDopravnik_ON:= TRUE;*)
+			SC_P3_Dopravniky.IdleTime.IN:= TRUE;
 			
 			IF SC_P3_Dopravniky.IdleTime.Q THEN
 				P3_Dopravniky.STAV.PoINIT:= TRUE;

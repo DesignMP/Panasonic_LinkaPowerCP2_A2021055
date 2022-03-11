@@ -3,8 +3,8 @@
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\iat_media.job._markerfile">
     <BuildReason>Target "iat_media.job._markerfile" does not exist</BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main\main.st.o">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\program\pracovisko_1\p1_main\main.st" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1\main.st.o">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\program\pracovisko_3\p3_leakagetestb\main.st" differs.
 </BuildReason>
   </Rule>
   <Rule ID=".mappView_Build">
@@ -13,27 +13,27 @@
   <Rule ID=".mappView_IntegrationBuild">
     <BuildReason>Rule contains a phony target. </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main\_bur_pvdef.st.o">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main\main.st.o" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1\_bur_pvdef.st.o">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1\main.st.o" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main\a.out">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main\main.st.o" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1\a.out">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1\main.st.o" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main\p1_main.ox">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main\a.out" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1\p3_leakag1.ox">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1\a.out" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main.br">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main\p1_main.ox" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1.br">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1\p3_leakag1.ox" differs.
 </BuildReason>
   </Rule>
   <Rule ID="#cpu_tp.mak">
     <BuildReason>Rule is forced.</BuildReason>
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\binaries\config2\5pc900_ts17_00\transfer.lst">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p1_main.br" differs.
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_leakag1.br" differs.
 </BuildReason>
   </Rule>
 </BuildReasons>

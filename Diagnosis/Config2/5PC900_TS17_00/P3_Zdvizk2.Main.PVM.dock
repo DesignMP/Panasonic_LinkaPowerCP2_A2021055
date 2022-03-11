@@ -1,0 +1,13 @@
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P3_Zdvizk2 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=3 ASCIIString=0
+                                    name                                     type force                                                            value level type len format place expand specs
+                SC_P3_ZdvizkaZaLeakTestA                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
+                                    Step                                     UINT    0 "                                                             101"    1    6    1   10    0    0         
+                   P3_ZdvizkaZaLeakTestA                P3_ZdvizkaZaLeakTestA_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                 Automat                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                           P3_Pracovisko                        P3_Pracovisko_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                    STAV                   P3_Pracovisko_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
+                             Porucha_ST2                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           P3_Dopravniky                        P3_Dopravniky_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     OUT                    P3_Dopravniky_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
+                  PriecnyDopravnik2_VZAD                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         

@@ -8,6 +8,17 @@
   <Operation Delete="P34_Remane.br"/>
   <Operation Delete="P2_Remanen.br"/>
   <Operation Delete="P1_Remanen.br"/>
+  <Operation Delete="P3_Zdvizk3.br"/>
+  <Operation Delete="P3_Leakag1.br"/>
+  <Operation Delete="P3_Zdvizk1.br"/>
+  <Operation Delete="P3_Zdvizk2.br"/>
+  <Operation Delete="P3_Leakage.br"/>
+  <Operation Delete="P3_Zdvizka.br"/>
+  <Operation Delete="P3_HV_Test.br"/>
+  <Operation Delete="P3_StoperS.br"/>
+  <Operation Delete="P3_SpodnyS.br"/>
+  <Operation Delete="P3_Dopravn.br"/>
+  <Operation Delete="P3_Main.br"/>
   <Operation Delete="P1_Akumula.br"/>
   <Operation Delete="P1_Robot.br"/>
   <Operation Delete="P1_StoperS.br"/>
@@ -17,6 +28,7 @@
   <Operation Delete="Blikanie20.br"/>
   <Operation Delete="Main.br"/>
   <Operation Delete="Blikanie10.br"/>
+  <Operation Delete="P3_Srobova.br"/>
   <Operation Delete="P1_Srobova.br"/>
   <Operation Delete="P1_Vytah.br"/>
   <Operation Delete="P4_Mappin1.br"/>
@@ -25,10 +37,10 @@
   <Operation Delete="P1_Mapping.br"/>
   <Operation Delete="RFID.br"/>
   <Operation Delete="MpAlarmX.br"/>
-  <Operation Delete="SKTcp.br"/>
   <Operation Delete="CoTrace.br"/>
   <Operation Delete="mvLoader.br"/>
   <Operation Delete="MpRecipe.br"/>
+  <Operation Delete="SKTcp.br"/>
   <Operation Delete="AtlasCopco.br"/>
   <Operation Delete="Banner.br"/>
   <Operation Delete="SC.br"/>
@@ -37,6 +49,8 @@
   <Operation Delete="SkrutSety.br"/>
   <Operation Delete="ScrewLoad.br"/>
   <Operation Delete="MyConvert.br"/>
+  <Operation Delete="arflatprv.br"/>
+  <Operation Delete="arcoal.br"/>
   <Operation Delete="dvframe.br"/>
   <Operation Delete="AsUSB.br"/>
   <Operation Delete="dataobj.br"/>
@@ -47,11 +61,8 @@
   <Operation Delete="AsIecCon.br"/>
   <Operation Delete="astime.br"/>
   <Operation Delete="AsZip.br"/>
-  <Operation Delete="arssl.br"/>
-  <Operation Delete="McBase.br"/>
-  <Operation Delete="arflatprv.br"/>
-  <Operation Delete="arcoal.br"/>
   <Operation Delete="FileIO.br"/>
+  <Operation Delete="arssl.br"/>
   <Operation Download="ashwd.br" Memory="SystemROM"/>
   <Operation Download="asfw.br" Memory="SystemROM"/>
   <Operation Download="asnxdb2.br" Memory="SystemROM"/>
@@ -60,40 +71,8 @@
   <Operation Download="arconfig.br" Memory="SystemROM"/>
   <Operation Download="sysconf.br" Memory="SystemROM"/>
   <Operation Restart="warm"/>
-  <Operation Download="mcdrivelog.br" Memory="UserROM"/>
-  <Operation Download="arsvcreg.br" Memory="UserROM"/>
-  <Operation Download="Runtime.br" Memory="UserROM"/>
-  <Operation Download="FileIO.br" Memory="UserROM"/>
-  <Operation Download="arcoal.br" Memory="UserROM"/>
-  <Operation Download="arflatprv.br" Memory="UserROM"/>
-  <Operation Download="McBase.br" Memory="UserROM"/>
-  <Operation Restart="warm"/>
-  <Operation Download="arssl.br" Memory="UserROM"/>
-  <Operation Download="standard.br" Memory="UserROM"/>
-  <Operation Download="AsBrStr.br" Memory="UserROM"/>
-  <Operation Download="AsZip.br" Memory="UserROM"/>
-  <Operation Download="astime.br" Memory="UserROM"/>
-  <Operation Download="AsIecCon.br" Memory="UserROM"/>
-  <Operation Download="sys_lib.br" Memory="UserROM"/>
-  <Operation Download="IecCheck.br" Memory="UserROM"/>
-  <Operation Download="AsTCP.br" Memory="UserROM"/>
-  <Operation Download="asstring.br" Memory="UserROM"/>
-  <Operation Download="MpBase.br" Memory="UserROM"/>
-  <Operation Download="dataobj.br" Memory="UserROM"/>
-  <Operation Download="AsUSB.br" Memory="UserROM"/>
-  <Operation Download="dvframe.br" Memory="UserROM"/>
-  <Operation Download="MyConvert.br" Memory="UserROM"/>
-  <Operation Download="ScrewLoad.br" Memory="UserROM"/>
-  <Operation Download="SkrutSety.br" Memory="UserROM"/>
-  <Operation Download="RFID_Heads.br" Memory="UserROM"/>
-  <Operation Download="RoCa_Festo.br" Memory="UserROM"/>
-  <Operation Download="SC.br" Memory="UserROM"/>
-  <Operation Download="Banner.br" Memory="UserROM"/>
-  <Operation Download="AtlasCopco.br" Memory="UserROM"/>
-  <Operation Download="MpRecipe.br" Memory="UserROM"/>
   <Operation Download="FWRules.br" Memory="UserROM"/>
   <Operation Download="TCData.br" Memory="SystemROM"/>
-  <Operation Download="mvLoader.br" Memory="UserROM"/>
   <Operation Download="udbdef.br" Memory="UserROM"/>
   <Operation Download="mCoWebSc.br" Memory="UserROM"/>
   <Operation Download="User.br" Memory="UserROM"/>
@@ -106,9 +85,38 @@
   <Operation Download="Config_4.br" Memory="UserROM"/>
   <Operation Download="Config_1.br" Memory="UserROM"/>
   <Operation Download="Config_5.br" Memory="UserROM"/>
-  <Operation Download="CoTrace.br" Memory="UserROM"/>
+  <Operation Download="standard.br" Memory="UserROM"/>
   <Operation Download="Operator.br" Memory="UserROM"/>
+  <Operation Download="AsBrStr.br" Memory="UserROM"/>
+  <Operation Download="Runtime.br" Memory="UserROM"/>
+  <Operation Download="asstring.br" Memory="UserROM"/>
+  <Operation Download="arsvcreg.br" Memory="UserROM"/>
+  <Operation Download="arssl.br" Memory="UserROM"/>
+  <Operation Download="FileIO.br" Memory="UserROM"/>
+  <Operation Download="AsZip.br" Memory="UserROM"/>
+  <Operation Download="astime.br" Memory="UserROM"/>
+  <Operation Download="AsIecCon.br" Memory="UserROM"/>
+  <Operation Download="sys_lib.br" Memory="UserROM"/>
+  <Operation Download="IecCheck.br" Memory="UserROM"/>
+  <Operation Download="AsTCP.br" Memory="UserROM"/>
+  <Operation Download="MpBase.br" Memory="UserROM"/>
+  <Operation Download="dataobj.br" Memory="UserROM"/>
+  <Operation Download="AsUSB.br" Memory="UserROM"/>
+  <Operation Download="dvframe.br" Memory="UserROM"/>
+  <Operation Download="arcoal.br" Memory="UserROM"/>
+  <Operation Download="arflatprv.br" Memory="UserROM"/>
+  <Operation Download="MyConvert.br" Memory="UserROM"/>
+  <Operation Download="ScrewLoad.br" Memory="UserROM"/>
+  <Operation Download="SkrutSety.br" Memory="UserROM"/>
+  <Operation Download="RFID_Heads.br" Memory="UserROM"/>
+  <Operation Download="RoCa_Festo.br" Memory="UserROM"/>
+  <Operation Download="SC.br" Memory="UserROM"/>
+  <Operation Download="Banner.br" Memory="UserROM"/>
+  <Operation Download="AtlasCopco.br" Memory="UserROM"/>
   <Operation Download="SKTcp.br" Memory="UserROM"/>
+  <Operation Download="MpRecipe.br" Memory="UserROM"/>
+  <Operation Download="mvLoader.br" Memory="UserROM"/>
+  <Operation Download="CoTrace.br" Memory="UserROM"/>
   <Operation Download="MpAlarmX.br" Memory="UserROM"/>
   <Operation Download="RFID.br" Memory="UserROM"/>
   <Operation Download="P1_Mapping.br" Memory="UserROM"/>
@@ -117,6 +125,7 @@
   <Operation Download="P4_Mappin1.br" Memory="UserROM"/>
   <Operation Download="P1_Vytah.br" Memory="UserROM"/>
   <Operation Download="P1_Srobova.br" Memory="UserROM"/>
+  <Operation Download="P3_Srobova.br" Memory="UserROM"/>
   <Operation Download="Blikanie10.br" Memory="UserROM"/>
   <Operation Download="Main.br" Memory="UserROM"/>
   <Operation Download="Blikanie20.br" Memory="UserROM"/>
@@ -126,6 +135,17 @@
   <Operation Download="P1_StoperS.br" Memory="UserROM"/>
   <Operation Download="P1_Robot.br" Memory="UserROM"/>
   <Operation Download="P1_Akumula.br" Memory="UserROM"/>
+  <Operation Download="P3_Main.br" Memory="UserROM"/>
+  <Operation Download="P3_Dopravn.br" Memory="UserROM"/>
+  <Operation Download="P3_SpodnyS.br" Memory="UserROM"/>
+  <Operation Download="P3_StoperS.br" Memory="UserROM"/>
+  <Operation Download="P3_HV_Test.br" Memory="UserROM"/>
+  <Operation Download="P3_Zdvizka.br" Memory="UserROM"/>
+  <Operation Download="P3_Leakage.br" Memory="UserROM"/>
+  <Operation Download="P3_Zdvizk2.br" Memory="UserROM"/>
+  <Operation Download="P3_Zdvizk1.br" Memory="UserROM"/>
+  <Operation Download="P3_Leakag1.br" Memory="UserROM"/>
+  <Operation Download="P3_Zdvizk3.br" Memory="UserROM"/>
   <Operation Download="P1_Remanen.br" Memory="UserROM"/>
   <Operation Download="P2_Remanen.br" Memory="UserROM"/>
   <Operation Download="P34_Remane.br" Memory="UserROM"/>

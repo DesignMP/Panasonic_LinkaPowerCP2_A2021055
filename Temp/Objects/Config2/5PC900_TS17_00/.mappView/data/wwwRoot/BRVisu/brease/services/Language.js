@@ -67,6 +67,10 @@ function (BreaseEvent, SocketEvent, Utils, config) {
             return Utils.deepCopy(_languages);
         },
 
+        isValidLanguage: function (code) {
+            return _languages.languages[code] !== undefined;
+        },
+
         /**
         * @method
         * Method to get code (ISO 639-1) of current selected language.  
@@ -181,7 +185,7 @@ function (BreaseEvent, SocketEvent, Utils, config) {
         switchLanguage: function (code) {
             _deferred = $.Deferred();
 
-            if (_languages.languages[code] === undefined) {
+            if (!Language.isValidLanguage(code)) {
                 console.iatWarn('Language \u00BB' + code + '\u00AB is not defined!');
                 _deferred.resolve({ success: false });
 

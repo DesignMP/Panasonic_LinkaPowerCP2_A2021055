@@ -35,7 +35,7 @@ PROGRAM _CYCLIC
 			P3_ZdvizkaPredLeakTestA.Manual:= FALSE;
 			P3_ZdvizkaPredLeakTestA.STAV.PoINIT:= FALSE;
 			P3_ZdvizkaPredLeakTestA.OUT.TlmicPaletky_VYSUN:= FALSE;
-						
+			P3_Dopravniky.OUT.PriecnyDopravnik1_VPRED:= FALSE;			
 			P3_ZdvizkaPredLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratA:= FALSE;
 			P3_ZdvizkaPredLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratB:= FALSE;
 			P3_HV_Test.STAV.PrebiehaVyvezeniePaletky:= FALSE;
@@ -82,7 +82,7 @@ PROGRAM _CYCLIC
 			END_IF	
 	
 			
-			
+				
 		5:
 			SC_P3_ZdvizkaPredLeakTestA.StepName:='5 - Inicializacia - kontrola pozicie zdvizky';
 			SC_P3_ZdvizkaPredLeakTestA.IdleTime.PT:= T#500ms;
@@ -93,14 +93,31 @@ PROGRAM _CYCLIC
 				SC_P3_ZdvizkaPredLeakTestA.ResetStep:= TRUE;
 				SC_P3_ZdvizkaPredLeakTestA.Step:= 100;
 			ELSIF P3_ZdvizkaPredLeakTestA.IN.Zdvizka_StrednaPoloha AND NOT P3_ZdvizkaPredLeakTestA.IN.PritomnostPaletky THEN	
-				P3_ZdvizkaPredLeakTestA.STAV.PoINIT:= TRUE;
 				SC_P3_ZdvizkaPredLeakTestA.ResetStep:= TRUE;
-				SC_P3_ZdvizkaPredLeakTestA.Step:= 100;
+				SC_P3_ZdvizkaPredLeakTestA.Step:= 6;
 			ELSE
 				SC_P3_ZdvizkaPredLeakTestA.ResetStep:= TRUE;
 				SC_P3_ZdvizkaPredLeakTestA.Step:= 8;
 			END_IF	
 	
+		6:
+			SC_P3_ZdvizkaPredLeakTestA.StepName:='5 - Inicializacia - vysunutie tlmica';
+			SC_P3_ZdvizkaPredLeakTestA.IdleTime.PT:= T#500ms;
+			SC_P3_ZdvizkaPredLeakTestA.AlarmTime.PT:= T#5s;
+			
+			IF NOT SC_P3_ZdvizkaPredLeakTestA.Switch1 THEN
+				P3_ZdvizkaPredLeakTestA.OUT.TlmicPaletky_VYSUN:= TRUE;
+				SC_P3_ZdvizkaPredLeakTestA.IdleTime.IN:= TRUE;
+				SC_P3_ZdvizkaPredLeakTestA.Switch1:= TRUE;
+			END_IF	
+			
+			IF SC_P3_ZdvizkaPredLeakTestA.IdleTime.Q THEN
+				P3_ZdvizkaPredLeakTestA.OUT.TlmicPaletky_VYSUN:= FALSE;
+				P3_ZdvizkaPredLeakTestA.STAV.PoINIT:= TRUE;
+				SC_P3_ZdvizkaPredLeakTestA.ResetStep:= TRUE;
+				SC_P3_ZdvizkaPredLeakTestA.Step:= 100;
+			END_IF	
+			
 			
 		8:
 			SC_P3_ZdvizkaPredLeakTestA.StepName:='8 - Inicializacia - presun zdvizky do strednej polohy';
@@ -135,7 +152,7 @@ PROGRAM _CYCLIC
 		
 		100:  
 			SC_P3_ZdvizkaPredLeakTestA.StepName:='100 - Automaticky Rezim - cakam na príchod paletky na zdvizku';
-			SC_P3_ZdvizkaPredLeakTestA.IdleTime.PT:= T#500ms;
+			SC_P3_ZdvizkaPredLeakTestA.IdleTime.PT:= T#700ms;
 			SC_P3_ZdvizkaPredLeakTestA.AlarmTime.PT:= T#5s;
 		
 			SC_P3_ZdvizkaPredLeakTestA.IdleTime.IN:= P3_ZdvizkaPredLeakTestA.IN.PritomnostPaletky;	
@@ -236,7 +253,7 @@ PROGRAM _CYCLIC
 			SC_P3_ZdvizkaPredLeakTestA.IdleTime.PT:= T#500ms;
 			SC_P3_ZdvizkaPredLeakTestA.AlarmTime.PT:= T#5s;
 			
-			SC_P3_ZdvizkaPredLeakTestA.IdleTime.IN:= P3_ZdvizkaPredLeakTestB.IN.PritomnostPaletky AND NOT P3_ZdvizkaPredLeakTestB.IN.PoziciaPaletky_OK;
+			SC_P3_ZdvizkaPredLeakTestA.IdleTime.IN:= P3_ZdvizkaPredLeakTestB.IN.PritomnostPaletky;
 			
 			IF NOT SC_P3_ZdvizkaPredLeakTestA.Switch1 THEN
 				P3_Dopravniky.OUT.PriecnyDopravnik1_VPRED:= TRUE;

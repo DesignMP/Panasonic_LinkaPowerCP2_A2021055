@@ -116,6 +116,9 @@ PROGRAM _CYCLIC
 			ELSIF SC_P2_StoperZaklTesnenia.Step = 100 AND NOT P2_StoperZaklTesnenia.RFID_hlava.PritomnostPaletky AND Safety.STAV.P2_ZaklTesn_PojazdMuting_AKTIVNY AND NOT P1_AkumulacnyStoper.STAV.PrebiehaVyvezeniePaletky THEN
 				SC_P1_AkumulacnyStoper.ResetStep:= TRUE;
 				SC_P1_AkumulacnyStoper.Step:= 105;
+			ELSIF NOT P1_AkumulacnyStoper.IN.PritomnostPaletky THEN
+				SC_P1_AkumulacnyStoper.ResetStep:= TRUE;
+				SC_P1_AkumulacnyStoper.Step:= 100;
 			END_IF
 			
 			

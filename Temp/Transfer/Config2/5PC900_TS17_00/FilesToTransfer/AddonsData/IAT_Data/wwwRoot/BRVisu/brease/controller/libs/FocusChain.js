@@ -20,6 +20,8 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
             length: undefined
         };
         this.recoveryPoints = new Map();
+        this.resetted = false;
+        this.modalWidgets = [];
     };
 
     FocusChain.prototype.hasFocus = function () {
@@ -27,6 +29,7 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
     };
 
     FocusChain.prototype.resetFocus = function () {
+        this.modalWidgets = [];
         if (this.hasFocus()) {
             this.getFocusedElem().focus({ preventScroll: true });
         } else {
@@ -34,6 +37,7 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
             this.position.widget = 0;
             this.focusNext(true, true);
         }
+        this.resetted = true;
     };
 
     FocusChain.prototype.addDialog = function (dialogId) {
@@ -65,6 +69,7 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
         }
         // todo: dialog with no focusable elements should be handled with focus trap
         this.focusNext(true, true);
+        this.resetted = true;
     };
 
     FocusChain.prototype.removeDialog = function (dialogId, preventFocus) {
@@ -114,6 +119,18 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
             --this.position.content;
         }
     };
+
+    FocusChain.prototype.addWidget = function (contentId, widget) {
+        if (widget.getTabIndex() < 0 || !widget.settings.focusable || this.hasElem(widget.elem)) {
+            return;
+        }
+        var contentPos = _getFocusPositionOfContent.call(this, contentId);
+        if (contentPos < 0) {
+            return;
+        }
+        _insertWidget.call(this, contentPos, widget);
+    };
+
     FocusChain.prototype.sort = function (pageId) {
         var orderedContents = getOrderedContents(pageId),
             newFocusPosition;
@@ -164,6 +181,7 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
                     // prevent focus on disabled inputs (inputs are always focusable by mouse!)
                     } else if (widgets[j].isEnabled()) {
                         this.position = { content: i, widget: j };
+                        this.resetted = false;
                     } else {
                         document.activeElement.blur();
                     }
@@ -198,11 +216,12 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
                     continue;
                 }
                 var widget = widgets[this.position.widget];
-                if (widget.isFocusable()) {
+                if (widget.isFocusable() && _isModalWidget.call(this, widget.elem.id)) {
                     if (!omitEvent) {
                         focusedElem.dispatchEvent(new CustomEvent(BreaseEvent.BEFORE_FOCUS_MOVE, { bubbles: false, cancelable: false, detail: {} }));
                     }
                     widget.elem.focus({ preventScroll: true });
+                    this.resetted = false;
                     return;
                 }
             }
@@ -238,11 +257,12 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
                         continue;
                     }
                     var widget = widgets[this.position.widget];
-                    if (widget.isFocusable()) {
+                    if (widget.isFocusable() && _isModalWidget.call(this, widget.elem.id)) {
                         if (!focusedElem.isSameNode(widget.elem)) {
                             focusedElem.dispatchEvent(new CustomEvent(BreaseEvent.BEFORE_FOCUS_MOVE, { bubbles: false, cancelable: false, detail: {} }));
                         }
                         widget.elem.focus({ preventScroll: true });
+                        this.resetted = false;
                         return;
                     }
                 }
@@ -260,27 +280,64 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
         }
     };
 
+    FocusChain.prototype.hasElem = function (elem) {
+        return this.chain.some(function (content) {
+            return content.widgets.some(function (widget) {
+                return elem.isSameNode(widget.elem);
+            });
+        });
+    };
+
+    /**
+     * Push widgets which are shown modal onto a stack. Widgets which are on top of the stack
+     * are focusable - all other not. The first widget (according to tabOrder) is focused.
+     * @param {String} id Should be used to remove pushed modal widgets. 
+     * @param {Object} widgets Widgets with tabIndex>=0 
+     */
+    FocusChain.prototype.pushModalWidgets = function (id, widgets) {
+        var index = this.modalWidgets.findIndex(function (context) {
+            return context.id === id;
+        });
+        if (index >= 0) {
+            return;
+        }
+        this.modalWidgets.push({
+            id: id,
+            widgetIds: widgets.map(function (w) {
+                return w.elem.id;
+            })
+        });
+        this.focusNext(true);
+    };
+
+    /**
+     * Remove widgets which are shown modal from the stack. The focus remains on the current widget!
+     * @param {String} id Identifier which was used with pushModalWidgets
+     */
+    FocusChain.prototype.removeModalWidgets = function (id) {
+        var index = this.modalWidgets.findIndex(function (it) {
+            return it.id === id;
+        });
+        if (index >= 0) {
+            this.modalWidgets.splice(index, 1);
+        }
+    };
+
     function _hasContent(contentId) {
         return _getFocusPositionOfContent.call(this, contentId) !== -1;
     }
 
     function _getFocusPositionOfContent(contentId) {
-        for (var i = 0; i < this.chain.length; ++i) {
-            if (this.chain[i].contentId === contentId) {
-                return i;
-            }
-        }
-        return -1;
+        return this.chain.findIndex(function (content) {
+            return content.contentId === contentId;
+        });
     }
 
     function _hasPage(pageId) {
-        for (var i = 0; i < this.chain.length; ++i) {
+        return this.chain.some(function (content) {
             // exclude dummy contents
-            if (this.chain[i].pageId === pageId && this.chain[i].contentId !== undefined) {
-                return true;
-            }
-        }
-        return false;
+            return content.pageId === pageId && content.contentId !== undefined;
+        });
     }
 
     function _getLastDialogId() {
@@ -361,21 +418,105 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
         }
     }
 
+    function _insertWidget(contentPos, widget) {
+        var insertIndex;
+        for (var i = 0; i < this.chain[contentPos].widgets.length; ++i) {
+            var chainWidget = this.chain[contentPos].widgets[i];
+
+            // for cowi childs we have to use tabIndex of parent
+            var parentCoWiId = chainWidget.settings.parentCoWiId;
+            if (parentCoWiId) {
+                chainWidget = brease.callWidget(parentCoWiId, 'widget');
+            }
+            if (Utils.compareTabOrder(chainWidget, widget) > 0) {
+                insertIndex = i;
+                break;
+            }
+        }
+        if (insertIndex === undefined) {
+            this.chain[contentPos].widgets.push(widget);
+        } else {
+            this.chain[contentPos].widgets.splice(insertIndex, 0, widget);
+            
+            if (contentPos === this.position.content && insertIndex <= this.position.widget) {
+                // reset the focus only if the user has not already moved the focus!
+                if (this.resetted) {
+                    this.resetFocus();
+                } else {
+                    ++this.position.widget;
+                }
+            }
+        }
+    }
+    
     // insert a content with widgets into sorted chain according the area of the content 
     function _insert(content) {
         Object.assign(content, Utils.getContentPageAreaIds(content.contentId));
 
         var insertIndex = _findLastIndexOfPageArea.call(this, content.pageId, content.areaId);
         if (insertIndex === -1) {
-            return;
+            // if the area is empty (e.g. content removed) we take the initial order of the page areas
+            insertIndex = _findInitialIndexOfPageArea.call(this, content.pageId, content.areaId);
+            if (insertIndex === -1) {
+                // content is not part of the current page
+                return;
+            } else {
+                this.chain.splice(insertIndex, 0, content);
+            }
+        } else {
+            // take type from dummy
+            content.type = this.chain[insertIndex].type;
+            //insert after dummy
+            this.chain.splice(++insertIndex, 0, content);
         }
-        // take type from dummy
-        content.type = this.chain[insertIndex].type;
-        this.chain.splice(++insertIndex, 0, content);
         if (insertIndex <= this.position.content) {
             ++this.position.content;
         }
         _updateChainCircle.call(this, insertIndex);
+    }
+
+    function _findInitialIndexOfPageArea(pageId, areaId) {
+        var areasBefore = _findAreasWithLowerTabIndex(pageId, areaId);
+        
+        if (areasBefore) {
+            var index = 0;
+            // count all contents with areaIds from areas with lower tabIndex
+            for (var i = 0; i < this.chain.length; i += 1) {
+                var content = this.chain[i];
+                if (content.pageId === pageId && areasBefore.includes(content.areaId)) {
+                    index += 1;
+                } else {
+                    break;
+                }
+            }
+            return index;
+        } else {
+            return -1;
+        }
+    }
+    
+    function _findAreasWithLowerTabIndex(pageId, areaId) {
+        var arContent = getOrderedContents(pageId),
+            areasBefore = [],
+            areaFound = false;
+
+        // iterate over all ordered contents til we find the areaId of the content to add
+        for (var i = 0; i < arContent.length; i += 1) {
+            var content = arContent[i];
+            if (content.pageId === pageId && content.areaId === areaId) {
+                areaFound = true;
+                break;
+            } else {
+                if (areasBefore.indexOf(content.areaId) === -1) {
+                    areasBefore.push(content.areaId);
+                }
+            }
+        }
+        if (areaFound) {
+            return areasBefore;
+        } else {
+            return undefined;
+        }
     }
 
     function _findLastIndexOfPageArea(pageId, areaId) {
@@ -430,6 +571,14 @@ define(['brease/events/BreaseEvent', 'brease/controller/libs/Utils', 'brease/enu
         }
         chainCircle.length = chainCircle.end - chainCircle.start + 1;
         return chainCircle;
+    }
+
+    function _isModalWidget(id) {
+        var top = this.modalWidgets[this.modalWidgets.length - 1];
+        if (top === undefined) {
+            return true;
+        }
+        return top.widgetIds.indexOf(id) !== -1;
     }
 
     return FocusChain;

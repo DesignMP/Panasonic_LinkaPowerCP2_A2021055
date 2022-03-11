@@ -1,8 +1,6 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	Convert_0 : UsintToUint := (0);
+	Convert_1 : UsintToUint := (0);
+	Convert_2 : UsintToUint := (0);
+	Convert_3 : UsintToUint := (0);
 END_VAR
