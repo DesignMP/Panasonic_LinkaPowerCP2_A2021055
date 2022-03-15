@@ -341,23 +341,23 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0];
 	P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1];
 	
-	P3_LeakageTestB.IN.VyrovnavaciTlak_OK:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].0;
+	P3_LeakageTestB.IN.VyrovnavaciTlak_OK:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].0;
 	
 	
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.0:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].2;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.1:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].3;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.2:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].4;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.3:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].5;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.4:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].6;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.5:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].7;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.6:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].0;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.7:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].1;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.8:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].2;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.9:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].3;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.10:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].4;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.11:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].5;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.12:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].6;
-	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.13:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].7;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.0:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].2;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.1:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].3;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.2:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].4;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.3:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].5;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.4:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].6;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.5:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[1].7;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.6:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].0;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.7:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].1;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.8:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].2;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.9:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].3;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.10:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].4;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.11:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].5;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.12:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].6;
+	P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak.13:= P3_Pracovisko.COM_Festo.DS3_2_Port0_IN[0].7;
 	
 	
 	P3_LeakageTestB.PAR.PreratanyVyrovnavaciTlak_Bar:= P3_LeakageTestB.PAR.PrecitanyVyrovnavaciTlak*0.1;
@@ -370,23 +370,23 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0];
 	P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1];
 	
-	P3_LeakageTestA.IN.VyrovnavaciTlak_OK:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].0;
+	P3_LeakageTestA.IN.VyrovnavaciTlak_OK:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].0;
 	
 	
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.0:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].2;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.1:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].3;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.2:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].4;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.3:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].5;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.4:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].6;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.5:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].7;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.6:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].0;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.7:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].1;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.8:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].2;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.9:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].3;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.10:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].4;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.11:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].5;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.12:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].6;
-	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.13:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].7;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.0:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].2;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.1:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].3;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.2:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].4;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.3:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].5;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.4:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].6;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.5:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[1].7;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.6:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].0;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.7:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].1;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.8:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].2;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.9:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].3;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.10:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].4;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.11:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].5;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.12:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].6;
+	P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak.13:= P3_Pracovisko.COM_Festo.DS3_2_Port1_IN[0].7;
 	
 	
 	P3_LeakageTestA.PAR.PreratanyVyrovnavaciTlak_Bar:= P3_LeakageTestA.PAR.PrecitanyVyrovnavaciTlak*0.1;
@@ -520,7 +520,9 @@ PROGRAM _CYCLIC
 	//Volanie knižníc//
 	P3_Srobovanie.SkrutSet_K40(); 
 	P3_Srobovanie.SkrutSet_M5(); 
-
+	P3_Srobovanie.ServoManipulOsY();
+	P3_Srobovanie.ServoManipulOsZ_M5();
+	
 	
 	
 	

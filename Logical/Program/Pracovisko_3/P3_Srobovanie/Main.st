@@ -17,8 +17,6 @@ PROGRAM _CYCLIC
 	
 	
 	//Volanie podprogramov a knižníc//
-	P3_Srobovanie.ServoManipulOsY();
-	P3_Srobovanie.ServoManipulOsZ_M5();
 	AtlasCopcoKomunikacia;	
 	
 	
@@ -556,7 +554,7 @@ PROGRAM _CYCLIC
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 30;
+			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= P34_RemPremenne.P3_Srob_PozZ_OdobratSkrutkyM5;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
 				P3_Srobovanie.ServoManipulOsZ_M5.Command.MovePosition:= TRUE;
@@ -1012,7 +1010,7 @@ PROGRAM _CYCLIC
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 30;
+			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= P34_RemPremenne.P3_Srob_PozZ_OdobratSkrutkyM5;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
 				P3_Srobovanie.ServoManipulOsZ_M5.Command.MovePosition:= TRUE;

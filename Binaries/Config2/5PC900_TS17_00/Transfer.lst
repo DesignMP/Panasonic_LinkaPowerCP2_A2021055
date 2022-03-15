@@ -44,11 +44,11 @@
   <Operation Delete="AtlasCopco.br"/>
   <Operation Delete="Banner.br"/>
   <Operation Delete="SC.br"/>
-  <Operation Delete="RoCa_Festo.br"/>
   <Operation Delete="RFID_Heads.br"/>
   <Operation Delete="SkrutSety.br"/>
   <Operation Delete="ScrewLoad.br"/>
   <Operation Delete="MyConvert.br"/>
+  <Operation Delete="RoCa_Festo.br"/>
   <Operation Delete="arflatprv.br"/>
   <Operation Delete="arcoal.br"/>
   <Operation Delete="dvframe.br"/>
@@ -105,11 +105,11 @@
   <Operation Download="dvframe.br" Memory="UserROM"/>
   <Operation Download="arcoal.br" Memory="UserROM"/>
   <Operation Download="arflatprv.br" Memory="UserROM"/>
+  <Operation Download="RoCa_Festo.br" Memory="UserROM"/>
   <Operation Download="MyConvert.br" Memory="UserROM"/>
   <Operation Download="ScrewLoad.br" Memory="UserROM"/>
   <Operation Download="SkrutSety.br" Memory="UserROM"/>
   <Operation Download="RFID_Heads.br" Memory="UserROM"/>
-  <Operation Download="RoCa_Festo.br" Memory="UserROM"/>
   <Operation Download="SC.br" Memory="UserROM"/>
   <Operation Download="Banner.br" Memory="UserROM"/>
   <Operation Download="AtlasCopco.br" Memory="UserROM"/>

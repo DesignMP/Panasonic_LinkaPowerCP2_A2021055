@@ -12,7 +12,7 @@ PROGRAM _CYCLIC
 	
 	//Volanie podprogramov a knižníc//
 	IOLinkKomunikacia;
-	P1_Vytah.ServoZdvihuVytahu();
+	
 	 
 	
 	

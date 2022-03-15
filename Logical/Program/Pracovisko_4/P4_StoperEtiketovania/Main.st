@@ -15,7 +15,6 @@ PROGRAM _CYCLIC
 	
 	
 	//Volanie podprogramov//
-	P4_Etiketovacka.ServoZdvihuAplikatora();
 	OvlCentrovacky;
 	OvlOtacaniaAplikatora;
 	IOLinkKomunikacia;

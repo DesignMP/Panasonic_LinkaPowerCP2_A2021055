@@ -24,10 +24,10 @@ ACTION AtlasCopcoKomunikacia:
 	
 	
     //Výstupy z PLC do AtlasCopco//
-    P3_Srobovanie.PAR.M5_AllasCopcoOutputs[0].0:= P3_Srobovanie.Skrutkovacka_M5.RESET_Poruchy;
-    P3_Srobovanie.PAR.M5_AllasCopcoOutputs[0].1:= P3_Srobovanie.Skrutkovacka_M5.RESET_Vysledkov;
-    P3_Srobovanie.PAR.M5_AllasCopcoOutputs[0].2:= P3_Srobovanie.Skrutkovacka_M5.START_Skrutkovania;
-    P3_Srobovanie.PAR.M5_AllasCopcoOutputs[0].3:= P3_Srobovanie.Skrutkovacka_M5.START_Utahovania;
+    P3_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].0:= P3_Srobovanie.Skrutkovacka_M5.RESET_Poruchy;
+    P3_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].1:= P3_Srobovanie.Skrutkovacka_M5.RESET_Vysledkov;
+    P3_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].2:= P3_Srobovanie.Skrutkovacka_M5.START_Skrutkovania;
+    P3_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].3:= P3_Srobovanie.Skrutkovacka_M5.START_Utahovania;
 	
 	
     //Dosiahnutý moment//
@@ -256,10 +256,10 @@ ACTION AtlasCopcoKomunikacia:
 	
 	
     //Výstupy z PLC do AtlasCopco//
-    P3_Srobovanie.PAR.K40_AllasCopcoOutputs[0].0:= P3_Srobovanie.Skrutkovacka_K40.RESET_Poruchy;
-    P3_Srobovanie.PAR.K40_AllasCopcoOutputs[0].1:= P3_Srobovanie.Skrutkovacka_K40.RESET_Vysledkov;
-    P3_Srobovanie.PAR.K40_AllasCopcoOutputs[0].2:= P3_Srobovanie.Skrutkovacka_K40.START_Skrutkovania;
-    P3_Srobovanie.PAR.K40_AllasCopcoOutputs[0].3:= P3_Srobovanie.Skrutkovacka_K40.START_Utahovania;
+    P3_Srobovanie.PAR.K40_AtlasCopcoOutputs[0].0:= P3_Srobovanie.Skrutkovacka_K40.RESET_Poruchy;
+    P3_Srobovanie.PAR.K40_AtlasCopcoOutputs[0].1:= P3_Srobovanie.Skrutkovacka_K40.RESET_Vysledkov;
+    P3_Srobovanie.PAR.K40_AtlasCopcoOutputs[0].2:= P3_Srobovanie.Skrutkovacka_K40.START_Skrutkovania;
+    P3_Srobovanie.PAR.K40_AtlasCopcoOutputs[0].3:= P3_Srobovanie.Skrutkovacka_K40.START_Utahovania;
 	
     //Dosiahnutý moment//
 //    P3_Srobovanie.STAV.K40_DosiahnutyMoment.0:= P3_Srobovanie.PAR.K40_AtlasCopcoInputs[1].24;

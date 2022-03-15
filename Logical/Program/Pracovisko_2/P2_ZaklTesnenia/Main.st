@@ -15,8 +15,7 @@ END_PROGRAM
 PROGRAM _CYCLIC
 	
 	//Volanie podprogramov a knižníc//
-	P2_ZakladacTesnenia.ServoPojazduZakladaca();
-	P2_ZakladacTesnenia.ServoZdvihuZakladaca();
+	
 	
 	
 	//Volanie funkcie SequenceControl//

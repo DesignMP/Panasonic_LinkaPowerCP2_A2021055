@@ -37,8 +37,8 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                 Position                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                 Override                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                     Dcc                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
-                                     Acc                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                                     Dcc                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                     Acc                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                      Jog                                 JogStruc    0 "                                                               *"    3   24    1    0    0    0         
                                      Acc                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
@@ -53,9 +53,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                  Warning                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                                    Error                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                                    Ready                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                               ActTorque                                     REAL    0 "                                                   -0.0860385448"    3    8    1   10    0    0         
-                             ActVelocity                                     REAL    0 "                                                    -2.37944E-06"    3    8    1   10    0    0         
-                             ActPosition                                     REAL    0 "                                                           93.99"    3    8    1   10    0    0         
+                               ActTorque                                     REAL    0 "                                                    -0.060747344"    3    8    1   10    0    0         
+                             ActVelocity                                     REAL    0 "                                                  5.27843567E-11"    3    8    1   10    0    0         
+                             ActPosition                                     REAL    0 "                                                            94.0"    3    8    1   10    0    0         
                       ServoManipulOsZ_M5                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
                                  Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    1         
                                  PowerON                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
@@ -68,13 +68,13 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                     Stop                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                                    Pause                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                               Parameters                               ParamStruc    0 "                                                               *"    2   24    1    0    0    1         
-                                  Torque                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                                  Torque                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                 Distance                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                 Position                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                 Override                                     REAL    0 "                                                           100.0"    3    8    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                            0.15"    3    8    1   10    0    0         
-                                     Dcc                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
-                                     Acc                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                     Dcc                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                     Acc                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                      Jog                                 JogStruc    0 "                                                               *"    3   24    1    0    0    0         
                                      Acc                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         

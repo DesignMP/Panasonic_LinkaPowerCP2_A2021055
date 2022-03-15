@@ -314,8 +314,10 @@ TYPE
 		P1_Srob5H_Rychl_PravejSkrutkyM5 : REAL; (*mm/s*)
 		P1_Srob_PozX_OdobratSkrutkyM5 : REAL;
 		P1_Srob_PozY_OdobratSkrutkyM5 : REAL;
+		P1_Srob_PozZ_OdobratSkrutkyM5 : REAL;
 		P1_Srob_PozX_OdobratSkrutkyM4 : REAL;
 		P1_Srob_PozY_OdobratSkrutkyM4 : REAL;
+		P1_Srob_PozZ_OdobratSkrutkyM4 : REAL;
 		P1_Vytah_RychlostZdvihu : REAL; (*mm/s*)
 		P1_Vytah_PoziciaNakladania : REAL;
 		P1_Vytah_PoziciaVykladania : REAL;
@@ -382,6 +384,7 @@ TYPE
 		P2_Srob5H_Rychl_SkrutkyM4 : REAL; (*mm/s*)
 		P2_Srob_PozX_OdobratSkrutkyM4 : REAL;
 		P2_Srob_PozY_OdobratSkrutkyM4 : REAL;
+		P2_Srob_PozZ_OdobratSkrutkyM4 : REAL;
 		P2_ManipSrob_OsX_Rychlost : REAL;
 		P2_ManipSrob_OsY_Rychlost : REAL;
 		P2_ManipSrob_OsZ_M4_Rychlost : REAL; (*mm/s*)
@@ -419,6 +422,7 @@ TYPE
 		P3_Srob45F_PozY_Skrutkovania : REAL;
 		P3_Srob5H_PozY_Skrutkovania : REAL;
 		P3_Srob_PozY_OdobratSkrutkyM5 : REAL;
+		P3_Srob_PozZ_OdobratSkrutkyM5 : REAL;
 		P3_Srob45F_Mom_SkrutkyM5 : REAL;
 		P3_Srob45F_Rychl_SkrutkyM5 : REAL; (*mm/s*)
 		P3_Srob5H_Mom_SkrutkyM5 : REAL;
@@ -458,6 +462,9 @@ TYPE
 		P2_SV_PrivodVzduchu_CH1 : BOOL;
 		P2_SV_PrivodVzduchu_CH2 : BOOL;
 		P2_SV_ZonaBunky : BOOL;
+		P2_SV_ZonaZakladacaTesnenia : BOOL;
+		P2_SV_ZonaMaticovacky : BOOL;
+		P2_SV_ZonaAutostopRobota : BOOL;
 		P3_SV_PrivodVzduchu_CH1 : BOOL;
 		P3_SV_PrivodVzduchu_CH2 : BOOL;
 		P3_SV_ZonaBunky : BOOL;
@@ -910,11 +917,11 @@ TYPE
 		ManipulOsZ_M5_JoggRychlost : REAL;
 		ManipulOsZ_M4_JoggRychlost : REAL;
 		K30_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
-		K30_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		K30_AtlasCopcoOutputs : ARRAY[0..7]OF UDINT;
 		M5_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
-		M5_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		M5_AtlasCopcoOutputs : ARRAY[0..7]OF UDINT;
 		M4_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
-		M4_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		M4_AtlasCopcoOutputs : ARRAY[0..7]OF UDINT;
 	END_STRUCT;
 	P1_Srobovanie_STAV_typ : 	STRUCT 
 		RR_Polohovanie_BUSY : BOOL;
@@ -1127,7 +1134,7 @@ TYPE
 		KoniecCyklu : BOOL;
 		COM_Weidmuller : P2_COM_Weidmuller_typ;
 		COM_Festo : P2_COM_Festo_typ;
-		COM_VentilovyTerminal : ARRAY[0..9]OF USINT;
+		COM_VentilovyTerminal : ARRAY[0..10]OF USINT;
 	END_STRUCT;
 	P2_Pracovisko_IN_typ : 	STRUCT 
 		TlakVzduchu_OK : BOOL; (*S2_10*)
@@ -1589,6 +1596,12 @@ TYPE
 		ManipulOsX_JoggRychlost : REAL;
 		ManipulOsY_JoggRychlost : REAL;
 		ManipulOsZ_M4_JoggRychlost : REAL;
+		M6_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
+		M6_AtlasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		M5_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
+		M5_AtlasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		M4_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
+		M4_AtlasCopcoOutputs : ARRAY[0..7]OF UDINT;
 	END_STRUCT;
 	P2_Srobovanie_STAV_typ : 	STRUCT 
 		RR_Polohovanie_BUSY : BOOL;
@@ -2245,9 +2258,9 @@ TYPE
 		ManipulOsY_JoggRychlost : REAL;
 		ManipulOsZ_M5_JoggRychlost : REAL;
 		K40_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
-		K40_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		K40_AtlasCopcoOutputs : ARRAY[0..7]OF UDINT;
 		M5_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
-		M5_AllasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		M5_AtlasCopcoOutputs : ARRAY[0..7]OF UDINT;
 	END_STRUCT;
 	P3_Srobovanie_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -2610,6 +2623,9 @@ TYPE
 		OUT : P4_PracoviskoOUT_typ;
 		PAR : P4_PracoviskoPAR_typ;
 		STAV : P4_PracoviskoSTAV_typ;
+		COM_Weidmuller : P4_COM_Weidmuller_typ;
+		COM_Festo : P4_COM_Festo_typ;
+		COM_VentilovyTerminal : ARRAY[0..9]OF USINT;
 		Automat : BOOL;
 		Manual : BOOL;
 		Reset : BOOL;
@@ -2654,6 +2670,33 @@ TYPE
 		Porucha_ST6 : BOOL; (*V˝stupn˝ v˝ùah*)
 		FunkcnyTestA_Zasunuty : BOOL;
 		FunkcnyTestB_Zasunuty : BOOL;
+	END_STRUCT;
+	P4_COM_Weidmuller_typ : 	STRUCT 
+		AB4_2_8DI : USINT;
+		AB4_3_8DI : USINT;
+		AB4_4_8DI : USINT;
+		AB4_5_8DO : USINT;
+		AB4_6_8DO : USINT;
+		AB4_8_8DO : USINT;
+	END_STRUCT;
+	P4_COM_Festo_typ : 	STRUCT 
+		DM4_1_4DI : ARRAY[0..3]OF BOOL;
+		DM4_1_4DO : ARRAY[0..3]OF BOOL;
+		DI4_1_8DI : ARRAY[0..7]OF BOOL;
+		DI4_2_8DI : ARRAY[0..7]OF BOOL;
+		DI4_3_8DI : ARRAY[0..7]OF BOOL;
+		DI4_4_8DI : ARRAY[0..7]OF BOOL;
+		DI4_5_8DI : ARRAY[0..7]OF BOOL;
+		DS4_1_Port0_IN : ARRAY[0..31]OF USINT;
+		DS4_1_Port0_OUT : ARRAY[0..31]OF USINT;
+		DS4_1_Port1_IN : ARRAY[0..31]OF USINT;
+		DS4_1_Port1_OUT : ARRAY[0..31]OF USINT;
+		DS4_1_Port2_IN : ARRAY[0..31]OF USINT;
+		DS4_1_Port2_OUT : ARRAY[0..31]OF USINT;
+		DS4_2_Port0_IN : ARRAY[0..15]OF USINT;
+		DS4_2_Port0_OUT : ARRAY[0..15]OF USINT;
+		DS4_2_Port1_IN : ARRAY[0..31]OF USINT;
+		DS4_2_Port1_OUT : ARRAY[0..31]OF USINT;
 	END_STRUCT;
 END_TYPE
 

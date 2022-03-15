@@ -22,21 +22,21 @@ ACTION AtlasCopcoKomunikacia:
 	
 	
     //Výstupy z PLC do AtlasCopco//
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].0:= P1_Srobovanie.Skrutkovacka_M5.RESET_Poruchy;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].1:= P1_Srobovanie.Skrutkovacka_M5.RESET_Vysledkov;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].2:= P1_Srobovanie.Skrutkovacka_M5.START_Skrutkovania;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].3:= P1_Srobovanie.Skrutkovacka_M5.START_Utahovania;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].0:= P1_Srobovanie.Skrutkovacka_M5.RESET_Poruchy;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].1:= P1_Srobovanie.Skrutkovacka_M5.RESET_Vysledkov;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].2:= P1_Srobovanie.Skrutkovacka_M5.START_Skrutkovania;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].3:= P1_Srobovanie.Skrutkovacka_M5.START_Utahovania;
 	
 	
     //Èíslo zadaného programu//
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].16:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.0;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].17:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.1;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].18:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.2;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].19:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.3;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].20:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.4;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].21:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.5;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].22:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.6;
-    P1_Srobovanie.PAR.M5_AllasCopcoOutputs[0].23:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.7;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].16:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.0;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].17:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.1;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].18:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.2;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].19:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.3;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].20:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.4;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].21:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.5;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].22:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.6;
+    P1_Srobovanie.PAR.M5_AtlasCopcoOutputs[0].23:= P1_Srobovanie.Skrutkovacka_M5.CisloZadanehoProgramu.7;
 	
 	
     //Èíslo aktuálneho programu//
@@ -272,10 +272,10 @@ ACTION AtlasCopcoKomunikacia:
 	
 	
     //Výstupy z PLC do AtlasCopco//
-    P1_Srobovanie.PAR.M4_AllasCopcoOutputs[0].0:= P1_Srobovanie.Skrutkovacka_M4.RESET_Poruchy;
-    P1_Srobovanie.PAR.M4_AllasCopcoOutputs[0].1:= P1_Srobovanie.Skrutkovacka_M4.RESET_Vysledkov;
-    P1_Srobovanie.PAR.M4_AllasCopcoOutputs[0].2:= P1_Srobovanie.Skrutkovacka_M4.START_Skrutkovania;
-    P1_Srobovanie.PAR.M4_AllasCopcoOutputs[0].3:= P1_Srobovanie.Skrutkovacka_M4.START_Utahovania;
+    P1_Srobovanie.PAR.M4_AtlasCopcoOutputs[0].0:= P1_Srobovanie.Skrutkovacka_M4.RESET_Poruchy;
+    P1_Srobovanie.PAR.M4_AtlasCopcoOutputs[0].1:= P1_Srobovanie.Skrutkovacka_M4.RESET_Vysledkov;
+    P1_Srobovanie.PAR.M4_AtlasCopcoOutputs[0].2:= P1_Srobovanie.Skrutkovacka_M4.START_Skrutkovania;
+    P1_Srobovanie.PAR.M4_AtlasCopcoOutputs[0].3:= P1_Srobovanie.Skrutkovacka_M4.START_Utahovania;
 	
 	
     //Dosiahnutý moment//
@@ -501,10 +501,10 @@ ACTION AtlasCopcoKomunikacia:
 	
 	
     //Výstupy z PLC do AtlasCopco//
-    P1_Srobovanie.PAR.K30_AllasCopcoOutputs[0].0:= P1_Srobovanie.Skrutkovacka_K30.RESET_Poruchy;
-    P1_Srobovanie.PAR.K30_AllasCopcoOutputs[0].1:= P1_Srobovanie.Skrutkovacka_K30.RESET_Vysledkov;
-    P1_Srobovanie.PAR.K30_AllasCopcoOutputs[0].2:= P1_Srobovanie.Skrutkovacka_K30.START_Skrutkovania;
-    P1_Srobovanie.PAR.K30_AllasCopcoOutputs[0].3:= P1_Srobovanie.Skrutkovacka_K30.START_Utahovania;
+    P1_Srobovanie.PAR.K30_AtlasCopcoOutputs[0].0:= P1_Srobovanie.Skrutkovacka_K30.RESET_Poruchy;
+    P1_Srobovanie.PAR.K30_AtlasCopcoOutputs[0].1:= P1_Srobovanie.Skrutkovacka_K30.RESET_Vysledkov;
+    P1_Srobovanie.PAR.K30_AtlasCopcoOutputs[0].2:= P1_Srobovanie.Skrutkovacka_K30.START_Skrutkovania;
+    P1_Srobovanie.PAR.K30_AtlasCopcoOutputs[0].3:= P1_Srobovanie.Skrutkovacka_K30.START_Utahovania;
 	
 	
     //Dosiahnutý moment//

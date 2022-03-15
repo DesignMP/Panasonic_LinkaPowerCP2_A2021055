@@ -12,7 +12,6 @@ END_PROGRAM
 PROGRAM _CYCLIC
 	
 	//Volanie podprogramov a knižníc//
-	P2_Zvaranie.ServoZdvihuZvarania();
 	OvlPojazdu;
 	
 	

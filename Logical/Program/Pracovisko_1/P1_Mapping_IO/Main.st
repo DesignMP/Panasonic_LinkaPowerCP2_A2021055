@@ -395,10 +395,15 @@ PROGRAM _CYCLIC
 	
 	
 	//Volanie knižnic//
+	P1_Vytah.ServoZdvihuVytahu();
 	P1_Srobovanie.SkrutSet_K30();
 	P1_Srobovanie.SkrutSet_M4(); 
 	P1_Srobovanie.SkrutSet_M5();
-	
+	P1_Srobovanie.ServoManipulOsX();
+	P1_Srobovanie.ServoManipulOsY();
+	P1_Srobovanie.ServoManipulOsZ_M4();
+	P1_Srobovanie.ServoManipulOsZ_M5();
+
 	
 END_PROGRAM
 
