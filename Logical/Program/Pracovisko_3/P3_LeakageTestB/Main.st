@@ -84,7 +84,7 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestB.StepName:='1 - Cakam na spustenie vyroby';
 			P3_LeakageTestB.KoniecCyklu:= FALSE;
 			IF P3_LeakageTestB.Automat THEN
-				SC_P3_LeakageTestB.Step:= 33;//2
+				SC_P3_LeakageTestB.Step:= 2;
 			ELSIF P3_LeakageTestB.Manual THEN
 				SC_P3_LeakageTestB.Step:= 700;
 			END_IF
@@ -304,7 +304,7 @@ PROGRAM _CYCLIC
 				SC_P3_LeakageTestB.Step:= 0;
 			ELSIF SC_P3_LeakageTestB.IdleTime.Q THEN
 				SC_P3_LeakageTestB.ResetStep:= TRUE;
-				SC_P3_LeakageTestB.Step:= 560;//101
+				SC_P3_LeakageTestB.Step:= 101;
 			END_IF
 		
 		101:
@@ -590,6 +590,8 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestB.IdleTime.IN:= NOT P3_LeakageTestB.IN.Kopito_ZASUNUTE;
 			
 			IF SC_P3_LeakageTestB.IdleTime.Q THEN
+				P3_LeakageTestB.OUT.PneuZamokCentrovania_ODOMKNI:= FALSE;
+				P3_LeakageTestB.OUT.PneuZamokZvonu_ODOMKNI:= FALSE;
 				IF P3_LeakageTestB.CMD.RR_ZatvorTester THEN
 					P3_LeakageTestB.CMD.RR_ZatvorTester:= FALSE;
 					P3_LeakageTestB.CMD.RR_TestovaciaSekvencia_START:= FALSE;

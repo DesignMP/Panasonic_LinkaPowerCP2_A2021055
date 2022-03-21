@@ -230,7 +230,7 @@ PROGRAM _CYCLIC
 			SC_P3_ZdvizkaZaLeakTestA.IdleTime.PT:= T#200ms;
 			SC_P3_ZdvizkaZaLeakTestA.AlarmTime.PT:= T#5s;
 		
-			SC_P3_ZdvizkaZaLeakTestA.IdleTime.IN:= P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky AND (P3_ZdvizkaZaLeakTestA.IN.PoziciaPaletky_OK OR P3_ZdvizkaZaLeakTestA.IN.TlmicPaletky_ZASUNUTY) AND P3_ZdvizkaZaLeakTestA.IN.Zdvizka_StrednaPoloha;	
+			SC_P3_ZdvizkaZaLeakTestA.IdleTime.IN:= P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky AND P3_ZdvizkaZaLeakTestA.IN.PoziciaPaletky_OK AND P3_ZdvizkaZaLeakTestA.IN.TlmicPaletky_ZASUNUTY AND P3_ZdvizkaZaLeakTestA.IN.Zdvizka_StrednaPoloha;	
 		
 			IF P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky AND P3_ZdvizkaZaLeakTestA.IN.Zdvizka_StrednaPoloha THEN
 				P3_LeakageTestA.STAV.PrebiehaVyvezeniePaletky:= FALSE;
@@ -334,7 +334,7 @@ PROGRAM _CYCLIC
 			SC_P3_ZdvizkaZaLeakTestA.IdleTime.PT:= T#500ms;
 			SC_P3_ZdvizkaZaLeakTestA.AlarmTime.PT:= T#5s;
 			
-			SC_P3_ZdvizkaZaLeakTestA.IdleTime.IN:= P3_ZdvizkaZaLeakTestB.IN.PritomnostPaletky AND NOT P3_ZdvizkaZaLeakTestB.IN.PoziciaPaletky_OK;
+			SC_P3_ZdvizkaZaLeakTestA.IdleTime.IN:= P3_ZdvizkaZaLeakTestB.IN.PritomnostPaletky AND P3_ZdvizkaZaLeakTestB.IN.PoziciaPaletky_OK;
 			
 			IF NOT SC_P3_ZdvizkaZaLeakTestA.Switch1 THEN
 				P3_Dopravniky.OUT.PriecnyDopravnik2_VZAD:= FALSE;

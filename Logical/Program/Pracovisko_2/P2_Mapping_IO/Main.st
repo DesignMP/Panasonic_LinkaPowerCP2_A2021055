@@ -75,24 +75,24 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.3 := P2_Dopravniky.OUT.DopravnikBunky_ON;
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.4 := P2_Dopravniky.OUT.VratnyDopravnik_ON;
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.5 := P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON;
-	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.6 := P2_Pracovisko.OUT.Osvetlenie_CAM1;
+	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.6;
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.7 := P2_Pracovisko.OUT.Osvetlenie_CAM7_CAM17;
 	
 	
 	
 	//************Karta AB 2.12 8DO***************//
-	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.0 := P2_Pracovisko.OUT.OsvetlenieBunky_ON;
+	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.0; 
 	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.1;
-	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.2;
-	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.3;
+	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.2:= P2_Pracovisko.OUT.OsvetlenieBunky_ON;;
+	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.3:= P2_Pracovisko.OUT.OsvetleniePracZaklTesnenia_ON;
 	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.4;
-	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.5;
-	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.6;
-	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.7 := P2_Srobovanie.SkrutSet_M5.OUT.VibracnyHrniec.ZapniVibromotor;
+	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.5:= P2_Pracovisko.OUT.Osvetlenie_CAM1_Svetlo1;
+	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.6:= P2_Pracovisko.OUT.Osvetlenie_CAM1_Svetlo2;
+	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.7:= P2_Srobovanie.SkrutSet_M5.OUT.VibracnyHrniec.ZapniVibromotor;
 	
 	//************Karta AB 2.13 8DO***************//
-	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.0;
-	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.1;
+	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.0:= P2_StoperSrobovania.OUT.OsvetleniePaletky_ON;
+	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.1:= P2_Srobovanie.OUT.BodoveOsvetlenie_ON;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.2;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.3;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.4;
@@ -437,7 +437,7 @@ PROGRAM _CYCLIC
 	
 	//************************************Ventilový terminál*******************************************//
 	
-	//1-8
+	//0-7
 	P2_Pracovisko.COM_VentilovyTerminal[0].0 := P2_Robot.OUT.Model45F_Vakum_ON;
 	P2_Pracovisko.COM_VentilovyTerminal[0].1 := P2_Robot.OUT.Model45F_Vakum_OFF;
 	P2_Pracovisko.COM_VentilovyTerminal[0].2 := P2_Robot.OUT.Model5H_Vakum_ON;
@@ -447,7 +447,7 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[0].6 := P2_Srobovanie.OUT.Skrutkovacka_M4_Odvzdusn_ON;
 	P2_Pracovisko.COM_VentilovyTerminal[0].7;
 	
-	//9-16
+	//8-15
 	P2_Pracovisko.COM_VentilovyTerminal[1].0 := P2_StoperZaklTesnenia.OUT.ZasunStoper;
 	P2_Pracovisko.COM_VentilovyTerminal[1].1 := P2_StoperMaticovacky.OUT.ZasunStoper;
 	P2_Pracovisko.COM_VentilovyTerminal[1].2 := P2_AkumulacnyStoper.OUT.ZasunStoper;
@@ -458,7 +458,7 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[1].7 := P2_Robot.OUT.OdistiGriper;
 	
 	
-	//17-24
+	//16-23
 	P2_Pracovisko.COM_VentilovyTerminal[2].0 := P2_Robot.OUT.PneuZamokUchopovaca_ODOMKNI;
 	P2_Pracovisko.COM_VentilovyTerminal[2].1;
 	P2_Pracovisko.COM_VentilovyTerminal[2].2 := P2_StoperMaticovacky.SkrutSet_MaticaM4.OUT.ZhadzovaciVzduch_RUN;
@@ -468,7 +468,7 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[2].6 := P2_StoperMaticovacky.SkrutSet_MaticaM4.OUT.NastrelenieMatice_RUN;
 	P2_Pracovisko.COM_VentilovyTerminal[2].7;
 	
-	//25-32
+	//24-31
 	P2_Pracovisko.COM_VentilovyTerminal[3].0 := P2_StoperMaticovacky.SkrutSet_MaticaM4.OUT.PodavacMatice_Vysun;
 	P2_Pracovisko.COM_VentilovyTerminal[3].1;
 	P2_Pracovisko.COM_VentilovyTerminal[3].2 := P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON;
@@ -478,7 +478,7 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[3].6 := P2_Srobovanie.SkrutSet_M5.OUT.VibracnyHrniec.OddelovacVysunut;
 	P2_Pracovisko.COM_VentilovyTerminal[3].7;
 	
-	//33-40
+	//32-39
 	P2_Pracovisko.COM_VentilovyTerminal[4].0 := P2_Srobovanie.SkrutSet_M5.OUT.VibracnyHrniec.VzduchNastreleniaSkrutky;
 	P2_Pracovisko.COM_VentilovyTerminal[4].1;
 	P2_Pracovisko.COM_VentilovyTerminal[4].2 := P2_Srobovanie.SkrutSet_M6.OUT.VibracnyHrniec.TiedenieSkrutiek;
@@ -488,7 +488,7 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[4].6 := P2_Srobovanie.SkrutSet_M6.OUT.VibracnyHrniec.VzduchNastreleniaSkrutky;
 	P2_Pracovisko.COM_VentilovyTerminal[4].7;
 	
-	//41-48
+	//40-47
 	P2_Pracovisko.COM_VentilovyTerminal[5].0 := P2_Srobovanie.SkrutSet_M4.OUT.ZhadzovaciVzduch_RUN;
 	P2_Pracovisko.COM_VentilovyTerminal[5].1 := P2_Srobovanie.SkrutSet_M4.OUT.TriediaciVzduch_RUN;
 	P2_Pracovisko.COM_VentilovyTerminal[5].2 := P2_Srobovanie.SkrutSet_M4.OUT.OtocPodavac_NaVystup;
@@ -498,7 +498,7 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[5].6 := P2_Srobovanie.SkrutSet_M6.OUT.Brzda.PodajSkrutku;
 	P2_Pracovisko.COM_VentilovyTerminal[5].7 := P2_Srobovanie.SkrutSet_M6.OUT.Brzda.ZakladnaPoloha;
 	
-	//49-56
+	//48-55
 	P2_Pracovisko.COM_VentilovyTerminal[6].0 := P2_Srobovanie.SkrutSet_M6.OUT.Brzda.OdsavanieNecistot;
 	P2_Pracovisko.COM_VentilovyTerminal[6].1 := P2_Srobovanie.SkrutSet_M6.OUT.Brzda.NastrelenieSkrutky;
 	P2_Pracovisko.COM_VentilovyTerminal[6].2 := P2_Srobovanie.OUT.Skrutkovacka_M5_Prisavanie_ON;
@@ -508,7 +508,7 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[6].6 := P2_Srobovanie.SkrutSet_M5.OUT.Brzda.OdsavanieNecistot;
 	P2_Pracovisko.COM_VentilovyTerminal[6].7 := P2_Srobovanie.SkrutSet_M5.OUT.Brzda.NastrelenieSkrutky;
 	
-	//57-64
+	//56-63
 	P2_Pracovisko.COM_VentilovyTerminal[7].0 := P2_Cistenie.OUT.VzduchPreIonizator_ON;
 	P2_Pracovisko.COM_VentilovyTerminal[7].1 := P2_Cistenie.OUT.OdsavanieOfuk_ON;
 	P2_Pracovisko.COM_VentilovyTerminal[7].2 := P2_Cistenie.OUT.Odsavanie_ON;
@@ -519,9 +519,9 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[7].7;
 	
 	
-	//65-72
+	//64-71
 	P2_Pracovisko.COM_VentilovyTerminal[8].0;
-	P2_Pracovisko.COM_VentilovyTerminal[8].1;
+	P2_Pracovisko.COM_VentilovyTerminal[8].1:= P2_StoperMaticovacky.OUT.Maticovacka_M4_Pneuzamok_ODOMKNI;
 	P2_Pracovisko.COM_VentilovyTerminal[8].2;
 	P2_Pracovisko.COM_VentilovyTerminal[8].3;
 	P2_Pracovisko.COM_VentilovyTerminal[8].4 := P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN;
@@ -530,7 +530,7 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[8].7 := P2_StoperMaticovacky.OUT.Centrovanie_ZASUN;
 	
 	
-	//73-80
+	//72-79
 	P2_Pracovisko.COM_VentilovyTerminal[9].0 := P2_StoperSrobovania.OUT.Centrovanie_VYSUN;
 	P2_Pracovisko.COM_VentilovyTerminal[9].1 := P2_StoperSrobovania.OUT.Centrovanie_ZASUN;
 	P2_Pracovisko.COM_VentilovyTerminal[9].2 := P2_StoperZvarania.OUT.Centrovanie_VYSUN;
@@ -541,11 +541,11 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[9].7;
 	
 	
-	//81-88
+	//80-87
 	P2_Pracovisko.COM_VentilovyTerminal[10].0 := P2_Srobovanie.OUT.Skrutkovacku_M5_VYSUN;
 	P2_Pracovisko.COM_VentilovyTerminal[10].1;
-	P2_Pracovisko.COM_VentilovyTerminal[10].2 := P2_Zvaranie.OUT.PresunZvaranie_VPRAVO;
-	P2_Pracovisko.COM_VentilovyTerminal[10].3 := P2_Zvaranie.OUT.PresunZvarania_VLAVO;
+	P2_Pracovisko.COM_VentilovyTerminal[10].2 := P2_Zvaranie.OUT.PresunZvarania_VLAVO;
+	P2_Pracovisko.COM_VentilovyTerminal[10].3 := P2_Zvaranie.OUT.PresunZvaranie_VPRAVO;
 	P2_Pracovisko.COM_VentilovyTerminal[10].4 := P2_Cistenie.OUT.Dvere_OTVOR;
 	P2_Pracovisko.COM_VentilovyTerminal[10].5 := P2_Cistenie.OUT.Dvere_ZATVOR;
 	P2_Pracovisko.COM_VentilovyTerminal[10].6;

@@ -32,7 +32,7 @@ ACTION OvlCentrovacky:
 		10:
 			SC_OvlCentrovacky.StepName:= '10 - Vysunutie centrovacky';
 			SC_OvlCentrovacky.IdleTime.PT:= T#3s;
-			SC_OvlCentrovacky.AlarmTime.PT:= T#6s;
+			SC_OvlCentrovacky.AlarmTime.PT:= T#10s;
 						
 			IF P3_LeakageTestA.Automat THEN
 				SC_OvlCentrovacky.AlarmTime.IN:= TRUE;
@@ -41,7 +41,7 @@ ACTION OvlCentrovacky:
 			END_IF	
 			
 			IF NOT SC_OvlCentrovacky.Switch1 THEN
-				P3_LeakageTestA.OUT.Centrovanie_ZASUN:= FALSE;
+				P3_LeakageTestA.OUT.PneuZamokCentrovania_ODOMKNI:= TRUE;
                 P3_LeakageTestA.OUT.Centrovanie_VYSUN:= TRUE;
 				SC_OvlCentrovacky.Switch1:= TRUE;
 			END_IF	
@@ -58,7 +58,7 @@ ACTION OvlCentrovacky:
 		20:
 			SC_OvlCentrovacky.StepName:= '20 - Zasunutie centrovacky';
 			SC_OvlCentrovacky.IdleTime.PT:= T#3s;
-			SC_OvlCentrovacky.AlarmTime.PT:= T#6s;
+			SC_OvlCentrovacky.AlarmTime.PT:= T#10s;
 						
 			IF P3_LeakageTestA.Automat THEN
 				SC_OvlCentrovacky.AlarmTime.IN:= TRUE;
@@ -68,7 +68,7 @@ ACTION OvlCentrovacky:
 			
 			IF NOT SC_OvlCentrovacky.Switch1 THEN
 				P3_LeakageTestA.OUT.Centrovanie_VYSUN:= FALSE;
-                P3_LeakageTestA.OUT.Centrovanie_ZASUN:= TRUE;
+                P3_LeakageTestA.OUT.PneuZamokCentrovania_ODOMKNI:= TRUE;
 				SC_OvlCentrovacky.Switch1:= TRUE;
 			END_IF	
 			

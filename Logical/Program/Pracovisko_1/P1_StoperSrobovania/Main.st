@@ -59,6 +59,8 @@ PROGRAM _CYCLIC
 			P1_Srobovanie.COM_IN.Model5H_ZaskrutkujStrednu_M5:= FALSE;
 			P1_Srobovanie.COM_IN.PresunManipulatora_VPRED:= FALSE;
 			P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= FALSE;
+			P1_Srobovanie.COM_IN.OdoberSkrutku_M4:= FALSE;
+			P1_Srobovanie.COM_IN.OdoberSkrutku_M5:= FALSE;
 			P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene:= FALSE;
 			P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny:= FALSE;
 			P1_Robot.COM_OUT.OdoberDPS_4F_z_Paletky:= FALSE;
@@ -113,6 +115,7 @@ PROGRAM _CYCLIC
 			TestovaciKus:= FALSE;
 			P1_StoperSrobovania.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P1_Vytah.STAV.PrebiehaVyvezeniePaletky:= FALSE;
+			
 			            
 			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND Safety.STAV.P1_ZonaBunky_AKTIVNA AND P1_Pracovisko.STAV.HardwareBunky_OK AND NOT P1_Pracovisko.STAV.Porucha_ST2 AND NOT P1_Pracovisko.STAV.Porucha_ST3 THEN
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
@@ -181,12 +184,14 @@ PROGRAM _CYCLIC
 		
 			IF P1_StoperSrobovania.IN.Centrovanie_ZASUNUTE AND P1_Dopravniky.STAV.PoINIT THEN
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
-				SC_P1_StoperSrobovania.Step:= 13;
+				SC_P1_StoperSrobovania.Step:= 15;
 			END_IF	
-				
 		
-		13:	
-			SC_P1_StoperSrobovania.StepName:='13 - Inicializacia - hladanie paletky';
+			
+				
+			
+		15:	
+			SC_P1_StoperSrobovania.StepName:='15 - Inicializacia - hladanie paletky';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#5s;
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;
 			SC_P1_StoperSrobovania.IdleTime.IN:= TRUE;
@@ -195,12 +200,49 @@ PROGRAM _CYCLIC
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 20;
 			ELSIF SC_P1_StoperSrobovania.IdleTime.Q THEN
+				SC_P1_StoperSrobovania.ResetStep:= TRUE;
+				SC_P1_StoperSrobovania.Step:= 18;
+			END_IF
+		
+		18:
+			SC_P1_StoperSrobovania.StepName:='18 - Inicializacia - odobratie skrutky M5 alebo presun manipulatora vzad';
+			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;
+		
+			IF NOT SC_P1_StoperSrobovania.Switch1 AND P1_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie THEN
+				IF Linka.PAR.ZvolenyModel = '4F' THEN
+					P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
+				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+					P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
+				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
+					P1_Srobovanie.COM_IN.OdoberSkrutku_M5:= TRUE;
+				END_IF	
+				SC_P1_StoperSrobovania.Switch1:= TRUE;
+			END_IF
+			
+			IF (P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene OR P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny) THEN
+				P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= FALSE;
+				P1_Srobovanie.COM_IN.OdoberSkrutku_M5:= FALSE;
+				SC_P1_StoperSrobovania.ResetStep:= TRUE;
+				SC_P1_StoperSrobovania.Step:= 19;
+			END_IF
+            
+         
+		19:
+			SC_P1_StoperSrobovania.StepName:='19 - Inicializacia - cakam na zrusenie signalu presun alebo skrutkovanie ukoncene';
+			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;	
+			
+			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene AND NOT P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
 				P1_StoperSrobovania.STAV.PoINIT:= TRUE;
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 100;
-			END_IF
-		
-		
+			END_IF	
+			
+			
+			
+			
+			
 		20:
 			SC_P1_StoperSrobovania.StepName:='20 - Inicializacia - precitanie cisla paletky';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
@@ -320,28 +362,35 @@ PROGRAM _CYCLIC
 			END_IF	
             
 		43:
-			SC_P1_StoperSrobovania.StepName:='43 - Inicializacia - presun manipulatora vzad';
+			SC_P1_StoperSrobovania.StepName:='43 - Inicializacia - odobratie skrutky M5 alebo presun manipulatora vzad';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P1_StoperSrobovania.Switch1 AND P1_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie THEN
-				P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
+				IF Linka.PAR.ZvolenyModel = '4F' THEN
+					P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
+				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+					P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
+				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
+					P1_Srobovanie.COM_IN.OdoberSkrutku_M5:= TRUE;
+				END_IF	
 				SC_P1_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
-			IF P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
+			IF (P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene OR P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny) THEN
 				P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= FALSE;
+				P1_Srobovanie.COM_IN.OdoberSkrutku_M5:= FALSE;
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 45;
 			END_IF
             
          
 		45:
-			SC_P1_StoperSrobovania.StepName:='45 - Inicializacia - cakam na zrusenie signalu presun manipulatora ukonceny';
+			SC_P1_StoperSrobovania.StepName:='45 - Inicializacia - cakam na zrusenie signalu presun alebo skrutkovanie ukoncene';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
-			IF NOT P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
+			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene AND NOT P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
 				CAM6.STAV.Results_READY:= FALSE;
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 46;
@@ -994,8 +1043,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 143;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 143;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 140;
@@ -1100,8 +1154,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 148;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 148;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 145;
@@ -1167,27 +1226,27 @@ PROGRAM _CYCLIC
 		
 			
 		148:
-			SC_P1_StoperSrobovania.StepName:='148 - Automaticky Rezim - model 45F presun manipulatora vzad';
+			SC_P1_StoperSrobovania.StepName:='148 - Automaticky Rezim - model 45F odobratie skrutky M4';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P1_StoperSrobovania.Switch1 AND P1_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie  THEN
-				P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
+				P1_Srobovanie.COM_IN.OdoberSkrutku_M4:= TRUE;
 				SC_P1_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
-			IF P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
-				P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= FALSE;
+			IF P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
+				P1_Srobovanie.COM_IN.OdoberSkrutku_M4:= FALSE;
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 149;
 			END_IF
 			
 		149:
-			SC_P1_StoperSrobovania.StepName:='149 - Automaticky Rezim - cakam na zrusenie signalu presun manipulatora ukonceny';
+			SC_P1_StoperSrobovania.StepName:='149 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
-			IF NOT P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny AND NOT P1_Robot.COM_IN.Stav_Foam4F_Polozeny AND NOT P1_Robot.COM_IN.Stav_Foam5F_Polozeny THEN
+			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene AND NOT P1_Robot.COM_IN.Stav_Foam4F_Polozeny AND NOT P1_Robot.COM_IN.Stav_Foam5F_Polozeny THEN
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 153;
 			END_IF	
@@ -1282,8 +1341,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 165;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 165;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 163;
@@ -1374,8 +1438,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 170;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 170;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 168;
@@ -1441,27 +1510,27 @@ PROGRAM _CYCLIC
 			
 		
 		170:
-			SC_P1_StoperSrobovania.StepName:='170 - Automaticky Rezim - model 45F presun manipulatora vzad';
+			SC_P1_StoperSrobovania.StepName:='170 - Automaticky Rezim - model 45F presun na odobratie skrutky M4';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P1_StoperSrobovania.Switch1  THEN
-				P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
+				P1_Srobovanie.COM_IN.OdoberSkrutku_M4:= TRUE;
 				SC_P1_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
-			IF P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny AND NOT P1_Robot.COM_IN.Stav_RobotPoziciaCakania THEN
-				P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= FALSE;
+			IF P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene AND NOT P1_Robot.COM_IN.Stav_RobotPoziciaCakania THEN
+				P1_Srobovanie.COM_IN.OdoberSkrutku_M4:= FALSE;
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 171;
 			END_IF	
 			
 		171:	
-			SC_P1_StoperSrobovania.StepName:='171 - Automaticky Rezim - cakam na zrusenie signalu presun manipulatora ukonceny';
+			SC_P1_StoperSrobovania.StepName:='171 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
-			IF NOT P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny AND NOT P1_Robot.COM_IN.Stav_RobotPoziciaCakania THEN
+			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene AND NOT P1_Robot.COM_IN.Stav_RobotPoziciaCakania THEN
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 173;
 			END_IF		
@@ -1595,7 +1664,7 @@ PROGRAM _CYCLIC
 				FTP_CAM6.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
 				FTP_CAM6.INPUTS.Result:= CAM6.PAR.ResultFotky;
 				Reports.Kamery.P1_CAM6_KontrolaPaletky:= CAM6.PAR.ResultFotky;
-            	FTP_CAM6.CMD.OdosliFotku:= TRUE;
+				FTP_CAM6.CMD.OdosliFotku:= TRUE;
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 185;	
 			END_IF	
@@ -1689,8 +1758,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 195;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 195;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 193;
@@ -2085,8 +2159,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 370;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 370;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 368;
@@ -2176,8 +2255,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 375;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 375;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 373;
@@ -2266,8 +2350,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 380;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 380;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 378;
@@ -2358,8 +2447,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 385;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 385;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 383;
@@ -2449,8 +2543,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P1_SkrutkovanieResult_OFF THEN
-					SC_P1_StoperSrobovania.ResetStep:= TRUE;
-					SC_P1_StoperSrobovania.Step:= 390;
+					IF P1_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P1_StoperSrobovania.ResetStep:= TRUE;
+						SC_P1_StoperSrobovania.Step:= 390;
+					END_IF	
 				ELSE	
 					SC_P1_StoperSrobovania.ResetStep:= TRUE;
 					SC_P1_StoperSrobovania.Step:= 387;
@@ -2516,27 +2615,27 @@ PROGRAM _CYCLIC
 		
 		
 		390:
-			SC_P1_StoperSrobovania.StepName:='390 - Automaticky Rezim - model 5H presun manipulatora vzad';
+			SC_P1_StoperSrobovania.StepName:='390 - Automaticky Rezim - model 5H odobratie skrutky M5';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P1_StoperSrobovania.Switch1  THEN
-				P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
+				P1_Srobovanie.COM_IN.OdoberSkrutku_M5:= TRUE;
 				SC_P1_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
-			IF P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
-				P1_Srobovanie.COM_IN.PresunManipulatora_VZAD:= FALSE;
+			IF P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
+				P1_Srobovanie.COM_IN.OdoberSkrutku_M5:= FALSE;
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 391;
 			END_IF
 		
 		391:
-			SC_P1_StoperSrobovania.StepName:='391 - Automaticky Rezim - cakam na zrusenie signalu presun manipulatora ukonceny';
+			SC_P1_StoperSrobovania.StepName:='391 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
 			SC_P1_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
-			IF NOT P1_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny AND NOT P1_Robot.COM_IN.Stav_RobotPoziciaCakania THEN
+			IF NOT P1_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene AND NOT P1_Robot.COM_IN.Stav_RobotPoziciaCakania THEN
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
 				SC_P1_StoperSrobovania.Step:= 393;
 			END_IF	

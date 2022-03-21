@@ -474,7 +474,7 @@ PROGRAM _CYCLIC
 				SC_P3_StoperSrobovania.Step:= 0;
 			ELSIF SC_P3_StoperSrobovania.IdleTime.Q THEN
 				SC_P3_StoperSrobovania.ResetStep:= TRUE;
-				SC_P3_StoperSrobovania.Step:= 560;//102
+				SC_P3_StoperSrobovania.Step:= 102;
 			END_IF
 		
 			
@@ -758,8 +758,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P3_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P3_SkrutkovanieResult_OFF THEN
-					SC_P3_StoperSrobovania.ResetStep:= TRUE;
-					SC_P3_StoperSrobovania.Step:= 545;
+					IF P3_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P3_StoperSrobovania.ResetStep:= TRUE;
+						SC_P3_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P3_StoperSrobovania.ResetStep:= TRUE;
+						SC_P3_StoperSrobovania.Step:= 545;
+					END_IF	
 				ELSE	
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
 					SC_P3_StoperSrobovania.Step:= 140;
@@ -873,8 +878,13 @@ PROGRAM _CYCLIC
 			
 			IF NOT P3_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				IF Linka.P3_SkrutkovanieResult_OFF THEN
-					SC_P3_StoperSrobovania.ResetStep:= TRUE;
-					SC_P3_StoperSrobovania.Step:= 545;
+					IF P3_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
+						SC_P3_StoperSrobovania.ResetStep:= TRUE;
+						SC_P3_StoperSrobovania.Step:= 500; 
+					ELSE	
+						SC_P3_StoperSrobovania.ResetStep:= TRUE;
+						SC_P3_StoperSrobovania.Step:= 545;
+					END_IF	
 				ELSE
 					SC_P3_StoperSrobovania.ResetStep:= TRUE;
 					SC_P3_StoperSrobovania.Step:= 360;

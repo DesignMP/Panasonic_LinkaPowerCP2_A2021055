@@ -203,10 +203,10 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.IN.TlakVzduchu_OK := P3_Pracovisko.COM_Festo.DI3_7_8DI[1];
 	Safety.IN.P3_SV_PrivodVzduchu_CH1 := P3_Pracovisko.COM_Festo.DI3_7_8DI[2];
 	Safety.IN.P3_SV_PrivodVzduchu_CH2 := P3_Pracovisko.COM_Festo.DI3_7_8DI[3];
-	P3_Pracovisko.COM_Festo.DI3_7_8DI[4];
-	P3_Pracovisko.COM_Festo.DI3_7_8DI[5];
-	P3_Pracovisko.COM_Festo.DI3_7_8DI[6];
-	P3_Pracovisko.COM_Festo.DI3_7_8DI[7];
+	P3_LeakageTestA.IN.Tester_TypKonektoru_4F:= P3_Pracovisko.COM_Festo.DI3_7_8DI[4];
+	P3_LeakageTestA.IN.Tester_TypKonektoru_5F_5H:= P3_Pracovisko.COM_Festo.DI3_7_8DI[5];
+	P3_LeakageTestB.IN.Tester_TypKonektoru_4F:= P3_Pracovisko.COM_Festo.DI3_7_8DI[6];
+	P3_LeakageTestB.IN.Tester_TypKonektoru_5F_5H:= P3_Pracovisko.COM_Festo.DI3_7_8DI[7];
 	
 	
 	
@@ -407,7 +407,7 @@ PROGRAM _CYCLIC
 	
 	//************************************Ventilový terminál*******************************************//
 	
-	//1-8
+	//0-7
 	P3_Pracovisko.COM_VentilovyTerminal[0].0 := P3_Srobovanie.OUT.Skrutkovacka_M5_Prisavanie_ON;
 	P3_Pracovisko.COM_VentilovyTerminal[0].1 := P3_Srobovanie.OUT.Skrutkovacka_M5_Prisavanie_OFF;
 	P3_Pracovisko.COM_VentilovyTerminal[0].2 := P3_Srobovanie.OUT.Skrutkovacka_M5_Odvzdusn_ON;
@@ -418,7 +418,7 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_VentilovyTerminal[0].7 := P3_HV_Test.OUT.ZasunStoper;
 	
 	
-	//9-16
+	//8-15
 	P3_Pracovisko.COM_VentilovyTerminal[1].0 := P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[1].1 := P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_ZASUN;
 	P3_Pracovisko.COM_VentilovyTerminal[1].2 := P3_ZdvizkaPredLeakTestA.OUT.TlmicPaletky_VYSUN;
@@ -428,7 +428,7 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_VentilovyTerminal[1].6;
 	P3_Pracovisko.COM_VentilovyTerminal[1].7;
 	
-	//17-24
+	//16-23
 	P3_Pracovisko.COM_VentilovyTerminal[2].0 := P3_LeakageTestA.OUT.ZasunStoper;
 	P3_Pracovisko.COM_VentilovyTerminal[2].1 := P3_LeakageTestB.OUT.ZasunStoper;
 	P3_Pracovisko.COM_VentilovyTerminal[2].2 := P3_ZdvizkaZaLeakTestA.OUT.Zdvizku_VYSUN;
@@ -439,7 +439,7 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_VentilovyTerminal[2].7 := P3_ZdvizkaZaLeakTestB.OUT.Zdvizku_ZASUN;
 	
 	
-	//25-32
+	//24-31
 	P3_Pracovisko.COM_VentilovyTerminal[3].0 := P3_ZdvizkaZaLeakTestB.OUT.TlmicPaletky_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[3].1 := P3_ZdvizkaZaLeakTestB.OUT.TlmicPaletky_ZASUN;
 	P3_Pracovisko.COM_VentilovyTerminal[3].2 := P3_Pracovisko.OUT.ZdvizkyPneuZamok_ODOMKNI;
@@ -450,7 +450,7 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_VentilovyTerminal[3].7;
 	
 	
-	//33-40
+	//32-39
 	P3_Pracovisko.COM_VentilovyTerminal[4].0 := P3_Srobovanie.SkrutSet_K40.OUT.VibracnyHrniec.VzduchNastreleniaSkrutky;
 	P3_Pracovisko.COM_VentilovyTerminal[4].1;
 	P3_Pracovisko.COM_VentilovyTerminal[4].2 := P3_Srobovanie.OUT.Skrutkovacka_K40_Prisavanie_ON;
@@ -460,7 +460,7 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_VentilovyTerminal[4].6 := P3_Srobovanie.SkrutSet_K40.OUT.Brzda.OdsavanieNecistot;
 	P3_Pracovisko.COM_VentilovyTerminal[4].7 := P3_Srobovanie.SkrutSet_K40.OUT.Brzda.NastrelenieSkrutky;
 	
-	//41-48
+	//40-47
 	P3_Pracovisko.COM_VentilovyTerminal[5].0 := P3_Srobovanie.SkrutSet_M5.OUT.ZhadzovaciVzduch_RUN;
 	P3_Pracovisko.COM_VentilovyTerminal[5].1 := P3_Srobovanie.SkrutSet_M5.OUT.TriediaciVzduch_RUN;
 	P3_Pracovisko.COM_VentilovyTerminal[5].2 := P3_Srobovanie.SkrutSet_M5.OUT.OtocPodavac_NaVystup;
@@ -470,7 +470,7 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_VentilovyTerminal[5].6 := P3_StoperSrobovania.OUT.Centrovanie_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[5].7 := P3_StoperSrobovania.OUT.Centrovanie_ZASUN;
 	
-	//49-56
+	//48-55
 	P3_Pracovisko.COM_VentilovyTerminal[6].0 := P3_Srobovanie.OUT.Skrutkovacku_K40_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[6].1;
 	P3_Pracovisko.COM_VentilovyTerminal[6].2 := P3_HV_Test.OUT.Centrovanie_VYSUN;
@@ -481,7 +481,7 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_VentilovyTerminal[6].7 := P3_HV_Test.OUT.HorneKontakty_ZASUN;
 	
 	
-	//57-64
+	//56-63
 	P3_Pracovisko.COM_VentilovyTerminal[7].0 := P3_HV_Test.OUT.PruzenieHornychKontaktov_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[7].1 := P3_HV_Test.OUT.PruzenieHornychKontaktov_ZASUN;
 	P3_Pracovisko.COM_VentilovyTerminal[7].2;
@@ -492,22 +492,22 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_VentilovyTerminal[7].7 := P3_LeakageTestA.OUT.Kopito_ZASUN;
 	
 	
-	//65-72
+	//64-71
 	P3_Pracovisko.COM_VentilovyTerminal[8].0 := P3_LeakageTestA.OUT.Centrovanie_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[8].1;
-	P3_Pracovisko.COM_VentilovyTerminal[8].2 := P3_LeakageTestA.OUT.Centrovanie_ZASUN;
-	P3_Pracovisko.COM_VentilovyTerminal[8].3 := P3_LeakageTestA.OUT.PneuZamok_ODOMKNI;
+	P3_Pracovisko.COM_VentilovyTerminal[8].2 := P3_LeakageTestA.OUT.PneuZamokCentrovania_ODOMKNI;
+	P3_Pracovisko.COM_VentilovyTerminal[8].3 := P3_LeakageTestA.OUT.PneuZamokZvonu_ODOMKNI;
 	P3_Pracovisko.COM_VentilovyTerminal[8].4 := P3_LeakageTestA.OUT.HornyPritlak_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[8].5 := P3_LeakageTestA.OUT.HornyPritlak_ZASUN;
 	P3_Pracovisko.COM_VentilovyTerminal[8].6 := P3_LeakageTestB.OUT.Kopito_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[8].7 := P3_LeakageTestB.OUT.Kopito_ZASUN;
 	
 	
-	//73-80
+	//72-79
 	P3_Pracovisko.COM_VentilovyTerminal[9].0 := P3_LeakageTestB.OUT.Centrovanie_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[9].1;
-	P3_Pracovisko.COM_VentilovyTerminal[9].2 := P3_LeakageTestB.OUT.Centrovanie_ZASUN;
-	P3_Pracovisko.COM_VentilovyTerminal[9].3 := P3_LeakageTestB.OUT.PneuZamok_ODOMKNI;
+	P3_Pracovisko.COM_VentilovyTerminal[9].2 := P3_LeakageTestB.OUT.PneuZamokCentrovania_ODOMKNI;
+	P3_Pracovisko.COM_VentilovyTerminal[9].3 := P3_LeakageTestB.OUT.PneuZamokZvonu_ODOMKNI;
 	P3_Pracovisko.COM_VentilovyTerminal[9].4 := P3_LeakageTestB.OUT.HornyPritlak_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[9].5 := P3_LeakageTestB.OUT.HornyPritlak_ZASUN;
 	P3_Pracovisko.COM_VentilovyTerminal[9].6;

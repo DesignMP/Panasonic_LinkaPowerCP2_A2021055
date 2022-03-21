@@ -109,7 +109,7 @@ PROGRAM _CYCLIC
 			IF P4_SpodnyStoper.KoniecCyklu AND NOT P4_Dopravniky.Automat THEN
 				SC_P4_SpodnyStoper.ResetStep:= TRUE;
 				SC_P4_SpodnyStoper.Step:= 0;
-			ELSIF SC_P4_SpodnyStoper.IdleTime.Q THEN  
+			ELSIF SC_P4_SpodnyStoper.IdleTime.Q AND P3_Dopravniky.STAV.PoINIT THEN  
 				SC_P4_SpodnyStoper.ResetStep:= TRUE;
 				SC_P4_SpodnyStoper.Step:= 105;
 			ELSIF NOT P4_SpodnyStoper.IN.PritomnostPaletky THEN

@@ -36,6 +36,7 @@ typedef struct VibracnyHrniecVAR
 {	struct TON T_ZapnutieTriediacehoVzduchu;
 	struct TON T_Zaplnenie;
 	struct TON T_PreletSkrutky;
+	struct TON T_PredOpatovnymPodanimSkrutky;
 } VibracnyHrniecVAR;
 
 typedef struct VibracnyHrniecStruc

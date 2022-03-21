@@ -130,7 +130,7 @@ PROGRAM _CYCLIC
 		
 			P3_Dopravniky.OUT.PrednyDopravnikBunky_ON:= TRUE;
 			P3_Dopravniky.OUT.ZadnyDopravnikBunky_ON:= TRUE;
-			(*P3_Dopravniky.OUT.VratnyDopravnik_ON:= TRUE;*)
+			P3_Dopravniky.OUT.VratnyDopravnik_ON:= TRUE;
 			SC_P3_Dopravniky.IdleTime.IN:= TRUE;
 			
 			IF SC_P3_Dopravniky.IdleTime.Q THEN

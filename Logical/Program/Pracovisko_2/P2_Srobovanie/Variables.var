@@ -2,4 +2,7 @@ VAR
 	FazaNavratu : UINT := 0;
 	CasSrobovania : REAL := 0.0;
 	PocetCisteniSkrutkovacky : USINT := 0;
+	M6_PrevodMomentu : PrevodMomentu;
+	M4_PrevodMomentu : PrevodMomentu;
+	M5_PrevodMomentu : PrevodMomentu;
 END_VAR

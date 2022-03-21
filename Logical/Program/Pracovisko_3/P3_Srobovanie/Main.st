@@ -360,7 +360,7 @@ PROGRAM _CYCLIC
 			
 					
 						
-			IF EDGEPOS(P3_Srobovanie.ServoManipulOsZ_M5.Status.InPosition) THEN
+			IF P3_Srobovanie.ServoManipulOsZ_M5.Status.InPosition THEN
 				P3_Srobovanie.ServoManipulOsZ_M5.Command.MovePosition:= FALSE;
 				P3_Srobovanie.OUT.Skrutkovacka_M5_Prisavanie_ON:= FALSE;
 				P3_Srobovanie.OUT.Skrutkovacka_M5_Prisavanie_OFF:= TRUE;
@@ -391,13 +391,19 @@ PROGRAM _CYCLIC
 			IF P3_Srobovanie.ServoManipulOsY.Status.InPosition AND NOT P3_Srobovanie.IN.Skrutkovacka_M5_Vakum_OK THEN
 				P3_Srobovanie.ServoManipulOsY.Command.MovePosition:= FALSE;
 				SC_P3_Srobovanie.ResetStep:= TRUE;
-				SC_P3_Srobovanie.Step:= 30;
+				SC_P3_Srobovanie.Step:= 29;
 			END_IF	
 				
 			
+		29:
+			SC_P3_Srobovanie.StepName:='29 - Inicializacia - cakam na zrusenie signalu polohovanie ukoncene';
+			SC_P3_Srobovanie.IdleTime.PT:= T#300ms;
+			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
-			
-			
+			IF NOT P3_Srobovanie.ServoManipulOsY.Status.InPosition THEN
+				SC_P3_Srobovanie.ResetStep:= TRUE;
+				SC_P3_Srobovanie.Step:= 30;
+			END_IF	
 	
 		30:
 			SC_P3_Srobovanie.StepName:='30 - Inicializacia - zasuvam skrutkovac M5';
@@ -536,9 +542,7 @@ PROGRAM _CYCLIC
 			ELSIF P3_Srobovanie.SkrutSet_M5.STAV.ERROR THEN
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= FALSE;
 				P34_Alarmy[327]:= TRUE;
-				P3_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;		
-				SC_P3_Srobovanie.ResetStep:= TRUE;
-				SC_P3_Srobovanie.Step:= 135;
+				P3_Pracovisko.STAV.Porucha_ST1:= TRUE;
 			ELSE
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= TRUE;
 			END_IF	
@@ -992,9 +996,7 @@ PROGRAM _CYCLIC
 			ELSIF P3_Srobovanie.SkrutSet_M5.STAV.ERROR THEN
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= FALSE;
 				P34_Alarmy[327]:= TRUE;
-				P3_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;		
-				SC_P3_Srobovanie.ResetStep:= TRUE;
-				SC_P3_Srobovanie.Step:= 217;
+				P3_Pracovisko.STAV.Porucha_ST1:= TRUE;
 			ELSE
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= TRUE;
 			END_IF	

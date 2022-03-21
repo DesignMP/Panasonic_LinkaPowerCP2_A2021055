@@ -122,6 +122,9 @@ PROGRAM _CYCLIC
 			ELSIF ((NOT P2_StoperSrobovania.RFID_hlava.PritomnostPaletky AND SC_P2_StoperSrobovania.Step = 100) OR (P2_StoperSrobovania.OUT.ZasunStoper AND SC_P2_StoperSrobovania.Step = 561)) AND NOT P2_AkumulacnyStoper.STAV.PrebiehaVyvezeniePaletky THEN
 				SC_P2_AkumulacnyStoper.ResetStep:= TRUE;
 				SC_P2_AkumulacnyStoper.Step:= 105;
+			ELSIF NOT P2_AkumulacnyStoper.IN.PritomnostPaletky THEN
+				SC_P2_AkumulacnyStoper.ResetStep:= TRUE;
+				SC_P2_AkumulacnyStoper.Step:= 100;
 			END_IF
 			
 			

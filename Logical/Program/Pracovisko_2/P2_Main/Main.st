@@ -62,153 +62,153 @@ PROGRAM _CYCLIC
     
 	//************************************Ukonèenie cyklu pri poruche*****************************************//
 	//ST1 - Zakladanie tesnenia//
-	IF P2_Pracovisko.STAV.Porucha_ST1 THEN
-		IF P2_StoperZaklTesnenia.Automat THEN
-			P2_StoperZaklTesnenia.Reset:= TRUE;
-		END_IF
-		IF P2_ZakladacTesnenia.Automat THEN
-			P2_ZakladacTesnenia.Reset:= TRUE;
-		END_IF
-	END_IF
+//	IF P2_Pracovisko.STAV.Porucha_ST1 THEN
+//		IF P2_StoperZaklTesnenia.Automat THEN
+//			P2_StoperZaklTesnenia.Reset:= TRUE;
+//		END_IF
+//		IF P2_ZakladacTesnenia.Automat THEN
+//			P2_ZakladacTesnenia.Reset:= TRUE;
+//		END_IF
+//	END_IF
      
 	//ST2 - Skrutkovanie matice//
-	IF P2_Pracovisko.STAV.Porucha_ST2 THEN
-		IF P2_Dopravniky.Automat THEN
-			P2_Dopravniky.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_SpodnyStoper.Automat THEN
-			P2_SpodnyStoper.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_StoperMaticovacky.Automat THEN
-			P2_StoperMaticovacky.Reset:= TRUE;
-		END_IF
-		IF P2_AkumulacnyStoper.Automat THEN
-			P2_AkumulacnyStoper.KoniecCyklu:= TRUE;
-		END_IF	
-		IF P2_StoperSrobovania.Automat THEN
-			P2_StoperSrobovania.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Srobovanie.Automat THEN
-			P2_Srobovanie.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Robot.Automat THEN
-			P2_Robot.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_StoperZvarania.Automat THEN
-			P2_StoperZvarania.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Zvaranie.Automat THEN
-			P2_Zvaranie.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Cistenie.Automat THEN
-			P2_Cistenie.KoniecCyklu:= TRUE; 
-		END_IF 
-	END_IF	
+//	IF P2_Pracovisko.STAV.Porucha_ST2 THEN
+//		IF P2_Dopravniky.Automat THEN
+//			P2_Dopravniky.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_SpodnyStoper.Automat THEN
+//			P2_SpodnyStoper.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_StoperMaticovacky.Automat THEN
+//			P2_StoperMaticovacky.Reset:= TRUE;
+//		END_IF
+//		IF P2_AkumulacnyStoper.Automat THEN
+//			P2_AkumulacnyStoper.KoniecCyklu:= TRUE;
+//		END_IF	
+//		IF P2_StoperSrobovania.Automat THEN
+//			P2_StoperSrobovania.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Srobovanie.Automat THEN
+//			P2_Srobovanie.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Robot.Automat THEN
+//			P2_Robot.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_StoperZvarania.Automat THEN
+//			P2_StoperZvarania.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Zvaranie.Automat THEN
+//			P2_Zvaranie.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Cistenie.Automat THEN
+//			P2_Cistenie.KoniecCyklu:= TRUE; 
+//		END_IF 
+//	END_IF	
     
 	
 	//ST3 - Akumulaèný stoper//
-	IF P2_Pracovisko.STAV.Porucha_ST3 THEN
-		IF P2_Dopravniky.Automat THEN
-			P2_Dopravniky.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_SpodnyStoper.Automat THEN
-			P2_SpodnyStoper.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_StoperMaticovacky.Automat THEN
-			P2_StoperMaticovacky.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_AkumulacnyStoper.Automat THEN
-			P2_AkumulacnyStoper.Reset:= TRUE;
-		END_IF	
-		IF P2_StoperSrobovania.Automat THEN
-			P2_StoperSrobovania.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Srobovanie.Automat THEN
-			P2_Srobovanie.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Robot.Automat THEN
-			P2_Robot.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_StoperZvarania.Automat THEN
-			P2_StoperZvarania.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Zvaranie.Automat THEN
-			P2_Zvaranie.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Cistenie.Automat THEN
-			P2_Cistenie.KoniecCyklu:= TRUE; 
-		END_IF 
-	END_IF 
+//	IF P2_Pracovisko.STAV.Porucha_ST3 THEN
+//		IF P2_Dopravniky.Automat THEN
+//			P2_Dopravniky.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_SpodnyStoper.Automat THEN
+//			P2_SpodnyStoper.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_StoperMaticovacky.Automat THEN
+//			P2_StoperMaticovacky.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_AkumulacnyStoper.Automat THEN
+//			P2_AkumulacnyStoper.Reset:= TRUE;
+//		END_IF	
+//		IF P2_StoperSrobovania.Automat THEN
+//			P2_StoperSrobovania.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Srobovanie.Automat THEN
+//			P2_Srobovanie.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Robot.Automat THEN
+//			P2_Robot.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_StoperZvarania.Automat THEN
+//			P2_StoperZvarania.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Zvaranie.Automat THEN
+//			P2_Zvaranie.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Cistenie.Automat THEN
+//			P2_Cistenie.KoniecCyklu:= TRUE; 
+//		END_IF 
+//	END_IF 
 	
 	
 	//ST4 - Šrobovanie//
-	IF P2_Pracovisko.STAV.Porucha_ST4 THEN
-		IF P2_Dopravniky.Automat THEN
-			P2_Dopravniky.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_SpodnyStoper.Automat THEN
-			P2_SpodnyStoper.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_StoperMaticovacky.Automat THEN
-			P2_StoperMaticovacky.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_AkumulacnyStoper.Automat THEN
-			P2_AkumulacnyStoper.KoniecCyklu:= TRUE;
-		END_IF	
-		IF P2_StoperSrobovania.Automat THEN
-			P2_StoperSrobovania.Reset:= TRUE;
-		END_IF
-		IF P2_Srobovanie.Automat THEN
-			P2_Srobovanie.Reset:= TRUE;
-		END_IF
-		IF P2_Robot.Automat THEN
-			P2_Robot.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_StoperZvarania.Automat THEN
-			P2_StoperZvarania.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Zvaranie.Automat THEN
-			P2_Zvaranie.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Cistenie.Automat THEN
-			P2_Cistenie.KoniecCyklu:= TRUE; 
-		END_IF 
-	END_IF 
+//	IF P2_Pracovisko.STAV.Porucha_ST4 THEN
+//		IF P2_Dopravniky.Automat THEN
+//			P2_Dopravniky.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_SpodnyStoper.Automat THEN
+//			P2_SpodnyStoper.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_StoperMaticovacky.Automat THEN
+//			P2_StoperMaticovacky.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_AkumulacnyStoper.Automat THEN
+//			P2_AkumulacnyStoper.KoniecCyklu:= TRUE;
+//		END_IF	
+//		IF P2_StoperSrobovania.Automat THEN
+//			P2_StoperSrobovania.Reset:= TRUE;
+//		END_IF
+//		IF P2_Srobovanie.Automat THEN
+//			P2_Srobovanie.Reset:= TRUE;
+//		END_IF
+//		IF P2_Robot.Automat THEN
+//			P2_Robot.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_StoperZvarania.Automat THEN
+//			P2_StoperZvarania.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Zvaranie.Automat THEN
+//			P2_Zvaranie.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Cistenie.Automat THEN
+//			P2_Cistenie.KoniecCyklu:= TRUE; 
+//		END_IF 
+//	END_IF 
     
 	
 	//ST5 - Zváranie a èistenie//
-	IF P2_Pracovisko.STAV.Porucha_ST5 THEN
-		IF P2_Dopravniky.Automat THEN
-			P2_Dopravniky.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_SpodnyStoper.Automat THEN
-			P2_SpodnyStoper.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_StoperMaticovacky.Automat THEN
-			P2_StoperMaticovacky.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_AkumulacnyStoper.Automat THEN
-			P2_AkumulacnyStoper.KoniecCyklu:= TRUE;
-		END_IF	
-		IF P2_StoperSrobovania.Automat THEN
-			P2_StoperSrobovania.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Srobovanie.Automat THEN
-			P2_Srobovanie.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_Robot.Automat THEN
-			P2_Robot.KoniecCyklu:= TRUE;
-		END_IF
-		IF P2_StoperZvarania.Automat THEN
-			P2_StoperZvarania.Reset:= TRUE;
-		END_IF
-		IF P2_Zvaranie.Automat THEN
-			P2_Zvaranie.Reset:= TRUE;
-		END_IF
-		IF P2_Cistenie.Automat THEN
-			P2_Cistenie.Reset:= TRUE; 
-		END_IF 
-	END_IF 
+//	IF P2_Pracovisko.STAV.Porucha_ST5 THEN
+//		IF P2_Dopravniky.Automat THEN
+//			P2_Dopravniky.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_SpodnyStoper.Automat THEN
+//			P2_SpodnyStoper.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_StoperMaticovacky.Automat THEN
+//			P2_StoperMaticovacky.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_AkumulacnyStoper.Automat THEN
+//			P2_AkumulacnyStoper.KoniecCyklu:= TRUE;
+//		END_IF	
+//		IF P2_StoperSrobovania.Automat THEN
+//			P2_StoperSrobovania.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Srobovanie.Automat THEN
+//			P2_Srobovanie.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_Robot.Automat THEN
+//			P2_Robot.KoniecCyklu:= TRUE;
+//		END_IF
+//		IF P2_StoperZvarania.Automat THEN
+//			P2_StoperZvarania.Reset:= TRUE;
+//		END_IF
+//		IF P2_Zvaranie.Automat THEN
+//			P2_Zvaranie.Reset:= TRUE;
+//		END_IF
+//		IF P2_Cistenie.Automat THEN
+//			P2_Cistenie.Reset:= TRUE; 
+//		END_IF 
+//	END_IF 
 	
 	
 	//*********************************Status prebieha ukonèenie cyklu********************************************//
@@ -291,12 +291,12 @@ PROGRAM _CYCLIC
 			P2_SpodnyStoper.Automat:= TRUE;
 			P2_StoperMaticovacky.Automat:= TRUE;
 			P2_AkumulacnyStoper.Automat:= TRUE;
-			P2_StoperSrobovania.Automat:= TRUE;
-			P2_Srobovanie.Automat:= TRUE;
-			P2_Robot.Automat:= TRUE;
-			P2_StoperZvarania.Automat:= TRUE;
-			P2_Zvaranie.Automat:= TRUE;
-			P2_Cistenie.Automat:= TRUE;
+//			P2_StoperSrobovania.Automat:= TRUE;
+//			P2_Srobovanie.Automat:= TRUE;
+//			P2_Robot.Automat:= TRUE;
+//			P2_StoperZvarania.Automat:= TRUE;
+//			P2_Zvaranie.Automat:= TRUE;
+//			P2_Cistenie.Automat:= TRUE;
 		END_IF	
 		P2_Pracovisko.Automat:= FALSE;
 	END_IF
@@ -383,6 +383,7 @@ PROGRAM _CYCLIC
 		P2_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
 		P2_Pracovisko.IN.ServoZaklTesneniaPojazd_KomOK AND
 		P2_Pracovisko.IN.ServoZaklTesneniaZdvih_KomOK AND
+		(*P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND*)
 		P2_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P2_Pracovisko.STAV.HardwareZaklTesnenia_OK:= TRUE;
 	ELSE	
@@ -401,19 +402,19 @@ PROGRAM _CYCLIC
 		P2_Pracovisko.IN.ServoManipulatorOsZ_M4_KomOK AND
 		P2_Pracovisko.IN.ServoZvaraniaOsZ_KomOK AND
 		P2_Pracovisko.IN.Skrutkovacka_M4_KomOK AND
-		P2_Pracovisko.IN.Skrutkovacka_M5_KomOK AND
+		(*P2_Pracovisko.IN.Skrutkovacka_M5_KomOK AND*)
 		P2_Pracovisko.IN.Skrutkovacka_M6_KomOK AND
 		P2_Pracovisko.IN.VentilovyTerminal_KomOK AND
 		P2_Srobovanie.IN.NapajanieSkrutkovackyM4_OK AND
-		P2_Srobovanie.IN.NapajanieSkrutkovackyM5_OK AND
+	(*	P2_Srobovanie.IN.NapajanieSkrutkovackyM5_OK AND*)
 		P2_Srobovanie.IN.NapajanieSkrutkovackyM6_OK AND
 		P2_Srobovanie.IN.NapajanieVibrolistyM4_OK AND
 		P2_Srobovanie.IN.NapajanieZasobnikaM6_OK AND
 		P2_Srobovanie.IN.NapajanieZasobnikaM4_OK AND
-		P2_Srobovanie.IN.NapajanieZasobnikaM5_OK AND
-		P2_Pracovisko.IN.SmartKamera8_KomOK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
-		P2_Pracovisko.IN.SmartKamera9_KomOK THEN
+		(*P2_Pracovisko.IN.SmartKamera8_KomOK AND*)
+		(*P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND*)
+		(*P2_Pracovisko.IN.SmartKamera9_KomOK AND *)
+		P2_Srobovanie.IN.NapajanieZasobnikaM5_OK THEN
 		P2_Pracovisko.STAV.HardwareBunky_OK:= TRUE;
 	ELSE	
 		P2_Pracovisko.STAV.HardwareBunky_OK:= FALSE;
@@ -430,7 +431,7 @@ PROGRAM _CYCLIC
 		
 	//*****************************Zapnutie osvetlenia pracoviska*********************************************************//
 	P2_Pracovisko.OUT.OsvetlenieBunky_ON:= TRUE;
-			
+	P2_Pracovisko.OUT.OsvetleniePracZaklTesnenia_ON:= TRUE;		
 	//		
 	//	P2_Pracovisko.OUT.Osvetlenie_CAM1:= TRUE;
 	//	P2_Pracovisko.OUT.Osvetlenie_CAM7_CAM17:= TRUE;
@@ -479,18 +480,18 @@ PROGRAM _CYCLIC
 	END_IF
 	
 	//Zvuková signalizácia//
-	IF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST1) THEN
-		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-	ELSIF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST2) THEN
-		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-	ELSIF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST3) THEN
-		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-	ELSIF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST4) THEN
-		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;	
-	ELSIF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST5) THEN
-		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;		
-	END_IF
-    
+//	IF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST1) THEN
+//		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+//	ELSIF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST2) THEN
+//		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+//	ELSIF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST3) THEN
+//		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+//	ELSIF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST4) THEN
+//		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;	
+//	ELSIF EDGEPOS(P2_Pracovisko.STAV.Porucha_ST5) THEN
+//		P2_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;		
+//	END_IF
+//    
 	
 	
 	 

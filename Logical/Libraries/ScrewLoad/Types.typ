@@ -22,6 +22,7 @@ TYPE
 		T_ZapnutieTriediacehoVzduchu : TON;
 		T_Zaplnenie : TON;
 		T_PreletSkrutky : TON;
+		T_PredOpatovnymPodanimSkrutky : TON;
 	END_STRUCT;
 END_TYPE
 

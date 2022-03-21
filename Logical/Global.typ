@@ -347,13 +347,15 @@ TYPE
 		P1_Srob5H_PravaM5_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 	END_STRUCT;
 	P2_RemPremenne_typ : 	STRUCT 
-		P2_ZaklTesnenia_Zdvih_Rychlost : REAL; (*mm/s*)
+		P2_ZaklTesn_Zdvih_RychlostZdvihu : REAL; (*mm/s*)
+		P2_ZaklTesn_Zdvih_RychlZatlacen : REAL; (*mm/s*)
+		P2_ZaklTesn_Zdvih_MomZatlacen : REAL;
 		P2_ZaklTesn_Zdvih_PozZatlacenia : REAL;
 		P2_ZaklTesn_Pojazd_RychlVysun : REAL;
 		P2_ZaklTesn_Pojazd_RychlZasun : REAL;
 		P2_ZaklTesn_Pojazd_PozZatlacenia : REAL;
 		P2_ZaklTesn_Pojazd_PozVkladania : REAL;
-		P2_ZaklTesnenia_PocetZatlaceni : USINT;
+		P2_ZaklTesn_PocetZatlaceni : USINT;
 		P2_Srob4F_PozX_LavejSkrutkyM6 : REAL;
 		P2_Srob4F_PozY_LavejSkrutkyM6 : REAL;
 		P2_Srob4F_PozX_PravejSkrutkyM6 : REAL;
@@ -392,10 +394,6 @@ TYPE
 		P2_Zvaranie_RychlostZvarania : REAL; (*mm/s*)
 		P2_Zvaranie_CasZvarania : TIME;
 		P2_Zvaranie_RychlostZdvihu : REAL; (*mm/s*)
-		P2_ZaklTesnenia_MomentPritlaku : REAL;
-		P2_ZaklTesnenia_RychlostPritlaku : REAL; (*mm/s*)
-		P2_ZaklTesnenia_RychlVysunutia : REAL; (*mm/s*)
-		P2_ZaklTesnenia_RychlZasunutia : REAL; (*mm/s*)
 		P2_Srob45F_LavaM6_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
 		P2_Srob45F_LavaM6_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 		P2_Srob45F_PravaM6_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
@@ -452,6 +450,8 @@ TYPE
 		IN : Safety_IN_typ;
 		OUT : Safety_OUT_typ;
 		STAV : Safety_STAV_typ;
+		Mapping_BYTE_IN : ARRAY[0..29]OF USINT;
+		Mapping_BYTE_OUT : ARRAY[0..3]OF USINT;
 	END_STRUCT;
 	Safety_IN_typ : 	STRUCT 
 		Linka_SV_ZonaCS : BOOL;
@@ -563,7 +563,7 @@ TYPE
 		P3_SkrutkovanieResult_OFF : BOOL;
 	END_STRUCT;
 	Linka_IN_typ : 	STRUCT 
-		New_Member : USINT;
+		SafetyMaster_OK : BOOL;
 	END_STRUCT;
 	Linka_OUT_typ : 	STRUCT 
 		New_Member : USINT;
@@ -960,10 +960,13 @@ TYPE
 		M4_Uhol_ToleranciaMAX : UDINT;
 		M4_Uhol_ToleranciaMIN_REAL : REAL;
 		M4_Uhol_ToleranciaMIN : UDINT;
+		ManipulatorNadPodavacmi : BOOL;
 	END_STRUCT;
 	P1_Srobovanie_COM_IN_typ : 	STRUCT 
 		PresunManipulatora_VPRED : BOOL;
 		PresunManipulatora_VZAD : BOOL;
+		OdoberSkrutku_M5 : BOOL;
+		OdoberSkrutku_M4 : BOOL;
 		Model45F_ZaskrutkujLavu_K30 : BOOL;
 		Model45F_ZaskrutkujPravu_K30 : BOOL;
 		Model5H_ZaskrutkujLavu_K30 : BOOL;
@@ -1166,8 +1169,10 @@ TYPE
 		Majak_CerveneSvetlo_ON : BOOL;
 		Majak_Hukacka_ON : BOOL;
 		OsvetlenieBunky_ON : BOOL;
+		OsvetleniePracZaklTesnenia_ON : BOOL;
 		Osvetlenie_CAM7_CAM17 : BOOL; (*Stoper zakladania tesnenia*)
-		Osvetlenie_CAM1 : BOOL; (*Zakladaè tesnenia*)
+		Osvetlenie_CAM1_Svetlo1 : BOOL; (*Zakladaè tesnenia*)
+		Osvetlenie_CAM1_Svetlo2 : BOOL; (*Zakladaè tesnenia*)
 		Osvetlenie_CAM10 : BOOL; (*Stoper skrutkovania matic*)
 		Osvetlenie_CAM11 : BOOL; (*Stoper zvárania*)
 		PredneDvereLS_ZAMKNI : BOOL;
@@ -1414,7 +1419,7 @@ TYPE
 		Centrovanie_VYSUN : BOOL; (*YV039_VT2*)
 		Centrovanie_ZASUN : BOOL; (*VY040_VT2*)
 		Maticovacku_M4_VYSUN : BOOL; (*YV072_VT2*)
-		Maticovacku_M4_ZASUN : BOOL; (*YV074_VT2*)
+		Maticovacka_M4_Pneuzamok_ODOMKNI : BOOL; (*YV074_VT2*)
 		Maticovacka_M4_Prisavanie_ON : BOOL; (*YV070_VT2*)
 		Maticovacka_M4_Odvzdusn_ON : BOOL; (*YV071_VT2*)
 	END_STRUCT;
@@ -1497,6 +1502,7 @@ TYPE
 		ZasunStoper : BOOL; (*YV042_VT2*)
 		Centrovanie_VYSUN : BOOL; (*YV043_VT2*)
 		Centrovanie_ZASUN : BOOL; (*YV044_VT2*)
+		OsvetleniePaletky_ON : BOOL;
 	END_STRUCT;
 	P2_StoperSrobovania_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
@@ -1584,6 +1590,7 @@ TYPE
 		Skrutkovacka_M4_Prisavanie_ON : BOOL; (*YV101_VT2*)
 		Skrutkovacka_M4_Prisavanie_OFF : BOOL; (*YV102_VT2*)
 		Skrutkovacka_M4_Odvzdusn_ON : BOOL; (*YV103_VT2*)
+		BodoveOsvetlenie_ON : BOOL;
 	END_STRUCT;
 	P2_Srobovanie_PAR_typ : 	STRUCT 
 		ManipulOsZ_M4_AktualnaPozicia : REAL;
@@ -1644,6 +1651,7 @@ TYPE
 	P2_Srobovanie_COM_IN_typ : 	STRUCT 
 		PresunManipulatora_VPRED : BOOL;
 		PresunManipulatora_VZAD : BOOL;
+		OdoberSkrutku_M4 : BOOL;
 		Model45F_ZaskrutkujLavuM6 : BOOL;
 		Model45F_ZaskrutkujPravuM6 : BOOL;
 		Model45F_ZaskrutkujLavuM4 : BOOL;
@@ -2463,12 +2471,12 @@ TYPE
 	P3_LeakageTestA_OUT_typ : 	STRUCT 
 		HornyPritlak_VYSUN : BOOL; (*YV143_VT3*)
 		HornyPritlak_ZASUN : BOOL; (*YV144_VT3*)
-		PneuZamok_ODOMKNI : BOOL; (*YV145_VT3*)
+		PneuZamokZvonu_ODOMKNI : BOOL; (*YV145_VT3*)
+		PneuZamokCentrovania_ODOMKNI : BOOL; (*YV168_VT3*)
 		Kopito_VYSUN : BOOL; (*YV149_VT3*)
 		Kopito_ZASUN : BOOL; (*YV150_VT3*)
 		ZasunStoper : BOOL; (*YV115_VT3*)
 		Centrovanie_VYSUN : BOOL; (*YV151_VT3*)
-		Centrovanie_ZASUN : BOOL; (*YV168_VT3*)
 	END_STRUCT;
 	P3_LeakageTestA_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
@@ -2521,12 +2529,12 @@ TYPE
 	P3_LeakageTestB_OUT_typ : 	STRUCT 
 		HornyPritlak_VYSUN : BOOL; (*YV146_VT3*)
 		HornyPritlak_ZASUN : BOOL; (*YV147_VT3*)
-		PneuZamok_ODOMKNI : BOOL; (*YV148_VT3*)
+		PneuZamokZvonu_ODOMKNI : BOOL; (*YV148_VT3*)
+		PneuZamokCentrovania_ODOMKNI : BOOL; (*YV169_VT3*)
 		Kopito_VYSUN : BOOL; (*YV153_VT3*)
 		Kopito_ZASUN : BOOL; (*YV167_VT3*)
 		ZasunStoper : BOOL; (*YV116_VT3*)
 		Centrovanie_VYSUN : BOOL; (*YV154_VT3*)
-		Centrovanie_ZASUN : BOOL; (*YV169_VT3*)
 	END_STRUCT;
 	P3_LeakageTestB_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];

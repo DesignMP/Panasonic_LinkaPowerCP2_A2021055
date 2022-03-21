@@ -49,7 +49,7 @@ FUNCTION_BLOCK PickAndPlace
 	Internal.CasZaplneniaVibrolisty();
 	
 	//***********************************Enable knižnice***************************************//
-	IF NOT CMD.ENABLE THEN
+	IF NOT CMD.ENABLE AND Step <> 0 THEN
 		OUT.VibropohonListy_RUN:= FALSE;
 		OUT.VibropohonZasobnika_RUN:= FALSE;
 		OUT.ZhadzovaciVzduch_RUN:= FALSE;
@@ -129,11 +129,11 @@ FUNCTION_BLOCK PickAndPlace
 		
 		20: //Spustenie vibrolisty//
 			OUT.VibropohonListy_RUN:= TRUE;
-			Internal.IdleTime_200ms.IN:= IN.Podavac_SkrutkaNaVstupe;
+			Internal.IdleTime_500ms.IN:= IN.Podavac_SkrutkaNaVstupe;
 			
 			
-			IF Internal.IdleTime_200ms.Q THEN
-				Internal.IdleTime_200ms.IN:= FALSE;
+			IF Internal.IdleTime_500ms.Q THEN
+				Internal.IdleTime_500ms.IN:= FALSE;
 				Step:= 21;
 			END_IF
 		

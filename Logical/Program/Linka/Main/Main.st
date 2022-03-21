@@ -7,7 +7,16 @@ PROGRAM _INIT
 	Safety.STAV.P1_ZonaVytahu_AKTIVNA:= TRUE;
 	Safety.STAV.P3_ZonaBunky_AKTIVNA:= TRUE;
 	Linka.PAR.ZvolenyModel:= '5F';
-	
+	P3_LeakageTestA.STAV.Tester_ON:= TRUE;
+	P3_LeakageTestB.STAV.Tester_ON:= TRUE;
+	P4_FunkcnyTestA.STAV.Tester_ON:= TRUE;
+	P4_FunkcnyTestB.STAV.Tester_ON:= TRUE;
+	Safety.STAV.P2_ZonaZakladacaPojazd_AKTIVNA:= TRUE;
+	Safety.STAV.P2_ZonaZakladacaZdvih_AKTIVNA:= TRUE;
+	Safety.STAV.P2_ZonaBunky_AKTIVNA:= TRUE;
+	Safety.STAV.P2_ZaklTesn_Bariera_AKTIVNA:= TRUE;
+	Safety.STAV.P2_ZaklTesn_Bumper_AKTIVNY:= TRUE;
+	Safety.STAV.P2_ZonaMaticovacky_AKTIVNA:= TRUE;
 END_PROGRAM
 
 PROGRAM _CYCLIC

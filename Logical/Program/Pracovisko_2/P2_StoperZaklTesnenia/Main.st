@@ -122,7 +122,7 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
 			
 									
-			IF P2_ZakladacTesnenia.STAV.PoINIT AND Safety.STAV.P2_ZaklTesn_PojazdMuting_AKTIVNY AND P2_Dopravniky.STAV.PoINIT THEN
+			IF P2_ZakladacTesnenia.STAV.PoINIT AND P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.ActPosition < 5  AND (*Safety.STAV.P2_ZaklTesn_PojazdMuting_AKTIVNY AND*) P2_Dopravniky.STAV.PoINIT THEN
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 3;
 			END_IF

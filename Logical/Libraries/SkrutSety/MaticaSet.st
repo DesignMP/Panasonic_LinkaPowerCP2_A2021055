@@ -41,7 +41,7 @@ FUNCTION_BLOCK MaticaSet
 	
 	
 	//***********************************Enable knižnice***************************************//
-	IF NOT CMD.ENABLE THEN
+	IF NOT CMD.ENABLE AND Step <> 0 THEN
 		OUT.VibropohonZasobnika_RUN:= FALSE;
 		OUT.ZhadzovaciVzduch_RUN:= FALSE;
 		OUT.NastrelenieMatice_RUN:= FALSE;

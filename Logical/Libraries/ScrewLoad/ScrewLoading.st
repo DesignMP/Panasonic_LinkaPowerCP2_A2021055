@@ -161,6 +161,7 @@ FUNCTION_BLOCK ScrewLoading
 			Internal.VibracnyHrniec.T_PreletSkrutky.IN:=0;
 			Internal.VibracnyHrniec.T_ZapnutieTriediacehoVzduchu.IN:=0;
 			Internal.VibracnyHrniec.T_Zaplnenie.IN:=0;
+			Internal.VibracnyHrniec.T_PredOpatovnymPodanimSkrutky.IN:=0;
 			
 			Error.ErrorBit:=0;
 			Error.ErrorNumber:=0;
@@ -185,7 +186,8 @@ FUNCTION_BLOCK ScrewLoading
 				Internal.VibracnyHrniec.T_Zaplnenie.IN:=0;
 			END_IF
 			
-			IF IN.VibracnyHrniec.VibracnaListaZaplnena=1 AND Internal.VibracnyHrniec.T_Zaplnenie.Q=1 AND Internal.Step.Brzda=102 THEN
+			IF IN.VibracnyHrniec.VibracnaListaZaplnena=1 AND Internal.VibracnyHrniec.T_Zaplnenie.Q=1 AND (Internal.Step.Brzda=102 OR Internal.Step.Brzda=104) THEN
+				Internal.VibracnyHrniec.T_Zaplnenie.IN:=0;
 				Internal.Step.VibracnyHrniec:=105;
 			ELSIF Internal.Step.Brzda=100 AND OUT.VibracnyHrniec.ZapniVibromotor=0 THEN
 				Internal.VibracnyHrniec.T_Zaplnenie.IN:=0;
@@ -218,19 +220,39 @@ FUNCTION_BLOCK ScrewLoading
 			END_IF
 			
 		111: Internal.Status.VibracnyHrniec:="Automat - Podavam skrutku";
-			OUT.VibracnyHrniec.OddelovacVysunut:=1;
-			Internal.VibracnyHrniec.T_PreletSkrutky.IN:=1;
-			
-			IF IN.VibracnyHrniec.PreletovySnimac=1 THEN
-				Internal.Step.VibracnyHrniec:=Internal.Step.VibracnyHrniec+1;
-				Internal.VibracnyHrniec.T_PreletSkrutky.IN:=0;
-			ELSIF Internal.VibracnyHrniec.T_PreletSkrutky.Q=1 THEN
-				OUT.VibracnyHrniec.OddelovacVysunut:=0;
-				Internal.VibracnyHrniec.T_PreletSkrutky.IN:=0;
-				Internal.Step.VibracnyHrniec:=150;// Skrutka sa neda podat
+			IF IN.VibracnyHrniec.VibracnaListaZaplnena=1 THEN
+				Internal.VibracnyHrniec.T_Zaplnenie.IN:=1;
+			ELSE
+				Internal.VibracnyHrniec.T_Zaplnenie.IN:=0;
 			END_IF
 			
-		112: Internal.Status.VibracnyHrniec:="Automat - Nastrelovanie";
+			IF Internal.VibracnyHrniec.T_Zaplnenie.Q=1 THEN
+				OUT.VibracnyHrniec.OddelovacVysunut:=1;
+				Internal.VibracnyHrniec.T_PreletSkrutky.IN:=1;
+			END_IF	
+			
+			IF IN.VibracnyHrniec.PreletovySnimac=1 THEN
+				Internal.VibracnyHrniec.T_PreletSkrutky.IN:=0;
+				Internal.VibracnyHrniec.T_Zaplnenie.IN:=0;
+				Internal.Step.VibracnyHrniec:=114;
+			ELSIF Internal.VibracnyHrniec.T_PreletSkrutky.Q=1 THEN
+				OUT.VibracnyHrniec.OddelovacVysunut:=0;
+				Internal.VibracnyHrniec.T_Zaplnenie.IN:=0;
+				Internal.VibracnyHrniec.T_PreletSkrutky.IN:=0;
+				Internal.Step.VibracnyHrniec:=112;// Skrutka sa neda podat
+			END_IF
+		
+		112: Internal.Status.VibracnyHrniec:="Automat - Cakam na opatovne podanie skrutky";
+			
+			Internal.VibracnyHrniec.T_PredOpatovnymPodanimSkrutky.IN:=1;
+			
+			IF Internal.VibracnyHrniec.T_PredOpatovnymPodanimSkrutky.Q THEN
+				Internal.VibracnyHrniec.T_PredOpatovnymPodanimSkrutky.IN:=0;
+				Internal.Step.VibracnyHrniec:=111;
+			END_IF	
+			
+			
+		114: Internal.Status.VibracnyHrniec:="Automat - Nastrelovanie";
 			OUT.VibracnyHrniec.OddelovacVysunut:=0;
 			OUT.VibracnyHrniec.VzduchNastreleniaSkrutky:=1;
 			
@@ -239,7 +261,7 @@ FUNCTION_BLOCK ScrewLoading
 				Internal.Step.VibracnyHrniec:=Internal.Step.VibracnyHrniec+1;
 			END_IF
 			
-		113: Internal.Status.VibracnyHrniec:="Automat - Koniec cyklu";
+		115: Internal.Status.VibracnyHrniec:="Automat - Koniec cyklu";
 			Internal.Step.VibracnyHrniec:=100;
 			
 			//---Manualne vibrovanie
@@ -283,7 +305,9 @@ FUNCTION_BLOCK ScrewLoading
 			Error.ErrorBit:=1;
 			Error.ErrorNumber:=3;
 			Error.ErrorMessage:=Internal.Status.VibracnyHrniec;
-		
+			OUT.VibracnyHrniec.TiedenieSkrutiek:=0;
+			OUT.VibracnyHrniec.ZapniVibromotor:=0;
+			
 			//---Manual----------------------
 		250: Internal.Status.VibracnyHrniec:="Manual";
 	END_CASE
@@ -304,13 +328,18 @@ FUNCTION_BLOCK ScrewLoading
 	Internal.Brzda.T_PresunBrzdy.PT:=T#2s;//REAL_TO_TIME(Visu.Premenne.);
 	Internal.Brzda.T_PresunBrzdy();
 	
-	Internal.VibracnyHrniec.T_PreletSkrutky.PT:=T#2s;//REAL_TO_TIME(Visu.Premenne.);
+	Internal.VibracnyHrniec.T_PreletSkrutky.PT:=T#5s;//REAL_TO_TIME(Visu.Premenne.);
 	Internal.VibracnyHrniec.T_PreletSkrutky();
 	
 	Internal.VibracnyHrniec.T_ZapnutieTriediacehoVzduchu.PT:=T#0.5s;//REAL_TO_TIME(Visu.Premenne.);
 	Internal.VibracnyHrniec.T_ZapnutieTriediacehoVzduchu();
 	
-	Internal.VibracnyHrniec.T_Zaplnenie.PT:=T#0.5s;//REAL_TO_TIME(Visu.Premenne.);
+	Internal.VibracnyHrniec.T_Zaplnenie.PT:=T#1s;//REAL_TO_TIME(Visu.Premenne.);
 	Internal.VibracnyHrniec.T_Zaplnenie();
+	
+	Internal.VibracnyHrniec.T_PredOpatovnymPodanimSkrutky.PT:=T#2s;//REAL_TO_TIME(Visu.Premenne.);
+	Internal.VibracnyHrniec.T_PredOpatovnymPodanimSkrutky();
+	
+	
 	
 END_FUNCTION_BLOCK

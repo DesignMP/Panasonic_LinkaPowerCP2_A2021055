@@ -330,7 +330,7 @@ PROGRAM _CYCLIC
 	
 	//************************************Ventilový terminál*******************************************//
 	
-	//1-8
+	//0-7
 	P1_Pracovisko.COM_VentilovyTerminal[0].0 :=P1_Robot.OUT.Vakum_OFF;
 	P1_Pracovisko.COM_VentilovyTerminal[0].1 :=P1_Robot.OUT.Vakum_ON;
 	P1_Pracovisko.COM_VentilovyTerminal[0].2 :=P1_Srobovanie.OUT.Skrutkovacka_M5_Prisavanie_ON;
@@ -340,7 +340,7 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_VentilovyTerminal[0].6 :=P1_Srobovanie.OUT.Skrutkovacka_M4_Prisavanie_ON;
 	P1_Pracovisko.COM_VentilovyTerminal[0].7 :=P1_Srobovanie.OUT.Skrutkovacka_M4_Prisavanie_OFF;
 	
-	//9-16
+	//8-15
 	P1_Pracovisko.COM_VentilovyTerminal[1].0 :=P1_StoperSrobovania.OUT.ZasunStoper;
 	P1_Pracovisko.COM_VentilovyTerminal[1].1 :=P1_AkumulacnyStoper.OUT.ZasunStoper;
 	P1_Pracovisko.COM_VentilovyTerminal[1].2 :=P1_SpodnyStoper.OUT.ZasunStoper;
@@ -350,7 +350,7 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_VentilovyTerminal[1].6 :=P1_Srobovanie.SkrutSet_M4.OUT.OtocPodavac_NaVstup;
 	P1_Pracovisko.COM_VentilovyTerminal[1].7 :=P1_Srobovanie.SkrutSet_M4.OUT.OtocPodavac_NaVystup;
 	
-	//17-24
+	//16-23
 	P1_Pracovisko.COM_VentilovyTerminal[2].0 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek;
 	P1_Pracovisko.COM_VentilovyTerminal[2].1 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.TiedenieSkrutiek;
 	P1_Pracovisko.COM_VentilovyTerminal[2].2 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.OddelovacVysunut;
@@ -360,7 +360,7 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_VentilovyTerminal[2].6 :=P1_Srobovanie.OUT.Skrutkovacka_K30_Prisavanie_ON;
 	P1_Pracovisko.COM_VentilovyTerminal[2].7 :=P1_Srobovanie.OUT.Skrutkovacka_K30_Odvzdusn_ON;
 	
-	//25-32
+	//24-31
 	P1_Pracovisko.COM_VentilovyTerminal[3].0:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.PodajSkrutku;
 	P1_Pracovisko.COM_VentilovyTerminal[3].1:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.ZakladnaPoloha;
 	P1_Pracovisko.COM_VentilovyTerminal[3].2:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.OdsavanieNecistot;
@@ -370,7 +370,7 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_VentilovyTerminal[3].6:=P1_Srobovanie.SkrutSet_M5.OUT.OtocPodavac_NaVstup;
 	P1_Pracovisko.COM_VentilovyTerminal[3].7:=P1_Srobovanie.SkrutSet_M5.OUT.OtocPodavac_NaVystup;
 	
-	//33-40
+	//32-39
 	P1_Pracovisko.COM_VentilovyTerminal[4].0 :=P1_Robot.OUT.OdistiGriper;
 	P1_Pracovisko.COM_VentilovyTerminal[4].1 :=P1_Robot.OUT.ZaistiGriper;
 	P1_Pracovisko.COM_VentilovyTerminal[4].2 :=P1_Robot.OUT.Griper_OTVOR;
@@ -380,7 +380,7 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_VentilovyTerminal[4].6;
 	P1_Pracovisko.COM_VentilovyTerminal[4].7;
 	
-	//41-48
+	//40-47
 	P1_Pracovisko.COM_VentilovyTerminal[5].0:=P1_Srobovanie.OUT.Skrutkovacku_K30_VYSUN;
 	P1_Pracovisko.COM_VentilovyTerminal[5].1;
 	P1_Pracovisko.COM_VentilovyTerminal[5].2:=P1_StoperSrobovania.OUT.Centrovanie_VYSUN;

@@ -83,6 +83,46 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Srobova\AtlasCopcoKomunikacia.st.var" />
     </Task>
     <Task
+      Name="P2_ZaklTes"
+      Disable="false"
+      Source="Program.Pracovisko_2.P2_ZaklTesnenia"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_ZaklTes\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_ZaklTesnenia\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_ZaklTesnenia\Variables.var" />
+    </Task>
+    <Task
+      Name="P2_Srobova"
+      Disable="false"
+      Source="Program.Pracovisko_2.P2_Srobovanie"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Srobova\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Srobovanie\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Srobovanie\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Srobova\AtlasCopcoKomunikacia.st.var" />
+    </Task>
+    <Task
+      Name="P2_Zvarani"
+      Disable="false"
+      Source="Program.Pracovisko_2.P2_Zvaranie"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Zvarani\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Zvaranie\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Zvaranie\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Zvarani\OvlPojazdu.st.var" />
+    </Task>
+    <Task
       Name="P3_Srobova"
       Disable="false"
       Source="Program.Pracovisko_3.P3_Srobovanie"
@@ -99,6 +139,18 @@
   </TaskClass>
   <TaskClass
     Name="Cyclic#3">
+    <Task
+      Name="SafetyMapp"
+      Disable="false"
+      Source="Program.Linka.SafetyMapping_IO"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\SafetyMapp\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Linka\SafetyMapping_IO\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Linka\SafetyMapping_IO\Variables.var" />
+    </Task>
     <Task
       Name="Blikanie10"
       Disable="false"
@@ -222,7 +274,7 @@
     </Task>
     <Task
       Name="P2_Main"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_Main"
       Language="IEC">
       <InternalFile
@@ -250,7 +302,7 @@
     </Task>
     <Task
       Name="P2_Dopravn"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_Dopravniky"
       Language="IEC">
       <InternalFile
@@ -262,7 +314,7 @@
     </Task>
     <Task
       Name="P2_SpodnyS"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_SpodnyStoper"
       Language="IEC">
       <InternalFile
@@ -274,7 +326,7 @@
     </Task>
     <Task
       Name="P2_StoperZ"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_StoperZaklTesnenia"
       Language="IEC">
       <InternalFile
@@ -287,20 +339,8 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_StoperZ\IOLinkKomunikacia.st.var" />
     </Task>
     <Task
-      Name="P2_ZaklTes"
-      Disable="true"
-      Source="Program.Pracovisko_2.P2_ZaklTesnenia"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_ZaklTes\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_ZaklTesnenia\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_ZaklTesnenia\Variables.var" />
-    </Task>
-    <Task
       Name="P2_StoperM"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_StoperMaticovacky"
       Language="IEC">
       <InternalFile
@@ -318,7 +358,7 @@
     </Task>
     <Task
       Name="P2_AkumSto"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_AkumStoper"
       Language="IEC">
       <InternalFile
@@ -330,7 +370,7 @@
     </Task>
     <Task
       Name="P2_Robot"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_Robot"
       Language="IEC">
       <InternalFile
@@ -344,7 +384,7 @@
     </Task>
     <Task
       Name="P2_StoperS"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_StoperSrobovania"
       Language="IEC">
       <InternalFile
@@ -359,22 +399,8 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_StoperS\OvlCentrovacky.st.var" />
     </Task>
     <Task
-      Name="P2_Srobova"
-      Disable="true"
-      Source="Program.Pracovisko_2.P2_Srobovanie"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Srobova\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Srobovanie\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Srobovanie\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Srobova\AtlasCopcoKomunikacia.st.var" />
-    </Task>
-    <Task
       Name="P2_Stoper1"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_StoperZvarania"
       Language="IEC">
       <InternalFile
@@ -389,22 +415,8 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Stoper1\IOLinkKomunikacia.st.var" />
     </Task>
     <Task
-      Name="P2_Zvarani"
-      Disable="true"
-      Source="Program.Pracovisko_2.P2_Zvaranie"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Zvarani\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Zvaranie\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Zvaranie\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Zvarani\OvlPojazdu.st.var" />
-    </Task>
-    <Task
       Name="P2_Cisteni"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_2.P2_Cistenie"
       Language="IEC">
       <InternalFile

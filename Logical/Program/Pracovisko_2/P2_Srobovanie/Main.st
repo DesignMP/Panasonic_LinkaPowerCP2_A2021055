@@ -1129,9 +1129,7 @@ PROGRAM _CYCLIC
 			ELSIF P2_Srobovanie.SkrutSet_M4.STAV.ERROR THEN
 				P2_Srobovanie.SkrutSet_M4.CMD.PodajSkrutku:= FALSE;
 				P2_Alarmy[237]:= TRUE;
-				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;		
-				SC_P2_Srobovanie.ResetStep:= TRUE;
-				SC_P2_Srobovanie.Step:= 167;
+				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;		
 			ELSE
 				P2_Srobovanie.SkrutSet_M4.CMD.PodajSkrutku:= TRUE;
 			END_IF	
@@ -1513,9 +1511,7 @@ PROGRAM _CYCLIC
 			ELSIF P2_Srobovanie.SkrutSet_M4.STAV.ERROR THEN
 				P2_Srobovanie.SkrutSet_M4.CMD.PodajSkrutku:= FALSE;
 				P2_Alarmy[237]:= TRUE;
-				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;		
-				SC_P2_Srobovanie.ResetStep:= TRUE;
-				SC_P2_Srobovanie.Step:= 187;
+				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
 			ELSE
 				P2_Srobovanie.SkrutSet_M4.CMD.PodajSkrutku:= TRUE;
 			END_IF	
@@ -2311,9 +2307,7 @@ PROGRAM _CYCLIC
 			ELSIF P2_Srobovanie.SkrutSet_M4.STAV.ERROR THEN
 				P2_Srobovanie.SkrutSet_M4.CMD.PodajSkrutku:= FALSE;
 				P2_Alarmy[237]:= TRUE;
-				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;		
-				SC_P2_Srobovanie.ResetStep:= TRUE;
-				SC_P2_Srobovanie.Step:= 257;
+				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
 			ELSE
 				P2_Srobovanie.SkrutSet_M4.CMD.PodajSkrutku:= TRUE;
 			END_IF	
@@ -2969,6 +2963,12 @@ PROGRAM _CYCLIC
 				SC_P2_Srobovanie.Step:= 602;
 			END_IF	
 		
+			
+			//Èistenie skrutkovaèky M4//	
+			
+			
+			
+			
 		
 		
 			//*******************************************************Manuálny režim*******************************************************************************//

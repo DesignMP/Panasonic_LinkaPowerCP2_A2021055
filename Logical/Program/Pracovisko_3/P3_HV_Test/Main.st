@@ -295,7 +295,7 @@ PROGRAM _CYCLIC
 				SC_P3_HV_Test.Step:= 0;
 			ELSIF SC_P3_HV_Test.IdleTime.Q THEN
 				SC_P3_HV_Test.ResetStep:= TRUE;
-				SC_P3_HV_Test.Step:= 560;//101
+				SC_P3_HV_Test.Step:= 101;
 			END_IF
 		
 		101:

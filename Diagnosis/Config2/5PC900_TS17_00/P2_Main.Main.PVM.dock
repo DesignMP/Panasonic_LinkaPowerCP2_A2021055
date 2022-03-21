@@ -1,0 +1,9 @@
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_Main 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=5 ASCIIString=0
+                                    name                                     type force                                                            value level type len format place expand specs
+                           P2_Pracovisko                        P2_Pracovisko_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                    STAV                   P2_Pracovisko_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
+                        HardwareBunky_OK                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                 HardwareZaklTesnenia_OK                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                                 Automat                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                   Reset                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         

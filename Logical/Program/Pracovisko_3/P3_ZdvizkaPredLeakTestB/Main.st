@@ -218,7 +218,7 @@ PROGRAM _CYCLIC
 			IF P3_ZdvizkaPredLeakTestB.KoniecCyklu AND NOT P3_ZdvizkaPredLeakTestA.Automat THEN
 				SC_P3_ZdvizkaPredLeakTestB.ResetStep:= TRUE;
 				SC_P3_ZdvizkaPredLeakTestB.Step:= 0;
-			ELSIF NOT P3_LeakageTestB.RFID_hlava.PritomnostPaletky AND SC_P3_LeakageTestB.Step = 100 AND NOT P3_ZdvizkaPredLeakTestB.STAV.PrebiehaVyvezeniePaletky THEN
+			ELSIF NOT P3_LeakageTestB.RFID_hlava.PritomnostPaletky AND SC_P3_LeakageTestB.Step = 100 THEN
 				SC_P3_ZdvizkaPredLeakTestB.ResetStep:= TRUE;
 				SC_P3_ZdvizkaPredLeakTestB.Step:= 123;
 			END_IF
@@ -245,9 +245,9 @@ PROGRAM _CYCLIC
 			SC_P3_ZdvizkaPredLeakTestB.IdleTime.PT:= T#500ms;
 			SC_P3_ZdvizkaPredLeakTestB.AlarmTime.PT:= T#5s;
 				
-			SC_P3_ZdvizkaPredLeakTestB.IdleTime.IN:= NOT P3_ZdvizkaPredLeakTestB.IN.PritomnostPaletky;
 			
-			IF SC_P3_ZdvizkaPredLeakTestB.IdleTime.Q AND NOT SC_P3_ZdvizkaPredLeakTestB.Switch1 AND SC_OvlZdvizky.Step = 1 THEN
+			
+			IF P3_LeakageTestB.RFID_hlava.PritomnostPaletky AND NOT SC_P3_ZdvizkaPredLeakTestB.Switch1 AND SC_OvlZdvizky.Step = 1 THEN
 				Zdvizku_VYSTRED:= TRUE;
 				SC_P3_ZdvizkaPredLeakTestB.Switch1:= TRUE;
 			END_IF

@@ -418,7 +418,7 @@ PROGRAM _CYCLIC
 	IF P3_Pracovisko.Automat THEN
 		IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND P3_Pracovisko.STAV.HardwareBunky_OK THEN
 			P3_Dopravniky.Automat:= TRUE;
-			(*P3_SpodnyStoper.Automat:= TRUE;*)
+			P3_SpodnyStoper.Automat:= TRUE;
 			P3_StoperSrobovania.Automat:= TRUE;
 			P3_Srobovanie.Automat:= TRUE;
 			P3_HV_Test.Automat:= TRUE;
@@ -544,14 +544,14 @@ PROGRAM _CYCLIC
 	END_IF
 	
 	//Priznak LeakageTest A zasunuty//
-	IF P3_LeakageTestA.IN.Centrovanie_ZASUNUTE AND P3_LeakageTestA.IN.HornyPritlak_ZASUNUTY (*AND P3_LeakageTestA.IN.Kopito_ZASUNUTE*) THEN
+	IF P3_LeakageTestA.IN.Centrovanie_ZASUNUTE AND P3_LeakageTestA.IN.HornyPritlak_ZASUNUTY AND P3_LeakageTestA.IN.Kopito_ZASUNUTE THEN
 		P3_Pracovisko.STAV.LeakageTestA_Zasunuty:= TRUE;
 	ELSE
 		P3_Pracovisko.STAV.LeakageTestA_Zasunuty:= FALSE;
 	END_IF	
 	
 	//Priznak LeakageTest B zasunuty//
-	IF P3_LeakageTestB.IN.Centrovanie_ZASUNUTE AND P3_LeakageTestB.IN.HornyPritlak_ZASUNUTY (*AND P3_LeakageTestB.IN.Kopito_ZASUNUTE*) THEN
+	IF P3_LeakageTestB.IN.Centrovanie_ZASUNUTE AND P3_LeakageTestB.IN.HornyPritlak_ZASUNUTY AND P3_LeakageTestB.IN.Kopito_ZASUNUTE THEN
 		P3_Pracovisko.STAV.LeakageTestB_Zasunuty:= TRUE;
 	ELSE
 		P3_Pracovisko.STAV.LeakageTestB_Zasunuty:= FALSE;
