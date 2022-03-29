@@ -24,6 +24,9 @@ VAR
 	P1_Vizu : P1_Vizu_typ;
 	P2_Vizu : P2_Vizu_typ;
 	P34_Vizu : P34_Vizu_typ;
+	FilterVizu_P1 : STRING[300];
+	FilterVizu_P2 : STRING[300];
+	FilterVizu_P34 : STRING[300];
 END_VAR
 (**************Remanentné premenné*********)
 VAR

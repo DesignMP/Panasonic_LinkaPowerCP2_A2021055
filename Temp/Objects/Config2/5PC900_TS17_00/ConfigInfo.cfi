@@ -109,6 +109,22 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Srobova\AtlasCopcoKomunikacia.st.var" />
     </Task>
     <Task
+      Name="P2_StoperS"
+      Disable="false"
+      Source="Program.Pracovisko_2.P2_StoperSrobovania"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_StoperS\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperSrobovania\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperSrobovania\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_StoperS\IOLinkKomunikacia.st.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_StoperS\OvlCentrovacky.st.var" />
+    </Task>
+    <Task
       Name="P2_Zvarani"
       Disable="false"
       Source="Program.Pracovisko_2.P2_Zvaranie"
@@ -121,6 +137,64 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Zvaranie\Variables.var" />
       <InternalFile
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Zvarani\OvlPojazdu.st.var" />
+    </Task>
+    <Task
+      Name="P2_Stoper1"
+      Disable="false"
+      Source="Program.Pracovisko_2.P2_StoperZvarania"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Stoper1\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperZvarania\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperZvarania\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Stoper1\OvlCentrovacky.st.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Stoper1\IOLinkKomunikacia.st.var" />
+    </Task>
+    <Task
+      Name="P2_Cisteni"
+      Disable="false"
+      Source="Program.Pracovisko_2.P2_Cistenie"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Cisteni\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Cistenie\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Cistenie\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Cisteni\OvlDveri.st.var" />
+    </Task>
+    <Task
+      Name="P1_Robot"
+      Disable="false"
+      Source="Program.Pracovisko_1.P1_Robot"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Robot\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Robot\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Robot\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Robot\ProfinetKomunikaciaRobot.st.var" />
+    </Task>
+    <Task
+      Name="P2_Robot"
+      Disable="false"
+      Source="Program.Pracovisko_2.P2_Robot"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Robot\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Robot\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Robot\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Robot\ProfinetKomunikaciaRobot.st.var" />
     </Task>
     <Task
       Name="P3_Srobova"
@@ -139,6 +213,54 @@
   </TaskClass>
   <TaskClass
     Name="Cyclic#3">
+    <Task
+      Name="P1_OvladSa"
+      Disable="false"
+      Source="Program.Pracovisko_1.P1_OvladSafety"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_OvladSa\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_OvladSafety\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_OvladSafety\Variables.var" />
+    </Task>
+    <Task
+      Name="P2_OvladSa"
+      Disable="false"
+      Source="Program.Pracovisko_2.P2_OvladSafety"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_OvladSa\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_OvladSafety\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_OvladSafety\Variables.var" />
+    </Task>
+    <Task
+      Name="P3_OvladSa"
+      Disable="false"
+      Source="Program.Pracovisko_3.P3_OvladSafety"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P3_OvladSa\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_OvladSafety\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_OvladSafety\Variables.var" />
+    </Task>
+    <Task
+      Name="P4_OvladSa"
+      Disable="false"
+      Source="Program.Pracovisko_4.P4_OvladSafety"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_OvladSa\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_OvladSafety\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_OvladSafety\Variables.var" />
+    </Task>
     <Task
       Name="SafetyMapp"
       Disable="false"
@@ -247,20 +369,6 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_StoperS\OvlCentrovacky.st.var" />
     </Task>
     <Task
-      Name="P1_Robot"
-      Disable="false"
-      Source="Program.Pracovisko_1.P1_Robot"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Robot\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Robot\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Robot\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Robot\ProfinetKomunikaciaRobot.st.var" />
-    </Task>
-    <Task
       Name="P1_Akumula"
       Disable="false"
       Source="Program.Pracovisko_1.P1_AkumStoper"
@@ -367,66 +475,6 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_AkumStoper\Types.typ" />
       <File
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_AkumStoper\Variables.var" />
-    </Task>
-    <Task
-      Name="P2_Robot"
-      Disable="false"
-      Source="Program.Pracovisko_2.P2_Robot"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Robot\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Robot\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Robot\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Robot\ProfinetKomunikaciaRobot.st.var" />
-    </Task>
-    <Task
-      Name="P2_StoperS"
-      Disable="false"
-      Source="Program.Pracovisko_2.P2_StoperSrobovania"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_StoperS\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperSrobovania\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperSrobovania\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_StoperS\IOLinkKomunikacia.st.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_StoperS\OvlCentrovacky.st.var" />
-    </Task>
-    <Task
-      Name="P2_Stoper1"
-      Disable="false"
-      Source="Program.Pracovisko_2.P2_StoperZvarania"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Stoper1\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperZvarania\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperZvarania\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Stoper1\OvlCentrovacky.st.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Stoper1\IOLinkKomunikacia.st.var" />
-    </Task>
-    <Task
-      Name="P2_Cisteni"
-      Disable="false"
-      Source="Program.Pracovisko_2.P2_Cistenie"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Cisteni\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Cistenie\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Cistenie\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Cisteni\OvlDveri.st.var" />
     </Task>
     <Task
       Name="P3_Main"

@@ -4,7 +4,8 @@ PROGRAM _INIT
 	//Init parametre serva zdvihu v˝ùahu//
 	P4_Vytah.ServoZdvihuVytahu.Parameters.Override:= 100;
 	P4_Vytah.PAR.Zdvih_JoggRychlost:= 0.1;
-	
+	P4_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= TRUE;
+	P4_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.0;
  
 END_PROGRAM
 
@@ -23,7 +24,7 @@ PROGRAM _CYCLIC
 	SequenceControl(SC:= SC_P4_Vytah);
 	
 	//Enable serva//
-	IF Safety.STAV.P4_ZonaVytahu_AKTIVNA THEN
+	IF Safety.STAV.P4_ZonaVytahu_AKTIVNA AND NOT P4_Vytah.ServoZdvihuVytahu.Command.ErrReset THEN
 		P4_Vytah.ServoZdvihuVytahu.Command.PowerON:= TRUE;
 	ELSE
 		P4_Vytah.ServoZdvihuVytahu.Command.PowerON:= FALSE;
@@ -74,7 +75,6 @@ PROGRAM _CYCLIC
 			P4_Vytah.ServoZdvihuVytahu.Command.JogPos:= FALSE;
 			P4_Vytah.ServoZdvihuVytahu.Command.MoveAdditive:= FALSE;
 			P4_Vytah.ServoZdvihuVytahu.Command.MovePosition:= FALSE;
-			P4_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= FALSE;
 			IF NOT P4_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
 				P4_Vytah.ServoZdvihuVytahu.Command.Stop:= TRUE;
 			END_IF	
@@ -148,7 +148,9 @@ PROGRAM _CYCLIC
 			
 			SC_P4_Vytah.IdleTime.IN:= P4_Dopravniky.STAV.PoINIT;
 			
-			P4_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= TRUE;
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Acc:= P34_RemPremenne.P4_Vytah_Zdvih_Acc;
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= P34_RemPremenne.P4_Vytah_Zdvih_Dcc;
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			
 			IF SC_P4_Vytah.IdleTime.Q THEN
 				SC_P4_Vytah.ResetStep:= TRUE;
@@ -216,9 +218,7 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.IN:= Safety.STAV.P4_Vytah_Bariera_AKTIVNA;
 			P34_Vizu.ZobrazHL6_ST10:= NOT Safety.STAV.P4_Vytah_Bariera_AKTIVNA;
 			
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Acc:= 50;
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= 50;
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
+			
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Velocity:= P34_RemPremenne.P4_Vytah_RychlostZdvihu/1000;
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Position:= P34_RemPremenne.P4_Vytah_PoziciaNakladania;
 			
@@ -346,6 +346,12 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.PT:= T#200ms;
 			SC_P4_Vytah.AlarmTime.PT:= T#5s;	
 		
+			
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Acc:= P34_RemPremenne.P4_Vytah_Zdvih_Acc;
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= P34_RemPremenne.P4_Vytah_Zdvih_Dcc;
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
+			
+			
 						
 			IF P4_Vytah.KoniecCyklu AND NOT P4_Etiketovacka.Automat THEN
 				SC_P4_Vytah.ResetStep:= TRUE;
@@ -1159,9 +1165,6 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.IN:= Safety.STAV.P4_Vytah_Bariera_AKTIVNA;
 			P34_Vizu.ZobrazHL6_ST10:= NOT Safety.STAV.P4_Vytah_Bariera_AKTIVNA;
 			
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Acc:= 50;
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= 50;
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Velocity:= P34_RemPremenne.P4_Vytah_RychlostZdvihu/1000;
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Position:= P34_RemPremenne.P4_Vytah_PoziciaVykladania;
 			
@@ -1239,9 +1242,6 @@ PROGRAM _CYCLIC
 					
 			P4_Vytah.Banner.IN.OranzovaLED_ON:= Blikac1s;			
 					
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Acc:= 50;
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= 50;
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Velocity:= P34_RemPremenne.P4_Vytah_RychlostZdvihu/1000;
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Position:= P34_RemPremenne.P4_Vytah_PoziciaNakladania;
 			

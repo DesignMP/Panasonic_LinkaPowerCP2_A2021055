@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<OpcUaSource FileVersion="7" ArVersion="D4.91">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView>
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="P1_Vizu">
+          <Variable Name="TL_RezimAutomat" />
+          <Variable Name="TL_StartAutomat_ENABLE" />
+          <Variable Name="TL_KoniecCyklu_ENABLE" />
+          <Variable Name="TL_RezimAutomat_ENABLE" />
+          <Variable Name="TL_RezimManual_ENABLE" />
+          <Variable Name="TL_Uzivatelia_ENABLE" />
+          <Variable Name="Warnings_Farba" />
+          <Variable Name="Warnings_Index" />
+          <Variable Name="TL_ResetCS" />
+          <Variable Name="TL_PrednyZamok_Farba" />
+          <Variable Name="TL_ZadnyZamokPS_Farba" />
+          <Variable Name="TL_ZadnyZamokLS_Farba" />
+          <Variable Name="TL_ZamkniPrednyZamok" />
+          <Variable Name="TL_ZamkniZadnyZamokPS" />
+          <Variable Name="TL_ZamkniZadnyZamokLS" />
+          <Variable Name="TL_VyprazdnenieLinky_ENABLE" />
+          <Variable Name="TL_OvladaniaZamkov_ENABLE" />
+          <Variable Name="TL_VolbaModelu_ENABLE" />
+          <Variable Name="TL_PaletkaPrechadza_ENABLE" />
+          <Variable Name="TL_TestovaciKus_ENABLE" />
+          <Variable Name="TL_Revork_ENABLE" />
+          <Variable Name="TL_STOP_ENABLE" />
+          <Variable Name="IndexStavu_Dopravnik" />
+          <Variable Name="IndexStavu_Vytah" />
+          <Variable Name="IndexStavu_SpodnyStoper" />
+          <Variable Name="IndexStavu_StoperSrobovania" />
+          <Variable Name="IndexStavu_Srobovanie" />
+          <Variable Name="IndexStavu_AkumulacnyStoper" />
+          <Variable Name="IndexStavu_Robot" />
+          <Variable Name="TL_PrihlasenieOperatora_ENABLE" />
+          <Variable Name="TL_PrihlasovOperatora_AKTIVNE" />
+          <Variable Name="TL_SETUP_ENABLE" />
+          <Variable Name="EditaciaParametrov_ENABLE" />
+        </Variable>
+        <Variable Name="P1_Pracovisko">
+          <Variable Name="Manual" />
+          <Variable Name="Reset" />
+          <Variable Name="KoniecCyklu" />
+          <Variable Name="Automat" />
+        </Variable>
+        <Variable Name="Vizu">
+          <Variable Name="TL_ResetCS_Farba" />
+          <Variable Name="ZadanyCasPLC" />
+          <Variable Name="NastavCasPLC" />
+          <Variable Name="AktualnyCasPLC" />
+        </Variable>
+        <Variable Name="UsersVizu">
+          <Variable Name="KartaPrilozena_Panel1" />
+          <Variable Name="KartaPrilozena_Panel2" />
+          <Variable Name="KartaPrilozena_Panel3" />
+          <Variable Name="MenoPrihlasenehoUzivatela_Panel1" />
+          <Variable Name="MenoPrihlasenehoUzivatela_Panel2" />
+          <Variable Name="MenoPrihlasenehoUzivatela_Panel3" />
+        </Variable>
+        <Variable Name="Linka">
+          <Variable Name="PAR">
+            <Variable Name="ZvolenyModel" />
+            <Variable Name="TestovaciKus" />
+            <Variable Name="RevorkovyKus" />
+            <Variable Name="PaletkaPrechadza" />
+            <Variable Name="IndexModelu" />
+            <Variable Name="VyprazdnenieLinky" />
+          </Variable>
+          <Variable Name="KOM_Panatrace_OFF" />
+          <Variable Name="KOM_FTP_OFF" />
+          <Variable Name="P1_Kamery_OFF" />
+          <Variable Name="P2_Kamery_OFF" />
+          <Variable Name="P3_Kamery_OFF" />
+          <Variable Name="P4_Kamery_OFF" />
+          <Variable Name="P1_SkrutkovanieResult_OFF" />
+          <Variable Name="P2_SkrutkovanieResult_OFF" />
+          <Variable Name="P3_SkrutkovanieResult_OFF" />
+        </Variable>
+        <Variable Name="FilterVizu_P1" />
+        <Variable Name="FilterVizu_P2" />
+        <Variable Name="FilterVizu_P34" />
+        <Variable Name="P1_AlarmyVizu">
+          <Variable Name="PotvrdAlarmy" />
+          <Variable Name="ArchivaciaAlarmov" />
+          <Variable Name="ZobrazSymbolAlarmu" />
+          <Variable Name="FarbaTlacitka_Alarmy" />
+        </Variable>
+        <Variable Name="P1_RemPremenne">
+          <Variable Name="P1_Srob45F_PozX_LavejSkrutkyK30" />
+          <Variable Name="P1_Srob45F_PozY_LavejSkrutkyK30" />
+          <Variable Name="P1_Srob45F_PozX_PravejSkrutkyK30" />
+          <Variable Name="P1_Srob45F_PozY_PravejSkrutkyK30" />
+          <Variable Name="P1_Srob4F_PozX_ZadnejSkrutkyM4" />
+          <Variable Name="P1_Srob4F_PozY_ZadnejSkrutkyM4" />
+          <Variable Name="P1_Srob5F_PozX_ZadnejSkrutkyM4" />
+          <Variable Name="P1_Srob5F_PozY_ZadnejSkrutkyM4" />
+          <Variable Name="P1_Srob45F_Mom_ZadnejSkrutkyM4" />
+          <Variable Name="P1_Srob45F_Rychl_ZadnejSkrutkyM4" />
+          <Variable Name="P1_Srob4F_PozX_PrednejSkrutkyM4" />
+          <Variable Name="P1_Srob4F_PozY_PrednejSkrutkyM4" />
+          <Variable Name="P1_Srob5F_PozX_PrednejSkrutkyM4" />
+          <Variable Name="P1_Srob5F_PozY_PrednejSkrutkyM4" />
+          <Variable Name="P1_Srob45F_Mom_PrednejSkrutkyM4" />
+          <Variable Name="P1_Srob45F_Rychl_PredneSkrutkyM4" />
+          <Variable Name="P1_Srob45F_PozX_SkrutkyDPS_M4" />
+          <Variable Name="P1_Srob45F_PozY_SkrutkyDPS_M4" />
+          <Variable Name="P1_Srob45F_Mom_SkrutkyDPS_M4" />
+          <Variable Name="P1_Srob45F_Rychl_SkrutkyDPS_M4" />
+          <Variable Name="P1_Srob5H_PozX_LavejSkrutkyK30" />
+          <Variable Name="P1_Srob5H_PozY_LavejSkrutkyK30" />
+          <Variable Name="P1_Srob5H_PozX_PravejSkrutkyK30" />
+          <Variable Name="P1_Srob5H_PozY_PravejSkrutkyK30" />
+          <Variable Name="P1_Srob5H_PozX_LavejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_PozY_LavejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_Mom_LavejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_Rychl_LavejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_PozX_StrednejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_PozY_StrednejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_Mom_StrednejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_Rychl_StredneSkrutkyM5" />
+          <Variable Name="P1_Srob5H_PozX_PravejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_PozY_PravejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_Mom_PravejSkrutkyM5" />
+          <Variable Name="P1_Srob5H_Rychl_PravejSkrutkyM5" />
+          <Variable Name="P1_Srob_PozX_OdobratSkrutkyM5" />
+          <Variable Name="P1_Srob_PozY_OdobratSkrutkyM5" />
+          <Variable Name="P1_Srob_PozZ_OdobratSkrutkyM5" />
+          <Variable Name="P1_Srob_PozX_OdobratSkrutkyM4" />
+          <Variable Name="P1_Srob_PozY_OdobratSkrutkyM4" />
+          <Variable Name="P1_Srob_PozZ_OdobratSkrutkyM4" />
+          <Variable Name="P1_Vytah_RychlostZdvihu" />
+          <Variable Name="P1_Vytah_Zdvih_Acc" />
+          <Variable Name="P1_Vytah_Zdvih_Dcc" />
+          <Variable Name="P1_Vytah_PoziciaNakladania" />
+          <Variable Name="P1_Vytah_PoziciaVykladania" />
+          <Variable Name="P1_ManipSrob_OsX_Rychlost" />
+          <Variable Name="P1_ManipSrob_OsY_Rychlost" />
+          <Variable Name="P1_ManipSrob_OsXY_Acc" />
+          <Variable Name="P1_ManipSrob_OsXY_Dcc" />
+          <Variable Name="P1_ManipSrob_OsZ_M4_Rychlost" />
+          <Variable Name="P1_ManipSrob_OsZ_M4_Acc" />
+          <Variable Name="P1_ManipSrob_OsZ_M4_Dcc" />
+          <Variable Name="P1_ManipSrob_OsZ_M5_Rychlost" />
+          <Variable Name="P1_ManipSrob_OsZ_M5_Acc" />
+          <Variable Name="P1_ManipSrob_OsZ_M5_Dcc" />
+          <Variable Name="P1_Srob45F_LavaK30_Vysunutie_LO" />
+          <Variable Name="P1_Srob45F_LavaK30_Vysunutie_HI" />
+          <Variable Name="P1_Srob45F_PravaK30_Vysunutie_LO" />
+          <Variable Name="P1_Srob45F_PravaK30_Vysunutie_HI" />
+          <Variable Name="P1_Srob45F_ZadnaM4_Vysunutie_LO" />
+          <Variable Name="P1_Srob45F_ZadnaM4_Vysunutie_HI" />
+          <Variable Name="P1_Srob45F_PrednaM4_Vysunutie_LO" />
+          <Variable Name="P1_Srob45F_PrednaM4_Vysunutie_HI" />
+          <Variable Name="P1_Srob45F_DPS_M4_Vysunutie_LO" />
+          <Variable Name="P1_Srob45F_DPS_M4_Vysunutie_HI" />
+          <Variable Name="P1_Srob5H_LavaK30_Vysunutie_LO" />
+          <Variable Name="P1_Srob5H_LavaK30_Vysunutie_HI" />
+          <Variable Name="P1_Srob5H_PravaK30_Vysunutie_LO" />
+          <Variable Name="P1_Srob5H_PravaK30_Vysunutie_HI" />
+          <Variable Name="P1_Srob5H_LavaM5_Vysunutie_LO" />
+          <Variable Name="P1_Srob5H_LavaM5_Vysunutie_HI" />
+          <Variable Name="P1_Srob5H_StrednaM5_Vysunutie_LO" />
+          <Variable Name="P1_Srob5H_StrednaM5_Vysunutie_HI" />
+          <Variable Name="P1_Srob5H_PravaM5_Vysunutie_LO" />
+          <Variable Name="P1_Srob5H_PravaM5_Vysunutie_HI" />
+        </Variable>
+        <Variable Name="P1_UlozPremenne" />
+      </GlobalVariables>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

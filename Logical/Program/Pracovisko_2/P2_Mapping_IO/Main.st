@@ -75,8 +75,8 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.3 := P2_Dopravniky.OUT.DopravnikBunky_ON;
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.4 := P2_Dopravniky.OUT.VratnyDopravnik_ON;
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.5 := P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON;
-	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.6;
-	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.7 := P2_Pracovisko.OUT.Osvetlenie_CAM7_CAM17;
+	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.6:= P2_Pracovisko.OUT.Osvetlenie_CAM10;
+	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.7:= P2_Pracovisko.OUT.Osvetlenie_CAM11;;
 	
 	
 	
@@ -85,14 +85,14 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.1;
 	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.2:= P2_Pracovisko.OUT.OsvetlenieBunky_ON;;
 	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.3:= P2_Pracovisko.OUT.OsvetleniePracZaklTesnenia_ON;
-	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.4;
+	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.4:= P2_Pracovisko.OUT.Osvetlenie_CAM12;
 	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.5:= P2_Pracovisko.OUT.Osvetlenie_CAM1_Svetlo1;
 	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.6:= P2_Pracovisko.OUT.Osvetlenie_CAM1_Svetlo2;
 	P2_Pracovisko.COM_Weidmuller.AB2_12_8DO.7:= P2_Srobovanie.SkrutSet_M5.OUT.VibracnyHrniec.ZapniVibromotor;
 	
 	//************Karta AB 2.13 8DO***************//
-	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.0:= P2_StoperSrobovania.OUT.OsvetleniePaletky_ON;
-	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.1:= P2_Srobovanie.OUT.BodoveOsvetlenie_ON;
+	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.0:= P2_Pracovisko.OUT.Srobovanie_OsvetleniePaletky_ON;
+	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.1:= P2_Pracovisko.OUT.Srobovanie_BodoveOsvetlenie_ON;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.2;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.3;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.4;
@@ -217,14 +217,14 @@ PROGRAM _CYCLIC
 	
 	//********Modul DS 2.1 IO link Port 0 - IO_Modul Balluff***************//
 	//Inputs//
-	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].0;
-	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].1;
-	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].2;
+	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].0;  //IS2.36
+	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].1;  //IS2.37
+	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].2;  //IS2.38
 	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].3;
 	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].4;
 	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].5;
-	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].6;
-	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].7;
+	P2_Robot.IN.KodGripra_Bit0:= P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].6;
+	P2_Robot.IN.KodGripra_Bit1:= P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].7;
 	
 	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[1].0;
 	P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[1].1;
@@ -281,14 +281,15 @@ PROGRAM _CYCLIC
 	//Inputs//
 	Convert_2.IN_Byte0:= P2_Pracovisko.COM_Festo.DS2_1_Port3_IN[0];
 	Convert_2.IN_Byte1:= P2_Pracovisko.COM_Festo.DS2_1_Port3_IN[1];
+		
 	
-	
-	IF NOT P2_Robot.IN.KodGripra_Bit0 AND P2_Robot.IN.KodGripra_Bit1 THEN
-		P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia:= 0;
-		P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia:= Convert_2.OUT_UINT;
-	ELSIF P2_Robot.IN.KodGripra_Bit0 AND P2_Robot.IN.KodGripra_Bit1 THEN
+		
+	IF P2_Robot.IN.KodGripra_Bit0 AND P2_Robot.IN.KodGripra_Bit1 THEN
 		P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia:= 0;
 		P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia:= Convert_2.OUT_UINT;
+	ELSIF NOT P2_Robot.IN.KodGripra_Bit0 AND P2_Robot.IN.KodGripra_Bit1 THEN
+		P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia:= 0;
+		P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia:= Convert_2.OUT_UINT;
 	ELSE
 		P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia:= 0;
 		P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia:= 0;
@@ -296,6 +297,105 @@ PROGRAM _CYCLIC
 	
 	Convert_2();
 	
+	
+	
+	//Typ gripra//
+	P2_Robot.IN.TypGripra_45F:= NOT P2_Robot.IN.KodGripra_Bit0 AND P2_Robot.IN.KodGripra_Bit1;
+	P2_Robot.IN.TypGripra_5H:= P2_Robot.IN.KodGripra_Bit0 AND P2_Robot.IN.KodGripra_Bit1;
+	P2_Robot.IN.TypGripra_MvCase:= P2_Robot.IN.KodGripra_Bit0 AND NOT P2_Robot.IN.KodGripra_Bit1;
+	
+	
+	//Stavy gripra 45F//
+	IF P2_Robot.IN.TypGripra_45F THEN
+		IF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia < 19000 THEN
+			P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
+			P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
+			P2_Robot.IN.Griper45F_Otvoreny:= TRUE;
+		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 40000 THEN	
+			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
+			P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
+			P2_Robot.IN.Griper45F_Zatvoreny:= TRUE;
+		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 21000 THEN	
+			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
+			P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
+			P2_Robot.IN.Griper45F_DrziBusbary:= TRUE;
+		ELSE
+			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
+			P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
+			P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
+		END_IF
+	ELSE
+		P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
+		P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
+		P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
+	END_IF	
+	
+	
+	
+	
+	
+	//Stavy gripra 5H//
+	IF P2_Robot.IN.TypGripra_5H THEN
+		IF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia < 21000 THEN
+			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
+			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
+			P2_Robot.IN.Griper5H_Otvoreny:= TRUE;
+		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 52000 THEN	
+			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
+			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
+			P2_Robot.IN.Griper5H_Zatvoreny:= TRUE;
+		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 24000 THEN	
+			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
+			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
+			P2_Robot.IN.Griper5H_DrziBusbary:= TRUE;
+		ELSE
+			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
+			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
+			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
+		END_IF	
+	ELSE
+		P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
+		P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
+		P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
+	END_IF	
+	
+	
+	//Stavy gripra MV case//
+	IF P2_Robot.IN.TypGripra_MvCase THEN
+		IF NOT P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].0 AND P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].1 AND NOT P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].2 THEN
+			P2_Robot.IN.GriperMvCase_DrziPowerCP:= FALSE;
+			P2_Robot.IN.GriperMvCase_DrziMvCase:= FALSE;
+			P2_Robot.IN.GriperMvCase_Zatvoreny:= FALSE;
+			P2_Robot.IN.GriperMvCase_Otvoreny:= TRUE;
+		ELSIF P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].0 AND NOT P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].1 AND NOT P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].2 THEN
+			P2_Robot.IN.GriperMvCase_DrziPowerCP:= FALSE;
+			P2_Robot.IN.GriperMvCase_DrziMvCase:= FALSE;
+			P2_Robot.IN.GriperMvCase_Zatvoreny:= TRUE;
+			P2_Robot.IN.GriperMvCase_Otvoreny:= FALSE;
+		ELSIF P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].0 AND NOT P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].1 AND P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].2 THEN
+			P2_Robot.IN.GriperMvCase_DrziPowerCP:= FALSE;
+			P2_Robot.IN.GriperMvCase_DrziMvCase:= TRUE;
+			P2_Robot.IN.GriperMvCase_Zatvoreny:= FALSE;
+			P2_Robot.IN.GriperMvCase_Otvoreny:= FALSE;
+		ELSIF P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].0 AND P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].1 AND NOT P2_Pracovisko.COM_Festo.DS2_1_Port0_IN[0].2 THEN
+			P2_Robot.IN.GriperMvCase_DrziPowerCP:= TRUE;
+			P2_Robot.IN.GriperMvCase_DrziMvCase:= FALSE;
+			P2_Robot.IN.GriperMvCase_Zatvoreny:= FALSE;
+			P2_Robot.IN.GriperMvCase_Otvoreny:= FALSE;	
+		ELSE
+			P2_Robot.IN.GriperMvCase_DrziPowerCP:= FALSE;
+			P2_Robot.IN.GriperMvCase_DrziMvCase:= FALSE;
+			P2_Robot.IN.GriperMvCase_Zatvoreny:= FALSE;
+			P2_Robot.IN.GriperMvCase_Otvoreny:= FALSE;
+		END_IF	
+	ELSE
+		P2_Robot.IN.GriperMvCase_DrziPowerCP:= FALSE;
+		P2_Robot.IN.GriperMvCase_DrziMvCase:= FALSE;
+		P2_Robot.IN.GriperMvCase_Zatvoreny:= FALSE;
+		P2_Robot.IN.GriperMvCase_Otvoreny:= FALSE;
+	END_IF	
+	
+
 	
 	
 	//********Modul DS 2.2 IO link Port 0 - RFID snímaè paletky zakladaè tesnenia**************//

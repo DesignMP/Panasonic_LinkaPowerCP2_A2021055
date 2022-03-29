@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageSetupP1_page1_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Linka.P1_SkrutkovanieResult_OFF" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageSetupP1_page1" widgetRefId="ToggleSwitch_VysledkaSkrutkovania_ON_OFF" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Linka.KOM_Panatrace_OFF" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageSetupP1_page1" widgetRefId="ToggleSwitch_Panatrace_ON_OFF" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Linka.KOM_FTP_OFF" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageSetupP1_page1" widgetRefId="ToggleSwitch_FTPkomunikacia_ON_OFF" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Linka.P1_Kamery_OFF" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageSetupP1_page1" widgetRefId="ToggleSwitch_Kamery_ON_OFF" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

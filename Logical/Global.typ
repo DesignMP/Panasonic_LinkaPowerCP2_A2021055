@@ -48,6 +48,7 @@ TYPE
 		TL_KoniecCyklu_ENABLE : BOOL;
 		TL_Uzivatelia_ENABLE : BOOL;
 		TL_STOP_ENABLE : BOOL;
+		TL_SETUP_ENABLE : BOOL;
 		TL_VyprazdnenieLinky_ENABLE : BOOL;
 		TL_RezimAutomat_ENABLE : BOOL;
 		TL_RezimManual_ENABLE : BOOL;
@@ -90,6 +91,7 @@ TYPE
 		TL_StartAutomat_ENABLE : BOOL;
 		TL_KoniecCyklu_ENABLE : BOOL;
 		TL_STOP_ENABLE : BOOL;
+		TL_SETUP_ENABLE : BOOL;
 		TL_RezimAutomat_ENABLE : BOOL;
 		TL_RezimManual_ENABLE : BOOL;
 		TL_RRZdvihZaklTesnenia_ENABLE : BOOL;
@@ -197,6 +199,7 @@ TYPE
 		TL_StartAutomat_ENABLE_P3 : BOOL;
 		TL_KoniecCyklu_ENABLE_P3 : BOOL;
 		TL_STOP_ENABLE_P3 : BOOL;
+		TL_SETUP_ENABLE : BOOL;
 		TL_RezimAutomat_ENABLE : BOOL;
 		TL_RezimManual_ENABLE_P3 : BOOL;
 		TL_RezimManual_ENABLE_P4 : BOOL;
@@ -319,12 +322,20 @@ TYPE
 		P1_Srob_PozY_OdobratSkrutkyM4 : REAL;
 		P1_Srob_PozZ_OdobratSkrutkyM4 : REAL;
 		P1_Vytah_RychlostZdvihu : REAL; (*mm/s*)
+		P1_Vytah_Zdvih_Acc : REAL;
+		P1_Vytah_Zdvih_Dcc : REAL;
 		P1_Vytah_PoziciaNakladania : REAL;
 		P1_Vytah_PoziciaVykladania : REAL;
 		P1_ManipSrob_OsX_Rychlost : REAL; (*mm/s*)
 		P1_ManipSrob_OsY_Rychlost : REAL; (*mm/s*)
+		P1_ManipSrob_OsXY_Acc : REAL;
+		P1_ManipSrob_OsXY_Dcc : REAL;
 		P1_ManipSrob_OsZ_M4_Rychlost : REAL; (*mm/s*)
+		P1_ManipSrob_OsZ_M4_Acc : REAL;
+		P1_ManipSrob_OsZ_M4_Dcc : REAL;
 		P1_ManipSrob_OsZ_M5_Rychlost : REAL; (*mm/s*)
+		P1_ManipSrob_OsZ_M5_Acc : REAL;
+		P1_ManipSrob_OsZ_M5_Dcc : REAL;
 		P1_Srob45F_LavaK30_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
 		P1_Srob45F_LavaK30_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 		P1_Srob45F_PravaK30_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
@@ -349,10 +360,14 @@ TYPE
 	P2_RemPremenne_typ : 	STRUCT 
 		P2_ZaklTesn_Zdvih_RychlostZdvihu : REAL; (*mm/s*)
 		P2_ZaklTesn_Zdvih_RychlZatlacen : REAL; (*mm/s*)
+		P2_ZaklTesn_Zdvih_Acc : REAL;
+		P2_ZaklTesn_Zdvih_Dcc : REAL;
 		P2_ZaklTesn_Zdvih_MomZatlacen : REAL;
 		P2_ZaklTesn_Zdvih_PozZatlacenia : REAL;
 		P2_ZaklTesn_Pojazd_RychlVysun : REAL;
 		P2_ZaklTesn_Pojazd_RychlZasun : REAL;
+		P2_ZaklTesn_Pojazd_Acc : REAL;
+		P2_ZaklTesn_Pojazd_Dcc : REAL;
 		P2_ZaklTesn_Pojazd_PozZatlacenia : REAL;
 		P2_ZaklTesn_Pojazd_PozVkladania : REAL;
 		P2_ZaklTesn_PocetZatlaceni : USINT;
@@ -389,9 +404,16 @@ TYPE
 		P2_Srob_PozZ_OdobratSkrutkyM4 : REAL;
 		P2_ManipSrob_OsX_Rychlost : REAL;
 		P2_ManipSrob_OsY_Rychlost : REAL;
+		P2_ManipSrob_OsXY_Acc : REAL;
+		P2_ManipSrob_OsXY_Dcc : REAL;
 		P2_ManipSrob_OsZ_M4_Rychlost : REAL; (*mm/s*)
-		P2_Zvaranie_MomentZvarania : REAL;
+		P2_ManipSrob_OsZ_M4_Acc : REAL;
+		P2_ManipSrob_OsZ_M4_Dcc : REAL;
+		P2_Zvaranie_MomentZvarania_PS : REAL;
+		P2_Zvaranie_MomentZvarania_LS : REAL;
 		P2_Zvaranie_RychlostZvarania : REAL; (*mm/s*)
+		P2_Zvaranie_Acc : REAL;
+		P2_Zvaranie_Dcc : REAL;
 		P2_Zvaranie_CasZvarania : TIME;
 		P2_Zvaranie_RychlostZdvihu : REAL; (*mm/s*)
 		P2_Srob45F_LavaM6_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
@@ -416,7 +438,11 @@ TYPE
 	END_STRUCT;
 	P34_RemPremenne_typ : 	STRUCT 
 		P3_ManipSrob_OsY_Rychlost : REAL; (*mm/s*)
+		P3_ManipSrob_OsY_Acc : REAL;
+		P3_ManipSrob_OsY_Dcc : REAL;
 		P3_ManipSrob_OsZ_M5_Rychlost : REAL; (*mm/s*)
+		P3_ManipSrob_OsZ_M5_Acc : REAL;
+		P3_ManipSrob_OsZ_M5_Dcc : REAL;
 		P3_Srob45F_PozY_Skrutkovania : REAL;
 		P3_Srob5H_PozY_Skrutkovania : REAL;
 		P3_Srob_PozY_OdobratSkrutkyM5 : REAL;
@@ -432,9 +458,13 @@ TYPE
 		P3_Srob5H_M5_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
 		P3_Srob5H_M5_Vysunutie_HI : REAL; (*Vysunutie skrutkovaèky - horná tolerancia*)
 		P4_Vytah_RychlostZdvihu : REAL; (*mm/s*)
+		P4_Vytah_Zdvih_Acc : REAL;
+		P4_Vytah_Zdvih_Dcc : REAL;
 		P4_Vytah_PoziciaNakladania : REAL;
 		P4_Vytah_PoziciaVykladania : REAL;
 		P4_ZdvihEtiketovacky_Rychlost : REAL; (*mm/s*)
+		P4_ZdvihEtiketovacky_Acc : REAL;
+		P4_ZdvihEtiketovacky_Dcc : REAL;
 		P4_Etiketovacka_PozEtikety_4F : REAL;
 		P4_Etiketovacka_PozEtikety_5F : REAL;
 		P4_Etiketovacka_PozEtikety_5H : REAL;
@@ -573,6 +603,8 @@ TYPE
 		TestovaciKus : BOOL;
 		RevorkovyKus : BOOL;
 		PaletkaPrechadza : BOOL;
+		IndexModelu : USINT;
+		VyprazdnenieLinky : BOOL;
 	END_STRUCT;
 	Linka_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -621,9 +653,11 @@ TYPE
 		Majak_CerveneSvetlo_ON : BOOL;
 		Majak_Hukacka_ON : BOOL;
 		OsvetlenieBunky_ON : BOOL;
-		Osvetlenie_CAM2_ON : BOOL;
+		Srobovanie_BodoveOsvetlenie_ON : BOOL;
+		Srobovanie_OsvetleniePaletky_ON : BOOL;
 		Osvetlenie_CAM4_ON : BOOL;
 		Osvetlenie_CAM6_ON : BOOL;
+		Osvetlenie_CAM5_ON : BOOL;
 		PredneDvere_ZAMKNI : BOOL; (*EZ 1.1*)
 		ZadneDvere_ZAMKNI : BOOL; (*EZ 1.2*)
 	END_STRUCT;
@@ -809,7 +843,6 @@ TYPE
 		ZasunStoper : BOOL; (*YV001_VT1*)
 		Centrovanie_VYSUN : BOOL; (*YV002_VT1*)
 		Centrovanie_ZASUN : BOOL; (*YV003_VT1*)
-		OsvetleniePaletky_ON : BOOL;
 	END_STRUCT;
 	P1_StoperSrobovania_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
@@ -866,9 +899,13 @@ TYPE
 		RR_SkrutSetM4_Zasobnik_RUN : BOOL;
 		RR_SkrutSetM4_Vibrolista_RUN : BOOL;
 		RR_SkrutSetM4_PodajSkrutku : BOOL;
+		RR_SkrutSetM4_OtocPodavac_Vstup : BOOL;
+		RR_SkrutSetM4_OtocPodavac_Vystup : BOOL;
 		RR_SkrutSetM5_Zasobnik_RUN : BOOL;
 		RR_SkrutSetM5_Vibrolista_RUN : BOOL;
 		RR_SkrutSetM5_PodajSkrutku : BOOL;
+		RR_SkrutSetM5_OtocPodavac_Vstup : BOOL;
+		RR_SkrutSetM5_OtocPodavac_Vystup : BOOL;
 		RR_PolohujManipulator : BOOL;
 	END_STRUCT;
 	P1_Srobovanie_IN_typ : 	STRUCT 
@@ -902,7 +939,6 @@ TYPE
 		Skrutkovacka_M5_Prisavanie_ON : BOOL; (*YV022_VT1*)
 		Skrutkovacka_M5_Prisavanie_OFF : BOOL; (*YV023_VT1*)
 		Skrutkovacka_M5_Odvzdusn_ON : BOOL; (*YV024_VT1*)
-		BodoveOsvetlenie_ON : BOOL;
 	END_STRUCT;
 	P1_Srobovanie_PAR_typ : 	STRUCT 
 		RR_IndexPolohovaniaManipulatora : USINT;
@@ -1170,11 +1206,13 @@ TYPE
 		Majak_Hukacka_ON : BOOL;
 		OsvetlenieBunky_ON : BOOL;
 		OsvetleniePracZaklTesnenia_ON : BOOL;
-		Osvetlenie_CAM7_CAM17 : BOOL; (*Stoper zakladania tesnenia*)
 		Osvetlenie_CAM1_Svetlo1 : BOOL; (*Zakladaè tesnenia*)
 		Osvetlenie_CAM1_Svetlo2 : BOOL; (*Zakladaè tesnenia*)
 		Osvetlenie_CAM10 : BOOL; (*Stoper skrutkovania matic*)
 		Osvetlenie_CAM11 : BOOL; (*Stoper zvárania*)
+		Osvetlenie_CAM12 : BOOL; (*Stoper srobovania*)
+		Srobovanie_BodoveOsvetlenie_ON : BOOL;
+		Srobovanie_OsvetleniePaletky_ON : BOOL;
 		PredneDvereLS_ZAMKNI : BOOL;
 		PredneDverePS_ZAMKNI : BOOL;
 		ZadneDvereLS_ZAMKNI : BOOL;
@@ -1225,8 +1263,8 @@ TYPE
 		DS2_1_Port1_OUT : ARRAY[0..1]OF USINT;
 		DS2_1_Port2_IN : ARRAY[0..1]OF USINT;
 		DS2_1_Port2_OUT : ARRAY[0..1]OF USINT;
-		DS2_1_Port3_IN : ARRAY[0..1]OF USINT;
-		DS2_1_Port3_OUT : ARRAY[0..1]OF USINT;
+		DS2_1_Port3_IN : ARRAY[0..31]OF USINT;
+		DS2_1_Port3_OUT : ARRAY[0..31]OF USINT;
 		DS2_2_Port0_IN : ARRAY[0..31]OF USINT;
 		DS2_2_Port0_OUT : ARRAY[0..31]OF USINT;
 		DS2_2_Port1_IN : ARRAY[0..31]OF USINT;
@@ -1502,7 +1540,6 @@ TYPE
 		ZasunStoper : BOOL; (*YV042_VT2*)
 		Centrovanie_VYSUN : BOOL; (*YV043_VT2*)
 		Centrovanie_ZASUN : BOOL; (*YV044_VT2*)
-		OsvetleniePaletky_ON : BOOL;
 	END_STRUCT;
 	P2_StoperSrobovania_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
@@ -1560,6 +1597,8 @@ TYPE
 		RR_SkrutSetM4_Zasobnik_RUN : BOOL;
 		RR_SkrutSetM4_Vibrolista_RUN : BOOL;
 		RR_SkrutSetM4_PodajSkrutku : BOOL;
+		RR_SkrutSetM4_OtocPodavac_Vstup : BOOL;
+		RR_SkrutSetM4_OtocPodavac_Vystup : BOOL;
 		RR_PolohujManipulator : BOOL;
 	END_STRUCT;
 	P2_Srobovanie_IN_typ : 	STRUCT 
@@ -1590,7 +1629,6 @@ TYPE
 		Skrutkovacka_M4_Prisavanie_ON : BOOL; (*YV101_VT2*)
 		Skrutkovacka_M4_Prisavanie_OFF : BOOL; (*YV102_VT2*)
 		Skrutkovacka_M4_Odvzdusn_ON : BOOL; (*YV103_VT2*)
-		BodoveOsvetlenie_ON : BOOL;
 	END_STRUCT;
 	P2_Srobovanie_PAR_typ : 	STRUCT 
 		ManipulOsZ_M4_AktualnaPozicia : REAL;
@@ -1647,6 +1685,7 @@ TYPE
 		M4_Uhol_ToleranciaMAX : UDINT;
 		M4_Uhol_ToleranciaMIN_REAL : REAL;
 		M4_Uhol_ToleranciaMIN : UDINT;
+		ManipulatorNadPodavacmi : BOOL;
 	END_STRUCT;
 	P2_Srobovanie_COM_IN_typ : 	STRUCT 
 		PresunManipulatora_VPRED : BOOL;
@@ -2235,6 +2274,8 @@ TYPE
 		RR_SkrutSetM5_Zasobnik_RUN : BOOL;
 		RR_SkrutSetM5_Vibrolista_RUN : BOOL;
 		RR_SkrutSetM5_PodajSkrutku : BOOL;
+		RR_SkrutSetM5_OtocPodavac_Vstup : BOOL;
+		RR_SkrutSetM5_OtocPodavac_Vystup : BOOL;
 		RR_PolohujManipulator : BOOL;
 	END_STRUCT;
 	P3_Srobovanie_IN_typ : 	STRUCT 

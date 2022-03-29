@@ -86,8 +86,8 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.1; //Safety resety
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.2; //Safety resety
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.3; //Safety resety
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.4:= P1_StoperSrobovania.OUT.OsvetleniePaletky_ON;
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.5:= P1_Srobovanie.OUT.BodoveOsvetlenie_ON;
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.4:= P1_Pracovisko.OUT.Srobovanie_OsvetleniePaletky_ON;
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.5:= P1_Pracovisko.OUT.Srobovanie_BodoveOsvetlenie_ON;
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.6;
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.7;
 	

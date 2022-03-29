@@ -4,13 +4,17 @@ PROGRAM _INIT
 	//Init parametre serva manipulátora Os Y//
 	P3_Srobovanie.ServoManipulOsY.Parameters.Override:= 100;
 	P3_Srobovanie.PAR.ManipulOsY_JoggRychlost:= 0.1;	
-	
+	P3_Srobovanie.ServoManipulOsY.Command.TorqueLimitation:= TRUE;
+	P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 	
 	//Init parametre serva zdvihu skrutkovacky M4//
 	P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Override:= 100;
 	P3_Srobovanie.PAR.ManipulOsZ_M5_JoggRychlost:= 0.1;
+	P3_Srobovanie.ServoManipulOsZ_M5.Command.TorqueLimitation:= TRUE;
+	P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 	
-		 
+	
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -26,11 +30,15 @@ PROGRAM _CYCLIC
 	
 	
 	//Enable serv//
-	IF Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
+	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsY.Command.ErrReset THEN
 		P3_Srobovanie.ServoManipulOsY.Command.PowerON:= TRUE;
-		P3_Srobovanie.ServoManipulOsZ_M5.Command.PowerON:= TRUE;
 	ELSE
 		P3_Srobovanie.ServoManipulOsY.Command.PowerON:= FALSE;
+	END_IF	
+	
+	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset THEN
+		P3_Srobovanie.ServoManipulOsZ_M5.Command.PowerON:= TRUE;
+	ELSE
 		P3_Srobovanie.ServoManipulOsZ_M5.Command.PowerON:= FALSE;
 	END_IF	
 	
@@ -84,7 +92,6 @@ PROGRAM _CYCLIC
 			P3_Srobovanie.ServoManipulOsY.Command.JogPos:= FALSE;
 			P3_Srobovanie.ServoManipulOsY.Command.MoveAdditive:= FALSE;
 			P3_Srobovanie.ServoManipulOsY.Command.MovePosition:= FALSE;
-			P3_Srobovanie.ServoManipulOsY.Command.TorqueLimitation:= FALSE;
 			IF NOT P3_Srobovanie.ServoManipulOsY.Status.StandStill THEN
 				P3_Srobovanie.ServoManipulOsY.Command.Stop:= TRUE;
 			END_IF	
@@ -92,7 +99,6 @@ PROGRAM _CYCLIC
 			P3_Srobovanie.ServoManipulOsZ_M5.Command.JogPos:= FALSE;
 			P3_Srobovanie.ServoManipulOsZ_M5.Command.MoveAdditive:= FALSE;
 			P3_Srobovanie.ServoManipulOsZ_M5.Command.MovePosition:= FALSE;
-			P3_Srobovanie.ServoManipulOsZ_M5.Command.TorqueLimitation:= FALSE;
 			IF NOT P3_Srobovanie.ServoManipulOsZ_M5.Status.StandStill THEN
 				P3_Srobovanie.ServoManipulOsZ_M5.Command.Stop:= TRUE;
 			END_IF	
@@ -112,15 +118,14 @@ PROGRAM _CYCLIC
 			P3_Srobovanie.CMD.RR_SkrutSetM5_Zasobnik_RUN:= FALSE;
 			P3_Srobovanie.CMD.RR_SkrutSetM5_Vibrolista_RUN:= FALSE;			
 			P3_Srobovanie.CMD.RR_SkrutSetM5_PodajSkrutku:= FALSE;
+			P3_Srobovanie.CMD.RR_SkrutSetM5_OtocPodavac_Vstup:= FALSE;
+			P3_Srobovanie.CMD.RR_SkrutSetM5_OtocPodavac_Vystup:= FALSE;
 			P3_Srobovanie.CMD.RR_PolohujManipulator:= FALSE;
 			P3_Srobovanie.STAV.RR_Polohovanie_BUSY:= FALSE;
 			P3_Srobovanie.PAR.RR_IndexPolohovaniaManipulatora:= 1;
 			
 			P3_Srobovanie.SkrutSet_M5.CMD.ENABLE:= FALSE;
-			P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= FALSE;
-			P3_Srobovanie.SkrutSet_M5.CMD.RR_ZapniVibrolistu:= FALSE;
-			P3_Srobovanie.SkrutSet_M5.CMD.RR_ZapniZasobnik:= FALSE;
-			P3_Srobovanie.SkrutSet_M5.CMD.RucnyRezim:= FALSE;
+			
 			P3_Srobovanie.SkrutSet_K40.Cmd.AutomatStart:= FALSE;
 			P3_Srobovanie.SkrutSet_K40.Cmd.PodajSkrutku:= FALSE;
 			P3_Srobovanie.SkrutSet_K40.Cmd.ManualStartHrniec:= FALSE;
@@ -183,10 +188,13 @@ PROGRAM _CYCLIC
 						
 			P3_Srobovanie.SkrutSet_M5.CMD.ENABLE:= TRUE;
 			P3_Srobovanie.SkrutSet_K40.Cmd.AutomatStart:= TRUE;
-						
-			P3_Srobovanie.ServoManipulOsY.Command.TorqueLimitation:= TRUE;
-			P3_Srobovanie.ServoManipulOsZ_M5.Command.TorqueLimitation:= TRUE;
-		
+			
+			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Acc;
+			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Dcc;
+			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
+			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= P34_RemPremenne.P3_ManipSrob_OsY_Acc;
+			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= P34_RemPremenne.P3_ManipSrob_OsY_Dcc;
+			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 		
 			SC_P3_Srobovanie.ResetStep:= TRUE;
 			SC_P3_Srobovanie.Step:= 3;
@@ -198,10 +206,8 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 		
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
+			
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 0;
 			
 			
@@ -222,10 +228,8 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 					
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
+			
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= 0;
 		
 				
@@ -249,10 +253,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
             			
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= 55; //mm
 			
 			IF NOT SC_P3_Srobovanie.Switch1 AND P3_Pracovisko.STAV.SkrutkovackyZasunute THEN
@@ -319,10 +320,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 						
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= 155; //mm
 			
 			
@@ -346,10 +344,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#1s;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#30s;
 					
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 106;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
@@ -376,10 +371,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 						
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= 168; //mm
 			
 			
@@ -410,10 +402,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#30s;
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 0;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
@@ -439,10 +428,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 						
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= P34_RemPremenne.P3_Srob_PozY_OdobratSkrutkyM5; //mm
 			
 			
@@ -478,6 +464,17 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#200ms;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;			
 	
+			
+			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Acc;
+			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Dcc;
+			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
+			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= P34_RemPremenne.P3_ManipSrob_OsY_Acc;
+			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= P34_RemPremenne.P3_ManipSrob_OsY_Dcc;
+			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
+			
+			
+			
+			
 			IF P3_Srobovanie.KoniecCyklu AND NOT P3_StoperSrobovania.Automat THEN
 				SC_P3_Srobovanie.ResetStep:= TRUE;
 				SC_P3_Srobovanie.Step:= 0;
@@ -505,10 +502,8 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 						
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
+			
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= P34_RemPremenne.P3_Srob_PozY_OdobratSkrutkyM5; //mm
 			
 			
@@ -542,7 +537,9 @@ PROGRAM _CYCLIC
 			ELSIF P3_Srobovanie.SkrutSet_M5.STAV.ERROR THEN
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= FALSE;
 				P34_Alarmy[327]:= TRUE;
-				P3_Pracovisko.STAV.Porucha_ST1:= TRUE;
+				P3_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
+				SC_P3_Srobovanie.ResetStep:= TRUE;
+				SC_P3_Srobovanie.Step:= 135;
 			ELSE
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= TRUE;
 			END_IF	
@@ -554,10 +551,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#10s;
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= P34_RemPremenne.P3_Srob_PozZ_OdobratSkrutkyM5;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
@@ -593,10 +587,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#30s;
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 0;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
@@ -642,10 +633,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#200ms;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000; // m/s
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= P34_RemPremenne.P3_Srob45F_PozY_Skrutkovania; //mm
 			
 			
@@ -754,10 +742,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#500ms;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;	
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 80;
 			
 			
@@ -790,8 +775,6 @@ PROGRAM _CYCLIC
 			
 			SC_P3_Srobovanie.AlarmTime.IN:= P3_Srobovanie.OUT.Skrutkovacku_K40_VYSUN AND (P3_Srobovanie.PAR.Skrutkov_K40_AktualHodnVysunutia < 5);
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_Srob45F_Rychl_SkrutkyM5/1000;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= P34_RemPremenne.P3_Srob45F_Mom_SkrutkyM5;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 100;
@@ -869,8 +852,6 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			SC_P3_Srobovanie.IdleTime.IN:= TRUE;
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 0;
@@ -921,10 +902,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 						
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= P34_RemPremenne.P3_Srob_PozY_OdobratSkrutkyM5; //mm
 			
 			
@@ -963,10 +941,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 						
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= P34_RemPremenne.P3_Srob_PozY_OdobratSkrutkyM5; //mm
 			
 			
@@ -996,7 +971,9 @@ PROGRAM _CYCLIC
 			ELSIF P3_Srobovanie.SkrutSet_M5.STAV.ERROR THEN
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= FALSE;
 				P34_Alarmy[327]:= TRUE;
-				P3_Pracovisko.STAV.Porucha_ST1:= TRUE;
+				P3_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
+				SC_P3_Srobovanie.ResetStep:= TRUE;
+				SC_P3_Srobovanie.Step:= 217;
 			ELSE
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= TRUE;
 			END_IF	
@@ -1008,10 +985,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#10s;
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= P34_RemPremenne.P3_Srob_PozZ_OdobratSkrutkyM5;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
@@ -1038,7 +1012,7 @@ PROGRAM _CYCLIC
 				P34_Alarmy[327]:= TRUE;
 				P3_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
 				SC_P3_Srobovanie.ResetStep:= TRUE;
-				SC_P3_Srobovanie.Step:= 217;
+				SC_P3_Srobovanie.Step:= 205;
 			END_IF
 		
 			
@@ -1047,10 +1021,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#30s;
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 0;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
@@ -1096,10 +1067,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#200ms;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000; // m/s
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= P34_RemPremenne.P3_Srob5H_PozY_Skrutkovania; //mm
 			
 			
@@ -1171,10 +1139,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.IN:= TRUE;	
 			
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 80;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
@@ -1200,8 +1165,6 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.IN:= TRUE;
 			
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_Srob5H_Rychl_SkrutkyM5/1000;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= P34_RemPremenne.P3_Srob5H_Mom_SkrutkyM5;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 100;
@@ -1255,8 +1218,6 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			SC_P3_Srobovanie.IdleTime.IN:= TRUE;
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 0;
@@ -1302,10 +1263,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 						
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= P34_RemPremenne.P3_Srob_PozY_OdobratSkrutkyM5; //mm
 			
 			
@@ -1350,10 +1308,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 									
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000; // m/s
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= 280; //mm
 				
 		
@@ -1389,10 +1344,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#200ms;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 								
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000; // m/s
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= 0; //mm
 				
 		
@@ -1442,10 +1394,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
           			
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= 55; //mm
 			
 			IF NOT SC_P3_Srobovanie.Switch1 AND P3_Pracovisko.STAV.SkrutkovackyZasunute THEN
@@ -1531,16 +1480,23 @@ PROGRAM _CYCLIC
 		
 			
 			//Èistenie skrutkovaèky M5//
-		520:	
-			SC_P3_Srobovanie.StepName:='520 - Automaticky Rezim - cistenie skrutkovacky M5,presun manipulatora na poziciu zahodenia skrutky M5';
+		520:
+			SC_P3_Srobovanie.StepName:='520 - Automaticky Rezim - cistenie skrutkovacky M5,kontrola zrusenia stavu serva v pozicii';
+			SC_P3_Srobovanie.IdleTime.PT:= T#300ms;
+			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
+		
+			IF NOT P3_Srobovanie.ServoManipulOsY.Status.InPosition THEN
+				SC_P3_Srobovanie.ResetStep:= TRUE;
+				SC_P3_Srobovanie.Step:= 521;
+			END_IF	
+		
+		521:	
+			SC_P3_Srobovanie.StepName:='521 - Automaticky Rezim - cistenie skrutkovacky M5,presun manipulatora na poziciu zahodenia skrutky M5';
 			SC_P3_Srobovanie.IdleTime.PT:= T#300ms;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 						
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= 155; //mm
 			
 			
@@ -1549,7 +1505,7 @@ PROGRAM _CYCLIC
 				SC_P3_Srobovanie.Switch1:= TRUE;
 			END_IF
 				
-			IF EDGEPOS(P3_Srobovanie.ServoManipulOsY.Status.InPosition) THEN
+			IF P3_Srobovanie.ServoManipulOsY.Status.InPosition THEN
 				P3_Srobovanie.ServoManipulOsY.Command.MovePosition:= FALSE;
 				SC_P3_Srobovanie.ResetStep:= TRUE;
 				SC_P3_Srobovanie.Step:= 523;
@@ -1564,10 +1520,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#1s;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#30s;
 					
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 0.1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 0.1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 106;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
@@ -1594,10 +1547,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.AlarmTime.PT:= T#5s;
 			
 						
-			P3_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsY_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsY.Parameters.Position:= 168; //mm
 			
 			
@@ -1622,10 +1572,7 @@ PROGRAM _CYCLIC
 			SC_P3_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P3_Srobovanie.AlarmTime.PT:= T#30s;
 			
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P34_RemPremenne.P3_ManipSrob_OsZ_M5_Rychlost/1000;
-			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 			P3_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 0;
 			
 			IF NOT SC_P3_Srobovanie.Switch1 THEN
@@ -1760,7 +1707,18 @@ PROGRAM _CYCLIC
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= FALSE;
 			END_IF	
 			
-			
+			//Otáèanie podavaèa skrutiek//
+			IF P3_Srobovanie.CMD.RR_SkrutSetM5_OtocPodavac_Vstup THEN
+				P3_Srobovanie.SkrutSet_M5.CMD.ENABLE:= TRUE;
+				P3_Srobovanie.SkrutSet_M5.CMD.RucnyRezim:= TRUE;
+				P3_Srobovanie.SkrutSet_M5.CMD.RR_OtocPodavac_Vstup:= TRUE;
+				P3_Srobovanie.CMD.RR_SkrutSetM5_OtocPodavac_Vstup:= FALSE;
+			ELSIF P3_Srobovanie.CMD.RR_SkrutSetM5_OtocPodavac_Vystup THEN
+				P3_Srobovanie.SkrutSet_M5.CMD.ENABLE:= TRUE;
+				P3_Srobovanie.SkrutSet_M5.CMD.RucnyRezim:= TRUE;
+				P3_Srobovanie.SkrutSet_M5.CMD.RR_OtocPodavac_Vystup:= TRUE;
+				P3_Srobovanie.CMD.RR_SkrutSetM5_OtocPodavac_Vystup:= FALSE;
+			END_IF	
 		
 			
 			

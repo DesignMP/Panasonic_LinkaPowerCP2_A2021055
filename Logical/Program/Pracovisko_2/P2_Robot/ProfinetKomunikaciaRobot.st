@@ -158,66 +158,7 @@ ACTION ProfinetKomunikaciaRobot:
 	
 	
 	
-	//Typ gripra//
-	P2_Robot.IN.TypGripra_5H:= P2_Robot.IN.KodGripra_Bit0 AND P2_Robot.IN.KodGripra_Bit1;
-	P2_Robot.IN.TypGripra_45F:= NOT P2_Robot.IN.KodGripra_Bit0 AND P2_Robot.IN.KodGripra_Bit1;
-	P2_Robot.IN.TypGripra_MvCase:= P2_Robot.IN.KodGripra_Bit0 AND NOT P2_Robot.IN.KodGripra_Bit1;
-	
-	
-	//Stavy gripra 5H//
-	IF P2_Robot.IN.TypGripra_5H THEN
-		IF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 0 THEN
-			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
-			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
-			P2_Robot.IN.Griper5H_Otvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 0 THEN	
-			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
-			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
-			P2_Robot.IN.Griper5H_Zatvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 0 THEN	
-			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
-			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
-			P2_Robot.IN.Griper5H_DrziBusbary:= TRUE;
-		ELSE
-			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
-			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
-			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
-		END_IF	
-	ELSE
-		P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
-		P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
-		P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
-	END_IF	
-	
-	
-	
-	
-	
-	//Stavy gripra 45F//
-	IF P2_Robot.IN.TypGripra_45F THEN
-		IF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 0 THEN
-			P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
-			P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
-			P2_Robot.IN.Griper45F_Otvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 0 THEN	
-			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
-			P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
-			P2_Robot.IN.Griper45F_Zatvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 0 THEN	
-			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
-			P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
-			P2_Robot.IN.Griper45F_DrziBusbary:= TRUE;
-		ELSE
-			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
-			P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
-			P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
-		END_IF
-	ELSE
-		P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
-		P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
-		P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
-	END_IF	
-	
+
 	
 	
 	

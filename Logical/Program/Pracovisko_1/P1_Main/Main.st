@@ -132,6 +132,9 @@ PROGRAM _CYCLIC
 		P1_Srobovanie.Reset:= TRUE;
 		P1_Robot.Reset:= TRUE;
 		P1_AkumulacnyStoper.Reset:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST1:= FALSE;
+		P1_Pracovisko.STAV.Porucha_ST2:= FALSE;
+		P1_Pracovisko.STAV.Porucha_ST3:= FALSE;
 		P1_Pracovisko.Reset:= FALSE;
 	END_IF	
 	
@@ -275,9 +278,13 @@ PROGRAM _CYCLIC
 	
 		
 	//*****************************Zapnutie osvetlenia pracoviska*********************************************************//
-	P1_Pracovisko.OUT.OsvetlenieBunky_ON:= TRUE;
+	P1_Pracovisko.OUT.OsvetlenieBunky_ON:= FALSE;
 	P1_Vytah.OUT.OsvetlenieVytahu_ON:= TRUE;
-		
+	P1_Pracovisko.OUT.Osvetlenie_CAM4_ON:= TRUE;
+	P1_Pracovisko.OUT.Osvetlenie_CAM5_ON:= TRUE;
+	P1_Pracovisko.OUT.Osvetlenie_CAM6_ON:= TRUE;
+	P1_Pracovisko.OUT.Srobovanie_BodoveOsvetlenie_ON:= TRUE;
+	P1_Pracovisko.OUT.Srobovanie_OsvetleniePaletky_ON:= TRUE;
 	
 	
 	//****************************************Ovládanie majáka***********************************************//

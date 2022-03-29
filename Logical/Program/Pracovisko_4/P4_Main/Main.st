@@ -218,6 +218,12 @@ PROGRAM _CYCLIC
 		P4_ZdvizkaZaFunkcTestB.Reset:= TRUE;
 		P4_Etiketovacka.Reset:= TRUE;
 		P4_Vytah.Reset:= TRUE;
+		P4_Pracovisko.STAV.Porucha_ST1:= FALSE;
+		P4_Pracovisko.STAV.Porucha_ST2:= FALSE;
+		P4_Pracovisko.STAV.Porucha_ST3:= FALSE;
+		P4_Pracovisko.STAV.Porucha_ST4:= FALSE;
+		P4_Pracovisko.STAV.Porucha_ST5:= FALSE;
+		P4_Pracovisko.STAV.Porucha_ST6:= FALSE;
 		P4_Pracovisko.Reset:= FALSE;
 	END_IF	
 	

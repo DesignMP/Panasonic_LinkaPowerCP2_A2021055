@@ -19,10 +19,6 @@
   <Operation Delete="P3_SpodnyS.br"/>
   <Operation Delete="P3_Dopravn.br"/>
   <Operation Delete="P3_Main.br"/>
-  <Operation Delete="P2_Cisteni.br"/>
-  <Operation Delete="P2_Stoper1.br"/>
-  <Operation Delete="P2_StoperS.br"/>
-  <Operation Delete="P2_Robot.br"/>
   <Operation Delete="P2_AkumSto.br"/>
   <Operation Delete="P2_StoperM.br"/>
   <Operation Delete="P2_StoperZ.br"/>
@@ -30,7 +26,6 @@
   <Operation Delete="P2_Dopravn.br"/>
   <Operation Delete="P2_Main.br"/>
   <Operation Delete="P1_Akumula.br"/>
-  <Operation Delete="P1_Robot.br"/>
   <Operation Delete="P1_StoperS.br"/>
   <Operation Delete="P1_SpodnyS.br"/>
   <Operation Delete="P1_Dopravn.br"/>
@@ -39,8 +34,17 @@
   <Operation Delete="Main.br"/>
   <Operation Delete="Blikanie10.br"/>
   <Operation Delete="SafetyMapp.br"/>
+  <Operation Delete="P4_OvladSa.br"/>
+  <Operation Delete="P3_OvladSa.br"/>
+  <Operation Delete="P2_OvladSa.br"/>
+  <Operation Delete="P1_OvladSa.br"/>
   <Operation Delete="P3_Srobova.br"/>
+  <Operation Delete="P2_Robot.br"/>
+  <Operation Delete="P1_Robot.br"/>
+  <Operation Delete="P2_Cisteni.br"/>
+  <Operation Delete="P2_Stoper1.br"/>
   <Operation Delete="P2_Zvarani.br"/>
+  <Operation Delete="P2_StoperS.br"/>
   <Operation Delete="P2_Srobova.br"/>
   <Operation Delete="P2_ZaklTes.br"/>
   <Operation Delete="P1_Srobova.br"/>
@@ -104,6 +108,7 @@
   <Operation Download="AsBrStr.br" Memory="UserROM"/>
   <Operation Download="Runtime.br" Memory="UserROM"/>
   <Operation Download="asstring.br" Memory="UserROM"/>
+  <Operation Download="TCLang.br" Memory="UserROM"/>
   <Operation Download="arsvcreg.br" Memory="UserROM"/>
   <Operation Download="arssl.br" Memory="UserROM"/>
   <Operation Download="FileIO.br" Memory="UserROM"/>
@@ -141,8 +146,17 @@
   <Operation Download="P1_Srobova.br" Memory="UserROM"/>
   <Operation Download="P2_ZaklTes.br" Memory="UserROM"/>
   <Operation Download="P2_Srobova.br" Memory="UserROM"/>
+  <Operation Download="P2_StoperS.br" Memory="UserROM"/>
   <Operation Download="P2_Zvarani.br" Memory="UserROM"/>
+  <Operation Download="P2_Stoper1.br" Memory="UserROM"/>
+  <Operation Download="P2_Cisteni.br" Memory="UserROM"/>
+  <Operation Download="P1_Robot.br" Memory="UserROM"/>
+  <Operation Download="P2_Robot.br" Memory="UserROM"/>
   <Operation Download="P3_Srobova.br" Memory="UserROM"/>
+  <Operation Download="P1_OvladSa.br" Memory="UserROM"/>
+  <Operation Download="P2_OvladSa.br" Memory="UserROM"/>
+  <Operation Download="P3_OvladSa.br" Memory="UserROM"/>
+  <Operation Download="P4_OvladSa.br" Memory="UserROM"/>
   <Operation Download="SafetyMapp.br" Memory="UserROM"/>
   <Operation Download="Blikanie10.br" Memory="UserROM"/>
   <Operation Download="Main.br" Memory="UserROM"/>
@@ -151,7 +165,6 @@
   <Operation Download="P1_Dopravn.br" Memory="UserROM"/>
   <Operation Download="P1_SpodnyS.br" Memory="UserROM"/>
   <Operation Download="P1_StoperS.br" Memory="UserROM"/>
-  <Operation Download="P1_Robot.br" Memory="UserROM"/>
   <Operation Download="P1_Akumula.br" Memory="UserROM"/>
   <Operation Download="P2_Main.br" Memory="UserROM"/>
   <Operation Download="P2_Dopravn.br" Memory="UserROM"/>
@@ -159,10 +172,6 @@
   <Operation Download="P2_StoperZ.br" Memory="UserROM"/>
   <Operation Download="P2_StoperM.br" Memory="UserROM"/>
   <Operation Download="P2_AkumSto.br" Memory="UserROM"/>
-  <Operation Download="P2_Robot.br" Memory="UserROM"/>
-  <Operation Download="P2_StoperS.br" Memory="UserROM"/>
-  <Operation Download="P2_Stoper1.br" Memory="UserROM"/>
-  <Operation Download="P2_Cisteni.br" Memory="UserROM"/>
   <Operation Download="P3_Main.br" Memory="UserROM"/>
   <Operation Download="P3_Dopravn.br" Memory="UserROM"/>
   <Operation Download="P3_SpodnyS.br" Memory="UserROM"/>

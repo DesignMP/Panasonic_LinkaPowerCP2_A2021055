@@ -259,6 +259,11 @@ PROGRAM _CYCLIC
 		P2_StoperZvarania.Reset:= TRUE;
 		P2_Zvaranie.Reset:= TRUE;
 		P2_Cistenie.Reset:= TRUE;
+		P2_Pracovisko.STAV.Porucha_ST1:= FALSE;
+		P2_Pracovisko.STAV.Porucha_ST2:= FALSE;
+		P2_Pracovisko.STAV.Porucha_ST3:= FALSE;
+		P2_Pracovisko.STAV.Porucha_ST4:= FALSE;
+		P2_Pracovisko.STAV.Porucha_ST5:= FALSE;
 		P2_Pracovisko.Reset:= FALSE;
 	END_IF	
 	
@@ -291,12 +296,12 @@ PROGRAM _CYCLIC
 			P2_SpodnyStoper.Automat:= TRUE;
 			P2_StoperMaticovacky.Automat:= TRUE;
 			P2_AkumulacnyStoper.Automat:= TRUE;
-//			P2_StoperSrobovania.Automat:= TRUE;
-//			P2_Srobovanie.Automat:= TRUE;
-//			P2_Robot.Automat:= TRUE;
-//			P2_StoperZvarania.Automat:= TRUE;
-//			P2_Zvaranie.Automat:= TRUE;
-//			P2_Cistenie.Automat:= TRUE;
+			P2_StoperSrobovania.Automat:= TRUE;
+			P2_Srobovanie.Automat:= TRUE;
+			P2_Robot.Automat:= TRUE;
+			P2_StoperZvarania.Automat:= TRUE;
+			P2_Zvaranie.Automat:= TRUE;
+			P2_Cistenie.Automat:= TRUE;
 		END_IF	
 		P2_Pracovisko.Automat:= FALSE;
 	END_IF
@@ -402,8 +407,8 @@ PROGRAM _CYCLIC
 		P2_Pracovisko.IN.ServoManipulatorOsZ_M4_KomOK AND
 		P2_Pracovisko.IN.ServoZvaraniaOsZ_KomOK AND
 		P2_Pracovisko.IN.Skrutkovacka_M4_KomOK AND
-		(*P2_Pracovisko.IN.Skrutkovacka_M5_KomOK AND*)
-		P2_Pracovisko.IN.Skrutkovacka_M6_KomOK AND
+		P2_Pracovisko.IN.Skrutkovacka_M5_KomOK AND
+		(*P2_Pracovisko.IN.Skrutkovacka_M6_KomOK AND*)
 		P2_Pracovisko.IN.VentilovyTerminal_KomOK AND
 		P2_Srobovanie.IN.NapajanieSkrutkovackyM4_OK AND
 	(*	P2_Srobovanie.IN.NapajanieSkrutkovackyM5_OK AND*)
@@ -430,15 +435,15 @@ PROGRAM _CYCLIC
 	
 		
 	//*****************************Zapnutie osvetlenia pracoviska*********************************************************//
-	P2_Pracovisko.OUT.OsvetlenieBunky_ON:= TRUE;
+	P2_Pracovisko.OUT.OsvetlenieBunky_ON:= FALSE;
 	P2_Pracovisko.OUT.OsvetleniePracZaklTesnenia_ON:= TRUE;		
-	//		
-	//	P2_Pracovisko.OUT.Osvetlenie_CAM1:= TRUE;
-	//	P2_Pracovisko.OUT.Osvetlenie_CAM7_CAM17:= TRUE;
-	//	P2_Pracovisko.OUT.Osvetlenie_CAM10:= TRUE;
-	//	P2_Pracovisko.OUT.Osvetlenie_CAM11:= TRUE;
-	
-	
+	P2_Pracovisko.OUT.Osvetlenie_CAM1_Svetlo1:= TRUE;
+	P2_Pracovisko.OUT.Osvetlenie_CAM1_Svetlo2:= TRUE;
+	P2_Pracovisko.OUT.Osvetlenie_CAM10:= TRUE;
+	P2_Pracovisko.OUT.Osvetlenie_CAM11:= TRUE;
+	P2_Pracovisko.OUT.Osvetlenie_CAM12:= TRUE;
+	P2_Pracovisko.OUT.Srobovanie_OsvetleniePaletky_ON:= TRUE;
+	P2_Pracovisko.OUT.Srobovanie_BodoveOsvetlenie_ON:= TRUE;
 	
 	
 	//****************************************Ovládanie majáka***********************************************//

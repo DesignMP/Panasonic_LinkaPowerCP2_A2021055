@@ -6,6 +6,8 @@ TYPE
 		RucnyRezim : BOOL;
 		RR_ZapniZasobnik : BOOL;
 		RR_ZapniVibrolistu : BOOL;
+		RR_OtocPodavac_Vstup : BOOL;
+		RR_OtocPodavac_Vystup : BOOL;
 		ResetPoruchy : BOOL;
 	END_STRUCT;
 	PickAndPlace_IN_typ : 	STRUCT 
@@ -42,7 +44,7 @@ TYPE
 		IdleTime_1s : TON;
 		IdleTime_500ms : TON;
 		IdleTime_100ms : TON;
-		AlarmTime_3s : TON;
+		AlarmTime_10s : TON;
 	END_STRUCT;
 	MaticaSet_CMD_typ : 	STRUCT 
 		ENABLE : BOOL;

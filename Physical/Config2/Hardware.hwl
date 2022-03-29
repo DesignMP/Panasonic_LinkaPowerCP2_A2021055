@@ -663,28 +663,29 @@
     <InfoElementText Id="Textbox_2" X="544.6289" Y="309.937347" Width="181.4361" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">AtlasCopco - Profinet
 P1_Skrutkovačka K30
-IPadresa:192.168.81.12</Text>
+Profinet:192.168.81.12</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_3" X="763.6289" Y="309.937347" Width="184.3711" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">AtlasCopco - Profinet
 P1_Skrutkovačka M5
-IPadresa:192.168.81.13</Text>
+Profinet:192.168.81.13</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_4" X="971.628845" Y="309.937347" Width="186.371155" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">AtlasCopco - Profinet
 P1_Skrutkovačka M4
-IPadresa:192.168.81.14</Text>
+Profinet:192.168.81.14</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_5" X="280.6289" Y="309.937347" Width="181.3711" Height="59">
+    <InfoElementText Id="Textbox_5" X="292.405273" Y="309.937347" Width="181.3711" Height="80.06265">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">ABB - Profinet
 P1_Robot IRB120_R1
-IPadresa:192.168.81.11</Text>
+Profinet:192.168.81.11
+Ethernet:192.168.1.10</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -705,7 +706,7 @@ NodNumber:2</Text>
     <InfoElementText Id="Textbox_9" X="793.2727" Y="608.5441" Width="214.926117" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P1_Operačný panel_OP1
-IPadresa:0.0.0.0</Text>
+Ethernet:192.168.1.11</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -724,14 +725,14 @@ NodNumber:3</Text>
     <InfoElementText Id="Textbox_13" X="1525.72119" Y="309" Width="196.071289" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Wenglor - Profinet
 P1_SmartKamera_CAM3
-IPadresa:192.168.81.16</Text>
+Profinet:192.168.81.16</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_14" X="1757.88025" Y="309" Width="192.862915" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Wenglor - Profinet
 P1_SmartKamera_CAM5
-IPadresa:192.168.81.17</Text>
+Profinet:192.168.81.17</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -773,7 +774,7 @@ IPadresa:192.168.80.6</Text>
     <InfoElementText Id="Textbox_20" X="1206.774" Y="309.937347" Width="189.225952" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P1_IO_Master
-IPadresa:192.168.81.15</Text>
+Profinet:192.168.81.15</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -794,70 +795,71 @@ NodNumber:5</Text>
     <InfoElementText Id="Textbox_25" X="476.001831" Y="1907.977" Width="208.701752" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P2_Operačný panel_OP2
-IPadresa:0.0.0.0</Text>
+Ethernet:192.168.1.21</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_26" X="455.742981" Y="1509.56519" Width="174.010071" Height="59">
+    <InfoElementText Id="Textbox_26" X="455.742981" Y="1509.56519" Width="174.010071" Height="78.4348145">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">ABB - Profinet
 P2_Robot IRB1200_R2
-IPadresa:192.168.81.2</Text>
+Profinet:192.168.81.2
+Ethernet:192.168.1.20</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_27" X="671.2136" Y="1509.56519" Width="205.101746" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">AtlasCopco - Profinet
 P2_Maticovačka M4
-IPadresa:192.168.81.3</Text>
+Profinet:192.168.81.3</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_28" X="905.743" Y="1509.56519" Width="210.918823" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">AtlasCopco - Profinet
 P2_Skrutkovačka M6
-IPadresa:192.168.81.4</Text>
+Profinet:192.168.81.4</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_29" X="1156.22827" Y="1509.56519" Width="196.63623" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">AtlasCopco - Profinet
 P2_Skrutkovačka M4
-IPadresa:192.168.81.5</Text>
+Profinet:192.168.81.5</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_30" X="1387.1499" Y="1509.56519" Width="196.63623" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">AtlasCopco - Profinet
 P2_Skrutkovačka M5
-IPadresa:192.168.81.6</Text>
+Profinet:192.168.81.6</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_31" X="1633.89429" Y="1509.56519" Width="201.734863" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">PhoenixContact - Profinet
 P2_SafetyPLC
-IPadresa:192.168.81.7</Text>
+Profinet:192.168.81.7</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_32" X="1883.31445" Y="1509.56519" Width="250.90332" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P2_IO_Master
-IPadresa:192.168.81.8</Text>
+Profinet:192.168.81.8</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_33" X="2177.7478" Y="1509.56519" Width="196.071289" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Wenglor - Profinet
-P2_SmartKamera_CAM8
-IPadresa:192.168.81.9</Text>
+P2_SmartKamera_CAM
+Profinet:192.168.81.9</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_34" X="2417.176" Y="1509.56519" Width="192.862915" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Wenglor - Profinet
 P2_SmartKamera_CAM9
-IPadresa:192.168.81.10</Text>
+Profinet:192.168.81.10</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -937,14 +939,14 @@ NodNumber:8</Text>
     <InfoElementText Id="Textbox_48" X="424.387634" Y="2851.30029" Width="210.918823" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">AtlasCopco - Profinet
 P3_Skrutkovačka K40
-IPadresa:192.168.82.2</Text>
+Profinet:192.168.82.2</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_49" X="750.824158" Y="2851.30029" Width="210.918823" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">AtlasCopco - Profinet
 P3_Skrutkovačka M5
-IPadresa:192.168.82.3</Text>
+Profinet:192.168.82.3</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -965,21 +967,22 @@ IPadresa:192.168.80.14</Text>
     <InfoElementText Id="Textbox_52" X="1031.49976" Y="2851.30029" Width="211.500244" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Ateq - Profinet
 P3_LeakageTesterA
-IPadresa:192.168.82.4</Text>
+Profinet:192.168.82.4</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_53" X="1362" Y="2851.30029" Width="206" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Ateq - Profinet
 P3_LeakageTesterB
-IPadresa:192.168.82.5</Text>
+Profinet:192.168.82.5</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_54" X="1721.79248" Y="2787" Width="192.862915" Height="123.300293">
+    <InfoElementText Id="Textbox_54" X="1721.79248" Y="2787" Width="192.862915" Height="141">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Wenglor - Profinet
 P3_Kamery_ControlUnit
-IPadresa:192.168.82.6  
+Profinet:192.168.82.6
+Ethernet:192.168.1.30  
 P1_Výtah CAM 2
 P1_Výtah CAM 4
 P1_Srobovanie CAM 6</Text>
@@ -989,14 +992,14 @@ P1_Srobovanie CAM 6</Text>
     <InfoElementText Id="Textbox_55" X="1997.73157" Y="2851.30029" Width="250.90332" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P3_IO_Master
-IPadresa:192.168.82.7</Text>
+Profinet:192.168.82.7</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
     <InfoElementText Id="Textbox_56" X="368.2727" Y="4183.60547" Width="208.701752" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P4_Operačný panel_OP3
-IPadresa:0.0.0.0</Text>
+Ethernet:192.168.1.40</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -1017,7 +1020,7 @@ NodNumber:10</Text>
     <InfoElementText Id="Textbox_59" X="339.942383" Y="3809.331" Width="250.90332" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Festo - Profinet
 P4_IO_Master
-IPadresa:192.168.82.8</Text>
+Profinet:192.168.82.8</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -1038,7 +1041,7 @@ IPadresa:192.168.80.16</Text>
     <InfoElementText Id="Textbox_62" X="742.9724" Y="3809.331" Width="192.862915" Height="59">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Wenglor - Profinet
 P4_SmartKamera_CAM14
-IPadresa:192.168.82.9</Text>
+Profinet:192.168.82.9</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>

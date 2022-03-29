@@ -1315,6 +1315,8 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 		
 			IF Linka.P2_Kamery_OFF THEN
+				P2_Robot.COM_OUT.ZmenaGripra_4F5F:= TRUE;
+				P2_Robot.STAV.Zvaranie_PrebiehaManipulacia:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 540; 
 			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie  THEN
@@ -1626,6 +1628,8 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 		
 			IF Linka.P2_Kamery_OFF THEN
+				P2_Robot.COM_OUT.ZmenaGripra_5H:= TRUE;
+				P2_Robot.STAV.Zvaranie_PrebiehaManipulacia:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 540; 
 			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
@@ -1887,6 +1891,10 @@ PROGRAM _CYCLIC
 			ELSIF ((NOT P3_StoperSrobovania.RFID_hlava.PritomnostPaletky AND SC_P3_StoperSrobovania.Step = 100) OR (P3_StoperSrobovania.OUT.ZasunStoper AND SC_P3_StoperSrobovania.Step = 561)) AND NOT P2_StoperZvarania.STAV.PrebiehaVyvezeniePaletky THEN
 				P2_StoperZvarania.OUT.ZasunStoper:= TRUE;
 				P2_StoperZvarania.STAV.PrebiehaVyvezeniePaletky:= TRUE;
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 561;
+			ELSE
+				P2_StoperZvarania.OUT.ZasunStoper:= TRUE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 561;
 			END_IF	

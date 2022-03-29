@@ -4,7 +4,8 @@ PROGRAM _INIT
 	//Init parametre serva zdvihu v˝ùahu//
 	P1_Vytah.ServoZdvihuVytahu.Parameters.Override:= 100;
 	P1_Vytah.PAR.Zdvih_JoggRychlost:= 0.1;
-	
+	P1_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= TRUE;
+	P1_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.0;
 	
 END_PROGRAM
 
@@ -21,7 +22,7 @@ PROGRAM _CYCLIC
 	SequenceControl(SC:= SC_P1_Vytah);
 	
 	//Enable serva//
-	IF Safety.STAV.P1_ZonaVytahu_AKTIVNA THEN
+	IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND NOT P1_Vytah.ServoZdvihuVytahu.Command.ErrReset THEN
 		P1_Vytah.ServoZdvihuVytahu.Command.PowerON:= TRUE;
 	ELSE
 		P1_Vytah.ServoZdvihuVytahu.Command.PowerON:= FALSE;
@@ -72,7 +73,6 @@ PROGRAM _CYCLIC
 			P1_Vytah.ServoZdvihuVytahu.Command.JogPos:= FALSE;
 			P1_Vytah.ServoZdvihuVytahu.Command.MoveAdditive:= FALSE;
 			P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= FALSE;
-			P1_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= FALSE;
 			IF NOT P1_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
 				P1_Vytah.ServoZdvihuVytahu.Command.Stop:= TRUE;
 			END_IF	
@@ -156,7 +156,9 @@ PROGRAM _CYCLIC
 			
 			SC_P1_Vytah.IdleTime.IN:= P1_Dopravniky.STAV.PoINIT;
 			
-			P1_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= TRUE;
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Acc:= P1_RemPremenne.P1_Vytah_Zdvih_Acc;
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= P1_RemPremenne.P1_Vytah_Zdvih_Dcc;
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			
 			IF SC_P1_Vytah.IdleTime.Q THEN
 				SC_P1_Vytah.ResetStep:= TRUE;
@@ -238,9 +240,7 @@ PROGRAM _CYCLIC
 			SC_P1_Vytah.IdleTime.IN:= Safety.STAV.P1_Vytah_Bariera_AKTIVNA;
 			P1_Vizu.ZobrazHL13_ST1:= NOT Safety.STAV.P1_Vytah_Bariera_AKTIVNA;
 			
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Acc:= 50.0;
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= 50.0;
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
+			
 			P1_Vytah.ServoZdvihuVytahu.Parameters.Velocity:= P1_RemPremenne.P1_Vytah_RychlostZdvihu /1000;
 			P1_Vytah.ServoZdvihuVytahu.Parameters.Position:= P1_RemPremenne.P1_Vytah_PoziciaVykladania;
 			
@@ -572,7 +572,10 @@ PROGRAM _CYCLIC
 		
 			SC_P1_Vytah.IdleTime.IN:= Safety.STAV.P1_Vytah_Bariera_AKTIVNA;
 			P1_Vizu.ZobrazHL13_ST1:= NOT Safety.STAV.P1_Vytah_Bariera_AKTIVNA;
-                        
+              
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Acc:= P1_RemPremenne.P1_Vytah_Zdvih_Acc;
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= P1_RemPremenne.P1_Vytah_Zdvih_Dcc;
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			            
 			IF P1_Vytah.KoniecCyklu THEN
 				SC_P1_Vytah.ResetStep:= TRUE;
@@ -595,9 +598,7 @@ PROGRAM _CYCLIC
 		
 			P1_Vytah.Banner.IN.OranzovaLED_ON:= Blikac1s;
 		
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Acc:= 50.0;
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= 50.;
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
+			
 			P1_Vytah.ServoZdvihuVytahu.Parameters.Velocity:= P1_RemPremenne.P1_Vytah_RychlostZdvihu/1000;
 			P1_Vytah.ServoZdvihuVytahu.Parameters.Position:= P1_RemPremenne.P1_Vytah_PoziciaNakladania;
 			
@@ -676,9 +677,6 @@ PROGRAM _CYCLIC
 			
 			P1_Vytah.Banner.IN.OranzovaLED_ON:= Blikac1s;
 			
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Acc:= 50.0;
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= 50.0;
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			P1_Vytah.ServoZdvihuVytahu.Parameters.Velocity:= P1_RemPremenne.P1_Vytah_RychlostZdvihu/1000;
 			P1_Vytah.ServoZdvihuVytahu.Parameters.Position:= P1_RemPremenne.P1_Vytah_PoziciaVykladania;
 			

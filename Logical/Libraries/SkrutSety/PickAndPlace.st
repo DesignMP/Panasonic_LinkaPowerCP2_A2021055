@@ -33,6 +33,7 @@ FUNCTION_BLOCK PickAndPlace
 	//*****************************************Vypnutie vibrolišty a zásobníka********************************************************//
 	IF IN.ZaplnenieVibrolisty_MIN AND
 		IN.ZaplnenieVibrolisty_MAX AND
+		IN.PodavacOtoceny_VYSTUP AND
 		NOT CMD.RR_ZapniVibrolistu AND
 		NOT CMD.RR_ZapniZasobnik THEN
 		Internal.CasZaplneniaVibrolisty.IN:= TRUE;
@@ -40,7 +41,7 @@ FUNCTION_BLOCK PickAndPlace
 		Internal.CasZaplneniaVibrolisty.IN:= FALSE;
 	END_IF
 	
-	IF OUT.VibropohonZasobnika_RUN AND Internal.CasZaplneniaVibrolisty.Q THEN
+	IF OUT.VibropohonListy_RUN AND Internal.CasZaplneniaVibrolisty.Q THEN
 		OUT.VibropohonListy_RUN:= FALSE;
 		OUT.VibropohonZasobnika_RUN:= FALSE;
 	END_IF	
@@ -76,25 +77,38 @@ FUNCTION_BLOCK PickAndPlace
 	CASE Step OF
 		
 		0: //Nulovanie//
-			OUT.OtocPodavac_NaVstup:= FALSE;
-			OUT.OtocPodavac_NaVystup:= FALSE;
 			Internal.IdleTime_200ms.IN:= FALSE;
 			Internal.IdleTime_100ms.IN:= FALSE;
 			Internal.IdleTime_500ms.IN:= FALSE;
 			Internal.IdleTime_1s.IN:= FALSE;
-			Internal.AlarmTime_3s.IN:= FALSE;
+			Internal.AlarmTime_10s.IN:= FALSE;
+			CMD.PodajSkrutku:= FALSE;
+			CMD.RR_ZapniVibrolistu:= FALSE;
+			CMD.RR_ZapniZasobnik:= FALSE;
+			CMD.RR_OtocPodavac_Vstup:= FALSE;
+			CMD.RR_OtocPodavac_Vystup:= FALSE;
+			CMD.RucnyRezim:= FALSE;
 			IF NOT CMD.PodajSkrutku AND CMD.ENABLE AND NOT STAV.ERROR THEN
 				Step:= 1;
 			END_IF	
 	
 	
 		1: //Èakam na spustenie//
+			Internal.IdleTime_1s.IN:= NOT IN.Podavac_SkrutkaNaVystupe;
+			
+			IF Internal.IdleTime_1s.Q THEN
+				CMD.PodajSkrutku:= TRUE;
+			END_IF	
+			
+			
 			IF CMD.RucnyRezim THEN
 				Step:= 70;	
 			ELSIF CMD.PodajSkrutku THEN
+				Internal.IdleTime_1s.IN:= FALSE;
 				Step:= 10;
 			END_IF	
 	
+			
 		10: //Kontrola skrutky na vystupe podavaca//
 			IF IN.Podavac_SkrutkaNaVystupe THEN
 				Step:= 0;
@@ -103,17 +117,17 @@ FUNCTION_BLOCK PickAndPlace
 			END_IF
 		
 		11: //Otocenie podavaca na vstup smerom k zasobniku//
+			OUT.OtocPodavac_NaVystup:= FALSE;
 			OUT.OtocPodavac_NaVstup:= TRUE;
-			Internal.AlarmTime_3s.IN:= TRUE;
+			Internal.AlarmTime_10s.IN:= TRUE;
 			
 			Internal.IdleTime_1s.IN:= IN.PodavacOtoceny_VSTUP;
 			
 			IF Internal.IdleTime_1s.Q THEN
-				OUT.OtocPodavac_NaVstup:= FALSE;
-				Internal.AlarmTime_3s.IN:= FALSE;
+				Internal.AlarmTime_10s.IN:= FALSE;
 				Internal.IdleTime_1s.IN:= FALSE;
 				Step:= 15;
-			ELSIF Internal.AlarmTime_3s.Q THEN
+			ELSIF Internal.AlarmTime_10s.Q THEN
 				STAV.ERROR:= TRUE;
 				STAV.CisloPoruchy:= 1;
 				STAV.PopisPoruchy:= 'Porucha snimaca otocenia podavaca na vstup';
@@ -122,8 +136,10 @@ FUNCTION_BLOCK PickAndPlace
 		
 		15: //Kontrola zaplnenie vibrolisty//
 			IF IN.ZaplnenieVibrolisty_MIN THEN
+				Internal.IdleTime_500ms.IN:= FALSE;
 				Step:= 20;
 			ELSE
+				Internal.IdleTime_200ms.IN:= FALSE;
 				Step:= 30;
 			END_IF
 		
@@ -138,17 +154,20 @@ FUNCTION_BLOCK PickAndPlace
 			END_IF
 		
 		21: //Otocenie podavaca na vystup smerom k skrutkovacke//
+			OUT.OtocPodavac_NaVstup:= FALSE;
 			OUT.OtocPodavac_NaVystup:= TRUE;
-			Internal.AlarmTime_3s.IN:= TRUE;
+			Internal.AlarmTime_10s.IN:= TRUE;
 			
 			Internal.IdleTime_1s.IN:= IN.PodavacOtoceny_VYSTUP;
 			
 			IF Internal.IdleTime_1s.Q AND IN.Podavac_SkrutkaNaVystupe THEN
 				OUT.VibropohonListy_RUN:= FALSE;
-				OUT.OtocPodavac_NaVystup:= FALSE;
-				Internal.IdleTime_1s.IN:= FALSE;
 				Step:= 0;
-			ELSIF Internal.AlarmTime_3s.Q THEN
+			ELSIF Internal.IdleTime_1s.Q AND NOT IN.Podavac_SkrutkaNaVystupe THEN
+				Internal.IdleTime_1s.IN:= FALSE;
+				Internal.AlarmTime_10s.IN:= FALSE;
+				Step:= 11;
+			ELSIF Internal.AlarmTime_10s.Q THEN
 				STAV.ERROR:= TRUE;
 				IF NOT IN.PodavacOtoceny_VYSTUP THEN 
 					STAV.CisloPoruchy:= 2;
@@ -183,16 +202,16 @@ FUNCTION_BLOCK PickAndPlace
 			END_IF
 			
 		31: //Otocenie podavaca na vystup smerom k skrutkovacke//
+			OUT.OtocPodavac_NaVstup:= FALSE;
 			OUT.OtocPodavac_NaVystup:= TRUE;
-			Internal.AlarmTime_3s.IN:= TRUE;
+			Internal.AlarmTime_10s.IN:= TRUE;
 			
 			Internal.IdleTime_1s.IN:= IN.PodavacOtoceny_VYSTUP;
 			
 			IF Internal.IdleTime_1s.Q AND IN.Podavac_SkrutkaNaVystupe THEN
-				OUT.OtocPodavac_NaVystup:= FALSE;
 				Internal.IdleTime_1s.IN:= FALSE;
 				Step:= 0;
-			ELSIF Internal.AlarmTime_3s.Q THEN
+			ELSIF Internal.AlarmTime_10s.Q THEN
 				STAV.ERROR:= TRUE;
 				IF NOT IN.PodavacOtoceny_VYSTUP THEN 
 					STAV.CisloPoruchy:= 2;
@@ -227,6 +246,15 @@ FUNCTION_BLOCK PickAndPlace
 			END_IF	
 		
 			
+			IF CMD.RR_OtocPodavac_Vstup THEN
+				OUT.OtocPodavac_NaVystup:= FALSE;
+				OUT.OtocPodavac_NaVstup:= TRUE;
+				CMD.RR_OtocPodavac_Vstup:= FALSE;
+			ELSIF CMD.RR_OtocPodavac_Vystup THEN	
+				OUT.OtocPodavac_NaVstup:= FALSE;
+				OUT.OtocPodavac_NaVystup:= TRUE;
+				CMD.RR_OtocPodavac_Vystup:= FALSE;
+			END_IF	
 		
 	END_CASE		
 	
@@ -240,8 +268,8 @@ FUNCTION_BLOCK PickAndPlace
 	Internal.IdleTime_500ms();
 	Internal.IdleTime_1s.PT:= T#1s;
 	Internal.IdleTime_1s();
-	Internal.AlarmTime_3s.PT:= T#3s;
-	Internal.AlarmTime_3s();
+	Internal.AlarmTime_10s.PT:= T#10s;
+	Internal.AlarmTime_10s();
 	
 	
 	

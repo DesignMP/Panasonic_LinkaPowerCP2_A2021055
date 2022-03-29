@@ -40,7 +40,6 @@ PROGRAM _CYCLIC
 			P2_StoperMaticovacky.STAV.PoINIT:= FALSE;
 			P2_StoperMaticovacky.OUT.ZasunStoper:= FALSE;
 			P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN:= FALSE;
-			P2_StoperMaticovacky.OUT.Maticovacka_M4_Pneuzamok_ODOMKNI:= TRUE;
 			P2_StoperMaticovacky.OUT.Maticovacka_M4_Odvzdusn_ON:= FALSE;
 			P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON:= FALSE;
 			P2_StoperMaticovacky.RFID_hlava.PrecitajChipRFID:= FALSE;
@@ -105,7 +104,7 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#4s;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;
 			
-			P2_StoperMaticovacky.OUT.Maticovacka_M4_Pneuzamok_ODOMKNI:= TRUE;
+			
 			P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN:= FALSE;
 			
             
@@ -879,7 +878,6 @@ PROGRAM _CYCLIC
             
 			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON:= TRUE;
-				P2_StoperMaticovacky.OUT.Maticovacka_M4_Pneuzamok_ODOMKNI:= TRUE;
 				P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN:= TRUE;
 				P2_StoperMaticovacky.Maticovacka_M4.START_Utahovania:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
@@ -921,7 +919,6 @@ PROGRAM _CYCLIC
 			
 			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN:= FALSE;
-				P2_StoperMaticovacky.OUT.Maticovacka_M4_Pneuzamok_ODOMKNI:= TRUE;
 				P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON:= FALSE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF
@@ -1331,11 +1328,9 @@ PROGRAM _CYCLIC
 		
 			//Vysunutie maticovaèky//
 			IF P2_StoperMaticovacky.CMD.RR_Maticovacku_VYSUN THEN
-				P2_StoperMaticovacky.OUT.Maticovacka_M4_Pneuzamok_ODOMKNI:= TRUE;
 				P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN:= TRUE;
 				P2_StoperMaticovacky.CMD.RR_Maticovacku_VYSUN:= FALSE;
 			ELSIF P2_StoperMaticovacky.CMD.RR_Maticovacku_ZASUN THEN
-				P2_StoperMaticovacky.OUT.Maticovacka_M4_Pneuzamok_ODOMKNI:= TRUE;
 				P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN:= FALSE;
 				P2_StoperMaticovacky.CMD.RR_Maticovacku_ZASUN:= FALSE;
 			END_IF	

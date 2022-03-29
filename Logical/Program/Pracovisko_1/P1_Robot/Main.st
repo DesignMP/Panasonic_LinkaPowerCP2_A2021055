@@ -72,7 +72,9 @@ PROGRAM _CYCLIC
 			SC_P1_Robot.AlarmTime.PT:= T#5s;
 			
 			SC_P1_Robot.IdleTime.IN:= TRUE;
-									
+			
+			P1_Robot.COM_OUT.VypniMotory:= TRUE;
+			
 			IF SC_P1_Robot.IdleTime.Q THEN
 				SC_P1_Robot.ResetStep:= TRUE;
 				SC_P1_Robot.Step:= 3;
@@ -100,6 +102,7 @@ PROGRAM _CYCLIC
 			SC_P1_Robot.AlarmTime.PT:= T#5s;
 			
 			IF NOT P1_Robot.COM_IN.Stav_MotoryON THEN
+				P1_Robot.COM_OUT.VypniMotory:= FALSE;
 				P1_Robot.COM_OUT.ZapniMotory:= TRUE;
 			END_IF
 			
@@ -112,19 +115,25 @@ PROGRAM _CYCLIC
 			
 		6:
 			SC_P1_Robot.StepName:='6 - Inicializacia - spustam program robota od zaciatku';
-			SC_P1_Robot.IdleTime.PT:= T#500ms;
-			SC_P1_Robot.AlarmTime.PT:= T#5s;
+			SC_P1_Robot.IdleTime.PT:= T#2s;
+			SC_P1_Robot.AlarmTime.PT:= T#10s;
 		
+			SC_P1_Robot.IdleTime.IN:= P1_Robot.COM_IN.Stav_ProgramRUN;
+			
 			IF NOT SC_P1_Robot.Switch1 THEN
 				P1_Robot.COM_OUT.StartProgramuMain:= TRUE;
+				SC_P1_Robot.AlarmTime.IN:= TRUE;
 				SC_P1_Robot.Switch1:= TRUE;
 			END_IF
 			
-			IF P1_Robot.COM_IN.Stav_ProgramRUN AND P1_Robot.COM_IN.Stav_VystupyZresetovane THEN
+			IF SC_P1_Robot.IdleTime.Q AND P1_Robot.COM_IN.Stav_VystupyZresetovane THEN
 				P1_Robot.COM_OUT.StartProgramuMain:= FALSE;
 				P1_Robot.STAV.PoINIT:= TRUE;
 				SC_P1_Robot.ResetStep:= TRUE;
 				SC_P1_Robot.Step:= 100;
+			ELSIF SC_P1_Robot.AlarmTime.Q THEN
+				SC_P1_Robot.ResetStep:= TRUE;
+				SC_P1_Robot.Step:= 0;
 			END_IF	
 			
 			
@@ -138,6 +147,9 @@ PROGRAM _CYCLIC
 			
 			
 			IF P1_Robot.KoniecCyklu AND NOT P1_StoperSrobovania.Automat AND NOT P1_Srobovanie.Automat AND P1_Robot.COM_IN.Stav_RobotOdparkovany THEN
+				SC_P1_Robot.ResetStep:= TRUE;
+				SC_P1_Robot.Step:= 0;
+			ELSIF NOT P1_Robot.COM_IN.Stav_ProgramRUN THEN
 				SC_P1_Robot.ResetStep:= TRUE;
 				SC_P1_Robot.Step:= 0;
 			END_IF	

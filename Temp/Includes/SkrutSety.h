@@ -21,6 +21,8 @@ typedef struct PickAndPlace_CMD_typ
 	plcbit RucnyRezim;
 	plcbit RR_ZapniZasobnik;
 	plcbit RR_ZapniVibrolistu;
+	plcbit RR_OtocPodavac_Vstup;
+	plcbit RR_OtocPodavac_Vystup;
 	plcbit ResetPoruchy;
 } PickAndPlace_CMD_typ;
 
@@ -61,7 +63,7 @@ typedef struct PickAndPlace_Internal_typ
 	struct TON IdleTime_1s;
 	struct TON IdleTime_500ms;
 	struct TON IdleTime_100ms;
-	struct TON AlarmTime_3s;
+	struct TON AlarmTime_10s;
 } PickAndPlace_Internal_typ;
 
 typedef struct MaticaSet_CMD_typ

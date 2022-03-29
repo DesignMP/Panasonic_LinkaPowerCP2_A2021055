@@ -4,12 +4,21 @@ PROGRAM _INIT
 	//Init parametre serva pojazdu zakladaèa//
 	P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Override:= 100;
 	P2_ZakladacTesnenia.PAR.ZakladacPojazd_JoggRychlost:= 0.1;
+	P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.TorqueLimitation:= TRUE;
+	P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Torque:= 1.0;
+	
+	
 	
 	//Init parametre serva zdvihu zakladaèa//
 	P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Override:= 100;
 	P2_ZakladacTesnenia.PAR.ZakladacZdvih_JoggRychlost:= 0.1;
+	P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.TorqueLimitation:= TRUE;
+	P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.0;
 	
-	 
+	
+	
+	
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -23,26 +32,24 @@ PROGRAM _CYCLIC
 	
 	
 	//Enable serv//
-	IF Safety.STAV.P2_ZonaZakladacaPojazd_AKTIVNA THEN
+	IF Safety.STAV.P2_ZonaZakladacaPojazd_AKTIVNA AND NOT P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.ErrReset THEN
 		P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.PowerON:= TRUE;
-	ELSE
-		P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.PowerON:= FALSE;
 	END_IF	
 	
-	IF Safety.STAV.P2_ZonaZakladacaZdvih_AKTIVNA THEN
+	IF Safety.STAV.P2_ZonaZakladacaZdvih_AKTIVNA AND NOT P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.ErrReset THEN
 		P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.PowerON:= TRUE;
-	ELSE
-		P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.PowerON:= FALSE;
 	END_IF
 	
 	
 	
 	//Reset poruchy serv//
 	IF P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.ErrReset AND NOT P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.Error THEN
+		P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.PowerON:= FALSE;
 		P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.ErrReset:= FALSE;
 	END_IF
 	
 	IF P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.ErrReset AND NOT P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.Error THEN
+		P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.PowerON:= FALSE;
 		P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.ErrReset:= FALSE;
 	END_IF
 	
@@ -78,7 +85,6 @@ PROGRAM _CYCLIC
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.JogPos:= FALSE;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MoveAdditive:= FALSE;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= FALSE;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.TorqueLimitation:= FALSE;
 			IF NOT P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.StandStill THEN
 				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.Stop:= TRUE;
 			END_IF	
@@ -86,7 +92,6 @@ PROGRAM _CYCLIC
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.JogPos:= FALSE;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MoveAdditive:= FALSE;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition:= FALSE;
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.TorqueLimitation:= FALSE;
 			IF NOT P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.StandStill THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= TRUE;
 			END_IF	
@@ -141,8 +146,7 @@ PROGRAM _CYCLIC
 			
 			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
 			
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.TorqueLimitation:= TRUE;
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.TorqueLimitation:= TRUE;
+			
 			
 			IF SC_P2_ZakladacTesnenia.IdleTime.Q THEN
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
@@ -175,11 +179,11 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
 			
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= 50;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Acc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlostZdvihu/1000;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.0;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 0;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 4;
 			
 			IF NOT SC_P2_ZakladacTesnenia.Switch1 THEN
 				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= TRUE;
@@ -227,8 +231,8 @@ PROGRAM _CYCLIC
 			
 			SC_P2_ZakladacTesnenia.IdleTime.IN:= Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE;
 			
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= 50;
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Acc;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Dcc;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Pojazd_RychlZasun/1000;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Torque:= 1.0;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Position:= P2_RemPremenne.P2_ZaklTesn_Pojazd_PozZatlacenia;
@@ -285,8 +289,8 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#200ms;
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;	
 			
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= 50;
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Acc;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Dcc;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Pojazd_RychlVysun/1000;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Torque:= 1.0;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Position:= P2_RemPremenne.P2_ZaklTesn_Pojazd_PozVkladania;
@@ -702,8 +706,8 @@ PROGRAM _CYCLIC
 			
 			SC_P2_ZakladacTesnenia.IdleTime.IN:= Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE;
 			
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= 50;
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Acc;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Dcc;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Pojazd_RychlZasun/1000;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Torque:= 1.0;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Position:= P2_RemPremenne.P2_ZaklTesn_Pojazd_PozZatlacenia;
@@ -757,8 +761,8 @@ PROGRAM _CYCLIC
 		
 		 
             
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= 50;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Acc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlostZdvihu/1000;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.0;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 55;
@@ -786,8 +790,8 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
 		
                        
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= 20;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Acc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlZatlacen/1000;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= P2_RemPremenne.P2_ZaklTesn_Zdvih_MomZatlacen;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 100; 
@@ -828,8 +832,8 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
 		            
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= 20;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Acc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlZatlacen/1000;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.0;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 55;
@@ -852,8 +856,8 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
 		
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= 50;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Acc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlostZdvihu/1000;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.0;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 0;
@@ -881,8 +885,8 @@ PROGRAM _CYCLIC
 			
 			
 			
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= 50;
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Acc;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Dcc;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Pojazd_RychlVysun/1000;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Torque:= 1.0;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Position:= P2_RemPremenne.P2_ZaklTesn_Pojazd_PozVkladania;
@@ -1101,8 +1105,8 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.IdleTime.IN:= Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE;
 				
 					
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= 50;
-			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= 20;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Acc;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Dcc;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Pojazd_RychlZasun/1000;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Torque:= 1.0;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Position:= P2_RemPremenne.P2_ZaklTesn_Pojazd_PozZatlacenia;
@@ -1170,10 +1174,10 @@ PROGRAM _CYCLIC
 			IF P2_ZakladacTesnenia.CMD.RR_PojazdZakladaca_VYSUN AND P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.ActPosition < P2_RemPremenne.P2_ZaklTesn_Pojazd_PozVkladania AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.ActPosition < 50 THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.JogNeg:= FALSE;
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.JogPos:= TRUE;
-			ELSIF P2_ZakladacTesnenia.CMD.RR_PojazdZakladaca_ZASUN AND P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.ActPosition > 3 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.ActPosition < 50 THEN
+			ELSIF P2_ZakladacTesnenia.CMD.RR_PojazdZakladaca_ZASUN AND P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.ActPosition > 4 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.ActPosition < 50 THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.JogPos:= FALSE;	
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.JogNeg:= TRUE;
-			ELSIF Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE AND P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.ActPosition > 3 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.ActPosition < 50 THEN
+			ELSIF Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE AND P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.ActPosition > 4 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.ActPosition < 50 THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.JogPos:= FALSE;	
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.JogNeg:= TRUE;
 			ELSE

@@ -75,7 +75,9 @@ PROGRAM _CYCLIC
 			SC_P2_Robot.AlarmTime.PT:= T#5s;
 			
 			SC_P2_Robot.IdleTime.IN:= TRUE;
-									
+			
+			P2_Robot.COM_OUT.VypniMotory:= TRUE;
+			
 			IF SC_P2_Robot.IdleTime.Q AND P2_Cistenie.STAV.PoINIT THEN
 				SC_P2_Robot.ResetStep:= TRUE;
 				SC_P2_Robot.Step:= 3;
@@ -99,12 +101,14 @@ PROGRAM _CYCLIC
 		
 		4:
 			SC_P2_Robot.StepName:='4 - Inicializacia - zapinam motory robota';
-			SC_P2_Robot.IdleTime.PT:= T#5s;
+			SC_P2_Robot.IdleTime.PT:= T#3s;
 			SC_P2_Robot.AlarmTime.PT:= T#5s;
 			SC_P2_Robot.IdleTime.IN:= TRUE;
 			
 			IF NOT P2_Robot.COM_IN.Stav_MotoryON THEN
+				P2_Robot.COM_OUT.VypniMotory:= FALSE;
 				P2_Robot.COM_OUT.ZapniMotory:= TRUE;
+				SC_P2_Robot.IdleTime.IN:= TRUE;
 			END_IF
 			
 			IF P2_Robot.COM_IN.Stav_MotoryON THEN
@@ -116,19 +120,25 @@ PROGRAM _CYCLIC
 			
 		6:
 			SC_P2_Robot.StepName:='6 - Inicializacia - spustam program robota od zaciatku';
-			SC_P2_Robot.IdleTime.PT:= T#500ms;
-			SC_P2_Robot.AlarmTime.PT:= T#5s;
+			SC_P2_Robot.IdleTime.PT:= T#2s;
+			SC_P2_Robot.AlarmTime.PT:= T#10s;
 		
+			SC_P2_Robot.IdleTime.IN:= P2_Robot.COM_IN.Stav_ProgramRUN;
+			
 			IF NOT SC_P2_Robot.Switch1 THEN
 				P2_Robot.COM_OUT.StartProgramuMain:= TRUE;
+				SC_P2_Robot.AlarmTime.IN:= TRUE;
 				SC_P2_Robot.Switch1:= TRUE;
 			END_IF
 			
-			IF P2_Robot.COM_IN.Stav_ProgramRUN AND P2_Robot.COM_IN.Stav_VystupyZresetovane THEN
+			IF SC_P2_Robot.IdleTime.Q AND P2_Robot.COM_IN.Stav_VystupyZresetovane THEN
 				P2_Robot.COM_OUT.StartProgramuMain:= FALSE;
 				P2_Robot.STAV.PoINIT:= TRUE;
 				SC_P2_Robot.ResetStep:= TRUE;
 				SC_P2_Robot.Step:= 100;
+			ELSIF SC_P2_Robot.AlarmTime.Q THEN
+				SC_P2_Robot.ResetStep:= TRUE;
+				SC_P2_Robot.Step:= 0;
 			END_IF	
 			
 			
@@ -142,6 +152,9 @@ PROGRAM _CYCLIC
 			
 			
 			IF P2_Robot.KoniecCyklu AND NOT P2_StoperSrobovania.Automat AND NOT P2_StoperZvarania.Automat AND P2_Robot.COM_IN.Stav_RobotOdparkovany THEN
+				SC_P2_Robot.ResetStep:= TRUE;
+				SC_P2_Robot.Step:= 0;
+			ELSIF NOT P2_Robot.COM_IN.Stav_ProgramRUN THEN
 				SC_P2_Robot.ResetStep:= TRUE;
 				SC_P2_Robot.Step:= 0;
 			END_IF	
@@ -165,7 +178,20 @@ PROGRAM _CYCLIC
 	
 	
 	
-	
+	//Zrušenie signálu výmena gripra 4F5F//
+	IF P2_Robot.COM_OUT.ZmenaGripra_4F5F AND P2_Robot.COM_IN.Stav_Griper4F5F_Vymeneny THEN
+		P2_Robot.COM_OUT.ZmenaGripra_4F5F:= FALSE;
+	END_IF
+    
+	//Zrušenie signálu výmena gripra 5H//
+	IF P2_Robot.COM_OUT.ZmenaGripra_5H AND P2_Robot.COM_IN.Stav_Griper5H_Vymeneny THEN
+		P2_Robot.COM_OUT.ZmenaGripra_5H:= FALSE;
+	END_IF
+    
+	//Zrušenie signálu výmena gripra èistenia Power CP//
+	IF P2_Robot.COM_OUT.ZmenaGripra_Cistenie AND P2_Robot.COM_IN.Stav_GriperCistenia_Vymeneny THEN
+		P2_Robot.COM_OUT.ZmenaGripra_Cistenie:= FALSE;
+	END_IF
 	
 	
 	

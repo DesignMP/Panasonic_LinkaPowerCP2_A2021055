@@ -394,6 +394,14 @@ PROGRAM _CYCLIC
 		P3_LeakageTestB.Reset:= TRUE;
 		P3_ZdvizkaZaLeakTestA.Reset:= TRUE;
 		P3_ZdvizkaZaLeakTestB.Reset:= TRUE;
+		P3_Pracovisko.STAV.Porucha_ST1:= FALSE;
+		P3_Pracovisko.STAV.Porucha_ST2:= FALSE;
+		P3_Pracovisko.STAV.Porucha_ST3:= FALSE;
+		P3_Pracovisko.STAV.Porucha_ST4:= FALSE;
+		P3_Pracovisko.STAV.Porucha_ST5:= FALSE;
+		P3_Pracovisko.STAV.Porucha_ST6:= FALSE;
+		P3_Pracovisko.STAV.Porucha_ST7:= FALSE;
+		P3_Pracovisko.STAV.Porucha_ST8:= FALSE;
 		P3_Pracovisko.Reset:= FALSE;
 	END_IF	
 	
