@@ -5,8 +5,12 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	(* Insert code here *)
-	 
+	P1_Vizu.ActualPage;
+	P1_Vizu.GoPage;
+	
+	P1_Vizu.TL_RezimAutomat_ENABLE;
+	P1_Vizu.TL_RezimManual_ENABLE;
+	
 END_PROGRAM
 
 PROGRAM _EXIT

@@ -20,7 +20,7 @@ export AS_TEMP_PLC := 5PC900_TS17_00
 export AS_USER_NAME := Martin\ Dvorscak
 export AS_CONFIGURATION := Config2
 export AS_COMPANY_NAME := \ 
-export AS_VERSION := 4.10.3.60\ SP
+export AS_VERSION := 4.10.4.38\ SP
 export AS_WORKINGVERSION := 4.10
 
 

@@ -198,7 +198,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P4_FunkcnyTestA.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P4_FunkcnyTestA.RFID_hlava.Stav_CitanieZapis_OK AND P4_FunkcnyTestA.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_FunkcnyTestA.RFID_hlava.PrecitaneCisloPaletky;
 				P4_FunkcnyTestA.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
@@ -315,7 +315,7 @@ PROGRAM _CYCLIC
 				SC_P4_FunkcnyTestA.Switch1:= TRUE;
 			END_IF
 			
-			IF P4_FunkcnyTestA.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P4_FunkcnyTestA.RFID_hlava.Stav_CitanieZapis_OK AND P4_FunkcnyTestA.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_FunkcnyTestA.RFID_hlava.PrecitaneCisloPaletky;
 				P4_FunkcnyTestA.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_FunkcnyTestA.ResetStep:= TRUE;

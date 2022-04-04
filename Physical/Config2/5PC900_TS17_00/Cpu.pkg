@@ -23,12 +23,10 @@
     <Build GccVersion="6.3.0" />
     <DefaultTargetMemory Tasks="UserROM" />
     <Io Supervision="False" />
-    <Safety SafetyRelease="1.10" />
+    <Safety SafetyRelease="0.0" />
     <TaskClasses DefaultIoTaskClass="Cyclic1" />
     <Transfer AddToUserPart="False" AdditionalUserDir="" AllowDowngrade="True" AllowInitialTransfer="False" AllowPartitioning="False" ExecuteInitExitProgram="False" ForceInitialTransfer="False" IdentificationTypeValue="" IgnoreVersion="True" KeepNonVolatileMemory="False" ModuleSystemForPip="" PreserveVariableValues="True" ProjectConsistent="True" RebootDuringTransfer="False" SavedOfflineInstallationFolder="G:\" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" TargetIdentificationType="Always" TryToBootInRunMode="False" UserFilesIgnoreDifference="False" />
     <Vc FirmwareVersion="V4.72.0" />
-    <TechnologyPackages>
-      <SafetyRelease Version="1.10.0" />
-    </TechnologyPackages>
+    <OnlineConfiguration Name="Panasonic_PowerCP2" DeviceType="TCPIP" DeviceParameters="/IF=tcpip /LOPO=11159 /SA=1" ConnectionParameters="/COMT=2500 /RT=1000 /AM=* /SDT=5 /DAIP=192.168.1.2 /REPO=11159 /ANSL=1 /PT=11169" Description="" />
   </Configuration>
 </Cpu>

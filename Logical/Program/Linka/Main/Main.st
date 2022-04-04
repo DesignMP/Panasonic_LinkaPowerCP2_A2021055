@@ -41,6 +41,31 @@ ProfinetKomunikaciaCU;
 	
 	
 	
+	//**************************Zmena èasu a dátumu***************************************//
+	IF Vizu.NastavCasPLC THEN
+		DTSetTime_0.enable:= TRUE;
+		DTSetTime_0.DT1:= Vizu.ZadanyCasPLC;
+		DTSetTime_0();
+	END_IF	
+	
+	IF DTSetTime_0.status = 0 THEN
+		Vizu.NastavCasPLC:= FALSE;
+		DTSetTime_0.enable:= FALSE;
+		DTSetTime_0();
+	END_IF	
+		
+	
+	//**********************Naèítanie èasu a dátumu do vizualizácie**************************//
+	DTGetTime_0.enable:= TRUE;
+	Vizu.AktualnyCasPLC:= DTGetTime_0.DT1;
+	DTGetTime_0();
+		
+	
+	
+	
+	
+	
+	
 END_PROGRAM
 
 PROGRAM _EXIT

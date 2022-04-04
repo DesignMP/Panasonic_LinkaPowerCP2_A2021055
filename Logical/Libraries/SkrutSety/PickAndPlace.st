@@ -9,7 +9,7 @@ FUNCTION_BLOCK PickAndPlace
 	
 	
 	//*******************************Ovládanie zhadzovacieho vzduchu pred lištou zásobníka******************************************//
-	Internal.CasZaplneniaZasobnika.IN:= IN.ZaplnenieListyZasobnika AND OUT.VibropohonZasobnika_RUN;
+	Internal.CasZaplneniaZasobnika.IN:= IN.ZaplnenieListyZasobnika AND OUT.VibropohonZasobnika_RUN AND IN.ZaplnenieVibrolisty_MIN AND IN.ZaplnenieVibrolisty_MAX;
 	
 	IF Internal.CasZaplneniaZasobnika.Q THEN
 		OUT.ZhadzovaciVzduch_RUN:= TRUE;
@@ -54,9 +54,6 @@ FUNCTION_BLOCK PickAndPlace
 		OUT.VibropohonListy_RUN:= FALSE;
 		OUT.VibropohonZasobnika_RUN:= FALSE;
 		OUT.ZhadzovaciVzduch_RUN:= FALSE;
-		STAV.ERROR:= FALSE;
-		STAV.CisloPoruchy:= 0;
-		STAV.PopisPoruchy:= '';
 		Step:= 0;
 	END_IF	
 	
@@ -66,7 +63,7 @@ FUNCTION_BLOCK PickAndPlace
 	//2 - porucha otoèenia podavaèa smerom k skrutkovaèke
 	//3 - porucha snímaèa skrutky na vystupe podavaèa
 	
-	IF CMD.ResetPoruchy THEN
+	IF CMD.ResetPoruchy OR NOT CMD.ENABLE THEN
 		STAV.ERROR:= FALSE;
 		STAV.CisloPoruchy:= 0;
 		STAV.PopisPoruchy:= '';

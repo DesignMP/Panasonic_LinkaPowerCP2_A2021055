@@ -193,7 +193,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P2_StoperZaklTesnenia.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P2_StoperZaklTesnenia.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperZaklTesnenia.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
@@ -351,7 +351,7 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 					
-			IF P2_StoperZaklTesnenia.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P2_StoperZaklTesnenia.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperZaklTesnenia.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;

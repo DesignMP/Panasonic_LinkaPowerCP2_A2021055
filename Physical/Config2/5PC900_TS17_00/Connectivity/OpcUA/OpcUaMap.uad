@@ -44,6 +44,8 @@
           <Variable Name="TL_PrihlasovOperatora_AKTIVNE" />
           <Variable Name="TL_SETUP_ENABLE" />
           <Variable Name="EditaciaParametrov_ENABLE" />
+          <Variable Name="ActualPage" />
+          <Variable Name="GoPage" />
         </Variable>
         <Variable Name="P1_Pracovisko">
           <Variable Name="Manual" />

@@ -215,7 +215,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P2_StoperZvarania.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P2_StoperZvarania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperZvarania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -584,7 +584,7 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 					
-			IF P2_StoperZvarania.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P2_StoperZvarania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -1891,10 +1891,6 @@ PROGRAM _CYCLIC
 			ELSIF ((NOT P3_StoperSrobovania.RFID_hlava.PritomnostPaletky AND SC_P3_StoperSrobovania.Step = 100) OR (P3_StoperSrobovania.OUT.ZasunStoper AND SC_P3_StoperSrobovania.Step = 561)) AND NOT P2_StoperZvarania.STAV.PrebiehaVyvezeniePaletky THEN
 				P2_StoperZvarania.OUT.ZasunStoper:= TRUE;
 				P2_StoperZvarania.STAV.PrebiehaVyvezeniePaletky:= TRUE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 561;
-			ELSE
-				P2_StoperZvarania.OUT.ZasunStoper:= TRUE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 561;
 			END_IF	

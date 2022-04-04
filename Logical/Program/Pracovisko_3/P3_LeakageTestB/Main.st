@@ -190,7 +190,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P3_LeakageTestB.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P3_LeakageTestB.RFID_hlava.Stav_CitanieZapis_OK AND P3_LeakageTestB.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P3_LeakageTestB.RFID_hlava.PrecitaneCisloPaletky;
 				P3_LeakageTestB.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P3_LeakageTestB.ResetStep:= TRUE;
@@ -320,7 +320,7 @@ PROGRAM _CYCLIC
 				SC_P3_LeakageTestB.Switch1:= TRUE;
 			END_IF
 			
-			IF P3_LeakageTestB.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P3_LeakageTestB.RFID_hlava.Stav_CitanieZapis_OK AND P3_LeakageTestB.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P3_LeakageTestB.RFID_hlava.PrecitaneCisloPaletky;
 				P3_LeakageTestB.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P3_LeakageTestB.ResetStep:= TRUE;

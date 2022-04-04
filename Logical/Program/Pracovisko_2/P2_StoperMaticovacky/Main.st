@@ -207,7 +207,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P2_StoperMaticovacky.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P2_StoperMaticovacky.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperMaticovacky.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperMaticovacky.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperMaticovacky.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
@@ -486,7 +486,7 @@ PROGRAM _CYCLIC
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF
 			
-			IF P2_StoperMaticovacky.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P2_StoperMaticovacky.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperMaticovacky.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperMaticovacky.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperMaticovacky.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperMaticovacky.ResetStep:= TRUE;

@@ -443,7 +443,7 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_VentilovyTerminal[3].0 := P3_ZdvizkaZaLeakTestB.OUT.TlmicPaletky_VYSUN;
 	P3_Pracovisko.COM_VentilovyTerminal[3].1 := P3_ZdvizkaZaLeakTestB.OUT.TlmicPaletky_ZASUN;
 	P3_Pracovisko.COM_VentilovyTerminal[3].2 := P3_Pracovisko.OUT.ZdvizkyPneuZamok_ODOMKNI;
-	P3_Pracovisko.COM_VentilovyTerminal[3].3;
+	P3_Pracovisko.COM_VentilovyTerminal[3].3 := P3_SpodnyStoper.OUT.ZasunStoper;
 	P3_Pracovisko.COM_VentilovyTerminal[3].4 := P3_Srobovanie.SkrutSet_K40.OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek;
 	P3_Pracovisko.COM_VentilovyTerminal[3].5 := P3_Srobovanie.SkrutSet_K40.OUT.VibracnyHrniec.TiedenieSkrutiek;
 	P3_Pracovisko.COM_VentilovyTerminal[3].6 := P3_Srobovanie.SkrutSet_K40.OUT.VibracnyHrniec.OddelovacVysunut;

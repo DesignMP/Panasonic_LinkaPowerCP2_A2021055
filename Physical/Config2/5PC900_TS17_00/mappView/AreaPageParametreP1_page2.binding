@@ -1,133 +1,122 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BindingsSet id="AreaPageParametreP1_page2_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Bindings>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_40" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_6" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_33" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_31" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_29" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_38" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_46" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_42" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_25" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_8" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_27" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_10" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_34" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_36" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_28" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_23" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_45" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_5" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_47" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_30" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_32" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_39" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_41" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_24" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_43" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_26" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_7" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_35" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_4" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_9" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_37" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_44" attribute="enable" />
-</Binding>
-</Bindings>
+	<Bindings>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_40" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_6" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_33" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_31" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_29" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_38" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_46" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_42" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_25" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_8" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_27" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_10" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_34" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_36" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_28" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_23" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_5" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_30" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_32" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_39" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_41" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_24" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_43" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_26" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_7" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_35" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_4" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_9" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_37" attribute="enable" />
+		</Binding>
+		
+	</Bindings>
 </BindingsSet>

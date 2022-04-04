@@ -2689,6 +2689,8 @@ TYPE
 		ServoZdvihuVytahu_KomOK : BOOL;
 		ServoZdvihuAplikEtikiet_KomOK : BOOL;
 		SmartKamera14_KomOK : BOOL;
+		PredneDvere_PritomnostAdaptera : BOOL; (*EZ 4.1*)
+		ZadneDvere_PritomnostAdaptera : BOOL; (*EZ 4.2*)
 	END_STRUCT;
 	P4_PracoviskoOUT_typ : 	STRUCT 
 		Majak_ZeleneSvetlo_ON : BOOL;
@@ -2699,6 +2701,8 @@ TYPE
 		Osvetlenie_CAM16_ON : BOOL;
 		Osvetlenie_CAM15_ON : BOOL;
 		ZdvizkyPneuZamok_ODOMKNI : BOOL; (*YV174_VT4*)
+		PredneDvere_ZAMKNI : BOOL; (*EZ 4.1*)
+		ZadneDvere_ZAMKNI : BOOL; (*EZ 4.2*)
 	END_STRUCT;
 	P4_PracoviskoPAR_typ : 	STRUCT 
 		New_Member : USINT;
@@ -3025,7 +3029,8 @@ TYPE
 		PrisavanieEtikety_Vakum_OK : BOOL; (*S4_6*)
 		NapajanieTlaciarne_OK : BOOL;
 		PritlakPowerCP_ZASUNUTY : BOOL; (*MS4_18*)
-		PritlakPowerCP_VYSUNUTY : BOOL; (*MS4_19*)
+		PritlakPowerCP_VYSUNUTY_45F : BOOL; (*MS4_19*)
+		PritlakPowerCP_VYSUNUTY_5H : BOOL; (*MS4_20*)
 	END_STRUCT;
 	P4_Etiketovacka_OUT_typ : 	STRUCT 
 		OfukEtikety_ON : BOOL; (*YV185_VT4*)

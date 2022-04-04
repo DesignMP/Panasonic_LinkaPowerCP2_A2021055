@@ -373,12 +373,24 @@ PROGRAM _CYCLIC
 	//32-39
 	P1_Pracovisko.COM_VentilovyTerminal[4].0 :=P1_Robot.OUT.OdistiGriper;
 	P1_Pracovisko.COM_VentilovyTerminal[4].1 :=P1_Robot.OUT.ZaistiGriper;
-	P1_Pracovisko.COM_VentilovyTerminal[4].2 :=P1_Robot.OUT.Griper_OTVOR;
-	P1_Pracovisko.COM_VentilovyTerminal[4].3 :=P1_Robot.OUT.Griper_ZATVOR;
+	P1_Pracovisko.COM_VentilovyTerminal[4].2;
+	P1_Pracovisko.COM_VentilovyTerminal[4].3;
 	P1_Pracovisko.COM_VentilovyTerminal[4].4;
 	P1_Pracovisko.COM_VentilovyTerminal[4].5;
 	P1_Pracovisko.COM_VentilovyTerminal[4].6;
 	P1_Pracovisko.COM_VentilovyTerminal[4].7;
+	
+	
+	IF P1_Robot.OUT.Griper_OTVOR THEN
+		P1_Pracovisko.COM_VentilovyTerminal[4].2:= TRUE;
+		P1_Pracovisko.COM_VentilovyTerminal[4].3:= FALSE;
+	ELSIF P1_Robot.OUT.Griper_ZATVOR THEN
+		P1_Pracovisko.COM_VentilovyTerminal[4].2:= FALSE;
+		P1_Pracovisko.COM_VentilovyTerminal[4].3:= TRUE;
+	END_IF	
+	
+	
+	
 	
 	//40-47
 	P1_Pracovisko.COM_VentilovyTerminal[5].0:=P1_Srobovanie.OUT.Skrutkovacku_K30_VYSUN;

@@ -409,19 +409,19 @@ PROGRAM _CYCLIC
 	END_IF
 	
 	//Zvuková signalizácia//
-	IF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST1) THEN
-		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST2) THEN
-		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST3) THEN
-		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST4) THEN
-		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;	
-	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST5) THEN
-		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST6) THEN
-		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-	END_IF
+//	IF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST1) THEN
+//		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+//	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST2) THEN
+//		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+//	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST3) THEN
+//		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+//	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST4) THEN
+//		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;	
+//	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST5) THEN
+//		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+//	ELSIF EDGEPOS(P4_Pracovisko.STAV.Porucha_ST6) THEN
+//		P4_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+//	END_IF
     
 	
 	

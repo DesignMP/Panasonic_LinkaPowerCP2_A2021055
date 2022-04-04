@@ -7,6 +7,11 @@
  ********************************************************************
  * Global variables of project Zamazat_1
  ********************************************************************)
+(**********Nastavenie èasu**************)
+VAR
+	DTSetTime_0 : DTSetTime;
+	DTGetTime_0 : DTGetTime;
+END_VAR
 (******************Blikaèe*****************************)
 VAR
 	Blikac100ms : BOOL;

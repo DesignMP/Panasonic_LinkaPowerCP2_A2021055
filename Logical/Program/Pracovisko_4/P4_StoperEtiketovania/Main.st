@@ -246,7 +246,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P4_Etiketovacka.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P4_Etiketovacka.RFID_hlava.Stav_CitanieZapis_OK AND P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky;
 				P4_Etiketovacka.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
@@ -504,7 +504,7 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 					
-			IF P4_Etiketovacka.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P4_Etiketovacka.RFID_hlava.Stav_CitanieZapis_OK AND P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;

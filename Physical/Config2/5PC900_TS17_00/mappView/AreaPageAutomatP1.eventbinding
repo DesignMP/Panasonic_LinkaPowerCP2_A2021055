@@ -1,45 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EventBindingSet id="AreaPageAutomatP1_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Bindings>
-    <EventBinding id="AreaPageAutomatP1.Button_START.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP1" widgetRefId="Button_START" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Pracovisko.Automat">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="AreaPageAutomatP1.Button_STOP.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP1" widgetRefId="Button_STOP" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Pracovisko.Reset">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="AreaPageAutomatP1.Button_KoniecCyklu.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP1" widgetRefId="Button_KoniecCyklu" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Pracovisko.KoniecCyklu">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="AreaPageAutomatP1.Button_PaletkaPrechadza.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP1" widgetRefId="Button_PaletkaPrechadza" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Linka.PAR.PaletkaPrechadza">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Bindings>
+	<Bindings>
+		<EventBinding id="AreaPageAutomatP1.Button_START.Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP1" widgetRefId="Button_START" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Pracovisko.Automat">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="AreaPageAutomatP1.Button_STOP.Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP1" widgetRefId="Button_STOP" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Pracovisko.Reset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="AreaPageAutomatP1.Button_KoniecCyklu.Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP1" widgetRefId="Button_KoniecCyklu" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Pracovisko.KoniecCyklu">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="AreaPageAutomatP1.Button_PaletkaPrechadza.Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP1" widgetRefId="Button_PaletkaPrechadza" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Linka.PAR.PaletkaPrechadza">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding>
+			<Source xsi:type="session.Event" refId="::SYSTEM:clientInfo.currentPageId" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Vizu.ActualPage" >
+						<Method xsi:type="opcUa.NodeAction.SetValueString" value="=newValue"/>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding>
+			<Source xsi:type="opcUa.Event" refId="::AsGlobalPV:P1_Vizu.GoPage" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.Navigate" pageId="=newValue" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+	</Bindings>
 </EventBindingSet>

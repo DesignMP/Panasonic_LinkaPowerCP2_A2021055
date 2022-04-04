@@ -258,7 +258,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P1_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P1_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK AND P1_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P1_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky;
 				P1_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;
@@ -575,7 +575,7 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 					
-			IF P1_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P1_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK AND P1_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P1_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky;
 				P1_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P1_StoperSrobovania.ResetStep:= TRUE;

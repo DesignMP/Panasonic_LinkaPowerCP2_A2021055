@@ -238,7 +238,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P2_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P2_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
@@ -546,7 +546,7 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 					
-			IF P2_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P2_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
@@ -1867,21 +1867,23 @@ PROGRAM _CYCLIC
 		
 			P2_Robot.COM_OUT.ManipSrobovania_BezpecnaPozicia:= TRUE;
             
-			IF NOT P2_Robot.COM_IN.Stav_RobotPoziciaCakania THEN
+			IF NOT P2_Robot.COM_IN.Stav_RobotPoziciaCakania AND NOT SC_P2_StoperSrobovania.Switch1 THEN
 				P2_Srobovanie.COM_IN.PresunManipulatora_VPRED:= TRUE;
+				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			END_IF 
+				
+			IF P2_Srobovanie.ServoManipulOsY.Status.ActPosition > 280 THEN 
 				P2_Robot.COM_OUT.Presun_CakaciaPozicia:= TRUE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 388;
 			END_IF
-			
-            
-		
 					
 		388:
 			SC_P2_StoperSrobovania.StepName:='388 - Automaticky Rezim - model 5H cakam na presunutie robota do cakacej pozicie';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
-			       
+			
+			P2_Robot.COM_OUT.ManipSrobovania_BezpecnaPozicia:= TRUE;
 					
 			IF P2_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny AND P2_Robot.COM_IN.Stav_RobotPoziciaCakania THEN
 				P2_Robot.COM_OUT.Presun_CakaciaPozicia:= FALSE;

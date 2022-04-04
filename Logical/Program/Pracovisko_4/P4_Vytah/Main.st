@@ -266,7 +266,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P4_Vytah.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P4_Vytah.RFID_hlava.Stav_CitanieZapis_OK AND P4_Vytah.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_Vytah.RFID_hlava.PrecitaneCisloPaletky;
 				P4_Vytah.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
@@ -408,7 +408,7 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 					
-			IF P4_Vytah.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P4_Vytah.RFID_hlava.Stav_CitanieZapis_OK AND P4_Vytah.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_Vytah.RFID_hlava.PrecitaneCisloPaletky;
 				P4_Vytah.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;

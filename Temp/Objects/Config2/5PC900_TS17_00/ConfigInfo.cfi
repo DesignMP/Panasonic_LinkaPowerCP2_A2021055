@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version="4.10.3.60 SP"?>
+<?AutomationStudio Version="4.10.4.38 SP"?>
 <ConfigInfo xmlns="http://br-automation.co.at/AS/BuildInfo">
   <TaskClass
     Name="Cyclic#1">
@@ -40,12 +40,12 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Mapping_IO\Variables.var" />
     </Task>
     <Task
-      Name="P4_Mappin1"
+      Name="P4_Mapping"
       Disable="false"
       Source="Program.Pracovisko_4.P4_Mapping_IO"
       Language="IEC">
       <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_Mappin1\Main.st.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_Mapping\Main.st.var" />
       <File
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Mapping_IO\Types.typ" />
       <File
@@ -81,6 +81,20 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Srobovanie\Variables.var" />
       <InternalFile
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Srobova\AtlasCopcoKomunikacia.st.var" />
+    </Task>
+    <Task
+      Name="P1_Robot"
+      Disable="false"
+      Source="Program.Pracovisko_1.P1_Robot"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Robot\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Robot\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Robot\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Robot\ProfinetKomunikaciaRobot.st.var" />
     </Task>
     <Task
       Name="P2_ZaklTes"
@@ -169,20 +183,6 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P2_Cisteni\OvlDveri.st.var" />
     </Task>
     <Task
-      Name="P1_Robot"
-      Disable="false"
-      Source="Program.Pracovisko_1.P1_Robot"
-      Language="IEC">
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Robot\Main.st.var" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Robot\Types.typ" />
-      <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Robot\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_Robot\ProfinetKomunikaciaRobot.st.var" />
-    </Task>
-    <Task
       Name="P2_Robot"
       Disable="false"
       Source="Program.Pracovisko_2.P2_Robot"
@@ -209,6 +209,26 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Srobovanie\Variables.var" />
       <InternalFile
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P3_Srobova\AtlasCopcoKomunikacia.st.var" />
+    </Task>
+    <Task
+      Name="P4_StoperE"
+      Disable="false"
+      Source="Program.Pracovisko_4.P4_StoperEtiketovania"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_StoperEtiketovania\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_StoperEtiketovania\Variables.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\OvlCentrovacky.st.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\IOLinkKomunikacia.st.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\COM_Tlaciaren.st.var" />
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\OvlOtacaniaAplikatora.st.var" />
     </Task>
   </TaskClass>
   <TaskClass
@@ -379,6 +399,18 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_AkumStoper\Types.typ" />
       <File
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_AkumStoper\Variables.var" />
+    </Task>
+    <Task
+      Name="P1_OvladVi"
+      Disable="false"
+      Source="Program.Pracovisko_1.P1_OvladVizu"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P1_OvladVi\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_OvladVizu\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_OvladVizu\Variables.var" />
     </Task>
     <Task
       Name="P2_Main"
@@ -650,7 +682,7 @@
     </Task>
     <Task
       Name="P4_Main"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_4.P4_Main"
       Language="IEC">
       <InternalFile
@@ -668,7 +700,7 @@
     </Task>
     <Task
       Name="P4_Dopravn"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_4.P4_Dopravniky"
       Language="IEC">
       <InternalFile
@@ -680,7 +712,7 @@
     </Task>
     <Task
       Name="P4_SpodnyS"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_4.P4_SpodnyStoper"
       Language="IEC">
       <InternalFile
@@ -692,7 +724,7 @@
     </Task>
     <Task
       Name="P4_Funkcny"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_4.P4_FunkcnyTestA"
       Language="IEC">
       <InternalFile
@@ -714,7 +746,7 @@
     </Task>
     <Task
       Name="P4_Zdvizka"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_4.P4_ZdvizkaZaFunkcTestA"
       Language="IEC">
       <InternalFile
@@ -728,7 +760,7 @@
     </Task>
     <Task
       Name="P4_Funkcn1"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_4.P4_FunkcnyTestB"
       Language="IEC">
       <InternalFile
@@ -750,7 +782,7 @@
     </Task>
     <Task
       Name="P4_Zdvizk1"
-      Disable="true"
+      Disable="false"
       Source="Program.Pracovisko_4.P4_ZdvizkaZaFunkcTestB"
       Language="IEC">
       <InternalFile
@@ -763,36 +795,28 @@
         Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_Zdvizk1\OvlZdvizky.st.var" />
     </Task>
     <Task
-      Name="P4_StoperE"
-      Disable="true"
-      Source="Program.Pracovisko_4.P4_StoperEtiketovania"
+      Name="DatumCasPL"
+      Disable="false"
+      Source="DatumCasPLC.DatumCasPLC"
       Language="IEC">
       <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\Main.st.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\DatumCasPL\Main.st.var" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_StoperEtiketovania\Types.typ" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\DatumCasPLC\DatumCasPLC\Types.typ" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_StoperEtiketovania\Variables.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\OvlCentrovacky.st.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\IOLinkKomunikacia.st.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\COM_Tlaciaren.st.var" />
-      <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_StoperE\OvlOtacaniaAplikatora.st.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\DatumCasPLC\DatumCasPLC\Variables.var" />
     </Task>
     <Task
-      Name="P4_Mapping"
-      Disable="true"
-      Source="Program.Pracovisko_4.P4_Mapping_IO"
+      Name="P4_OvladVi"
+      Disable="false"
+      Source="Program.Pracovisko_4.P4_OvladVizu"
       Language="IEC">
       <InternalFile
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_Mapping\Main.st.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\P4_OvladVi\Main.st.var" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Mapping_IO\Types.typ" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_OvladVizu\Types.typ" />
       <File
-        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Mapping_IO\Variables.var" />
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_OvladVizu\Variables.var" />
     </Task>
   </TaskClass>
   <TaskClass

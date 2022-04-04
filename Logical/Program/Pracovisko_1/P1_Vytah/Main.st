@@ -128,7 +128,7 @@ PROGRAM _CYCLIC
 			Linka.PAR.TestovaciKus:= FALSE;
 			Linka.PAR.RevorkovyKus:= FALSE;
 			P1_Vytah.STAV.PrebiehaVyvezeniePaletky:= FALSE;
-			P1_Pracovisko.OUT.Osvetlenie_CAM4_ON:= FALSE;
+			(*P1_Pracovisko.OUT.Osvetlenie_CAM4_ON:= FALSE;*)
             
 			
 			IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND NOT P1_Pracovisko.STAV.Porucha_ST1 AND P1_Pracovisko.STAV.HardwareVytahu_OK AND P1_Vytah.ServoZdvihuVytahu.Status.Ready AND P1_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
@@ -290,7 +290,7 @@ PROGRAM _CYCLIC
 				i:= 0;
 			END_IF
 			
-			IF P1_Vytah.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P1_Vytah.RFID_hlava.Stav_CitanieZapis_OK AND P1_Vytah.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P1_Vytah.RFID_hlava.PrecitaneCisloPaletky;
 				P1_Vytah.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P1_Vytah.ResetStep:= TRUE;
@@ -710,7 +710,7 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 					
-			IF P1_Vytah.RFID_hlava.Stav_CitanieZapis_OK THEN
+			IF P1_Vytah.RFID_hlava.Stav_CitanieZapis_OK AND P1_Vytah.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P1_Vytah.RFID_hlava.PrecitaneCisloPaletky;
 				P1_Vytah.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P1_Vytah.ResetStep:= TRUE;

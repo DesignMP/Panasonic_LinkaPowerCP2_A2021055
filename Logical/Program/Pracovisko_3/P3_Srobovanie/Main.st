@@ -685,7 +685,7 @@ PROGRAM _CYCLIC
 		123:
 			SC_P3_Srobovanie.StepName:='123 - Automaticky Rezim - model 45F, kontrola skrutky K40 v skrutkovacke';
 			SC_P3_Srobovanie.IdleTime.PT:= T#5s;
-			SC_P3_Srobovanie.AlarmTime.PT:= T#10s;
+			SC_P3_Srobovanie.AlarmTime.PT:= T#3M;
 			SC_P3_Srobovanie.AlarmTime.IN:= TRUE;
             
 			IF P3_Srobovanie.SkrutSet_K40.Status.SkrutkaPripravena AND P3_Srobovanie.Skrutkovacka_K40.Stav_READY_to_START THEN

@@ -307,15 +307,15 @@ PROGRAM _CYCLIC
 	
 	//Stavy gripra 45F//
 	IF P2_Robot.IN.TypGripra_45F THEN
-		IF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia < 19000 THEN
+		IF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia < 17500 THEN
 			P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
 			P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
 			P2_Robot.IN.Griper45F_Otvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 40000 THEN	
+		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 44000 THEN	
 			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
 			P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
 			P2_Robot.IN.Griper45F_Zatvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 21000 THEN	
+		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 22000 THEN	
 			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
 			P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
 			P2_Robot.IN.Griper45F_DrziBusbary:= TRUE;
@@ -336,15 +336,15 @@ PROGRAM _CYCLIC
 	
 	//Stavy gripra 5H//
 	IF P2_Robot.IN.TypGripra_5H THEN
-		IF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia < 21000 THEN
+		IF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia < 19600 THEN
 			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
 			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
 			P2_Robot.IN.Griper5H_Otvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 52000 THEN	
+		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 49000 THEN	
 			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
 			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
 			P2_Robot.IN.Griper5H_Zatvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 24000 THEN	
+		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 19900 THEN	
 			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
 			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
 			P2_Robot.IN.Griper5H_DrziBusbary:= TRUE;
@@ -635,10 +635,23 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_VentilovyTerminal[9].1 := P2_StoperSrobovania.OUT.Centrovanie_ZASUN;
 	P2_Pracovisko.COM_VentilovyTerminal[9].2 := P2_StoperZvarania.OUT.Centrovanie_VYSUN;
 	P2_Pracovisko.COM_VentilovyTerminal[9].3 := P2_StoperZvarania.OUT.Centrovanie_ZASUN;
-	P2_Pracovisko.COM_VentilovyTerminal[9].4 := P2_Robot.OUT.Griper_OTVOR;
-	P2_Pracovisko.COM_VentilovyTerminal[9].5 := P2_Robot.OUT.Griper_ZATVOR ;
+	P2_Pracovisko.COM_VentilovyTerminal[9].4;
+	P2_Pracovisko.COM_VentilovyTerminal[9].5;
 	P2_Pracovisko.COM_VentilovyTerminal[9].6 := P2_Srobovanie.OUT.Skrutkovacku_M6_VYSUN;
 	P2_Pracovisko.COM_VentilovyTerminal[9].7;
+	
+	
+	IF NOT P2_Robot.OUT.PneuZamokUchopovaca_ODOMKNI THEN
+		P2_Pracovisko.COM_VentilovyTerminal[9].4 := FALSE;
+		P2_Pracovisko.COM_VentilovyTerminal[9].5 := FALSE;
+	ELSIF P2_Robot.OUT.Griper_OTVOR THEN
+		P2_Pracovisko.COM_VentilovyTerminal[9].4 := TRUE;
+		P2_Pracovisko.COM_VentilovyTerminal[9].5 := FALSE;
+	ELSIF P2_Robot.OUT.Griper_ZATVOR THEN
+		P2_Pracovisko.COM_VentilovyTerminal[9].4 := FALSE;
+		P2_Pracovisko.COM_VentilovyTerminal[9].5 := TRUE;
+	END_IF	
+	
 	
 	
 	//80-87

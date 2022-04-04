@@ -271,7 +271,7 @@ PROGRAM _CYCLIC
 	
 		106:
 			SC_P2_Zvaranie.StepName:='106 - Automaticky Rezim - resetovanie zvaracky';
-			SC_P2_Zvaranie.IdleTime.PT:= T#500ms;
+			SC_P2_Zvaranie.IdleTime.PT:= T#3s;
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;	
                     
 			IF NOT SC_P2_Zvaranie.Switch1 THEN
@@ -380,7 +380,7 @@ PROGRAM _CYCLIC
 	        
 		116:
 			SC_P2_Zvaranie.StepName:='116 - Automaticky Rezim - resetovanie zvaracky';
-			SC_P2_Zvaranie.IdleTime.PT:= T#500ms;
+			SC_P2_Zvaranie.IdleTime.PT:= T#3s;
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;	
                     
 			IF NOT SC_P2_Zvaranie.Switch1 THEN
