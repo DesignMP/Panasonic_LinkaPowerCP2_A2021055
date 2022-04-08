@@ -133,10 +133,29 @@
 	<!--favorite watch-->
 	
 	<Style id="FavoriteWatch" xsi:type="widgets.brease.Label" 
-		fontSize="14px" 
-		textColor="#474747" 
-		backColor="#ff8500" 
-		borderStyle="none" 
-		padding="5px" />
+		fontSize="22px" 
+		textColor="rgba(0, 0, 0, 1)" 
+		backColor="rgba(224, 224, 224, 1)" 
+		borderStyle="solid" 
+		borderWidth="2px"
+		borderColor="rgba(0, 0, 0, 1)"
+		cornerRadius="2px"
+		shadow="2px 2px 15px rgba(0, 0, 0, 1)"
+		textAlign="center"
+		bold="true"
+	padding="5px" />
+	
+	<Style id="LabelSnimace" xsi:type="widgets.brease.Label" 
+		fontSize="15px" 
+		textColor="rgba(0, 0, 0, 1)" 
+		backColor="rgba(192, 192, 192, 1)" 
+		borderStyle="outset" 
+		borderWidth="2px"
+		borderColor="rgba(0, 0, 0, 1)"
+		cornerRadius="5px"
+		shadow="none"
+		textAlign="left"
+		bold="true"
+	padding="5px" />
 	
 </Styles>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="HlavickaP34_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="HlavickaP34.DateTimeOutput1.Click">
+      <Source xsi:type="widgets.brease.DateTimeOutput.Event" contentRefId="HlavickaP34" widgetRefId="DateTimeOutput1" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="TimeDialogP34" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="HlavickaP34.ButtonResetCS.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="HlavickaP34" widgetRefId="ButtonResetCS" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ResetCS">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="HlavickaP34.ButtonZadneDvereBunka3.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="HlavickaP34" widgetRefId="ButtonZadneDvereBunka3" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniZadnyZamok_P3">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="HlavickaP34.ButtonPredneLaveBunka3.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="HlavickaP34" widgetRefId="ButtonPredneLaveBunka3" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniPrednyZamokLS_P3">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="HlavickaP34.ButtonPrednePraveBunka3.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="HlavickaP34" widgetRefId="ButtonPrednePraveBunka3" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniPrednyZamokPS_P3">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="HlavickaP34.ButtonPredneDvereBunka4.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="HlavickaP34" widgetRefId="ButtonPredneDvereBunka4" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniPrednyZamok_P4">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="HlavickaP34.TextOutputOperator.Click">
+      <Source xsi:type="widgets.brease.TextOutput.Event" contentRefId="HlavickaP34" widgetRefId="TextOutputOperator" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="LoginDialogP34" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

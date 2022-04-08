@@ -210,7 +210,7 @@
 	}
 }
 #AreaPageParametreMainP1_Label2 {
-	@include elemTop(8);
+	@include elemTop(13);
 }
 #AreaPageParametreMainP1_Label2 {
 	@include elemLeft(483);
@@ -219,32 +219,19 @@
 	@include elemAutoWidth(400);
 }
 #AreaPageParametreMainP1_Label2 {
-	@include elemAutoHeight(50);
+	@include elemAutoHeight(40);
 }
 #AreaPageParametreMainP1_Label2 {
 		z-index: 3;
 }
 #AreaPageParametreMainP1_Label2 {
-		border-width: 5px;
+		border-width: 3px;
 }
 #AreaPageParametreMainP1_Label2 {
 	@include border-radius(5px);
 }
 #AreaPageParametreMainP1_Label2 {
 		background-color: rgba(224, 224, 224, 1);
-}
-#AreaPageParametreMainP1_Label2 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageParametreMainP1_Label2 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreMainP1_Label2 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
 }
 #AreaPageParametreMainP1_Label2 {
 		border-style: ridge;
@@ -274,7 +261,7 @@
 	@include font-weight-bold(true);
 }
 #AreaPageParametreMainP1_Label2 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(2px 2px 15px rgba(0, 0, 0, 1));
 }
 #AreaPageParametreMainP1_NavigationButtonPageRR_StavJednotlivychStanic {
 	@include elemTop(380);

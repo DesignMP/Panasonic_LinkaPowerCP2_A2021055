@@ -1,0 +1,15 @@
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P4_Zdvizka 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=11 ASCIIString=0
+                                    name                                     type force                                                            value level type len format place expand specs
+               SC_P4_ZdvizkaZaFunkcTestA                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
+                                    Step                                     UINT    0 "                                                             100"    1    6    1   10    0    0         
+                  P4_ZdvizkaZaFunkcTestA               P4_ZdvizkaZaFunkcTestA_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                      IN             P4_ZdvizkaZaFunkTestA_IN_typ    0 "                                                               *"    1   24    1    0    0    1         
+                       PritomnostPaletky                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 Automat                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                         P3_LeakageTestA                      P3_LeakageTestA_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                    STAV                 P3_LeakageTestA_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
+                PrebiehaVyvezeniePaletky                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                         P4_FunkcnyTestA                      P4_FunkcnyTestA_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                    STAV                 P4_FunkcnyTestA_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
+                PrebiehaVyvezeniePaletky                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         

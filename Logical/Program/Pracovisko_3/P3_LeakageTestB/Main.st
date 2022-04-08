@@ -181,13 +181,14 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestB.StepName:='20 - Inicializacia - precitanie cisla paletky';
 			SC_P3_LeakageTestB.IdleTime.PT:= T#200ms;
 			SC_P3_LeakageTestB.AlarmTime.PT:= T#5s;
-			SC_P3_LeakageTestB.IdleTime.IN:= TRUE;
+			
 		
 			SC_P3_LeakageTestB.IdleTime.IN:= P3_LeakageTestB.RFID_hlava.PritomnostPaletky;
 									
-			IF SC_P3_LeakageTestB.IdleTime.Q THEN
+			IF SC_P3_LeakageTestB.IdleTime.Q AND NOT SC_P3_LeakageTestB.Switch1 THEN
 				P3_LeakageTestB.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P3_LeakageTestB.Switch1:= TRUE;
 			END_IF
 			
 			IF P3_LeakageTestB.RFID_hlava.Stav_CitanieZapis_OK AND P3_LeakageTestB.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN

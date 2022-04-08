@@ -1,0 +1,138 @@
+#AreaHlasenie7_ST3_GroupBox1 {
+  top: 0px;
+  position: absolute;
+}
+
+#AreaHlasenie7_ST3_GroupBox1 {
+  left: 0px;
+  position: absolute;
+}
+
+#AreaHlasenie7_ST3_GroupBox1 {
+  width: 500px;
+}
+
+#AreaHlasenie7_ST3_GroupBox1 {
+  height: 300px;
+}
+
+#AreaHlasenie7_ST3_GroupBox1 {
+  z-index: 0;
+}
+
+#AreaHlasenie7_ST3_GroupBox1 {
+  border-width: 4px;
+}
+
+#AreaHlasenie7_ST3_GroupBox1 > .header {
+  border-width: 4px;
+}
+
+#AreaHlasenie7_ST3_GroupBox1 {
+  border-radius: 0px;
+}
+
+#AreaHlasenie7_ST3_GroupBox1 {
+  background-color: red;
+}
+
+#AreaHlasenie7_ST3_Image1 {
+  top: 10px;
+  position: absolute;
+}
+
+#AreaHlasenie7_ST3_Image1 {
+  left: 10px;
+  position: absolute;
+}
+
+#AreaHlasenie7_ST3_Image1 {
+  width: 80px;
+}
+
+#AreaHlasenie7_ST3_Image1 {
+  height: 80px;
+}
+
+#AreaHlasenie7_ST3_Image1 {
+  z-index: 0;
+}
+
+#AreaHlasenie7_ST3_Label1 {
+  top: 106px;
+  position: absolute;
+}
+
+#AreaHlasenie7_ST3_Label1 {
+  left: 21px;
+  position: absolute;
+}
+
+#AreaHlasenie7_ST3_Label1 {
+  width: 450px;
+}
+
+#AreaHlasenie7_ST3_Label1 {
+  height: 100px;
+}
+
+#AreaHlasenie7_ST3_Label1 {
+  z-index: 1;
+}
+
+#AreaHlasenie7_ST3_Label1 span {
+  color: black;
+}
+
+#AreaHlasenie7_ST3_Label1 {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#AreaHlasenie7_ST3_Label1 {
+  font-size: 25px;
+}
+
+#AreaHlasenie7_ST3_Label1 {
+  font-weight: bold;
+}
+
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+  top: 206px;
+  position: absolute;
+}
+
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+  left: 171px;
+  position: absolute;
+}
+
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+  width: 150px;
+}
+
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+  height: 45px;
+}
+
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+  z-index: 2;
+}
+
+#AreaHlasenie7_ST3_Button_IgnorujKameru span {
+  font-size: 16px;
+}
+
+#AreaHlasenie7_ST3_Button_IgnorujKameru:not(.active):not(.checked) {
+  box-shadow: 2px 2px 10px black;
+}
+
+#AreaHlasenie7_ST3_Button_IgnorujKameru.disabled.active {
+  box-shadow: 2px 2px 10px black;
+}
+
+#AreaHlasenie7_ST3_Button_IgnorujKameru.disabled.checked {
+  box-shadow: 2px 2px 10px black;
+}

@@ -571,7 +571,7 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.OUT.OsvetlenieBunky_ON:= TRUE;
 			
 		
-	
+	P3_Pracovisko.OUT.Ventilator_ON:= TRUE;
 	
 	
 	//****************************************Ovládanie majáka***********************************************//

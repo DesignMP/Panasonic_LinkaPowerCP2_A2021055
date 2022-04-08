@@ -1,0 +1,34 @@
+﻿@import "mixins.scss";
+#AreaPageTolerancieSkrutkovaniaP3_ImageTolerancieSkrutkovaniaP3 {
+	@include elemTop(0);
+}
+#AreaPageTolerancieSkrutkovaniaP3_ImageTolerancieSkrutkovaniaP3 {
+	@include elemLeft(0);
+}
+#AreaPageTolerancieSkrutkovaniaP3_ImageTolerancieSkrutkovaniaP3 {
+	@include elemAutoWidth(1366);
+}
+#AreaPageTolerancieSkrutkovaniaP3_ImageTolerancieSkrutkovaniaP3 {
+	@include elemAutoHeight(588);
+}
+#AreaPageTolerancieSkrutkovaniaP3_ImageTolerancieSkrutkovaniaP3 {
+		z-index: 0;
+}
+#AreaPageTolerancieSkrutkovaniaP3_ImageTolerancieSkrutkovaniaP3 {
+		opacity: 0.15;
+}
+#AreaPageTolerancieSkrutkovaniaP3_Label1 {
+	@include elemTop(20);
+}
+#AreaPageTolerancieSkrutkovaniaP3_Label1 {
+	@include elemLeft(483);
+}
+#AreaPageTolerancieSkrutkovaniaP3_Label1 {
+	@include elemAutoWidth(400);
+}
+#AreaPageTolerancieSkrutkovaniaP3_Label1 {
+	@include elemAutoHeight(40);
+}
+#AreaPageTolerancieSkrutkovaniaP3_Label1 {
+		z-index: 1;
+}

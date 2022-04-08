@@ -308,18 +308,62 @@ input {
 @import "../../../../widgets/brease/Label/meta/Label_base";
 .widgets_brease_Label_style_FavoriteWatch {
 @include widgets_brease_Label_base; 
-	font-size: 14px;
+	font-size: 22px;
 & span {
-	color: #474747;
+	color: rgba(0, 0, 0, 1);
 }
-	background-color: #ff8500;
-	border-style: none;
+	background-color: rgba(224, 224, 224, 1);
+	border-style: solid;
 &:before {
-	border-style: none;
+	border-style: solid;
 }
 &:after {
-	border-style: none;
+	border-style: solid;
 }
+	border-width: 2px;
+	border-color: rgba(0, 0, 0, 1);
+&:before {
+	border-color: rgba(0, 0, 0, 1);
+}
+&:after {
+	border-color: rgba(0, 0, 0, 1);
+}
+@include border-radius(2px);
+@include box-shadow(2px 2px 15px rgba(0, 0, 0, 1));
+@include text-alignment-all('center');
+@include font-weight-bold(true);
+span {
+	padding: 5px;
+}
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_LabelSnimace {
+@include widgets_brease_Label_base; 
+	font-size: 15px;
+& span {
+	color: rgba(0, 0, 0, 1);
+}
+	background-color: rgba(192, 192, 192, 1);
+	border-style: outset;
+&:before {
+	border-style: outset;
+}
+&:after {
+	border-style: outset;
+}
+	border-width: 2px;
+	border-color: rgba(0, 0, 0, 1);
+&:before {
+	border-color: rgba(0, 0, 0, 1);
+}
+&:after {
+	border-color: rgba(0, 0, 0, 1);
+}
+@include border-radius(5px);
+@include box-shadow(none);
+@include text-alignment-all('left');
+@include font-weight-bold(true);
 span {
 	padding: 5px;
 }

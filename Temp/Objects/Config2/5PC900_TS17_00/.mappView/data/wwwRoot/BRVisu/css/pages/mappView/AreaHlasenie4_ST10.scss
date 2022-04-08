@@ -1,0 +1,74 @@
+﻿@import "mixins.scss";
+#AreaHlasenie4_ST10_GroupBox1 {
+	@include elemTop(0);
+}
+#AreaHlasenie4_ST10_GroupBox1 {
+	@include elemLeft(0);
+}
+#AreaHlasenie4_ST10_GroupBox1 {
+	@include elemWidth(500);
+}
+#AreaHlasenie4_ST10_GroupBox1 {
+	@include elemHeight(300);
+}
+#AreaHlasenie4_ST10_GroupBox1 {
+		z-index: 0;
+}
+#AreaHlasenie4_ST10_GroupBox1 {
+		border-width: 4px;
+}
+#AreaHlasenie4_ST10_GroupBox1 {
+	> .header{
+		border-width: 4px;
+	}
+}
+#AreaHlasenie4_ST10_GroupBox1 {
+	@include border-radius(0px);
+}
+#AreaHlasenie4_ST10_GroupBox1 {
+		background-color: rgba(255, 192, 128, 1);
+}
+#AreaHlasenie4_ST10_Image1 {
+	@include elemTop(10);
+}
+#AreaHlasenie4_ST10_Image1 {
+	@include elemLeft(10);
+}
+#AreaHlasenie4_ST10_Image1 {
+	@include elemAutoWidth(80);
+}
+#AreaHlasenie4_ST10_Image1 {
+	@include elemAutoHeight(80);
+}
+#AreaHlasenie4_ST10_Image1 {
+		z-index: 0;
+}
+#AreaHlasenie4_ST10_Label1 {
+	@include elemTop(106);
+}
+#AreaHlasenie4_ST10_Label1 {
+	@include elemLeft(21);
+}
+#AreaHlasenie4_ST10_Label1 {
+	@include elemAutoWidth(450);
+}
+#AreaHlasenie4_ST10_Label1 {
+	@include elemAutoHeight(100);
+}
+#AreaHlasenie4_ST10_Label1 {
+		z-index: 1;
+}
+#AreaHlasenie4_ST10_Label1 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaHlasenie4_ST10_Label1 {
+	@include text-alignment-all('center');
+}
+#AreaHlasenie4_ST10_Label1 {
+		font-size: 25px;
+}
+#AreaHlasenie4_ST10_Label1 {
+	@include font-weight-bold(true);
+}

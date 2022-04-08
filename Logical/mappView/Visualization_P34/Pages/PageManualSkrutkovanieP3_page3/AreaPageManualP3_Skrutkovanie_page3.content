@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="AreaPageManualP3_Skrutkovanie_page3" height="588" width="1366" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Image" id="ImagePageSkrutkovanie3" top="0" left="0" width="1366" height="588" zIndex="0" image="Media/Pozadie/BackGround_588x1366.png" opacity="0.15" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="20" left="483" width="400" height="40" zIndex="1" text="Manuálny režim - Skrutkovanie (3/3)" style="FavoriteWatch" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButton2" top="10" left="10" width="110" height="50" zIndex="2" image="Media/Pictures/PreviewPage1_48x48.png" pageId="PageManualP3_Skrutkovanie_page2" cornerRadius="4px" backGroundGradient="" shadow="3px 3px 14px rgba(0, 0, 0, 1)" style="Default_NavButton" />
+  </Widgets>
+</Content>

@@ -27,32 +27,19 @@
 	@include elemAutoWidth(400);
 }
 #AreaPageAutomatP1_Label1 {
-	@include elemAutoHeight(50);
+	@include elemAutoHeight(40);
 }
 #AreaPageAutomatP1_Label1 {
 		z-index: 1;
 }
 #AreaPageAutomatP1_Label1 {
-		border-width: 5px;
+		border-width: 3px;
 }
 #AreaPageAutomatP1_Label1 {
 	@include border-radius(5px);
 }
 #AreaPageAutomatP1_Label1 {
 		background-color: rgba(224, 224, 224, 1);
-}
-#AreaPageAutomatP1_Label1 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageAutomatP1_Label1 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageAutomatP1_Label1 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
 }
 #AreaPageAutomatP1_Label1 {
 		border-style: ridge;
@@ -82,13 +69,13 @@
 	@include font-weight-bold(true);
 }
 #AreaPageAutomatP1_Label1 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(2px 2px 15px rgba(0, 0, 0, 1));
 }
 #AreaPageAutomatP1_ImageList5 {
-	@include elemTop(400);
+	@include elemTop(370);
 }
 #AreaPageAutomatP1_ImageList5 {
-	@include elemLeft(490);
+	@include elemLeft(540);
 }
 #AreaPageAutomatP1_ImageList5 {
 	@include elemWidth(28);
@@ -106,7 +93,7 @@
 		border-width: 0px;
 }
 #AreaPageAutomatP1_grpFileExplorerStatus {
-	@include elemTop(14);
+	@include elemTop(13);
 }
 #AreaPageAutomatP1_grpFileExplorerStatus {
 	@include elemLeft(1082);
@@ -252,10 +239,10 @@
 	}
 }
 #AreaPageAutomatP1_ImageList6 {
-	@include elemTop(400);
+	@include elemTop(420);
 }
 #AreaPageAutomatP1_ImageList6 {
-	@include elemLeft(590);
+	@include elemLeft(765);
 }
 #AreaPageAutomatP1_ImageList6 {
 	@include elemWidth(28);
@@ -273,10 +260,10 @@
 		border-width: 0px;
 }
 #AreaPageAutomatP1_ImageList7 {
-	@include elemTop(450);
+	@include elemTop(470);
 }
 #AreaPageAutomatP1_ImageList7 {
-	@include elemLeft(638);
+	@include elemLeft(650);
 }
 #AreaPageAutomatP1_ImageList7 {
 	@include elemWidth(28);
@@ -294,10 +281,10 @@
 		border-width: 0px;
 }
 #AreaPageAutomatP1_ImageList8 {
-	@include elemTop(400);
+	@include elemTop(375);
 }
 #AreaPageAutomatP1_ImageList8 {
-	@include elemLeft(680);
+	@include elemLeft(695);
 }
 #AreaPageAutomatP1_ImageList8 {
 	@include elemWidth(28);
@@ -336,10 +323,10 @@
 		border-width: 0px;
 }
 #AreaPageAutomatP1_ImageList10 {
-	@include elemTop(400);
+	@include elemTop(375);
 }
 #AreaPageAutomatP1_ImageList10 {
-	@include elemLeft(904);
+	@include elemLeft(815);
 }
 #AreaPageAutomatP1_ImageList10 {
 	@include elemWidth(28);
@@ -357,10 +344,10 @@
 		border-width: 0px;
 }
 #AreaPageAutomatP1_ImageList11 {
-	@include elemTop(236);
+	@include elemTop(220);
 }
 #AreaPageAutomatP1_ImageList11 {
-	@include elemLeft(774);
+	@include elemLeft(815);
 }
 #AreaPageAutomatP1_ImageList11 {
 	@include elemWidth(28);
@@ -571,13 +558,16 @@
 		z-index: 3;
 }
 #AreaPageAutomatP1_Image2 {
+		background-color: rgba(255, 255, 255, 1);
+}
+#AreaPageAutomatP1_Image2 {
 		border-style: solid;
 }
 #AreaPageAutomatP1_GroupBox7 {
-	@include elemTop(108);
+	@include elemTop(265);
 }
 #AreaPageAutomatP1_GroupBox7 {
-	@include elemLeft(460);
+	@include elemLeft(510);
 }
 #AreaPageAutomatP1_GroupBox7 {
 	@include elemWidth(88);
@@ -724,10 +714,10 @@
 	}
 }
 #AreaPageAutomatP1_GroupBox8 {
-	@include elemTop(108);
+	@include elemTop(110);
 }
 #AreaPageAutomatP1_GroupBox8 {
-	@include elemLeft(598);
+	@include elemLeft(655);
 }
 #AreaPageAutomatP1_GroupBox8 {
 	@include elemWidth(88);
@@ -1244,7 +1234,7 @@
 	}
 }
 #AreaPageAutomatP1_ToggleButton_Prihlasenie {
-	@include elemTop(14);
+	@include elemTop(13);
 }
 #AreaPageAutomatP1_ToggleButton_Prihlasenie {
 	@include elemLeft(900);

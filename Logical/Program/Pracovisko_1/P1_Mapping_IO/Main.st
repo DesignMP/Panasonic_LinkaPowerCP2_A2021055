@@ -70,6 +70,9 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_Weidmuller.AB1_7_8DO.6 := P1_Robot.OUT.Griper_ZATVOR;
 	P1_Pracovisko.COM_Weidmuller.AB1_7_8DO.7;
 	
+	
+	
+	
 	//***********Karta AB 1.9 8DO*****************//
 	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.0;
 	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.1;
@@ -380,11 +383,13 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_VentilovyTerminal[4].6;
 	P1_Pracovisko.COM_VentilovyTerminal[4].7;
 	
-	
-	IF P1_Robot.OUT.Griper_OTVOR THEN
+	IF P1_Robot.OUT.OdistiGriper THEN
+		P1_Pracovisko.COM_VentilovyTerminal[4].2:= FALSE;
+		P1_Pracovisko.COM_VentilovyTerminal[4].3:= FALSE;	
+	ELSIF P1_Robot.OUT.Griper_OTVOR AND P1_Robot.IN.TypGripra_45F AND P1_Robot.OUT.ZaistiGriper THEN
 		P1_Pracovisko.COM_VentilovyTerminal[4].2:= TRUE;
 		P1_Pracovisko.COM_VentilovyTerminal[4].3:= FALSE;
-	ELSIF P1_Robot.OUT.Griper_ZATVOR THEN
+	ELSIF P1_Robot.OUT.Griper_ZATVOR AND P1_Robot.IN.TypGripra_45F AND P1_Robot.OUT.ZaistiGriper THEN
 		P1_Pracovisko.COM_VentilovyTerminal[4].2:= FALSE;
 		P1_Pracovisko.COM_VentilovyTerminal[4].3:= TRUE;
 	END_IF	

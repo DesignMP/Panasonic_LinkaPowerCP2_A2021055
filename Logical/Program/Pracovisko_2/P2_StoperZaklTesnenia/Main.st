@@ -182,15 +182,15 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.StepName:='20 - Inicializacia - precitanie cisla paletky';
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
-			SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
-		
-		
 			
 			SC_P2_StoperZaklTesnenia.IdleTime.IN:= P2_StoperZaklTesnenia.RFID_hlava.PritomnostPaletky;
+		
+					
 									
-			IF SC_P2_StoperZaklTesnenia.IdleTime.Q THEN
+			IF SC_P2_StoperZaklTesnenia.IdleTime.Q AND NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				P2_StoperZaklTesnenia.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF
 			
 			IF P2_StoperZaklTesnenia.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN

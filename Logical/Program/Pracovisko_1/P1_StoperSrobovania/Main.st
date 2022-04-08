@@ -253,9 +253,10 @@ PROGRAM _CYCLIC
 			
 			SC_P1_StoperSrobovania.IdleTime.IN:= P1_StoperSrobovania.RFID_hlava.PritomnostPaletky;
 									
-			IF SC_P1_StoperSrobovania.IdleTime.Q THEN
+			IF SC_P1_StoperSrobovania.IdleTime.Q AND NOT SC_P1_StoperSrobovania.Switch1 THEN
 				P1_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P1_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
 			IF P1_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK AND P1_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN

@@ -1,0 +1,117 @@
+﻿@import "mixins.scss";
+#LoginDialogP34_RectangleLogin {
+	@include elemTop(0);
+}
+#LoginDialogP34_RectangleLogin {
+	@include elemLeft(0);
+}
+#LoginDialogP34_RectangleLogin {
+	@include elemWidth(500);
+}
+#LoginDialogP34_RectangleLogin {
+	@include elemHeight(350);
+}
+#LoginDialogP34_RectangleLogin {
+		z-index: 0;
+}
+#LoginDialogP34_RectangleLogin {
+		border-width: 2px;
+}
+#LoginDialogP34_RectangleLogin {
+	@include border-radius(0px);
+}
+#LoginDialogP34_RectangleLogin {
+		background-color: rgba(153, 180, 209, 1);
+}
+#LoginDialogP34_ImageLogin {
+	@include elemTop(10);
+}
+#LoginDialogP34_ImageLogin {
+	@include elemLeft(20);
+}
+#LoginDialogP34_ImageLogin {
+	@include elemAutoWidth(60);
+}
+#LoginDialogP34_ImageLogin {
+	@include elemAutoHeight(60);
+}
+#LoginDialogP34_ImageLogin {
+		z-index: 1;
+}
+#LoginDialogP34_TextOutput1 {
+	@include elemTop(15);
+}
+#LoginDialogP34_TextOutput1 {
+	@include elemLeft(130);
+}
+#LoginDialogP34_TextOutput1 {
+	@include elemAutoWidth(240);
+}
+#LoginDialogP34_TextOutput1 {
+	@include elemAutoHeight(50);
+}
+#LoginDialogP34_TextOutput1 {
+		z-index: 2;
+}
+#LoginDialogP34_TextOutput1 {
+	@include text-alignment-all('center');
+}
+#LoginDialogP34_Line1 {
+		z-index: 3;
+}
+#LoginDialogP34_Line1 {
+	line{
+		stroke: rgba(255, 255, 255, 1);
+	}
+}
+#LoginDialogP34_Line1 {
+	line{
+		stroke-width: 3px;
+	}
+}
+#LoginDialogP34_LogoutButton_Exit {
+	@include elemTop(270);
+}
+#LoginDialogP34_LogoutButton_Exit {
+	@include elemLeft(60);
+}
+#LoginDialogP34_LogoutButton_Exit {
+	@include elemAutoWidth(150);
+}
+#LoginDialogP34_LogoutButton_Exit {
+	@include elemAutoHeight(40);
+}
+#LoginDialogP34_LogoutButton_Exit {
+		z-index: 4;
+}
+#LoginDialogP34_LogoutButton_Exit {
+	@include border-radius(10px);
+}
+#LoginDialogP34_LogoutButton_Exit {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#LoginDialogP34_LogoutButton_Odhlasenie {
+	@include elemTop(270);
+}
+#LoginDialogP34_LogoutButton_Odhlasenie {
+	@include elemLeft(290);
+}
+#LoginDialogP34_LogoutButton_Odhlasenie {
+	@include elemAutoWidth(150);
+}
+#LoginDialogP34_LogoutButton_Odhlasenie {
+	@include elemAutoHeight(40);
+}
+#LoginDialogP34_LogoutButton_Odhlasenie {
+		z-index: 5;
+}
+#LoginDialogP34_LogoutButton_Odhlasenie {
+	@include border-radius(10px);
+}
+#LoginDialogP34_LogoutButton_Odhlasenie {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}

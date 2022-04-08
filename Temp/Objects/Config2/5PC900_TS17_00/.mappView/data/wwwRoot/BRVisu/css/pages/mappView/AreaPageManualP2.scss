@@ -1,0 +1,541 @@
+﻿@import "mixins.scss";
+#AreaPageManualP2_ImageManualMain {
+	@include elemTop(0);
+}
+#AreaPageManualP2_ImageManualMain {
+	@include elemLeft(0);
+}
+#AreaPageManualP2_ImageManualMain {
+	@include elemAutoWidth(1366);
+}
+#AreaPageManualP2_ImageManualMain {
+	@include elemAutoHeight(588);
+}
+#AreaPageManualP2_ImageManualMain {
+		z-index: 0;
+}
+#AreaPageManualP2_ImageManualMain {
+		opacity: 0.15;
+}
+#AreaPageManualP2_Label1 {
+	@include elemTop(13);
+}
+#AreaPageManualP2_Label1 {
+	@include elemLeft(483);
+}
+#AreaPageManualP2_Label1 {
+	@include elemAutoWidth(400);
+}
+#AreaPageManualP2_Label1 {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_Label1 {
+		z-index: 1;
+}
+#AreaPageManualP2_Label1 {
+		border-width: 3px;
+}
+#AreaPageManualP2_Label1 {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_Label1 {
+		border-style: ridge;
+}
+#AreaPageManualP2_Label1 {
+	&:before{
+		border-style: ridge;
+	}
+}
+#AreaPageManualP2_Label1 {
+	&:after{
+		border-style: ridge;
+	}
+}
+#AreaPageManualP2_Image1 {
+	@include elemTop(70);
+}
+#AreaPageManualP2_Image1 {
+	@include elemLeft(58);
+}
+#AreaPageManualP2_Image1 {
+	@include elemAutoWidth(1250);
+}
+#AreaPageManualP2_Image1 {
+	@include elemAutoHeight(500);
+}
+#AreaPageManualP2_Image1 {
+		z-index: 2;
+}
+#AreaPageManualP2_Image1 {
+		background-color: rgba(255, 255, 255, 0);
+}
+#AreaPageManualP2_Image1 {
+		border-style: none;
+}
+#AreaPageManualP2_Image1 {
+		border-width: 0px;
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	@include elemTop(355);
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	@include elemLeft(1040);
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	@include elemAutoWidth(310);
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	@include elemAutoHeight(70);
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+		z-index: 3;
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	img{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	svg{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	img{
+	@include imageWidth(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	svg{
+	@include imageWidth(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	&:not(.active):not(.checked){
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	&.disabled{
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	&:not(.disabled):not(.checked){
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	span{
+		font-size: 22px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	@include elemTop(320);
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	@include elemLeft(20);
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	@include elemAutoWidth(300);
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	@include elemAutoHeight(70);
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+		z-index: 4;
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	img{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	svg{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	&:not(.active):not(.checked){
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	&.disabled{
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	&:not(.disabled):not(.checked){
+		border-color: rgba(0, 128, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	span{
+		font-size: 22px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	@include elemTop(475);
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	@include elemLeft(390);
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	@include elemAutoWidth(310);
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	@include elemAutoHeight(70);
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+		z-index: 5;
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	img{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	svg{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	&:not(.active):not(.checked){
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	&.disabled{
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	&:not(.disabled):not(.checked){
+		border-color: rgba(255, 117, 26, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	span{
+		font-size: 22px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	@include elemTop(80);
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	@include elemLeft(533);
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	@include elemAutoWidth(300);
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	@include elemAutoHeight(70);
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+		z-index: 6;
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	img{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	svg{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&:not(.active):not(.checked){
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&.disabled{
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&:not(.disabled):not(.checked){
+		border-color: rgba(230, 184, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	span{
+		font-size: 22px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	@include elemTop(475);
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	@include elemLeft(725);
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	@include elemAutoWidth(310);
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	@include elemAutoHeight(70);
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+		z-index: 7;
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	img{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	svg{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	&:not(.active):not(.checked){
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	&.disabled{
+		border-width: 3px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	&:not(.disabled):not(.checked){
+		border-color: rgba(0, 82, 204, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	span{
+		font-size: 22px;
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Rectangle1 {
+	@include elemTop(275);
+}
+#AreaPageManualP2_Rectangle1 {
+	@include elemLeft(350);
+}
+#AreaPageManualP2_Rectangle1 {
+	@include elemWidth(97);
+}
+#AreaPageManualP2_Rectangle1 {
+	@include elemHeight(112);
+}
+#AreaPageManualP2_Rectangle1 {
+		z-index: 8;
+}
+#AreaPageManualP2_Rectangle1 {
+		border-style: solid;
+}
+#AreaPageManualP2_Rectangle1 {
+		border-width: 4px;
+}
+#AreaPageManualP2_Rectangle1 {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_Rectangle1 {
+		border-color: rgba(0, 128, 0, 1);
+}
+#AreaPageManualP2_Rectangle2 {
+	@include elemTop(305);
+}
+#AreaPageManualP2_Rectangle2 {
+	@include elemLeft(535);
+}
+#AreaPageManualP2_Rectangle2 {
+	@include elemWidth(107);
+}
+#AreaPageManualP2_Rectangle2 {
+	@include elemHeight(148);
+}
+#AreaPageManualP2_Rectangle2 {
+		z-index: 9;
+}
+#AreaPageManualP2_Rectangle2 {
+		border-style: solid;
+}
+#AreaPageManualP2_Rectangle2 {
+		border-width: 4px;
+}
+#AreaPageManualP2_Rectangle2 {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_Rectangle2 {
+		border-color: rgba(255, 117, 26, 1);
+}
+#AreaPageManualP2_Rectangle2 {
+		background-color: rgba(255, 255, 255, 0);
+}
+#AreaPageManualP2_Rectangle3 {
+	@include elemTop(345);
+}
+#AreaPageManualP2_Rectangle3 {
+	@include elemLeft(825);
+}
+#AreaPageManualP2_Rectangle3 {
+	@include elemWidth(90);
+}
+#AreaPageManualP2_Rectangle3 {
+	@include elemHeight(111);
+}
+#AreaPageManualP2_Rectangle3 {
+		z-index: 10;
+}
+#AreaPageManualP2_Rectangle3 {
+		border-style: solid;
+}
+#AreaPageManualP2_Rectangle3 {
+		border-width: 4px;
+}
+#AreaPageManualP2_Rectangle3 {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_Rectangle3 {
+		border-color: rgba(0, 82, 204, 1);
+}
+#AreaPageManualP2_Rectangle4 {
+	@include elemTop(280);
+}
+#AreaPageManualP2_Rectangle4 {
+	@include elemLeft(645);
+}
+#AreaPageManualP2_Rectangle4 {
+	@include elemWidth(175);
+}
+#AreaPageManualP2_Rectangle4 {
+	@include elemHeight(176);
+}
+#AreaPageManualP2_Rectangle4 {
+		z-index: 11;
+}
+#AreaPageManualP2_Rectangle4 {
+		border-style: solid;
+}
+#AreaPageManualP2_Rectangle4 {
+		border-width: 4px;
+}
+#AreaPageManualP2_Rectangle4 {
+	@include border-radius(5px);
+}
+#AreaPageManualP2_Rectangle4 {
+		border-color: rgba(230, 184, 0, 1);
+}
+#AreaPageManualP2_Rectangle4 {
+		background-color: rgba(255, 255, 255, 0);
+}

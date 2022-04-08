@@ -176,8 +176,6 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			IF P2_Cistenie.IN.Dvere_ZATVORENE THEN
-				P2_Cistenie.OUT.Ionizator_ON:= FALSE;
-				P2_Cistenie.OUT.VzduchPreIonizator_ON:= FALSE;
 				SC_P2_Cistenie.ResetStep:= TRUE;
 				SC_P2_Cistenie.Step:= 112;
 			END_IF
@@ -229,6 +227,8 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			IF P2_Cistenie.IN.Dvere_OTVORENE THEN
+				P2_Cistenie.OUT.Ionizator_ON:= FALSE;
+				P2_Cistenie.OUT.VzduchPreIonizator_ON:= FALSE;
 				P2_Robot.COM_OUT.Cistenie_BezpecnaPozicia:= TRUE;
 				SC_P2_Cistenie.ResetStep:= TRUE;
 				SC_P2_Cistenie.Step:= 122;

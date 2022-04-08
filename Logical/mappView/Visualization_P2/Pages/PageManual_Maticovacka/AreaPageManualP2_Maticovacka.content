@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="AreaPageManualP2_Maticovacka" height="588" width="1366" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Image" id="ImageRR_Maticovacka" top="0" left="0" width="1366" height="588" zIndex="0" image="Media/Pozadie/BackGround_588x1366.png" opacity="0.15" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="13" left="483" width="400" height="40" zIndex="1" text="Manuálny režim - Maticovačka" borderWidth="3px" borderStyle="ridge" style="FavoriteWatch" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="110" left="1120" width="235" height="400" zIndex="2" image="Media/Pozadie/Pracovisko2_Maticovacka.png" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxRR_SkrutkovackaMatic" top="75" left="575" width="520" height="328" zIndex="3" text="Ovládanie skrutkovačky matíc" style="GroupBox1">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_MaticovackuVysun" top="26" left="29" width="186" height="50" zIndex="0" mouseDownText="Maticovačku\nzasuň" multiLine="true" text="Maticovačku\nvysuň" textColor="rgba(0, 0, 0, 1)" fontSize="18px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
+        <Widget xsi:type="widgets.brease.Label" id="Label_VysunutieMaticovacky" top="16" left="284" width="200" height="75" zIndex="1" text="Vysunutie maticovačky" textAlign="center top" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_VysunutieMaticovacky" top="54" left="304" width="160" zIndex="2" unit="{'metric':'MMT','imperial':'CEL','imperial-us':'CEL'}" unitAlign="right" borderWidth="2px" backColor="rgba(255, 255, 255, 1)" backGroundGradient="linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)" borderStyle="solid" textColor="rgba(0, 0, 0, 1)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_PodajMaticu" top="106" left="39" width="170" height="50" zIndex="3" text="Podaj maticu" textAlign="left" style="Operate" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageListPodajMaticu" top="119" left="174" width="25" height="25" zIndex="4" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_PrisavanieZapni" top="106" left="289" width="186" height="50" zIndex="5" mouseDownText="Prisávanie\nvypni" multiLine="true" text="Prisávanie\nzapni" textColor="rgba(0, 0, 0, 1)" fontSize="18px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
+        <Widget xsi:type="widgets.brease.Line" id="Line1" zIndex="6" x1="259" x2="259" y1="181" y2="281" lineWidth="2px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelPodavacMaticVysunuty" top="191" left="34" width="200" height="40" zIndex="7" multiLine="true" text="Podávač matíc\nVYSUNUTÝ" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageListPodavacMaticVysunuty" top="199" left="198" width="25" height="25" zIndex="8" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelPritomnostMatice" top="236" left="34" width="200" height="40" zIndex="9" multiLine="true" text="Prítomnosť matice\nv maticovačke" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageListPritomnostMatice" top="244" left="198" width="25" height="25" zIndex="10" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelPodavacMaticZasunuty" top="191" left="284" width="200" height="40" zIndex="11" multiLine="true" text="Podávač matíc\nZASUNUTÝ" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageListPodavacMaticZasunuty" top="199" left="448" width="25" height="25" zIndex="12" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelMaticovackaZasunuta" top="236" left="284" width="200" height="40" zIndex="13" multiLine="true" text="Maticovačka\nZASUNUTÁ" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageListMaticovackaZasunuta" top="244" left="448" width="25" height="25" zIndex="14" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox2" top="75" left="35" width="520" height="328" zIndex="4" text="Ovládanie zásobníka matíc" style="GroupBox1">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_VibracieZasobnika" top="26" left="34" width="186" height="50" zIndex="0" mouseDownText="Vypni vibrácie\nzásobníka" multiLine="true" text="Zapni vibrácie\nzásobníka" textColor="rgba(0, 0, 0, 1)" fontSize="18px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelZasobnikMaticPrazdny" top="186" left="29" width="200" height="40" zIndex="1" multiLine="true" text="Zásobník matíc\nPRÁZDNY" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageListZasobnikMaticPrazdny" top="194" left="193" width="25" height="25" zIndex="2" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox1" top="415" left="575" width="520" height="160" zIndex="5" text="Ovládanie stopra" style="GroupBox1">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_Stoper1" top="33" left="294" width="165" height="45" zIndex="0" mouseDownText="Vysuň stoper" multiLine="true" text="Zasuň stoper" textColor="rgba(0, 0, 0, 1)" fontSize="16px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelPritomnostPaletky" top="38" left="39" width="200" height="40" zIndex="1" multiLine="true" text="Prítomnosť paletky" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImagePritomnostPaletky" top="45" left="208" width="25" height="25" zIndex="2" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox3" top="415" left="35" width="520" height="160" zIndex="6" text="Ovládanie centrovania paletky" style="GroupBox1">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Button" id="Button_CentrovanieDOLE" top="38" left="44" width="180" height="50" zIndex="0" image="Media/Pictures/SipkaDole2_32x32.png" text="DOLE" textAlign="left" fontSize="18px" style="Operate" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_CentrovanieHORE" top="38" left="279" width="180" height="50" zIndex="1" image="Media/Pictures/SipkaHore2_32x32.png" imageAlign="right" text="HORE" textAlign="right" fontSize="18px" style="Operate" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageCentrovanieDOLE" top="51" left="184" width="25" height="25" zIndex="2" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageCentrovanieHORE" top="51" left="294" width="25" height="25" zIndex="3" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

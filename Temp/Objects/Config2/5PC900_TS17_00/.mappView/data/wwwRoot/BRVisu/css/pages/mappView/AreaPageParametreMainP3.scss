@@ -1,0 +1,148 @@
+﻿@import "mixins.scss";
+#AreaPageParametreMainP3_ImageParametreP2 {
+	@include elemTop(0);
+}
+#AreaPageParametreMainP3_ImageParametreP2 {
+	@include elemLeft(0);
+}
+#AreaPageParametreMainP3_ImageParametreP2 {
+	@include elemAutoWidth(1366);
+}
+#AreaPageParametreMainP3_ImageParametreP2 {
+	@include elemAutoHeight(588);
+}
+#AreaPageParametreMainP3_ImageParametreP2 {
+		z-index: 0;
+}
+#AreaPageParametreMainP3_ImageParametreP2 {
+		opacity: 0.15;
+}
+#AreaPageParametreMainP3_Label1 {
+	@include elemTop(20);
+}
+#AreaPageParametreMainP3_Label1 {
+	@include elemLeft(483);
+}
+#AreaPageParametreMainP3_Label1 {
+	@include elemAutoWidth(400);
+}
+#AreaPageParametreMainP3_Label1 {
+	@include elemAutoHeight(40);
+}
+#AreaPageParametreMainP3_Label1 {
+		z-index: 1;
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+	@include elemTop(135);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+	@include elemLeft(510);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+	@include elemAutoWidth(350);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+	@include elemAutoHeight(75);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+		z-index: 2;
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+	&:not(.active):not(.checked){
+		border-width: 1px 1px 1px 1px;
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+	&.disabled{
+		border-width: 1px 1px 1px 1px;
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+	@include border-radius(5px);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+	&:not(.disabled):not(.checked){
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_VseobecneParametre {
+	span{
+		font-size: 22px;
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+	@include elemTop(285);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+	@include elemLeft(510);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+	@include elemAutoWidth(350);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+	@include elemAutoHeight(75);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+		z-index: 3;
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+	&:not(.active):not(.checked){
+		border-width: 1px 1px 1px 1px;
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+	&.disabled{
+		border-width: 1px 1px 1px 1px;
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+	@include border-radius(5px);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+	&:not(.disabled):not(.checked){
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_TolerancieSkrutkovania {
+	span{
+		font-size: 22px;
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+	@include elemTop(435);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+	@include elemLeft(510);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+	@include elemAutoWidth(350);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+	@include elemAutoHeight(75);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+		z-index: 4;
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+	&:not(.active):not(.checked){
+		border-width: 1px 1px 1px 1px;
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+	&.disabled{
+		border-width: 1px 1px 1px 1px;
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+	@include border-radius(5px);
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+	&:not(.disabled):not(.checked){
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageParametreMainP3_NavigationButtonRR_StavyStanic {
+	span{
+		font-size: 22px;
+	}
+}

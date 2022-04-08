@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="AreaPageManualMainP3" height="588" width="1366" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Image" id="ImagePageManualMainP3" top="0" left="0" width="1366" height="588" zIndex="0" image="Media/Pozadie/BackGround_588x1366.png" opacity="0.15" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="20" left="483" width="400" height="40" zIndex="1" text="Manuálny režim - Bunka 3" style="FavoriteWatch" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="70" left="10" width="1342" height="500" zIndex="2" image="Media/Pozadie/Pracovisko3_Manual.png" borderWidth="0px" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButtonRR_LeakageBP3" top="75" left="645" width="310" height="65" zIndex="3" image="Media/Pictures/Operator_kluc_512x512.png" multiLine="true" pageId="PageManualP3_LeakageB" text="Bunka 3\nLeakage Test B" imageHeight="55" borderWidth="3px" cornerRadius="5px" borderColor="rgba(0, 82, 204, 1)" fontSize="22px" style="Default_NavButton" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButtonRR_LeakageAP3" top="500" left="645" width="310" height="65" zIndex="4" image="Media/Pictures/Operator_kluc_512x512.png" multiLine="true" pageId="PageManualP3_LeakageA" text="Bunka 3\nLeakage Test A" imageHeight="55" borderWidth="3px" cornerRadius="5px" borderColor="rgba(255, 117, 26, 1)" fontSize="22px" style="Default_NavButton" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButtonRR_DopravnikyP3" top="380" left="1030" width="310" height="65" zIndex="5" image="Media/Pictures/Operator_kluc_512x512.png" multiLine="true" pageId="PageManualP3_Dopravniky" text="Bunka 3\nDopravníky a stopre" imageHeight="55" borderWidth="3px" cornerRadius="5px" borderColor="rgba(0, 0, 0, 1)" fontSize="22px" style="Default_NavButton" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButtonRR_SkrutkovanieP3" top="390" left="20" width="310" height="65" zIndex="6" image="Media/Pictures/Operator_kluc_512x512.png" multiLine="true" pageId="PageManualP3_Skrutkovanie_page1" text="Bunka 3\nSkrutkovanie" imageHeight="55" borderWidth="3px" cornerRadius="5px" borderColor="rgba(0, 128, 0, 1)" fontSize="22px" style="Default_NavButton" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle1" top="290" left="350" width="130" height="200" zIndex="7" borderStyle="solid" borderWidth="4px" cornerRadius="5px" lineColor="rgba(0, 128, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle2" top="330" left="740" width="115" height="160" zIndex="8" borderStyle="solid" borderWidth="4px" cornerRadius="5px" lineColor="rgba(255, 117, 26, 1)" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle3" top="150" left="740" width="115" height="160" zIndex="9" borderStyle="solid" borderWidth="4px" cornerRadius="5px" lineColor="rgba(0, 82, 204, 1)" />
+  </Widgets>
+</Content>

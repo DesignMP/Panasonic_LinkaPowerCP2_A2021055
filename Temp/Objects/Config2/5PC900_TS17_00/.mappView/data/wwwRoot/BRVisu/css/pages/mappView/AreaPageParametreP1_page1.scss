@@ -1,6 +1,6 @@
 ﻿@import "mixins.scss";
 #AreaPageParametreP1_page1_Label1 {
-	@include elemTop(8);
+	@include elemTop(13);
 }
 #AreaPageParametreP1_page1_Label1 {
 	@include elemLeft(483);
@@ -9,32 +9,19 @@
 	@include elemAutoWidth(400);
 }
 #AreaPageParametreP1_page1_Label1 {
-	@include elemAutoHeight(50);
+	@include elemAutoHeight(40);
 }
 #AreaPageParametreP1_page1_Label1 {
 		z-index: 1;
 }
 #AreaPageParametreP1_page1_Label1 {
-		border-width: 5px;
+		border-width: 3px;
 }
 #AreaPageParametreP1_page1_Label1 {
 	@include border-radius(5px);
 }
 #AreaPageParametreP1_page1_Label1 {
 		background-color: rgba(224, 224, 224, 1);
-}
-#AreaPageParametreP1_page1_Label1 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageParametreP1_page1_Label1 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_Label1 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
 }
 #AreaPageParametreP1_page1_Label1 {
 		border-style: ridge;
@@ -64,7 +51,7 @@
 	@include font-weight-bold(true);
 }
 #AreaPageParametreP1_page1_Label1 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(2px 2px 15px rgba(0, 0, 0, 1));
 }
 #AreaPageParametreP1_page1_GroupBox1 {
 	@include elemTop(74);
@@ -190,11 +177,6 @@
 #AreaPageParametreP1_page1_NumericInput_1 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_1 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_1 {
@@ -349,11 +331,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_2 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_2 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -502,11 +479,6 @@
 #AreaPageParametreP1_page1_NumericInput_3 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_3 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_3 {
@@ -661,11 +633,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_22 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_22 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -814,11 +781,6 @@
 #AreaPageParametreP1_page1_NumericInput_23 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_23 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_23 {
@@ -1105,11 +1067,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_11 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_11 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -1258,11 +1215,6 @@
 #AreaPageParametreP1_page1_NumericInput_17 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_17 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_17 {
@@ -1417,11 +1369,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_12 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_12 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -1570,11 +1517,6 @@
 #AreaPageParametreP1_page1_NumericInput_18 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_18 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_18 {
@@ -1729,11 +1671,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_13 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_13 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -1882,11 +1819,6 @@
 #AreaPageParametreP1_page1_NumericInput_19 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_19 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_19 {
@@ -2041,11 +1973,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_14 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_14 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -2194,11 +2121,6 @@
 #AreaPageParametreP1_page1_NumericInput_20 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_20 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_20 {
@@ -2353,11 +2275,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_15 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_15 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -2506,11 +2423,6 @@
 #AreaPageParametreP1_page1_NumericInput_21 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_21 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_21 {
@@ -2665,11 +2577,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_44 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_44 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -2818,11 +2725,6 @@
 #AreaPageParametreP1_page1_NumericInput_45 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_45 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_45 {
@@ -2977,11 +2879,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_47 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_47 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -3130,11 +3027,6 @@
 #AreaPageParametreP1_page1_NumericInput_49 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_49 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_49 {
@@ -3289,11 +3181,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_26 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_26 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -3442,11 +3329,6 @@
 #AreaPageParametreP1_page1_NumericInput_27 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_27 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_27 {
@@ -3601,11 +3483,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_28 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_28 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -3754,11 +3631,6 @@
 #AreaPageParametreP1_page1_NumericInput_29 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_29 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_29 {
@@ -3913,11 +3785,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_30 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_30 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -4066,11 +3933,6 @@
 #AreaPageParametreP1_page1_NumericInput_31 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_31 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_31 {
@@ -4225,11 +4087,6 @@
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_16 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_16 {
 	&.disabled{
 		border-color: rgba(255, 136, 0, 1);
 	}
@@ -4378,11 +4235,6 @@
 #AreaPageParametreP1_page1_NumericInput_24 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
-	}
-}
-#AreaPageParametreP1_page1_NumericInput_24 {
-	&:not(.disabled):not(.active){
-		border-color: rgba(153, 153, 153, 1);
 	}
 }
 #AreaPageParametreP1_page1_NumericInput_24 {

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="AreaTimeP1_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="AreaTimeP1.DateTimeInput1.ValueChanged">
+      <Source xsi:type="widgets.brease.DateTimeInput.Event" contentRefId="AreaTimeP1" widgetRefId="DateTimeInput1" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Vizu.NastavCasPLC">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaTimeP1.DateTimeInput2.ValueChanged">
+      <Source xsi:type="widgets.brease.DateTimeInput.Event" contentRefId="AreaTimeP1" widgetRefId="DateTimeInput2" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Vizu.NastavCasPLC">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaTimeP1.LogoutButton2.Click">
+      <Source xsi:type="widgets.brease.LogoutButton.Event" contentRefId="AreaTimeP1" widgetRefId="LogoutButton2" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.CloseDialog" dialogId="TimeDialogP1" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

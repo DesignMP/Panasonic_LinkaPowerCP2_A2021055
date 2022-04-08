@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="AreaPageAutomatP34_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="AreaPageAutomatP34.Button_STOP_Bunka3.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP34" widgetRefId="Button_STOP_Bunka3" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P3_Pracovisko.Reset">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageAutomatP34.Button_UkoncenieCyklu_Bunka3.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP34" widgetRefId="Button_UkoncenieCyklu_Bunka3" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P3_Pracovisko.KoniecCyklu">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageAutomatP34.Button_START_Bunka4.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP34" widgetRefId="Button_START_Bunka4" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Pracovisko.Automat">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageAutomatP34.Button_STOP_Bunka4.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP34" widgetRefId="Button_STOP_Bunka4" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Pracovisko.Reset">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageAutomatP34.Button_UkoncenieCyklu_Bunka4.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageAutomatP34" widgetRefId="Button_UkoncenieCyklu_Bunka4" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Pracovisko.KoniecCyklu">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_3">
+      <Source xsi:type="session.Event" refId="::SYSTEM:clientInfo.currentPageId" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.ActualPage">
+            <Method xsi:type="opcUa.NodeAction.SetValueString" value="=newValue" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_4">
+      <Source xsi:type="opcUa.Event" refId="::AsGlobalPV:P34_Vizu.GoPage" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="=newValue" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

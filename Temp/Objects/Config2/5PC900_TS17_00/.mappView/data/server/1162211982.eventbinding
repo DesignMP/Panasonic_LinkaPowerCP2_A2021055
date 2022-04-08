@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageAutomatP34">
+    <EventBinding id="AreaPageAutomatP34.Button_STOP_Bunka3.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageAutomatP34_Button_STOP_Bunka3" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_Pracovisko.Reset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageAutomatP34">
+    <EventBinding id="AreaPageAutomatP34.Button_UkoncenieCyklu_Bunka3.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageAutomatP34_Button_UkoncenieCyklu_Bunka3" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_Pracovisko.KoniecCyklu">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageAutomatP34">
+    <EventBinding id="AreaPageAutomatP34.Button_START_Bunka4.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageAutomatP34_Button_START_Bunka4" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Pracovisko.Automat">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageAutomatP34">
+    <EventBinding id="AreaPageAutomatP34.Button_STOP_Bunka4.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageAutomatP34_Button_STOP_Bunka4" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Pracovisko.Reset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageAutomatP34">
+    <EventBinding id="AreaPageAutomatP34.Button_UkoncenieCyklu_Bunka4.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageAutomatP34_Button_UkoncenieCyklu_Bunka4" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Pracovisko.KoniecCyklu">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Visualization>
+    <EventBinding id="EventBinding_3">
+      <Source type="session.Event" refId="::SYSTEM:clientInfo.currentPageId" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.ActualPage">
+            <Method type="opcUa.NodeAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="=newValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="EventBinding_4">
+      <Source type="opcUa.Event" refId="::AsGlobalPV:P34_Vizu.GoPage" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target type="clientSystem.Action">
+            <Method type="clientSystem.Action.Navigate"><Parameter name="pageId" xsi:type="ANY_STRING" value="=newValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Visualization>
+</EventBindingDefinition>

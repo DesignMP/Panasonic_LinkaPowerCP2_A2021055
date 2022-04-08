@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="AreaHlasenie14_ST3" height="300" width="500" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox1" top="0" left="0" width="500" height="300" zIndex="0" borderWidth="4px" cornerRadius="0px" backColor="rgba(255, 192, 128, 1)">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Image" id="Image1" top="10" left="10" width="80" height="80" zIndex="0" image="Media/SVGsymbols/Edit/Information.svg" />
+        <Widget xsi:type="widgets.brease.Label" id="Label1" top="106" left="21" width="450" height="100" zIndex="1" multiLine="true" text="Odober PowerCP z paletky \na vlož ho do šuplíka." textColor="rgba(0, 0, 0, 1)" textAlign="center" fontSize="25px" bold="true" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_OznacPaletkuNG" top="216" left="161" width="170" height="45" zIndex="2" multiLine="true" text="Označ paletku\nNG" backGroundGradient="linear-gradient(to bottom, rgba(255, 192, 192, 1) 20%,rgba(255,0,0,1) 100%)" fontSize="18px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" style="Default_Button" />
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

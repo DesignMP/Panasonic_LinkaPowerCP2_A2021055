@@ -33,6 +33,7 @@ FUNCTION_BLOCK PickAndPlace
 	//*****************************************Vypnutie vibrolišty a zásobníka********************************************************//
 	IF IN.ZaplnenieVibrolisty_MIN AND
 		IN.ZaplnenieVibrolisty_MAX AND
+		IN.ZaplnenieListyZasobnika AND
 		IN.PodavacOtoceny_VYSTUP AND
 		NOT CMD.RR_ZapniVibrolistu AND
 		NOT CMD.RR_ZapniZasobnik THEN
@@ -132,7 +133,7 @@ FUNCTION_BLOCK PickAndPlace
 			END_IF	
 		
 		15: //Kontrola zaplnenie vibrolisty//
-			IF IN.ZaplnenieVibrolisty_MIN THEN
+			IF IN.ZaplnenieVibrolisty_MAX THEN
 				Internal.IdleTime_500ms.IN:= FALSE;
 				Step:= 20;
 			ELSE
@@ -153,7 +154,8 @@ FUNCTION_BLOCK PickAndPlace
 		21: //Otocenie podavaca na vystup smerom k skrutkovacke//
 			OUT.OtocPodavac_NaVstup:= FALSE;
 			OUT.OtocPodavac_NaVystup:= TRUE;
-			Internal.AlarmTime_10s.IN:= TRUE;
+			
+			Internal.AlarmTime_10s.IN:= NOT IN.PodavacOtoceny_VYSTUP;
 			
 			Internal.IdleTime_1s.IN:= IN.PodavacOtoceny_VYSTUP;
 			
@@ -166,13 +168,8 @@ FUNCTION_BLOCK PickAndPlace
 				Step:= 11;
 			ELSIF Internal.AlarmTime_10s.Q THEN
 				STAV.ERROR:= TRUE;
-				IF NOT IN.PodavacOtoceny_VYSTUP THEN 
-					STAV.CisloPoruchy:= 2;
-					STAV.PopisPoruchy:= 'Porucha snimaca otocenia podavaca na vystup';
-				ELSIF NOT IN.Podavac_SkrutkaNaVystupe THEN
-					STAV.CisloPoruchy:= 3;
-					STAV.PopisPoruchy:= 'Porucha snimaca pritomnosti skrutky na vystupe podavaca';
-				END_IF	
+				STAV.CisloPoruchy:= 2;
+				STAV.PopisPoruchy:= 'Porucha snimaca otocenia podavaca na vystup';
 				Step:= 0;	
 			END_IF	
 		
@@ -201,24 +198,28 @@ FUNCTION_BLOCK PickAndPlace
 		31: //Otocenie podavaca na vystup smerom k skrutkovacke//
 			OUT.OtocPodavac_NaVstup:= FALSE;
 			OUT.OtocPodavac_NaVystup:= TRUE;
-			Internal.AlarmTime_10s.IN:= TRUE;
+			
+			Internal.AlarmTime_10s.IN:= NOT IN.PodavacOtoceny_VYSTUP;
 			
 			Internal.IdleTime_1s.IN:= IN.PodavacOtoceny_VYSTUP;
 			
 			IF Internal.IdleTime_1s.Q AND IN.Podavac_SkrutkaNaVystupe THEN
 				Internal.IdleTime_1s.IN:= FALSE;
 				Step:= 0;
+			ELSIF Internal.IdleTime_1s.Q AND NOT IN.Podavac_SkrutkaNaVystupe THEN
+				Internal.IdleTime_1s.IN:= FALSE;
+				Internal.AlarmTime_10s.IN:= FALSE;
+				Step:= 11;	
 			ELSIF Internal.AlarmTime_10s.Q THEN
 				STAV.ERROR:= TRUE;
-				IF NOT IN.PodavacOtoceny_VYSTUP THEN 
-					STAV.CisloPoruchy:= 2;
-					STAV.PopisPoruchy:= 'Porucha snimaca otocenia podavaca na vystup';
-				ELSIF NOT IN.Podavac_SkrutkaNaVystupe THEN
-					STAV.CisloPoruchy:= 3;
-					STAV.PopisPoruchy:= 'Porucha snimaca pritomnosti skrutky na vystupe podavaca';
-				END_IF	
+				STAV.CisloPoruchy:= 2;
+				STAV.PopisPoruchy:= 'Porucha snimaca otocenia podavaca na vystup';
 				Step:= 0;	
 			END_IF	
+			
+			
+		
+			
 			
 			
 		

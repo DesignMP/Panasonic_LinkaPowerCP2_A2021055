@@ -271,7 +271,7 @@ PROGRAM _CYCLIC
 	
 		106:
 			SC_P2_Zvaranie.StepName:='106 - Automaticky Rezim - resetovanie zvaracky';
-			SC_P2_Zvaranie.IdleTime.PT:= T#3s;
+			SC_P2_Zvaranie.IdleTime.PT:= T#500ms;
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;	
                     
 			IF NOT SC_P2_Zvaranie.Switch1 THEN
@@ -279,13 +279,21 @@ PROGRAM _CYCLIC
 				SC_P2_Zvaranie.IdleTime.IN:= TRUE;
 				SC_P2_Zvaranie.Switch1:= TRUE;
 			END_IF
-                        
+               
 			IF SC_P2_Zvaranie.IdleTime.Q THEN
 				P2_Zvaranie.OUT.Zvaracka_RESET:= FALSE;
+			END_IF	
+			
+			
+			IF P2_Zvaranie.IN.ZvarackaStav_READY AND NOT P2_Zvaranie.OUT.Zvaracka_RESET THEN
 				SC_P2_Zvaranie.ResetStep:= TRUE;
 				SC_P2_Zvaranie.Step:= 105;
 			END_IF    
-                        
+            
+			
+			
+			
+			
     	//Zváranie//		                             
 			
 		108:
@@ -296,7 +304,7 @@ PROGRAM _CYCLIC
 			
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZvarania/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= P2_RemPremenne.P2_Zvaranie_MomentZvarania_PS;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 300;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= P2_RemPremenne.P2_Zvaranie_PoziciaZvarania_PS;
 			
 			
 			IF NOT SC_P2_Zvaranie.Switch1 THEN
@@ -304,7 +312,7 @@ PROGRAM _CYCLIC
 				SC_P2_Zvaranie.Switch1:= TRUE;
 			END_IF	
 				
-			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InTorque) THEN
+			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition) THEN
 				Reports.Zvaranie.Moment.PravyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActTorque);
 				Reports.Zvaranie.Vyska.PravyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActPosition);
 				Reports.Zvaranie.Frekvencia:= '80';
@@ -380,7 +388,7 @@ PROGRAM _CYCLIC
 	        
 		116:
 			SC_P2_Zvaranie.StepName:='116 - Automaticky Rezim - resetovanie zvaracky';
-			SC_P2_Zvaranie.IdleTime.PT:= T#3s;
+			SC_P2_Zvaranie.IdleTime.PT:= T#500ms;
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;	
                     
 			IF NOT SC_P2_Zvaranie.Switch1 THEN
@@ -388,9 +396,13 @@ PROGRAM _CYCLIC
 				SC_P2_Zvaranie.IdleTime.IN:= TRUE;
 				SC_P2_Zvaranie.Switch1:= TRUE;
 			END_IF
-                        
+            
 			IF SC_P2_Zvaranie.IdleTime.Q THEN
 				P2_Zvaranie.OUT.Zvaracka_RESET:= FALSE;
+			END_IF	
+			
+			
+			IF P2_Zvaranie.IN.ZvarackaStav_READY AND NOT P2_Zvaranie.OUT.Zvaracka_RESET THEN
 				SC_P2_Zvaranie.ResetStep:= TRUE;
 				SC_P2_Zvaranie.Step:= 115;
 			END_IF    
@@ -406,7 +418,7 @@ PROGRAM _CYCLIC
           	
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZvarania/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= P2_RemPremenne.P2_Zvaranie_MomentZvarania_LS;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 300;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= P2_RemPremenne.P2_Zvaranie_PoziciaZvarania_LS;
 			
 			
 			IF NOT SC_P2_Zvaranie.Switch1 THEN
@@ -414,7 +426,7 @@ PROGRAM _CYCLIC
 				SC_P2_Zvaranie.Switch1:= TRUE;
 			END_IF	
 				
-			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InTorque) THEN
+			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition) THEN
 				Reports.Zvaranie.Moment.LavyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActTorque);
 				Reports.Zvaranie.Vyska.LavyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActPosition);
 				Reports.Zvaranie.Frekvencia:= '80';
@@ -548,10 +560,11 @@ PROGRAM _CYCLIC
        
 		206:
 			SC_P2_Zvaranie.StepName:='206 - Automaticky Rezim - cakam na zrusenie signalu servo v pozicii';
-			SC_P2_Zvaranie.IdleTime.PT:= T#200ms;
+			SC_P2_Zvaranie.IdleTime.PT:= P2_RemPremenne.P2_Zvaranie_CasZatlacania;
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;
+			SC_P2_Zvaranie.IdleTime.IN:= TRUE;
 			
-			IF NOT P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition THEN
+			IF NOT P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition AND SC_P2_Zvaranie.IdleTime.Q THEN
 				SC_P2_Zvaranie.ResetStep:= TRUE;
 				SC_P2_Zvaranie.Step:= 208;
 			END_IF

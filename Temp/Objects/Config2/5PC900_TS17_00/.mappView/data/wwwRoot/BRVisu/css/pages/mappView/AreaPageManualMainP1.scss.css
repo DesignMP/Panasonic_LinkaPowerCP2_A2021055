@@ -25,25 +25,25 @@
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah {
-  top: 240px;
+  top: 385px;
   position: absolute;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah {
-  left: 513px;
+  left: 65px;
   position: absolute;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah {
-  width: 340px;
+  width: 320px;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah {
-  height: 75px;
+  height: 70px;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah {
-  z-index: 1;
+  z-index: 4;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah img {
@@ -70,8 +70,16 @@
   border-style: solid;
 }
 
+#AreaPageManualMainP1_NavigationButtonPageRR_Vytah:not(.active):not(.checked) {
+  border-width: 3px;
+}
+
+#AreaPageManualMainP1_NavigationButtonPageRR_Vytah.disabled {
+  border-width: 3px;
+}
+
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah {
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah.active:not(.disabled) {
@@ -80,6 +88,10 @@
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah.checked:not(.disabled) {
   background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualMainP1_NavigationButtonPageRR_Vytah:not(.disabled):not(.checked) {
+  border-color: green;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Vytah:not(.disabled):not(.active):not(.checked) span {
@@ -119,25 +131,25 @@
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky {
-  top: 120px;
+  top: 380px;
   position: absolute;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky {
-  left: 513px;
+  left: 970px;
   position: absolute;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky {
-  width: 340px;
+  width: 320px;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky {
-  height: 75px;
+  height: 70px;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky {
-  z-index: 2;
+  z-index: 3;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky img {
@@ -164,8 +176,16 @@
   border-style: solid;
 }
 
+#AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky:not(.active):not(.checked) {
+  border-width: 3px;
+}
+
+#AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky.disabled {
+  border-width: 3px;
+}
+
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky {
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky.active:not(.disabled) {
@@ -174,6 +194,10 @@
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky.checked:not(.disabled) {
   background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky:not(.disabled):not(.checked) {
+  border-color: black;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky:not(.disabled):not(.active):not(.checked) span {
@@ -213,25 +237,25 @@
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie {
-  top: 370px;
+  top: 485px;
   position: absolute;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie {
-  left: 513px;
+  left: 523px;
   position: absolute;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie {
-  width: 340px;
+  width: 320px;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie {
-  height: 75px;
+  height: 70px;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie {
-  z-index: 3;
+  z-index: 5;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie img {
@@ -258,6 +282,14 @@
   border-style: solid;
 }
 
+#AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie:not(.active):not(.checked) {
+  border-width: 3px;
+}
+
+#AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie.disabled {
+  border-width: 3px;
+}
+
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie {
   border-radius: 8px;
 }
@@ -268,6 +300,10 @@
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie.checked:not(.disabled) {
   background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie:not(.disabled):not(.checked) {
+  border-color: #ff751a;
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie:not(.disabled):not(.active):not(.checked) span {
@@ -307,7 +343,7 @@
 }
 
 #AreaPageManualMainP1_Label2 {
-  top: 8px;
+  top: 13px;
   position: absolute;
 }
 
@@ -321,35 +357,23 @@
 }
 
 #AreaPageManualMainP1_Label2 {
-  height: 50px;
+  height: 40px;
 }
 
 #AreaPageManualMainP1_Label2 {
-  z-index: 4;
+  z-index: 1;
 }
 
 #AreaPageManualMainP1_Label2 {
-  border-width: 5px;
+  border-width: 3px;
 }
 
 #AreaPageManualMainP1_Label2 {
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 #AreaPageManualMainP1_Label2 {
   background-color: #e0e0e0;
-}
-
-#AreaPageManualMainP1_Label2 {
-  border-color: #999999;
-}
-
-#AreaPageManualMainP1_Label2:before {
-  border-color: #999999;
-}
-
-#AreaPageManualMainP1_Label2:after {
-  border-color: #999999;
 }
 
 #AreaPageManualMainP1_Label2 {
@@ -384,5 +408,103 @@
 }
 
 #AreaPageManualMainP1_Label2 {
-  box-shadow: 4px 4px 14px black;
+  box-shadow: 2px 2px 15px black;
+}
+
+#AreaPageManualMainP1_Image2 {
+  top: 55px;
+  position: absolute;
+}
+
+#AreaPageManualMainP1_Image2 {
+  left: 12px;
+  position: absolute;
+}
+
+#AreaPageManualMainP1_Image2 {
+  width: 1342px;
+}
+
+#AreaPageManualMainP1_Image2 {
+  height: 500px;
+}
+
+#AreaPageManualMainP1_Image2 {
+  z-index: 2;
+}
+
+#AreaPageManualMainP1_Rectangle1 {
+  top: 295px;
+  position: absolute;
+}
+
+#AreaPageManualMainP1_Rectangle1 {
+  left: 425px;
+  position: absolute;
+}
+
+#AreaPageManualMainP1_Rectangle1 {
+  width: 170px;
+}
+
+#AreaPageManualMainP1_Rectangle1 {
+  height: 145px;
+}
+
+#AreaPageManualMainP1_Rectangle1 {
+  z-index: 6;
+}
+
+#AreaPageManualMainP1_Rectangle1 {
+  border-style: solid;
+}
+
+#AreaPageManualMainP1_Rectangle1 {
+  border-width: 4px;
+}
+
+#AreaPageManualMainP1_Rectangle1 {
+  border-radius: 5px;
+}
+
+#AreaPageManualMainP1_Rectangle1 {
+  border-color: green;
+}
+
+#AreaPageManualMainP1_Rectangle2 {
+  top: 155px;
+  position: absolute;
+}
+
+#AreaPageManualMainP1_Rectangle2 {
+  left: 600px;
+  position: absolute;
+}
+
+#AreaPageManualMainP1_Rectangle2 {
+  width: 230px;
+}
+
+#AreaPageManualMainP1_Rectangle2 {
+  height: 300px;
+}
+
+#AreaPageManualMainP1_Rectangle2 {
+  z-index: 7;
+}
+
+#AreaPageManualMainP1_Rectangle2 {
+  border-style: solid;
+}
+
+#AreaPageManualMainP1_Rectangle2 {
+  border-width: 4px;
+}
+
+#AreaPageManualMainP1_Rectangle2 {
+  border-radius: 5px;
+}
+
+#AreaPageManualMainP1_Rectangle2 {
+  border-color: #ff751a;
 }

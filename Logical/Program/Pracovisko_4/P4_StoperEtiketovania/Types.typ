@@ -48,4 +48,20 @@ TYPE
 		Counter : STRING[5];
 		DataMetrix : STRING[31];
 	END_STRUCT;
+	Etiketa_typ : 	STRUCT 
+		LocationCode : STRING[2]; (*KK*)
+		PartIdentNumber : STRING[7]; (*SSSSSSS*)
+		ChangeIndex : STRING[2]; (*II*)
+		ProductionYear : STRING[2]; (*JJ*)
+		Manufactured : STRING[1]; (*H*)
+		DayOfProduction : STRING[3]; (*TTT*)
+		AssemblyLine : STRING[1]; (*M*)
+		DayProductionCounter : STRING[5]; (*PPPPP*)
+		SuplierNumber : STRING[6]; (*LLLLLL*)
+		PlantCode : STRING[2]; (*NN*)
+		DataMetrix : STRING[31]; (*Vytváram ho z kodu modelu na pracovisku etiketovania*)
+		TypModelu : STRING[8];
+		CountryCode : STRING[2];
+		DatumVyroby : STRING[8]; (*02.03.20*)
+	END_STRUCT;
 END_TYPE

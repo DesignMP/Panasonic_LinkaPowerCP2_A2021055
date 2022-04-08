@@ -18,7 +18,7 @@
 		opacity: 0.2;
 }
 #AreaPageSetupP1_page1_Label1 {
-	@include elemTop(8);
+	@include elemTop(13);
 }
 #AreaPageSetupP1_page1_Label1 {
 	@include elemLeft(483);
@@ -27,32 +27,19 @@
 	@include elemAutoWidth(400);
 }
 #AreaPageSetupP1_page1_Label1 {
-	@include elemAutoHeight(50);
+	@include elemAutoHeight(40);
 }
 #AreaPageSetupP1_page1_Label1 {
 		z-index: 1;
 }
 #AreaPageSetupP1_page1_Label1 {
-		border-width: 5px;
+		border-width: 3px;
 }
 #AreaPageSetupP1_page1_Label1 {
 	@include border-radius(5px);
 }
 #AreaPageSetupP1_page1_Label1 {
 		background-color: rgba(224, 224, 224, 1);
-}
-#AreaPageSetupP1_page1_Label1 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageSetupP1_page1_Label1 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageSetupP1_page1_Label1 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
 }
 #AreaPageSetupP1_page1_Label1 {
 		border-style: ridge;
@@ -82,7 +69,7 @@
 	@include font-weight-bold(true);
 }
 #AreaPageSetupP1_page1_Label1 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(2px 2px 15px rgba(0, 0, 0, 1));
 }
 #AreaPageSetupP1_page1_GroupBox5 {
 	@include elemTop(100);

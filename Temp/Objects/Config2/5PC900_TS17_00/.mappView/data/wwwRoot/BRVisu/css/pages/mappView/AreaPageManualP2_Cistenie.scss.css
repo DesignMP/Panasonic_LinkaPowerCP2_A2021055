@@ -1,0 +1,431 @@
+#AreaPageManualP2_Cistenie_ImageRR_Cistenie {
+  top: 0px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ImageRR_Cistenie {
+  left: 0px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ImageRR_Cistenie {
+  width: 1366px;
+}
+
+#AreaPageManualP2_Cistenie_ImageRR_Cistenie {
+  height: 588px;
+}
+
+#AreaPageManualP2_Cistenie_ImageRR_Cistenie {
+  z-index: 0;
+}
+
+#AreaPageManualP2_Cistenie_ImageRR_Cistenie {
+  opacity: 0.15;
+}
+
+#AreaPageManualP2_Cistenie_Label1 {
+  top: 13px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_Label1 {
+  left: 483px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_Label1 {
+  width: 400px;
+}
+
+#AreaPageManualP2_Cistenie_Label1 {
+  height: 40px;
+}
+
+#AreaPageManualP2_Cistenie_Label1 {
+  z-index: 1;
+}
+
+#AreaPageManualP2_Cistenie_Label1 {
+  border-width: 3px;
+}
+
+#AreaPageManualP2_Cistenie_Label1 {
+  border-style: ridge;
+}
+
+#AreaPageManualP2_Cistenie_Label1:before {
+  border-style: ridge;
+}
+
+#AreaPageManualP2_Cistenie_Label1:after {
+  border-style: ridge;
+}
+
+#AreaPageManualP2_Cistenie_NavigationButtonRR_Zvaranie {
+  top: 10px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_NavigationButtonRR_Zvaranie {
+  left: 10px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_NavigationButtonRR_Zvaranie {
+  width: 110px;
+}
+
+#AreaPageManualP2_Cistenie_NavigationButtonRR_Zvaranie {
+  height: 50px;
+}
+
+#AreaPageManualP2_Cistenie_NavigationButtonRR_Zvaranie {
+  z-index: 2;
+}
+
+#AreaPageManualP2_Cistenie_NavigationButtonRR_Zvaranie {
+  border-radius: 4px;
+}
+
+#AreaPageManualP2_Cistenie_NavigationButtonRR_Zvaranie:not(.active):not(.checked) {
+  box-shadow: 3px 3px 14px black;
+}
+
+#AreaPageManualP2_Cistenie_NavigationButtonRR_Zvaranie.disabled.active {
+  box-shadow: 3px 3px 14px black;
+}
+
+#AreaPageManualP2_Cistenie_NavigationButtonRR_Zvaranie.disabled.checked {
+  box-shadow: 3px 3px 14px black;
+}
+
+#AreaPageManualP2_Cistenie_Image1 {
+  top: 95px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_Image1 {
+  left: 1020px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_Image1 {
+  width: 300px;
+}
+
+#AreaPageManualP2_Cistenie_Image1 {
+  height: 424px;
+}
+
+#AreaPageManualP2_Cistenie_Image1 {
+  z-index: 3;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Cistenie {
+  top: 169px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Cistenie {
+  left: 30px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Cistenie {
+  width: 450px;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Cistenie {
+  height: 260px;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Cistenie {
+  z-index: 4;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieDOLE {
+  top: 84px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieDOLE {
+  left: 24px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieDOLE {
+  width: 180px;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieDOLE {
+  height: 50px;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieDOLE {
+  z-index: 0;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieDOLE {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieDOLE span {
+  font-size: 18px;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieDOLE {
+  top: 97px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieDOLE {
+  left: 164px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieDOLE {
+  width: 25px;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieDOLE {
+  height: 25px;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieDOLE {
+  z-index: 1;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieDOLE {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieHORE {
+  top: 84px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieHORE {
+  left: 239px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieHORE {
+  width: 180px;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieHORE {
+  height: 50px;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieHORE {
+  z-index: 2;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieHORE {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+#AreaPageManualP2_Cistenie_Button_CentrovanieHORE span {
+  font-size: 18px;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieHORE {
+  top: 97px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieHORE {
+  left: 254px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieHORE {
+  width: 25px;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieHORE {
+  height: 25px;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieHORE {
+  z-index: 3;
+}
+
+#AreaPageManualP2_Cistenie_ImageCentrovanieHORE {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Ionizator {
+  top: 170px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Ionizator {
+  left: 510px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Ionizator {
+  width: 450px;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Ionizator {
+  height: 260px;
+}
+
+#AreaPageManualP2_Cistenie_GroupBox_Ionizator {
+  z-index: 5;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator {
+  top: 13px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator {
+  left: 134px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator {
+  width: 180px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator {
+  height: 50px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator {
+  z-index: 0;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator .wrapper .before {
+  font-size: 17px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator .wrapper .after {
+  font-size: 17px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator:not(.active):not(.checked) {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator.disabled.active {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniIonizator.disabled.checked {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch {
+  top: 83px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch {
+  left: 134px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch {
+  width: 180px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch {
+  height: 50px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch {
+  z-index: 1;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch .wrapper .before {
+  font-size: 17px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch .wrapper .after {
+  font-size: 17px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch:not(.active):not(.checked) {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch.disabled.active {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniVzduch.disabled.checked {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie {
+  top: 153px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie {
+  left: 134px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie {
+  width: 180px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie {
+  height: 50px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie {
+  z-index: 2;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie .wrapper .before {
+  font-size: 17px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie .wrapper .after {
+  font-size: 17px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie:not(.active):not(.checked) {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie.disabled.active {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie.disabled.checked {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}

@@ -1,0 +1,455 @@
+﻿@import "mixins.scss";
+#PataP34_NavigationBar1 {
+	@include elemTop(0);
+}
+#PataP34_NavigationBar1 {
+	@include elemLeft(0);
+}
+#PataP34_NavigationBar1 {
+	@include elemWidth(1366);
+}
+#PataP34_NavigationBar1 {
+	@include elemHeight(80);
+}
+#PataP34_NavigationBar1 {
+		z-index: 0;
+}
+#PataP34_NavigationButton_Automat {
+	@include elemTop(10);
+}
+#PataP34_NavigationButton_Automat {
+	@include elemLeft(10);
+}
+#PataP34_NavigationButton_Automat {
+	@include elemAutoWidth(155);
+}
+#PataP34_NavigationButton_Automat {
+	@include elemAutoHeight(60);
+}
+#PataP34_NavigationButton_Automat {
+		z-index: 0;
+}
+#PataP34_NavigationButton_Automat {
+	@include border-radius(8px);
+}
+#PataP34_NavigationButton_Automat {
+	&:not(.disabled):not(.active):not(.checked){
+	@include backGroundGradient('');
+	}
+}
+#PataP34_NavigationButton_Automat {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Automat {
+	&.active:not(.disabled):not(.editMode){
+		border-width: 1px 1px 1px 1px;
+	}
+}
+#PataP34_NavigationButton_Automat {
+	&.checked:not(.disabled){
+		border-width: 1px 1px 1px 1px;
+	}
+}
+#PataP34_NavigationButton_Automat {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Automat {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Automat {
+	span{
+		font-size: 20px;
+	}
+}
+#PataP34_NavigationButton_Automat {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_Automat {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_Automat {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_Automat {
+	&.checked:not(.active):not(.disabled){
+		border-color: rgba(255, 123, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Alarmy {
+	@include elemTop(10);
+}
+#PataP34_NavigationButton_Alarmy {
+	@include elemLeft(518);
+}
+#PataP34_NavigationButton_Alarmy {
+	@include elemAutoWidth(155);
+}
+#PataP34_NavigationButton_Alarmy {
+	@include elemAutoHeight(60);
+}
+#PataP34_NavigationButton_Alarmy {
+		z-index: 1;
+}
+#PataP34_NavigationButton_Alarmy {
+	@include border-radius(8px);
+}
+#PataP34_NavigationButton_Alarmy {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Alarmy {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Alarmy {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Alarmy {
+	span{
+		font-size: 19px;
+	}
+}
+#PataP34_NavigationButton_Alarmy {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_Alarmy {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_Alarmy {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	@include elemTop(10);
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	@include elemLeft(349);
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	@include elemAutoWidth(155);
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	@include elemAutoHeight(60);
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+		z-index: 2;
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	@include border-radius(8px);
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	span{
+		font-size: 19px;
+	}
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ParametreBunka3 {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_Setup {
+	@include elemTop(10);
+}
+#PataP34_NavigationButton_Setup {
+	@include elemLeft(687);
+}
+#PataP34_NavigationButton_Setup {
+	@include elemAutoWidth(155);
+}
+#PataP34_NavigationButton_Setup {
+	@include elemAutoHeight(60);
+}
+#PataP34_NavigationButton_Setup {
+		z-index: 3;
+}
+#PataP34_NavigationButton_Setup {
+	@include border-radius(8px);
+}
+#PataP34_NavigationButton_Setup {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Setup {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Setup {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_Setup {
+	span{
+		font-size: 19px;
+	}
+}
+#PataP34_NavigationButton_Setup {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_Setup {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_Setup {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_DMP {
+	@include elemTop(10);
+}
+#PataP34_NavigationButton_DMP {
+	@include elemLeft(1195);
+}
+#PataP34_NavigationButton_DMP {
+	@include elemAutoWidth(155);
+}
+#PataP34_NavigationButton_DMP {
+	@include elemAutoHeight(60);
+}
+#PataP34_NavigationButton_DMP {
+		z-index: 4;
+}
+#PataP34_NavigationButton_DMP {
+	@include border-radius(8px);
+}
+#PataP34_NavigationButton_DMP {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_DMP {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_DMP {
+	span{
+		font-size: 20px;
+	}
+}
+#PataP34_NavigationButton_DMP {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_DMP {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_DMP {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	@include elemTop(10);
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	@include elemLeft(179);
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	@include elemAutoWidth(155);
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	@include elemAutoHeight(60);
+}
+#PataP34_NavigationButton_ManualBunka3 {
+		z-index: 5;
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	@include border-radius(8px);
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	span{
+		font-size: 19px;
+	}
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ManualBunka3 {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	@include elemTop(10);
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	@include elemLeft(856);
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	@include elemAutoWidth(155);
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	@include elemAutoHeight(60);
+}
+#PataP34_NavigationButton_ManualBunka4 {
+		z-index: 6;
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	@include border-radius(8px);
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	span{
+		font-size: 19px;
+	}
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ManualBunka4 {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	@include elemTop(10);
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	@include elemLeft(1025);
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	@include elemAutoWidth(155);
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	@include elemAutoHeight(60);
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+		z-index: 7;
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	@include border-radius(8px);
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	span{
+		font-size: 19px;
+	}
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#PataP34_NavigationButton_ParametreBunka4 {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}

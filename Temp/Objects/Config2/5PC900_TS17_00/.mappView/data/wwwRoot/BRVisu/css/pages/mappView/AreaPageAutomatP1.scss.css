@@ -39,7 +39,7 @@
 }
 
 #AreaPageAutomatP1_Label1 {
-  height: 50px;
+  height: 40px;
 }
 
 #AreaPageAutomatP1_Label1 {
@@ -47,7 +47,7 @@
 }
 
 #AreaPageAutomatP1_Label1 {
-  border-width: 5px;
+  border-width: 3px;
 }
 
 #AreaPageAutomatP1_Label1 {
@@ -56,18 +56,6 @@
 
 #AreaPageAutomatP1_Label1 {
   background-color: #e0e0e0;
-}
-
-#AreaPageAutomatP1_Label1 {
-  border-color: #999999;
-}
-
-#AreaPageAutomatP1_Label1:before {
-  border-color: #999999;
-}
-
-#AreaPageAutomatP1_Label1:after {
-  border-color: #999999;
 }
 
 #AreaPageAutomatP1_Label1 {
@@ -102,16 +90,16 @@
 }
 
 #AreaPageAutomatP1_Label1 {
-  box-shadow: 4px 4px 14px black;
+  box-shadow: 2px 2px 15px black;
 }
 
 #AreaPageAutomatP1_ImageList5 {
-  top: 400px;
+  top: 370px;
   position: absolute;
 }
 
 #AreaPageAutomatP1_ImageList5 {
-  left: 490px;
+  left: 540px;
   position: absolute;
 }
 
@@ -136,7 +124,7 @@
 }
 
 #AreaPageAutomatP1_grpFileExplorerStatus {
-  top: 14px;
+  top: 13px;
   position: absolute;
 }
 
@@ -329,12 +317,12 @@
 }
 
 #AreaPageAutomatP1_ImageList6 {
-  top: 400px;
+  top: 420px;
   position: absolute;
 }
 
 #AreaPageAutomatP1_ImageList6 {
-  left: 590px;
+  left: 765px;
   position: absolute;
 }
 
@@ -359,12 +347,12 @@
 }
 
 #AreaPageAutomatP1_ImageList7 {
-  top: 450px;
+  top: 470px;
   position: absolute;
 }
 
 #AreaPageAutomatP1_ImageList7 {
-  left: 638px;
+  left: 650px;
   position: absolute;
 }
 
@@ -389,12 +377,12 @@
 }
 
 #AreaPageAutomatP1_ImageList8 {
-  top: 400px;
+  top: 375px;
   position: absolute;
 }
 
 #AreaPageAutomatP1_ImageList8 {
-  left: 680px;
+  left: 695px;
   position: absolute;
 }
 
@@ -449,12 +437,12 @@
 }
 
 #AreaPageAutomatP1_ImageList10 {
-  top: 400px;
+  top: 375px;
   position: absolute;
 }
 
 #AreaPageAutomatP1_ImageList10 {
-  left: 904px;
+  left: 815px;
   position: absolute;
 }
 
@@ -479,12 +467,12 @@
 }
 
 #AreaPageAutomatP1_ImageList11 {
-  top: 236px;
+  top: 220px;
   position: absolute;
 }
 
 #AreaPageAutomatP1_ImageList11 {
-  left: 774px;
+  left: 815px;
   position: absolute;
 }
 
@@ -723,16 +711,20 @@
 }
 
 #AreaPageAutomatP1_Image2 {
+  background-color: white;
+}
+
+#AreaPageAutomatP1_Image2 {
   border-style: solid;
 }
 
 #AreaPageAutomatP1_GroupBox7 {
-  top: 108px;
+  top: 265px;
   position: absolute;
 }
 
 #AreaPageAutomatP1_GroupBox7 {
-  left: 460px;
+  left: 510px;
   position: absolute;
 }
 
@@ -898,12 +890,12 @@
 }
 
 #AreaPageAutomatP1_GroupBox8 {
-  top: 108px;
+  top: 110px;
   position: absolute;
 }
 
 #AreaPageAutomatP1_GroupBox8 {
-  left: 598px;
+  left: 655px;
   position: absolute;
 }
 
@@ -1415,7 +1407,7 @@
 }
 
 #AreaPageAutomatP1_ToggleButton_Prihlasenie {
-  top: 14px;
+  top: 13px;
   position: absolute;
 }
 

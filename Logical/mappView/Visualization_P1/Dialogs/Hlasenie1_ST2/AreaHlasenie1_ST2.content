@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="AreaHlasenie1_ST2" height="520" width="500" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox1" top="0" left="0" width="500" height="520" zIndex="0" borderWidth="4px" cornerRadius="0px" backColor="rgba(255, 192, 128, 1)">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Label" id="Label1" top="16" left="21" width="450" height="70" zIndex="0" multiLine="true" text="Stanica 2 - Skrutkovanie\nVstupná kontrola paletky - Model 4F" borderWidth="2px" cornerRadius="2px" backColor="rgba(169, 169, 169, 1)" borderColor="rgba(0, 0, 0, 1)" borderStyle="solid" textColor="rgba(0, 0, 0, 1)" textAlign="center" fontSize="20px" bold="true" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_OznacPaletkuOK" top="416" left="61" width="170" height="45" zIndex="1" multiLine="true" text="Označ paletku\nOK" cornerRadius="10px" backGroundGradient="linear-gradient(to bottom, rgba(192, 255, 192, 1) 20%,rgba(0,255,0,1) 100%)" textColor="rgba(0, 0, 0, 1)" fontSize="18px" shadow="4px 4px 14px rgba(0, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_OznacPaletkuNG" top="416" left="261" width="170" height="45" zIndex="2" multiLine="true" text="Označ paletku\nNG" cornerRadius="10px" backGroundGradient="linear-gradient(to bottom, rgba(255, 192, 192, 1) 20%,rgba(255,0,0,1) 100%)" textColor="rgba(0, 0, 0, 1)" fontSize="18px" shadow="4px 4px 14px rgba(0, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Label" id="Label2" top="126" left="21" width="450" height="35" zIndex="3" text="Plate - neprítomnosť pravej skrutky K30" cornerRadius="2px" backColor="rgba(224, 224, 224, 1)" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageList1" top="130" left="431" width="28" height="28" zIndex="4" imageList="['YesButton_48x48.png', 'NoButton_48x48.png']" imagePrefix="Media/Pictures/" />
+        <Widget xsi:type="widgets.brease.Label" id="Label3" top="166" left="21" width="450" height="35" zIndex="5" text="Plate - neprítomnosť lavej skrutky K30" cornerRadius="2px" backColor="rgba(224, 224, 224, 1)" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageList2" top="170" left="431" width="28" height="28" zIndex="6" imageList="['YesButton_48x48.png', 'NoButton_48x48.png']" imagePrefix="Media/Pictures/" />
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

@@ -1,0 +1,50 @@
+﻿@import "mixins.scss";
+#AreaPageSetupP2_ImageSetupP2 {
+	@include elemTop(0);
+}
+#AreaPageSetupP2_ImageSetupP2 {
+	@include elemLeft(0);
+}
+#AreaPageSetupP2_ImageSetupP2 {
+	@include elemAutoWidth(1366);
+}
+#AreaPageSetupP2_ImageSetupP2 {
+	@include elemAutoHeight(588);
+}
+#AreaPageSetupP2_ImageSetupP2 {
+		z-index: 0;
+}
+#AreaPageSetupP2_ImageSetupP2 {
+		opacity: 0.15;
+}
+#AreaPageSetupP2_Label1 {
+	@include elemTop(13);
+}
+#AreaPageSetupP2_Label1 {
+	@include elemLeft(483);
+}
+#AreaPageSetupP2_Label1 {
+	@include elemAutoWidth(400);
+}
+#AreaPageSetupP2_Label1 {
+	@include elemAutoHeight(40);
+}
+#AreaPageSetupP2_Label1 {
+		z-index: 1;
+}
+#AreaPageSetupP2_Label1 {
+		border-width: 3px;
+}
+#AreaPageSetupP2_Label1 {
+		border-style: ridge;
+}
+#AreaPageSetupP2_Label1 {
+	&:before{
+		border-style: ridge;
+	}
+}
+#AreaPageSetupP2_Label1 {
+	&:after{
+		border-style: ridge;
+	}
+}

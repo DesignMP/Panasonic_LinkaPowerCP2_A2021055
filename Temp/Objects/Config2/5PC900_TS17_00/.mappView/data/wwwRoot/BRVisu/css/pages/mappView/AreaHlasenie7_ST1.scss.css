@@ -1,73 +1,57 @@
-#AreaHlasenie7_ST1_GroupBox6 {
+#AreaHlasenie7_ST1_GroupBox1 {
   top: 0px;
   position: absolute;
 }
 
-#AreaHlasenie7_ST1_GroupBox6 {
+#AreaHlasenie7_ST1_GroupBox1 {
   left: 0px;
   position: absolute;
 }
 
-#AreaHlasenie7_ST1_GroupBox6 {
+#AreaHlasenie7_ST1_GroupBox1 {
   width: 500px;
 }
 
-#AreaHlasenie7_ST1_GroupBox6 {
+#AreaHlasenie7_ST1_GroupBox1 {
   height: 300px;
 }
 
-#AreaHlasenie7_ST1_GroupBox6 {
+#AreaHlasenie7_ST1_GroupBox1 {
   z-index: 0;
 }
 
-#AreaHlasenie7_ST1_GroupBox6 {
-  border-width: 7px;
+#AreaHlasenie7_ST1_GroupBox1 {
+  border-width: 4px;
 }
 
-#AreaHlasenie7_ST1_GroupBox6 > .header {
-  border-width: 7px;
+#AreaHlasenie7_ST1_GroupBox1 > .header {
+  border-width: 4px;
 }
 
-#AreaHlasenie7_ST1_GroupBox6 {
-  border-radius: 6px 6px 6px 6px;
+#AreaHlasenie7_ST1_GroupBox1 {
+  border-radius: 0px;
 }
 
-#AreaHlasenie7_ST1_GroupBox6 {
+#AreaHlasenie7_ST1_GroupBox1 {
   background-color: #ffc080;
 }
 
-#AreaHlasenie7_ST1_GroupBox6 {
-  border-style: groove;
-}
-
-#AreaHlasenie7_ST1_GroupBox6 > .header {
-  border-bottom-style: groove;
-}
-
-#AreaHlasenie7_ST1_GroupBox6 > .header span {
-  color: black;
-}
-
-#AreaHlasenie7_ST1_GroupBox6 {
-  box-shadow: 4px 4px 14px black;
-}
-
 #AreaHlasenie7_ST1_Image1 {
-  top: 7px;
+  top: 10px;
   position: absolute;
 }
 
 #AreaHlasenie7_ST1_Image1 {
-  left: 415px;
+  left: 10px;
   position: absolute;
 }
 
 #AreaHlasenie7_ST1_Image1 {
-  width: 62px;
+  width: 80px;
 }
 
 #AreaHlasenie7_ST1_Image1 {
-  height: 62px;
+  height: 80px;
 }
 
 #AreaHlasenie7_ST1_Image1 {
@@ -75,17 +59,17 @@
 }
 
 #AreaHlasenie7_ST1_Label1 {
-  top: 93px;
+  top: 106px;
   position: absolute;
 }
 
 #AreaHlasenie7_ST1_Label1 {
-  left: 22px;
+  left: 21px;
   position: absolute;
 }
 
 #AreaHlasenie7_ST1_Label1 {
-  width: 443px;
+  width: 450px;
 }
 
 #AreaHlasenie7_ST1_Label1 {
@@ -108,7 +92,7 @@
 }
 
 #AreaHlasenie7_ST1_Label1 {
-  font-size: 24px;
+  font-size: 25px;
 }
 
 #AreaHlasenie7_ST1_Label1 {

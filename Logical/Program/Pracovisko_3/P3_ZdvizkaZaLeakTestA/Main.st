@@ -251,13 +251,23 @@ PROGRAM _CYCLIC
 			SC_P3_ZdvizkaZaLeakTestA.IdleTime.PT:= T#200ms;
 			SC_P3_ZdvizkaZaLeakTestA.AlarmTime.PT:= T#5s;
 			
-			IF P3_ZdvizkaZaLeakTestA.KoniecCyklu AND NOT P3_LeakageTestA.Automat THEN
+			IF P3_ZdvizkaZaLeakTestA.KoniecCyklu AND NOT P3_LeakageTestA.Automat THEN      
 				SC_P3_ZdvizkaZaLeakTestA.ResetStep:= TRUE;
 				SC_P3_ZdvizkaZaLeakTestA.Step:= 0;
-			ELSIF P4_FunkcnyTestA.STAV.Tester_ON AND NOT P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky AND SC_P4_FunkcnyTestA.Step = 100 AND NOT P3_ZdvizkaZaLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratA AND NOT P3_ZdvizkaZaLeakTestB.STAV.PrebiehaVyvezeniePaletkyNaTratA THEN
+			ELSIF P4_FunkcnyTestA.STAV.Tester_ON AND   //Vyvezenie na traù A//
+				NOT P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky AND
+				SC_P4_FunkcnyTestA.Step = 100 AND
+				NOT P3_ZdvizkaZaLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratA AND
+				NOT P3_ZdvizkaZaLeakTestB.STAV.PrebiehaVyvezeniePaletkyNaTratA THEN
 				SC_P3_ZdvizkaZaLeakTestA.ResetStep:= TRUE;
 				SC_P3_ZdvizkaZaLeakTestA.Step:= 110;
-			ELSIF NOT P4_FunkcnyTestA.STAV.Tester_ON AND P4_FunkcnyTestB.STAV.Tester_ON AND NOT P3_ZdvizkaZaLeakTestB.IN.PritomnostPaletky AND SC_P3_ZdvizkaZaLeakTestB.Step = 100 AND NOT P3_ZdvizkaZaLeakTestB.STAV.PrebiehaVyvezeniePaletkyNaTratA AND NOT P3_LeakageTestB.STAV.PrebiehaVyvezeniePaletky THEN
+			ELSIF NOT P4_FunkcnyTestA.STAV.Tester_ON AND       //Vyvezenie na traù B//
+				P4_FunkcnyTestB.STAV.Tester_ON AND
+				NOT P3_ZdvizkaZaLeakTestB.IN.PritomnostPaletky AND
+				SC_P3_ZdvizkaZaLeakTestB.Step = 100 AND
+				NOT P3_ZdvizkaZaLeakTestB.STAV.PrebiehaVyvezeniePaletkyNaTratA AND
+				NOT P3_LeakageTestB.STAV.PrebiehaVyvezeniePaletky AND
+				SC_P3_LeakageTestB.Step < 560 THEN
 				SC_P3_ZdvizkaZaLeakTestA.ResetStep:= TRUE;
 				SC_P3_ZdvizkaZaLeakTestA.Step:= 120;
 			ELSIF NOT P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky THEN

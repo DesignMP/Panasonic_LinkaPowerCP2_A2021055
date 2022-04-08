@@ -95,10 +95,10 @@ PROGRAM _CYCLIC
 	
 	
 	//***********Modul DI 4.1 8DI****************//
-	P4_Pracovisko.COM_Festo.DI4_1_8DI[0];
-	P4_Pracovisko.COM_Festo.DI4_1_8DI[1];
-	P4_Pracovisko.COM_Festo.DI4_1_8DI[2];
-	P4_Pracovisko.COM_Festo.DI4_1_8DI[3];
+	P4_FunkcnyTestA.IN.TypSpodnychKontaktov_5F_5H:= P4_Pracovisko.COM_Festo.DI4_1_8DI[0];
+	P4_FunkcnyTestA.IN.TypSpodnychKontaktov_4F:= P4_Pracovisko.COM_Festo.DI4_1_8DI[1];
+	P4_FunkcnyTestB.IN.TypSpodnychKontaktov_5F_5H:= P4_Pracovisko.COM_Festo.DI4_1_8DI[2];
+	P4_FunkcnyTestB.IN.TypSpodnychKontaktov_4F:= P4_Pracovisko.COM_Festo.DI4_1_8DI[3];
 	P4_Etiketovacka.IN.Centrovanie_ZASUNUTE := P4_Pracovisko.COM_Festo.DI4_1_8DI[4];
 	P4_Etiketovacka.IN.Centrovanie_VYSUNUTE := P4_Pracovisko.COM_Festo.DI4_1_8DI[5];
 	P4_SpodnyStoper.IN.ZaplnenieDopravnika := P4_Pracovisko.COM_Festo.DI4_1_8DI[6];
@@ -107,8 +107,8 @@ PROGRAM _CYCLIC
 	
 	
 	//***********Modul DI 4.2 8DI****************//
-	P4_Etiketovacka.IN.Aplikator_OtocenyVZAD := P4_Pracovisko.COM_Festo.DI4_2_8DI[0];
-	P4_Etiketovacka.IN.Aplikator_OtocenyVPRED := P4_Pracovisko.COM_Festo.DI4_2_8DI[1];
+	P4_Etiketovacka.IN.Aplikator_OtocenyVPRED := P4_Pracovisko.COM_Festo.DI4_2_8DI[0];
+	P4_Etiketovacka.IN.Aplikator_OtocenyVZAD := P4_Pracovisko.COM_Festo.DI4_2_8DI[1];
 	P4_Etiketovacka.IN.Aplikator_ZASUNUTY := P4_Pracovisko.COM_Festo.DI4_2_8DI[2];
 	P4_Etiketovacka.IN.Aplikator_VYSUNUTY := P4_Pracovisko.COM_Festo.DI4_2_8DI[3];
 	P4_Etiketovacka.IN.PritlakPowerCP_ZASUNUTY := P4_Pracovisko.COM_Festo.DI4_2_8DI[4];
@@ -307,8 +307,8 @@ PROGRAM _CYCLIC
 	P4_Pracovisko.COM_VentilovyTerminal[2].3 := P4_FunkcnyTestB.OUT.KontaktyTestera_VYSUN;
 	P4_Pracovisko.COM_VentilovyTerminal[2].4 := P4_Etiketovacka.OUT.OfukEtikety_ON;
 	P4_Pracovisko.COM_VentilovyTerminal[2].5;
-	P4_Pracovisko.COM_VentilovyTerminal[2].6 := P4_Etiketovacka.OUT.Aplikator_OtocVZAD;
-	P4_Pracovisko.COM_VentilovyTerminal[2].7 := P4_Etiketovacka.OUT.Aplikator_OtocVPRED;
+	P4_Pracovisko.COM_VentilovyTerminal[2].6 := P4_Etiketovacka.OUT.Aplikator_OtocVPRED;
+	P4_Pracovisko.COM_VentilovyTerminal[2].7 := P4_Etiketovacka.OUT.Aplikator_OtocVZAD;
 	
 	//24-31
 	P4_Pracovisko.COM_VentilovyTerminal[3].0 := P4_Etiketovacka.OUT.Aplikator_VYSUN;

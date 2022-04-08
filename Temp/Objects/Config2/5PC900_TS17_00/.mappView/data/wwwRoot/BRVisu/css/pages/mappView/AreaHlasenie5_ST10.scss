@@ -1,0 +1,158 @@
+﻿@import "mixins.scss";
+#AreaHlasenie5_ST10_GroupBox1 {
+	@include elemTop(0);
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+	@include elemLeft(0);
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+	@include elemWidth(500);
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+	@include elemHeight(300);
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+		z-index: 0;
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+		border-width: 4px;
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+	> .header{
+		border-width: 4px;
+	}
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+	@include border-radius(0px);
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+		background-color: rgba(0, 255, 255, 1);
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+		border-style: solid;
+}
+#AreaHlasenie5_ST10_GroupBox1 {
+	> .header{
+		border-bottom-style: solid;
+	}
+}
+#AreaHlasenie5_ST10_Image1 {
+	@include elemTop(10);
+}
+#AreaHlasenie5_ST10_Image1 {
+	@include elemLeft(10);
+}
+#AreaHlasenie5_ST10_Image1 {
+	@include elemAutoWidth(80);
+}
+#AreaHlasenie5_ST10_Image1 {
+	@include elemAutoHeight(80);
+}
+#AreaHlasenie5_ST10_Image1 {
+		z-index: 0;
+}
+#AreaHlasenie5_ST10_Label1 {
+	@include elemTop(96);
+}
+#AreaHlasenie5_ST10_Label1 {
+	@include elemLeft(21);
+}
+#AreaHlasenie5_ST10_Label1 {
+	@include elemAutoWidth(450);
+}
+#AreaHlasenie5_ST10_Label1 {
+	@include elemAutoHeight(100);
+}
+#AreaHlasenie5_ST10_Label1 {
+		z-index: 1;
+}
+#AreaHlasenie5_ST10_Label1 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaHlasenie5_ST10_Label1 {
+	@include text-alignment-all('center');
+}
+#AreaHlasenie5_ST10_Label1 {
+		font-size: 25px;
+}
+#AreaHlasenie5_ST10_Label1 {
+	@include font-weight-bold(true);
+}
+#AreaHlasenie5_ST10_Button_ANO {
+	@include elemTop(210);
+}
+#AreaHlasenie5_ST10_Button_ANO {
+	@include elemLeft(56);
+}
+#AreaHlasenie5_ST10_Button_ANO {
+	@include elemAutoWidth(170);
+}
+#AreaHlasenie5_ST10_Button_ANO {
+	@include elemAutoHeight(45);
+}
+#AreaHlasenie5_ST10_Button_ANO {
+		z-index: 2;
+}
+#AreaHlasenie5_ST10_Button_ANO {
+	@include border-radius(10px);
+}
+#AreaHlasenie5_ST10_Button_ANO {
+	&:not(.disabled):not(.active):not(.checked){
+	@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+	}
+}
+#AreaHlasenie5_ST10_Button_ANO {
+	&:not(.active):not(.checked){
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaHlasenie5_ST10_Button_ANO {
+	&.disabled.active{
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaHlasenie5_ST10_Button_ANO {
+	&.disabled.checked{
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaHlasenie5_ST10_Button_NIE {
+	@include elemTop(210);
+}
+#AreaHlasenie5_ST10_Button_NIE {
+	@include elemLeft(266);
+}
+#AreaHlasenie5_ST10_Button_NIE {
+	@include elemAutoWidth(170);
+}
+#AreaHlasenie5_ST10_Button_NIE {
+	@include elemAutoHeight(45);
+}
+#AreaHlasenie5_ST10_Button_NIE {
+		z-index: 3;
+}
+#AreaHlasenie5_ST10_Button_NIE {
+	@include border-radius(10px);
+}
+#AreaHlasenie5_ST10_Button_NIE {
+	&:not(.disabled):not(.active):not(.checked){
+	@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+	}
+}
+#AreaHlasenie5_ST10_Button_NIE {
+	&:not(.active):not(.checked){
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaHlasenie5_ST10_Button_NIE {
+	&.disabled.active{
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaHlasenie5_ST10_Button_NIE {
+	&.disabled.checked{
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}

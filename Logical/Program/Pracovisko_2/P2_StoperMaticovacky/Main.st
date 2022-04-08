@@ -28,6 +28,18 @@ PROGRAM _CYCLIC
 	END_IF	
 	
 	
+	//Zrušenie podania matice//
+	IF P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu AND P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.MaticaPripravena THEN
+		P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu:= FALSE;
+	ELSIF P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu AND P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.ERROR THEN
+		P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu:= FALSE;
+		P2_Alarmy[298]:= TRUE;
+		P2_Pracovisko.STAV.Porucha_ST2:= TRUE;	
+	END_IF
+			
+
+	
+	
 	
 	CASE SC_P2_StoperMaticovacky.Step OF 
 	
@@ -167,12 +179,8 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 			IF P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.MaticaPripravena THEN
-				P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu:= FALSE;
 				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
 				SC_P2_StoperMaticovacky.Step:= 13;
-			ELSIF P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.ERROR THEN
-				P2_Alarmy[298]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST2:= TRUE;
 			END_IF
 			
 			
@@ -202,9 +210,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.IN:= P2_StoperMaticovacky.RFID_hlava.PritomnostPaletky;
 		
           							
-			IF SC_P2_StoperMaticovacky.IdleTime.Q THEN
+			IF SC_P2_StoperMaticovacky.IdleTime.Q AND NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				P2_StoperMaticovacky.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF
 			
 			IF P2_StoperMaticovacky.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperMaticovacky.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
@@ -849,12 +858,8 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 			IF P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.MaticaPripravena THEN
-				P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu:= FALSE;
 				SC_P2_StoperMaticovacky.ResetStep:= TRUE;
 				SC_P2_StoperMaticovacky.Step:= 133;
-			ELSIF P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.ERROR THEN
-				P2_Alarmy[298]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST2:= TRUE;
 			END_IF
 			
 		136:
@@ -931,16 +936,16 @@ PROGRAM _CYCLIC
 		
 		143:
 			SC_P2_StoperMaticovacky.StepName:='143 - Automaticky Rezim - nabitie matice do maticovacky';
-			SC_P2_StoperMaticovacky.IdleTime.PT:= T#200ms;
+			SC_P2_StoperMaticovacky.IdleTime.PT:= T#500ms;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;
 			
 			IF NOT SC_P2_StoperMaticovacky.Switch1 THEN
 				P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu:= TRUE;
+				SC_P2_StoperMaticovacky.IdleTime.IN:= TRUE;
 				SC_P2_StoperMaticovacky.Switch1:= TRUE;
 			END_IF
 			
-			IF P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.MaticaPripravena THEN
-				P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu:= FALSE;
+			IF SC_P2_StoperMaticovacky.IdleTime.Q THEN
 				IF Linka.P2_SkrutkovanieResult_OFF THEN
 					SC_P2_StoperMaticovacky.ResetStep:= TRUE;
 					SC_P2_StoperMaticovacky.Step:= 148;
@@ -948,9 +953,6 @@ PROGRAM _CYCLIC
 					SC_P2_StoperMaticovacky.ResetStep:= TRUE;
 					SC_P2_StoperMaticovacky.Step:= 145;
 				END_IF	
-			ELSIF P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.ERROR THEN
-				P2_Alarmy[298]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST2:= TRUE;	
 			END_IF
 	
 				

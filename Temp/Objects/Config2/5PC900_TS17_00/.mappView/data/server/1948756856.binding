@@ -174,4 +174,22 @@
 			<Target xsi:type="brease" refId="AreaPageParametreP1_page2_NumericInput_37" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 		</Binding>
   </Content>
+  <Content id="AreaPageParametreP1_page2">
+    <Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageParametreP1_page2_NumericInput_16" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="AreaPageParametreP1_page2">
+    <Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageParametreP1_page2_NumericInput_49" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="AreaPageParametreP1_page2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageParametreP1_page2_NumericInput_48" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
 </BindingDefinition>

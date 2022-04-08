@@ -21,9 +21,6 @@
     <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.PSR-M-GW-PN" Version="0.0.0.0" OrderNumber="PSR-M-GW-PN">
       <SourceFile OriginalFile="GSDML-V2.33-Phoenix Contact-PSR M GW PN V1.0-20200129.xml" TranslationFile="EYTC82RT.ext" />
     </Module>
-    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.Control Unit V2.2" Version="3.14.0" OrderNumber="Control Unit V2.2">
-      <SourceFile OriginalFile="GSDML-V2.35-WENGLOR-WENGLOR IDENT-20200422.xml" TranslationFile="3ILMUUB1.ext" />
-    </Module>
     <Module ModuleID="FBE.000002EE_EB80" Version="1.0" OrderNumber="EB80">
       <SourceFile OriginalFile="000002EE_EB80.xdd" TranslationFile="KUAE1WRO.ext" />
       <SourceFile OriginalFile="EB80.front.png" TranslationFile="L08STLL2.ext" />
@@ -34,6 +31,9 @@
     </Module>
     <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.COMX 51XX-RE$002FPNS V3.5.35 - V3.x" Version="V3.x" OrderNumber="COMX 51XX-RE/PNS V3.5.35 - V3.x">
       <SourceFile OriginalFile="GSDML-V2.32-HILSCHER-COMX 51XX-RE PNS-20160502.xml" TranslationFile="Z8LT8WTB.ext" />
+    </Module>
+    <Module ModuleID="FBD.Hilscher.PNIOGenDevDTM2.Control Unit V2.2" Version="3.14.0" OrderNumber="Control Unit V2.2">
+      <SourceFile OriginalFile="GSDML-V2.35-WENGLOR-WENGLOR IDENT-20200925.xml" TranslationFile="58NVPR8V.ext" />
     </Module>
   </Modules>
 </ExternalHardware>

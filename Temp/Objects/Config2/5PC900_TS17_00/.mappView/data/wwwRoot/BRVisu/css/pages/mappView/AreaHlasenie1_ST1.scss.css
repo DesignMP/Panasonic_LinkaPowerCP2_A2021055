@@ -1,73 +1,65 @@
-#AreaHlasenie1_ST1_GroupBox6 {
+#AreaHlasenie1_ST1_GroupBox1 {
   top: 0px;
   position: absolute;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 {
+#AreaHlasenie1_ST1_GroupBox1 {
   left: 0px;
   position: absolute;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 {
+#AreaHlasenie1_ST1_GroupBox1 {
   width: 500px;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 {
+#AreaHlasenie1_ST1_GroupBox1 {
   height: 520px;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 {
+#AreaHlasenie1_ST1_GroupBox1 {
   z-index: 0;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 {
-  border-width: 7px;
+#AreaHlasenie1_ST1_GroupBox1 {
+  border-width: 4px;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 > .header {
-  border-width: 7px;
+#AreaHlasenie1_ST1_GroupBox1 > .header {
+  border-width: 4px;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 {
-  border-radius: 6px 6px 6px 6px;
+#AreaHlasenie1_ST1_GroupBox1 {
+  border-radius: 0px 0px 0px 0px;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 {
+#AreaHlasenie1_ST1_GroupBox1 {
   background-color: #ffc080;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 {
-  border-style: groove;
+#AreaHlasenie1_ST1_GroupBox1 {
+  border-style: solid;
 }
 
-#AreaHlasenie1_ST1_GroupBox6 > .header {
-  border-bottom-style: groove;
-}
-
-#AreaHlasenie1_ST1_GroupBox6 > .header span {
-  color: black;
-}
-
-#AreaHlasenie1_ST1_GroupBox6 {
-  box-shadow: 4px 4px 14px black;
+#AreaHlasenie1_ST1_GroupBox1 > .header {
+  border-bottom-style: solid;
 }
 
 #AreaHlasenie1_ST1_Image1 {
-  top: 7px;
+  top: 10px;
   position: absolute;
 }
 
 #AreaHlasenie1_ST1_Image1 {
-  left: 415px;
+  left: 10px;
   position: absolute;
 }
 
 #AreaHlasenie1_ST1_Image1 {
-  width: 62px;
+  width: 80px;
 }
 
 #AreaHlasenie1_ST1_Image1 {
-  height: 62px;
+  height: 80px;
 }
 
 #AreaHlasenie1_ST1_Image1 {
@@ -75,21 +67,21 @@
 }
 
 #AreaHlasenie1_ST1_Label1 {
-  top: 39px;
+  top: 26px;
   position: absolute;
 }
 
 #AreaHlasenie1_ST1_Label1 {
-  left: 1px;
+  left: 96px;
   position: absolute;
 }
 
 #AreaHlasenie1_ST1_Label1 {
-  width: 443px;
+  width: 380px;
 }
 
 #AreaHlasenie1_ST1_Label1 {
-  height: 36px;
+  height: 50px;
 }
 
 #AreaHlasenie1_ST1_Label1 {
@@ -108,7 +100,7 @@
 }
 
 #AreaHlasenie1_ST1_Label1 {
-  font-size: 24px;
+  font-size: 25px;
 }
 
 #AreaHlasenie1_ST1_Label1 {
@@ -119,172 +111,22 @@
   text-decoration: underline;
 }
 
-#AreaHlasenie1_ST1_ImageList2 {
-  top: 287px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList2 {
-  left: 329px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList2 {
-  width: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList2 {
-  height: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList2 {
-  z-index: 6;
-}
-
-#AreaHlasenie1_ST1_ImageList2 {
-  border-style: none;
-}
-
-#AreaHlasenie1_ST1_ImageList2 {
-  border-width: 0px;
-}
-
-#AreaHlasenie1_ST1_ImageList3 {
-  top: 353px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList3 {
-  left: 367px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList3 {
-  width: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList3 {
-  height: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList3 {
-  z-index: 5;
-}
-
-#AreaHlasenie1_ST1_ImageList3 {
-  border-style: none;
-}
-
-#AreaHlasenie1_ST1_ImageList3 {
-  border-width: 0px;
-}
-
-#AreaHlasenie1_ST1_ImageList4 {
-  top: 275px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList4 {
-  left: 133px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList4 {
-  width: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList4 {
-  height: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList4 {
-  z-index: 4;
-}
-
-#AreaHlasenie1_ST1_ImageList4 {
-  border-style: none;
-}
-
-#AreaHlasenie1_ST1_ImageList4 {
-  border-width: 0px;
-}
-
-#AreaHlasenie1_ST1_ImageList5 {
-  top: 203px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList5 {
-  left: 167px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList5 {
-  width: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList5 {
-  height: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList5 {
-  z-index: 3;
-}
-
-#AreaHlasenie1_ST1_ImageList5 {
-  border-style: none;
-}
-
-#AreaHlasenie1_ST1_ImageList5 {
-  border-width: 0px;
-}
-
-#AreaHlasenie1_ST1_ImageList1 {
-  top: 271px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList1 {
-  left: 401px;
-  position: absolute;
-}
-
-#AreaHlasenie1_ST1_ImageList1 {
-  width: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList1 {
-  height: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList1 {
-  z-index: 7;
-}
-
-#AreaHlasenie1_ST1_ImageList1 {
-  border-style: none;
-}
-
-#AreaHlasenie1_ST1_ImageList1 {
-  border-width: 0px;
-}
-
 #AreaHlasenie1_ST1_Image2 {
-  top: 100px;
+  top: 96px;
   position: absolute;
 }
 
 #AreaHlasenie1_ST1_Image2 {
-  left: 23px;
+  left: 46px;
   position: absolute;
 }
 
 #AreaHlasenie1_ST1_Image2 {
-  width: 439px;
+  width: 400px;
 }
 
 #AreaHlasenie1_ST1_Image2 {
-  height: 390px;
+  height: 400px;
 }
 
 #AreaHlasenie1_ST1_Image2 {
@@ -292,150 +134,223 @@
 }
 
 #AreaHlasenie1_ST1_Image2 {
-  border-style: groove;
+  border-width: 0px;
 }
 
-#AreaHlasenie1_ST1_Image2 {
-  border-width: 5px;
-}
-
-#AreaHlasenie1_ST1_Image2 {
-  border-radius: 10px;
-}
-
-#AreaHlasenie1_ST1_ImageList7 {
-  top: 247px;
+#AreaHlasenie1_ST1_ImageList1 {
+  top: 191px;
   position: absolute;
 }
 
-#AreaHlasenie1_ST1_ImageList7 {
-  left: 329px;
+#AreaHlasenie1_ST1_ImageList1 {
+  left: 338px;
   position: absolute;
 }
 
-#AreaHlasenie1_ST1_ImageList7 {
-  width: 35px;
+#AreaHlasenie1_ST1_ImageList1 {
+  width: 32px;
 }
 
-#AreaHlasenie1_ST1_ImageList7 {
-  height: 35px;
+#AreaHlasenie1_ST1_ImageList1 {
+  height: 32px;
 }
 
-#AreaHlasenie1_ST1_ImageList7 {
+#AreaHlasenie1_ST1_ImageList1 {
+  z-index: 3;
+}
+
+#AreaHlasenie1_ST1_ImageList2 {
+  top: 191px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList2 {
+  left: 385px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList2 {
+  width: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList2 {
+  height: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList2 {
+  z-index: 4;
+}
+
+#AreaHlasenie1_ST1_ImageList3 {
+  top: 250px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList3 {
+  left: 325px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList3 {
+  width: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList3 {
+  height: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList3 {
+  z-index: 5;
+}
+
+#AreaHlasenie1_ST1_ImageList4 {
+  top: 288px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList4 {
+  left: 325px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList4 {
+  width: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList4 {
+  height: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList4 {
+  z-index: 6;
+}
+
+#AreaHlasenie1_ST1_ImageList5 {
+  top: 356px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList5 {
+  left: 362px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList5 {
+  width: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList5 {
+  height: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList5 {
+  z-index: 7;
+}
+
+#AreaHlasenie1_ST1_ImageList6 {
+  top: 274px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList6 {
+  left: 390px;
+  position: absolute;
+}
+
+#AreaHlasenie1_ST1_ImageList6 {
+  width: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList6 {
+  height: 32px;
+}
+
+#AreaHlasenie1_ST1_ImageList6 {
   z-index: 8;
 }
 
 #AreaHlasenie1_ST1_ImageList7 {
-  border-style: none;
+  top: 201px;
+  position: absolute;
 }
 
 #AreaHlasenie1_ST1_ImageList7 {
-  border-width: 0px;
-}
-
-#AreaHlasenie1_ST1_ImageList9 {
-  top: 191px;
+  left: 176px;
   position: absolute;
 }
 
-#AreaHlasenie1_ST1_ImageList9 {
-  left: 341px;
-  position: absolute;
+#AreaHlasenie1_ST1_ImageList7 {
+  width: 32px;
 }
 
-#AreaHlasenie1_ST1_ImageList9 {
-  width: 35px;
+#AreaHlasenie1_ST1_ImageList7 {
+  height: 32px;
 }
 
-#AreaHlasenie1_ST1_ImageList9 {
-  height: 35px;
-}
-
-#AreaHlasenie1_ST1_ImageList9 {
+#AreaHlasenie1_ST1_ImageList7 {
   z-index: 9;
 }
 
-#AreaHlasenie1_ST1_ImageList9 {
-  border-style: none;
-}
-
-#AreaHlasenie1_ST1_ImageList9 {
-  border-width: 0px;
-}
-
-#AreaHlasenie1_ST1_ImageList10 {
-  top: 191px;
+#AreaHlasenie1_ST1_ImageList8 {
+  top: 276px;
   position: absolute;
 }
 
-#AreaHlasenie1_ST1_ImageList10 {
-  left: 395px;
+#AreaHlasenie1_ST1_ImageList8 {
+  left: 146px;
   position: absolute;
 }
 
-#AreaHlasenie1_ST1_ImageList10 {
-  width: 35px;
+#AreaHlasenie1_ST1_ImageList8 {
+  width: 32px;
 }
 
-#AreaHlasenie1_ST1_ImageList10 {
-  height: 35px;
+#AreaHlasenie1_ST1_ImageList8 {
+  height: 32px;
 }
 
-#AreaHlasenie1_ST1_ImageList10 {
+#AreaHlasenie1_ST1_ImageList8 {
   z-index: 10;
 }
 
-#AreaHlasenie1_ST1_ImageList10 {
-  border-style: none;
-}
-
-#AreaHlasenie1_ST1_ImageList10 {
-  border-width: 0px;
-}
-
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru {
-  top: 119px;
+#AreaHlasenie1_ST1_Button_IgnorujKameru {
+  top: 111px;
   position: absolute;
 }
 
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru {
-  left: 45px;
+#AreaHlasenie1_ST1_Button_IgnorujKameru {
+  left: 61px;
   position: absolute;
 }
 
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru {
-  width: 149px;
+#AreaHlasenie1_ST1_Button_IgnorujKameru {
+  width: 150px;
 }
 
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru {
+#AreaHlasenie1_ST1_Button_IgnorujKameru {
   height: 45px;
 }
 
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru {
+#AreaHlasenie1_ST1_Button_IgnorujKameru {
   z-index: 11;
 }
 
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru {
-  border-radius: 10px;
-}
-
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru:not(.disabled):not(.active):not(.checked) span {
+#AreaHlasenie1_ST1_Button_IgnorujKameru:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
 
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru {
-  justify-content: center;
-  text-align: center;
+#AreaHlasenie1_ST1_Button_IgnorujKameru span {
+  font-size: 16px;
 }
 
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru:not(.active):not(.checked) {
-  box-shadow: 4px 4px 14px black;
+#AreaHlasenie1_ST1_Button_IgnorujKameru:not(.active):not(.checked) {
+  box-shadow: 2px 2px 10px black;
 }
 
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru.disabled.active {
-  box-shadow: 4px 4px 14px black;
+#AreaHlasenie1_ST1_Button_IgnorujKameru.disabled.active {
+  box-shadow: 2px 2px 10px black;
 }
 
-#AreaHlasenie1_ST1_Button_Vytah_IgnorujKameru.disabled.checked {
-  box-shadow: 4px 4px 14px black;
+#AreaHlasenie1_ST1_Button_IgnorujKameru.disabled.checked {
+  box-shadow: 2px 2px 10px black;
 }

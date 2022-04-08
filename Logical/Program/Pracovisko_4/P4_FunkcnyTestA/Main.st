@@ -46,6 +46,8 @@ PROGRAM _CYCLIC
 			P4_FunkcnyTestA.OUT.PritlakPowerCP_VYSUN:= FALSE;
 			P4_FunkcnyTestA.OUT.SpodneKontakty_VYSUN:= FALSE;
 			P4_FunkcnyTestA.OUT.SpodneKontakty_ZASUN:= TRUE;
+			P4_FunkcnyTestA.OUT.HorneKontakty_VYSUN:= FALSE;
+			P4_FunkcnyTestA.OUT.HorneKontakty_ZASUN:= TRUE;
 			P4_FunkcnyTestA.RFID_hlava.PrecitajChipRFID:= FALSE;
 			P4_FunkcnyTestA.CMD.RR_OtvorTester:= FALSE;
 			P4_FunkcnyTestA.CMD.RR_ZatvorTester:= FALSE;
@@ -189,13 +191,14 @@ PROGRAM _CYCLIC
 			SC_P4_FunkcnyTestA.StepName:='20 - Inicializacia - precitanie cisla paletky';
 			SC_P4_FunkcnyTestA.IdleTime.PT:= T#200ms;
 			SC_P4_FunkcnyTestA.AlarmTime.PT:= T#5s;
-			SC_P4_FunkcnyTestA.IdleTime.IN:= TRUE;
+			
 		
 			SC_P4_FunkcnyTestA.IdleTime.IN:= P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky;
 									
-			IF SC_P4_FunkcnyTestA.IdleTime.Q THEN
+			IF SC_P4_FunkcnyTestA.IdleTime.Q AND NOT SC_P4_FunkcnyTestA.Switch1 THEN
 				P4_FunkcnyTestA.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P4_FunkcnyTestA.Switch1:= TRUE;
 			END_IF
 			
 			IF P4_FunkcnyTestA.RFID_hlava.Stav_CitanieZapis_OK AND P4_FunkcnyTestA.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
@@ -536,6 +539,7 @@ PROGRAM _CYCLIC
 			SC_P4_FunkcnyTestA.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P4_FunkcnyTestA.Switch1 THEN
+				P4_FunkcnyTestA.OUT.PritlakPowerCP_VYSUN:= TRUE;
 				SpodneKontakty_ZASUN:= TRUE;
 				SC_P4_FunkcnyTestA.Switch1:= TRUE;
 			END_IF
@@ -557,6 +561,7 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			IF P4_FunkcnyTestA.IN.HorneKontakty_ZASUNUTE THEN
+				P4_FunkcnyTestA.OUT.PritlakPowerCP_VYSUN:= FALSE;
 				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
 				SC_P4_FunkcnyTestA.Step:= 148;
 			END_IF

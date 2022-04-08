@@ -77,7 +77,7 @@ PROGRAM _CYCLIC
 			
 			
 												
-			IF P3_Dopravniky.STAV.PoINIT THEN
+			IF P4_Dopravniky.STAV.PoINIT THEN
 				SC_P4_ZdvizkaZaFunkcTestA.ResetStep:= TRUE;
 				SC_P4_ZdvizkaZaFunkcTestA.Step:= 5;
 			END_IF	
@@ -222,9 +222,9 @@ PROGRAM _CYCLIC
 		
 			SC_P4_ZdvizkaZaFunkcTestA.IdleTime.IN:= P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky AND P4_ZdvizkaZaFunkcTestA.IN.PoziciaPaletky_OK AND P4_ZdvizkaZaFunkcTestA.IN.Zdvizka_StrednaPoloha;	
 		
-			IF P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky AND P4_ZdvizkaZaFunkcTestA.IN.Zdvizka_StrednaPoloha THEN
-				P3_LeakageTestA.STAV.PrebiehaVyvezeniePaletky:= FALSE;
-				P3_ZdvizkaZaLeakTestB.STAV.PrebiehaVyvezeniePaletkyNaTratA:= FALSE;
+			IF P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky AND P4_ZdvizkaZaFunkcTestA.IN.PoziciaPaletky_OK THEN
+				P4_FunkcnyTestA.STAV.PrebiehaVyvezeniePaletky:= FALSE;
+				P4_ZdvizkaZaFunkcTestB.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			END_IF	
 			
 			IF P4_ZdvizkaZaFunkcTestA.KoniecCyklu AND NOT P3_LeakageTestA.Automat THEN
@@ -273,9 +273,8 @@ PROGRAM _CYCLIC
 			SC_P4_ZdvizkaZaFunkcTestA.IdleTime.PT:= T#500ms;
 			SC_P4_ZdvizkaZaFunkcTestA.AlarmTime.PT:= T#5s;
 				
-			SC_P4_ZdvizkaZaFunkcTestA.IdleTime.IN:= NOT P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky;
-			
-			IF SC_P4_ZdvizkaZaFunkcTestA.IdleTime.Q AND NOT SC_P4_ZdvizkaZaFunkcTestA.Switch1 AND SC_OvlZdvizky.Step = 1 THEN
+						
+			IF P4_Etiketovacka.RFID_hlava.PritomnostPaletky AND NOT SC_P4_ZdvizkaZaFunkcTestA.Switch1 AND SC_OvlZdvizky.Step = 1 THEN
 				Zdvizku_VYSTRED:= TRUE;
 				SC_P4_ZdvizkaZaFunkcTestA.Switch1:= TRUE;
 			END_IF

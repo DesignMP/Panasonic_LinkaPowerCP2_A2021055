@@ -13,6 +13,18 @@ PROGRAM _CYCLIC
 	ProfinetKomunikaciaKAM16;
 	 
 	
+	//Odomknutie pneumatického zámku zdvižiek//
+	IF Safety.STAV.P4_ZonaBunky_AKTIVNA THEN
+		P4_Pracovisko.OUT.ZdvizkyPneuZamok_ODOMKNI:= TRUE;
+	ELSE
+		P4_Pracovisko.OUT.ZdvizkyPneuZamok_ODOMKNI:= FALSE;
+	END_IF	
+	
+	
+	
+	
+	
+	
 	//**************************************Ukonèenie cyklu pracoviska****************************************************//
 	IF P4_Pracovisko.KoniecCyklu THEN
 		IF P4_Dopravniky.Automat THEN
@@ -327,7 +339,7 @@ PROGRAM _CYCLIC
 		P4_Pracovisko.IN.ModulFesto_IO_KomOK AND
 		P4_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
 		P4_Pracovisko.IN.ServoZdvihuVytahu_KomOK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+		(*P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND*)
 		P4_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P4_Pracovisko.STAV.HardwareVytahu_OK:= TRUE;
 	ELSE	
@@ -340,7 +352,7 @@ PROGRAM _CYCLIC
 		P4_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
 		P4_Pracovisko.IN.ServoZdvihuAplikEtikiet_KomOK AND
 		P4_Pracovisko.IN.SmartKamera14_KomOK AND
-		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
+		(*P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND*)
 		P4_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P4_Pracovisko.STAV.HardwareBunky_OK:= TRUE;
 	ELSE	

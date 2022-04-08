@@ -18,7 +18,7 @@
 		opacity: 0.2;
 }
 #AreaPageManualP1_Vytah_Label1 {
-	@include elemTop(8);
+	@include elemTop(13);
 }
 #AreaPageManualP1_Vytah_Label1 {
 	@include elemLeft(483);
@@ -27,13 +27,13 @@
 	@include elemAutoWidth(400);
 }
 #AreaPageManualP1_Vytah_Label1 {
-	@include elemAutoHeight(50);
+	@include elemAutoHeight(40);
 }
 #AreaPageManualP1_Vytah_Label1 {
 		z-index: 1;
 }
 #AreaPageManualP1_Vytah_Label1 {
-		border-width: 5px;
+		border-width: 3px;
 }
 #AreaPageManualP1_Vytah_Label1 {
 	@include border-radius(5px);
@@ -69,7 +69,7 @@
 	@include font-weight-bold(true);
 }
 #AreaPageManualP1_Vytah_Label1 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(2px 2px 15px rgba(0, 0, 0, 1));
 }
 #AreaPageManualP1_Vytah_GroupBox_OvladanieDopravnikov {
 	@include elemTop(68);
@@ -332,7 +332,7 @@
 	@include elemTop(16);
 }
 #AreaPageManualP1_Vytah_Button_ResetServa {
-	@include elemLeft(11);
+	@include elemLeft(26);
 }
 #AreaPageManualP1_Vytah_Button_ResetServa {
 	@include elemAutoWidth(165);
@@ -437,7 +437,7 @@
 	@include elemTop(79);
 }
 #AreaPageManualP1_Vytah_MomentaryPushButton_JoggZdvihuDOLE {
-	@include elemLeft(11);
+	@include elemLeft(26);
 }
 #AreaPageManualP1_Vytah_MomentaryPushButton_JoggZdvihuDOLE {
 	@include elemAutoWidth(165);
@@ -478,7 +478,7 @@
 	@include elemTop(79);
 }
 #AreaPageManualP1_Vytah_MomentaryPushButton_JoggZdvihuHORE {
-	@include elemLeft(251);
+	@include elemLeft(236);
 }
 #AreaPageManualP1_Vytah_MomentaryPushButton_JoggZdvihuHORE {
 	@include elemAutoWidth(165);
@@ -987,4 +987,10 @@
 }
 #AreaPageManualP1_Vytah_Image2 {
 		z-index: 5;
+}
+#AreaPageManualP1_Vytah_Image2 {
+		background-color: rgba(253, 245, 230, 1);
+}
+#AreaPageManualP1_Vytah_Image2 {
+		border-width: 1px;
 }

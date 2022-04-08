@@ -1,0 +1,109 @@
+﻿@import "mixins.scss";
+#AreaHlasenie7_ST3_GroupBox1 {
+	@include elemTop(0);
+}
+#AreaHlasenie7_ST3_GroupBox1 {
+	@include elemLeft(0);
+}
+#AreaHlasenie7_ST3_GroupBox1 {
+	@include elemWidth(500);
+}
+#AreaHlasenie7_ST3_GroupBox1 {
+	@include elemHeight(300);
+}
+#AreaHlasenie7_ST3_GroupBox1 {
+		z-index: 0;
+}
+#AreaHlasenie7_ST3_GroupBox1 {
+		border-width: 4px;
+}
+#AreaHlasenie7_ST3_GroupBox1 {
+	> .header{
+		border-width: 4px;
+	}
+}
+#AreaHlasenie7_ST3_GroupBox1 {
+	@include border-radius(0px);
+}
+#AreaHlasenie7_ST3_GroupBox1 {
+		background-color: rgba(255, 0, 0, 1);
+}
+#AreaHlasenie7_ST3_Image1 {
+	@include elemTop(10);
+}
+#AreaHlasenie7_ST3_Image1 {
+	@include elemLeft(10);
+}
+#AreaHlasenie7_ST3_Image1 {
+	@include elemAutoWidth(80);
+}
+#AreaHlasenie7_ST3_Image1 {
+	@include elemAutoHeight(80);
+}
+#AreaHlasenie7_ST3_Image1 {
+		z-index: 0;
+}
+#AreaHlasenie7_ST3_Label1 {
+	@include elemTop(106);
+}
+#AreaHlasenie7_ST3_Label1 {
+	@include elemLeft(21);
+}
+#AreaHlasenie7_ST3_Label1 {
+	@include elemAutoWidth(450);
+}
+#AreaHlasenie7_ST3_Label1 {
+	@include elemAutoHeight(100);
+}
+#AreaHlasenie7_ST3_Label1 {
+		z-index: 1;
+}
+#AreaHlasenie7_ST3_Label1 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaHlasenie7_ST3_Label1 {
+	@include text-alignment-all('center');
+}
+#AreaHlasenie7_ST3_Label1 {
+		font-size: 25px;
+}
+#AreaHlasenie7_ST3_Label1 {
+	@include font-weight-bold(true);
+}
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+	@include elemTop(206);
+}
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+	@include elemLeft(171);
+}
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+	@include elemAutoWidth(150);
+}
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+	@include elemAutoHeight(45);
+}
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+		z-index: 2;
+}
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+	span{
+		font-size: 16px;
+	}
+}
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+	&:not(.active):not(.checked){
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+	&.disabled.active{
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaHlasenie7_ST3_Button_IgnorujKameru {
+	&.disabled.checked{
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}

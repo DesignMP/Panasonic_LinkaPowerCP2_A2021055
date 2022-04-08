@@ -6,6 +6,9 @@ PROGRAM _INIT
 	Safety.STAV.P1_ZonaBunky_AKTIVNA:= TRUE;
 	Safety.STAV.P1_ZonaVytahu_AKTIVNA:= TRUE;
 	Safety.STAV.P3_ZonaBunky_AKTIVNA:= TRUE;
+	Safety.STAV.P4_ZonaBunky_AKTIVNA:= TRUE;
+	Safety.STAV.P4_ZonaVytahu_AKTIVNA:= TRUE;
+	Safety.STAV.P4_Vytah_Bariera_AKTIVNA:= TRUE;
 	Linka.PAR.ZvolenyModel:= '5F';
 	P3_LeakageTestA.STAV.Tester_ON:= TRUE;
 	P3_LeakageTestB.STAV.Tester_ON:= TRUE;

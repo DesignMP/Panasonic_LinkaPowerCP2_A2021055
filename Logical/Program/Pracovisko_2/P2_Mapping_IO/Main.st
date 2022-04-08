@@ -112,10 +112,10 @@ PROGRAM _CYCLIC
 	
 	
 	//Outputs//
-	P2_Pracovisko.OUT.PredneDvereLS_ZAMKNI := P2_Pracovisko.COM_Festo.DM2_1_4DO[0];
-	P2_Pracovisko.OUT.PredneDverePS_ZAMKNI := P2_Pracovisko.COM_Festo.DM2_1_4DO[1];
-	P2_Pracovisko.OUT.ZadneDverePS_ZAMKNI := P2_Pracovisko.COM_Festo.DM2_1_4DO[2];
-	P2_Pracovisko.OUT.ZadneDvereLS_ZAMKNI := P2_Pracovisko.COM_Festo.DM2_1_4DO[3];
+	P2_Pracovisko.COM_Festo.DM2_1_4DO[0]:= P2_Pracovisko.OUT.PredneDvereLS_ZAMKNI;
+	P2_Pracovisko.COM_Festo.DM2_1_4DO[1]:=P2_Pracovisko.OUT.PredneDverePS_ZAMKNI;
+	P2_Pracovisko.COM_Festo.DM2_1_4DO[2]:= P2_Pracovisko.OUT.ZadneDverePS_ZAMKNI;
+	P2_Pracovisko.COM_Festo.DM2_1_4DO[3]:= P2_Pracovisko.OUT.ZadneDvereLS_ZAMKNI;
 	
 	
 	

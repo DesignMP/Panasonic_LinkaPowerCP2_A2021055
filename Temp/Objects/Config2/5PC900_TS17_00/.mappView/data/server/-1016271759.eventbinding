@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="PataP34">
+    <EventBinding id="PataP34.NavigationButton_Automat.Click">
+      <Source type="widgets.brease.NavigationButton.Event" event="Click" refId="PataP34_NavigationButton_Automat" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_RezimAutomat">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="PataP34">
+    <EventBinding id="PataP34.NavigationButton_ManualBunka3.Click">
+      <Source type="widgets.brease.NavigationButton.Event" event="Click" refId="PataP34_NavigationButton_ManualBunka3" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_Pracovisko.Manual">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="PataP34">
+    <EventBinding id="PataP34.NavigationButton_ManualBunka4.Click">
+      <Source type="widgets.brease.NavigationButton.Event" event="Click" refId="PataP34_NavigationButton_ManualBunka4" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Pracovisko.Manual">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

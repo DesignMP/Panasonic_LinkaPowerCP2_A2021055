@@ -11,16 +11,17 @@
   <TaskClass Name="Cyclic#2">
     <Task Name="P1_Vytah" Source="Program.Pracovisko_1.P1_Vytah.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P1_Srobova" Source="Program.Pracovisko_1.P1_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P1_Robot" Source="Program.Pracovisko_1.P1_Robot.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_ZaklTes" Source="Program.Pracovisko_2.P2_ZaklTesnenia.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_Srobova" Source="Program.Pracovisko_2.P2_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_StoperS" Source="Program.Pracovisko_2.P2_StoperSrobovania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_Zvarani" Source="Program.Pracovisko_2.P2_Zvaranie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_Stoper1" Source="Program.Pracovisko_2.P2_StoperZvarania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_Cisteni" Source="Program.Pracovisko_2.P2_Cistenie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P1_Robot" Source="Program.Pracovisko_1.P1_Robot.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_Robot" Source="Program.Pracovisko_2.P2_Robot.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P3_Srobova" Source="Program.Pracovisko_3.P3_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P4_StoperE" Source="Program.Pracovisko_4.P4_StoperEtiketovania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P4_Vytah" Source="Program.Pracovisko_4.P4_Vytah.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#3">
     <Task Name="P1_OvladSa" Source="Program.Pracovisko_1.P1_OvladSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />

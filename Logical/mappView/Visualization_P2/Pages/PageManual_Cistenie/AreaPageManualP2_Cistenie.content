@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="AreaPageManualP2_Cistenie" height="588" width="1366" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Image" id="ImageRR_Cistenie" top="0" left="0" width="1366" height="588" zIndex="0" image="Media/Pozadie/BackGround_588x1366.png" opacity="0.15" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="13" left="483" width="400" height="40" zIndex="1" text="Manuálny režim - Čistenie (2/2)" borderWidth="3px" borderStyle="ridge" style="FavoriteWatch" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButtonRR_Zvaranie" top="10" left="10" width="110" height="50" zIndex="2" image="Media/Pictures/PreviewPage1_48x48.png" pageId="PageManualP2_Zvaranie" cornerRadius="4px" backGroundGradient="" shadow="3px 3px 14px rgba(0, 0, 0, 1)" style="Default_NavButton" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="95" left="1020" width="300" height="424" zIndex="3" image="Media/Pozadie/Pracovisko2_Cistenie.png" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox_Cistenie" top="169" left="30" width="450" height="260" zIndex="4" text="Ovládanie čistenia" style="GroupBox1">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Button" id="Button_CentrovanieDOLE" top="84" left="24" width="180" height="50" zIndex="0" image="Media/Pictures/SipkaDole2_32x32.png" text="DOLE" textAlign="left" fontSize="18px" style="Operate" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageCentrovanieDOLE" top="97" left="164" width="25" height="25" zIndex="1" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_CentrovanieHORE" top="84" left="239" width="180" height="50" zIndex="2" image="Media/Pictures/SipkaHore2_32x32.png" imageAlign="right" text="HORE" textAlign="right" fontSize="18px" style="Operate" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageCentrovanieHORE" top="97" left="254" width="25" height="25" zIndex="3" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox_Ionizator" top="170" left="510" width="450" height="260" zIndex="5" text="Ovládanie ionizátora" style="GroupBox1">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_ZapniIonizator" top="13" left="134" width="180" height="50" zIndex="0" mouseDownText="Vypni Ionizátor" multiLine="true" text="Zapni Ionizátor" textColor="rgba(0, 0, 0, 1)" fontSize="17px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_ZapniVzduch" top="83" left="134" width="180" height="50" zIndex="1" mouseDownText="Vypni vzduch" multiLine="true" text="Zapni vzduch" textColor="rgba(0, 0, 0, 1)" fontSize="17px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_ZapniOdsavanie" top="153" left="134" width="180" height="50" zIndex="2" mouseDownText="Vypni odsávanie" multiLine="true" text="Zapni odsávanie" textColor="rgba(0, 0, 0, 1)" fontSize="17px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

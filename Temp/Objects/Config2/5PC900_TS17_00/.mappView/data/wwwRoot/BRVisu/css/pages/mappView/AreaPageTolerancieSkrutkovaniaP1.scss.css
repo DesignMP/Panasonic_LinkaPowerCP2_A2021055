@@ -25,7 +25,7 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_Label1 {
-  top: 8px;
+  top: 13px;
   position: absolute;
 }
 
@@ -39,7 +39,7 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_Label1 {
-  height: 50px;
+  height: 40px;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_Label1 {
@@ -47,7 +47,7 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_Label1 {
-  border-width: 5px;
+  border-width: 3px;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_Label1 {
@@ -56,18 +56,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_Label1 {
   background-color: #e0e0e0;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_Label1 {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_Label1:before {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_Label1:after {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_Label1 {
@@ -102,7 +90,7 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_Label1 {
-  box-shadow: 4px 4px 14px black;
+  box-shadow: 2px 2px 15px black;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_GroupBox1 {
@@ -294,10 +282,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_3.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_3:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_3.disabled {
@@ -547,10 +531,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_8:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_8.disabled {
   border-color: #ff8800;
 }
@@ -677,10 +657,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_9.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_9:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_9.disabled {
@@ -930,10 +906,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_6:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_6.disabled {
   border-color: #ff8800;
 }
@@ -1181,10 +1153,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_11:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_11.disabled {
   border-color: #ff8800;
 }
@@ -1311,10 +1279,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_12.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_12:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_12.disabled {
@@ -1564,10 +1528,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_14:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_14.disabled {
   border-color: #ff8800;
 }
@@ -1696,10 +1656,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_15:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_15.disabled {
   border-color: #ff8800;
 }
@@ -1825,10 +1781,6 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput2 {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput2 {
   border-style: ridge;
 }
 
@@ -1885,10 +1837,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput3 {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput3 {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput3 {
@@ -1951,10 +1899,6 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput4 {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput4 {
   border-style: ridge;
 }
 
@@ -2011,10 +1955,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput5 {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput5 {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput5 {
@@ -2078,10 +2018,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_5.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_5:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_5.disabled {
@@ -2365,10 +2301,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_17:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_17.disabled {
   border-color: #ff8800;
 }
@@ -2495,10 +2427,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_18.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_18:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_18.disabled {
@@ -2748,10 +2676,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_23:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_23.disabled {
   border-color: #ff8800;
 }
@@ -2878,10 +2802,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_24.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_24:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_24.disabled {
@@ -3131,10 +3051,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_20:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_20.disabled {
   border-color: #ff8800;
 }
@@ -3261,10 +3177,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_21.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_21:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_21.disabled {
@@ -3514,10 +3426,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_26:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_26.disabled {
   border-color: #ff8800;
 }
@@ -3644,10 +3552,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_27.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_27:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_27.disabled {
@@ -3897,10 +3801,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_29:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_29.disabled {
   border-color: #ff8800;
 }
@@ -4029,10 +3929,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_30:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_30.disabled {
   border-color: #ff8800;
 }
@@ -4158,10 +4054,6 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput6 {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput6 {
   border-style: ridge;
 }
 
@@ -4218,10 +4110,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput7 {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput7 {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput7 {
@@ -4284,10 +4172,6 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput8 {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput8 {
   border-style: ridge;
 }
 
@@ -4347,10 +4231,6 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput9 {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput9 {
   border-style: ridge;
 }
 
@@ -4407,10 +4287,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput10 {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput10 {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput10 {
@@ -4629,10 +4505,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_32:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_32.disabled {
   border-color: #ff8800;
 }
@@ -4759,10 +4631,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_33.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_33:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_33.disabled {
@@ -5012,10 +4880,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_38:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_38.disabled {
   border-color: #ff8800;
 }
@@ -5142,10 +5006,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_39.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_39:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_39.disabled {
@@ -5395,10 +5255,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_35:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_35.disabled {
   border-color: #ff8800;
 }
@@ -5525,10 +5381,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_36.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_36:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_36.disabled {
@@ -5778,10 +5630,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_41:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_41.disabled {
   border-color: #ff8800;
 }
@@ -5908,10 +5756,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_42.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_42:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_42.disabled {
@@ -6161,10 +6005,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_44:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_44.disabled {
   border-color: #ff8800;
 }
@@ -6293,10 +6133,6 @@
   background-color: silver;
 }
 
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_45:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_45.disabled {
   border-color: #ff8800;
 }
@@ -6422,10 +6258,6 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput11 {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput11 {
   border-style: ridge;
 }
 
@@ -6482,10 +6314,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput12 {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput12 {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput12 {
@@ -6548,10 +6376,6 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput13 {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput13 {
   border-style: ridge;
 }
 
@@ -6608,10 +6432,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput14 {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput14 {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput14 {
@@ -6674,10 +6494,6 @@
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput15 {
-  border-color: #999999;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput15 {
   border-style: ridge;
 }
 
@@ -6734,10 +6550,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput1 {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericOutput1 {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericOutput1 {
@@ -6801,10 +6613,6 @@
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_2.disabled {
   background-color: silver;
-}
-
-#AreaPageTolerancieSkrutkovaniaP1_NumericInput_2:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageTolerancieSkrutkovaniaP1_NumericInput_2.disabled {

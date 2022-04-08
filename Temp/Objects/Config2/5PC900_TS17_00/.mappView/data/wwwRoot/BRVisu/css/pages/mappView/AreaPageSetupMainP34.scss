@@ -1,0 +1,34 @@
+﻿@import "mixins.scss";
+#AreaPageSetupMainP34_ImageSetupP34 {
+	@include elemTop(0);
+}
+#AreaPageSetupMainP34_ImageSetupP34 {
+	@include elemLeft(0);
+}
+#AreaPageSetupMainP34_ImageSetupP34 {
+	@include elemAutoWidth(1366);
+}
+#AreaPageSetupMainP34_ImageSetupP34 {
+	@include elemAutoHeight(588);
+}
+#AreaPageSetupMainP34_ImageSetupP34 {
+		z-index: 0;
+}
+#AreaPageSetupMainP34_ImageSetupP34 {
+		opacity: 0.15;
+}
+#AreaPageSetupMainP34_Label1 {
+	@include elemTop(20);
+}
+#AreaPageSetupMainP34_Label1 {
+	@include elemLeft(483);
+}
+#AreaPageSetupMainP34_Label1 {
+	@include elemAutoWidth(400);
+}
+#AreaPageSetupMainP34_Label1 {
+	@include elemAutoHeight(40);
+}
+#AreaPageSetupMainP34_Label1 {
+		z-index: 1;
+}

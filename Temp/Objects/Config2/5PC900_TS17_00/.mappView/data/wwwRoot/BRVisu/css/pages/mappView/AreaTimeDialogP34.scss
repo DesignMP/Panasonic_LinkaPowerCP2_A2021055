@@ -1,0 +1,463 @@
+﻿@import "mixins.scss";
+#AreaTimeDialogP34_Rectangle1 {
+	@include elemTop(0);
+}
+#AreaTimeDialogP34_Rectangle1 {
+	@include elemLeft(0);
+}
+#AreaTimeDialogP34_Rectangle1 {
+	@include elemWidth(500);
+}
+#AreaTimeDialogP34_Rectangle1 {
+	@include elemHeight(350);
+}
+#AreaTimeDialogP34_Rectangle1 {
+		z-index: 0;
+}
+#AreaTimeDialogP34_Rectangle1 {
+		border-width: 2px;
+}
+#AreaTimeDialogP34_Rectangle1 {
+		background-color: rgba(153, 180, 209, 1);
+}
+#AreaTimeDialogP34_Image1 {
+	@include elemTop(10);
+}
+#AreaTimeDialogP34_Image1 {
+	@include elemLeft(20);
+}
+#AreaTimeDialogP34_Image1 {
+	@include elemAutoWidth(60);
+}
+#AreaTimeDialogP34_Image1 {
+	@include elemAutoHeight(60);
+}
+#AreaTimeDialogP34_Image1 {
+		z-index: 1;
+}
+#AreaTimeDialogP34_Line1 {
+		z-index: 2;
+}
+#AreaTimeDialogP34_Line1 {
+	line{
+		stroke: rgba(255, 255, 255, 1);
+	}
+}
+#AreaTimeDialogP34_Line1 {
+	line{
+		stroke-width: 3px;
+	}
+}
+#AreaTimeDialogP34_Label1 {
+	@include elemTop(15);
+}
+#AreaTimeDialogP34_Label1 {
+	@include elemLeft(130);
+}
+#AreaTimeDialogP34_Label1 {
+	@include elemAutoWidth(300);
+}
+#AreaTimeDialogP34_Label1 {
+	@include elemAutoHeight(50);
+}
+#AreaTimeDialogP34_Label1 {
+		z-index: 3;
+}
+#AreaTimeDialogP34_Label1 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_Label1 {
+	@include text-alignment-all('center');
+}
+#AreaTimeDialogP34_Label1 {
+		font-size: 22px;
+}
+#AreaTimeDialogP34_Label1 {
+	@include font-weight-bold(true);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+	@include elemTop(130);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+	@include elemLeft(160);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+	@include elemWidth(260);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+	@include elemHeight(40);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+		z-index: 4;
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+	&:not(.disabled):not(.active){
+		border-width: 3px;
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+	&:not(.active):not(.disabled){
+		border-color: rgba(71, 71, 71, 1);
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+	&:not(.active):not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+	@include text-alignment(center);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+		font-size: 20px;
+}
+#AreaTimeDialogP34_DateTimeInput_Cas {
+	@include box-shadow(4px 1px 3px rgba(71, 71, 71, 1));
+}
+#AreaTimeDialogP34_Label2 {
+	@include elemAutoWidth(80);
+}
+#AreaTimeDialogP34_Label2 {
+	@include elemAutoHeight(30);
+}
+#AreaTimeDialogP34_Label2 {
+	@include elemTop(135);
+}
+#AreaTimeDialogP34_Label2 {
+	@include elemLeft(50);
+}
+#AreaTimeDialogP34_Label2 {
+		z-index: 5;
+}
+#AreaTimeDialogP34_Label2 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_Label2 {
+		font-size: 20px;
+}
+#AreaTimeDialogP34_Label2 {
+	@include font-weight-bold(true);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+	@include elemTop(200);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+	@include elemLeft(160);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+	@include elemWidth(260);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+	@include elemHeight(40);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+		z-index: 6;
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+	&:not(.disabled):not(.active){
+		border-width: 3px;
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+	&:not(.active):not(.disabled){
+		border-color: rgba(71, 71, 71, 1);
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+	&:not(.active):not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+	@include text-alignment(center);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+		font-size: 20px;
+}
+#AreaTimeDialogP34_DateTimeInput_Cas1 {
+	@include box-shadow(4px 1px 3px rgba(71, 71, 71, 1));
+}
+#AreaTimeDialogP34_Label3 {
+	@include elemAutoWidth(80);
+}
+#AreaTimeDialogP34_Label3 {
+	@include elemAutoHeight(30);
+}
+#AreaTimeDialogP34_Label3 {
+	@include elemTop(205);
+}
+#AreaTimeDialogP34_Label3 {
+	@include elemLeft(50);
+}
+#AreaTimeDialogP34_Label3 {
+		z-index: 7;
+}
+#AreaTimeDialogP34_Label3 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_Label3 {
+		font-size: 20px;
+}
+#AreaTimeDialogP34_Label3 {
+	@include font-weight-bold(true);
+}
+#AreaTimeDialogP34_LogoutButton_Exit {
+	@include elemTop(280);
+}
+#AreaTimeDialogP34_LogoutButton_Exit {
+	@include elemLeft(175);
+}
+#AreaTimeDialogP34_LogoutButton_Exit {
+	@include elemAutoWidth(150);
+}
+#AreaTimeDialogP34_LogoutButton_Exit {
+	@include elemAutoHeight(40);
+}
+#AreaTimeDialogP34_LogoutButton_Exit {
+		z-index: 8;
+}
+#AreaTimeDialogP34_LogoutButton_Exit {
+	@include border-radius(10px);
+}
+#AreaTimeDialogP34_LogoutButton_Exit {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_Rectangle2 {
+	@include elemTop(0);
+}
+#AreaTimeDialogP34_Rectangle2 {
+	@include elemLeft(0);
+}
+#AreaTimeDialogP34_Rectangle2 {
+	@include elemWidth(500);
+}
+#AreaTimeDialogP34_Rectangle2 {
+	@include elemHeight(350);
+}
+#AreaTimeDialogP34_Rectangle2 {
+		z-index: 9;
+}
+#AreaTimeDialogP34_Rectangle2 {
+		border-width: 2px;
+}
+#AreaTimeDialogP34_Rectangle2 {
+		background-color: rgba(153, 180, 209, 1);
+}
+#AreaTimeDialogP34_Image2 {
+	@include elemTop(10);
+}
+#AreaTimeDialogP34_Image2 {
+	@include elemLeft(20);
+}
+#AreaTimeDialogP34_Image2 {
+	@include elemAutoWidth(60);
+}
+#AreaTimeDialogP34_Image2 {
+	@include elemAutoHeight(60);
+}
+#AreaTimeDialogP34_Image2 {
+		z-index: 10;
+}
+#AreaTimeDialogP34_Line2 {
+		z-index: 11;
+}
+#AreaTimeDialogP34_Line2 {
+	line{
+		stroke: rgba(255, 255, 255, 1);
+	}
+}
+#AreaTimeDialogP34_Line2 {
+	line{
+		stroke-width: 3px;
+	}
+}
+#AreaTimeDialogP34_Label4 {
+	@include elemTop(15);
+}
+#AreaTimeDialogP34_Label4 {
+	@include elemLeft(130);
+}
+#AreaTimeDialogP34_Label4 {
+	@include elemAutoWidth(300);
+}
+#AreaTimeDialogP34_Label4 {
+	@include elemAutoHeight(50);
+}
+#AreaTimeDialogP34_Label4 {
+		z-index: 12;
+}
+#AreaTimeDialogP34_Label4 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_Label4 {
+	@include text-alignment-all('center');
+}
+#AreaTimeDialogP34_Label4 {
+		font-size: 22px;
+}
+#AreaTimeDialogP34_Label4 {
+	@include font-weight-bold(true);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+	@include elemTop(130);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+	@include elemLeft(160);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+	@include elemWidth(260);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+	@include elemHeight(40);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+		z-index: 13;
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+	&:not(.disabled):not(.active){
+		border-width: 3px;
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+	&:not(.active):not(.disabled){
+		border-color: rgba(71, 71, 71, 1);
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+	&:not(.active):not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+	@include text-alignment(center);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+		font-size: 20px;
+}
+#AreaTimeDialogP34_DateTimeInput_Cas2 {
+	@include box-shadow(4px 1px 3px rgba(71, 71, 71, 1));
+}
+#AreaTimeDialogP34_Label5 {
+	@include elemAutoWidth(80);
+}
+#AreaTimeDialogP34_Label5 {
+	@include elemAutoHeight(30);
+}
+#AreaTimeDialogP34_Label5 {
+	@include elemTop(135);
+}
+#AreaTimeDialogP34_Label5 {
+	@include elemLeft(50);
+}
+#AreaTimeDialogP34_Label5 {
+		z-index: 14;
+}
+#AreaTimeDialogP34_Label5 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_Label5 {
+		font-size: 20px;
+}
+#AreaTimeDialogP34_Label5 {
+	@include font-weight-bold(true);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+	@include elemTop(200);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+	@include elemLeft(160);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+	@include elemWidth(260);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+	@include elemHeight(40);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+		z-index: 15;
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+	&:not(.disabled):not(.active){
+		border-width: 3px;
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+	&:not(.active):not(.disabled){
+		border-color: rgba(71, 71, 71, 1);
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+	&:not(.active):not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+	@include text-alignment(center);
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+		font-size: 20px;
+}
+#AreaTimeDialogP34_DateTimeInput_Cas3 {
+	@include box-shadow(4px 1px 3px rgba(71, 71, 71, 1));
+}
+#AreaTimeDialogP34_Label6 {
+	@include elemAutoWidth(80);
+}
+#AreaTimeDialogP34_Label6 {
+	@include elemAutoHeight(30);
+}
+#AreaTimeDialogP34_Label6 {
+	@include elemTop(205);
+}
+#AreaTimeDialogP34_Label6 {
+	@include elemLeft(50);
+}
+#AreaTimeDialogP34_Label6 {
+		z-index: 16;
+}
+#AreaTimeDialogP34_Label6 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaTimeDialogP34_Label6 {
+		font-size: 20px;
+}
+#AreaTimeDialogP34_Label6 {
+	@include font-weight-bold(true);
+}
+#AreaTimeDialogP34_LogoutButton_Exit1 {
+	@include elemTop(280);
+}
+#AreaTimeDialogP34_LogoutButton_Exit1 {
+	@include elemLeft(175);
+}
+#AreaTimeDialogP34_LogoutButton_Exit1 {
+	@include elemAutoWidth(150);
+}
+#AreaTimeDialogP34_LogoutButton_Exit1 {
+	@include elemAutoHeight(40);
+}
+#AreaTimeDialogP34_LogoutButton_Exit1 {
+		z-index: 17;
+}
+#AreaTimeDialogP34_LogoutButton_Exit1 {
+	@include border-radius(10px);
+}
+#AreaTimeDialogP34_LogoutButton_Exit1 {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}

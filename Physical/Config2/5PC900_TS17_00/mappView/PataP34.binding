@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="PataP34_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_RezimManual_ENABLE_P3" attribute="value" />
+<Target xsi:type="brease" contentRefId="PataP34" widgetRefId="NavigationButton_ManualBunka3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_RezimManual_ENABLE_P4" attribute="value" />
+<Target xsi:type="brease" contentRefId="PataP34" widgetRefId="NavigationButton_ManualBunka4" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_AlarmyVizu.FarbaTlacitka_Alarmy" attribute="value" />
+<Target xsi:type="brease" contentRefId="PataP34" widgetRefId="NavigationButton_Alarmy" attribute="style" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_SETUP_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="PataP34" widgetRefId="NavigationButton_Setup" attribute="enable" />
+</Binding>
+</Bindings>
+</BindingsSet>

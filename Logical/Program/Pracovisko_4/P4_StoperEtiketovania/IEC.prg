@@ -9,5 +9,6 @@
     <File>IOLinkKomunikacia.st</File>
     <File>COM_Tlaciaren.st</File>
     <File>OvlOtacaniaAplikatora.st</File>
+    <File>VytvorenieEtikety.st</File>
   </Files>
 </Program>

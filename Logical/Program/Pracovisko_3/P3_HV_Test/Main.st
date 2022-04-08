@@ -197,13 +197,14 @@ PROGRAM _CYCLIC
 			SC_P3_HV_Test.StepName:='20 - Inicializacia - precitanie cisla paletky';
 			SC_P3_HV_Test.IdleTime.PT:= T#200ms;
 			SC_P3_HV_Test.AlarmTime.PT:= T#5s;
-			SC_P3_HV_Test.IdleTime.IN:= TRUE;
+			
 		
 			SC_P3_HV_Test.IdleTime.IN:= P3_HV_Test.RFID_hlava.PritomnostPaletky;
 									
-			IF SC_P3_HV_Test.IdleTime.Q THEN
+			IF SC_P3_HV_Test.IdleTime.Q AND NOT SC_P3_HV_Test.Switch1 THEN
 				P3_HV_Test.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P3_HV_Test.Switch1:= TRUE;
 			END_IF
 			
 			IF P3_HV_Test.RFID_hlava.Stav_CitanieZapis_OK AND P3_HV_Test.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN

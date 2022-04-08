@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="AreaTimeDialogP34" height="350" width="500" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle1" top="0" left="0" width="500" height="350" zIndex="0" borderWidth="2px" backColor="rgba(153, 180, 209, 1)" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="10" left="20" width="60" height="60" zIndex="1" image="Media/Pictures/CasDatum48x48.png" />
+    <Widget xsi:type="widgets.brease.Line" id="Line1" zIndex="2" x1="10" x2="490" y1="80" y2="80" lineColor="rgba(255, 255, 255, 1)" lineWidth="3px" style="Solid_LightGray_Wide" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="15" left="130" width="300" height="50" zIndex="3" text="Nastavenie času a dátumu" textColor="rgba(0, 0, 0, 1)" textAlign="center" fontSize="22px" bold="true" />
+    <Widget xsi:type="widgets.brease.DateTimeInput" id="DateTimeInput_Cas" top="130" left="160" width="260" height="40" zIndex="4" format="HH:mm" borderWidth="3px" borderColor="rgba(71, 71, 71, 1)" textColor="rgba(0, 0, 0, 1)" textAlign="center" fontSize="20px" shadow="4px 1px 3px rgba(71, 71, 71, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="Label2" top="135" left="50" zIndex="5" text="Čas:" textColor="rgba(0, 0, 0, 1)" fontSize="20px" bold="true" />
+    <Widget xsi:type="widgets.brease.DateTimeInput" id="DateTimeInput_Cas1" top="200" left="160" width="260" height="40" zIndex="6" format="dd/MM/yyyy" borderWidth="3px" borderColor="rgba(71, 71, 71, 1)" textColor="rgba(0, 0, 0, 1)" textAlign="center" fontSize="20px" shadow="4px 1px 3px rgba(71, 71, 71, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="Label3" top="205" left="50" zIndex="7" text="Dátum:" textColor="rgba(0, 0, 0, 1)" fontSize="20px" bold="true" />
+    <Widget xsi:type="widgets.brease.LogoutButton" id="LogoutButton_Exit" top="280" left="175" width="150" height="40" zIndex="8" image="Media/Pictures/Cancel3_32x32.png" text="Exit" cornerRadius="10px" textColor="rgba(0, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle2" top="0" left="0" width="500" height="350" zIndex="9" borderWidth="2px" backColor="rgba(153, 180, 209, 1)" />
+    <Widget xsi:type="widgets.brease.Image" id="Image2" top="10" left="20" width="60" height="60" zIndex="10" image="Media/Pictures/CasDatum48x48.png" />
+    <Widget xsi:type="widgets.brease.Line" id="Line2" zIndex="11" x1="10" x2="490" y1="80" y2="80" lineColor="rgba(255, 255, 255, 1)" lineWidth="3px" style="Solid_LightGray_Wide" />
+    <Widget xsi:type="widgets.brease.Label" id="Label4" top="15" left="130" width="300" height="50" zIndex="12" text="Nastavenie času a dátumu" textColor="rgba(0, 0, 0, 1)" textAlign="center" fontSize="22px" bold="true" />
+    <Widget xsi:type="widgets.brease.DateTimeInput" id="DateTimeInput_Cas2" top="130" left="160" width="260" height="40" zIndex="13" format="HH:mm" borderWidth="3px" borderColor="rgba(71, 71, 71, 1)" textColor="rgba(0, 0, 0, 1)" textAlign="center" fontSize="20px" shadow="4px 1px 3px rgba(71, 71, 71, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="Label5" top="135" left="50" zIndex="14" text="Čas:" textColor="rgba(0, 0, 0, 1)" fontSize="20px" bold="true" />
+    <Widget xsi:type="widgets.brease.DateTimeInput" id="DateTimeInput_Cas3" top="200" left="160" width="260" height="40" zIndex="15" format="dd/MM/yyyy" borderWidth="3px" borderColor="rgba(71, 71, 71, 1)" textColor="rgba(0, 0, 0, 1)" textAlign="center" fontSize="20px" shadow="4px 1px 3px rgba(71, 71, 71, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="Label6" top="205" left="50" zIndex="16" text="Dátum:" textColor="rgba(0, 0, 0, 1)" fontSize="20px" bold="true" />
+    <Widget xsi:type="widgets.brease.LogoutButton" id="LogoutButton_Exit1" top="280" left="175" width="150" height="40" zIndex="17" image="Media/Pictures/Cancel3_32x32.png" text="Exit" cornerRadius="10px" textColor="rgba(0, 0, 0, 1)" />
+  </Widgets>
+</Content>

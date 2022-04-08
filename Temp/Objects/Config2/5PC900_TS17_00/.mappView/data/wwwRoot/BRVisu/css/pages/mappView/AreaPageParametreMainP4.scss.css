@@ -1,0 +1,131 @@
+#AreaPageParametreMainP4_ImageParametreP2 {
+  top: 0px;
+  position: absolute;
+}
+
+#AreaPageParametreMainP4_ImageParametreP2 {
+  left: 0px;
+  position: absolute;
+}
+
+#AreaPageParametreMainP4_ImageParametreP2 {
+  width: 1366px;
+}
+
+#AreaPageParametreMainP4_ImageParametreP2 {
+  height: 588px;
+}
+
+#AreaPageParametreMainP4_ImageParametreP2 {
+  z-index: 0;
+}
+
+#AreaPageParametreMainP4_ImageParametreP2 {
+  opacity: 0.15;
+}
+
+#AreaPageParametreMainP4_Label1 {
+  top: 20px;
+  position: absolute;
+}
+
+#AreaPageParametreMainP4_Label1 {
+  left: 483px;
+  position: absolute;
+}
+
+#AreaPageParametreMainP4_Label1 {
+  width: 400px;
+}
+
+#AreaPageParametreMainP4_Label1 {
+  height: 40px;
+}
+
+#AreaPageParametreMainP4_Label1 {
+  z-index: 1;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre {
+  top: 135px;
+  position: absolute;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre {
+  left: 510px;
+  position: absolute;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre {
+  width: 350px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre {
+  height: 75px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre {
+  z-index: 2;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre:not(.active):not(.checked) {
+  border-width: 1px 1px 1px 1px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre.disabled {
+  border-width: 1px 1px 1px 1px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre {
+  border-radius: 5px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre:not(.disabled):not(.checked) {
+  border-color: black;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_VseobecneParametre span {
+  font-size: 22px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic {
+  top: 285px;
+  position: absolute;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic {
+  left: 510px;
+  position: absolute;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic {
+  width: 350px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic {
+  height: 75px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic {
+  z-index: 3;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic:not(.active):not(.checked) {
+  border-width: 1px 1px 1px 1px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic.disabled {
+  border-width: 1px 1px 1px 1px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic {
+  border-radius: 5px;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic:not(.disabled):not(.checked) {
+  border-color: black;
+}
+
+#AreaPageParametreMainP4_NavigationButtonRR_StavyStanic span {
+  font-size: 22px;
+}

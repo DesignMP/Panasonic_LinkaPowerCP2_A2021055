@@ -65,7 +65,7 @@ PROGRAM _CYCLIC
 			SC_P4_Dopravniky.IdleTime.PT:= T#1s;
 			SC_P4_Dopravniky.AlarmTime.PT:= T#5s;
 			
-			IF P4_Pracovisko.STAV.FunkcnyTestA_Zasunuty AND P4_Pracovisko.STAV.FunkcnyTestB_Zasunuty AND P4_Vytah.STAV.PoINIT THEN
+			IF P4_Pracovisko.STAV.FunkcnyTestA_Zasunuty AND P4_Pracovisko.STAV.FunkcnyTestB_Zasunuty THEN
 				SC_P4_Dopravniky.IdleTime.IN:= TRUE;
 			ELSE	
 				SC_P4_Dopravniky.IdleTime.IN:= FALSE;

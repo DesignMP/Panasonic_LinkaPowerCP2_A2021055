@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Vizu.AktualnyCasPLC" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_DateTimeOutput1" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_ZadnyZamokLS_Farba" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonZadneDvereLS" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_OvladaniaZamkov_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonZadneDvereLS" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_ZadnyZamokPS_Farba" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonZadneDverePS" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_OvladaniaZamkov_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonZadneDverePS" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_OvladaniaZamkov_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonPredneLaveDvere" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_PrednyZamokLS_Farba" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonPredneLaveDvere" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_OvladaniaZamkov_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonPrednePraveDvere" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_PrednyZamokPS_Farba" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonPrednePraveDvere" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Vizu.TL_ResetCS_Farba" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonResetCS" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:UsersVizu.KartaPrilozena_Panel2" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ImageKarta" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:UsersVizu.MenoPrihlasenehoUzivatela_Panel2" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_TextOutputOperator" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.Warnings_Farba" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_TextOutputWarnings" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+</BindingDefinition>

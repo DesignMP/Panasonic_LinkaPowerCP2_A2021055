@@ -118,5 +118,17 @@
 			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_37" attribute="enable" />
 		</Binding>
 		
-	</Bindings>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_16" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_49" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_48" attribute="enable" />
+</Binding>
+</Bindings>
 </BindingsSet>

@@ -1,0 +1,691 @@
+﻿@import "mixins.scss";
+#AreaPageManualP2_ZakladanieTesnenia_ImageRR_ZakladanieTesnenia {
+	@include elemTop(0);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageRR_ZakladanieTesnenia {
+	@include elemLeft(0);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageRR_ZakladanieTesnenia {
+	@include elemAutoWidth(1366);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageRR_ZakladanieTesnenia {
+	@include elemAutoHeight(588);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageRR_ZakladanieTesnenia {
+		z-index: 0;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageRR_ZakladanieTesnenia {
+		opacity: 0.15;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_ZakladanieTesnenia {
+	@include elemTop(13);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_ZakladanieTesnenia {
+	@include elemLeft(483);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_ZakladanieTesnenia {
+	@include elemAutoWidth(400);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_ZakladanieTesnenia {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_ZakladanieTesnenia {
+		z-index: 1;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_ZakladanieTesnenia {
+		border-width: 3px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_ZakladanieTesnenia {
+		border-style: ridge;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_ZakladanieTesnenia {
+	&:before{
+		border-style: ridge;
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_ZakladanieTesnenia {
+	&:after{
+		border-style: ridge;
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_Image1 {
+	@include elemTop(94);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Image1 {
+	@include elemLeft(1004);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Image1 {
+	@include elemAutoWidth(330);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Image1 {
+	@include elemAutoHeight(400);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Image1 {
+		z-index: 2;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Image1 {
+		background-color: rgba(253, 245, 230, 1);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_ZdvihZakladania {
+	@include elemTop(136);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_ZdvihZakladania {
+	@include elemLeft(11);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_ZdvihZakladania {
+	@include elemWidth(460);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_ZdvihZakladania {
+	@include elemHeight(320);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_ZdvihZakladania {
+		z-index: 3;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa {
+	@include elemTop(18);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa {
+	@include elemLeft(144);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa {
+	@include elemAutoWidth(170);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa {
+	@include elemAutoHeight(35);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa {
+		z-index: 0;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa {
+	@include text-alignment(left);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihDole {
+	@include elemTop(150);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihDole {
+	@include elemLeft(13);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihDole {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihDole {
+	@include elemAutoHeight(60);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihDole {
+		z-index: 1;
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihDole {
+	span{
+		font-size: 25px;
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihHore {
+	@include elemTop(150);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihHore {
+	@include elemLeft(243);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihHore {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihHore {
+	@include elemAutoHeight(60);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihHore {
+		z-index: 2;
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_ZdvihHore {
+	span{
+		font-size: 25px;
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelInicializaciaZakladaca {
+	@include elemTop(225);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelInicializaciaZakladaca {
+	@include elemLeft(129);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelInicializaciaZakladaca {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelInicializaciaZakladaca {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelInicializaciaZakladaca {
+		z-index: 3;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageInicializaciaZakladaca {
+	@include elemTop(233);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageInicializaciaZakladaca {
+	@include elemLeft(295);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageInicializaciaZakladaca {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageInicializaciaZakladaca {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageInicializaciaZakladaca {
+		z-index: 4;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageInicializaciaZakladaca {
+		border-width: 0px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa {
+	@include elemTop(23);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa {
+	@include elemLeft(282);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa {
+		z-index: 5;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa {
+		border-width: 0px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia {
+	@include elemTop(65);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia {
+	@include elemLeft(13);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia {
+	@include elemAutoHeight(75);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia {
+		z-index: 6;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia {
+	@include text-alignment-all('center top');
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu {
+	@include elemTop(65);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu {
+	@include elemLeft(243);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu {
+	@include elemAutoHeight(75);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu {
+		z-index: 7;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu {
+	@include text-alignment-all('center top');
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+	@include elemTop(103);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+	@include elemLeft(33);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+	@include elemAutoWidth(160);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+		z-index: 8;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+		border-width: 2px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+		background-color: rgba(255, 255, 255, 1);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+		border-style: solid;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+	input{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia {
+	span.breaseNumericOutput_unit{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+	@include elemTop(103);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+	@include elemLeft(263);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+	@include elemAutoWidth(160);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+		z-index: 9;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+		border-width: 2px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+		background-color: rgba(255, 255, 255, 1);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+		border-color: rgba(255, 192, 128, 1);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+		border-style: solid;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+	input{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu {
+	span.breaseNumericOutput_unit{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_PojazdZakladaca {
+	@include elemTop(75);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_PojazdZakladaca {
+	@include elemLeft(495);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_PojazdZakladaca {
+	@include elemWidth(460);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_PojazdZakladaca {
+	@include elemHeight(360);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_PojazdZakladaca {
+		z-index: 4;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa1 {
+	@include elemTop(18);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa1 {
+	@include elemLeft(144);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa1 {
+	@include elemAutoWidth(170);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa1 {
+	@include elemAutoHeight(35);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa1 {
+		z-index: 0;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Button_HomingServa1 {
+	@include text-alignment(left);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVpred {
+	@include elemTop(150);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVpred {
+	@include elemLeft(13);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVpred {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVpred {
+	@include elemAutoHeight(60);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVpred {
+		z-index: 1;
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVpred {
+	span{
+		font-size: 25px;
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVzad {
+	@include elemTop(150);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVzad {
+	@include elemLeft(243);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVzad {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVzad {
+	@include elemAutoHeight(60);
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVzad {
+		z-index: 2;
+}
+#AreaPageManualP2_ZakladanieTesnenia_MomentaryPushButton_PojazdVzad {
+	span{
+		font-size: 25px;
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPowerCP {
+	@include elemTop(223);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPowerCP {
+	@include elemLeft(17);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPowerCP {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPowerCP {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPowerCP {
+		z-index: 3;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImagePritomnostPowerCP {
+	@include elemTop(231);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImagePritomnostPowerCP {
+	@include elemLeft(183);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImagePritomnostPowerCP {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImagePritomnostPowerCP {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImagePritomnostPowerCP {
+		z-index: 4;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImagePritomnostPowerCP {
+		border-width: 0px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa1 {
+	@include elemTop(23);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa1 {
+	@include elemLeft(282);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa1 {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa1 {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa1 {
+		z-index: 5;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageListHomingServa1 {
+		border-width: 0px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia1 {
+	@include elemTop(65);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia1 {
+	@include elemLeft(13);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia1 {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia1 {
+	@include elemAutoHeight(75);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia1 {
+		z-index: 6;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_AktualnaPozicia1 {
+	@include text-alignment-all('center top');
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu1 {
+	@include elemTop(65);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu1 {
+	@include elemLeft(243);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu1 {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu1 {
+	@include elemAutoHeight(75);
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu1 {
+		z-index: 7;
+}
+#AreaPageManualP2_ZakladanieTesnenia_Label_RychlostPohybu1 {
+	@include text-alignment-all('center top');
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+	@include elemTop(103);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+	@include elemLeft(33);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+	@include elemAutoWidth(160);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+		z-index: 8;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+		border-width: 2px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+		background-color: rgba(255, 255, 255, 1);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+		border-style: solid;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+	input{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_AktualnaPozicia1 {
+	span.breaseNumericOutput_unit{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+	@include elemTop(103);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+	@include elemLeft(263);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+	@include elemAutoWidth(160);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+		z-index: 9;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+		border-width: 2px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+		background-color: rgba(255, 255, 255, 1);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+		border-color: rgba(255, 192, 128, 1);
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+		border-style: solid;
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+	input{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_NumericOutput_RychlostPohybu1 {
+	span.breaseNumericOutput_unit{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelKopytoZakladnaPoloha {
+	@include elemTop(222);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelKopytoZakladnaPoloha {
+	@include elemLeft(241);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelKopytoZakladnaPoloha {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelKopytoZakladnaPoloha {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelKopytoZakladnaPoloha {
+		z-index: 10;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageKopytoZakladnaPoloha {
+	@include elemTop(230);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageKopytoZakladnaPoloha {
+	@include elemLeft(407);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageKopytoZakladnaPoloha {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageKopytoZakladnaPoloha {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageKopytoZakladnaPoloha {
+		z-index: 11;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageKopytoZakladnaPoloha {
+		border-width: 0px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelZadnyBezpecnostny {
+	@include elemTop(270);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelZadnyBezpecnostny {
+	@include elemLeft(129);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelZadnyBezpecnostny {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelZadnyBezpecnostny {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelZadnyBezpecnostny {
+		z-index: 12;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny {
+	@include elemTop(277);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny {
+	@include elemLeft(298);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny {
+		z-index: 13;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny {
+		border-width: 0px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_OvladanieStopra {
+	@include elemTop(444);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_OvladanieStopra {
+	@include elemLeft(497);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_OvladanieStopra {
+	@include elemWidth(460);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_OvladanieStopra {
+	@include elemHeight(125);
+}
+#AreaPageManualP2_ZakladanieTesnenia_GroupBox_OvladanieStopra {
+		z-index: 5;
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPaletky {
+	@include elemTop(24);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPaletky {
+	@include elemLeft(18);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPaletky {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPaletky {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_ZakladanieTesnenia_LabelPritomnostPaletky {
+		z-index: 0;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny1 {
+	@include elemTop(31);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny1 {
+	@include elemLeft(187);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny1 {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny1 {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny1 {
+		z-index: 1;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ImageZadnyBezpecnostny1 {
+		border-width: 0px;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ToggleSwitch_Stoper1 {
+	@include elemTop(19);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ToggleSwitch_Stoper1 {
+	@include elemLeft(269);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ToggleSwitch_Stoper1 {
+	@include elemAutoWidth(165);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ToggleSwitch_Stoper1 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManualP2_ZakladanieTesnenia_ToggleSwitch_Stoper1 {
+		z-index: 2;
+}
+#AreaPageManualP2_ZakladanieTesnenia_ToggleSwitch_Stoper1 {
+	&:not(.disabled):not(.checked) .wrapper .before{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_ToggleSwitch_Stoper1 {
+	&:not(.disabled):not(.checked) .wrapper .after{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_ToggleSwitch_Stoper1 {
+	.wrapper .before{
+		font-size: 16px;
+	}
+}
+#AreaPageManualP2_ZakladanieTesnenia_ToggleSwitch_Stoper1 {
+	.wrapper .after{
+		font-size: 16px;
+	}
+}

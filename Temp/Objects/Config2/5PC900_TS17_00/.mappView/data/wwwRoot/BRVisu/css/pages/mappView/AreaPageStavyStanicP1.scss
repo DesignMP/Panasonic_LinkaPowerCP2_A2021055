@@ -18,7 +18,7 @@
 		opacity: 0.2;
 }
 #AreaPageStavyStanicP1_Label1 {
-	@include elemTop(8);
+	@include elemTop(13);
 }
 #AreaPageStavyStanicP1_Label1 {
 	@include elemLeft(483);
@@ -27,32 +27,19 @@
 	@include elemAutoWidth(400);
 }
 #AreaPageStavyStanicP1_Label1 {
-	@include elemAutoHeight(50);
+	@include elemAutoHeight(40);
 }
 #AreaPageStavyStanicP1_Label1 {
 		z-index: 1;
 }
 #AreaPageStavyStanicP1_Label1 {
-		border-width: 5px;
+		border-width: 3px;
 }
 #AreaPageStavyStanicP1_Label1 {
 	@include border-radius(5px);
 }
 #AreaPageStavyStanicP1_Label1 {
 		background-color: rgba(224, 224, 224, 1);
-}
-#AreaPageStavyStanicP1_Label1 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageStavyStanicP1_Label1 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_Label1 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
 }
 #AreaPageStavyStanicP1_Label1 {
 		border-style: ridge;
@@ -82,7 +69,7 @@
 	@include font-weight-bold(true);
 }
 #AreaPageStavyStanicP1_Label1 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(2px 2px 15px rgba(0, 0, 0, 1));
 }
 #AreaPageStavyStanicP1_Label8 {
 	@include elemTop(70);
@@ -174,19 +161,6 @@
 }
 #AreaPageStavyStanicP1_TextOutput1 {
 		background-color: rgba(169, 169, 169, 1);
-}
-#AreaPageStavyStanicP1_TextOutput1 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageStavyStanicP1_TextOutput1 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput1 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
 }
 #AreaPageStavyStanicP1_TextOutput1 {
 		border-style: ridge;
@@ -304,19 +278,6 @@
 		background-color: rgba(169, 169, 169, 1);
 }
 #AreaPageStavyStanicP1_TextOutput2 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageStavyStanicP1_TextOutput2 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput2 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput2 {
 		border-style: ridge;
 }
 #AreaPageStavyStanicP1_TextOutput2 {
@@ -430,19 +391,6 @@
 }
 #AreaPageStavyStanicP1_TextOutput3 {
 		background-color: rgba(169, 169, 169, 1);
-}
-#AreaPageStavyStanicP1_TextOutput3 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageStavyStanicP1_TextOutput3 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput3 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
 }
 #AreaPageStavyStanicP1_TextOutput3 {
 		border-style: ridge;
@@ -560,19 +508,6 @@
 		background-color: rgba(169, 169, 169, 1);
 }
 #AreaPageStavyStanicP1_TextOutput4 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageStavyStanicP1_TextOutput4 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput4 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput4 {
 		border-style: ridge;
 }
 #AreaPageStavyStanicP1_TextOutput4 {
@@ -686,19 +621,6 @@
 }
 #AreaPageStavyStanicP1_TextOutput5 {
 		background-color: rgba(169, 169, 169, 1);
-}
-#AreaPageStavyStanicP1_TextOutput5 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageStavyStanicP1_TextOutput5 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput5 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
 }
 #AreaPageStavyStanicP1_TextOutput5 {
 		border-style: ridge;
@@ -816,19 +738,6 @@
 		background-color: rgba(169, 169, 169, 1);
 }
 #AreaPageStavyStanicP1_TextOutput6 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageStavyStanicP1_TextOutput6 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput6 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput6 {
 		border-style: ridge;
 }
 #AreaPageStavyStanicP1_TextOutput6 {
@@ -942,19 +851,6 @@
 }
 #AreaPageStavyStanicP1_TextOutput7 {
 		background-color: rgba(169, 169, 169, 1);
-}
-#AreaPageStavyStanicP1_TextOutput7 {
-		border-color: rgba(153, 153, 153, 1);
-}
-#AreaPageStavyStanicP1_TextOutput7 {
-	&:before{
-		border-color: rgba(153, 153, 153, 1);
-	}
-}
-#AreaPageStavyStanicP1_TextOutput7 {
-	&:after{
-		border-color: rgba(153, 153, 153, 1);
-	}
 }
 #AreaPageStavyStanicP1_TextOutput7 {
 		border-style: ridge;

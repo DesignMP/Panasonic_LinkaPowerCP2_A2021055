@@ -257,13 +257,14 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.StepName:='18 - Inicializacia -  precitanie cisla paletky';
 			SC_P4_Vytah.IdleTime.PT:= T#200ms;
 			SC_P4_Vytah.AlarmTime.PT:= T#5s;
-			SC_P4_Vytah.IdleTime.IN:= TRUE;
 			
 			SC_P4_Vytah.IdleTime.IN:= P4_Vytah.RFID_hlava.PritomnostPaletky;
-									
-			IF SC_P4_Vytah.IdleTime.Q THEN
+			
+												
+			IF SC_P4_Vytah.IdleTime.Q AND NOT SC_P4_Vytah.Switch1 THEN
 				P4_Vytah.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF
 			
 			IF P4_Vytah.RFID_hlava.Stav_CitanieZapis_OK AND P4_Vytah.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
@@ -339,7 +340,7 @@ PROGRAM _CYCLIC
 			END_IF	
 		
 		
-		//********************************************************Automatický režim****************************************************************************//
+			//********************************************************Automatický režim****************************************************************************//
 	
 		100:
 			SC_P4_Vytah.StepName:='100 - Automaticky Rezim - cakam na navezenie paletky na vytah z vrchneho dopravnika';
@@ -600,7 +601,7 @@ PROGRAM _CYCLIC
 			ELSIF TRCB_P4_Vytah_PaletkaNG THEN
 				TRCB_P4_Vytah_PaletkaNG:= FALSE;
 				P34_Vizu.ZobrazHL9_ST10:= FALSE;
-				Paletka[i].PAR.StavPaletky := 'NG';
+				Paletka[i].STAV.StavPaletky := 'NG';
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 130;
 			END_IF   
@@ -611,7 +612,7 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.PT:= T#5s;
 			SC_P4_Vytah.AlarmTime.PT:= T#5s;
             
-            P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
+			P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
             
 			IF Linka.P4_Kamery_OFF THEN
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
@@ -667,7 +668,6 @@ PROGRAM _CYCLIC
 			IF NOT CAM16.STAV.BUSY THEN
 				CAM16.CMD.Triger:= FALSE;
 				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					P4_Vytah.STAV.Kamera_VysledkyM5_ENABLE:= TRUE;
 					IF CAM16.RESULT.PowerCP.PritomnostSkrutky_K40 AND
 						CAM16.RESULT.PowerCP.PritomnostSkrutky_M5 THEN
 						CAM16.PAR.ResultFotky:= 'PASS';
@@ -679,7 +679,6 @@ PROGRAM _CYCLIC
 						SC_P4_Vytah.Step:= 121;
 					END_IF
 				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					P4_Vytah.STAV.Kamera_VysledkyM5_ENABLE:= TRUE;
 					IF CAM16.RESULT.PowerCP.PritomnostSkrutky_K40 AND
 						CAM16.RESULT.PowerCP.PritomnostSkrutky_M5 THEN
 						CAM16.PAR.ResultFotky:= 'PASS';
@@ -691,7 +690,6 @@ PROGRAM _CYCLIC
 						SC_P4_Vytah.Step:= 121;
 					END_IF 
 				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					P4_Vytah.STAV.Kamera_VysledkyM5_ENABLE:= FALSE;
 					IF CAM16.RESULT.PowerCP.PritomnostSkrutky_K40 THEN
 						CAM16.PAR.ResultFotky:= 'PASS';
 						SC_P4_Vytah.ResetStep:= TRUE;
@@ -874,7 +872,7 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.PT:= T#500ms;
 			SC_P4_Vytah.AlarmTime.PT:= T#20s;
 			
-			IF Paletka[i].PAR.StavPaletky = 'NG' THEN
+			IF Paletka[i].STAV.StavPaletky = 'NG' THEN
 				P4_Vytah.Banner.IN.CervenaLED_ON:= P4_Vytah.RFID_hlava.PritomnostPaletky;
 			ELSE    
 				P4_Vytah.Banner.IN.ZelenaLED_ON:= P4_Vytah.RFID_hlava.PritomnostPaletky;
@@ -901,7 +899,7 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.PT:= T#5s;
 			SC_P4_Vytah.AlarmTime.PT:= T#10s;
 		
-            P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
+			P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
 		
 			IF Linka.P4_Kamery_OFF THEN
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;	
@@ -1033,7 +1031,7 @@ PROGRAM _CYCLIC
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 140;
-			IF NOT SC_P4_Vytah.Switch1 THEN
+			ELSIF NOT SC_P4_Vytah.Switch1 THEN
 				FTP_CAM16.CMD.VymazFotku:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF	
@@ -1111,7 +1109,7 @@ PROGRAM _CYCLIC
         
 	
 
-		//***********************************Vyvezenie paletky****************************************//		
+			//***********************************Vyvezenie paletky****************************************//		
 		560:
 			SC_P4_Vytah.StepName:='560 - Automaticky Rezim - cakam na vyvezenie na spodny dopravnik';
 			SC_P4_Vytah.IdleTime.PT:= T#1s;
@@ -1125,7 +1123,7 @@ PROGRAM _CYCLIC
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 0;	
 			ELSIF SC_P4_Vytah.IdleTime.Q AND P4_Vytah.RFID_hlava.PritomnostPaletky AND Safety.STAV.P4_Vytah_Bariera_AKTIVNA AND NOT P4_Vytah.IN.PrechodDopravnika THEN
-                Paletka[i].PAR.CisloPaletky:= '';
+				Paletka[i].PAR.CisloPaletky:= '';
 				Paletka[i].STAV.StavPaletky:= '';
 				Paletka[i].STAV.TypModelu:= '';
 				Paletka[i].STAV.KodModelu:= '';
@@ -1145,8 +1143,8 @@ PROGRAM _CYCLIC
 				Paletka[i].STAV.QRkodFiltraPriradeny:= FALSE;
 				Paletka[i].STAV.Zvaranie_Ukoncene:= FALSE;
 				CisloFotky:= 0;
-                Reports.Kamery.P4_CAM16_KontrolaPaletky:= '';
-                P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
+				Reports.Kamery.P4_CAM16_KontrolaPaletky:= '';
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				P34_Vizu.ZobrazHL6_ST10:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 563;
@@ -1224,7 +1222,7 @@ PROGRAM _CYCLIC
 			P4_Vytah.Banner.IN.OranzovaLED_ON:= Blikac1s;			
 					
 					
-			SC_P4_Vytah.IdleTime.IN:= Safety.STAV.P4_Vytah_Bariera_AKTIVNA AND NOT P4_Vytah.IN.VystupDopravnikaVytahu_OS11 AND NOT P4_Vytah.IN.PritomnostPaletky_S13;
+			SC_P4_Vytah.IdleTime.IN:= Safety.STAV.P4_Vytah_Bariera_AKTIVNA AND NOT P4_Vytah.IN.PrechodDopravnika AND NOT P4_Vytah.RFID_hlava.PritomnostPaletky;
 			P34_Vizu.ZobrazHL6_ST10:= NOT Safety.STAV.P4_Vytah_Bariera_AKTIVNA;
             
 			IF SC_P4_Vytah.IdleTime.Q  THEN
@@ -1303,10 +1301,10 @@ PROGRAM _CYCLIC
 		
 	END_CASE
 	 
-END_PROGRAM
+				END_PROGRAM
 
 PROGRAM _EXIT
-	(* Insert code here *)
+				(* Insert code here *)
 	 
-END_PROGRAM
+				END_PROGRAM
 

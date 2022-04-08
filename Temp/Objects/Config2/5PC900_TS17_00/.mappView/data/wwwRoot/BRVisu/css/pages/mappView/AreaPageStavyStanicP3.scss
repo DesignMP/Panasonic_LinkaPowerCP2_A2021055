@@ -1,0 +1,34 @@
+﻿@import "mixins.scss";
+#AreaPageStavyStanicP3_ImageStavyStanicP3 {
+	@include elemTop(0);
+}
+#AreaPageStavyStanicP3_ImageStavyStanicP3 {
+	@include elemLeft(0);
+}
+#AreaPageStavyStanicP3_ImageStavyStanicP3 {
+	@include elemAutoWidth(1366);
+}
+#AreaPageStavyStanicP3_ImageStavyStanicP3 {
+	@include elemAutoHeight(588);
+}
+#AreaPageStavyStanicP3_ImageStavyStanicP3 {
+		z-index: 0;
+}
+#AreaPageStavyStanicP3_ImageStavyStanicP3 {
+		opacity: 0.15;
+}
+#AreaPageStavyStanicP3_Label1 {
+	@include elemTop(20);
+}
+#AreaPageStavyStanicP3_Label1 {
+	@include elemLeft(483);
+}
+#AreaPageStavyStanicP3_Label1 {
+	@include elemAutoWidth(400);
+}
+#AreaPageStavyStanicP3_Label1 {
+	@include elemAutoHeight(40);
+}
+#AreaPageStavyStanicP3_Label1 {
+		z-index: 1;
+}

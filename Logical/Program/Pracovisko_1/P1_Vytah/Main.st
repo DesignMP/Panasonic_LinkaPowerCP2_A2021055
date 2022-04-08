@@ -281,13 +281,14 @@ PROGRAM _CYCLIC
 			SC_P1_Vytah.StepName:='18 - Inicializacia -  precitanie cisla paletky';
 			SC_P1_Vytah.IdleTime.PT:= T#200ms;
 			SC_P1_Vytah.AlarmTime.PT:= T#5s;
-			SC_P1_Vytah.IdleTime.IN:= TRUE;
 			
 			SC_P1_Vytah.IdleTime.IN:= P1_Vytah.RFID_hlava.PritomnostPaletky;
-									
-			IF SC_P1_Vytah.IdleTime.Q THEN
+			
+												
+			IF SC_P1_Vytah.IdleTime.Q AND NOT SC_P1_Vytah.Switch1 THEN
 				P1_Vytah.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P1_Vytah.Switch1:= TRUE;
 			END_IF
 			
 			IF P1_Vytah.RFID_hlava.Stav_CitanieZapis_OK AND P1_Vytah.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN

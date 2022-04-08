@@ -18,7 +18,7 @@
 		opacity: 0.2;
 }
 #AreaPageManualP1_Skrutkovanie_page4_Label1 {
-	@include elemTop(8);
+	@include elemTop(13);
 }
 #AreaPageManualP1_Skrutkovanie_page4_Label1 {
 	@include elemLeft(483);
@@ -27,13 +27,13 @@
 	@include elemAutoWidth(400);
 }
 #AreaPageManualP1_Skrutkovanie_page4_Label1 {
-	@include elemAutoHeight(50);
+	@include elemAutoHeight(40);
 }
 #AreaPageManualP1_Skrutkovanie_page4_Label1 {
 		z-index: 1;
 }
 #AreaPageManualP1_Skrutkovanie_page4_Label1 {
-		border-width: 5px;
+		border-width: 3px;
 }
 #AreaPageManualP1_Skrutkovanie_page4_Label1 {
 	@include border-radius(5px);
@@ -69,7 +69,7 @@
 	@include font-weight-bold(true);
 }
 #AreaPageManualP1_Skrutkovanie_page4_Label1 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(2px 2px 15px rgba(0, 0, 0, 1));
 }
 #AreaPageManualP1_Skrutkovanie_page4_NavigationButton_PreviewPage {
 	@include elemTop(8);

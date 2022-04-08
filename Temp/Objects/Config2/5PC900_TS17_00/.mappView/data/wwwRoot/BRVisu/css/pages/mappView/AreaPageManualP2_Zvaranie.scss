@@ -1,0 +1,680 @@
+﻿@import "mixins.scss";
+#AreaPageManualP2_Zvaranie_ImageRR_Zvaranie {
+	@include elemTop(0);
+}
+#AreaPageManualP2_Zvaranie_ImageRR_Zvaranie {
+	@include elemLeft(0);
+}
+#AreaPageManualP2_Zvaranie_ImageRR_Zvaranie {
+	@include elemAutoWidth(1366);
+}
+#AreaPageManualP2_Zvaranie_ImageRR_Zvaranie {
+	@include elemAutoHeight(588);
+}
+#AreaPageManualP2_Zvaranie_ImageRR_Zvaranie {
+		z-index: 0;
+}
+#AreaPageManualP2_Zvaranie_ImageRR_Zvaranie {
+		opacity: 0.15;
+}
+#AreaPageManualP2_Zvaranie_Label1 {
+	@include elemTop(13);
+}
+#AreaPageManualP2_Zvaranie_Label1 {
+	@include elemLeft(483);
+}
+#AreaPageManualP2_Zvaranie_Label1 {
+	@include elemAutoWidth(400);
+}
+#AreaPageManualP2_Zvaranie_Label1 {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_Zvaranie_Label1 {
+		z-index: 1;
+}
+#AreaPageManualP2_Zvaranie_Label1 {
+		border-width: 3px;
+}
+#AreaPageManualP2_Zvaranie_Label1 {
+		border-style: ridge;
+}
+#AreaPageManualP2_Zvaranie_Label1 {
+	&:before{
+		border-style: ridge;
+	}
+}
+#AreaPageManualP2_Zvaranie_Label1 {
+	&:after{
+		border-style: ridge;
+	}
+}
+#AreaPageManualP2_Zvaranie_Image1 {
+	@include elemTop(125);
+}
+#AreaPageManualP2_Zvaranie_Image1 {
+	@include elemLeft(1100);
+}
+#AreaPageManualP2_Zvaranie_Image1 {
+	@include elemAutoWidth(240);
+}
+#AreaPageManualP2_Zvaranie_Image1 {
+	@include elemAutoHeight(400);
+}
+#AreaPageManualP2_Zvaranie_Image1 {
+		z-index: 2;
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+	@include elemTop(10);
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+	@include elemLeft(1240);
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+	@include elemAutoWidth(110);
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+	@include elemAutoHeight(50);
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+		z-index: 3;
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+	@include border-radius(4px);
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+	&:not(.disabled):not(.active):not(.checked){
+	@include backGroundGradient('');
+	}
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+	&:not(.active):not(.checked){
+	@include box-shadow(3px 3px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+	&.disabled.active{
+	@include box-shadow(3px 3px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Zvaranie_NavigationButtonRR_Cistenie {
+	&.disabled.checked{
+	@include box-shadow(3px 3px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Zvaranie_GroupBox_ZdvihZvarania {
+	@include elemTop(75);
+}
+#AreaPageManualP2_Zvaranie_GroupBox_ZdvihZvarania {
+	@include elemLeft(55);
+}
+#AreaPageManualP2_Zvaranie_GroupBox_ZdvihZvarania {
+	@include elemWidth(450);
+}
+#AreaPageManualP2_Zvaranie_GroupBox_ZdvihZvarania {
+	@include elemHeight(340);
+}
+#AreaPageManualP2_Zvaranie_GroupBox_ZdvihZvarania {
+		z-index: 4;
+}
+#AreaPageManualP2_Zvaranie_Button_HomingServa {
+	@include elemTop(23);
+}
+#AreaPageManualP2_Zvaranie_Button_HomingServa {
+	@include elemLeft(129);
+}
+#AreaPageManualP2_Zvaranie_Button_HomingServa {
+	@include elemAutoWidth(170);
+}
+#AreaPageManualP2_Zvaranie_Button_HomingServa {
+	@include elemAutoHeight(35);
+}
+#AreaPageManualP2_Zvaranie_Button_HomingServa {
+		z-index: 0;
+}
+#AreaPageManualP2_Zvaranie_Button_HomingServa {
+	@include text-alignment(left);
+}
+#AreaPageManualP2_Zvaranie_ImageListHomingServa {
+	@include elemTop(28);
+}
+#AreaPageManualP2_Zvaranie_ImageListHomingServa {
+	@include elemLeft(264);
+}
+#AreaPageManualP2_Zvaranie_ImageListHomingServa {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Zvaranie_ImageListHomingServa {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Zvaranie_ImageListHomingServa {
+		z-index: 1;
+}
+#AreaPageManualP2_Zvaranie_ImageListHomingServa {
+		border-width: 0px;
+}
+#AreaPageManualP2_Zvaranie_Label_AktualnaPozicia {
+	@include elemTop(73);
+}
+#AreaPageManualP2_Zvaranie_Label_AktualnaPozicia {
+	@include elemLeft(19);
+}
+#AreaPageManualP2_Zvaranie_Label_AktualnaPozicia {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_Zvaranie_Label_AktualnaPozicia {
+	@include elemAutoHeight(75);
+}
+#AreaPageManualP2_Zvaranie_Label_AktualnaPozicia {
+		z-index: 2;
+}
+#AreaPageManualP2_Zvaranie_Label_AktualnaPozicia {
+	@include text-alignment-all('center top');
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+	@include elemTop(111);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+	@include elemLeft(39);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+	@include elemAutoWidth(160);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+		z-index: 3;
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+		border-width: 2px;
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+		background-color: rgba(255, 255, 255, 1);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+		border-style: solid;
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+	input{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_AktualnaPoziciaOsX {
+	span.breaseNumericOutput_unit{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_Zvaranie_Label_RychlostPohyb {
+	@include elemTop(73);
+}
+#AreaPageManualP2_Zvaranie_Label_RychlostPohyb {
+	@include elemLeft(229);
+}
+#AreaPageManualP2_Zvaranie_Label_RychlostPohyb {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_Zvaranie_Label_RychlostPohyb {
+	@include elemAutoHeight(75);
+}
+#AreaPageManualP2_Zvaranie_Label_RychlostPohyb {
+		z-index: 4;
+}
+#AreaPageManualP2_Zvaranie_Label_RychlostPohyb {
+	@include text-alignment-all('center top');
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+	@include elemTop(111);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+	@include elemLeft(249);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+	@include elemAutoWidth(160);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+		z-index: 5;
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+		border-width: 2px;
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+		background-color: rgba(255, 255, 255, 1);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+		border-color: rgba(255, 192, 128, 1);
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+		border-style: solid;
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+	input{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_Zvaranie_NumericOutput_RychlostPohybuOsX {
+	span.breaseNumericOutput_unit{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_DOLE {
+	@include elemTop(168);
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_DOLE {
+	@include elemLeft(19);
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_DOLE {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_DOLE {
+	@include elemAutoHeight(60);
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_DOLE {
+		z-index: 6;
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_DOLE {
+	span{
+		font-size: 25px;
+	}
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_DOLE {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_DOLE {
+	&.disabled.active{
+	@include box-shadow(4px 4px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_DOLE {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_HORE {
+	@include elemTop(168);
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_HORE {
+	@include elemLeft(229);
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_HORE {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_HORE {
+	@include elemAutoHeight(60);
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_HORE {
+		z-index: 7;
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_HORE {
+	span{
+		font-size: 25px;
+	}
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_HORE {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_HORE {
+	&.disabled.active{
+	@include box-shadow(4px 4px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Zvaranie_MomentaryPushButton_ZdvihZvarania_HORE {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualP2_Zvaranie_LabelNulovySnimac {
+	@include elemTop(248);
+}
+#AreaPageManualP2_Zvaranie_LabelNulovySnimac {
+	@include elemLeft(19);
+}
+#AreaPageManualP2_Zvaranie_LabelNulovySnimac {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_Zvaranie_LabelNulovySnimac {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_Zvaranie_LabelNulovySnimac {
+		z-index: 8;
+}
+#AreaPageManualP2_Zvaranie_ImageListNulovySnimac {
+	@include elemTop(256);
+}
+#AreaPageManualP2_Zvaranie_ImageListNulovySnimac {
+	@include elemLeft(183);
+}
+#AreaPageManualP2_Zvaranie_ImageListNulovySnimac {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Zvaranie_ImageListNulovySnimac {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Zvaranie_ImageListNulovySnimac {
+		z-index: 9;
+}
+#AreaPageManualP2_Zvaranie_ImageListNulovySnimac {
+		border-width: 0px;
+}
+#AreaPageManualP2_Zvaranie_LabelZvarackaReady {
+	@include elemTop(248);
+}
+#AreaPageManualP2_Zvaranie_LabelZvarackaReady {
+	@include elemLeft(229);
+}
+#AreaPageManualP2_Zvaranie_LabelZvarackaReady {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_Zvaranie_LabelZvarackaReady {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_Zvaranie_LabelZvarackaReady {
+		z-index: 10;
+}
+#AreaPageManualP2_Zvaranie_ImageListZvarackaReady {
+	@include elemTop(256);
+}
+#AreaPageManualP2_Zvaranie_ImageListZvarackaReady {
+	@include elemLeft(393);
+}
+#AreaPageManualP2_Zvaranie_ImageListZvarackaReady {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Zvaranie_ImageListZvarackaReady {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Zvaranie_ImageListZvarackaReady {
+		z-index: 11;
+}
+#AreaPageManualP2_Zvaranie_ImageListZvarackaReady {
+		border-width: 0px;
+}
+#AreaPageManualP2_Zvaranie_GroupBox1 {
+	@include elemTop(75);
+}
+#AreaPageManualP2_Zvaranie_GroupBox1 {
+	@include elemLeft(580);
+}
+#AreaPageManualP2_Zvaranie_GroupBox1 {
+	@include elemWidth(450);
+}
+#AreaPageManualP2_Zvaranie_GroupBox1 {
+	@include elemHeight(240);
+}
+#AreaPageManualP2_Zvaranie_GroupBox1 {
+		z-index: 5;
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieDOLE {
+	@include elemTop(73);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieDOLE {
+	@include elemLeft(29);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieDOLE {
+	@include elemAutoWidth(180);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieDOLE {
+	@include elemAutoHeight(50);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieDOLE {
+		z-index: 0;
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieDOLE {
+	@include text-alignment(left);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieDOLE {
+	span{
+		font-size: 18px;
+	}
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieDOLE {
+	@include elemTop(86);
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieDOLE {
+	@include elemLeft(169);
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieDOLE {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieDOLE {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieDOLE {
+		z-index: 1;
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieDOLE {
+		border-width: 0px;
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieHORE {
+	@include elemTop(73);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieHORE {
+	@include elemLeft(234);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieHORE {
+	@include elemAutoWidth(180);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieHORE {
+	@include elemAutoHeight(50);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieHORE {
+		z-index: 2;
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieHORE {
+	@include text-alignment(right);
+}
+#AreaPageManualP2_Zvaranie_Button_CentrovanieHORE {
+	span{
+		font-size: 18px;
+	}
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieHORE {
+	@include elemTop(86);
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieHORE {
+	@include elemLeft(249);
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieHORE {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieHORE {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieHORE {
+		z-index: 3;
+}
+#AreaPageManualP2_Zvaranie_ImageCentrovanieHORE {
+		border-width: 0px;
+}
+#AreaPageManualP2_Zvaranie_GroupBox2 {
+	@include elemHeight(150);
+}
+#AreaPageManualP2_Zvaranie_GroupBox2 {
+	@include elemTop(425);
+}
+#AreaPageManualP2_Zvaranie_GroupBox2 {
+	@include elemLeft(55);
+}
+#AreaPageManualP2_Zvaranie_GroupBox2 {
+	@include elemWidth(450);
+}
+#AreaPageManualP2_Zvaranie_GroupBox2 {
+		z-index: 6;
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVLAVO {
+	@include elemTop(33);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVLAVO {
+	@include elemLeft(29);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVLAVO {
+	@include elemAutoWidth(180);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVLAVO {
+	@include elemAutoHeight(50);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVLAVO {
+		z-index: 0;
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVLAVO {
+	@include text-alignment(left);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVLAVO {
+	span{
+		font-size: 18px;
+	}
+}
+#AreaPageManualP2_Zvaranie_ImageZvaranieVlavo {
+	@include elemTop(46);
+}
+#AreaPageManualP2_Zvaranie_ImageZvaranieVlavo {
+	@include elemLeft(169);
+}
+#AreaPageManualP2_Zvaranie_ImageZvaranieVlavo {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Zvaranie_ImageZvaranieVlavo {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Zvaranie_ImageZvaranieVlavo {
+		z-index: 1;
+}
+#AreaPageManualP2_Zvaranie_ImageZvaranieVlavo {
+		border-width: 0px;
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVPRAVO {
+	@include elemTop(33);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVPRAVO {
+	@include elemLeft(234);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVPRAVO {
+	@include elemAutoWidth(180);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVPRAVO {
+	@include elemAutoHeight(50);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVPRAVO {
+		z-index: 2;
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVPRAVO {
+	@include text-alignment(right);
+}
+#AreaPageManualP2_Zvaranie_Button_ZvaranieVPRAVO {
+	span{
+		font-size: 18px;
+	}
+}
+#AreaPageManualP2_Zvaranie_ImageZaranieVpravo {
+	@include elemTop(46);
+}
+#AreaPageManualP2_Zvaranie_ImageZaranieVpravo {
+	@include elemLeft(249);
+}
+#AreaPageManualP2_Zvaranie_ImageZaranieVpravo {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Zvaranie_ImageZaranieVpravo {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Zvaranie_ImageZaranieVpravo {
+		z-index: 3;
+}
+#AreaPageManualP2_Zvaranie_ImageZaranieVpravo {
+		border-width: 0px;
+}
+#AreaPageManualP2_Zvaranie_GroupBox3 {
+	@include elemTop(335);
+}
+#AreaPageManualP2_Zvaranie_GroupBox3 {
+	@include elemLeft(580);
+}
+#AreaPageManualP2_Zvaranie_GroupBox3 {
+	@include elemWidth(450);
+}
+#AreaPageManualP2_Zvaranie_GroupBox3 {
+	@include elemHeight(240);
+}
+#AreaPageManualP2_Zvaranie_GroupBox3 {
+		z-index: 7;
+}
+#AreaPageManualP2_Zvaranie_LabelPritomnostPaletky {
+	@include elemTop(78);
+}
+#AreaPageManualP2_Zvaranie_LabelPritomnostPaletky {
+	@include elemLeft(24);
+}
+#AreaPageManualP2_Zvaranie_LabelPritomnostPaletky {
+	@include elemAutoWidth(200);
+}
+#AreaPageManualP2_Zvaranie_LabelPritomnostPaletky {
+	@include elemAutoHeight(40);
+}
+#AreaPageManualP2_Zvaranie_LabelPritomnostPaletky {
+		z-index: 0;
+}
+#AreaPageManualP2_Zvaranie_ImagePritomnostPaletky {
+	@include elemTop(85);
+}
+#AreaPageManualP2_Zvaranie_ImagePritomnostPaletky {
+	@include elemLeft(193);
+}
+#AreaPageManualP2_Zvaranie_ImagePritomnostPaletky {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Zvaranie_ImagePritomnostPaletky {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Zvaranie_ImagePritomnostPaletky {
+		z-index: 1;
+}
+#AreaPageManualP2_Zvaranie_ImagePritomnostPaletky {
+		border-width: 0px;
+}
+#AreaPageManualP2_Zvaranie_ToggleSwitch_Stoper {
+	@include elemTop(73);
+}
+#AreaPageManualP2_Zvaranie_ToggleSwitch_Stoper {
+	@include elemLeft(254);
+}
+#AreaPageManualP2_Zvaranie_ToggleSwitch_Stoper {
+	@include elemAutoWidth(165);
+}
+#AreaPageManualP2_Zvaranie_ToggleSwitch_Stoper {
+	@include elemAutoHeight(45);
+}
+#AreaPageManualP2_Zvaranie_ToggleSwitch_Stoper {
+		z-index: 2;
+}
+#AreaPageManualP2_Zvaranie_ToggleSwitch_Stoper {
+	&:not(.disabled):not(.checked) .wrapper .before{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_Zvaranie_ToggleSwitch_Stoper {
+	&:not(.disabled):not(.checked) .wrapper .after{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_Zvaranie_ToggleSwitch_Stoper {
+	.wrapper .before{
+		font-size: 16px;
+	}
+}
+#AreaPageManualP2_Zvaranie_ToggleSwitch_Stoper {
+	.wrapper .after{
+		font-size: 16px;
+	}
+}

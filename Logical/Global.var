@@ -131,7 +131,7 @@ VAR
 END_VAR
 (******************Premenné linky***************************)
 VAR RETAIN
-	Paletka : ARRAY[0..20] OF Paletka_typ := [21((0))];
+	Paletka : ARRAY[0..30] OF Paletka_typ := [31((0))];
 END_VAR
 VAR
 	Linka : Linka_typ := (0);

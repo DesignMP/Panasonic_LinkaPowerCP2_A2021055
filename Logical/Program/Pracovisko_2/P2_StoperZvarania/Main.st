@@ -206,13 +206,14 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.StepName:='20 - Inicializacia - precitanie cisla paletky';
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
-			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
+			
 		
 			SC_P2_StoperZvarania.IdleTime.IN:= P2_StoperZvarania.RFID_hlava.PritomnostPaletky;
 									
-			IF SC_P2_StoperZvarania.IdleTime.Q THEN
+			IF SC_P2_StoperZvarania.IdleTime.Q AND NOT SC_P2_StoperZvarania.Switch1 THEN
 				P2_StoperZvarania.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF
 			
 			IF P2_StoperZvarania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
@@ -586,7 +587,7 @@ PROGRAM _CYCLIC
 					
 			IF P2_StoperZvarania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky;
-				P2_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
+				P2_StoperZvarania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 102;
 			END_IF	

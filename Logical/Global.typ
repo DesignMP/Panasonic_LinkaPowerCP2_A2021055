@@ -147,9 +147,11 @@ TYPE
 		ZobrazHL7_ST6 : BOOL; (*ST3 - Zle založené tesnenie na Power CP*)
 		ZobrazHL8_ST6 : BOOL; (*ST6 - Odpoved panatrace je NG*)
 		IndexStavu_Dopravnik : USINT;
+		IndexStavu_SpodnyStoper : USINT;
 		IndexStavu_StoperZakladacaTesn : USINT;
 		IndexStavu_ZakladacaTesnenia : USINT;
 		IndexStavu_StoperMaticovacky : USINT;
+		IndexStavu_AkumulacnyStoper : USINT;
 		IndexStavu_StoperSrobovania : USINT;
 		IndexStavu_Srobovania : USINT;
 		IndexStavu_Robot : USINT;
@@ -179,16 +181,23 @@ TYPE
 		TL_ResetCS : BOOL;
 		IndexStavu_DopravnikP3 : USINT;
 		IndexStavu_SpodnyStoperP3 : USINT;
-		IndexStavu_VstupnyStoper : USINT;
 		IndexStavu_StoperSrobovaniaP3 : USINT;
 		IndexStavu_SrobovanieP3 : USINT;
+		IndexStavu_HV_Test : USINT;
 		IndexStavu_AkumulacnyStoperP3 : USINT;
+		IndexStavu_ZdvizkPredLeakTestomA : USINT;
+		IndexStavu_ZdvizkPredLeakTestomB : USINT;
 		IndexStavu_StoperLeakageTestA : USINT;
 		IndexStavu_StoperLeakageTestB : USINT;
+		IndexStavu_ZdvizkaZaLeakTestomA : USINT;
+		IndexStavu_ZdvizkaZaLeakTestomB : USINT;
 		IndexStavu_DopravnikP4 : USINT;
+		IndexStavu_SpodnyStoperP4 : USINT;
 		IndexStavu_Vytah : USINT;
 		IndexStavu_StoperFunkcnyTestA : USINT;
 		IndexStavu_StoperFunkcnyTestB : USINT;
+		IndexStavu_ZdvizkaZaFunkTestomA : USINT;
+		IndexStavu_ZdvizkaZaFunkTestomB : USINT;
 		IndexStavu_StoperEtiketovackyP4 : USINT;
 		TL_PrednyZamokPS_Farba_P3 : WSTRING[80];
 		TL_PrednyZamokLS_Farba_P3 : WSTRING[80];
@@ -414,6 +423,8 @@ TYPE
 		P2_Zvaranie_RychlostZvarania : REAL; (*mm/s*)
 		P2_Zvaranie_Acc : REAL;
 		P2_Zvaranie_Dcc : REAL;
+		P2_Zvaranie_PoziciaZvarania_PS : REAL;
+		P2_Zvaranie_PoziciaZvarania_LS : REAL;
 		P2_Zvaranie_CasZvarania : TIME;
 		P2_Zvaranie_RychlostZdvihu : REAL; (*mm/s*)
 		P2_Srob45F_LavaM6_Vysunutie_LO : REAL; (*Vysunutie skrutkovaèky - spodná tolerancia*)
@@ -462,14 +473,13 @@ TYPE
 		P4_Vytah_Zdvih_Dcc : REAL;
 		P4_Vytah_PoziciaNakladania : REAL;
 		P4_Vytah_PoziciaVykladania : REAL;
-		P4_ZdvihEtiketovacky_Rychlost : REAL; (*mm/s*)
 		P4_ZdvihEtiketovacky_Acc : REAL;
 		P4_ZdvihEtiketovacky_Dcc : REAL;
+		P4_Etiketov_RychlZdvihuAplikat : REAL; (*mm/s*)
+		P4_Etiketovacka_PozOdoberEtikety : REAL;
 		P4_Etiketovacka_PozEtikety_4F : REAL;
 		P4_Etiketovacka_PozEtikety_5F : REAL;
 		P4_Etiketovacka_PozEtikety_5H : REAL;
-		P4_Etiketovacka_PozOdoberEtikety : REAL;
-		P4_Etiketov_RychlZdvihuAplikat : REAL; (*mm/s*)
 	END_STRUCT;
 END_TYPE
 

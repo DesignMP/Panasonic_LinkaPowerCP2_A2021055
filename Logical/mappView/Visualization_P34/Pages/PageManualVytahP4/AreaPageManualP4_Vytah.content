@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="AreaPageManualP4_Vytah" height="588" width="1366" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Image" id="ImagePageVytah" top="0" left="0" width="1366" height="588" zIndex="0" image="Media/Pozadie/BackGround_588x1366.png" opacity="0.15" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="15" left="483" width="400" height="40" zIndex="1" text="Manuálny režim - Výťah" style="FavoriteWatch" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="110" left="960" width="378" height="400" zIndex="2" image="Media/Pozadie/Pracovisko4_Vytah.png" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox_OvladanieDopravnikov" top="65" left="25" width="430" height="250" zIndex="3" text="Ovládanie dopravníka výťahu" backColor="rgba(253, 245, 230, 1)" textColor="rgba(0, 0, 0, 1)" shadow="4px 4px 14px rgba(0, 0, 0, 1)">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_DopravnikVZAD" top="117" left="11" width="165" height="45" zIndex="0" image="Media/Pictures/SipkaVlavo2_32x32.png" text="VZAD" cornerRadius="10px" textColor="rgba(0, 0, 0, 1)" textAlign="center" shadow="4px 4px 14px rgba(0, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_DopravnikVPRED" top="117" left="251" width="165" height="45" zIndex="1" image="Media/Pictures/SipkaVpravo2_32x32.png" imageAlign="right" text="VPRED" cornerRadius="10px" textColor="rgba(0, 0, 0, 1)" textAlign="center" shadow="4px 4px 14px rgba(0, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelPritomnostPaletky" top="18" left="19" width="200" height="40" zIndex="2" multiLine="true" text="Prítomnosť paletky" style="LabelSnimace" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImagePritomnostPaletky" top="25" left="188" width="25" height="25" zIndex="3" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox2" top="65" left="485" width="430" height="510" zIndex="4" text="Ovládanie výťahu" backColor="rgba(253, 245, 230, 1)" textColor="rgba(0, 0, 0, 1)" shadow="4px 4px 14px rgba(0, 0, 0, 1)">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Button" id="Button_ResetServa" top="16" left="11" width="165" height="45" zIndex="0" imageAlign="right" multiLine="true" text="Reset serva" cornerRadius="10px" textColor="rgba(0, 0, 0, 1)" textAlign="left" shadow="4px 4px 14px rgba(0, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput_ZdvihZadanaRychlost" top="177" left="236" width="165" zIndex="11" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" minValue="2" unit="{'metric':'C16','imperial':'CEL','imperial-us':'CEL'}" unitAlign="right" borderWidth="2px 4px 2px 2px" fontSize="18px" shadow="4px 4px 8px rgba(0, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_ZdvihAktualnaPozicia" top="177" left="26" width="165" zIndex="9" unit="{'metric':'MMT','imperial':'CEL','imperial-us':'CEL'}" unitAlign="right" borderWidth="4px" borderStyle="ridge" textColor="rgba(0, 0, 0, 1)" fontSize="16px" style="Output" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_JoggZdvihuDOLE" top="79" left="11" width="165" height="45" zIndex="1" image="Media/Pictures/SipkaDole2_32x32.png" text="DOLE" cornerRadius="10px" textColor="rgba(0, 0, 0, 1)" textAlign="center" shadow="4px 4px 14px rgba(0, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton_JoggZdvihuHORE" top="79" left="251" width="165" height="45" zIndex="2" image="Media/Pictures/SipkaHore2_32x32.png" imageAlign="right" text="HORE" cornerRadius="10px" textColor="rgba(0, 0, 0, 1)" textAlign="center" shadow="4px 4px 14px rgba(0, 0, 0, 1)" />
+        <Widget xsi:type="widgets.brease.Label" id="Label11" top="232" left="11" width="195" height="45" zIndex="3" multiLine="true" text="Horný limitný\nsnímač" borderWidth="2px" cornerRadius="5px" backColor="rgba(192, 192, 192, 1)" borderColor="rgba(0, 0, 0, 1)" borderStyle="outset" textColor="rgba(0, 0, 0, 1)" fontSize="14px" bold="true" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageList15" top="242" left="171" width="25" height="25" zIndex="4" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderStyle="none" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.Line" id="Line3" zIndex="5" x1="213" x2="213" y1="230" y2="460" lineWidth="2px" />
+        <Widget xsi:type="widgets.brease.Label" id="Label12" top="285" left="11" width="195" height="45" zIndex="6" multiLine="true" text="Spodný limitný\nsnímač" borderWidth="2px" cornerRadius="5px" backColor="rgba(192, 192, 192, 1)" borderColor="rgba(0, 0, 0, 1)" borderStyle="outset" textColor="rgba(0, 0, 0, 1)" fontSize="14px" bold="true" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageList16" top="295" left="171" width="25" height="25" zIndex="7" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderStyle="none" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="Label27" top="141" left="11" width="195" height="77" zIndex="8" multiLine="true" text="Aktuálna pozícia" borderWidth="2px" cornerRadius="5px" backColor="rgba(192, 192, 192, 1)" borderColor="rgba(0, 0, 0, 1)" borderStyle="outset" textColor="rgba(0, 0, 0, 1)" textAlign="center top" fontSize="14px" bold="true" />
+        <Widget xsi:type="widgets.brease.Label" id="Label28" top="141" left="221" width="195" height="77" zIndex="10" multiLine="true" text="Rýchlosť pohybu" borderWidth="2px" cornerRadius="5px" backColor="rgba(192, 192, 192, 1)" borderColor="rgba(0, 0, 0, 1)" borderStyle="outset" textColor="rgba(0, 0, 0, 1)" textAlign="center top" fontSize="14px" bold="true" />
+        <Widget xsi:type="widgets.brease.Label" id="Label16" top="16" left="221" width="195" height="45" zIndex="12" multiLine="true" text="Servo READY" borderWidth="2px" cornerRadius="5px" backColor="rgba(192, 192, 192, 1)" borderColor="rgba(0, 0, 0, 1)" borderStyle="outset" textColor="rgba(0, 0, 0, 1)" fontSize="14px" bold="true" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageList6" top="26" left="381" width="25" height="25" zIndex="13" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderStyle="none" borderWidth="0px" />
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

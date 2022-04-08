@@ -1,5 +1,5 @@
 #AreaPageParametreP1_page1_Label1 {
-  top: 8px;
+  top: 13px;
   position: absolute;
 }
 
@@ -13,7 +13,7 @@
 }
 
 #AreaPageParametreP1_page1_Label1 {
-  height: 50px;
+  height: 40px;
 }
 
 #AreaPageParametreP1_page1_Label1 {
@@ -21,7 +21,7 @@
 }
 
 #AreaPageParametreP1_page1_Label1 {
-  border-width: 5px;
+  border-width: 3px;
 }
 
 #AreaPageParametreP1_page1_Label1 {
@@ -30,18 +30,6 @@
 
 #AreaPageParametreP1_page1_Label1 {
   background-color: #e0e0e0;
-}
-
-#AreaPageParametreP1_page1_Label1 {
-  border-color: #999999;
-}
-
-#AreaPageParametreP1_page1_Label1:before {
-  border-color: #999999;
-}
-
-#AreaPageParametreP1_page1_Label1:after {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_Label1 {
@@ -76,7 +64,7 @@
 }
 
 #AreaPageParametreP1_page1_Label1 {
-  box-shadow: 4px 4px 14px black;
+  box-shadow: 2px 2px 15px black;
 }
 
 #AreaPageParametreP1_page1_GroupBox1 {
@@ -227,10 +215,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_1.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_1:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_1.disabled {
@@ -394,10 +378,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_2:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_2.disabled {
   border-color: #ff8800;
 }
@@ -557,10 +537,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_3.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_3:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_3.disabled {
@@ -724,10 +700,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_22:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_22.disabled {
   border-color: #ff8800;
 }
@@ -887,10 +859,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_23.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_23:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_23.disabled {
@@ -1186,10 +1154,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_11:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_11.disabled {
   border-color: #ff8800;
 }
@@ -1349,10 +1313,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_17.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_17:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_17.disabled {
@@ -1516,10 +1476,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_12:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_12.disabled {
   border-color: #ff8800;
 }
@@ -1679,10 +1635,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_18.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_18:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_18.disabled {
@@ -1846,10 +1798,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_13:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_13.disabled {
   border-color: #ff8800;
 }
@@ -2009,10 +1957,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_19.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_19:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_19.disabled {
@@ -2176,10 +2120,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_14:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_14.disabled {
   border-color: #ff8800;
 }
@@ -2339,10 +2279,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_20.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_20:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_20.disabled {
@@ -2506,10 +2442,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_15:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_15.disabled {
   border-color: #ff8800;
 }
@@ -2669,10 +2601,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_21.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_21:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_21.disabled {
@@ -2836,10 +2764,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_44:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_44.disabled {
   border-color: #ff8800;
 }
@@ -2999,10 +2923,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_45.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_45:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_45.disabled {
@@ -3166,10 +3086,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_47:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_47.disabled {
   border-color: #ff8800;
 }
@@ -3329,10 +3245,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_49.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_49:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_49.disabled {
@@ -3496,10 +3408,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_26:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_26.disabled {
   border-color: #ff8800;
 }
@@ -3659,10 +3567,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_27.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_27:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_27.disabled {
@@ -3826,10 +3730,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_28:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_28.disabled {
   border-color: #ff8800;
 }
@@ -3989,10 +3889,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_29.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_29:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_29.disabled {
@@ -4156,10 +4052,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_30:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_30.disabled {
   border-color: #ff8800;
 }
@@ -4319,10 +4211,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_31.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_31:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_31.disabled {
@@ -4486,10 +4374,6 @@
   background-color: silver;
 }
 
-#AreaPageParametreP1_page1_NumericInput_16:not(.disabled):not(.active) {
-  border-color: #999999;
-}
-
 #AreaPageParametreP1_page1_NumericInput_16.disabled {
   border-color: #ff8800;
 }
@@ -4649,10 +4533,6 @@
 
 #AreaPageParametreP1_page1_NumericInput_24.disabled {
   background-color: silver;
-}
-
-#AreaPageParametreP1_page1_NumericInput_24:not(.disabled):not(.active) {
-  border-color: #999999;
 }
 
 #AreaPageParametreP1_page1_NumericInput_24.disabled {

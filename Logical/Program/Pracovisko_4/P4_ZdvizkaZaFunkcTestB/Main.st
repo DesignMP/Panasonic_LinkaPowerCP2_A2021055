@@ -156,7 +156,7 @@ PROGRAM _CYCLIC
 			IF P4_ZdvizkaZaFunkcTestB.KoniecCyklu AND NOT P4_FunkcnyTestB.Automat THEN
 				SC_P4_ZdvizkaZaFunkcTestB.ResetStep:= TRUE;
 				SC_P4_ZdvizkaZaFunkcTestB.Step:= 0;
-			ELSIF NOT P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky AND SC_P4_ZdvizkaZaFunkcTestA.Step = 100 AND NOT P4_FunkcnyTestA.STAV.PrebiehaVyvezeniePaletky THEN	
+			ELSIF NOT P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky AND SC_P4_ZdvizkaZaFunkcTestA.Step = 100 AND NOT P4_FunkcnyTestA.STAV.PrebiehaVyvezeniePaletky AND SC_P4_FunkcnyTestA.Step < 560 THEN	
 				SC_P4_ZdvizkaZaFunkcTestB.ResetStep:= TRUE;
 				SC_P4_ZdvizkaZaFunkcTestB.Step:= 110;
 			END_IF
@@ -178,7 +178,7 @@ PROGRAM _CYCLIC
 				SC_P4_ZdvizkaZaFunkcTestB.Switch1:= TRUE;
 			END_IF
 			
-			IF P4_ZdvizkaZaFunkcTestA.IN.Zdvizka_HornaPoloha AND P3_ZdvizkaPredLeakTestB.IN.Zdvizka_HornaPoloha AND P4_ZdvizkaZaFunkcTestA.IN.TlmicPaletky_ZASUNUTY THEN
+			IF P4_ZdvizkaZaFunkcTestA.IN.Zdvizka_HornaPoloha AND P4_ZdvizkaZaFunkcTestB.IN.Zdvizka_HornaPoloha AND P4_ZdvizkaZaFunkcTestA.IN.TlmicPaletky_ZASUNUTY THEN
 				SC_P4_ZdvizkaZaFunkcTestB.ResetStep:= TRUE;
 				SC_P4_ZdvizkaZaFunkcTestB.Step:= 113;
 			END_IF
@@ -188,7 +188,7 @@ PROGRAM _CYCLIC
 			SC_P4_ZdvizkaZaFunkcTestB.IdleTime.PT:= T#500ms;
 			SC_P4_ZdvizkaZaFunkcTestB.AlarmTime.PT:= T#5s;
 			
-			SC_P4_ZdvizkaZaFunkcTestB.IdleTime.IN:= P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky AND NOT P4_ZdvizkaZaFunkcTestA.IN.PoziciaPaletky_OK;
+			SC_P4_ZdvizkaZaFunkcTestB.IdleTime.IN:= P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky;
 			
 			IF NOT SC_P4_ZdvizkaZaFunkcTestB.Switch1 THEN
 				P4_Dopravniky.OUT.PriecnyDopravnik_VPRED:= TRUE;
@@ -208,8 +208,8 @@ PROGRAM _CYCLIC
 			
 			IF NOT SC_P4_ZdvizkaZaFunkcTestB.Switch1 AND SC_OvlZdvizky.Step = 1 THEN
 				Zdvizku_VYSTRED:= TRUE;
-				P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_ZASUN:= FALSE;
-				P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_VYSUN:= FALSE;
+				P4_ZdvizkaZaFunkcTestA.OUT.Zdvizku_ZASUN:= FALSE;
+				P4_ZdvizkaZaFunkcTestA.OUT.Zdvizku_VYSUN:= FALSE;
 				SC_P4_ZdvizkaZaFunkcTestB.Switch1:= TRUE;
 			END_IF
 			

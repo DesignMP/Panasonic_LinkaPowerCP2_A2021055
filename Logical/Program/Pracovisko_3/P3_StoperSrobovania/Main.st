@@ -175,13 +175,14 @@ PROGRAM _CYCLIC
 			SC_P3_StoperSrobovania.StepName:='20 - Inicializacia - precitanie cisla paletky';
 			SC_P3_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P3_StoperSrobovania.AlarmTime.PT:= T#5s;
-			SC_P3_StoperSrobovania.IdleTime.IN:= TRUE;
+			
 		
 			SC_P3_StoperSrobovania.IdleTime.IN:= P3_StoperSrobovania.RFID_hlava.PritomnostPaletky;
 									
-			IF SC_P3_StoperSrobovania.IdleTime.Q THEN
+			IF SC_P3_StoperSrobovania.IdleTime.Q AND NOT SC_P3_StoperSrobovania.Switch1 THEN
 				P3_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P3_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
 			IF P3_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK AND P3_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN

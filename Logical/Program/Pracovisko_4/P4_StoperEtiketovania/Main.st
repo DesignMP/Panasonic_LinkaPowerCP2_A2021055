@@ -20,6 +20,7 @@ PROGRAM _CYCLIC
 	OvlOtacaniaAplikatora;
 	IOLinkKomunikacia;
 	COM_Tlaciaren;
+	VytvorenieEtikety;
 	
 	//Enable serva//
 	IF Safety.STAV.P4_ZonaBunky_AKTIVNA AND NOT P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset THEN
@@ -60,13 +61,15 @@ PROGRAM _CYCLIC
 			P4_Etiketovacka.Manual:= FALSE;
 			P4_Etiketovacka.STAV.PoINIT:= FALSE;
 			P4_Etiketovacka.OUT.ZasunStoper:= FALSE;
+			P4_Etiketovacka.OUT.Centrovanie_VYSUN:= FALSE;
+			P4_Etiketovacka.OUT.Centrovanie_ZASUN:= TRUE;
 			P4_Etiketovacka.OUT.Aplikator_VYSUN:= FALSE;
 			P4_Etiketovacka.OUT.Aplikator_OtocVPRED:= FALSE;
-			P4_Etiketovacka.OUT.Aplikator_OtocVZAD:= TRUE;
+			P4_Etiketovacka.OUT.Aplikator_OtocVZAD:= FALSE;
 			P4_Etiketovacka.OUT.OfukEtikety_ON:= FALSE;
 			P4_Etiketovacka.OUT.PritlakPowerCP_VYSUN:= FALSE;
 			P4_Etiketovacka.OUT.PrisavanieEtikety_ON:= FALSE;
-			P4_Etiketovacka.OUT.PrisavanieEtikety_OFF:= FALSE;
+			P4_Etiketovacka.OUT.PrisavanieEtikety_OFF:= TRUE;
 			P4_Etiketovacka.RFID_hlava.PrecitajChipRFID:= FALSE;
 			
 			P4_Etiketovacka.ServoZdvihuAplikatora.Command.JogNeg:= FALSE;
@@ -163,7 +166,7 @@ PROGRAM _CYCLIC
 			
 			IF Linka.KOM_FTP_OFF THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 10;
+				SC_P4_Etiketovacka.Step:= 5;
 			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
 				FTP_CAM15.CMD.VymazFotku:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
@@ -173,14 +176,64 @@ PROGRAM _CYCLIC
 			IF FTP_CAM15.STATUS.KomunikaciaUkoncena THEN
 				FTP_CAM15.CMD.VymazFotku:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 10;
+				SC_P4_Etiketovacka.Step:= 5;
 			ELSIF FTP_CAM15.STATUS.KomunikaciaError THEN
 				P34_Alarmy[434]:= TRUE;
 				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
 			END_IF	
 		
+			
+		5:
+			SC_P4_Etiketovacka.StepName:='5 - Inicializacia - kontrola otocenia aplikatora';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
+			
+			IF P4_Etiketovacka.IN.Aplikator_OtocenyVZAD THEN 
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 13;
+			ELSE
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 8;
+			END_IF
+			
+			
+		8:
+			SC_P4_Etiketovacka.StepName:='8 - Inicializacia - zdvih aplikatora do pozicie otocenia aplikatora';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
+			
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= 250;
+			
+			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= TRUE;
+				SC_P4_Etiketovacka.Switch1:= TRUE;
+			END_IF	
+				
+			IF P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 10;
+			END_IF
+			
 		10:
-			SC_P4_Etiketovacka.StepName:='10 - Inicializacia - presun zdvihu aplikatora do pozicie odoberania etikety';
+			SC_P4_Etiketovacka.StepName:='10 - Inicializacia - otocenia aplikatora vzad';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
+			
+			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+				OtocAplikator_VZAD:= TRUE;
+				SC_P4_Etiketovacka.Switch1:= TRUE;
+			END_IF
+			
+			IF P4_Etiketovacka.IN.Aplikator_OtocenyVZAD THEN 
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 13;
+			END_IF
+			
+			
+		13:
+			SC_P4_Etiketovacka.StepName:='13 - Inicializacia - presun zdvihu aplikatora do pozicie odoberania etikety';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
@@ -195,7 +248,7 @@ PROGRAM _CYCLIC
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
 				
-			IF P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition THEN
+			IF EDGEPOS(P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition) THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 15;
@@ -237,13 +290,14 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.StepName:='20 - Inicializacia - precitanie cisla paletky';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-			SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
+			
 		
 			SC_P4_Etiketovacka.IdleTime.IN:= P4_Etiketovacka.RFID_hlava.PritomnostPaletky;
 									
-			IF SC_P4_Etiketovacka.IdleTime.Q THEN
+			IF SC_P4_Etiketovacka.IdleTime.Q AND SC_P4_Etiketovacka.Switch1 THEN
 				P4_Etiketovacka.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
+				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF
 			
 			IF P4_Etiketovacka.RFID_hlava.Stav_CitanieZapis_OK AND P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
@@ -506,7 +560,7 @@ PROGRAM _CYCLIC
 					
 			IF P4_Etiketovacka.RFID_hlava.Stav_CitanieZapis_OK AND P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky;
-				P2_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
+				P4_Etiketovacka.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 102;
 			END_IF	
@@ -709,6 +763,7 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			IF P4_Etiketovacka.IN.Centrovanie_VYSUNUTE THEN
+				P4_Etiketovacka.OUT.PritlakPowerCP_VYSUN:= TRUE;
 				CAM14.STAV.Results_READY:= FALSE;
 				IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
@@ -837,7 +892,7 @@ PROGRAM _CYCLIC
 				SC_P4_Etiketovacka.Step:= 138;
 			ELSIF Linka.KOM_Panatrace_OFF THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 138;	
+				SC_P4_Etiketovacka.Step:= 138;
 			ELSE	
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 127;
@@ -952,11 +1007,12 @@ PROGRAM _CYCLIC
 			P4_Etiketovacka.OUT.OfukEtikety_ON:= TRUE;
 			SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
             
+			
 			IF NOT SC_P4_Etiketovacka.Switch1 AND SC_P4_Etiketovacka.IdleTime.Q THEN
 				Tlaciaren.CMD.VytlacEtiketu:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF
-            	
+            			
 			IF Tlaciaren.STAV.VytlacenieEtikety_OK THEN
 				Tlaciaren.CMD.VytlacEtiketu:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
@@ -980,13 +1036,52 @@ PROGRAM _CYCLIC
 			IF SC_P4_Etiketovacka.IdleTime.Q THEN
 				P4_Etiketovacka.OUT.OfukEtikety_ON:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 155;
-			ELSIF SC_P4_Etiketovacka.AlarmTime.Q THEN
-				P4_Etiketovacka.OUT.OfukEtikety_ON:= FALSE;
-				P34_Alarmy[431]:= TRUE;
-				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
+				SC_P4_Etiketovacka.Step:= 145;
+//			ELSIF SC_P4_Etiketovacka.AlarmTime.Q THEN
+//				P4_Etiketovacka.OUT.OfukEtikety_ON:= FALSE;
+//				P34_Alarmy[431]:= TRUE;
+//				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
 			END_IF
 		
+			
+		145:
+			SC_P4_Etiketovacka.StepName:='145 - Automaticky Rezim - napolohovanie zdvihu na poziciu otocenia aplikatora';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
+			
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= 250;
+			
+			
+			IF NOT SC_P4_Etiketovacka.Switch1 AND P4_Etiketovacka.IN.Aplikator_OtocenyVZAD AND P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= TRUE;
+				SC_P4_Etiketovacka.Switch1:= TRUE;
+			END_IF	
+				
+			IF EDGEPOS(P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition) THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 148;
+			END_IF	
+			
+		
+		148:
+			SC_P4_Etiketovacka.StepName:='148 - Automaticky Rezim - otocenie aplikatora vpred';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
+			
+			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+				OtocAplikator_VPRED:= TRUE;
+				SC_P4_Etiketovacka.Switch1:= TRUE;
+			END_IF
+			
+			IF P4_Etiketovacka.IN.Aplikator_OtocenyVPRED THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 155;
+			END_IF	
+			
+			
+			
 		155:
 			SC_P4_Etiketovacka.StepName:='155 - Automaticky Rezim - napolohovanie zdvihu na poziciu nalepenia etikety';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
@@ -1004,32 +1099,17 @@ PROGRAM _CYCLIC
 				P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P34_RemPremenne.P4_Etiketovacka_PozEtikety_5H;
 			END_IF	
 				
-			IF NOT SC_P4_Etiketovacka.Switch1 AND P4_Etiketovacka.IN.Aplikator_OtocenyVZAD AND P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
+			IF NOT SC_P4_Etiketovacka.Switch1 AND P4_Etiketovacka.IN.Aplikator_OtocenyVPRED AND P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
 				
-			IF P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition THEN
+			IF EDGEPOS(P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition) THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 158;
-			END_IF	
-			
-						
-		158:
-			SC_P4_Etiketovacka.StepName:='158 - Automaticky Rezim - otocenie aplikatora vpred k Power CP';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-		
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
-				OtocAplikator_VPRED:= TRUE;
-				SC_P4_Etiketovacka.Switch1:= TRUE;
-			END_IF	
-		
-			IF P4_Etiketovacka.IN.Aplikator_OtocenyVPRED THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 160;
 			END_IF	
+			
 		
 		
 		160:
@@ -1065,63 +1145,35 @@ PROGRAM _CYCLIC
 		
 			IF P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 165;
-			END_IF
-		
-		165:
-			SC_P4_Etiketovacka.StepName:='165 - Automaticky Rezim - otocenie aplikatora vzad';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-		
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
-				OtocAplikator_VZAD:= TRUE;
-				SC_P4_Etiketovacka.Switch1:= TRUE;
-			END_IF	
-		
-			IF P4_Etiketovacka.IN.Aplikator_OtocenyVZAD THEN
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 168;
-			END_IF	
+			END_IF
+	
 		
 		
 		168:
-			SC_P4_Etiketovacka.StepName:='168 - Automaticky Rezim - napolohovanie zdvihu na poziciu 7mm nad etiketu';
+			SC_P4_Etiketovacka.StepName:='168 - Automaticky Rezim - napolohovanie zdvihu na poziciu 10mm nad etiketu';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
 			
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P4_Etiketovacka.ServoZdvihuAplikatora.Status.ActPosition - 7;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P4_Etiketovacka.ServoZdvihuAplikatora.Status.ActPosition - 10;
 			
 				
-			IF NOT SC_P4_Etiketovacka.Switch1 AND P4_Etiketovacka.IN.Aplikator_OtocenyVZAD AND P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
+			IF NOT SC_P4_Etiketovacka.Switch1 AND P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
 				
-			IF P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition THEN
+			IF EDGEPOS(P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition) THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 170;
 			END_IF	
 		
+			
 		170:
-			SC_P4_Etiketovacka.StepName:='170 - Automaticky Rezim - otocenie aplikatora vpred k Power CP';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-		
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
-				OtocAplikator_VPRED:= TRUE;
-				SC_P4_Etiketovacka.Switch1:= TRUE;
-			END_IF	
-		
-			IF P4_Etiketovacka.IN.Aplikator_OtocenyVPRED THEN
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 173;
-			END_IF	
-		
-		173:
-			SC_P4_Etiketovacka.StepName:='173 - Automaticky Rezim - vysunutie aplikatora vpred k Power CP';
+			SC_P4_Etiketovacka.StepName:='170 - Automaticky Rezim - vysunutie aplikatora vpred k Power CP';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
@@ -1133,11 +1185,11 @@ PROGRAM _CYCLIC
 		
 			IF P4_Etiketovacka.IN.Aplikator_VYSUNUTY OR SC_P4_Etiketovacka.IdleTime.Q THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 175;
+				SC_P4_Etiketovacka.Step:= 173;
 			END_IF	
 		
-		175:	
-			SC_P4_Etiketovacka.StepName:='175 - Automaticky Rezim - zasunutie aplikatora etikety';
+		173:	
+			SC_P4_Etiketovacka.StepName:='173 - Automaticky Rezim - zasunutie aplikatora etikety';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#500ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
@@ -1150,9 +1202,34 @@ PROGRAM _CYCLIC
 		
 			IF P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 178;
+				SC_P4_Etiketovacka.Step:= 175;
 			END_IF
 		
+			
+		175:
+			SC_P4_Etiketovacka.StepName:='175 - Automaticky Rezim - napolohovanie zdvihu na poziciu otocenia aplikatora';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
+		
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= 250;
+			
+			
+			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= TRUE;
+				SC_P4_Etiketovacka.Switch1:= TRUE;
+			END_IF	
+				
+			IF EDGEPOS(P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition) THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 178;
+			END_IF	
+					
+			
+			
+			
+			
 		178:
 			SC_P4_Etiketovacka.StepName:='178 - Automaticky Rezim - otocenie aplikatora vzad';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#2s;
@@ -1356,6 +1433,7 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+				P4_Etiketovacka.OUT.PritlakPowerCP_VYSUN:= FALSE;
 				Centrovacku_ZASUN:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF
