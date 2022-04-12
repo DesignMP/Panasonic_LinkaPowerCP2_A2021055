@@ -53,6 +53,7 @@ PROGRAM _CYCLIC
 	//Reset sekcie //
 	IF P4_Vytah.Reset THEN
 		SC_P4_Vytah.Step:= 0;
+		P4_Vytah.ServoZdvihuVytahu.Command.ErrReset:= TRUE;
 		P4_Vytah.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P4_Vytah.Step:= 0;

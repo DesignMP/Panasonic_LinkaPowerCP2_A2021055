@@ -223,6 +223,15 @@ PROGRAM _CYCLIC
 		P1_Pracovisko.STAV.READY:= FALSE;
 	END_IF
 	
+	//Príznak pracovisko stav PORUCHA//
+	IF P1_Pracovisko.STAV.Porucha_ST1 OR
+		P1_Pracovisko.STAV.Porucha_ST2 OR
+		P1_Pracovisko.STAV.Porucha_ST3 THEN
+		P1_Pracovisko.STAV.PORUCHA:= TRUE;
+	ELSE
+		P1_Pracovisko.STAV.PORUCHA:= FALSE;
+	END_IF	
+	
 
 	//Priznak HW Vytahu OK//
 	IF P1_Pracovisko.IN.TlakVzduchu_OK AND
@@ -280,7 +289,6 @@ PROGRAM _CYCLIC
 	//*****************************Zapnutie osvetlenia pracoviska*********************************************************//
 	P1_Pracovisko.OUT.OsvetlenieBunky_ON:= FALSE;
 	P1_Vytah.OUT.OsvetlenieVytahu_ON:= TRUE;
-	P1_Pracovisko.OUT.Osvetlenie_CAM4_ON:= TRUE;
 	P1_Pracovisko.OUT.Osvetlenie_CAM5_ON:= TRUE;
 	P1_Pracovisko.OUT.Osvetlenie_CAM6_ON:= TRUE;
 	P1_Pracovisko.OUT.Srobovanie_BodoveOsvetlenie_ON:= TRUE;

@@ -343,6 +343,11 @@
 	}
 }
 #AreaPageAlarmP1_AlarmHistory1 {
+	&.breaseTableWidget .breaseTableColumnWidget .headerText{
+		font-size: 18px;
+	}
+}
+#AreaPageAlarmP1_AlarmHistory1 {
 	svg > g > path.unselected{
 		fill: rgba(255, 255, 255, 0);
 	}

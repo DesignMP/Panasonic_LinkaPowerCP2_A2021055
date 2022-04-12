@@ -124,7 +124,11 @@
 }
 
 #AreaPageAutomatP34_Image1 {
-  background-color: whitesmoke;
+  background-color: gainsboro;
+}
+
+#AreaPageAutomatP34_Image1 {
+  border-style: solid;
 }
 
 #AreaPageAutomatP34_Image1 {
@@ -132,7 +136,7 @@
 }
 
 #AreaPageAutomatP34_GroupBox_OvladanieBunky3 {
-  top: 80px;
+  top: 85px;
   position: absolute;
 }
 
@@ -1094,7 +1098,7 @@
 }
 
 #AreaPageAutomatP34_GroupBox_OvladanieBunky4 {
-  top: 80px;
+  top: 85px;
   position: absolute;
 }
 
@@ -2564,11 +2568,11 @@
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff {
-  width: 165px;
+  width: 140px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff {
-  height: 45px;
+  height: 40px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff {
@@ -2584,11 +2588,11 @@
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff .wrapper .before {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff .wrapper .after {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff:not(.active):not(.checked) {
@@ -2614,11 +2618,11 @@
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff1 {
-  width: 165px;
+  width: 140px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff1 {
-  height: 45px;
+  height: 40px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff1 {
@@ -2634,11 +2638,11 @@
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff1 .wrapper .before {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff1 .wrapper .after {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff1:not(.active):not(.checked) {
@@ -2664,11 +2668,11 @@
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff2 {
-  width: 165px;
+  width: 140px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff2 {
-  height: 45px;
+  height: 40px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff2 {
@@ -2684,11 +2688,11 @@
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff2 .wrapper .before {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff2 .wrapper .after {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff2:not(.active):not(.checked) {
@@ -2714,11 +2718,11 @@
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff3 {
-  width: 165px;
+  width: 140px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff3 {
-  height: 45px;
+  height: 40px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff3 {
@@ -2734,11 +2738,11 @@
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff3 .wrapper .before {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff3 .wrapper .after {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 #AreaPageAutomatP34_ToggleSwitch_LeakageTestA_OnOff3:not(.active):not(.checked) {

@@ -91,7 +91,7 @@ PROGRAM _CYCLIC
 		
 			SC_P3_SpodnyStoper.IdleTime.IN:= P3_SpodnyStoper.IN.PritomnostPaletky;
 			
-			IF P3_SpodnyStoper.KoniecCyklu AND NOT P3_Dopravniky.Automat THEN
+			IF P3_SpodnyStoper.KoniecCyklu THEN
 				SC_P3_SpodnyStoper.ResetStep:= TRUE;
 				SC_P3_SpodnyStoper.Step:= 0;
 			ELSIF SC_P3_SpodnyStoper.IdleTime.Q THEN
@@ -107,7 +107,7 @@ PROGRAM _CYCLIC
 			
 			SC_P3_SpodnyStoper.IdleTime.IN:= NOT P2_SpodnyStoper.IN.ZaplnenieDopravnika;
 			
-			IF P3_SpodnyStoper.KoniecCyklu AND NOT P3_Dopravniky.Automat THEN
+			IF P3_SpodnyStoper.KoniecCyklu THEN
 				SC_P3_SpodnyStoper.ResetStep:= TRUE;
 				SC_P3_SpodnyStoper.Step:= 0;
 			ELSIF SC_P3_SpodnyStoper.IdleTime.Q AND P2_Dopravniky.STAV.PoINIT THEN  

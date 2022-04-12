@@ -21,11 +21,7 @@
           <Variable Name="Warnings_Index" />
           <Variable Name="TL_ResetCS" />
           <Variable Name="TL_PrednyZamok_Farba" />
-          <Variable Name="TL_ZadnyZamokPS_Farba" />
-          <Variable Name="TL_ZadnyZamokLS_Farba" />
           <Variable Name="TL_ZamkniPrednyZamok" />
-          <Variable Name="TL_ZamkniZadnyZamokPS" />
-          <Variable Name="TL_ZamkniZadnyZamokLS" />
           <Variable Name="TL_VyprazdnenieLinky_ENABLE" />
           <Variable Name="TL_OvladaniaZamkov_ENABLE" />
           <Variable Name="TL_VolbaModelu_ENABLE" />
@@ -72,12 +68,20 @@
           <Variable Name="TL_OvladanieVytahu_ENABLE" />
           <Variable Name="RR_CistenieSkrutkovaciek_ENABLE" />
           <Variable Name="RR_PozicieSkrutiek_ENABLE" />
+          <Variable Name="TL_ZadnyZamok_Farba" />
+          <Variable Name="TL_ZamkniZadnyZamok" />
+          <Variable Name="Srobovanie_OvlManipOsX_ENABLE" />
+          <Variable Name="Srobovanie_OvlManipOsY_ENABLE" />
         </Variable>
         <Variable Name="P1_Pracovisko">
           <Variable Name="Manual" />
           <Variable Name="Reset" />
           <Variable Name="KoniecCyklu" />
           <Variable Name="Automat" />
+          <Variable Name="OUT">
+            <Variable Name="PredneDvere_ZAMKNI" />
+            <Variable Name="ZadneDvere_ZAMKNI" />
+          </Variable>
         </Variable>
         <Variable Name="Vizu">
           <Variable Name="TL_ResetCS_Farba" />
@@ -124,7 +128,7 @@
           <Variable Name="ZobrazSymbolAlarmu" />
           <Variable Name="FarbaTlacitka_Alarmy" />
         </Variable>
-        <Variable Name="P1_RemPremenne">
+        <Variable Name="P1_RemPremenne" AutomaticEnable="True">
           <Variable Name="P1_Srob45F_PozX_LavejSkrutkyK30" />
           <Variable Name="P1_Srob45F_PozY_LavejSkrutkyK30" />
           <Variable Name="P1_Srob45F_PozX_PravejSkrutkyK30" />
@@ -208,14 +212,6 @@
           <Variable Name="TL_RezimAutomat" />
           <Variable Name="ActualPage" />
           <Variable Name="GoPage" />
-          <Variable Name="TL_PrednyZamokPS_Farba" />
-          <Variable Name="TL_PrednyZamokLS_Farba" />
-          <Variable Name="TL_ZadnyZamokPS_Farba" />
-          <Variable Name="TL_ZadnyZamokLS_Farba" />
-          <Variable Name="TL_ZamkniPrednyZamokPS" />
-          <Variable Name="TL_ZamkniPrednyZamokLS" />
-          <Variable Name="TL_ZamkniZadnyZamokPS" />
-          <Variable Name="TL_ZamkniZadnyZamokLS" />
           <Variable Name="TL_StartAutomat_ENABLE" />
           <Variable Name="TL_KoniecCyklu_ENABLE" />
           <Variable Name="TL_STOP_ENABLE" />
@@ -286,6 +282,10 @@
           <Variable Name="PopUpButtonNO" />
           <Variable Name="IndexStavu_SpodnyStoper" />
           <Variable Name="IndexStavu_AkumulacnyStoper" />
+          <Variable Name="TL_PrednyZamok_Farba" />
+          <Variable Name="TL_ZadnyZamok_Farba" />
+          <Variable Name="TL_ZamkniPredneZamky" />
+          <Variable Name="TL_ZamkniZadneZamky" />
         </Variable>
         <Variable Name="P2_AlarmyVizu">
           <Variable Name="PotvrdAlarmy" />
@@ -332,12 +332,7 @@
           <Variable Name="IndexStavu_StoperFunkcnyTestA" />
           <Variable Name="IndexStavu_StoperFunkcnyTestB" />
           <Variable Name="IndexStavu_StoperEtiketovackyP4" />
-          <Variable Name="TL_PrednyZamokPS_Farba_P3" />
-          <Variable Name="TL_PrednyZamokLS_Farba_P3" />
           <Variable Name="TL_ZadnyZamok_Farba_P3" />
-          <Variable Name="TL_ZamkniPrednyZamokPS_P3" />
-          <Variable Name="TL_ZamkniPrednyZamokLS_P3" />
-          <Variable Name="TL_ZamkniZadnyZamok_P3" />
           <Variable Name="TL_StartAutomat_ENABLE_P3" />
           <Variable Name="TL_KoniecCyklu_ENABLE_P3" />
           <Variable Name="TL_STOP_ENABLE_P3" />
@@ -382,6 +377,11 @@
           <Variable Name="IndexStavu_ZdvizkaZaFunkTestomA" />
           <Variable Name="IndexStavu_ZdvizkaZaFunkTestomB" />
           <Variable Name="IndexStavu_HV_Test" />
+          <Variable Name="TL_PrednyZamok_Farba_P3" />
+          <Variable Name="TL_ZamkniPredneZamky_P3" />
+          <Variable Name="TL_ZamkniZadneZamky_P3" />
+          <Variable Name="TL_ZamkniZadnyZamok_P4" />
+          <Variable Name="TL_ZadnyZamok_Farba_P4" />
         </Variable>
         <Variable Name="P3_LeakageTestA">
           <Variable Name="STAV">
@@ -401,6 +401,96 @@
         <Variable Name="P4_FunkcnyTestB">
           <Variable Name="STAV">
             <Variable Name="Tester_ON" />
+          </Variable>
+        </Variable>
+        <Variable Name="P2_Pracovisko">
+          <Variable Name="OUT">
+            <Variable Name="PredneDvereLS_ZAMKNI" />
+            <Variable Name="PredneDverePS_ZAMKNI" />
+            <Variable Name="ZadneDvereLS_ZAMKNI" />
+            <Variable Name="ZadneDverePS_ZAMKNI" />
+          </Variable>
+          <Variable Name="Automat" />
+          <Variable Name="Manual" />
+          <Variable Name="Reset" />
+          <Variable Name="KoniecCyklu" />
+          <Variable Name="STAV">
+            <Variable Name="PredneDvereZamknute" />
+            <Variable Name="ZadneDvereZamknute" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_Pracovisko">
+          <Variable Name="OUT">
+            <Variable Name="PredneDvereLave_ZAMKNI" />
+            <Variable Name="PredneDverePrave_ZAMKNI" />
+            <Variable Name="ZadneDvereLave_ZAMKNI" />
+            <Variable Name="ZadneDverePrave_ZAMKNI" />
+          </Variable>
+          <Variable Name="Automat" />
+          <Variable Name="Manual" />
+          <Variable Name="Reset" />
+          <Variable Name="KoniecCyklu" />
+          <Variable Name="STAV">
+            <Variable Name="PredneDvereZamknute" />
+            <Variable Name="ZadneDvereZamknute" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_Pracovisko">
+          <Variable Name="OUT">
+            <Variable Name="PredneDvere_ZAMKNI" />
+            <Variable Name="ZadneDvere_ZAMKNI" />
+          </Variable>
+          <Variable Name="Automat" />
+          <Variable Name="Manual" />
+          <Variable Name="Reset" />
+          <Variable Name="KoniecCyklu" />
+          <Variable Name="KoniecVyroby" />
+        </Variable>
+        <Variable Name="gAlarmXCore" AutomaticEnable="True" />
+        <Variable Name="gAlarmXHistory" AutomaticEnable="True" />
+        <Variable Name="P2_RemPremenne" AutomaticEnable="True" />
+        <Variable Name="P34_RemPremenne" AutomaticEnable="True" />
+        <Variable Name="P34_UlozPremenne" />
+        <Variable Name="P34_NacitajPremenne" />
+        <Variable Name="P2_UlozPremenne" />
+        <Variable Name="P2_NacitajPremenne" />
+        <Variable Name="P1_NacitajPremenne" />
+        <Variable Name="P1_Vytah_KAM_Result_Ignoruj" />
+        <Variable Name="P2_Zvaranie_KAM_Result_OK" />
+        <Variable Name="P2_Zvaranie_KAM_Result_NG" />
+        <Variable Name="P4_Etiketov_KAM_Result_Ignoruj" />
+        <Variable Name="P4_Etiketov_KAM_Result_NG" />
+        <Variable Name="P4_Etiketov_KAM_Result_OK" />
+        <Variable Name="CAM11">
+          <Variable Name="RESULT">
+            <Variable Name="Paletka">
+              <Variable Name="Pritomn_PowerCP_4F" />
+              <Variable Name="Pritomn_PowerCP_5F" />
+              <Variable Name="Pritomn_PowerCP_5H" />
+            </Variable>
+            <Variable Name="PowerCP">
+              <Variable Name="Pritomn_LavyMVcase" />
+              <Variable Name="Pritomn_PravyMVcase" />
+              <Variable Name="LavyBusbar_Zvaranie_OK" />
+              <Variable Name="PravyBusbar_Zvaranie_OK" />
+              <Variable Name="Pritomn_TopCover_4F" />
+              <Variable Name="Pritomn_TopCover_5F" />
+              <Variable Name="Pritomn_TopCover_5H" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="CAM15">
+          <Variable Name="RESULT">
+            <Variable Name="Pritomn_Etikety" />
+            <Variable Name="Pritomn_LogoBMV" />
+            <Variable Name="Pritomn_LogoPanasonic" />
+            <Variable Name="CitanieQRkodu_Etikety_OK" />
+            <Variable Name="PrecitanyQRkod_Etikety" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_Etiketovacka">
+          <Variable Name="STAV">
+            <Variable Name="Etiketa_ZhodaQRkodu_OK" />
           </Variable>
         </Variable>
       </GlobalVariables>

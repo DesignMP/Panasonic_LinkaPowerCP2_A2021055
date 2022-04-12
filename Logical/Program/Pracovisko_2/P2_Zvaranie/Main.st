@@ -22,12 +22,13 @@ PROGRAM _CYCLIC
 	//Enable serva//
 	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset THEN
 		P2_Zvaranie.ServoZdvihuZvarania.Command.PowerON:= TRUE;
+	ELSE
+		P2_Zvaranie.ServoZdvihuZvarania.Command.PowerON:= FALSE;
 	END_IF	
 	
 	
 	//Reset poruchy serva//
 	IF P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset AND NOT P2_Zvaranie.ServoZdvihuZvarania.Status.Error THEN
-		P2_Zvaranie.ServoZdvihuZvarania.Command.PowerON:= FALSE;
 		P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset:= FALSE;
 	END_IF
 	
@@ -35,6 +36,7 @@ PROGRAM _CYCLIC
 	//Reset sekcie //
 	IF P2_Zvaranie.Reset THEN
 		SC_P2_Zvaranie.Step:= 0;
+		P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset:= TRUE;
 		P2_Zvaranie.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_Zvaranie.Step:= 0;
@@ -230,7 +232,7 @@ PROGRAM _CYCLIC
 			
 			
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZdvihu/1000;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 235;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 236;
 			
 			
 			IF NOT SC_P2_Zvaranie.Switch1 THEN
@@ -312,7 +314,7 @@ PROGRAM _CYCLIC
 				SC_P2_Zvaranie.Switch1:= TRUE;
 			END_IF	
 				
-			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition) THEN
+			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InTorque) THEN
 				Reports.Zvaranie.Moment.PravyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActTorque);
 				Reports.Zvaranie.Vyska.PravyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActPosition);
 				Reports.Zvaranie.Frekvencia:= '80';
@@ -332,7 +334,7 @@ PROGRAM _CYCLIC
 			
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Velocity:= P2_RemPremenne.P2_Zvaranie_RychlostZdvihu/1000;
 			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Torque:= 1.0;
-			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 235;
+			P2_Zvaranie.ServoZdvihuZvarania.Parameters.Position:= 236;
 			
 			
 			IF NOT SC_P2_Zvaranie.Switch1 AND SC_P2_Zvaranie.IdleTime.Q THEN
@@ -426,7 +428,7 @@ PROGRAM _CYCLIC
 				SC_P2_Zvaranie.Switch1:= TRUE;
 			END_IF	
 				
-			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition) THEN
+			IF EDGEPOS(P2_Zvaranie.ServoZdvihuZvarania.Status.InTorque) THEN
 				Reports.Zvaranie.Moment.LavyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActTorque);
 				Reports.Zvaranie.Vyska.LavyZvar:= REAL_TO_STRING(P2_Zvaranie.ServoZdvihuZvarania.Status.ActPosition);
 				Reports.Zvaranie.Frekvencia:= '80';

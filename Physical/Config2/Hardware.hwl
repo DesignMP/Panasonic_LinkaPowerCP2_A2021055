@@ -2,7 +2,7 @@
 <?AutomationStudio FileVersion="4.9"?>
 <BR.AS.HardwareTopology>
   <TimeStamps>
-    <TimeStamp LogicalPath="Config2.Hardware.hw" LastWriteTime="04/08/2022 16:13:29" />
+    <TimeStamp LogicalPath="Config2.Hardware.hw" LastWriteTime="04/12/2022 17:10:41" />
   </TimeStamps>
   <Modules>
     <Module Name="P1_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="348" Y="89" />
@@ -685,7 +685,7 @@ Profinet:192.168.81.14</Text>
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">ABB - Profinet
 P1_Robot IRB120_R1
 Profinet:192.168.81.11
-Ethernet:192.168.1.10</Text>
+Ethernet:192.168.148.10</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -706,7 +706,7 @@ NodNumber:2</Text>
     <InfoElementText Id="Textbox_9" X="793.2727" Y="608.5441" Width="214.926117" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P1_Operačný panel_OP1
-Ethernet:192.168.1.11</Text>
+Ethernet:192.168.148.11</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -795,15 +795,15 @@ NodNumber:5</Text>
     <InfoElementText Id="Textbox_25" X="476.001831" Y="1907.977" Width="208.701752" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P2_Operačný panel_OP2
-Ethernet:192.168.1.21</Text>
+Ethernet:192.168.148.21</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
-    <InfoElementText Id="Textbox_26" X="455.742981" Y="1509.56519" Width="174.010071" Height="78.4348145">
+    <InfoElementText Id="Textbox_26" X="455.742981" Y="1509.56519" Width="197.257019" Height="78.4348145">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">ABB - Profinet
 P2_Robot IRB1200_R2
 Profinet:192.168.81.2
-Ethernet:192.168.1.20</Text>
+Ethernet:192.168.148.20</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -982,7 +982,7 @@ Profinet:192.168.82.5</Text>
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Wenglor - Profinet
 P3_Kamery_ControlUnit
 Profinet:192.168.80.17
-Ethernet:192.168.1.30  
+Ethernet:192.168.148.30  
 P1_Výtah CAM 2
 P1_Výtah CAM 4
 P1_Srobovanie CAM 6</Text>
@@ -999,7 +999,7 @@ Profinet:192.168.82.6</Text>
     <InfoElementText Id="Textbox_56" X="368.2727" Y="4183.60547" Width="208.701752" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P4_Operačný panel_OP3
-Ethernet:192.168.1.40</Text>
+Ethernet:192.168.148.40</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -1048,7 +1048,7 @@ Profinet:192.168.81.18</Text>
     <InfoElementText Id="Textbox_64" X="822.798" Y="4295" Width="208.701752" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Tlačiareň - Ethernet
 
-Ethernet:192.168.1.41</Text>
+Ethernet:192.168.148.41</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>

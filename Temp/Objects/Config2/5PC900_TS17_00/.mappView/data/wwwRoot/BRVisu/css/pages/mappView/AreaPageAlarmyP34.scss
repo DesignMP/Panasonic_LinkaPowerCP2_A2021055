@@ -44,7 +44,12 @@
 }
 #AreaPageAlarmyP34_TabControl1 {
 	> .tabItemContainer{
-		border-width: 1px;
+		border-width: 2px;
+	}
+}
+#AreaPageAlarmyP34_TabControl1 {
+	> .tabItemContainer{
+	@include border-radius(5px);
 	}
 }
 #AreaPageAlarmyP34_TabControl1 {
@@ -107,7 +112,7 @@
 }
 #AreaPageAlarmyP34_AlarmList1 {
 	&.breaseTableWidget .breaseTableColumnWidget .headerText{
-		font-size: 20px;
+		font-size: 18px;
 	}
 }
 #AreaPageAlarmyP34_AlarmList1 {
@@ -204,8 +209,31 @@
 		z-index: 1;
 }
 #AreaPageAlarmyP34_Button_PotvrdenieAlarmu {
+	@include border-radius(10px);
+}
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu {
 	span{
-		font-size: 18px;
+		font-size: 16px;
+	}
+}
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
 #AreaPageAlarmyP34_TabItem2_breaseTabItemTab {
@@ -263,7 +291,7 @@
 }
 #AreaPageAlarmyP34_AlarmHistory1 {
 	&.breaseTableWidget .breaseTableColumnWidget .headerText{
-		font-size: 20px;
+		font-size: 18px;
 	}
 }
 #AreaPageAlarmyP34_AlarmHistory1 {
@@ -350,7 +378,30 @@
 		z-index: 1;
 }
 #AreaPageAlarmyP34_Button_ArchivaciaAlarmov {
+	@include border-radius(10px);
+}
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov {
+	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov {
 	span{
-		font-size: 18px;
+		font-size: 16px;
+	}
+}
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }

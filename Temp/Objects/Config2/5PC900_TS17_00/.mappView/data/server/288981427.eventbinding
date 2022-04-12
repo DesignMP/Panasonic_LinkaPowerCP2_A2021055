@@ -25,60 +25,36 @@
     </EventBinding>
   </Content>
   <Content id="HlavickaP2">
-    <EventBinding id="HlavickaP2.ButtonZadneDvereLS.Click">
-      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP2_ButtonZadneDvereLS" />
-      <EventHandler>
-        <Action>
-          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Vizu.TL_ZamkniZadnyZamokLS">
-            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Content>
-  <Content id="HlavickaP2">
-    <EventBinding id="HlavickaP2.ButtonZadneDverePS.Click">
-      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP2_ButtonZadneDverePS" />
-      <EventHandler>
-        <Action>
-          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Vizu.TL_ZamkniZadnyZamokPS">
-            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Content>
-  <Content id="HlavickaP2">
-    <EventBinding id="HlavickaP2.ButtonPredneLaveDvere.Click">
-      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP2_ButtonPredneLaveDvere" />
-      <EventHandler>
-        <Action>
-          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Vizu.TL_ZamkniPrednyZamokLS">
-            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Content>
-  <Content id="HlavickaP2">
-    <EventBinding id="HlavickaP2.ButtonPrednePraveDvere.Click">
-      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP2_ButtonPrednePraveDvere" />
-      <EventHandler>
-        <Action>
-          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Vizu.TL_ZamkniPrednyZamokPS">
-            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Content>
-  <Content id="HlavickaP2">
     <EventBinding id="HlavickaP2.TextOutputOperator.Click">
       <Source type="widgets.brease.TextOutput.Event" event="Click" refId="HlavickaP2_TextOutputOperator" />
       <EventHandler>
         <Action>
           <Target type="clientSystem.Action">
             <Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="LoginDialogP2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="HlavickaP2">
+    <EventBinding id="HlavickaP2.ButtonPredneDvere.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP2_ButtonPredneDvere" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Vizu.TL_ZamkniPredneZamky">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="HlavickaP2">
+    <EventBinding id="HlavickaP2.ButtonZadneDvere.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP2_ButtonZadneDvere" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Vizu.TL_ZamkniZadneZamky">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
           </Target>
         </Action>
       </EventHandler>

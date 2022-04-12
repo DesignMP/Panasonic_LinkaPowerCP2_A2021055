@@ -1,100 +1,6 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P4_StoperE 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=633 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=723 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                         P4_Etiketovacka                      P4_Etiketovacka_typ    0 "                                                               *"    0   24    1    0    0    1         
-                                     OUT                  P4_Etiketovacka_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
-                          OfukEtikety_ON                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                    PrisavanieEtikety_ON                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                   PrisavanieEtikety_OFF                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                     Aplikator_OtocVPRED                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                      Aplikator_OtocVZAD                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                         Aplikator_VYSUN                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                    PritlakPowerCP_VYSUN                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                 Automat                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                   ServoZdvihuAplikatora                              ServoDriver    0 "                                                               *"    1   24    1    0    0    0         
-                                 Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    0         
-                                 PowerON                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                ErrReset                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                  JogNeg                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                  JogPos                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                            MoveAdditive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                            MovePosition                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                        TorqueLimitation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                    Stop                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                   Pause                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                              Parameters                               ParamStruc    0 "                                                               *"    2   24    1    0    0    0         
-                                  Torque                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                Distance                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                Position                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                Override                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                     Dcc                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                     Acc                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                     Jog                                 JogStruc    0 "                                                               *"    3   24    1    0    0    0         
-                                     Acc                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
-                                     OUT                              OutputStruc    0 "                                                               *"    2   24    1    0    0    0         
-                          ExtendedParam0                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                          ExtendedParam1                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                          ExtendedParam2                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                          ExtendedParam3                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                          ExtendedParam4                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                          ExtendedParam5                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                          ExtendedParam6                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                          ExtendedParam7                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                          ExtendedParam8                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                          ExtendedParam9                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                         ExtendedParam10                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                         ExtendedParam11                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                         ExtendedParam12                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                         ExtendedParam13                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                         ExtendedParam14                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                         ExtendedParam15                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-                                    user                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
-             TraverseToFixedEndstop_Bit8                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-          ActivateHardwLimitSwitch_Bit15                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           ActivateSoftLimitSwitch_Bit14                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           TouchProbeEdgeSelection_Bit11                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-               TouchProbeSelection_Bit10                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                 JoggingIncremental_Bit5                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                      MDIselection_Bit15                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           NegModuloPositioningDir_Bit10                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-            PosModuloPositioningDir_Bit9                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                AbsolutePositioning_Bit8                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           TraversingBlockSelection_Bit0                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           TraversingBlockSelection_Bit1                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           TraversingBlockSelection_Bit2                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           TraversingBlockSelection_Bit3                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           TraversingBlockSelection_Bit4                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           TraversingBlockSelection_Bit5                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-           TraversingBlockSelection_Bit6                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  OpenHoldingBrake_Bit12                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-              StartHomingProcedure_Bit11                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                      ControlByPLC_Bit10                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                               Jog2_Bit9                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                               Jog1_Bit8                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                           FaultAck_Bit7                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-             ActivateTraversingTask_Bit6                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                 NoIntermediateStop_Bit5                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-          DoNotRejectTraversingTask_Bit4                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                    EnableOperation_Bit3                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                        NoQuickStop_Bit2                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                        NoCoastStop_Bit1                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                           SwitchON_Bit0                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                    Step                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
-                                    Info                              WSTRING[80]    0 "                                                               *"    2   21  162    1    0    0         
-                                  Status                              StatusStruc    0 "                                                               *"    2   24    1    0    0    0         
-                          WarningMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         
-                            ErrorMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         
-                                InTorque                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                              InPosition                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                              StandStill                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                 Warning                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                   Error                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                   Ready                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                               ActTorque                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                             ActVelocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                             ActPosition                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                       SC_P4_Etiketovacka                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
                                     Step                                     UINT    0 "                                                             560"    1    6    1   10    0    0         
                            P4_Pracovisko                        P4_Pracovisko_typ    0 "                                                               *"    0   24    1    0    0    1         
@@ -102,8 +8,8 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                              Porucha_ST5                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                    Linka                                Linka_typ    0 "                                                               *"    0   24    1    0    0    1         
                                      PAR                            Linka_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
-                            ZvolenyModel                                STRING[2]    0 "                                                            '4F'"    2    9    3    1    0    0         
-                                 Paletka                       Paletka_typ[0..30]    0 "                                                               *"    0   24   31    0    0    1         
+                            ZvolenyModel                                STRING[2]    0 "                                                            '5H'"    2    9    3    1    0    0         
+                                 Paletka                       Paletka_typ[0..30]    0 "                                                               *"    0   24   31    0    0    0         
                               Paletka[0]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
                                      PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
                             CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
@@ -633,15 +539,15 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                             Paletka[23]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    1         
-                                     PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    1         
-                            CisloPaletky                                STRING[2]    0 "                                                              ''"    3    9    3    1    0    0         
-                            QRkodPowerCP                               STRING[30]    0 "                                                              ''"    3    9   31    1    0    0         
+                             Paletka[23]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
+                                     PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
+                            CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
+                            QRkodPowerCP                               STRING[30]    0 "                                                               *"    3    9   31    1    0    0         
                           QRkodFiltra_5H                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
                         QRkodFiltra_4F5F                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
                             ID_Operatora                               STRING[80]    0 "                                                               *"    3    9   81    1    0    0         
                              StavPowerCP                                STRING[4]    0 "                                                               *"    3    9    5    1    0    0         
-                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    1         
+                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    0         
                              StavPaletky                               STRING[10]    0 "                                                               *"    3    9   11    1    0    0         
                                TypModelu                                STRING[5]    0 "                                                               *"    3    9    6    1    0    0         
                                KodModelu                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
@@ -817,3 +723,5 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                P34_Vizu                             P34_Vizu_typ    0 "                                                               *"    0   24    1    0    0    1         
+                           ZobrazHL2_ST9                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         

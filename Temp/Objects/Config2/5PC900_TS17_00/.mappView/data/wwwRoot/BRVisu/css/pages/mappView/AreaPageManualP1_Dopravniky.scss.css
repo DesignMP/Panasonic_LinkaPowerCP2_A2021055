@@ -73,11 +73,15 @@
 }
 
 #AreaPageManualP1_Dopravniky_Image2 {
-  background-color: oldlace;
+  background-color: #e0e0e0;
 }
 
 #AreaPageManualP1_Dopravniky_Image2 {
-  border-width: 1px;
+  border-style: hidden;
+}
+
+#AreaPageManualP1_Dopravniky_Image2 {
+  border-width: 2px;
 }
 
 #AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1 {

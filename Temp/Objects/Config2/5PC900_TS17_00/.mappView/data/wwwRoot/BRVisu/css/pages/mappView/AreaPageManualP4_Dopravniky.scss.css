@@ -47,7 +47,7 @@
 }
 
 #AreaPageManualP4_Dopravniky_Image1 {
-  top: 95px;
+  top: 70px;
   position: absolute;
 }
 
@@ -61,11 +61,19 @@
 }
 
 #AreaPageManualP4_Dopravniky_Image1 {
-  height: 500px;
+  height: 505px;
 }
 
 #AreaPageManualP4_Dopravniky_Image1 {
   z-index: 2;
+}
+
+#AreaPageManualP4_Dopravniky_Image1 {
+  background-color: gainsboro;
+}
+
+#AreaPageManualP4_Dopravniky_Image1 {
+  border-style: solid;
 }
 
 #AreaPageManualP4_Dopravniky_ImageList1 {
@@ -347,7 +355,7 @@
 }
 
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie3 {
-  top: 65px;
+  top: 80px;
   position: absolute;
 }
 
@@ -397,7 +405,7 @@
 }
 
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie4 {
-  top: 530px;
+  top: 515px;
   position: absolute;
 }
 
@@ -447,7 +455,7 @@
 }
 
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZasunStoperSkrutkovanie {
-  top: 120px;
+  top: 135px;
   position: absolute;
 }
 
@@ -497,7 +505,7 @@
 }
 
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZasunStoperSkrutkovanie1 {
-  top: 120px;
+  top: 135px;
   position: absolute;
 }
 

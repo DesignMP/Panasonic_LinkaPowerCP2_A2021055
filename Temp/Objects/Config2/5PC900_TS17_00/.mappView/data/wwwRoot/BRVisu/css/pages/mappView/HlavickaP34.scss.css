@@ -21,7 +21,7 @@
 }
 
 #HlavickaP34_DateTimeOutput1 {
-  border-width: 8px;
+  border-width: 3px;
 }
 
 #HlavickaP34_DateTimeOutput1 {
@@ -37,11 +37,11 @@
 }
 
 #HlavickaP34_DateTimeOutput1 {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP34_DateTimeOutput1 {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP34_DateTimeOutput1 span {
@@ -199,46 +199,46 @@
   border-width: 0px;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
   top: 6px;
   position: absolute;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
   left: 560px;
   position: absolute;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
   width: 150px;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
   height: 50px;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
   z-index: 5;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3:not(.disabled):not(.active):not(.checked) span {
+#HlavickaP34_ButtonPredneDvereBunka3:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
   justify-content: flex-end;
   text-align: right;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3:not(.active):not(.checked) {
+#HlavickaP34_ButtonPredneDvereBunka3:not(.active):not(.checked) {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3.disabled.active {
+#HlavickaP34_ButtonPredneDvereBunka3.disabled.active {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP34_ButtonPredneLaveBunka3.disabled.checked {
+#HlavickaP34_ButtonPredneDvereBunka3.disabled.checked {
   box-shadow: 4px 4px 14px black;
 }
 
@@ -264,46 +264,46 @@
   z-index: 6;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
   top: 6px;
   position: absolute;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
   left: 725px;
   position: absolute;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
   width: 150px;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
   height: 50px;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
   z-index: 7;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3:not(.disabled):not(.active):not(.checked) span {
+#HlavickaP34_ButtonZadneDvereBunka4:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
   justify-content: flex-end;
   text-align: right;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3:not(.active):not(.checked) {
+#HlavickaP34_ButtonZadneDvereBunka4:not(.active):not(.checked) {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3.disabled.active {
+#HlavickaP34_ButtonZadneDvereBunka4.disabled.active {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP34_ButtonPrednePraveBunka3.disabled.checked {
+#HlavickaP34_ButtonZadneDvereBunka4.disabled.checked {
   box-shadow: 4px 4px 14px black;
 }
 
@@ -404,7 +404,7 @@
 }
 
 #HlavickaP34_TextOutputOperator {
-  border-width: 8px;
+  border-width: 3px;
 }
 
 #HlavickaP34_TextOutputOperator {
@@ -420,27 +420,27 @@
 }
 
 #HlavickaP34_TextOutputOperator {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP34_TextOutputOperator:before {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP34_TextOutputOperator:after {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP34_TextOutputOperator {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP34_TextOutputOperator:before {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP34_TextOutputOperator:after {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP34_TextOutputOperator span {

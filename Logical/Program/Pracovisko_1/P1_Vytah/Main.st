@@ -51,6 +51,7 @@ PROGRAM _CYCLIC
 	//Reset sekcie //
 	IF P1_Vytah.Reset THEN
 		SC_P1_Vytah.Step:= 0;
+		P1_Vytah.ServoZdvihuVytahu.Command.ErrReset:= TRUE;
 		P1_Vytah.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P1_Vytah.Step:= 0;
@@ -128,7 +129,7 @@ PROGRAM _CYCLIC
 			Linka.PAR.TestovaciKus:= FALSE;
 			Linka.PAR.RevorkovyKus:= FALSE;
 			P1_Vytah.STAV.PrebiehaVyvezeniePaletky:= FALSE;
-			(*P1_Pracovisko.OUT.Osvetlenie_CAM4_ON:= FALSE;*)
+			P1_Pracovisko.OUT.Osvetlenie_CAM4_ON:= FALSE;
             
 			
 			IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND NOT P1_Pracovisko.STAV.Porucha_ST1 AND P1_Pracovisko.STAV.HardwareVytahu_OK AND P1_Vytah.ServoZdvihuVytahu.Status.Ready AND P1_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
@@ -830,7 +831,7 @@ PROGRAM _CYCLIC
 				SC_P1_Vytah.Step:= 0;
 			ELSIF Linka.P1_Kamery_OFF THEN
 				SC_P1_Vytah.ResetStep:= TRUE;
-				SC_P1_Vytah.Step:= 300;	
+				SC_P1_Vytah.Step:= 165;//300	
 			ELSIF NOT P1_UzivatelPrihlaseny THEN
 				Paletka[i].STAV.StavPaletky:= '';
 				SC_P1_Vytah.ResetStep:= TRUE;
@@ -1314,7 +1315,7 @@ PROGRAM _CYCLIC
 			IF CAM4.PAR.ResultFotky = 'PASS' THEN
 				CAM3.STAV.Results_READY:= FALSE;
 				SC_P1_Vytah.ResetStep:= TRUE;
-				SC_P1_Vytah.Step:= 190;
+				SC_P1_Vytah.Step:= 300;//190
 			ELSIF CAM4.PAR.ResultFotky = 'FAIL' THEN
 				SC_P1_Vytah.ResetStep:= TRUE;
 				SC_P1_Vytah.Step:= 178;
@@ -1356,7 +1357,7 @@ PROGRAM _CYCLIC
 				P1_Vytah.CMD.Banner_LED_OFF:= TRUE; //Zhasnem banner
 				CAM4.PAR.ResultFotky:= 'PASS';
 				SC_P1_Vytah.ResetStep:= TRUE;
-				SC_P1_Vytah.Step:= 190;
+				SC_P1_Vytah.Step:= 300;//190
 			END_IF	
 			
 						

@@ -1,346 +1,226 @@
 
-<vdef:Visualization id="Vizu_P1" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
-  <StartPage pageRefId="PageBootP1" />
-  <Pages>
-    <Page refId="PageBootP1" />
-    <Page refId="PageAutomatP1" />
-    <Page refId="PageManualMainP1" />
-    <Page refId="PageManualP1_Dopravniky" />
-    <Page refId="PageManualP1_Vytah" />
-    <Page refId="PageManualP1_Skrutkovanie" />
-    <Page refId="PageManualP1_Skrutkovanie_page2" />
-    <Page refId="PageManualP1_Skrutkovanie_page3" />
-    <Page refId="PageAlarmP1" />
-    <Page refId="PageInfoP1" />
-    <Page refId="PageSetupP1_page1" />
-    <Page refId="PageParametreMainP1" />
-    <Page refId="PageParametreP1_page1" />
-    <Page refId="PageParametreP1_page2" />
-    <Page refId="PageStavyStanicP1" />
-    <Page refId="PageTolerancieSkrutkovaniaP1" />
-    <Page refId="PageUsers" />
-    <Page refId="PageManualP1_Skrutkovanie_page4" />
-    <Page refId="PageAlarmyP2" />
-    <Page refId="PageAutomatP2" />
-    <Page refId="PageBootP2" />
-    <Page refId="PageInfoP2" />
-    <Page refId="PageManualMainP2" />
-    <Page refId="PageManualP2_Cistenie" />
-    <Page refId="PageManualP2_Dopravniky" />
-    <Page refId="PageManualP2_Maticovacka" />
-    <Page refId="PageManualP2_Skrutkovanie" />
-    <Page refId="PageManualP2_Skrutkovanie_page2" />
-    <Page refId="PageManualP2_Skrutkovanie_page3" />
-    <Page refId="PageManualP2_Skrutkovanie_page4" />
-    <Page refId="PageManualP2_ZakladanieTesnenia" />
-    <Page refId="PageManualP2_Zvaranie" />
-    <Page refId="PageParametreMainP2" />
-    <Page refId="PageParametreP2_page1" />
-    <Page refId="PageSetupP2" />
-    <Page refId="PageStavyStanicP2" />
-    <Page refId="PageTolerancieSkrutkovaniaP2_page1" />
-    <Page refId="PageAlarmP34" />
-    <Page refId="PageAutomatP34" />
-    <Page refId="PageBootP34" />
-    <Page refId="PageInfoP34" />
-    <Page refId="PageManualP3_Dopravniky" />
-    <Page refId="PageManualP4_Dopravniky" />
-    <Page refId="PageManualP4_Etiketovanie" />
-    <Page refId="PageManualP4_FunkcnyTestA" />
-    <Page refId="PageManualP4_FunkcnyTestB" />
-    <Page refId="PageManualP3_LeakageA" />
-    <Page refId="PageManualP3_LeakageB" />
-    <Page refId="PageManualMainP3" />
-    <Page refId="PageManualMainP4" />
-    <Page refId="PageManualP3_Skrutkovanie_page1" />
-    <Page refId="PageManualP3_Skrutkovanie_page2" />
-    <Page refId="PageManualP3_Skrutkovanie_page3" />
-    <Page refId="PageManualP4_Vytah" />
-    <Page refId="PageParametreMainP3" />
-    <Page refId="PageParametreMainP4" />
-    <Page refId="PageSetupMainP34" />
-    <Page refId="PageStavyStanicP3" />
-    <Page refId="PageStavyStanicP4" />
-    <Page refId="PageTolerancieSkrutkovaniaP3" />
-    <Page refId="PageVseobecneParametreP3" />
-    <Page refId="PageVseobecneParametreP4" />
-  </Pages>
-  <Navigations>
-    <!--<Navigation refId="" />-->
-  </Navigations>
-  <BindingsSets>
-    <BindingsSet refId="1059230267" />
-    <BindingsSet refId="-1260519224" />
-    <BindingsSet refId="-1745456510" />
-    <BindingsSet refId="1091392584" />
-    <BindingsSet refId="-342887235" />
-    <BindingsSet refId="1954477367" />
-    <BindingsSet refId="1948756856" />
-    <BindingsSet refId="946432131" />
-    <BindingsSet refId="1472554209" />
-    <BindingsSet refId="-1602918109" />
-    <BindingsSet refId="-2092605546" />
-    <BindingsSet refId="-1751176765" />
-    <BindingsSet refId="1398009040" />
-    <BindingsSet refId="88100866" />
-    <BindingsSet refId="-1789833607" />
-    <BindingsSet refId="-1647342656" />
-  </BindingsSets>
-  <EventBindingsSets>
-    <EventBindingsSet refId="747011459" />
-    <EventBindingsSet refId="-554006622" />
-    <EventBindingsSet refId="-1773139480" />
-    <EventBindingsSet refId="635401690" />
-    <EventBindingsSet refId="-1053773953" />
-    <EventBindingsSet refId="-2099007365" />
-    <EventBindingsSet refId="1634982777" />
-    <EventBindingsSet refId="-911732930" />
-    <EventBindingsSet refId="288981427" />
-    <EventBindingsSet refId="-1819572076" />
-    <EventBindingsSet refId="363987627" />
-    <EventBindingsSet refId="907053918" />
-    <EventBindingsSet refId="1866021044" />
-    <EventBindingsSet refId="-1016271759" />
-    <EventBindingsSet refId="1162211982" />
-  </EventBindingsSets>
-  <Dialogs>
-    <Dialog refId="Hlasenie1_ST1" />
-    <Dialog refId="Hlasenie2_ST1" />
-    <Dialog refId="Hlasenie3_ST1" />
-    <Dialog refId="Hlasenie4_ST1" />
-    <Dialog refId="Hlasenie5_ST1" />
-    <Dialog refId="Hlasenie6_ST1" />
-    <Dialog refId="Hlasenie7_ST1" />
-    <Dialog refId="Hlasenie8_ST1" />
-    <Dialog refId="Hlasenie9_ST1" />
-    <Dialog refId="Hlasenie10_ST1" />
-    <Dialog refId="Hlasenie11_ST1" />
-    <Dialog refId="Hlasenie12_ST1" />
-    <Dialog refId="Hlasenie13_ST1" />
-    <Dialog refId="Hlasenie14_ST1" />
-    <Dialog refId="Hlasenie1_ST2" />
-    <Dialog refId="Hlasenie2_ST2" />
-    <Dialog refId="Hlasenie3_ST2" />
-    <Dialog refId="Hlasenie4_ST2" />
-    <Dialog refId="Hlasenie5_ST2" />
-    <Dialog refId="Hlasenie6_ST2" />
-    <Dialog refId="Hlasenie7_ST2" />
-    <Dialog refId="Hlasenie8_ST2" />
-    <Dialog refId="Hlasenie9_ST2" />
-    <Dialog refId="LoginDialogP1" />
-    <Dialog refId="TimeDialogP1" />
-    <Dialog refId="Hlasenie10_ST3" />
-    <Dialog refId="Hlasenie11_ST3" />
-    <Dialog refId="Hlasenie12_ST3" />
-    <Dialog refId="Hlasenie13_ST3" />
-    <Dialog refId="Hlasenie14_ST3" />
-    <Dialog refId="Hlasenie1_ST3" />
-    <Dialog refId="Hlasenie1_ST4" />
-    <Dialog refId="Hlasenie1_ST5" />
-    <Dialog refId="Hlasenie1_ST6" />
-    <Dialog refId="Hlasenie2_ST3" />
-    <Dialog refId="Hlasenie2_ST4" />
-    <Dialog refId="Hlasenie2_ST5" />
-    <Dialog refId="Hlasenie2_ST6" />
-    <Dialog refId="Hlasenie3_ST3" />
-    <Dialog refId="Hlasenie3_ST4" />
-    <Dialog refId="Hlasenie3_ST5" />
-    <Dialog refId="Hlasenie3_ST6" />
-    <Dialog refId="Hlasenie4_ST5" />
-    <Dialog refId="Hlasenie4_ST6" />
-    <Dialog refId="Hlasenie5_ST3" />
-    <Dialog refId="Hlasenie4_ST3" />
-    <Dialog refId="Hlasenie5_ST6" />
-    <Dialog refId="Hlasenie6_ST3" />
-    <Dialog refId="Hlasenie6_ST6" />
-    <Dialog refId="Hlasenie7_ST3" />
-    <Dialog refId="Hlasenie7_ST6" />
-    <Dialog refId="Hlasenie8_ST3" />
-    <Dialog refId="Hlasenie8_ST6" />
-    <Dialog refId="Hlasenie9_ST3" />
-    <Dialog refId="LoginDialogP2" />
-    <Dialog refId="TimeDialogP2" />
-    <Dialog refId="Hlasenie1_ST10" />
-    <Dialog refId="Hlasenie1_ST7" />
-    <Dialog refId="Hlasenie1_ST8" />
-    <Dialog refId="Hlasenie1_ST9" />
-    <Dialog refId="Hlasenie2_ST10" />
-    <Dialog refId="Hlasenie2_ST8" />
-    <Dialog refId="Hlasenie2_ST9" />
-    <Dialog refId="Hlasenie3_ST10" />
-    <Dialog refId="Hlasenie3_ST9" />
-    <Dialog refId="Hlasenie4_ST10" />
-    <Dialog refId="Hlasenie5_ST10" />
-    <Dialog refId="Hlasenie6_ST10" />
-    <Dialog refId="Hlasenie7_ST10" />
-    <Dialog refId="Hlasenie8_ST10" />
-    <Dialog refId="Hlasenie9_ST10" />
-    <Dialog refId="LoginDialogP34" />
-    <Dialog refId="TimeDialogP34" />
-  </Dialogs>
-  <Contents>
-    <Content refId="AreaPageBootP1" />
-    <Content refId="AreaPageAutomatP1" />
-    <Content refId="AreaPageManualMainP1" />
-    <Content refId="AreaPageManualP1_Dopravniky" />
-    <Content refId="AreaPageManualP1_Vytah" />
-    <Content refId="AreaPageManualP1_Skrutkovanie" />
-    <Content refId="AreaPageManualP1_Skrutkovanie_page2" />
-    <Content refId="AreaPageManualP1_Skrutkovanie_page3" />
-    <Content refId="AreaPageAlarmP1" />
-    <Content refId="AreaPageInfoP1" />
-    <Content refId="AreaPageSetupP1_page1" />
-    <Content refId="AreaPageParametreMainP1" />
-    <Content refId="AreaPageParametreP1_page1" />
-    <Content refId="AreaPageParametreP1_page2" />
-    <Content refId="AreaPageStavyStanicP1" />
-    <Content refId="AreaPageTolerancieSkrutkovaniaP1" />
-    <Content refId="AreaPageUsers" />
-    <Content refId="AreaPageManualP1_Skrutkovanie_page4" />
-    <Content refId="AreaHlasenie1_ST1" />
-    <Content refId="AreaHlasenie2_ST1" />
-    <Content refId="AreaHlasenie3_ST1" />
-    <Content refId="AreaHlasenie4_ST1" />
-    <Content refId="AreaHlasenie5_ST1" />
-    <Content refId="AreaHlasenie6_ST1" />
-    <Content refId="AreaHlasenie7_ST1" />
-    <Content refId="AreaHlasenie8_ST1" />
-    <Content refId="AreaHlasenie9_ST1" />
-    <Content refId="AreaHlasenie10_ST1" />
-    <Content refId="AreaHlasenie11_ST1" />
-    <Content refId="AreaHlasenie12_ST1" />
-    <Content refId="AreaHlasenie13_ST1" />
-    <Content refId="AreaHlasenie14_ST1" />
-    <Content refId="AreaHlasenie1_ST2" />
-    <Content refId="AreaHlasenie2_ST2" />
-    <Content refId="AreaHlasenie3_ST2" />
-    <Content refId="AreaHlasenie4_ST2" />
-    <Content refId="AreaHlasenie5_ST2" />
-    <Content refId="AreaHlasenie6_ST2" />
-    <Content refId="AreaHlasenie7_ST2" />
-    <Content refId="AreaHlasenie8_ST2" />
-    <Content refId="AreaHlasenie9_ST2" />
-    <Content refId="AreaLoginP1" />
-    <Content refId="AreaTimeP1" />
-    <Content refId="AreaHlasenie10_ST3" />
-    <Content refId="AreaHlasenie11_ST3" />
-    <Content refId="AreaHlasenie12_ST3" />
-    <Content refId="AreaHlasenie13_ST3" />
-    <Content refId="AreaHlasenie14_ST3" />
-    <Content refId="AreaHlasenie1_ST3" />
-    <Content refId="AreaHlasenie1_ST4" />
-    <Content refId="AreaHlasenie1_ST5" />
-    <Content refId="AreaHlasenie1_ST6" />
-    <Content refId="AreaHlasenie2_ST3" />
-    <Content refId="AreaHlasenie2_ST4" />
-    <Content refId="AreaHlasenie2_ST5" />
-    <Content refId="AreaHlasenie2_ST6" />
-    <Content refId="AreaHlasenie3_ST3" />
-    <Content refId="AreaHlasenie3_ST4" />
-    <Content refId="AreaHlasenie3_ST5" />
-    <Content refId="AreaHlasenie3_ST6" />
-    <Content refId="AreaHlasenie4_ST3" />
-    <Content refId="AreaHlasenie4_ST5" />
-    <Content refId="AreaHlasenie4_ST6" />
-    <Content refId="AreaHlasenie5_ST3" />
-    <Content refId="AreaHlasenie5_ST6" />
-    <Content refId="AreaHlasenie6_ST3" />
-    <Content refId="AreaHlasenie6_ST6" />
-    <Content refId="AreaHlasenie7_ST3" />
-    <Content refId="AreaHlasenie7_ST6" />
-    <Content refId="AreaHlasenie8_ST3" />
-    <Content refId="AreaHlasenie8_ST6" />
-    <Content refId="AreaHlasenie9_ST3" />
-    <Content refId="HlavickaP2" />
-    <Content refId="PataP2" />
-    <Content refId="AreaPageAlarmyP2" />
-    <Content refId="AreaPageAutomatP2" />
-    <Content refId="AreaPageBootP2" />
-    <Content refId="AreaPageInfoP2" />
-    <Content refId="AreaPageManualP2" />
-    <Content refId="AreaPageManualP2_Cistenie" />
-    <Content refId="AreaPageManualP2_Dopravniky" />
-    <Content refId="AreaPageManualP2_Maticovacka" />
-    <Content refId="AreaPageManualP2_Skrutkovanie" />
-    <Content refId="AreaPageManual_Skrutkovanie_page2" />
-    <Content refId="AreaPageManual_Skrutkovanie_page3" />
-    <Content refId="AreaPageManual_Skrutkovanie_page4" />
-    <Content refId="AreaPageManualP2_ZakladanieTesnenia" />
-    <Content refId="AreaPageManualP2_Zvaranie" />
-    <Content refId="AreaPageParametreMainP2" />
-    <Content refId="AreaPageParametreP2_page1" />
-    <Content refId="AreaPageSetupP2" />
-    <Content refId="AreaPageStavyStanicP2" />
-    <Content refId="AreaPageTolerancieSkrutkovaniaP2_page1" />
-    <Content refId="AreaLoginP2" />
-    <Content refId="AreaTimeP2" />
-    <Content refId="AreaHlasenie1_ST10" />
-    <Content refId="AreaHlasenie1_ST7" />
-    <Content refId="AreaHlasenie1_ST8" />
-    <Content refId="AreaHlasenie1_ST9" />
-    <Content refId="AreaHlasenie2_ST10" />
-    <Content refId="AreaHlasenie2_ST8" />
-    <Content refId="AreaHlasenie2_ST9" />
-    <Content refId="AreaHlasenie3_ST10" />
-    <Content refId="AreaHlasenie3_ST9" />
-    <Content refId="AreaHlasenie4_ST10" />
-    <Content refId="AreaHlasenie5_ST10" />
-    <Content refId="AreaHlasenie6_ST10" />
-    <Content refId="AreaHlasenie7_ST10" />
-    <Content refId="AreaHlasenie8_ST10" />
-    <Content refId="AreaHlasenie9_ST10" />
-    <Content refId="LoginDialogP34" />
-    <Content refId="AreaTimeDialogP34" />
-    <Content refId="HlavickaP34" />
-    <Content refId="PataP34" />
-    <Content refId="AreaPageAlarmyP34" />
-    <Content refId="AreaPageAutomatP34" />
-    <Content refId="AreaPageBootP34" />
-    <Content refId="AreaPageInfoP34" />
-    <Content refId="AreaPageManualP3_Dopravniky" />
-    <Content refId="AreaPageManualP4_Dopravniky" />
-    <Content refId="AreaPageManualP4_Etiketovanie" />
-    <Content refId="AreaPageManualP4_FunkcnyTestA" />
-    <Content refId="AreaPageManualP4_FunkcnyTestB" />
-    <Content refId="AreaPageManualP3_LeakageA" />
-    <Content refId="AreaPageManualP3_LeakageB" />
-    <Content refId="AreaPageManualMainP3" />
-    <Content refId="AreaPageManualMainP4" />
-    <Content refId="AreaPageManualP3_Skrutkovanie_page1" />
-    <Content refId="AreaPageManualP3_Skrutkovanie_page2" />
-    <Content refId="AreaPageManualP3_Skrutkovanie_page3" />
-    <Content refId="AreaPageManualP4_Vytah" />
-    <Content refId="AreaPageParametreMainP3" />
-    <Content refId="AreaPageParametreMainP4" />
-    <Content refId="AreaPageSetupMainP34" />
-    <Content refId="AreaPageStavyStanicP3" />
-    <Content refId="AreaPageStavyStanicP4" />
-    <Content refId="AreaPageTolerancieSkrutkovaniaP3" />
-    <Content refId="AreaPageVseobecneParametreP3" />
-    <Content refId="AreaPageVseobecneParametreP4" />
-  </Contents>
-  <VariablesSets />
-  <SnippetsSets>
-    <SnippetsSet refId="Snippets" />
-    <SnippetsSet refId="StavyUsers_snippet" />
-  </SnippetsSets>
-  <ExpressionsSets>
-    <!--<ExpressionsSet refId=""/>-->
-  </ExpressionsSets>
-  <StartTheme themeRefId="BuRTheme1" />
-  <Themes>
-    <Theme refId="BuRTheme1" />
-  </Themes>
-  <Configurations>
-    <Configuration key="activityCount" value="false" />
-    <Configuration key="zoom" value="true" />
-    <Gestures>
-      <!--<SystemGesture1 touchPoints="2" />
-		  <SystemGesture2 touchPoints="2" />
-		  <SystemGesture3 touchPoints="2" />-->
-    </Gestures>
-    <VirtualKeyboards>
-      <!--<InputProcessing onKeyDown="true" />-->
-    </VirtualKeyboards>
-  </Configurations>
+<vdef:Visualization id="Vizu_P1" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+	<StartPage pageRefId="PageBootP1" />
+	<Pages>
+		<Page refId="PageBootP1" />
+		<Page refId="PageAutomatP1" />
+		<Page refId="PageAlarmP1" />
+		<Page refId="PageManualMainP1" />
+		<Page refId="PageManualP1_Dopravniky" />
+		<Page refId="PageManualP1_Vytah" />
+		<Page refId="PageManualP1_Skrutkovanie" />
+		<Page refId="PageManualP1_Skrutkovanie_page2" />
+		<Page refId="PageManualP1_Skrutkovanie_page3" />
+		<Page refId="PageInfoP1" />
+		<Page refId="PageSetupP1_page1" />
+		<Page refId="PageParametreMainP1" />
+		<Page refId="PageParametreP1_page1" />
+		<Page refId="PageParametreP1_page2" />
+		<Page refId="PageStavyStanicP1" />
+		<Page refId="PageTolerancieSkrutkovaniaP1" />
+		<Page refId="PageUsers" />
+		<Page refId="PageManualP1_Skrutkovanie_page4" />
+		
+    
+	</Pages>
+	<Navigations>
+		<!--<Navigation refId="" />-->
+	</Navigations>
+	<BindingsSets>
+		<BindingsSet refId="1059230267" />
+		<BindingsSet refId="-1260519224" />
+		<BindingsSet refId="-1745456510" />
+		<BindingsSet refId="1091392584" />
+		<BindingsSet refId="-342887235" />
+		<BindingsSet refId="1954477367" />
+		<BindingsSet refId="1948756856" />
+		<BindingsSet refId="946432131" />
+		<BindingsSet refId="1472554209" />
+			
+	</BindingsSets>
+	<EventBindingsSets>
+		<EventBindingsSet refId="747011459" />
+		<EventBindingsSet refId="-554006622" />
+		<EventBindingsSet refId="-1773139480" />
+		<EventBindingsSet refId="635401690" />
+		<EventBindingsSet refId="-1053773953" />
+		<EventBindingsSet refId="-2099007365" />
+		<EventBindingsSet refId="1634982777" />
+		<EventBindingsSet refId="-627506400" />
+				
+	</EventBindingsSets>
+	<Dialogs>
+		<Dialog refId="Hlasenie1_ST1" />
+		<Dialog refId="Hlasenie2_ST1" />
+		<Dialog refId="Hlasenie3_ST1" />
+		<Dialog refId="Hlasenie4_ST1" />
+		<Dialog refId="Hlasenie5_ST1" />
+		<Dialog refId="Hlasenie6_ST1" />
+		<Dialog refId="Hlasenie7_ST1" />
+		<Dialog refId="Hlasenie8_ST1" />
+		<Dialog refId="Hlasenie9_ST1" />
+		<Dialog refId="Hlasenie10_ST1" />
+		<Dialog refId="Hlasenie11_ST1" />
+		<Dialog refId="Hlasenie12_ST1" />
+		<Dialog refId="Hlasenie13_ST1" />
+		<Dialog refId="Hlasenie14_ST1" />
+		<Dialog refId="Hlasenie1_ST2" />
+		<Dialog refId="Hlasenie2_ST2" />
+		<Dialog refId="Hlasenie3_ST2" />
+		<Dialog refId="Hlasenie4_ST2" />
+		<Dialog refId="Hlasenie5_ST2" />
+		<Dialog refId="Hlasenie6_ST2" />
+		<Dialog refId="Hlasenie7_ST2" />
+		<Dialog refId="Hlasenie8_ST2" />
+		<Dialog refId="Hlasenie9_ST2" />
+		<Dialog refId="LoginDialogP1" />
+		<Dialog refId="TimeDialogP1" />
+		<Dialog refId="Hlasenie10_ST3" />
+		<Dialog refId="Hlasenie11_ST3" />
+		<Dialog refId="Hlasenie12_ST3" />
+		<Dialog refId="Hlasenie13_ST3" />
+		<Dialog refId="Hlasenie14_ST3" />
+		<Dialog refId="Hlasenie1_ST3" />
+		<Dialog refId="Hlasenie1_ST4" />
+		<Dialog refId="Hlasenie1_ST5" />
+		<Dialog refId="Hlasenie1_ST6" />
+		<Dialog refId="Hlasenie2_ST3" />
+		<Dialog refId="Hlasenie2_ST4" />
+		<Dialog refId="Hlasenie2_ST5" />
+		<Dialog refId="Hlasenie2_ST6" />
+		<Dialog refId="Hlasenie3_ST3" />
+		<Dialog refId="Hlasenie3_ST4" />
+		<Dialog refId="Hlasenie3_ST5" />
+		<Dialog refId="Hlasenie3_ST6" />
+		<Dialog refId="Hlasenie4_ST5" />
+		<Dialog refId="Hlasenie4_ST6" />
+		<Dialog refId="Hlasenie5_ST3" />
+		<Dialog refId="Hlasenie4_ST3" />
+		<Dialog refId="Hlasenie5_ST6" />
+		<Dialog refId="Hlasenie6_ST3" />
+		<Dialog refId="Hlasenie6_ST6" />
+		<Dialog refId="Hlasenie7_ST3" />
+		<Dialog refId="Hlasenie7_ST6" />
+		<Dialog refId="Hlasenie8_ST3" />
+		<Dialog refId="Hlasenie8_ST6" />
+		<Dialog refId="Hlasenie9_ST3" />
+		<Dialog refId="LoginDialogP2" />
+		<Dialog refId="TimeDialogP2" />
+		<Dialog refId="Hlasenie1_ST10" />
+		<Dialog refId="Hlasenie1_ST7" />
+		<Dialog refId="Hlasenie1_ST8" />
+		<Dialog refId="Hlasenie1_ST9" />
+		<Dialog refId="Hlasenie2_ST10" />
+		<Dialog refId="Hlasenie2_ST8" />
+		<Dialog refId="Hlasenie2_ST9" />
+		<Dialog refId="Hlasenie3_ST10" />
+		<Dialog refId="Hlasenie3_ST9" />
+		<Dialog refId="Hlasenie4_ST10" />
+		<Dialog refId="Hlasenie5_ST10" />
+		<Dialog refId="Hlasenie6_ST10" />
+		<Dialog refId="Hlasenie7_ST10" />
+		<Dialog refId="Hlasenie8_ST10" />
+		<Dialog refId="Hlasenie9_ST10" />
+		<Dialog refId="LoginDialogP34" />
+		<Dialog refId="TimeDialogP34" />
+	</Dialogs>
+	<Contents>
+		<Content refId="AreaLoginP1" />
+		<Content refId="AreaTimeP1" />
+		<Content refId="AreaPageBootP1" />
+		<Content refId="AreaPageAutomatP1" />
+		<Content refId="AreaPageAlarmP1" />
+		<Content refId="AreaPageManualMainP1" />
+		<Content refId="AreaPageManualP1_Dopravniky" />
+		<Content refId="AreaPageManualP1_Vytah" />
+		<Content refId="AreaPageManualP1_Skrutkovanie" />
+		<Content refId="AreaPageManualP1_Skrutkovanie_page2" />
+		<Content refId="AreaPageManualP1_Skrutkovanie_page3" />
+		<Content refId="AreaPageInfoP1" />
+		<Content refId="AreaPageSetupP1_page1" />
+		<Content refId="AreaPageParametreMainP1" />
+		<Content refId="AreaPageParametreP1_page1" />
+		<Content refId="AreaPageParametreP1_page2" />
+		<Content refId="AreaPageStavyStanicP1" />
+		<Content refId="AreaPageTolerancieSkrutkovaniaP1" />
+		<Content refId="AreaPageUsers" />
+		<Content refId="AreaPageManualP1_Skrutkovanie_page4" />
+		<Content refId="AreaHlasenie1_ST1" />
+		<Content refId="AreaHlasenie2_ST1" />
+		<Content refId="AreaHlasenie3_ST1" />
+		<Content refId="AreaHlasenie4_ST1" />
+		<Content refId="AreaHlasenie5_ST1" />
+		<Content refId="AreaHlasenie6_ST1" />
+		<Content refId="AreaHlasenie7_ST1" />
+		<Content refId="AreaHlasenie8_ST1" />
+		<Content refId="AreaHlasenie9_ST1" />
+		<Content refId="AreaHlasenie10_ST1" />
+		<Content refId="AreaHlasenie11_ST1" />
+		<Content refId="AreaHlasenie12_ST1" />
+		<Content refId="AreaHlasenie13_ST1" />
+		<Content refId="AreaHlasenie14_ST1" />
+		<Content refId="AreaHlasenie1_ST2" />
+		<Content refId="AreaHlasenie2_ST2" />
+		<Content refId="AreaHlasenie3_ST2" />
+		<Content refId="AreaHlasenie4_ST2" />
+		<Content refId="AreaHlasenie5_ST2" />
+		<Content refId="AreaHlasenie6_ST2" />
+		<Content refId="AreaHlasenie7_ST2" />
+		<Content refId="AreaHlasenie8_ST2" />
+		<Content refId="AreaHlasenie9_ST2" />
+		<Content refId="AreaHlasenie10_ST3" />
+		<Content refId="AreaHlasenie11_ST3" />
+		<Content refId="AreaHlasenie12_ST3" />
+		<Content refId="AreaHlasenie13_ST3" />
+		<Content refId="AreaHlasenie14_ST3" />
+		<Content refId="AreaHlasenie1_ST3" />
+		<Content refId="AreaHlasenie1_ST4" />
+		<Content refId="AreaHlasenie1_ST5" />
+		<Content refId="AreaHlasenie1_ST6" />
+		<Content refId="AreaHlasenie2_ST3" />
+		<Content refId="AreaHlasenie2_ST4" />
+		<Content refId="AreaHlasenie2_ST5" />
+		<Content refId="AreaHlasenie2_ST6" />
+		<Content refId="AreaHlasenie3_ST3" />
+		<Content refId="AreaHlasenie3_ST4" />
+		<Content refId="AreaHlasenie3_ST5" />
+		<Content refId="AreaHlasenie3_ST6" />
+		<Content refId="AreaHlasenie4_ST3" />
+		<Content refId="AreaHlasenie4_ST5" />
+		<Content refId="AreaHlasenie4_ST6" />
+		<Content refId="AreaHlasenie5_ST3" />
+		<Content refId="AreaHlasenie5_ST6" />
+		<Content refId="AreaHlasenie6_ST3" />
+		<Content refId="AreaHlasenie6_ST6" />
+		<Content refId="AreaHlasenie7_ST3" />
+		<Content refId="AreaHlasenie7_ST6" />
+		<Content refId="AreaHlasenie8_ST3" />
+		<Content refId="AreaHlasenie8_ST6" />
+		<Content refId="AreaHlasenie9_ST3" />
+				
+	</Contents>
+	<VariablesSets />
+	<SnippetsSets>
+		<SnippetsSet refId="StavyStroja_snippet" />
+		<SnippetsSet refId="StavyUsers_snippet" />
+	</SnippetsSets>
+	<ExpressionsSets>
+		<!--<ExpressionsSet refId=""/>-->
+	</ExpressionsSets>
+	<StartTheme themeRefId="BuRTheme1" />
+	<Themes>
+		<Theme refId="BuRTheme1" />
+	</Themes>
+	<Configurations>
+		<Configuration key="activityCount" value="false" />
+		<Configuration key="zoom" value="true" />
+		<Gestures>
+			<!--<SystemGesture1 touchPoints="2" />
+			<SystemGesture2 touchPoints="2" />
+			<SystemGesture3 touchPoints="2" />-->
+		</Gestures>
+		<VirtualKeyboards>
+			<!--<InputProcessing onKeyDown="true" />-->
+		</VirtualKeyboards>
+	</Configurations>
 </vdef:Visualization>

@@ -26,7 +26,7 @@
 }
 
 #HlavickaP1_DateTimeOutput1 {
-  left: 6px;
+  left: 8px;
   position: absolute;
 }
 
@@ -43,7 +43,7 @@
 }
 
 #HlavickaP1_DateTimeOutput1 {
-  border-width: 8px;
+  border-width: 3px;
 }
 
 #HlavickaP1_DateTimeOutput1 {
@@ -59,11 +59,11 @@
 }
 
 #HlavickaP1_DateTimeOutput1 {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP1_DateTimeOutput1 {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP1_DateTimeOutput1 span {
@@ -76,7 +76,7 @@
 }
 
 #HlavickaP1_DateTimeOutput1 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #HlavickaP1_DateTimeOutput1 {
@@ -179,7 +179,7 @@
 }
 
 #HlavickaP1_TextOutput1 {
-  border-width: 8px;
+  border-width: 3px;
 }
 
 #HlavickaP1_TextOutput1 {
@@ -195,27 +195,27 @@
 }
 
 #HlavickaP1_TextOutput1 {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP1_TextOutput1:before {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP1_TextOutput1:after {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP1_TextOutput1 {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP1_TextOutput1:before {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP1_TextOutput1:after {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP1_TextOutput1 span {
@@ -328,120 +328,73 @@
   z-index: 6;
 }
 
-#HlavickaP1_ButtonZadneDvereLS {
+#HlavickaP1_ButtonZadneDvere {
   top: 8px;
   position: absolute;
 }
 
-#HlavickaP1_ButtonZadneDvereLS {
+#HlavickaP1_ButtonZadneDvere {
   left: 398px;
   position: absolute;
 }
 
-#HlavickaP1_ButtonZadneDvereLS {
+#HlavickaP1_ButtonZadneDvere {
   width: 150px;
 }
 
-#HlavickaP1_ButtonZadneDvereLS {
+#HlavickaP1_ButtonZadneDvere {
   height: 50px;
 }
 
-#HlavickaP1_ButtonZadneDvereLS {
+#HlavickaP1_ButtonZadneDvere {
   z-index: 7;
 }
 
-#HlavickaP1_ButtonZadneDvereLS:not(.disabled):not(.active):not(.checked) span {
+#HlavickaP1_ButtonZadneDvere:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
 
-#HlavickaP1_ButtonZadneDvereLS {
+#HlavickaP1_ButtonZadneDvere {
   justify-content: flex-end;
   text-align: right;
 }
 
-#HlavickaP1_ButtonZadneDvereLS span {
+#HlavickaP1_ButtonZadneDvere span {
   font-size: 16px;
 }
 
-#HlavickaP1_ButtonZadneDvereLS:not(.active):not(.checked) {
+#HlavickaP1_ButtonZadneDvere:not(.active):not(.checked) {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP1_ButtonZadneDvereLS.disabled.active {
+#HlavickaP1_ButtonZadneDvere.disabled.active {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP1_ButtonZadneDvereLS.disabled.checked {
+#HlavickaP1_ButtonZadneDvere.disabled.checked {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP1_ButtonZadneDverePS {
+#HlavickaP1_ButtonPredneDvere {
   top: 8px;
   position: absolute;
 }
 
-#HlavickaP1_ButtonZadneDverePS {
-  left: 564px;
+#HlavickaP1_ButtonPredneDvere {
+  left: 565px;
   position: absolute;
 }
 
-#HlavickaP1_ButtonZadneDverePS {
+#HlavickaP1_ButtonPredneDvere {
   width: 150px;
 }
 
-#HlavickaP1_ButtonZadneDverePS {
+#HlavickaP1_ButtonPredneDvere {
   height: 50px;
 }
 
-#HlavickaP1_ButtonZadneDverePS {
+#HlavickaP1_ButtonPredneDvere {
   z-index: 8;
-}
-
-#HlavickaP1_ButtonZadneDverePS:not(.disabled):not(.active):not(.checked) span {
-  color: black;
-}
-
-#HlavickaP1_ButtonZadneDverePS {
-  justify-content: flex-end;
-  text-align: right;
-}
-
-#HlavickaP1_ButtonZadneDverePS span {
-  font-size: 16px;
-}
-
-#HlavickaP1_ButtonZadneDverePS:not(.active):not(.checked) {
-  box-shadow: 4px 4px 14px black;
-}
-
-#HlavickaP1_ButtonZadneDverePS.disabled.active {
-  box-shadow: 4px 4px 14px black;
-}
-
-#HlavickaP1_ButtonZadneDverePS.disabled.checked {
-  box-shadow: 4px 4px 14px black;
-}
-
-#HlavickaP1_ButtonPredneDvere {
-  top: 8px;
-  position: absolute;
-}
-
-#HlavickaP1_ButtonPredneDvere {
-  left: 732px;
-  position: absolute;
-}
-
-#HlavickaP1_ButtonPredneDvere {
-  width: 150px;
-}
-
-#HlavickaP1_ButtonPredneDvere {
-  height: 50px;
-}
-
-#HlavickaP1_ButtonPredneDvere {
-  z-index: 9;
 }
 
 #HlavickaP1_ButtonPredneDvere:not(.disabled):not(.active):not(.checked) span {
@@ -488,67 +441,37 @@
 }
 
 #HlavickaP1_ImageList2 {
+  z-index: 9;
+}
+
+#HlavickaP1_ImageList2 {
+  border-style: none;
+}
+
+#HlavickaP1_ImageList2 {
+  border-width: 0px;
+}
+
+#HlavickaP1_ImageList4 {
+  top: 18px;
+  position: absolute;
+}
+
+#HlavickaP1_ImageList4 {
+  left: 575px;
+  position: absolute;
+}
+
+#HlavickaP1_ImageList4 {
+  width: 30px;
+}
+
+#HlavickaP1_ImageList4 {
+  height: 30px;
+}
+
+#HlavickaP1_ImageList4 {
   z-index: 10;
-}
-
-#HlavickaP1_ImageList2 {
-  border-style: none;
-}
-
-#HlavickaP1_ImageList2 {
-  border-width: 0px;
-}
-
-#HlavickaP1_ImageList3 {
-  top: 18px;
-  position: absolute;
-}
-
-#HlavickaP1_ImageList3 {
-  left: 574px;
-  position: absolute;
-}
-
-#HlavickaP1_ImageList3 {
-  width: 30px;
-}
-
-#HlavickaP1_ImageList3 {
-  height: 30px;
-}
-
-#HlavickaP1_ImageList3 {
-  z-index: 11;
-}
-
-#HlavickaP1_ImageList3 {
-  border-style: none;
-}
-
-#HlavickaP1_ImageList3 {
-  border-width: 0px;
-}
-
-#HlavickaP1_ImageList4 {
-  top: 18px;
-  position: absolute;
-}
-
-#HlavickaP1_ImageList4 {
-  left: 742px;
-  position: absolute;
-}
-
-#HlavickaP1_ImageList4 {
-  width: 30px;
-}
-
-#HlavickaP1_ImageList4 {
-  height: 30px;
-}
-
-#HlavickaP1_ImageList4 {
-  z-index: 12;
 }
 
 #HlavickaP1_ImageList4 {

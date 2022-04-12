@@ -41,6 +41,7 @@ PROGRAM _CYCLIC
 	//Reset sekcie //
 	IF P4_Etiketovacka.Reset THEN
 		SC_P4_Etiketovacka.Step:= 0;
+		P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset:= TRUE;
 		P4_Etiketovacka.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P4_Etiketovacka.Step:= 0;
@@ -294,7 +295,7 @@ PROGRAM _CYCLIC
 		
 			SC_P4_Etiketovacka.IdleTime.IN:= P4_Etiketovacka.RFID_hlava.PritomnostPaletky;
 									
-			IF SC_P4_Etiketovacka.IdleTime.Q AND SC_P4_Etiketovacka.Switch1 THEN
+			IF SC_P4_Etiketovacka.IdleTime.Q AND NOT SC_P4_Etiketovacka.Switch1 THEN
 				P4_Etiketovacka.RFID_hlava.PrecitajChipRFID:= TRUE;
 				i:= 0;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
@@ -1278,10 +1279,7 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#5s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
-			IF Linka.P4_Kamery_OFF THEN
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 540;
-			ELSIF NOT SC_P4_Etiketovacka.Switch1 AND CAM15.STAV.Command_READY THEN
+			IF NOT SC_P4_Etiketovacka.Switch1 AND CAM15.STAV.Command_READY THEN
 				CAM15.CMD.Triger:= TRUE;
 				P4_Etiketovacka.STAV.Etiketa_ZhodaQRkodu_OK:= FALSE;
 				SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
@@ -1328,6 +1326,8 @@ PROGRAM _CYCLIC
 			IF NOT CAM15.STAV.BUSY  THEN
 				CAM15.CMD.Triger:= FALSE;
 				IF CAM15.RESULT.CitanieQRkodu_Etikety_OK AND
+					CAM15.RESULT.Pritomn_LogoBMV AND
+					CAM15.RESULT.Pritomn_LogoPanasonic AND
 					CAM15.RESULT.Pritomn_Etikety THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 194;
@@ -1351,7 +1351,7 @@ PROGRAM _CYCLIC
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 198;
 			ELSE
-				CAM15.PAR.ResultFotky:= 'FAIL';
+				CAM15.PAR.ResultFotky:= 'PASS';//FAIL
 				P4_Etiketovacka.STAV.Etiketa_ZhodaQRkodu_OK:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 198;

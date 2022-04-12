@@ -80,6 +80,9 @@ PROGRAM _CYCLIC
 	//Reset sekcie //
 	IF P2_Srobovanie.Reset THEN
 		SC_P2_Srobovanie.Step:= 0;
+		P2_Srobovanie.ServoManipulOsX.Command.ErrReset:= TRUE;
+		P2_Srobovanie.ServoManipulOsY.Command.ErrReset:= TRUE;
+		P2_Srobovanie.ServoManipulOsZ_M4.Command.ErrReset:= TRUE;
 		P2_Srobovanie.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_Srobovanie.Step:= 0;
@@ -234,11 +237,11 @@ PROGRAM _CYCLIC
 			P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsZ_M4_Acc;
 			P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsZ_M4_Dcc;
 			P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Torque:= 1.0;
-			P2_Srobovanie.ServoManipulOsX.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsXY_Acc;
-			P2_Srobovanie.ServoManipulOsX.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsXY_Dcc;
+			P2_Srobovanie.ServoManipulOsX.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsX_Acc;
+			P2_Srobovanie.ServoManipulOsX.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsX_Dcc;
 			P2_Srobovanie.ServoManipulOsX.Parameters.Torque:= 1.0;
-			P2_Srobovanie.ServoManipulOsY.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsXY_Acc;
-			P2_Srobovanie.ServoManipulOsY.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsXY_Dcc;
+			P2_Srobovanie.ServoManipulOsY.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsY_Acc;
+			P2_Srobovanie.ServoManipulOsY.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsY_Dcc;
 			P2_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 			
 			
@@ -641,11 +644,11 @@ PROGRAM _CYCLIC
 			P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsZ_M4_Acc;
 			P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsZ_M4_Dcc;
 			P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Torque:= 1.0;
-			P2_Srobovanie.ServoManipulOsX.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsXY_Acc;
-			P2_Srobovanie.ServoManipulOsX.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsXY_Dcc;
+			P2_Srobovanie.ServoManipulOsX.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsX_Acc;
+			P2_Srobovanie.ServoManipulOsX.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsX_Dcc;
 			P2_Srobovanie.ServoManipulOsX.Parameters.Torque:= 1.0;
-			P2_Srobovanie.ServoManipulOsY.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsXY_Acc;
-			P2_Srobovanie.ServoManipulOsY.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsXY_Dcc;
+			P2_Srobovanie.ServoManipulOsY.Parameters.Acc:= P2_RemPremenne.P2_ManipSrob_OsY_Acc;
+			P2_Srobovanie.ServoManipulOsY.Parameters.Dcc:= P2_RemPremenne.P2_ManipSrob_OsY_Dcc;
 			P2_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 				
 			

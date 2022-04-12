@@ -60,6 +60,8 @@ PROGRAM _CYCLIC
 	//Reset sekcie //
 	IF P2_ZakladacTesnenia.Reset THEN
 		SC_P2_ZakladacTesnenia.Step:= 0;
+		P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.ErrReset:= TRUE;
+		P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.ErrReset:= TRUE;
 		P2_ZakladacTesnenia.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_ZakladacTesnenia.Step:= 0;

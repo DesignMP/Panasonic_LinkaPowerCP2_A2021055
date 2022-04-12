@@ -2,28 +2,28 @@
 <Content id="AreaPageAlarmyP34" height="588" width="1366" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
     <Widget xsi:type="widgets.brease.Image" id="ImagePageAlarmy" top="0" left="0" width="1366" height="588" zIndex="0" image="Media/Pozadie/BackGround_588x1366.png" opacity="0.15" />
-    <Widget xsi:type="widgets.brease.TabControl" id="TabControl1" top="14" left="13" width="1340" height="560" zIndex="1" backColor="rgba(192, 192, 192, 1)" borderStyle="solid" borderWidth="1px" borderColor="rgba(0, 0, 0, 1)">
+    <Widget xsi:type="widgets.brease.TabControl" id="TabControl1" top="14" left="13" width="1340" height="560" zIndex="1" backColor="rgba(192, 192, 192, 1)" borderStyle="solid" borderWidth="2px" cornerRadius="5px" borderColor="rgba(0, 0, 0, 1)">
       <Widgets>
         <Widget xsi:type="widgets.brease.TabItem" id="TabItem1" left="0" width="670" height="40" zIndex="0" text="Aktuálne alarmy" fontSize="25px">
           <Widgets>
-            <Widget xsi:type="widgets.brease.AlarmList" id="AlarmList1" top="7" left="9" width="1320" height="440" zIndex="0" format="dd.MM.yyyy HH:mm" itemsPerPage="10" searchBox="false" borderStyle="solid" borderColor="rgba(0, 0, 0, 1)" backColor="rgba(253, 245, 230, 1)" headerBackGroundGradient="linear-gradient(to bottom, rgba(255, 192, 192, 1) 20%,rgba(255,0,0,1) 100%)" headerFontSize="20px" fontSize="14px" sortingButtonColor="rgba(255, 255, 255, 0)" shadow="4px 4px 8px rgba(0, 0, 0, 1)" cornerRadius="8px" headerBold="true" headerTextAlign="center" headerCellBorderColor="rgba(0, 0, 0, 1)" headerCellBorderStyle="solid" cellBorderColor="rgba(0, 0, 0, 1)" cellBorderWidth="1px 1px 1px 1px" backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)">
+            <Widget xsi:type="widgets.brease.AlarmList" id="AlarmList1" top="7" left="9" width="1320" height="440" zIndex="0" format="dd.MM.yyyy HH:mm" itemsPerPage="10" searchBox="false" borderStyle="solid" borderColor="rgba(0, 0, 0, 1)" backColor="rgba(253, 245, 230, 1)" headerBackGroundGradient="linear-gradient(to bottom, rgba(255, 192, 192, 1) 20%,rgba(255,0,0,1) 100%)" headerFontSize="18px" fontSize="14px" sortingButtonColor="rgba(255, 255, 255, 0)" shadow="4px 4px 8px rgba(0, 0, 0, 1)" cornerRadius="8px" headerBold="true" headerTextAlign="center" headerCellBorderColor="rgba(0, 0, 0, 1)" headerCellBorderStyle="solid" cellBorderColor="rgba(0, 0, 0, 1)" cellBorderWidth="1px 1px 1px 1px" backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)">
               <Widgets>
                 <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItem1" width="320" zIndex="0" columnType="timestamp" text="Dátum a čas" />
                 <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItem2" width="1000" zIndex="1" text="Názov alarmu" />
               </Widgets>
             </Widget>
-            <Widget xsi:type="widgets.brease.Button" id="Button_PotvrdenieAlarmu" top="460" left="1169" width="160" height="50" zIndex="1" image="Media/Pictures/PotvrdenieAlarmu_32x32.png" multiLine="true" text="Potvrdenie\nalarmu" fontSize="18px" style="Default_Button" />
+            <Widget xsi:type="widgets.brease.Button" id="Button_PotvrdenieAlarmu" top="460" left="1169" width="160" height="50" zIndex="1" image="Media/Pictures/PotvrdenieAlarmu_32x32.png" multiLine="true" text="Potvrdenie\nalarmu" cornerRadius="10px" textColor="rgba(0, 0, 0, 1)" fontSize="16px" shadow="4px 4px 14px rgba(0, 0, 0, 1)" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="TabItem2" left="0" width="670" height="40" zIndex="1" text="História alarmov" fontSize="25px">
           <Widgets>
-            <Widget xsi:type="widgets.brease.AlarmHistory" id="AlarmHistory1" top="7" left="9" width="1320" height="440" zIndex="0" format="dd.MM.yyyy HH:mm" itemsPerPage="10" searchBox="false" borderStyle="solid" borderColor="rgba(0, 0, 0, 1)" backColor="rgba(253, 245, 230, 1)" headerBackGroundGradient="linear-gradient(to bottom, rgba(192, 255, 192, 1) 20%,rgba(0,255,0,1) 100%)" headerFontSize="20px" sortingButtonColor="rgba(255, 255, 255, 0)" shadow="4px 4px 8px rgba(0, 0, 0, 1)" cornerRadius="8px" headerTextAlign="center" headerCellBorderColor="rgba(0, 0, 0, 1)" headerCellBorderStyle="solid" cellBorderColor="rgba(0, 0, 0, 1)" cellBorderWidth="1px 1px 1px 1px" backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)">
+            <Widget xsi:type="widgets.brease.AlarmHistory" id="AlarmHistory1" top="7" left="9" width="1320" height="440" zIndex="0" format="dd.MM.yyyy HH:mm" itemsPerPage="10" searchBox="false" borderStyle="solid" borderColor="rgba(0, 0, 0, 1)" backColor="rgba(253, 245, 230, 1)" headerBackGroundGradient="linear-gradient(to bottom, rgba(192, 255, 192, 1) 20%,rgba(0,255,0,1) 100%)" headerFontSize="18px" sortingButtonColor="rgba(255, 255, 255, 0)" shadow="4px 4px 8px rgba(0, 0, 0, 1)" cornerRadius="8px" headerTextAlign="center" headerCellBorderColor="rgba(0, 0, 0, 1)" headerCellBorderStyle="solid" cellBorderColor="rgba(0, 0, 0, 1)" cellBorderWidth="1px 1px 1px 1px" backGroundGradient="linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)">
               <Widgets>
                 <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryItem1" width="320" zIndex="0" columnType="timestamp" text="Dátum a čas" />
                 <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryItem2" width="1000" zIndex="1" text="Názov alarmu" />
               </Widgets>
             </Widget>
-            <Widget xsi:type="widgets.brease.Button" id="Button_ArchivaciaAlarmov" top="460" left="1169" width="160" height="50" zIndex="1" image="Media/Pictures/Uloz_32x32.png" multiLine="true" text="Archivácia\nalarmov" fontSize="18px" style="Default_Button" />
+            <Widget xsi:type="widgets.brease.Button" id="Button_ArchivaciaAlarmov" top="460" left="1169" width="160" height="50" zIndex="1" image="Media/Pictures/Uloz_32x32.png" multiLine="true" text="Archivácia\nalarmov" cornerRadius="10px" textColor="rgba(0, 0, 0, 1)" fontSize="16px" shadow="4px 4px 14px rgba(0, 0, 0, 1)" />
           </Widgets>
         </Widget>
       </Widgets>

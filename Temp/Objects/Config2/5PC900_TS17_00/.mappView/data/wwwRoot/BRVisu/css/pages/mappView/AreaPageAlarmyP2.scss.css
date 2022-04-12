@@ -55,7 +55,11 @@
 }
 
 #AreaPageAlarmyP2_TabControl1 > .tabItemContainer {
-  border-width: 1px;
+  border-width: 2px;
+}
+
+#AreaPageAlarmyP2_TabControl1 > .tabItemContainer {
+  border-radius: 5px;
 }
 
 #AreaPageAlarmyP2_TabControl1 > .tabItemContainer {

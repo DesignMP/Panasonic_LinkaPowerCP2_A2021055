@@ -7,9 +7,9 @@
         <Widget xsi:type="widgets.brease.Button" id="Button_OznacPaletkuOK" top="416" left="61" width="170" height="45" zIndex="1" multiLine="true" text="Označ paletku\nOK" backGroundGradient="linear-gradient(to bottom, rgba(192, 255, 192, 1) 20%,rgba(0,255,0,1) 100%)" fontSize="18px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" style="Default_Button" />
         <Widget xsi:type="widgets.brease.Button" id="Button_OznacPaletkuNG" top="416" left="261" width="170" height="45" zIndex="2" multiLine="true" text="Označ paletku\nNG" backGroundGradient="linear-gradient(to bottom, rgba(255, 192, 192, 1) 20%,rgba(255,0,0,1) 100%)" fontSize="18px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" style="Default_Button" />
         <Widget xsi:type="widgets.brease.Label" id="Label2" top="111" left="21" width="450" height="35" zIndex="3" text="Plate - pravý zvar OK" cornerRadius="2px" backColor="rgba(224, 224, 224, 1)" style="LabelSnimace" />
-        <Widget xsi:type="widgets.brease.ImageList" id="ImageList1" top="115" left="431" width="28" height="28" zIndex="4" imageList="['YesButton_48x48.png', 'NoButton_48x48.png']" imagePrefix="Media/Pictures/" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageList1" top="115" left="431" width="28" height="28" zIndex="4" imageList="['NoButton_48x48.png', 'YesButton_48x48.png']" imagePrefix="Media/Pictures/" />
         <Widget xsi:type="widgets.brease.Label" id="Label3" top="151" left="21" width="450" height="35" zIndex="5" text="Plate - lavý zvar OK" cornerRadius="2px" backColor="rgba(224, 224, 224, 1)" style="LabelSnimace" />
-        <Widget xsi:type="widgets.brease.ImageList" id="ImageList2" top="155" left="431" width="28" height="28" zIndex="6" imageList="['YesButton_48x48.png', 'NoButton_48x48.png']" imagePrefix="Media/Pictures/" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageList2" top="155" left="431" width="28" height="28" zIndex="6" imageList="['NoButton_48x48.png', 'YesButton_48x48.png']" imagePrefix="Media/Pictures/" />
       </Widgets>
     </Widget>
   </Widgets>

@@ -131,7 +131,7 @@
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky {
-  top: 380px;
+  top: 385px;
   position: absolute;
 }
 
@@ -237,7 +237,7 @@
 }
 
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie {
-  top: 485px;
+  top: 475px;
   position: absolute;
 }
 
@@ -412,7 +412,7 @@
 }
 
 #AreaPageManualMainP1_Image2 {
-  top: 55px;
+  top: 75px;
   position: absolute;
 }
 
@@ -426,11 +426,23 @@
 }
 
 #AreaPageManualMainP1_Image2 {
-  height: 500px;
+  height: 480px;
 }
 
 #AreaPageManualMainP1_Image2 {
   z-index: 2;
+}
+
+#AreaPageManualMainP1_Image2 {
+  background-color: #e0e0e0;
+}
+
+#AreaPageManualMainP1_Image2 {
+  border-style: hidden;
+}
+
+#AreaPageManualMainP1_Image2 {
+  border-width: 0px;
 }
 
 #AreaPageManualMainP1_Rectangle1 {
@@ -472,7 +484,7 @@
 }
 
 #AreaPageManualMainP1_Rectangle2 {
-  top: 155px;
+  top: 170px;
   position: absolute;
 }
 
@@ -486,7 +498,7 @@
 }
 
 #AreaPageManualMainP1_Rectangle2 {
-  height: 300px;
+  height: 285px;
 }
 
 #AreaPageManualMainP1_Rectangle2 {

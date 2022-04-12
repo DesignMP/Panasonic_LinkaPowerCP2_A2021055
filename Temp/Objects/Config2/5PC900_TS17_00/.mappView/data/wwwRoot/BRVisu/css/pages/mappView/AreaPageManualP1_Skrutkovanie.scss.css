@@ -376,7 +376,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_Label15 {
-  width: 269px;
+  width: 195px;
 }
 
 #AreaPageManualP1_Skrutkovanie_Label15 {
@@ -441,7 +441,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_ImageList19 {
-  left: 246px;
+  left: 171px;
   position: absolute;
 }
 
@@ -463,53 +463,6 @@
 
 #AreaPageManualP1_Skrutkovanie_ImageList19 {
   border-width: 0px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-  height: 30px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-  top: 21px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-  left: 166px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-  width: 71px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-  z-index: 3;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-  border-width: 4px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-  border-style: ridge;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky input {
-  color: black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky span.breaseNumericOutput_unit {
-  color: black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky input {
-  justify-content: center;
-  text-align: center;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky input {
-  font-size: 16px;
 }
 
 #AreaPageManualP1_Skrutkovanie_NavigationButton_NextPage {
@@ -642,82 +595,6 @@
 
 #AreaPageManualP1_Skrutkovanie_GroupBox3 {
   box-shadow: 4px 4px 14px black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-  height: 30px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-  top: 187px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-  left: 238px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-  width: 165px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-  z-index: 10;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsX_ZadanaRychlost:not(.active):not(.disabled) {
-  border-width: 2px 4px 2px 2px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsX_ZadanaRychlost input {
-  font-size: 18px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-  box-shadow: 4px 4px 8px black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-  height: 30px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-  top: 187px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-  left: 26px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-  width: 165px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-  z-index: 8;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-  border-width: 4px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-  border-style: ridge;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia input {
-  color: black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia span.breaseNumericOutput_unit {
-  color: black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia input {
-  font-size: 16px;
 }
 
 #AreaPageManualP1_Skrutkovanie_MomentaryPushButton_JoggOsX_VZAD {
@@ -1118,7 +995,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_Label28 {
-  z-index: 9;
+  z-index: 8;
 }
 
 #AreaPageManualP1_Skrutkovanie_Label28 {
@@ -1195,7 +1072,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_ImageList6 {
-  z-index: 13;
+  z-index: 11;
 }
 
 #AreaPageManualP1_Skrutkovanie_ImageList6 {
@@ -1225,7 +1102,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_Label17 {
-  z-index: 12;
+  z-index: 10;
 }
 
 #AreaPageManualP1_Skrutkovanie_Label17 {
@@ -1295,7 +1172,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_Button_ResetServaOsX {
-  z-index: 11;
+  z-index: 9;
 }
 
 #AreaPageManualP1_Skrutkovanie_Button_ResetServaOsX {
@@ -1321,6 +1198,152 @@
 
 #AreaPageManualP1_Skrutkovanie_Button_ResetServaOsX.disabled.checked {
   box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 {
+  height: 30px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 {
+  top: 187px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 {
+  left: 238px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 {
+  width: 165px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 {
+  z-index: 13;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6:not(.active):not(.disabled) {
+  border-width: 4px 4px 4px 4px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6.disabled {
+  border-width: 3px 3px 3px 3px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 {
+  border-radius: 4px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6.disabled {
+  background-color: silver;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6.disabled {
+  border-color: #ff8800;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6.active:not(.disabled) {
+  background-color: white;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6.active:not(.disabled) input {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6.active:not(.disabled) span.breaseNumericInput_unit {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 {
+  border-style: ridge;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6.disabled {
+  border-style: ridge;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6.disabled input {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6.disabled span.breaseNumericInput_unit {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 input {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 input {
+  font-size: 18px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 .breaseNumericInput_unit {
+  font-size: 10px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_6 {
+  box-shadow: none;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 {
+  height: 30px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 {
+  top: 187px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 {
+  left: 26px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 {
+  width: 165px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 {
+  z-index: 12;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 {
+  border-width: 4px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 {
+  border-radius: 4px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 {
+  background-color: #e0e0e0;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 {
+  border-style: ridge;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 input {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 span.breaseNumericOutput_unit {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 input {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 input {
+  font-size: 18px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput2 .breaseNumericOutput_unit {
+  font-size: 10px;
 }
 
 #AreaPageManualP1_Skrutkovanie_GroupBox5 {
@@ -1355,82 +1378,6 @@
 
 #AreaPageManualP1_Skrutkovanie_GroupBox5 {
   box-shadow: 4px 4px 14px black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-  height: 30px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-  top: 187px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-  left: 239px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-  width: 165px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-  z-index: 10;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsY_ZadanaRychlost:not(.active):not(.disabled) {
-  border-width: 2px 4px 2px 2px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsY_ZadanaRychlost input {
-  font-size: 18px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-  box-shadow: 4px 4px 8px black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-  height: 30px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-  top: 187px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-  left: 26px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-  width: 165px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-  z-index: 8;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-  border-width: 4px;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-  border-style: ridge;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia input {
-  color: black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia span.breaseNumericOutput_unit {
-  color: black;
-}
-
-#AreaPageManualP1_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia input {
-  font-size: 16px;
 }
 
 #AreaPageManualP1_Skrutkovanie_MomentaryPushButton_JoggOsY_VPRED {
@@ -1831,7 +1778,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_Label30 {
-  z-index: 9;
+  z-index: 8;
 }
 
 #AreaPageManualP1_Skrutkovanie_Label30 {
@@ -1908,7 +1855,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_ImageList7 {
-  z-index: 13;
+  z-index: 11;
 }
 
 #AreaPageManualP1_Skrutkovanie_ImageList7 {
@@ -1938,7 +1885,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_Label18 {
-  z-index: 12;
+  z-index: 10;
 }
 
 #AreaPageManualP1_Skrutkovanie_Label18 {
@@ -2008,7 +1955,7 @@
 }
 
 #AreaPageManualP1_Skrutkovanie_Button_ResetServaOsY {
-  z-index: 11;
+  z-index: 9;
 }
 
 #AreaPageManualP1_Skrutkovanie_Button_ResetServaOsY {
@@ -2034,4 +1981,150 @@
 
 #AreaPageManualP1_Skrutkovanie_Button_ResetServaOsY.disabled.checked {
   box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 {
+  height: 30px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 {
+  top: 187px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 {
+  left: 239px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 {
+  width: 165px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 {
+  z-index: 13;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7:not(.active):not(.disabled) {
+  border-width: 4px 4px 4px 4px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7.disabled {
+  border-width: 3px 3px 3px 3px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 {
+  border-radius: 4px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7.disabled {
+  background-color: silver;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7.disabled {
+  border-color: #ff8800;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7.active:not(.disabled) {
+  background-color: white;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7.active:not(.disabled) input {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7.active:not(.disabled) span.breaseNumericInput_unit {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 {
+  border-style: ridge;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7.disabled {
+  border-style: ridge;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7.disabled input {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7.disabled span.breaseNumericInput_unit {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 input {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 input {
+  font-size: 18px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 .breaseNumericInput_unit {
+  font-size: 10px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericInput_7 {
+  box-shadow: none;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 {
+  height: 30px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 {
+  top: 187px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 {
+  left: 26px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 {
+  width: 165px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 {
+  z-index: 12;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 {
+  border-width: 4px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 {
+  border-radius: 4px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 {
+  background-color: #e0e0e0;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 {
+  border-style: ridge;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 input {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 span.breaseNumericOutput_unit {
+  color: black;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 input {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 input {
+  font-size: 18px;
+}
+
+#AreaPageManualP1_Skrutkovanie_NumericOutput3 .breaseNumericOutput_unit {
+  font-size: 10px;
 }

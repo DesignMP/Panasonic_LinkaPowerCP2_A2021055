@@ -25,30 +25,6 @@
     </EventBinding>
   </Content>
   <Content id="HlavickaP1">
-    <EventBinding id="HlavickaP1.ButtonZadneDvereLS.Click">
-      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP1_ButtonZadneDvereLS" />
-      <EventHandler>
-        <Action>
-          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Vizu.TL_ZamkniZadnyZamokLS">
-            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Content>
-  <Content id="HlavickaP1">
-    <EventBinding id="HlavickaP1.ButtonZadneDverePS.Click">
-      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP1_ButtonZadneDverePS" />
-      <EventHandler>
-        <Action>
-          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Vizu.TL_ZamkniZadnyZamokPS">
-            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Content>
-  <Content id="HlavickaP1">
     <EventBinding id="HlavickaP1.ButtonPredneDvere.Click">
       <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP1_ButtonPredneDvere" />
       <EventHandler>
@@ -67,6 +43,18 @@
         <Action>
           <Target type="clientSystem.Action">
             <Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="LoginDialogP1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="HlavickaP1">
+    <EventBinding id="HlavickaP1.ButtonZadneDvere.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP1_ButtonZadneDvere" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Vizu.TL_ZamkniZadnyZamok">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
           </Target>
         </Action>
       </EventHandler>

@@ -110,23 +110,15 @@ PROGRAM _CYCLIC
     //A299 - Akumulacny stoper - Porucha vyvezenia paletky zo stopra !!!
     
     
-	//***************************Príznak pracovisko 2 stav PORUCHA**********************************//
-    
-    FOR a:=200 TO 299 BY 1 DO
-        P2_Alarmy[a];
-        IF P2_Alarmy[a] = TRUE THEN
-            P2_Pracovisko.STAV.PORUCHA:= TRUE;
-        END_IF	
-    END_FOR
-    
+
     
 	
     //*********************Pracovisko 2 - Porucha tlaku vzduchu*********************************//
-    IF CasKontroly_TlakVzduchu.Q THEN
-        P2_Alarmy[245]:= TRUE;
-        P2_PoruchaST1:= TRUE;
-        P2_PoruchaST2:= TRUE;
-        P2_PoruchaST3:= TRUE;
+	IF CasKontroly_TlakVzduchu.Q THEN
+		P2_Alarmy[245]:= TRUE;
+		P2_PoruchaST1:= TRUE;
+		P2_PoruchaST2:= TRUE;
+		P2_PoruchaST3:= TRUE;
         P2_PoruchaST4:= TRUE;
     END_IF    
     
@@ -1111,26 +1103,7 @@ PROGRAM _CYCLIC
     
    
 	
-    //********************************Zobrazenie symbolu alarmu*****************************************************//
-	
-    IF P2_Pracovisko.STAV.PORUCHA THEN
-        P2_AlarmyVizu.ZobrazSymbolAlarmu:= Blikac1s;
-    ELSE
-        P2_AlarmyVizu.ZobrazSymbolAlarmu:= FALSE;
-    END_IF	
-	
-	
-    //********************************Blikanie tlaèítka Alarmy*******************************************************//
-    IF P2_Pracovisko.STAV.PORUCHA AND P2_Vizu.ActualPage <> 'PageAlarmP2' THEN
-        IF Blikac1s THEN
-            P2_AlarmyVizu.FarbaTlacitka_Alarmy:= "Button_Red";
-        ELSE	
-            P2_AlarmyVizu.FarbaTlacitka_Alarmy:= "default";
-        END_IF
-    ELSE
-        P2_AlarmyVizu.FarbaTlacitka_Alarmy:= "default";
-    END_IF	
-	
+    	
 	
 	
 	

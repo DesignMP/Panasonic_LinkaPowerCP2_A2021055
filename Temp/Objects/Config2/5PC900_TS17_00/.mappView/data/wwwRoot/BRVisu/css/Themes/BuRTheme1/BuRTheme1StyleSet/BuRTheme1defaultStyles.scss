@@ -1057,3 +1057,47 @@ span {
 @include text-alignment-all('center');
 
 }
+@import "../../../../widgets/brease/TextOutput/meta/TextOutput_base";
+.widgets_brease_TextOutput_style_TextOutput_Orange {
+@include widgets_brease_TextOutput_base; 
+& span {
+	color: rgba(0, 0, 0, 1);
+}
+	border-style: ridge;
+&:before {
+	border-style: ridge;
+}
+&:after {
+	border-style: ridge;
+}
+	border-width: 4px;
+@include border-radius(2px);
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	font-size: 16px;
+	background-color: rgba(255, 165, 0, 1);
+@include font-weight-bold(true);
+@include text-alignment-all('center');
+
+}
+@import "../../../../widgets/brease/TextOutput/meta/TextOutput_base";
+.widgets_brease_TextOutput_style_TextOutput_Blue {
+@include widgets_brease_TextOutput_base; 
+& span {
+	color: rgba(0, 0, 0, 1);
+}
+	border-style: ridge;
+&:before {
+	border-style: ridge;
+}
+&:after {
+	border-style: ridge;
+}
+	border-width: 4px;
+@include border-radius(2px);
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	font-size: 16px;
+	background-color: rgba(0, 255, 255, 1);
+@include font-weight-bold(true);
+@include text-alignment-all('center');
+
+}

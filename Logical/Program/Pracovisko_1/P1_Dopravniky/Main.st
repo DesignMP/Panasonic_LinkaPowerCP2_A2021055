@@ -32,7 +32,7 @@ PROGRAM _CYCLIC
 			P1_Dopravniky.OUT.VratnyDopravnik_ON:= FALSE;
 			
 						
-			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND NOT P1_Pracovisko.STAV.Porucha_ST2 AND P1_Pracovisko.STAV.HardwareBunky_OK THEN
+			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND NOT P1_Pracovisko.STAV.PORUCHA AND P1_Pracovisko.STAV.HardwareBunky_OK THEN
 				SC_P1_Dopravniky.ResetStep:= TRUE;
 				SC_P1_Dopravniky.Step:= 1;
 			END_IF

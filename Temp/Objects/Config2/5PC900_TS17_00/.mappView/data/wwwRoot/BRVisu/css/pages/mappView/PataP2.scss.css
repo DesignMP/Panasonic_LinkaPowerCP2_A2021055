@@ -46,6 +46,14 @@
   border-radius: 8px;
 }
 
+#PataP2_NavigationButton_Automat.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#PataP2_NavigationButton_Automat.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #PataP2_NavigationButton_Automat:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
@@ -112,6 +120,14 @@
   border-radius: 8px;
 }
 
+#PataP2_NavigationButton_Alarmy.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#PataP2_NavigationButton_Alarmy.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #PataP2_NavigationButton_Alarmy:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
@@ -164,6 +180,14 @@
 
 #PataP2_NavigationButton_Parametre {
   border-radius: 8px;
+}
+
+#PataP2_NavigationButton_Parametre.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#PataP2_NavigationButton_Parametre.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
 }
 
 #PataP2_NavigationButton_Parametre:not(.disabled):not(.active):not(.checked) span {
@@ -220,6 +244,14 @@
   border-radius: 8px;
 }
 
+#PataP2_NavigationButton_Setup.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#PataP2_NavigationButton_Setup.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #PataP2_NavigationButton_Setup:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
@@ -274,6 +306,14 @@
   border-radius: 8px;
 }
 
+#PataP2_NavigationButton_DMP.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#PataP2_NavigationButton_DMP.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #PataP2_NavigationButton_DMP:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
@@ -326,6 +366,14 @@
 
 #PataP2_NavigationButton_Manual {
   border-radius: 8px;
+}
+
+#PataP2_NavigationButton_Manual.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#PataP2_NavigationButton_Manual.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
 }
 
 #PataP2_NavigationButton_Manual:not(.disabled):not(.active):not(.checked) span {

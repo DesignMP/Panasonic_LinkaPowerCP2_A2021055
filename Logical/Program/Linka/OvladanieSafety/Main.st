@@ -46,11 +46,18 @@ PROGRAM _CYCLIC
 	END_IF	
 		
 	
-//    //Reset bariÈry vstupnÈho v˝ùahu//
-//    IF NOT Safety.STAV.P1_Vytah_Bariera_AKTIVNA THEN
-//        Safety.OUT.P1_ResetBarieryVytahu:= Blikac500ms;
-//    ELSE
-//        Safety.OUT.P1_ResetBarieryVytahu:= FALSE;
+	
+	
+	
+	
+	
+	
+	
+	//    //Reset bariÈry vstupnÈho v˝ùahu//
+	//    IF NOT Safety.STAV.P1_Vytah_Bariera_AKTIVNA THEN
+	//        Safety.OUT.P1_ResetBarieryVytahu:= Blikac500ms;
+	//    ELSE
+	//        Safety.OUT.P1_ResetBarieryVytahu:= FALSE;
 //    END_IF    
 //  
 //    

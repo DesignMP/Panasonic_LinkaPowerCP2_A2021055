@@ -458,7 +458,7 @@ span {
 @include font-weight-bold(true);
 }
 &:not(.disabled):not(.active):not(.checked) span {
-	color: #474747;
+	color: rgba(0, 0, 0, 1);
 }
 &.active:not(.disabled):not(.editMode) span {
 	color: #FFFFFF;
@@ -498,13 +498,13 @@ span {
 @include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
 }
 &:not(.active):not(.checked) {
-@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+@include box-shadow(2px 2px 10px 0px rgba(0, 0, 0, 1));
 }
 &.disabled.active {
-@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+@include box-shadow(2px 2px 10px 0px rgba(0, 0, 0, 1));
 }
 &.disabled.checked {
-@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+@include box-shadow(2px 2px 10px 0px rgba(0, 0, 0, 1));
 }
 &.active:not(.disabled):not(.editMode) {
 @include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
@@ -643,6 +643,100 @@ span {
 }
 &.checked:not(.disabled) {
 @include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/Button/meta/Button_base";
+.widgets_brease_Button_style_Default_Button {
+@include widgets_brease_Button_base; 
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: rgba(245, 245, 245, 1);
+}
+&:not(.disabled):not(.active):not(.checked) {
+	border-color: rgba(168, 153, 160, 1) rgba(95, 95, 95, 1) rgba(95, 95, 95, 1) rgba(168, 153, 160, 1);
+}
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+	border-style: solid;
+&.active {
+	border-style: solid;
+}
+&.checked {
+	border-style: solid;
+}
+&.disabled {
+	border-style: solid;
+}
+@include border-radius(8px);
+&.active:not(.disabled):not(.editMode) {
+	background-color: rgba(219, 219, 219, 1);
+}
+&.checked:not(.disabled) {
+	background-color: rgba(219, 219, 219, 1);
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%)');
+}
+&.active:not(.disabled):not(.editMode) {
+	border-color: rgba(255, 169, 71, 1) rgba(253, 123, 1, 1) rgba(253, 123, 1, 1) rgba(255, 169, 71, 1);
+}
+&.checked:not(.disabled) {
+	border-color: rgba(255, 169, 71, 1) rgba(253, 123, 1, 1) rgba(253, 123, 1, 1) rgba(255, 169, 71, 1);
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 1px 1px 1px 1px;
+}
+&.checked:not(.disabled) {
+	border-width: 1px 1px 1px 1px;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: rgba(0, 0, 0, 1);
+}
+&.active.checked:not(.disabled) span {
+	color: rgba(0, 0, 0, 1);
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px rgba(62, 79, 92, 0.75));
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: rgba(0, 0, 0, 1);
+}
+span {
+@include font-weight-bold(true);
+}
+span {
+	font-size: 20px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('');
 }
 
 }
@@ -1017,6 +1111,100 @@ span {
 }
 
 }
+@import "../../../../widgets/brease/MomentaryPushButton/meta/MomentaryPushButton_base";
+.widgets_brease_MomentaryPushButton_style_Default_MomentaryButton {
+@include widgets_brease_MomentaryPushButton_base; 
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: rgba(245, 245, 245, 1);
+}
+&:not(.disabled):not(.active):not(.checked) {
+	border-color: rgba(168, 153, 160, 1) rgba(95, 95, 95, 1) rgba(95, 95, 95, 1) rgba(168, 153, 160, 1);
+}
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+	border-style: solid;
+&.active {
+	border-style: solid;
+}
+&.checked {
+	border-style: solid;
+}
+&.disabled {
+	border-style: solid;
+}
+@include border-radius(8px);
+&.active:not(.disabled):not(.editMode) {
+	background-color: rgba(219, 219, 219, 1);
+}
+&.checked:not(.disabled) {
+	background-color: rgba(219, 219, 219, 1);
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%)');
+}
+&.active:not(.disabled):not(.editMode) {
+	border-color: rgba(255, 169, 71, 1) rgba(253, 123, 1, 1) rgba(253, 123, 1, 1) rgba(255, 169, 71, 1);
+}
+&.checked:not(.disabled) {
+	border-color: rgba(255, 169, 71, 1) rgba(253, 123, 1, 1) rgba(253, 123, 1, 1) rgba(255, 169, 71, 1);
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 1px 1px 1px 1px;
+}
+&.checked:not(.disabled) {
+	border-width: 1px 1px 1px 1px;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: rgba(0, 0, 0, 1);
+}
+&.active.checked:not(.disabled) span {
+	color: rgba(0, 0, 0, 1);
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px rgba(62, 79, 92, 0.75));
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: rgba(0, 0, 0, 1);
+}
+span {
+@include font-weight-bold(true);
+}
+span {
+	font-size: 20px;
+}
+
+}
 @import "../../../../widgets/brease/NavigationButton/meta/NavigationButton_base";
 .widgets_brease_NavigationButton_style_transparent {
 @include widgets_brease_NavigationButton_base; 
@@ -1057,6 +1245,100 @@ span {
 @include widgets_brease_NavigationButton_base; 
 &:not(.disabled):not(.active):not(.checked) {
 	background-color: rgba(255, 0, 0, 1);
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('');
+}
+
+}
+@import "../../../../widgets/brease/NavigationButton/meta/NavigationButton_base";
+.widgets_brease_NavigationButton_style_Default_NavButton {
+@include widgets_brease_NavigationButton_base; 
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: rgba(245, 245, 245, 1);
+}
+&:not(.disabled):not(.checked) {
+	border-color: rgba(168, 153, 160, 1) rgba(95, 95, 95, 1) rgba(95, 95, 95, 1) rgba(168, 153, 160, 1);
+}
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.checked:not(.disabled):not(.active) {
+@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%)');
+}
+	border-style: solid;
+&.active {
+	border-style: solid;
+}
+&.checked {
+	border-style: solid;
+}
+&.disabled {
+	border-style: solid;
+}
+@include border-radius(8px);
+&.active:not(.disabled):not(.editMode) {
+	background-color: rgba(219, 219, 219, 1);
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(247,247,247,1) 100%)');
+}
+&.active:not(.disabled):not(.editMode) {
+	border-color: rgba(255, 169, 71, 1) rgba(253, 123, 1, 1) rgba(253, 123, 1, 1) rgba(255, 169, 71, 1);
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 1px 1px 1px 1px;
+}
+&.checked:not(.disabled) {
+	border-width: 1px 1px 1px 1px;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: rgba(0, 0, 0, 1);
+}
+&.active.checked:not(.disabled) span {
+	color: rgba(0, 0, 0, 1);
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px rgba(62, 79, 92, 0.75));
+}
+&.checked {
+@include box-shadow(2px 2px 8px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(2px 2px 8px rgba(62, 79, 92, 0.75));
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: rgba(0, 0, 0, 1);
+}
+span {
+@include font-weight-bold(true);
+}
+span {
+	font-size: 20px;
 }
 &:not(.disabled):not(.active):not(.checked) {
 @include backGroundGradient('');

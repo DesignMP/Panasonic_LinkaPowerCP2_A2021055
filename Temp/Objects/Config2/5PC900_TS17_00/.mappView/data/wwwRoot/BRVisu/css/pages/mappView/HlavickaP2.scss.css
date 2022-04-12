@@ -21,7 +21,7 @@
 }
 
 #HlavickaP2_DateTimeOutput1 {
-  border-width: 8px;
+  border-width: 3px;
 }
 
 #HlavickaP2_DateTimeOutput1 {
@@ -37,11 +37,11 @@
 }
 
 #HlavickaP2_DateTimeOutput1 {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP2_DateTimeOutput1 {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP2_DateTimeOutput1 span {
@@ -130,46 +130,46 @@
   border-width: 0px;
 }
 
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
   top: 6px;
   position: absolute;
 }
 
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
   left: 395px;
   position: absolute;
 }
 
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
   width: 150px;
 }
 
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
   height: 50px;
 }
 
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
   z-index: 3;
 }
 
-#HlavickaP2_ButtonZadneDvereLS:not(.disabled):not(.active):not(.checked) span {
+#HlavickaP2_ButtonZadneDvere:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
 
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
   justify-content: flex-end;
   text-align: right;
 }
 
-#HlavickaP2_ButtonZadneDvereLS:not(.active):not(.checked) {
+#HlavickaP2_ButtonZadneDvere:not(.active):not(.checked) {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP2_ButtonZadneDvereLS.disabled.active {
+#HlavickaP2_ButtonZadneDvere.disabled.active {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP2_ButtonZadneDvereLS.disabled.checked {
+#HlavickaP2_ButtonZadneDvere.disabled.checked {
   box-shadow: 4px 4px 14px black;
 }
 
@@ -199,46 +199,46 @@
   border-width: 0px;
 }
 
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
   top: 6px;
   position: absolute;
 }
 
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
   left: 560px;
   position: absolute;
 }
 
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
   width: 150px;
 }
 
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
   height: 50px;
 }
 
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
   z-index: 5;
 }
 
-#HlavickaP2_ButtonZadneDverePS:not(.disabled):not(.active):not(.checked) span {
+#HlavickaP2_ButtonPredneDvere:not(.disabled):not(.active):not(.checked) span {
   color: black;
 }
 
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
   justify-content: flex-end;
   text-align: right;
 }
 
-#HlavickaP2_ButtonZadneDverePS:not(.active):not(.checked) {
+#HlavickaP2_ButtonPredneDvere:not(.active):not(.checked) {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP2_ButtonZadneDverePS.disabled.active {
+#HlavickaP2_ButtonPredneDvere.disabled.active {
   box-shadow: 4px 4px 14px black;
 }
 
-#HlavickaP2_ButtonZadneDverePS.disabled.checked {
+#HlavickaP2_ButtonPredneDvere.disabled.checked {
   box-shadow: 4px 4px 14px black;
 }
 
@@ -264,71 +264,6 @@
   z-index: 6;
 }
 
-#HlavickaP2_ButtonPredneLaveDvere {
-  top: 6px;
-  position: absolute;
-}
-
-#HlavickaP2_ButtonPredneLaveDvere {
-  left: 725px;
-  position: absolute;
-}
-
-#HlavickaP2_ButtonPredneLaveDvere {
-  width: 150px;
-}
-
-#HlavickaP2_ButtonPredneLaveDvere {
-  height: 50px;
-}
-
-#HlavickaP2_ButtonPredneLaveDvere {
-  z-index: 7;
-}
-
-#HlavickaP2_ButtonPredneLaveDvere:not(.disabled):not(.active):not(.checked) span {
-  color: black;
-}
-
-#HlavickaP2_ButtonPredneLaveDvere {
-  justify-content: flex-end;
-  text-align: right;
-}
-
-#HlavickaP2_ButtonPredneLaveDvere:not(.active):not(.checked) {
-  box-shadow: 4px 4px 14px black;
-}
-
-#HlavickaP2_ButtonPredneLaveDvere.disabled.active {
-  box-shadow: 4px 4px 14px black;
-}
-
-#HlavickaP2_ButtonPredneLaveDvere.disabled.checked {
-  box-shadow: 4px 4px 14px black;
-}
-
-#HlavickaP2_ImageListPredneLaveDvere {
-  top: 16px;
-  position: absolute;
-}
-
-#HlavickaP2_ImageListPredneLaveDvere {
-  left: 733px;
-  position: absolute;
-}
-
-#HlavickaP2_ImageListPredneLaveDvere {
-  width: 30px;
-}
-
-#HlavickaP2_ImageListPredneLaveDvere {
-  height: 30px;
-}
-
-#HlavickaP2_ImageListPredneLaveDvere {
-  z-index: 8;
-}
-
 #HlavickaP2_ImageKarta {
   top: 7px;
   position: absolute;
@@ -348,7 +283,7 @@
 }
 
 #HlavickaP2_ImageKarta {
-  z-index: 9;
+  z-index: 7;
 }
 
 #HlavickaP2_ImageKarta {
@@ -374,7 +309,7 @@
 }
 
 #HlavickaP2_ImageOperator {
-  z-index: 10;
+  z-index: 8;
 }
 
 #HlavickaP2_ImageOperator {
@@ -400,11 +335,11 @@
 }
 
 #HlavickaP2_TextOutputOperator {
-  z-index: 11;
+  z-index: 9;
 }
 
 #HlavickaP2_TextOutputOperator {
-  border-width: 8px;
+  border-width: 3px;
 }
 
 #HlavickaP2_TextOutputOperator {
@@ -420,27 +355,27 @@
 }
 
 #HlavickaP2_TextOutputOperator {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP2_TextOutputOperator:before {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP2_TextOutputOperator:after {
-  border-color: #999999;
+  border-color: black;
 }
 
 #HlavickaP2_TextOutputOperator {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP2_TextOutputOperator:before {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP2_TextOutputOperator:after {
-  border-style: ridge;
+  border-style: solid;
 }
 
 #HlavickaP2_TextOutputOperator span {
@@ -462,144 +397,75 @@
   box-shadow: 2px 2px 10px black;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   top: 62px;
   position: absolute;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   left: 8px;
   position: absolute;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   width: 1350px;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   height: 35px;
 }
 
-#HlavickaP2_TextOutputWarnings {
-  z-index: 12;
+#HlavickaP2_TextOut_Warnings {
+  z-index: 10;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   border-width: 4px;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   border-radius: 4px;
 }
 
-#HlavickaP2_TextOutputWarnings {
-  background-color: lime;
-}
-
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   border-color: #999999;
 }
 
-#HlavickaP2_TextOutputWarnings:before {
+#HlavickaP2_TextOut_Warnings:before {
   border-color: #999999;
 }
 
-#HlavickaP2_TextOutputWarnings:after {
+#HlavickaP2_TextOut_Warnings:after {
   border-color: #999999;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   border-style: ridge;
 }
 
-#HlavickaP2_TextOutputWarnings:before {
+#HlavickaP2_TextOut_Warnings:before {
   border-style: ridge;
 }
 
-#HlavickaP2_TextOutputWarnings:after {
+#HlavickaP2_TextOut_Warnings:after {
   border-style: ridge;
 }
 
-#HlavickaP2_TextOutputWarnings span {
+#HlavickaP2_TextOut_Warnings span {
   color: black;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   justify-content: center;
   text-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   font-size: 20px;
 }
 
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
   box-shadow: 2px 2px 10px transparent;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere {
-  top: 6px;
-  position: absolute;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere {
-  left: 890px;
-  position: absolute;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere {
-  width: 150px;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere {
-  height: 50px;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere {
-  z-index: 13;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere:not(.disabled):not(.active):not(.checked) span {
-  color: black;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere {
-  justify-content: flex-end;
-  text-align: right;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere:not(.active):not(.checked) {
-  box-shadow: 4px 4px 14px black;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere.disabled.active {
-  box-shadow: 4px 4px 14px black;
-}
-
-#HlavickaP2_ButtonPrednePraveDvere.disabled.checked {
-  box-shadow: 4px 4px 14px black;
-}
-
-#HlavickaP2_ImageListPrednePraveDvere {
-  top: 16px;
-  position: absolute;
-}
-
-#HlavickaP2_ImageListPrednePraveDvere {
-  left: 895px;
-  position: absolute;
-}
-
-#HlavickaP2_ImageListPrednePraveDvere {
-  width: 30px;
-}
-
-#HlavickaP2_ImageListPrednePraveDvere {
-  height: 30px;
-}
-
-#HlavickaP2_ImageListPrednePraveDvere {
-  z-index: 14;
 }

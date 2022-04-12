@@ -69,7 +69,15 @@
 }
 
 #AreaPageManualMainP3_Image1 {
-  border-width: 0px;
+  background-color: gainsboro;
+}
+
+#AreaPageManualMainP3_Image1 {
+  border-style: hidden;
+}
+
+#AreaPageManualMainP3_Image1 {
+  border-width: 2px;
 }
 
 #AreaPageManualMainP3_NavigationButtonRR_LeakageBP3 {
@@ -78,7 +86,7 @@
 }
 
 #AreaPageManualMainP3_NavigationButtonRR_LeakageBP3 {
-  left: 645px;
+  left: 528px;
   position: absolute;
 }
 
@@ -114,6 +122,14 @@
   border-radius: 5px;
 }
 
+#AreaPageManualMainP3_NavigationButtonRR_LeakageBP3.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_LeakageBP3.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #AreaPageManualMainP3_NavigationButtonRR_LeakageBP3:not(.disabled):not(.checked) {
   border-color: #0052cc;
 }
@@ -122,13 +138,25 @@
   font-size: 22px;
 }
 
+#AreaPageManualMainP3_NavigationButtonRR_LeakageBP3:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_LeakageBP3.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_LeakageBP3.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
 #AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 {
   top: 500px;
   position: absolute;
 }
 
 #AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 {
-  left: 645px;
+  left: 528px;
   position: absolute;
 }
 
@@ -164,12 +192,32 @@
   border-radius: 5px;
 }
 
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP3.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP3.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #AreaPageManualMainP3_NavigationButtonRR_LeakageAP3:not(.disabled):not(.checked) {
   border-color: #ff751a;
 }
 
 #AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 span {
   font-size: 22px;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP3:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP3.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP3.disabled.checked {
+  box-shadow: 4px 4px 14px black;
 }
 
 #AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3 {
@@ -214,12 +262,32 @@
   border-radius: 5px;
 }
 
+#AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3:not(.disabled):not(.checked) {
   border-color: black;
 }
 
 #AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3 span {
   font-size: 22px;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3.disabled.checked {
+  box-shadow: 4px 4px 14px black;
 }
 
 #AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3 {
@@ -264,12 +332,32 @@
   border-radius: 5px;
 }
 
+#AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3:not(.disabled):not(.checked) {
   border-color: green;
 }
 
 #AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3 span {
   font-size: 22px;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3.disabled.checked {
+  box-shadow: 4px 4px 14px black;
 }
 
 #AreaPageManualMainP3_Rectangle1 {

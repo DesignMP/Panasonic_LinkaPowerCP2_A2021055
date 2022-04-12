@@ -72,12 +72,12 @@
 }
 
 #AreaPageManualP2_Image1 {
-  left: 58px;
+  left: 15px;
   position: absolute;
 }
 
 #AreaPageManualP2_Image1 {
-  width: 1250px;
+  width: 1330px;
 }
 
 #AreaPageManualP2_Image1 {
@@ -89,15 +89,11 @@
 }
 
 #AreaPageManualP2_Image1 {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: gainsboro;
 }
 
 #AreaPageManualP2_Image1 {
-  border-style: none;
-}
-
-#AreaPageManualP2_Image1 {
-  border-width: 0px;
+  border-style: hidden;
 }
 
 #AreaPageManualP2_NavigationButtonRR_Dopravniky {
@@ -106,7 +102,7 @@
 }
 
 #AreaPageManualP2_NavigationButtonRR_Dopravniky {
-  left: 1040px;
+  left: 1015px;
   position: absolute;
 }
 
@@ -148,6 +144,14 @@
 
 #AreaPageManualP2_NavigationButtonRR_Dopravniky {
   border-radius: 5px;
+}
+
+#AreaPageManualP2_NavigationButtonRR_Dopravniky.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualP2_NavigationButtonRR_Dopravniky.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
 }
 
 #AreaPageManualP2_NavigationButtonRR_Dopravniky:not(.disabled):not(.checked) {
@@ -216,6 +220,14 @@
   border-radius: 5px;
 }
 
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia:not(.disabled):not(.checked) {
   border-color: green;
 }
@@ -241,7 +253,7 @@
 }
 
 #AreaPageManualP2_NavigationButtonRR_Maticovacka {
-  top: 475px;
+  top: 485px;
   position: absolute;
 }
 
@@ -280,6 +292,14 @@
 
 #AreaPageManualP2_NavigationButtonRR_Maticovacka {
   border-radius: 5px;
+}
+
+#AreaPageManualP2_NavigationButtonRR_Maticovacka.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualP2_NavigationButtonRR_Maticovacka.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
 }
 
 #AreaPageManualP2_NavigationButtonRR_Maticovacka:not(.disabled):not(.checked) {
@@ -373,7 +393,7 @@
 }
 
 #AreaPageManualP2_NavigationButtonRR_Zvaranie {
-  top: 475px;
+  top: 485px;
   position: absolute;
 }
 
@@ -412,6 +432,14 @@
 
 #AreaPageManualP2_NavigationButtonRR_Zvaranie {
   border-radius: 5px;
+}
+
+#AreaPageManualP2_NavigationButtonRR_Zvaranie.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualP2_NavigationButtonRR_Zvaranie.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
 }
 
 #AreaPageManualP2_NavigationButtonRR_Zvaranie:not(.disabled):not(.checked) {

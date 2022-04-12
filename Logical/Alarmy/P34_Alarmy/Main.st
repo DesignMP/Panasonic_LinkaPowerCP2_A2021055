@@ -159,41 +159,24 @@ PROGRAM _CYCLIC
 	//A462 - ST9_Etiketovacka - Porucha otocenia aplikatora vpred !!!
 	//A463 - ST9_Etiketovacka - Porucha otocenia aplikatora vzad !!!
 	
-	//***********************************PrÌznak pracovisko 3 stav PORUCHA*****************************************//
-//    IF P3_PoruchaST1 THEN
-//        P3_Pracovisko.STAV.PORUCHA:= TRUE;
-//    ELSIF P3_PoruchaST2 THEN
-//        P3_Pracovisko.STAV.PORUCHA:= TRUE;
-//    ELSIF P3_PoruchaST3 THEN
-//        P3_Pracovisko.STAV.PORUCHA:= TRUE;	
-//    ELSE 
-//        P3_Pracovisko.STAV.PORUCHA:= FALSE;
-//    END_IF	
-	
-	
-    FOR a:=300 TO 399 BY 1 DO
-        P34_Alarmy[a];
-        IF P34_Alarmy[a] = TRUE THEN
-            P3_Pracovisko.STAV.PORUCHA:= TRUE;
-        END_IF	
-    END_FOR
+
     
     
     
     
     //*********************Pracovisko 3 - Porucha tlaku vzduchu*********************************//
-    IF CasKontroly_TlakVzduchuP3.Q THEN
-        P34_Alarmy[323]:= TRUE;
-        P3_PoruchaST1:= TRUE;
-        P3_PoruchaST2:= TRUE;
-        P3_PoruchaST3:= TRUE;
-    END_IF    
+	IF CasKontroly_TlakVzduchuP3.Q THEN
+		P34_Alarmy[323]:= TRUE;
+		P3_PoruchaST1:= TRUE;
+		P3_PoruchaST2:= TRUE;
+		P3_PoruchaST3:= TRUE;
+	END_IF    
     
-    IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Pracovisko.IN.PrivodVzduchu_SnimacTlaku_S25 THEN
-        CasKontroly_TlakVzduchuP3.IN:= TRUE;
-    ELSE    
-        CasKontroly_TlakVzduchuP3.IN:= FALSE;
-    END_IF 
+	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Pracovisko.IN.PrivodVzduchu_SnimacTlaku_S25 THEN
+		CasKontroly_TlakVzduchuP3.IN:= TRUE;
+	ELSE    
+		CasKontroly_TlakVzduchuP3.IN:= FALSE;
+	END_IF 
     
     
     CasKontroly_TlakVzduchuP3.PT:= T#10s;
@@ -1348,60 +1331,32 @@ PROGRAM _CYCLIC
     
     
 	
-    //********************************Zobrazenie symbolu alarmu*****************************************************//
-	
-    IF P3_Pracovisko.STAV.PORUCHA THEN
-        P34_AlarmyVizu.ZobrazSymbolAlarmu:= Blikac500ms;
-    ELSIF P4_Pracovisko.STAV.PORUCHA THEN
-        P34_AlarmyVizu.ZobrazSymbolAlarmu:= Blikac500ms;
-    ELSE
-        P34_AlarmyVizu.ZobrazSymbolAlarmu:= FALSE;
-    END_IF	
+    	
 	
 	
-    //********************************Blikanie tlaËÌtka Alarmy*******************************************************//
-    IF P3_Pracovisko.STAV.PORUCHA AND P34_Vizu.ActualPage <> 'PageAlarm' THEN
-        IF Blikac500ms THEN
-            P34_AlarmyVizu.FarbaTlacitka_Alarmy:= "Button_Red";
-        ELSE	
-            P34_AlarmyVizu.FarbaTlacitka_Alarmy:= "default";
-        END_IF
-    ELSIF P4_Pracovisko.STAV.PORUCHA AND P34_Vizu.ActualPage <> 'PageAlarm' THEN
-        IF Blikac500ms THEN
-            P34_AlarmyVizu.FarbaTlacitka_Alarmy:= "Button_Red";
-        ELSE	
-            P34_AlarmyVizu.FarbaTlacitka_Alarmy:= "default";
-        END_IF	
-    ELSE
-        P34_AlarmyVizu.FarbaTlacitka_Alarmy:= "default";
-    END_IF	
-	
-	
-	
-	
-    //*************************************Potvrdenie alarmov*********************************************************//
-    IF P34_AlarmyVizu.PotvrdAlarmy THEN
-        brsmemset(ADR(P34_Alarmy),0,SIZEOF(P34_Alarmy));
-        P3_Pracovisko.STAV.PORUCHA:= FALSE;
-        P4_Pracovisko.STAV.PORUCHA:= FALSE;
-        P3_PoruchaST1:= FALSE;
-        P3_PoruchaST2:= FALSE;
-        P3_PoruchaST3:= FALSE;
-        P4_PoruchaST1:= FALSE;
-        P4_PoruchaST2:= FALSE;
-        P4_PoruchaST3:= FALSE;
-        P4_PoruchaST4:= FALSE;
-        IF P3_Srobovanie.ServoManipulOsY_M37.STATUS.ERROR AND P3_Srobovanie.ServoManipulOsY_M37.STATUS.ReadyToPower_ON THEN
-            P3_Srobovanie.ServoManipulOsY_M37.CMD.ErrorRESET:= TRUE;
-        END_IF    
-        IF P4_Etiketovacka.ServoZdvihuEtiketovania_M28.STATUS.ERROR AND P4_Etiketovacka.ServoZdvihuEtiketovania_M28.STATUS.ReadyToPower_ON THEN
-            P4_Etiketovacka.ServoZdvihuEtiketovania_M28.CMD.ErrorRESET:= TRUE;
-        END_IF    
-        IF P4_Vytah.ServoZdvihuVytahu_M26.STATUS.ERROR AND P4_Vytah.ServoZdvihuVytahu_M26.STATUS.ReadyToPower_ON THEN
-            P4_Vytah.ServoZdvihuVytahu_M26.CMD.ErrorRESET:= TRUE;
-        END_IF 
-        P34_AlarmyVizu.PotvrdAlarmy:= FALSE;
-    END_IF	
+	//*************************************Potvrdenie alarmov*********************************************************//
+	IF P34_AlarmyVizu.PotvrdAlarmy THEN
+		brsmemset(ADR(P34_Alarmy),0,SIZEOF(P34_Alarmy));
+		P3_Pracovisko.STAV.PORUCHA:= FALSE;
+		P4_Pracovisko.STAV.PORUCHA:= FALSE;
+		P3_PoruchaST1:= FALSE;
+		P3_PoruchaST2:= FALSE;
+		P3_PoruchaST3:= FALSE;
+		P4_PoruchaST1:= FALSE;
+		P4_PoruchaST2:= FALSE;
+		P4_PoruchaST3:= FALSE;
+		P4_PoruchaST4:= FALSE;
+		IF P3_Srobovanie.ServoManipulOsY_M37.STATUS.ERROR AND P3_Srobovanie.ServoManipulOsY_M37.STATUS.ReadyToPower_ON THEN
+			P3_Srobovanie.ServoManipulOsY_M37.CMD.ErrorRESET:= TRUE;
+		END_IF    
+		IF P4_Etiketovacka.ServoZdvihuEtiketovania_M28.STATUS.ERROR AND P4_Etiketovacka.ServoZdvihuEtiketovania_M28.STATUS.ReadyToPower_ON THEN
+			P4_Etiketovacka.ServoZdvihuEtiketovania_M28.CMD.ErrorRESET:= TRUE;
+		END_IF    
+		IF P4_Vytah.ServoZdvihuVytahu_M26.STATUS.ERROR AND P4_Vytah.ServoZdvihuVytahu_M26.STATUS.ReadyToPower_ON THEN
+			P4_Vytah.ServoZdvihuVytahu_M26.CMD.ErrorRESET:= TRUE;
+		END_IF 
+		P34_AlarmyVizu.PotvrdAlarmy:= FALSE;
+	END_IF	
 	
 	
     //Resetovanie serva zdvihu v˝ùahu//

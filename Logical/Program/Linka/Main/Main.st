@@ -9,7 +9,6 @@ PROGRAM _INIT
 	Safety.STAV.P4_ZonaBunky_AKTIVNA:= TRUE;
 	Safety.STAV.P4_ZonaVytahu_AKTIVNA:= TRUE;
 	Safety.STAV.P4_Vytah_Bariera_AKTIVNA:= TRUE;
-	Linka.PAR.ZvolenyModel:= '5F';
 	P3_LeakageTestA.STAV.Tester_ON:= TRUE;
 	P3_LeakageTestB.STAV.Tester_ON:= TRUE;
 	P4_FunkcnyTestA.STAV.Tester_ON:= TRUE;
@@ -20,6 +19,10 @@ PROGRAM _INIT
 	Safety.STAV.P2_ZaklTesn_Bariera_AKTIVNA:= TRUE;
 	Safety.STAV.P2_ZaklTesn_Bumper_AKTIVNY:= TRUE;
 	Safety.STAV.P2_ZonaMaticovacky_AKTIVNA:= TRUE;
+	
+	
+	Linka.PAR.IndexModelu:= 1;
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -64,8 +67,57 @@ ProfinetKomunikaciaCU;
 	DTGetTime_0();
 		
 	
+	//Volba modelu//
+	IF Linka.STAV.OFF THEN
+		IF Linka.PAR.IndexModelu = 0 THEN
+			Linka.PAR.ZvolenyModel:= '4F';
+		ELSIF Linka.PAR.IndexModelu = 1 THEN
+			Linka.PAR.ZvolenyModel:= '5F';
+		ELSIF Linka.PAR.IndexModelu = 2 THEN
+			Linka.PAR.ZvolenyModel:= '5H';
+		END_IF  
+	END_IF
+    
+	//**************************Stav linka vypnuta********************************************//
+	IF P1_Pracovisko.STAV.Automat THEN
+		Linka.STAV.OFF:= FALSE;
+	ELSIF P2_Pracovisko.STAV.Automat THEN
+		Linka.STAV.OFF:= FALSE; 
+	ELSIF P3_Pracovisko.STAV.Automat THEN
+		Linka.STAV.OFF:= FALSE; 
+	ELSIF P4_Pracovisko.STAV.Automat THEN
+		Linka.STAV.OFF:= FALSE; 
+	ELSE
+		Linka.STAV.OFF:= TRUE;
+	END_IF    
 	
 	
+	//**************************Stav linka prazdna********************************************//
+	IF NOT P1_StoperSrobovania.RFID_hlava.PritomnostPaletky AND
+		NOT P1_AkumulacnyStoper.IN.PritomnostPaletky AND
+		NOT P2_StoperZaklTesnenia.RFID_hlava.PritomnostPaletky AND
+		NOT P2_StoperMaticovacky.RFID_hlava.PritomnostPaletky AND
+		NOT P2_AkumulacnyStoper.IN.PritomnostPaletky AND
+		NOT P2_StoperSrobovania.RFID_hlava.PritomnostPaletky AND
+		NOT P2_StoperZvarania.RFID_hlava.PritomnostPaletky AND
+		NOT P3_StoperSrobovania.RFID_hlava.PritomnostPaletky AND
+		NOT P3_HV_Test.RFID_hlava.PritomnostPaletky AND
+		NOT P3_ZdvizkaPredLeakTestA.IN.PritomnostPaletky AND
+		NOT P3_ZdvizkaPredLeakTestB.IN.PritomnostPaletky AND
+		NOT P3_LeakageTestA.RFID_hlava.PritomnostPaletky AND
+		NOT P3_LeakageTestB.RFID_hlava.PritomnostPaletky AND
+		NOT P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky AND
+		NOT P3_ZdvizkaZaLeakTestB.IN.PritomnostPaletky AND
+		NOT P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky AND
+		NOT P4_FunkcnyTestB.RFID_hlava.PritomnostPaletky AND
+		NOT P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky AND
+		NOT P4_ZdvizkaZaFunkcTestB.IN.PritomnostPaletky AND
+		NOT P4_Etiketovacka.RFID_hlava.PritomnostPaletky AND
+		NOT P4_Vytah.RFID_hlava.PritomnostPaletky THEN
+		Linka.STAV.PRAZDNA:= TRUE;
+	ELSE
+		Linka.STAV.PRAZDNA:= FALSE;
+	END_IF	
 	
 	
 	

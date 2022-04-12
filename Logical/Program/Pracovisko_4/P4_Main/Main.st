@@ -333,6 +333,19 @@ PROGRAM _CYCLIC
 		P4_Pracovisko.STAV.READY:= FALSE;
 	END_IF
 	
+	//Príznak pracovisko stav PORUCHA//
+	IF P4_Pracovisko.STAV.Porucha_ST1 OR
+		P4_Pracovisko.STAV.Porucha_ST2 OR
+		P4_Pracovisko.STAV.Porucha_ST3 OR
+		P4_Pracovisko.STAV.Porucha_ST4 OR
+		P4_Pracovisko.STAV.Porucha_ST5 OR
+		P4_Pracovisko.STAV.Porucha_ST6 THEN
+		P4_Pracovisko.STAV.PORUCHA:= TRUE;
+	ELSE
+		P4_Pracovisko.STAV.PORUCHA:= FALSE;
+	END_IF	
+	
+	
 	
 	//Priznak HW Vytahu OK//
 	IF P4_Pracovisko.IN.TlakVzduchu_OK AND

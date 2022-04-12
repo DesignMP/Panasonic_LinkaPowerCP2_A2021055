@@ -3427,27 +3427,35 @@
 </LN>
 <LN ID="%IX.SL2.IF1.ST16.ModuleOk" Type="BOOL">
 <Prod Device="SL2.IF1.ST16" DPName="ModuleOk" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="P3_Pracovisko.IN.Kamery_ControlUnit_KomOK" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module001_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module001_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="ControlUnit.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module001_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module001_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="ControlUnit.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module002_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module002_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM2.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module002_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module002_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM2.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module002_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module002_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM2.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module002_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module002_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM2.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module002_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module002_Inputs005" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM2.Profinet_PLC_INPUTS[4]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module002_Inputs006" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module002_Inputs006" Kind="io"/>
@@ -3724,15 +3732,19 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module004_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module004_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM4.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module004_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module004_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM4.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module004_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module004_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM4.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module004_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module004_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM4.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module004_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module004_Inputs005" Kind="io"/>
@@ -4012,21 +4024,27 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module006_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module006_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM6.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module006_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module006_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM6.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module006_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module006_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM6.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module006_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module006_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM6.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module006_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module006_Inputs005" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM6.Profinet_PLC_INPUTS[4]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module006_Inputs006" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module006_Inputs006" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM6.Profinet_PLC_INPUTS[5]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module006_Inputs007" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module006_Inputs007" Kind="io"/>
@@ -4300,15 +4318,19 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module008_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module008_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM1.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module008_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module008_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM1.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module008_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module008_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM1.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module008_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module008_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM1.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module008_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module008_Inputs005" Kind="io"/>
@@ -4684,99 +4706,131 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs005" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[4]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs006" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs006" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[5]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs007" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs007" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[6]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs008" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs008" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[7]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs009" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs009" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[8]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs010" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs010" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[9]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs011" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs011" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[10]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs012" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs012" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[11]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs013" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs013" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[12]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs014" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs014" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[13]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs015" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs015" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[14]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs016" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs016" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[15]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs017" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs017" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[16]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs018" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs018" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[17]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs019" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs019" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[18]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs020" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs020" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[19]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs021" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs021" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[20]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs022" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs022" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[21]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs023" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs023" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[22]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs024" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs024" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[23]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs025" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs025" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[24]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs026" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs026" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[25]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs027" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs027" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[26]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs028" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs028" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[27]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs029" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs029" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[28]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs030" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs030" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[29]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs031" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs031" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[30]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs032" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs032" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM17.Profinet_QRkod_Znaky[31]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module011_Inputs033" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module011_Inputs033" Kind="io"/>
@@ -4876,15 +4930,19 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module012_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module012_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM7.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module012_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module012_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM7.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module012_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module012_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM7.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module012_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module012_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM7.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module012_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module012_Inputs005" Kind="io"/>
@@ -5164,15 +5222,19 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module015_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module015_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM10.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module015_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module015_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM10.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module015_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module015_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM10.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module015_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module015_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM10.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module015_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module015_Inputs005" Kind="io"/>
@@ -5452,15 +5514,19 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module017_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module017_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM11.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module017_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module017_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM11.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module017_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module017_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM11.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module017_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module017_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM11.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module017_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module017_Inputs005" Kind="io"/>
@@ -5740,15 +5806,19 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module019_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module019_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM12.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module019_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module019_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM12.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module019_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module019_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM12.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module019_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module019_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM12.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module019_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module019_Inputs005" Kind="io"/>
@@ -6028,15 +6098,19 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs005" Kind="io"/>
@@ -6124,99 +6198,131 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs033" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs033" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs034" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs034" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs035" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs035" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs036" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs036" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs037" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs037" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[4]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs038" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs038" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[5]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs039" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs039" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[6]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs040" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs040" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[7]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs041" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs041" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[8]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs042" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs042" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[9]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs043" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs043" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[10]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs044" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs044" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[11]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs045" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs045" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[12]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs046" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs046" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[13]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs047" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs047" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[14]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs048" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs048" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[15]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs049" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs049" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[16]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs050" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs050" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[17]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs051" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs051" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[18]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs052" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs052" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[19]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs053" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs053" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[20]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs054" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs054" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[21]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs055" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs055" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[22]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs056" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs056" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[23]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs057" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs057" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[24]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs058" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs058" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[25]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs059" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs059" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[26]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs060" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs060" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[27]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs061" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs061" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[28]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs062" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs062" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[29]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs063" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs063" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[30]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module021_Inputs064" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module021_Inputs064" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM15.Profinet_QRkod_Znaky[31]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module022_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module022_Inputs001" Kind="io"/>
@@ -6316,15 +6422,19 @@
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module023_Inputs001" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module023_Inputs001" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM16.Profinet_PLC_INPUTS[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module023_Inputs002" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module023_Inputs002" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM16.Profinet_PLC_INPUTS[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module023_Inputs003" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module023_Inputs003" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM16.Profinet_PLC_INPUTS[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module023_Inputs004" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module023_Inputs004" Kind="io"/>
+<Cons Device="TC#1-CPYDEV" DPName="CAM16.Profinet_PLC_INPUTS[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL2.IF1.ST16.Module023_Inputs005" Type="USINT">
 <Prod Device="SL2.IF1.ST16" DPName="Module023_Inputs005" Kind="io"/>
@@ -6795,6 +6905,7 @@
 <Prod Device="SL2.IF1.ST16" DPName="Module025_Inputs064" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module026_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM2.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module026_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module026_Outputs002" Type="USINT">
@@ -6807,6 +6918,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module026_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module027_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM4.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module027_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module027_Outputs002" Type="USINT">
@@ -6819,6 +6931,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module027_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module028_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM6.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module028_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module028_Outputs002" Type="USINT">
@@ -6831,6 +6944,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module028_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module029_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM1.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module029_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module029_Outputs002" Type="USINT">
@@ -6843,6 +6957,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module029_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module030_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM17.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module030_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module030_Outputs002" Type="USINT">
@@ -6855,6 +6970,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module030_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module031_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM7.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module031_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module031_Outputs002" Type="USINT">
@@ -6867,6 +6983,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module031_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module032_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM10.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module032_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module032_Outputs002" Type="USINT">
@@ -6879,6 +6996,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module032_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module033_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM11.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module033_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module033_Outputs002" Type="USINT">
@@ -6891,6 +7009,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module033_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module034_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM12.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module034_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module034_Outputs002" Type="USINT">
@@ -6903,6 +7022,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module034_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module035_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM15.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module035_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module035_Outputs002" Type="USINT">
@@ -6915,6 +7035,7 @@
 <Cons Device="SL2.IF1.ST16" DPName="Module035_Outputs004" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module036_Outputs001" Type="USINT">
+<Prod Device="TC#1-CPYDEV" DPName="CAM16.Profinet_PLC_OUTPUTS[0]" Kind="pv"/>
 <Cons Device="SL2.IF1.ST16" DPName="Module036_Outputs001" Kind="io"/>
 </LN>
 <LN ID="%QB.SL2.IF1.ST16.Module036_Outputs002" Type="USINT">

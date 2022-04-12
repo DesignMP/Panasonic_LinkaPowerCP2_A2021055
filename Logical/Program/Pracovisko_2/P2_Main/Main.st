@@ -382,6 +382,21 @@ PROGRAM _CYCLIC
 		P2_Pracovisko.STAV.READY:= FALSE;
 	END_IF
 	
+	//Príznak pracovisko stav PORUCHA//
+	IF P2_Pracovisko.STAV.Porucha_ST1 OR
+		P2_Pracovisko.STAV.Porucha_ST2 OR
+		P2_Pracovisko.STAV.Porucha_ST3 OR
+		P2_Pracovisko.STAV.Porucha_ST4 OR
+		P2_Pracovisko.STAV.Porucha_ST5 THEN
+		P2_Pracovisko.STAV.PORUCHA:= TRUE;
+	ELSE
+		P2_Pracovisko.STAV.PORUCHA:= FALSE;
+	END_IF	
+	
+	
+	
+	
+	
 	//Príznak HW zakladaèa tesnenia OK//
 	IF P2_Pracovisko.IN.TlakVzduchu_OK AND
 		P2_Pracovisko.IN.ModulFesto_IO_KomOK AND

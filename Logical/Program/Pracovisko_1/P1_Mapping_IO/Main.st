@@ -386,10 +386,10 @@ PROGRAM _CYCLIC
 	IF P1_Robot.OUT.OdistiGriper THEN
 		P1_Pracovisko.COM_VentilovyTerminal[4].2:= FALSE;
 		P1_Pracovisko.COM_VentilovyTerminal[4].3:= FALSE;	
-	ELSIF P1_Robot.OUT.Griper_OTVOR AND P1_Robot.IN.TypGripra_45F AND P1_Robot.OUT.ZaistiGriper THEN
+	ELSIF P1_Robot.OUT.Griper_OTVOR AND P1_Robot.IN.TypGripra_45F THEN
 		P1_Pracovisko.COM_VentilovyTerminal[4].2:= TRUE;
 		P1_Pracovisko.COM_VentilovyTerminal[4].3:= FALSE;
-	ELSIF P1_Robot.OUT.Griper_ZATVOR AND P1_Robot.IN.TypGripra_45F AND P1_Robot.OUT.ZaistiGriper THEN
+	ELSIF P1_Robot.OUT.Griper_ZATVOR AND P1_Robot.IN.TypGripra_45F THEN
 		P1_Pracovisko.COM_VentilovyTerminal[4].2:= FALSE;
 		P1_Pracovisko.COM_VentilovyTerminal[4].3:= TRUE;
 	END_IF	

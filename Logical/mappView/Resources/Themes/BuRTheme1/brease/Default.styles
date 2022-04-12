@@ -309,6 +309,27 @@
 	textAlign="center" />
 	
 	
+	<Style id="TextOutput_Orange" xsi:type="widgets.brease.TextOutput" 
+		textColor="rgba(0, 0, 0, 1)" 
+		borderStyle="ridge"
+		borderWidth="4px" 
+		cornerRadius="2px"
+		shadow="4px 4px 14px rgba(0, 0, 0, 1)" 
+		fontSize="16px" 
+		backColor="rgba(255, 165, 0, 1)" 
+		bold="true" 
+	textAlign="center" />
+	
+	<Style id="TextOutput_Blue" xsi:type="widgets.brease.TextOutput" 
+		textColor="rgba(0, 0, 0, 1)" 
+		borderStyle="ridge"
+		borderWidth="4px" 
+		cornerRadius="2px"
+		shadow="4px 4px 14px rgba(0, 0, 0, 1)" 
+		fontSize="16px" 
+		backColor="rgba(0, 255, 255, 1)" 
+		bold="true" 
+	textAlign="center" />
 	
 	<!--password-->
 	

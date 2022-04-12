@@ -441,7 +441,7 @@ PROGRAM _CYCLIC
 						NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
 						NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
 						NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_4F AND
-						CAM11.RESULT.PowerCP.Pritomn_PowerCP_4F THEN
+						CAM11.RESULT.Paletka.Pritomn_PowerCP_4F THEN
 						CAM11.PAR.ResultFotky:= 'PASS';
 						CAM12.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -459,7 +459,7 @@ PROGRAM _CYCLIC
 						NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
 						NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
 						NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_5F AND
-						CAM11.RESULT.PowerCP.Pritomn_PowerCP_5F THEN
+						CAM11.RESULT.Paletka.Pritomn_PowerCP_5F THEN
 						CAM11.PAR.ResultFotky:= 'PASS';
 						CAM12.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -477,7 +477,7 @@ PROGRAM _CYCLIC
 						NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
 						NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
 						NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_5H AND
-						CAM11.RESULT.PowerCP.Pritomn_PowerCP_5H THEN
+						CAM11.RESULT.Paletka.Pritomn_PowerCP_5H THEN
 						CAM11.PAR.ResultFotky:= 'PASS';
 						CAM12.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -966,7 +966,7 @@ PROGRAM _CYCLIC
 					NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
 					NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
 					NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_4F AND
-					CAM11.RESULT.PowerCP.Pritomn_PowerCP_4F THEN
+					CAM11.RESULT.Paletka.Pritomn_PowerCP_4F THEN
 					CAM11.PAR.ResultFotky:= 'PASS';
 					CAM12.PAR.ResultFotky:= 'PASS';
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -984,7 +984,7 @@ PROGRAM _CYCLIC
 					NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
 					NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
 					NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_5F AND
-					CAM11.RESULT.PowerCP.Pritomn_PowerCP_5F THEN
+					CAM11.RESULT.Paletka.Pritomn_PowerCP_5F THEN
 					CAM11.PAR.ResultFotky:= 'PASS';
 					CAM12.PAR.ResultFotky:= 'PASS';
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -1095,10 +1095,7 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 		
-			IF Linka.P2_Kamery_OFF THEN
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 219;
-			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
+			IF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
 				CAM11.CMD.Triger:= TRUE;
 				SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -1439,7 +1436,7 @@ PROGRAM _CYCLIC
 				NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
 				NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
 				NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_5H AND
-				CAM11.RESULT.PowerCP.Pritomn_PowerCP_5H THEN
+				CAM11.RESULT.Paletka.Pritomn_PowerCP_5H THEN
 				CAM11.PAR.ResultFotky:= 'PASS';
 				CAM12.PAR.ResultFotky:= 'PASS';
 				SC_P2_StoperZvarania.ResetStep:= TRUE;

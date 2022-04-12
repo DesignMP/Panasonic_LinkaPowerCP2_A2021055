@@ -55,7 +55,11 @@
 }
 
 #AreaPageAlarmyP34_TabControl1 > .tabItemContainer {
-  border-width: 1px;
+  border-width: 2px;
+}
+
+#AreaPageAlarmyP34_TabControl1 > .tabItemContainer {
+  border-radius: 5px;
 }
 
 #AreaPageAlarmyP34_TabControl1 > .tabItemContainer {
@@ -117,7 +121,7 @@
 }
 
 #AreaPageAlarmyP34_AlarmList1.breaseTableWidget .breaseTableColumnWidget .headerText {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 #AreaPageAlarmyP34_AlarmList1.breaseTableWidget .dataTable > tbody > tr > td {
@@ -215,8 +219,28 @@
   z-index: 1;
 }
 
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu {
+  border-radius: 10px;
+}
+
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
 #AreaPageAlarmyP34_Button_PotvrdenieAlarmu span {
-  font-size: 18px;
+  font-size: 16px;
+}
+
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageAlarmyP34_Button_PotvrdenieAlarmu.disabled.checked {
+  box-shadow: 4px 4px 14px black;
 }
 
 #AreaPageAlarmyP34_TabItem2_breaseTabItemTab.tabItem {
@@ -274,7 +298,7 @@
 }
 
 #AreaPageAlarmyP34_AlarmHistory1.breaseTableWidget .breaseTableColumnWidget .headerText {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 #AreaPageAlarmyP34_AlarmHistory1 svg > g > path.unselected {
@@ -364,6 +388,26 @@
   z-index: 1;
 }
 
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov {
+  border-radius: 10px;
+}
+
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
 #AreaPageAlarmyP34_Button_ArchivaciaAlarmov span {
-  font-size: 18px;
+  font-size: 16px;
+}
+
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageAlarmyP34_Button_ArchivaciaAlarmov.disabled.checked {
+  box-shadow: 4px 4px 14px black;
 }

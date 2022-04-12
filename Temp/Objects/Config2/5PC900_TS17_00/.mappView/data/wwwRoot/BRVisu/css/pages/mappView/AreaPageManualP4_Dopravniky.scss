@@ -33,7 +33,7 @@
 		z-index: 1;
 }
 #AreaPageManualP4_Dopravniky_Image1 {
-	@include elemTop(95);
+	@include elemTop(70);
 }
 #AreaPageManualP4_Dopravniky_Image1 {
 	@include elemLeft(15);
@@ -42,10 +42,16 @@
 	@include elemAutoWidth(1342);
 }
 #AreaPageManualP4_Dopravniky_Image1 {
-	@include elemAutoHeight(500);
+	@include elemAutoHeight(505);
 }
 #AreaPageManualP4_Dopravniky_Image1 {
 		z-index: 2;
+}
+#AreaPageManualP4_Dopravniky_Image1 {
+		background-color: rgba(220, 220, 220, 1);
+}
+#AreaPageManualP4_Dopravniky_Image1 {
+		border-style: solid;
 }
 #AreaPageManualP4_Dopravniky_ImageList1 {
 	@include elemTop(400);
@@ -302,7 +308,7 @@
 	}
 }
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie3 {
-	@include elemTop(65);
+	@include elemTop(80);
 }
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie3 {
 	@include elemLeft(580);
@@ -352,7 +358,7 @@
 	}
 }
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie4 {
-	@include elemTop(530);
+	@include elemTop(515);
 }
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie4 {
 	@include elemLeft(580);
@@ -402,7 +408,7 @@
 	}
 }
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZasunStoperSkrutkovanie {
-	@include elemTop(120);
+	@include elemTop(135);
 }
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZasunStoperSkrutkovanie {
 	@include elemLeft(470);
@@ -452,7 +458,7 @@
 	}
 }
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZasunStoperSkrutkovanie1 {
-	@include elemTop(120);
+	@include elemTop(135);
 }
 #AreaPageManualP4_Dopravniky_ToggleSwitch_ZasunStoperSkrutkovanie1 {
 	@include elemLeft(675);

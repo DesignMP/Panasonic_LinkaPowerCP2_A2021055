@@ -33,7 +33,7 @@
 		z-index: 1;
 }
 #AreaPageManualP3_Dopravniky_Image1 {
-	@include elemTop(70);
+	@include elemTop(80);
 }
 #AreaPageManualP3_Dopravniky_Image1 {
 	@include elemLeft(12);
@@ -42,10 +42,16 @@
 	@include elemAutoWidth(1342);
 }
 #AreaPageManualP3_Dopravniky_Image1 {
-	@include elemAutoHeight(500);
+	@include elemAutoHeight(490);
 }
 #AreaPageManualP3_Dopravniky_Image1 {
 		z-index: 2;
+}
+#AreaPageManualP3_Dopravniky_Image1 {
+		background-color: rgba(220, 220, 220, 1);
+}
+#AreaPageManualP3_Dopravniky_Image1 {
+		border-style: solid;
 }
 #AreaPageManualP3_Dopravniky_ImageList1 {
 	@include elemTop(365);
@@ -605,7 +611,7 @@
 	}
 }
 #AreaPageManualP3_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie3 {
-	@include elemTop(75);
+	@include elemTop(100);
 }
 #AreaPageManualP3_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie3 {
 	@include elemLeft(585);
@@ -655,10 +661,10 @@
 	}
 }
 #AreaPageManualP3_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie4 {
-	@include elemTop(75);
+	@include elemTop(100);
 }
 #AreaPageManualP3_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie4 {
-	@include elemLeft(890);
+	@include elemLeft(995);
 }
 #AreaPageManualP3_Dopravniky_ToggleSwitch_ZacentrujSkrutkovanie4 {
 	@include elemAutoWidth(180);

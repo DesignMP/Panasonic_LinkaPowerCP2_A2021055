@@ -2,26 +2,26 @@
 <BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
   <Content id="PataP1">
     <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_RezimManual_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="PataP1_NavigationButton_Manual" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-</Binding>
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_RezimManual_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="PataP1_NavigationButton_Manual" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
   </Content>
   <Content id="PataP1">
     <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_Uzivatelia_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="PataP1_NavigationButton_Parametre1" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-</Binding>
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_Uzivatelia_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="PataP1_NavigationButton_Parametre1" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
   </Content>
   <Content id="PataP1">
     <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_SETUP_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="PataP1_NavigationButton_Setup" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="PataP1">
+    <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P1_AlarmyVizu.FarbaTlacitka_Alarmy" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 <Target xsi:type="brease" refId="PataP1_NavigationButton_Alarmy" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-</Binding>
-  </Content>
-  <Content id="PataP1">
-    <Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_SETUP_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="PataP1_NavigationButton_Setup" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding>
   </Content>
 </BindingDefinition>

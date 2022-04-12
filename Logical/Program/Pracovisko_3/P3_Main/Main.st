@@ -512,7 +512,23 @@ PROGRAM _CYCLIC
 		P3_Pracovisko.STAV.READY:= FALSE;
 	END_IF
 	
-		
+	//Príznak pracovisko stav PORUCHA//
+	IF P3_Pracovisko.STAV.Porucha_ST1 OR
+		P3_Pracovisko.STAV.Porucha_ST2 OR
+		P3_Pracovisko.STAV.Porucha_ST3 OR
+		P3_Pracovisko.STAV.Porucha_ST4 OR
+		P3_Pracovisko.STAV.Porucha_ST5 OR
+		P3_Pracovisko.STAV.Porucha_ST6 OR
+		P3_Pracovisko.STAV.Porucha_ST7 OR
+		P3_Pracovisko.STAV.Porucha_ST8 THEN
+		P3_Pracovisko.STAV.PORUCHA:= TRUE;
+	ELSE
+		P3_Pracovisko.STAV.PORUCHA:= FALSE;
+	END_IF	
+	
+	
+	
+	
 	//Príznak HW Bunky OK//
 	IF P3_Pracovisko.IN.TlakVzduchu_OK AND
 		P3_Pracovisko.IN.ModulFesto_IO_KomOK AND

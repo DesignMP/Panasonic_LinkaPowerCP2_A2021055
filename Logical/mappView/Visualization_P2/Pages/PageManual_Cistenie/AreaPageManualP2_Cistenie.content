@@ -4,7 +4,7 @@
     <Widget xsi:type="widgets.brease.Image" id="ImageRR_Cistenie" top="0" left="0" width="1366" height="588" zIndex="0" image="Media/Pozadie/BackGround_588x1366.png" opacity="0.15" />
     <Widget xsi:type="widgets.brease.Label" id="Label1" top="13" left="483" width="400" height="40" zIndex="1" text="Manuálny režim - Čistenie (2/2)" borderWidth="3px" borderStyle="ridge" style="FavoriteWatch" />
     <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButtonRR_Zvaranie" top="10" left="10" width="110" height="50" zIndex="2" image="Media/Pictures/PreviewPage1_48x48.png" pageId="PageManualP2_Zvaranie" cornerRadius="4px" backGroundGradient="" shadow="3px 3px 14px rgba(0, 0, 0, 1)" style="Default_NavButton" />
-    <Widget xsi:type="widgets.brease.Image" id="Image1" top="95" left="1020" width="300" height="424" zIndex="3" image="Media/Pozadie/Pracovisko2_Cistenie.png" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="95" left="1020" width="300" height="424" zIndex="3" image="Media/Pozadie/Pracovisko2_Cistenie.png" backColor="rgba(220, 220, 220, 1)" borderStyle="solid" />
     <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox_Cistenie" top="169" left="30" width="450" height="260" zIndex="4" text="Ovládanie čistenia" style="GroupBox1">
       <Widgets>
         <Widget xsi:type="widgets.brease.Button" id="Button_CentrovanieDOLE" top="84" left="24" width="180" height="50" zIndex="0" image="Media/Pictures/SipkaDole2_32x32.png" text="DOLE" textAlign="left" fontSize="18px" style="Operate" />

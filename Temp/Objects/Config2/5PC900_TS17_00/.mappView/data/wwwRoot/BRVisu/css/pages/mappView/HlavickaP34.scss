@@ -15,7 +15,7 @@
 		z-index: 0;
 }
 #HlavickaP34_DateTimeOutput1 {
-		border-width: 8px;
+		border-width: 3px;
 }
 #HlavickaP34_DateTimeOutput1 {
 	@include border-radius(5px);
@@ -27,10 +27,10 @@
 	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
 }
 #HlavickaP34_DateTimeOutput1 {
-		border-color: rgba(153, 153, 153, 1);
+		border-color: rgba(0, 0, 0, 1);
 }
 #HlavickaP34_DateTimeOutput1 {
-		border-style: ridge;
+		border-style: solid;
 }
 #HlavickaP34_DateTimeOutput1 {
 	& span{
@@ -158,40 +158,40 @@
 #HlavickaP34_ImageListZadneLaveDvere {
 		border-width: 0px;
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 	@include elemTop(6);
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 	@include elemLeft(560);
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 	@include elemAutoWidth(150);
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 	@include elemAutoHeight(50);
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 		z-index: 5;
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 	&:not(.disabled):not(.active):not(.checked) span{
 		color: rgba(0, 0, 0, 1);
 	}
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 	@include text-alignment(right);
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 	&:not(.active):not(.checked){
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 	&.disabled.active{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
-#HlavickaP34_ButtonPredneLaveBunka3 {
+#HlavickaP34_ButtonPredneDvereBunka3 {
 	&.disabled.checked{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
@@ -211,40 +211,40 @@
 #HlavickaP34_ImageListZadnePraveDvere {
 		z-index: 6;
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 	@include elemTop(6);
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 	@include elemLeft(725);
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 	@include elemAutoWidth(150);
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 	@include elemAutoHeight(50);
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 		z-index: 7;
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 	&:not(.disabled):not(.active):not(.checked) span{
 		color: rgba(0, 0, 0, 1);
 	}
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 	@include text-alignment(right);
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 	&:not(.active):not(.checked){
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 	&.disabled.active{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
-#HlavickaP34_ButtonPrednePraveBunka3 {
+#HlavickaP34_ButtonZadneDvereBunka4 {
 	&.disabled.checked{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
@@ -316,7 +316,7 @@
 		z-index: 11;
 }
 #HlavickaP34_TextOutputOperator {
-		border-width: 8px;
+		border-width: 3px;
 }
 #HlavickaP34_TextOutputOperator {
 	@include border-radius(5px);
@@ -328,29 +328,29 @@
 	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
 }
 #HlavickaP34_TextOutputOperator {
-		border-color: rgba(153, 153, 153, 1);
+		border-color: rgba(0, 0, 0, 1);
 }
 #HlavickaP34_TextOutputOperator {
 	&:before{
-		border-color: rgba(153, 153, 153, 1);
+		border-color: rgba(0, 0, 0, 1);
 	}
 }
 #HlavickaP34_TextOutputOperator {
 	&:after{
-		border-color: rgba(153, 153, 153, 1);
+		border-color: rgba(0, 0, 0, 1);
 	}
 }
 #HlavickaP34_TextOutputOperator {
-		border-style: ridge;
+		border-style: solid;
 }
 #HlavickaP34_TextOutputOperator {
 	&:before{
-		border-style: ridge;
+		border-style: solid;
 	}
 }
 #HlavickaP34_TextOutputOperator {
 	&:after{
-		border-style: ridge;
+		border-style: solid;
 	}
 }
 #HlavickaP34_TextOutputOperator {

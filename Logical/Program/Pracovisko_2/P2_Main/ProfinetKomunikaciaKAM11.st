@@ -14,11 +14,11 @@ ACTION ProfinetKomunikaciaKAM11:
     CAM11.STAV.Command_ERROR:= CAM11.Profinet_PLC_INPUTS[0].5;
 	
 	//Výsledky kamery//
-	CAM11.RESULT.PowerCP.Pritomn_PowerCP_4F:= CAM11.Profinet_PLC_INPUTS[2].0;
-	CAM11.RESULT.PowerCP.Pritomn_PowerCP_5F:= CAM11.Profinet_PLC_INPUTS[2].1;
-	CAM11.RESULT.PowerCP.Pritomn_PowerCP_5H:= CAM11.Profinet_PLC_INPUTS[2].2;
-	CAM11.RESULT.PowerCP.Pritomn_PravyMVcase:= CAM11.Profinet_PLC_INPUTS[2].3;
-	CAM11.RESULT.PowerCP.Pritomn_LavyMVcase:= CAM11.Profinet_PLC_INPUTS[2].4;
+	CAM11.RESULT.Paletka.Pritomn_PowerCP_4F:= CAM11.Profinet_PLC_INPUTS[2].0;
+	CAM11.RESULT.Paletka.Pritomn_PowerCP_5F:= CAM11.Profinet_PLC_INPUTS[2].1;
+	CAM11.RESULT.Paletka.Pritomn_PowerCP_5H:= CAM11.Profinet_PLC_INPUTS[2].2;
+	CAM11.RESULT.PowerCP.Pritomn_LavyMVcase:= CAM11.Profinet_PLC_INPUTS[2].3;
+	CAM11.RESULT.PowerCP.Pritomn_PravyMVcase:= CAM11.Profinet_PLC_INPUTS[2].4;
 	CAM11.RESULT.PowerCP.LavyBusbar_Zvaranie_OK:= CAM11.Profinet_PLC_INPUTS[2].5;
 	CAM11.RESULT.PowerCP.PravyBusbar_Zvaranie_OK:= CAM11.Profinet_PLC_INPUTS[2].6;
 	CAM11.RESULT.PowerCP.Pritomn_TopCover_4F:= CAM11.Profinet_PLC_INPUTS[2].7;

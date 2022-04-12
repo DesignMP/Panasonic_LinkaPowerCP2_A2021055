@@ -77,7 +77,7 @@ ACTION COM_Tlaciaren:
 			Client.TcpClient_0.enable := 1;
 			Client.TcpClient_0.ident := Client.TcpOpen_0.ident;  (* Connection Ident from AsTCP.TCP_Open *)
 			Client.TcpClient_0.portserv := 9100;  (* Port komunikácie s tlaèiaròou *)
-			Client.TcpClient_0.pServer := ADR('192.168.1.41');  (* Adresa tlaèiarne *)
+			Client.TcpClient_0.pServer := ADR('192.168.148.41');  (* Adresa tlaèiarne *)
 			Client.TcpClient_0;  (* Call the Function*)
 			
 			

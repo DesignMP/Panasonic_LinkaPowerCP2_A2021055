@@ -101,6 +101,10 @@ PROGRAM _CYCLIC
 	//Reset sekcie //
 	IF P1_Srobovanie.Reset THEN
 		SC_P1_Srobovanie.Step:= 0;
+		P1_Srobovanie.ServoManipulOsX.Command.ErrReset:= TRUE;
+		P1_Srobovanie.ServoManipulOsY.Command.ErrReset:= TRUE;
+		P1_Srobovanie.ServoManipulOsZ_M4.Command.ErrReset:= TRUE;
+		P1_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset:= TRUE;
 		P1_Srobovanie.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P1_Srobovanie.Step:= 0;

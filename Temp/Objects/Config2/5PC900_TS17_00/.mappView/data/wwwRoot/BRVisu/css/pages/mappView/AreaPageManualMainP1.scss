@@ -139,7 +139,7 @@
 	}
 }
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky {
-	@include elemTop(380);
+	@include elemTop(385);
 }
 #AreaPageManualMainP1_NavigationButtonPageRR_Dopravniky {
 	@include elemLeft(970);
@@ -260,7 +260,7 @@
 	}
 }
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie {
-	@include elemTop(485);
+	@include elemTop(475);
 }
 #AreaPageManualMainP1_NavigationButtonPageRR_Skrutkovanie {
 	@include elemLeft(523);
@@ -435,7 +435,7 @@
 	@include box-shadow(2px 2px 15px rgba(0, 0, 0, 1));
 }
 #AreaPageManualMainP1_Image2 {
-	@include elemTop(55);
+	@include elemTop(75);
 }
 #AreaPageManualMainP1_Image2 {
 	@include elemLeft(12);
@@ -444,10 +444,19 @@
 	@include elemAutoWidth(1342);
 }
 #AreaPageManualMainP1_Image2 {
-	@include elemAutoHeight(500);
+	@include elemAutoHeight(480);
 }
 #AreaPageManualMainP1_Image2 {
 		z-index: 2;
+}
+#AreaPageManualMainP1_Image2 {
+		background-color: rgba(224, 224, 224, 1);
+}
+#AreaPageManualMainP1_Image2 {
+		border-style: hidden;
+}
+#AreaPageManualMainP1_Image2 {
+		border-width: 0px;
 }
 #AreaPageManualMainP1_Rectangle1 {
 	@include elemTop(295);
@@ -477,7 +486,7 @@
 		border-color: rgba(0, 128, 0, 1);
 }
 #AreaPageManualMainP1_Rectangle2 {
-	@include elemTop(155);
+	@include elemTop(170);
 }
 #AreaPageManualMainP1_Rectangle2 {
 	@include elemLeft(600);
@@ -486,7 +495,7 @@
 	@include elemWidth(230);
 }
 #AreaPageManualMainP1_Rectangle2 {
-	@include elemHeight(300);
+	@include elemHeight(285);
 }
 #AreaPageManualMainP1_Rectangle2 {
 		z-index: 7;

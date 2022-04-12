@@ -47,50 +47,10 @@
 }
 
 #AreaPageManualP1_Vytah_Label1 {
-  border-width: 3px;
-}
-
-#AreaPageManualP1_Vytah_Label1 {
-  border-radius: 5px;
-}
-
-#AreaPageManualP1_Vytah_Label1 {
-  background-color: #e0e0e0;
-}
-
-#AreaPageManualP1_Vytah_Label1 {
-  border-style: ridge;
-}
-
-#AreaPageManualP1_Vytah_Label1:before {
-  border-style: ridge;
-}
-
-#AreaPageManualP1_Vytah_Label1:after {
-  border-style: ridge;
-}
-
-#AreaPageManualP1_Vytah_Label1 span {
-  color: black;
-}
-
-#AreaPageManualP1_Vytah_Label1 {
   justify-content: center;
   text-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-#AreaPageManualP1_Vytah_Label1 {
-  font-size: 22px;
-}
-
-#AreaPageManualP1_Vytah_Label1 {
-  font-weight: bold;
-}
-
-#AreaPageManualP1_Vytah_Label1 {
-  box-shadow: 2px 2px 15px black;
 }
 
 #AreaPageManualP1_Vytah_GroupBox_OvladanieDopravnikov {
@@ -115,18 +75,6 @@
   z-index: 2;
 }
 
-#AreaPageManualP1_Vytah_GroupBox_OvladanieDopravnikov {
-  background-color: oldlace;
-}
-
-#AreaPageManualP1_Vytah_GroupBox_OvladanieDopravnikov > .header span {
-  color: black;
-}
-
-#AreaPageManualP1_Vytah_GroupBox_OvladanieDopravnikov {
-  box-shadow: 4px 4px 14px black;
-}
-
 #AreaPageManualP1_Vytah_Label15 {
   top: 16px;
   position: absolute;
@@ -138,7 +86,7 @@
 }
 
 #AreaPageManualP1_Vytah_Label15 {
-  width: 269px;
+  width: 195px;
 }
 
 #AreaPageManualP1_Vytah_Label15 {
@@ -203,7 +151,7 @@
 }
 
 #AreaPageManualP1_Vytah_ImageList19 {
-  left: 241px;
+  left: 171px;
   position: absolute;
 }
 
@@ -228,7 +176,7 @@
 }
 
 #AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD {
-  top: 117px;
+  top: 145px;
   position: absolute;
 }
 
@@ -250,32 +198,12 @@
 }
 
 #AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD {
-  border-radius: 10px;
-}
-
-#AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD:not(.disabled):not(.active):not(.checked) span {
-  color: black;
-}
-
-#AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD {
   justify-content: flex-start;
   text-align: left;
 }
 
-#AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD:not(.active):not(.checked) {
-  box-shadow: 4px 4px 14px black;
-}
-
-#AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD.disabled.active {
-  box-shadow: 4px 4px 14px black;
-}
-
-#AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD.disabled.checked {
-  box-shadow: 4px 4px 14px black;
-}
-
 #AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVPRED {
-  top: 117px;
+  top: 145px;
   position: absolute;
 }
 
@@ -321,51 +249,221 @@
   box-shadow: 4px 4px 14px black;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky {
-  height: 30px;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky {
-  top: 24px;
+#AreaPageManualP1_Vytah_Label17 {
+  top: 75px;
   position: absolute;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky {
-  left: 160px;
+#AreaPageManualP1_Vytah_Label17 {
+  left: 11px;
   position: absolute;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky {
-  width: 71px;
+#AreaPageManualP1_Vytah_Label17 {
+  width: 404px;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky {
+#AreaPageManualP1_Vytah_Label17 {
+  height: 45px;
+}
+
+#AreaPageManualP1_Vytah_Label17 {
   z-index: 4;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky {
-  border-width: 4px;
+#AreaPageManualP1_Vytah_Label17 {
+  border-width: 2px;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky {
-  border-style: ridge;
+#AreaPageManualP1_Vytah_Label17 {
+  border-radius: 5px;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky input {
+#AreaPageManualP1_Vytah_Label17 {
+  background-color: silver;
+}
+
+#AreaPageManualP1_Vytah_Label17 {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Label17:before {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Label17:after {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Label17 {
+  border-style: outset;
+}
+
+#AreaPageManualP1_Vytah_Label17:before {
+  border-style: outset;
+}
+
+#AreaPageManualP1_Vytah_Label17:after {
+  border-style: outset;
+}
+
+#AreaPageManualP1_Vytah_Label17 span {
   color: black;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky span.breaseNumericOutput_unit {
-  color: black;
+#AreaPageManualP1_Vytah_Label17 {
+  font-size: 14px;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky input {
+#AreaPageManualP1_Vytah_Label17 {
+  font-weight: bold;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput4 {
+  height: 30px;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput4 {
+  top: 83px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput4 {
+  left: 126px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput4 {
+  width: 60px;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput4 {
+  z-index: 5;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput4 {
+  background-color: #e0e0e0;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_7 {
+  height: 30px;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_7 {
+  top: 83px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_7 {
+  left: 276px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_7 {
+  width: 60px;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_7 {
+  z-index: 6;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_7 input {
   justify-content: center;
   text-align: center;
 }
 
-#AreaPageManualP1_Vytah_NumericOutput_VytahCisloPaletky input {
-  font-size: 16px;
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku {
+  height: 30px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku {
+  top: 83px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku {
+  left: 191px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku {
+  width: 65px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku {
+  z-index: 7;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku:not(.active):not(.checked) {
+  border-width: 2px 2px 2px 2px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku.disabled {
+  border-width: 2px 2px 2px 2px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku {
+  border-radius: 10px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku:not(.disabled):not(.active):not(.checked) {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1 {
+  height: 30px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1 {
+  top: 83px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1 {
+  left: 341px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1 {
+  width: 65px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1 {
+  z-index: 8;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1:not(.active):not(.checked) {
+  border-width: 2px 2px 2px 2px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1.disabled {
+  border-width: 2px 2px 2px 2px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1 {
+  border-radius: 10px;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1:not(.disabled):not(.active):not(.checked) {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
+#AreaPageManualP1_Vytah_Button_PrecitajPaletku1 {
+  justify-content: center;
+  text-align: center;
 }
 
 #AreaPageManualP1_Vytah_GroupBox2 {
@@ -388,14 +486,6 @@
 
 #AreaPageManualP1_Vytah_GroupBox2 {
   z-index: 3;
-}
-
-#AreaPageManualP1_Vytah_GroupBox2 {
-  background-color: oldlace;
-}
-
-#AreaPageManualP1_Vytah_GroupBox2 > .header span {
-  color: black;
 }
 
 #AreaPageManualP1_Vytah_GroupBox2 {
@@ -447,82 +537,6 @@
 
 #AreaPageManualP1_Vytah_Button_ResetServa.disabled.checked {
   box-shadow: 4px 4px 14px black;
-}
-
-#AreaPageManualP1_Vytah_NumericInput_ZdvihZadanaRychlost {
-  height: 30px;
-}
-
-#AreaPageManualP1_Vytah_NumericInput_ZdvihZadanaRychlost {
-  top: 177px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_NumericInput_ZdvihZadanaRychlost {
-  left: 236px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_NumericInput_ZdvihZadanaRychlost {
-  width: 165px;
-}
-
-#AreaPageManualP1_Vytah_NumericInput_ZdvihZadanaRychlost {
-  z-index: 11;
-}
-
-#AreaPageManualP1_Vytah_NumericInput_ZdvihZadanaRychlost:not(.active):not(.disabled) {
-  border-width: 2px 4px 2px 2px;
-}
-
-#AreaPageManualP1_Vytah_NumericInput_ZdvihZadanaRychlost input {
-  font-size: 18px;
-}
-
-#AreaPageManualP1_Vytah_NumericInput_ZdvihZadanaRychlost {
-  box-shadow: 4px 4px 8px black;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia {
-  height: 30px;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia {
-  top: 177px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia {
-  left: 26px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia {
-  width: 165px;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia {
-  z-index: 9;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia {
-  border-width: 4px;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia {
-  border-style: ridge;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia input {
-  color: black;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia span.breaseNumericOutput_unit {
-  color: black;
-}
-
-#AreaPageManualP1_Vytah_NumericOutput_ZdvihAktualnaPozicia input {
-  font-size: 16px;
 }
 
 #AreaPageManualP1_Vytah_MomentaryPushButton_JoggZdvihuDOLE {
@@ -923,7 +937,7 @@
 }
 
 #AreaPageManualP1_Vytah_Label28 {
-  z-index: 10;
+  z-index: 9;
 }
 
 #AreaPageManualP1_Vytah_Label28 {
@@ -1000,7 +1014,7 @@
 }
 
 #AreaPageManualP1_Vytah_Label16 {
-  z-index: 12;
+  z-index: 10;
 }
 
 #AreaPageManualP1_Vytah_Label16 {
@@ -1070,7 +1084,7 @@
 }
 
 #AreaPageManualP1_Vytah_ImageList6 {
-  z-index: 13;
+  z-index: 11;
 }
 
 #AreaPageManualP1_Vytah_ImageList6 {
@@ -1079,6 +1093,80 @@
 
 #AreaPageManualP1_Vytah_ImageList6 {
   border-width: 0px;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput2 {
+  height: 30px;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput2 {
+  top: 177px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput2 {
+  left: 26px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput2 {
+  width: 165px;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput2 {
+  z-index: 12;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput2 input {
+  color: black;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput2 span.breaseNumericOutput_unit {
+  color: black;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput2 input {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_6 {
+  height: 30px;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_6 {
+  top: 177px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_6 {
+  left: 236px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_6 {
+  width: 165px;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_6 {
+  z-index: 13;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_6.active:not(.disabled) {
+  background-color: white;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_6.active:not(.disabled) input {
+  color: black;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_6.active:not(.disabled) span.breaseNumericInput_unit {
+  color: black;
+}
+
+#AreaPageManualP1_Vytah_NumericInput_6 input {
+  justify-content: center;
+  text-align: center;
 }
 
 #AreaPageManualP1_Vytah_GroupBox_OvladanieOsvetleniaKamier {
@@ -1103,18 +1191,6 @@
   z-index: 4;
 }
 
-#AreaPageManualP1_Vytah_GroupBox_OvladanieOsvetleniaKamier {
-  background-color: oldlace;
-}
-
-#AreaPageManualP1_Vytah_GroupBox_OvladanieOsvetleniaKamier > .header span {
-  color: black;
-}
-
-#AreaPageManualP1_Vytah_GroupBox_OvladanieOsvetleniaKamier {
-  box-shadow: 4px 4px 14px black;
-}
-
 #AreaPageManualP1_Vytah_ToggleSwitch_OsvetlenieKameryKAM4 {
   top: 65px;
   position: absolute;
@@ -1135,34 +1211,6 @@
 
 #AreaPageManualP1_Vytah_ToggleSwitch_OsvetlenieKameryKAM4 {
   z-index: 0;
-}
-
-#AreaPageManualP1_Vytah_ToggleSwitch_OsvetlenieKameryKAM4:not(.disabled):not(.checked) .wrapper .before {
-  color: black;
-}
-
-#AreaPageManualP1_Vytah_ToggleSwitch_OsvetlenieKameryKAM4:not(.disabled):not(.checked) .wrapper .after {
-  color: black;
-}
-
-#AreaPageManualP1_Vytah_ToggleSwitch_OsvetlenieKameryKAM4 .wrapper .before {
-  font-size: 16px;
-}
-
-#AreaPageManualP1_Vytah_ToggleSwitch_OsvetlenieKameryKAM4 .wrapper .after {
-  font-size: 16px;
-}
-
-#AreaPageManualP1_Vytah_ToggleSwitch_OsvetlenieKameryKAM4:not(.active):not(.checked) {
-  box-shadow: 4px 4px 14px black;
-}
-
-#AreaPageManualP1_Vytah_ToggleSwitch_OsvetlenieKameryKAM4.disabled.active {
-  box-shadow: 4px 4px 14px black;
-}
-
-#AreaPageManualP1_Vytah_ToggleSwitch_OsvetlenieKameryKAM4.disabled.checked {
-  box-shadow: 4px 4px 14px black;
 }
 
 #AreaPageManualP1_Vytah_Image2 {
@@ -1188,9 +1236,13 @@
 }
 
 #AreaPageManualP1_Vytah_Image2 {
-  background-color: oldlace;
+  background-color: #e0e0e0;
 }
 
 #AreaPageManualP1_Vytah_Image2 {
-  border-width: 1px;
+  border-style: hidden;
+}
+
+#AreaPageManualP1_Vytah_Image2 {
+  border-width: 2px;
 }

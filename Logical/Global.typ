@@ -39,11 +39,9 @@ TYPE
 		ZobrazHL8_ST2 : BOOL;
 		ZobrazHL9_ST2 : BOOL; (*ST2 - Odpoved panatrace NG*)
 		TL_PrednyZamok_Farba : WSTRING[80];
-		TL_ZadnyZamokPS_Farba : WSTRING[80];
-		TL_ZadnyZamokLS_Farba : WSTRING[80];
+		TL_ZadnyZamok_Farba : WSTRING[80];
 		TL_ZamkniPrednyZamok : BOOL;
-		TL_ZamkniZadnyZamokPS : BOOL;
-		TL_ZamkniZadnyZamokLS : BOOL;
+		TL_ZamkniZadnyZamok : BOOL;
 		TL_StartAutomat_ENABLE : BOOL;
 		TL_KoniecCyklu_ENABLE : BOOL;
 		TL_Uzivatelia_ENABLE : BOOL;
@@ -80,14 +78,10 @@ TYPE
 		ActualPage : STRING[80];
 		GoPage : STRING[80] := 'PageBootP2';
 		TL_RezimAutomat : BOOL;
-		TL_PrednyZamokPS_Farba : WSTRING[80];
-		TL_PrednyZamokLS_Farba : WSTRING[80];
-		TL_ZadnyZamokPS_Farba : WSTRING[80];
-		TL_ZadnyZamokLS_Farba : WSTRING[80];
-		TL_ZamkniPrednyZamokPS : BOOL;
-		TL_ZamkniPrednyZamokLS : BOOL;
-		TL_ZamkniZadnyZamokPS : BOOL;
-		TL_ZamkniZadnyZamokLS : BOOL;
+		TL_PrednyZamok_Farba : WSTRING[80];
+		TL_ZadnyZamok_Farba : WSTRING[80];
+		TL_ZamkniPredneZamky : BOOL;
+		TL_ZamkniZadneZamky : BOOL;
 		TL_StartAutomat_ENABLE : BOOL;
 		TL_KoniecCyklu_ENABLE : BOOL;
 		TL_STOP_ENABLE : BOOL;
@@ -199,12 +193,10 @@ TYPE
 		IndexStavu_ZdvizkaZaFunkTestomA : USINT;
 		IndexStavu_ZdvizkaZaFunkTestomB : USINT;
 		IndexStavu_StoperEtiketovackyP4 : USINT;
-		TL_PrednyZamokPS_Farba_P3 : WSTRING[80];
-		TL_PrednyZamokLS_Farba_P3 : WSTRING[80];
+		TL_PrednyZamok_Farba_P3 : WSTRING[80];
 		TL_ZadnyZamok_Farba_P3 : WSTRING[80];
-		TL_ZamkniPrednyZamokPS_P3 : BOOL;
-		TL_ZamkniPrednyZamokLS_P3 : BOOL;
-		TL_ZamkniZadnyZamok_P3 : BOOL;
+		TL_ZamkniPredneZamky_P3 : BOOL;
+		TL_ZamkniZadneZamky_P3 : BOOL;
 		TL_StartAutomat_ENABLE_P3 : BOOL;
 		TL_KoniecCyklu_ENABLE_P3 : BOOL;
 		TL_STOP_ENABLE_P3 : BOOL;
@@ -233,7 +225,9 @@ TYPE
 		TL_PrihlasenieOperatora_ENABLE : BOOL;
 		TL_PrihlasovOperatora_AKTIVNE : BOOL;
 		TL_PrednyZamok_Farba_P4 : WSTRING[80];
+		TL_ZadnyZamok_Farba_P4 : WSTRING[80];
 		TL_ZamkniPrednyZamok_P4 : BOOL;
+		TL_ZamkniZadnyZamok_P4 : BOOL;
 		WarningsP3_Farba : WSTRING[80];
 		WarningsP3_Index : USINT;
 		WarningsP4_Farba : WSTRING[80];
@@ -413,8 +407,10 @@ TYPE
 		P2_Srob_PozZ_OdobratSkrutkyM4 : REAL;
 		P2_ManipSrob_OsX_Rychlost : REAL;
 		P2_ManipSrob_OsY_Rychlost : REAL;
-		P2_ManipSrob_OsXY_Acc : REAL;
-		P2_ManipSrob_OsXY_Dcc : REAL;
+		P2_ManipSrob_OsX_Acc : REAL;
+		P2_ManipSrob_OsX_Dcc : REAL;
+		P2_ManipSrob_OsY_Acc : REAL;
+		P2_ManipSrob_OsY_Dcc : REAL;
 		P2_ManipSrob_OsZ_M4_Rychlost : REAL; (*mm/s*)
 		P2_ManipSrob_OsZ_M4_Acc : REAL;
 		P2_ManipSrob_OsZ_M4_Dcc : REAL;
@@ -619,6 +615,8 @@ TYPE
 	Linka_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
 		VyprazdnenieLinky : BOOL;
+		OFF : BOOL;
+		PRAZDNA : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -679,6 +677,7 @@ TYPE
 		Manual : BOOL;
 		PoINIT : BOOL;
 		READY : BOOL;
+		PORUCHA : BOOL;
 		HardwareVytahu_OK : BOOL;
 		HardwareBunky_OK : BOOL;
 		SkrutkovackyZasunute : BOOL;
@@ -1236,6 +1235,7 @@ TYPE
 		Manual : BOOL;
 		PoINIT : BOOL;
 		READY : BOOL;
+		PORUCHA : BOOL;
 		Porucha_ST1 : BOOL; (*Zakladanie tesnenia*)
 		Porucha_ST2 : BOOL; (*Skrutkovanie matice*)
 		Porucha_ST3 : BOOL; (*Akumulaèný stoper*)
@@ -1245,6 +1245,8 @@ TYPE
 		HardwareZaklTesnenia_OK : BOOL;
 		SkrutkovackyZasunute : BOOL;
 		UkoncenieCyklu_BUSY : BOOL;
+		PredneDvereZamknute : BOOL;
+		ZadneDvereZamknute : BOOL;
 	END_STRUCT;
 	P2_COM_Weidmuller_typ : 	STRUCT 
 		AB2_5_8DI : USINT;
@@ -2085,6 +2087,7 @@ TYPE
 		Manual : BOOL;
 		PoINIT : BOOL;
 		READY : BOOL;
+		PORUCHA : BOOL;
 		HardwareBunky_OK : BOOL;
 		Porucha_ST1 : BOOL; (*Šrobovanie*)
 		Porucha_ST2 : BOOL; (*HV test*)
@@ -2099,6 +2102,8 @@ TYPE
 		HVtest_Zasunuty : BOOL;
 		LeakageTestA_Zasunuty : BOOL;
 		LeakageTestB_Zasunuty : BOOL;
+		PredneDvereZamknute : BOOL;
+		ZadneDvereZamknute : BOOL;
 	END_STRUCT;
 	P3_COM_Weidmuller_typ : 	STRUCT 
 		AB3_5_8DI : USINT;
@@ -2722,6 +2727,7 @@ TYPE
 		Manual : BOOL;
 		PoINIT : BOOL;
 		READY : BOOL;
+		PORUCHA : BOOL;
 		HardwareBunky_OK : BOOL;
 		HardwareVytahu_OK : BOOL;
 		UkoncenieCyklu_BUSY : BOOL;
@@ -3789,7 +3795,7 @@ TYPE
 		Pritom_LavyFoam_4F5F : BOOL;
 		Pritom_PravyFoam_4F5F : BOOL;
 	END_STRUCT;
-	CAM7_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola Power CP a QR kódu filtra*)
+	CAM7_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola paletky*)
 		CMD : CAM7_Commands_typ;
 		PAR : CAM7_Parametre_typ;
 		STAV : CAM7_Status_typ;
@@ -3968,11 +3974,11 @@ TYPE
 	END_STRUCT;
 	CAM11_Paletka_typ : 	STRUCT 
 		New_Member : USINT;
-	END_STRUCT;
-	CAM11_PowerCP_typ : 	STRUCT 
 		Pritomn_PowerCP_4F : BOOL;
 		Pritomn_PowerCP_5F : BOOL;
 		Pritomn_PowerCP_5H : BOOL;
+	END_STRUCT;
+	CAM11_PowerCP_typ : 	STRUCT 
 		Pritomn_LavyMVcase : BOOL;
 		Pritomn_PravyMVcase : BOOL;
 		LavyBusbar_Zvaranie_OK : BOOL;
@@ -4091,7 +4097,6 @@ TYPE
 		STAV : CAM15_Status_typ;
 		RESULT : CAM15_Results_typ;
 		Profinet_QRkod_Znaky : ARRAY[0..31]OF USINT;
-		Profinet_OCR_Znaky : ARRAY[0..31]OF USINT;
 		Profinet_PLC_INPUTS : ARRAY[0..100]OF USINT;
 		Profinet_PLC_OUTPUTS : ARRAY[0..3]OF USINT;
 	END_STRUCT;
@@ -4116,12 +4121,9 @@ TYPE
 	CAM15_Results_typ : 	STRUCT 
 		Pritomn_Etikety : BOOL;
 		Pritomn_LogoBMV : BOOL;
-		Pritomn_Textu_PowerCP : BOOL;
-		Pritomn_Textu_Panasonic : BOOL;
-		Pritomn_Textu_SK : BOOL;
+		Pritomn_LogoPanasonic : BOOL;
 		CitanieQRkodu_Etikety_OK : BOOL;
 		PrecitanyQRkod_Etikety : STRING[31];
-		PrecitaneOCR_Etikety : STRING[32];
 	END_STRUCT;
 	CAM16_typ : 	STRUCT  (*P4_ST4_Vytah - kontrola paletky*)
 		CMD : CAM16_Commands_typ;
@@ -4167,11 +4169,12 @@ TYPE
 		PritomnostSkrutky_K40 : BOOL;
 		PritomnostSkrutky_M5 : BOOL;
 	END_STRUCT;
-	CAM17_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola paletky*)
+	CAM17_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola Power CP a QR kódu filtra*)
 		CMD : CAM17_Commands_typ;
 		PAR : CAM17_Parametre_typ;
 		STAV : CAM17_Status_typ;
 		RESULT : CAM17_Results_typ;
+		Profinet_QRkod_Znaky : ARRAY[0..31]OF USINT;
 		Profinet_PLC_INPUTS : ARRAY[0..100]OF USINT;
 		Profinet_PLC_OUTPUTS : ARRAY[0..3]OF USINT;
 	END_STRUCT;

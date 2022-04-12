@@ -8,7 +8,6 @@
   <Operation Delete="P34_Remane.br"/>
   <Operation Delete="P2_Remanen.br"/>
   <Operation Delete="P1_Remanen.br"/>
-  <Operation Delete="P4_OvladVi.br"/>
   <Operation Delete="DatumCasPL.br"/>
   <Operation Delete="P4_Zdvizk1.br"/>
   <Operation Delete="P4_Funkcn1.br"/>
@@ -34,7 +33,6 @@
   <Operation Delete="P2_SpodnyS.br"/>
   <Operation Delete="P2_Dopravn.br"/>
   <Operation Delete="P2_Main.br"/>
-  <Operation Delete="P1_OvladVi.br"/>
   <Operation Delete="P1_Akumula.br"/>
   <Operation Delete="P1_StoperS.br"/>
   <Operation Delete="P1_SpodnyS.br"/>
@@ -48,39 +46,45 @@
   <Operation Delete="P3_OvladSa.br"/>
   <Operation Delete="P2_OvladSa.br"/>
   <Operation Delete="P1_OvladSa.br"/>
+  <Operation Delete="OvladanieV.br"/>
+  <Operation Delete="P4_OvladVi.br"/>
   <Operation Delete="P4_Vytah.br"/>
   <Operation Delete="P4_StoperE.br"/>
   <Operation Delete="P3_Srobova.br"/>
-  <Operation Delete="P2_Robot.br"/>
   <Operation Delete="P1_Robot.br"/>
+  <Operation Delete="P2_OvladVi.br"/>
   <Operation Delete="P2_Cisteni.br"/>
+  <Operation Delete="P2_ZaklTes.br"/>
+  <Operation Delete="P1_OvladVi.br"/>
+  <Operation Delete="P1_Srobova.br"/>
+  <Operation Delete="P1_Vytah.br"/>
+  <Operation Delete="P2_Robot.br"/>
   <Operation Delete="P2_Stoper1.br"/>
   <Operation Delete="P2_Zvarani.br"/>
   <Operation Delete="P2_StoperS.br"/>
   <Operation Delete="P2_Srobova.br"/>
-  <Operation Delete="P2_ZaklTes.br"/>
-  <Operation Delete="P1_Srobova.br"/>
-  <Operation Delete="P1_Vytah.br"/>
   <Operation Delete="P4_Mapping.br"/>
   <Operation Delete="P3_Mapping.br"/>
   <Operation Delete="P2_Mapping.br"/>
   <Operation Delete="P1_Mapping.br"/>
+  <Operation Delete="MpServer.br"/>
   <Operation Delete="RFID.br"/>
   <Operation Delete="MpAlarmX.br"/>
   <Operation Delete="CoTrace.br"/>
   <Operation Delete="mvLoader.br"/>
   <Operation Delete="MpRecipe.br"/>
   <Operation Delete="SKTcp.br"/>
-  <Operation Delete="AtlasCopco.br"/>
   <Operation Delete="Banner.br"/>
-  <Operation Delete="SC.br"/>
   <Operation Delete="RFID_Heads.br"/>
+  <Operation Delete="AtlasCopco.br"/>
+  <Operation Delete="SC.br"/>
   <Operation Delete="SkrutSety.br"/>
   <Operation Delete="ScrewLoad.br"/>
   <Operation Delete="MyConvert.br"/>
   <Operation Delete="RoCa_Festo.br"/>
   <Operation Delete="arflatprv.br"/>
   <Operation Delete="arcoal.br"/>
+  <Operation Delete="aruser.br"/>
   <Operation Delete="dvframe.br"/>
   <Operation Delete="AsUSB.br"/>
   <Operation Delete="dataobj.br"/>
@@ -115,6 +119,7 @@
   <Operation Download="Config_4.br" Memory="UserROM"/>
   <Operation Download="Config_1.br" Memory="UserROM"/>
   <Operation Download="Config_5.br" Memory="UserROM"/>
+  <Operation Download="TC.br" Memory="UserROM"/>
   <Operation Download="standard.br" Memory="UserROM"/>
   <Operation Download="Operator.br" Memory="UserROM"/>
   <Operation Download="AsBrStr.br" Memory="UserROM"/>
@@ -133,39 +138,45 @@
   <Operation Download="dataobj.br" Memory="UserROM"/>
   <Operation Download="AsUSB.br" Memory="UserROM"/>
   <Operation Download="dvframe.br" Memory="UserROM"/>
+  <Operation Download="aruser.br" Memory="UserROM"/>
   <Operation Download="arcoal.br" Memory="UserROM"/>
   <Operation Download="arflatprv.br" Memory="UserROM"/>
   <Operation Download="RoCa_Festo.br" Memory="UserROM"/>
   <Operation Download="MyConvert.br" Memory="UserROM"/>
   <Operation Download="ScrewLoad.br" Memory="UserROM"/>
   <Operation Download="SkrutSety.br" Memory="UserROM"/>
-  <Operation Download="RFID_Heads.br" Memory="UserROM"/>
   <Operation Download="SC.br" Memory="UserROM"/>
-  <Operation Download="Banner.br" Memory="UserROM"/>
   <Operation Download="AtlasCopco.br" Memory="UserROM"/>
+  <Operation Download="RFID_Heads.br" Memory="UserROM"/>
+  <Operation Download="Banner.br" Memory="UserROM"/>
   <Operation Download="SKTcp.br" Memory="UserROM"/>
   <Operation Download="MpRecipe.br" Memory="UserROM"/>
   <Operation Download="mvLoader.br" Memory="UserROM"/>
   <Operation Download="CoTrace.br" Memory="UserROM"/>
   <Operation Download="MpAlarmX.br" Memory="UserROM"/>
   <Operation Download="RFID.br" Memory="UserROM"/>
+  <Operation Download="MpServer.br" Memory="UserROM"/>
   <Operation Download="P1_Mapping.br" Memory="UserROM"/>
   <Operation Download="P2_Mapping.br" Memory="UserROM"/>
   <Operation Download="P3_Mapping.br" Memory="UserROM"/>
   <Operation Download="P4_Mapping.br" Memory="UserROM"/>
-  <Operation Download="P1_Vytah.br" Memory="UserROM"/>
-  <Operation Download="P1_Srobova.br" Memory="UserROM"/>
-  <Operation Download="P2_ZaklTes.br" Memory="UserROM"/>
   <Operation Download="P2_Srobova.br" Memory="UserROM"/>
   <Operation Download="P2_StoperS.br" Memory="UserROM"/>
   <Operation Download="P2_Zvarani.br" Memory="UserROM"/>
   <Operation Download="P2_Stoper1.br" Memory="UserROM"/>
-  <Operation Download="P2_Cisteni.br" Memory="UserROM"/>
-  <Operation Download="P1_Robot.br" Memory="UserROM"/>
   <Operation Download="P2_Robot.br" Memory="UserROM"/>
+  <Operation Download="P1_Vytah.br" Memory="UserROM"/>
+  <Operation Download="P1_Srobova.br" Memory="UserROM"/>
+  <Operation Download="P1_OvladVi.br" Memory="UserROM"/>
+  <Operation Download="P2_ZaklTes.br" Memory="UserROM"/>
+  <Operation Download="P2_Cisteni.br" Memory="UserROM"/>
+  <Operation Download="P2_OvladVi.br" Memory="UserROM"/>
+  <Operation Download="P1_Robot.br" Memory="UserROM"/>
   <Operation Download="P3_Srobova.br" Memory="UserROM"/>
   <Operation Download="P4_StoperE.br" Memory="UserROM"/>
   <Operation Download="P4_Vytah.br" Memory="UserROM"/>
+  <Operation Download="P4_OvladVi.br" Memory="UserROM"/>
+  <Operation Download="OvladanieV.br" Memory="UserROM"/>
   <Operation Download="P1_OvladSa.br" Memory="UserROM"/>
   <Operation Download="P2_OvladSa.br" Memory="UserROM"/>
   <Operation Download="P3_OvladSa.br" Memory="UserROM"/>
@@ -179,7 +190,6 @@
   <Operation Download="P1_SpodnyS.br" Memory="UserROM"/>
   <Operation Download="P1_StoperS.br" Memory="UserROM"/>
   <Operation Download="P1_Akumula.br" Memory="UserROM"/>
-  <Operation Download="P1_OvladVi.br" Memory="UserROM"/>
   <Operation Download="P2_Main.br" Memory="UserROM"/>
   <Operation Download="P2_Dopravn.br" Memory="UserROM"/>
   <Operation Download="P2_SpodnyS.br" Memory="UserROM"/>
@@ -205,7 +215,6 @@
   <Operation Download="P4_Funkcn1.br" Memory="UserROM"/>
   <Operation Download="P4_Zdvizk1.br" Memory="UserROM"/>
   <Operation Download="DatumCasPL.br" Memory="UserROM"/>
-  <Operation Download="P4_OvladVi.br" Memory="UserROM"/>
   <Operation Download="P1_Remanen.br" Memory="UserROM"/>
   <Operation Download="P2_Remanen.br" Memory="UserROM"/>
   <Operation Download="P34_Remane.br" Memory="UserROM"/>

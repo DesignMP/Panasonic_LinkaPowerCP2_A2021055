@@ -18,6 +18,11 @@
         <seg>Example informational user message. For customer events bit 3 must be always set in the event id</seg>
       </tuv>
     </tu>
+    <tu tuid="10">
+      <tuv xml:lang="sk">
+        <seg>Prebieha testovací režim linky.</seg>
+      </tuv>
+    </tu>
     <tu tuid="2">
       <tuv xml:lang="sk">
         <seg>Na pracovisku prebieha výroba.</seg>
@@ -56,11 +61,6 @@
     <tu tuid="9">
       <tuv xml:lang="sk">
         <seg>Na linke nie je zvolený model !!!</seg>
-      </tuv>
-    </tu>
-    <tu tuid="10">
-      <tuv xml:lang="sk">
-        <seg>Prebieha testovací režim linky.</seg>
       </tuv>
     </tu>
   </body>

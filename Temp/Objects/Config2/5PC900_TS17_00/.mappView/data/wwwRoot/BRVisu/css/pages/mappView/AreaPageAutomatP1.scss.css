@@ -711,11 +711,15 @@
 }
 
 #AreaPageAutomatP1_Image2 {
-  background-color: white;
+  background-color: #e0e0e0;
 }
 
 #AreaPageAutomatP1_Image2 {
   border-style: solid;
+}
+
+#AreaPageAutomatP1_Image2 {
+  border-width: 2px;
 }
 
 #AreaPageAutomatP1_GroupBox7 {
@@ -1233,7 +1237,7 @@
 }
 
 #AreaPageAutomatP1_ToggleButton_TestovaciKus {
-  top: 87px;
+  top: 102px;
   position: absolute;
 }
 
@@ -1291,7 +1295,7 @@
 }
 
 #AreaPageAutomatP1_ToggleButton_Revork {
-  top: 197px;
+  top: 195px;
   position: absolute;
 }
 
@@ -1349,7 +1353,7 @@
 }
 
 #AreaPageAutomatP1_ToggleButton_VyprazdnenieLinky {
-  top: 416px;
+  top: 399px;
   position: absolute;
 }
 

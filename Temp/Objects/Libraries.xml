@@ -98,6 +98,12 @@
     UseAsStatic="false"
     Version="5.17.0" />
   <Library
+    Name="MpServer"
+    IsDeployed="true"
+    IsStatic="false"
+    UseAsStatic="false"
+    Version="5.17.0" />
+  <Library
     Name="MyConvert"
     IsDeployed="true"
     IsStatic="false"

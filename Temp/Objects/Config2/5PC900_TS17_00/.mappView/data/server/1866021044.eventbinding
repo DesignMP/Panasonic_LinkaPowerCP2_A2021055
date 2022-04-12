@@ -29,31 +29,7 @@
       <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP34_ButtonZadneDvereBunka3" />
       <EventHandler>
         <Action>
-          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniZadnyZamok_P3">
-            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Content>
-  <Content id="HlavickaP34">
-    <EventBinding id="HlavickaP34.ButtonPredneLaveBunka3.Click">
-      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP34_ButtonPredneLaveBunka3" />
-      <EventHandler>
-        <Action>
-          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniPrednyZamokLS_P3">
-            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Content>
-  <Content id="HlavickaP34">
-    <EventBinding id="HlavickaP34.ButtonPrednePraveBunka3.Click">
-      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP34_ButtonPrednePraveBunka3" />
-      <EventHandler>
-        <Action>
-          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniPrednyZamokPS_P3">
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniZadneZamky_P3">
             <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
           </Target>
         </Action>
@@ -79,6 +55,30 @@
         <Action>
           <Target type="clientSystem.Action">
             <Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="LoginDialogP34" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="HlavickaP34">
+    <EventBinding id="HlavickaP34.ButtonPredneDvereBunka3.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP34_ButtonPredneDvereBunka3" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniPredneZamky_P3">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="HlavickaP34">
+    <EventBinding id="HlavickaP34.ButtonZadneDvereBunka4.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="HlavickaP34_ButtonZadneDvereBunka4" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P34_Vizu.TL_ZamkniZadnyZamok_P4">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
           </Target>
         </Action>
       </EventHandler>

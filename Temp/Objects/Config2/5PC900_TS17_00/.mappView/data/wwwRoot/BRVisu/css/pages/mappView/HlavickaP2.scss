@@ -15,7 +15,7 @@
 		z-index: 0;
 }
 #HlavickaP2_DateTimeOutput1 {
-		border-width: 8px;
+		border-width: 3px;
 }
 #HlavickaP2_DateTimeOutput1 {
 	@include border-radius(5px);
@@ -27,10 +27,10 @@
 	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
 }
 #HlavickaP2_DateTimeOutput1 {
-		border-color: rgba(153, 153, 153, 1);
+		border-color: rgba(0, 0, 0, 1);
 }
 #HlavickaP2_DateTimeOutput1 {
-		border-style: ridge;
+		border-style: solid;
 }
 #HlavickaP2_DateTimeOutput1 {
 	& span{
@@ -102,40 +102,40 @@
 #HlavickaP2_Image1 {
 		border-width: 0px;
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 	@include elemTop(6);
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 	@include elemLeft(395);
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 	@include elemAutoWidth(150);
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 	@include elemAutoHeight(50);
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 		z-index: 3;
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 	&:not(.disabled):not(.active):not(.checked) span{
 		color: rgba(0, 0, 0, 1);
 	}
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 	@include text-alignment(right);
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 	&:not(.active):not(.checked){
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 	&.disabled.active{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
-#HlavickaP2_ButtonZadneDvereLS {
+#HlavickaP2_ButtonZadneDvere {
 	&.disabled.checked{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
@@ -158,40 +158,40 @@
 #HlavickaP2_ImageListZadneLaveDvere {
 		border-width: 0px;
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 	@include elemTop(6);
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 	@include elemLeft(560);
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 	@include elemAutoWidth(150);
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 	@include elemAutoHeight(50);
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 		z-index: 5;
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 	&:not(.disabled):not(.active):not(.checked) span{
 		color: rgba(0, 0, 0, 1);
 	}
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 	@include text-alignment(right);
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 	&:not(.active):not(.checked){
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 	&.disabled.active{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
-#HlavickaP2_ButtonZadneDverePS {
+#HlavickaP2_ButtonPredneDvere {
 	&.disabled.checked{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
@@ -211,59 +211,6 @@
 #HlavickaP2_ImageListZadnePraveDvere {
 		z-index: 6;
 }
-#HlavickaP2_ButtonPredneLaveDvere {
-	@include elemTop(6);
-}
-#HlavickaP2_ButtonPredneLaveDvere {
-	@include elemLeft(725);
-}
-#HlavickaP2_ButtonPredneLaveDvere {
-	@include elemAutoWidth(150);
-}
-#HlavickaP2_ButtonPredneLaveDvere {
-	@include elemAutoHeight(50);
-}
-#HlavickaP2_ButtonPredneLaveDvere {
-		z-index: 7;
-}
-#HlavickaP2_ButtonPredneLaveDvere {
-	&:not(.disabled):not(.active):not(.checked) span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#HlavickaP2_ButtonPredneLaveDvere {
-	@include text-alignment(right);
-}
-#HlavickaP2_ButtonPredneLaveDvere {
-	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#HlavickaP2_ButtonPredneLaveDvere {
-	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#HlavickaP2_ButtonPredneLaveDvere {
-	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#HlavickaP2_ImageListPredneLaveDvere {
-	@include elemTop(16);
-}
-#HlavickaP2_ImageListPredneLaveDvere {
-	@include elemLeft(733);
-}
-#HlavickaP2_ImageListPredneLaveDvere {
-	@include elemWidth(30);
-}
-#HlavickaP2_ImageListPredneLaveDvere {
-	@include elemHeight(30);
-}
-#HlavickaP2_ImageListPredneLaveDvere {
-		z-index: 8;
-}
 #HlavickaP2_ImageKarta {
 	@include elemTop(7);
 }
@@ -277,7 +224,7 @@
 	@include elemAutoHeight(48);
 }
 #HlavickaP2_ImageKarta {
-		z-index: 9;
+		z-index: 7;
 }
 #HlavickaP2_ImageKarta {
 		border-width: 0px;
@@ -295,7 +242,7 @@
 	@include elemAutoHeight(38);
 }
 #HlavickaP2_ImageOperator {
-		z-index: 10;
+		z-index: 8;
 }
 #HlavickaP2_ImageOperator {
 		border-width: 0px;
@@ -313,10 +260,10 @@
 	@include elemAutoHeight(50);
 }
 #HlavickaP2_TextOutputOperator {
-		z-index: 11;
+		z-index: 9;
 }
 #HlavickaP2_TextOutputOperator {
-		border-width: 8px;
+		border-width: 3px;
 }
 #HlavickaP2_TextOutputOperator {
 	@include border-radius(5px);
@@ -328,29 +275,29 @@
 	@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
 }
 #HlavickaP2_TextOutputOperator {
-		border-color: rgba(153, 153, 153, 1);
+		border-color: rgba(0, 0, 0, 1);
 }
 #HlavickaP2_TextOutputOperator {
 	&:before{
-		border-color: rgba(153, 153, 153, 1);
+		border-color: rgba(0, 0, 0, 1);
 	}
 }
 #HlavickaP2_TextOutputOperator {
 	&:after{
-		border-color: rgba(153, 153, 153, 1);
+		border-color: rgba(0, 0, 0, 1);
 	}
 }
 #HlavickaP2_TextOutputOperator {
-		border-style: ridge;
+		border-style: solid;
 }
 #HlavickaP2_TextOutputOperator {
 	&:before{
-		border-style: ridge;
+		border-style: solid;
 	}
 }
 #HlavickaP2_TextOutputOperator {
 	&:after{
-		border-style: ridge;
+		border-style: solid;
 	}
 }
 #HlavickaP2_TextOutputOperator {
@@ -367,120 +314,64 @@
 #HlavickaP2_TextOutputOperator {
 	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	@include elemTop(62);
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	@include elemLeft(8);
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	@include elemAutoWidth(1350);
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	@include elemAutoHeight(35);
 }
-#HlavickaP2_TextOutputWarnings {
-		z-index: 12;
+#HlavickaP2_TextOut_Warnings {
+		z-index: 10;
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 		border-width: 4px;
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	@include border-radius(4px);
 }
-#HlavickaP2_TextOutputWarnings {
-		background-color: rgba(0, 255, 0, 1);
-}
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 		border-color: rgba(153, 153, 153, 1);
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	&:before{
 		border-color: rgba(153, 153, 153, 1);
 	}
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	&:after{
 		border-color: rgba(153, 153, 153, 1);
 	}
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 		border-style: ridge;
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	&:before{
 		border-style: ridge;
 	}
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	&:after{
 		border-style: ridge;
 	}
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	& span{
 		color: rgba(0, 0, 0, 1);
 	}
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	@include text-alignment-all('center');
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 		font-size: 20px;
 }
-#HlavickaP2_TextOutputWarnings {
+#HlavickaP2_TextOut_Warnings {
 	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 0));
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-	@include elemTop(6);
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-	@include elemLeft(890);
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-	@include elemAutoWidth(150);
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-	@include elemAutoHeight(50);
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-		z-index: 13;
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-	&:not(.disabled):not(.active):not(.checked) span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-	@include text-alignment(right);
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#HlavickaP2_ButtonPrednePraveDvere {
-	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#HlavickaP2_ImageListPrednePraveDvere {
-	@include elemTop(16);
-}
-#HlavickaP2_ImageListPrednePraveDvere {
-	@include elemLeft(895);
-}
-#HlavickaP2_ImageListPrednePraveDvere {
-	@include elemWidth(30);
-}
-#HlavickaP2_ImageListPrednePraveDvere {
-	@include elemHeight(30);
-}
-#HlavickaP2_ImageListPrednePraveDvere {
-		z-index: 14;
 }

@@ -85,7 +85,11 @@
 }
 
 #AreaPageManualP2_ZakladanieTesnenia_Image1 {
-  background-color: oldlace;
+  background-color: gainsboro;
+}
+
+#AreaPageManualP2_ZakladanieTesnenia_Image1 {
+  border-style: solid;
 }
 
 #AreaPageManualP2_ZakladanieTesnenia_GroupBox_ZdvihZakladania {

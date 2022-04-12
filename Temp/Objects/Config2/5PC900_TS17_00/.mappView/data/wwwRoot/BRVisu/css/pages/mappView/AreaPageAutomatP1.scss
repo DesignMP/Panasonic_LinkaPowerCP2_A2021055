@@ -558,10 +558,13 @@
 		z-index: 3;
 }
 #AreaPageAutomatP1_Image2 {
-		background-color: rgba(255, 255, 255, 1);
+		background-color: rgba(224, 224, 224, 1);
 }
 #AreaPageAutomatP1_Image2 {
 		border-style: solid;
+}
+#AreaPageAutomatP1_Image2 {
+		border-width: 2px;
 }
 #AreaPageAutomatP1_GroupBox7 {
 	@include elemTop(265);
@@ -1045,7 +1048,7 @@
 	}
 }
 #AreaPageAutomatP1_ToggleButton_TestovaciKus {
-	@include elemTop(87);
+	@include elemTop(102);
 }
 #AreaPageAutomatP1_ToggleButton_TestovaciKus {
 	@include elemLeft(9);
@@ -1108,7 +1111,7 @@
 	}
 }
 #AreaPageAutomatP1_ToggleButton_Revork {
-	@include elemTop(197);
+	@include elemTop(195);
 }
 #AreaPageAutomatP1_ToggleButton_Revork {
 	@include elemLeft(9);
@@ -1171,7 +1174,7 @@
 	}
 }
 #AreaPageAutomatP1_ToggleButton_VyprazdnenieLinky {
-	@include elemTop(416);
+	@include elemTop(399);
 }
 #AreaPageAutomatP1_ToggleButton_VyprazdnenieLinky {
 	@include elemLeft(1128);

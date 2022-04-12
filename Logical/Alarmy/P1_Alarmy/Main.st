@@ -119,21 +119,13 @@ PROGRAM _CYCLIC
 	
 	
 	
-    //***********************************Príznak pracovisko 1 stav PORUCHA*****************************************//
-   	
-    FOR a:=100 TO 199 BY 1 DO
-        P1_Alarmy[a];
-        IF P1_Alarmy[a] = TRUE THEN
-            P1_Pracovisko.STAV.PORUCHA:= TRUE;
-        END_IF	
-    END_FOR
     
     
     
     
-    //**********************************Porucha tlaku vzduchu*********************************************************//
-    IF CasKontroly_TlakVzduchu.Q THEN
-        P1_Alarmy[124]:= TRUE;
+	//**********************************Porucha tlaku vzduchu*********************************************************//
+	IF CasKontroly_TlakVzduchu.Q THEN
+		P1_Alarmy[124]:= TRUE;
         P1_PoruchaST1:= TRUE;
         P1_PoruchaST2:= TRUE;
     END_IF    
@@ -874,27 +866,17 @@ PROGRAM _CYCLIC
     END_IF	
 	
 	
-    //********************************Blikanie tlaèítka Alarmy*******************************************************//
-    IF P1_Pracovisko.STAV.PORUCHA AND P1_Vizu.ActualPage <> 'PageAlarm' THEN
-        IF Blikac500ms THEN
-            P1_AlarmyVizu.FarbaTlacitka_Alarmy:= "Button_Red";
-        ELSE	
-            P1_AlarmyVizu.FarbaTlacitka_Alarmy:= "default";
-        END_IF
-    ELSE
-        P1_AlarmyVizu.FarbaTlacitka_Alarmy:= "default";
-    END_IF	
+  
 	
 	
 	
-	
-    //*************************************Potvrdenie alarmov*********************************************************//
-    IF P1_AlarmyVizu.PotvrdAlarmy THEN
-        brsmemset(ADR(P1_Alarmy),0,SIZEOF(P1_Alarmy));
-        P1_Pracovisko.STAV.PORUCHA:= FALSE;
-        P1_PoruchaST1:= FALSE;
-        P1_PoruchaST2:= FALSE;
-        IF P1_Vytah.ServoZdvihuVytahu_M31.STATUS.ERROR AND P1_Vytah.ServoZdvihuVytahu_M31.STATUS.ReadyToPower_ON THEN
+	//*************************************Potvrdenie alarmov*********************************************************//
+	IF P1_AlarmyVizu.PotvrdAlarmy THEN
+		brsmemset(ADR(P1_Alarmy),0,SIZEOF(P1_Alarmy));
+		P1_Pracovisko.STAV.PORUCHA:= FALSE;
+		P1_PoruchaST1:= FALSE;
+		P1_PoruchaST2:= FALSE;
+		IF P1_Vytah.ServoZdvihuVytahu_M31.STATUS.ERROR AND P1_Vytah.ServoZdvihuVytahu_M31.STATUS.ReadyToPower_ON THEN
             P1_Vytah.ServoZdvihuVytahu_M31.CMD.ErrorRESET:= TRUE;
         END_IF    
         IF P1_Srobovanie.ServoManipulOsX_M20.STATUS.ERROR AND P1_Srobovanie.ServoManipulOsX_M20.STATUS.ReadyToPower_ON THEN

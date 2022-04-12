@@ -93,47 +93,13 @@
   box-shadow: 2px 2px 15px black;
 }
 
-#AreaPageSetupP1_page1_GroupBox5 {
+#AreaPageSetupP1_page1_ToggleSwitch_Kamery_ON_OFF {
   top: 100px;
   position: absolute;
 }
 
-#AreaPageSetupP1_page1_GroupBox5 {
-  left: 386px;
-  position: absolute;
-}
-
-#AreaPageSetupP1_page1_GroupBox5 {
-  width: 595px;
-}
-
-#AreaPageSetupP1_page1_GroupBox5 {
-  height: 440px;
-}
-
-#AreaPageSetupP1_page1_GroupBox5 {
-  z-index: 2;
-}
-
-#AreaPageSetupP1_page1_GroupBox5 {
-  background-color: oldlace;
-}
-
-#AreaPageSetupP1_page1_GroupBox5 > .header span {
-  color: black;
-}
-
-#AreaPageSetupP1_page1_GroupBox5 {
-  box-shadow: 4px 4px 14px black;
-}
-
 #AreaPageSetupP1_page1_ToggleSwitch_Kamery_ON_OFF {
-  top: 23px;
-  position: absolute;
-}
-
-#AreaPageSetupP1_page1_ToggleSwitch_Kamery_ON_OFF {
-  left: 122px;
+  left: 508px;
   position: absolute;
 }
 
@@ -146,7 +112,7 @@
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_Kamery_ON_OFF {
-  z-index: 0;
+  z-index: 2;
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_Kamery_ON_OFF:not(.disabled):not(.checked) .wrapper .before {
@@ -178,12 +144,12 @@
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_FTPkomunikacia_ON_OFF {
-  top: 120px;
+  top: 202px;
   position: absolute;
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_FTPkomunikacia_ON_OFF {
-  left: 122px;
+  left: 508px;
   position: absolute;
 }
 
@@ -196,7 +162,7 @@
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_FTPkomunikacia_ON_OFF {
-  z-index: 1;
+  z-index: 3;
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_FTPkomunikacia_ON_OFF:not(.disabled):not(.checked) .wrapper .before {
@@ -228,12 +194,12 @@
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_Panatrace_ON_OFF {
-  top: 216px;
+  top: 303px;
   position: absolute;
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_Panatrace_ON_OFF {
-  left: 122px;
+  left: 508px;
   position: absolute;
 }
 
@@ -246,7 +212,7 @@
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_Panatrace_ON_OFF {
-  z-index: 2;
+  z-index: 4;
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_Panatrace_ON_OFF:not(.disabled):not(.checked) .wrapper .before {
@@ -278,12 +244,12 @@
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_VysledkaSkrutkovania_ON_OFF {
-  top: 313px;
+  top: 405px;
   position: absolute;
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_VysledkaSkrutkovania_ON_OFF {
-  left: 122px;
+  left: 508px;
   position: absolute;
 }
 
@@ -296,7 +262,7 @@
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_VysledkaSkrutkovania_ON_OFF {
-  z-index: 3;
+  z-index: 5;
 }
 
 #AreaPageSetupP1_page1_ToggleSwitch_VysledkaSkrutkovania_ON_OFF:not(.disabled):not(.checked) .wrapper .before {
