@@ -15,18 +15,18 @@
 		z-index: 0;
 }
 #AreaHlasenie14_ST3_GroupBox1 {
-		border-width: 4px;
+		border-width: 6px;
 }
 #AreaHlasenie14_ST3_GroupBox1 {
 	> .header{
-		border-width: 4px;
+		border-width: 6px;
 	}
 }
 #AreaHlasenie14_ST3_GroupBox1 {
 	@include border-radius(0px);
 }
 #AreaHlasenie14_ST3_GroupBox1 {
-		background-color: rgba(255, 192, 128, 1);
+		background-color: rgba(135, 206, 235, 1);
 }
 #AreaHlasenie14_ST3_Image1 {
 	@include elemTop(10);
@@ -42,6 +42,12 @@
 }
 #AreaHlasenie14_ST3_Image1 {
 		z-index: 0;
+}
+#AreaHlasenie14_ST3_Image1 {
+	@include border-radius(50px);
+}
+#AreaHlasenie14_ST3_Image1 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }
 #AreaHlasenie14_ST3_Label1 {
 	@include elemTop(106);
@@ -73,13 +79,13 @@
 	@include font-weight-bold(true);
 }
 #AreaHlasenie14_ST3_Button_OznacPaletkuNG {
-	@include elemTop(216);
+	@include elemTop(14);
 }
 #AreaHlasenie14_ST3_Button_OznacPaletkuNG {
-	@include elemLeft(161);
+	@include elemLeft(324);
 }
 #AreaHlasenie14_ST3_Button_OznacPaletkuNG {
-	@include elemAutoWidth(170);
+	@include elemAutoWidth(150);
 }
 #AreaHlasenie14_ST3_Button_OznacPaletkuNG {
 	@include elemAutoHeight(45);

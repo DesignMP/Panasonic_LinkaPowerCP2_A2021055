@@ -31,7 +31,8 @@ FUNCTION_BLOCK PickAndPlace
 	Internal.CasVypnTriediacehoVzduchu();
 	
 	//*****************************************Vypnutie vibrolišty a zásobníka********************************************************//
-	IF IN.ZaplnenieVibrolisty_MIN AND
+	IF OUT.VibropohonListy_RUN AND
+		IN.ZaplnenieVibrolisty_MIN AND
 		IN.ZaplnenieVibrolisty_MAX AND
 		IN.ZaplnenieListyZasobnika AND
 		IN.PodavacOtoceny_VYSTUP AND
@@ -137,6 +138,7 @@ FUNCTION_BLOCK PickAndPlace
 				Internal.IdleTime_500ms.IN:= FALSE;
 				Step:= 20;
 			ELSE
+				Internal.IdleTime_1s.IN:= FALSE;
 				Internal.IdleTime_200ms.IN:= FALSE;
 				Step:= 30;
 			END_IF

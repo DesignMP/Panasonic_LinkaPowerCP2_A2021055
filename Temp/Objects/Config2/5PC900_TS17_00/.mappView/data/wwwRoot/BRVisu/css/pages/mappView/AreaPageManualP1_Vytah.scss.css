@@ -145,36 +145,6 @@
   font-weight: bold;
 }
 
-#AreaPageManualP1_Vytah_ImageList19 {
-  top: 27px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_ImageList19 {
-  left: 171px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_ImageList19 {
-  width: 25px;
-}
-
-#AreaPageManualP1_Vytah_ImageList19 {
-  height: 25px;
-}
-
-#AreaPageManualP1_Vytah_ImageList19 {
-  z-index: 1;
-}
-
-#AreaPageManualP1_Vytah_ImageList19 {
-  border-style: none;
-}
-
-#AreaPageManualP1_Vytah_ImageList19 {
-  border-width: 0px;
-}
-
 #AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD {
   top: 145px;
   position: absolute;
@@ -194,7 +164,7 @@
 }
 
 #AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD {
-  z-index: 2;
+  z-index: 1;
 }
 
 #AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVZAD {
@@ -221,7 +191,7 @@
 }
 
 #AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVPRED {
-  z-index: 3;
+  z-index: 2;
 }
 
 #AreaPageManualP1_Vytah_MomentaryPushButton_DopravnikVPRED {
@@ -268,7 +238,7 @@
 }
 
 #AreaPageManualP1_Vytah_Label17 {
-  z-index: 4;
+  z-index: 3;
 }
 
 #AreaPageManualP1_Vytah_Label17 {
@@ -338,7 +308,7 @@
 }
 
 #AreaPageManualP1_Vytah_NumericOutput4 {
-  z-index: 5;
+  z-index: 4;
 }
 
 #AreaPageManualP1_Vytah_NumericOutput4 {
@@ -364,7 +334,7 @@
 }
 
 #AreaPageManualP1_Vytah_NumericInput_7 {
-  z-index: 6;
+  z-index: 5;
 }
 
 #AreaPageManualP1_Vytah_NumericInput_7 input {
@@ -391,7 +361,7 @@
 }
 
 #AreaPageManualP1_Vytah_Button_PrecitajPaletku {
-  z-index: 7;
+  z-index: 6;
 }
 
 #AreaPageManualP1_Vytah_Button_PrecitajPaletku:not(.active):not(.checked) {
@@ -438,7 +408,7 @@
 }
 
 #AreaPageManualP1_Vytah_Button_PrecitajPaletku1 {
-  z-index: 8;
+  z-index: 7;
 }
 
 #AreaPageManualP1_Vytah_Button_PrecitajPaletku1:not(.active):not(.checked) {
@@ -464,6 +434,32 @@
 #AreaPageManualP1_Vytah_Button_PrecitajPaletku1 {
   justify-content: center;
   text-align: center;
+}
+
+#AreaPageManualP1_Vytah_ImageList9 {
+  top: 27px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList9 {
+  left: 171px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList9 {
+  width: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList9 {
+  height: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList9 {
+  z-index: 8;
+}
+
+#AreaPageManualP1_Vytah_ImageList9 {
+  border-width: 0px;
 }
 
 #AreaPageManualP1_Vytah_GroupBox2 {
@@ -703,38 +699,8 @@
   font-weight: bold;
 }
 
-#AreaPageManualP1_Vytah_ImageList15 {
-  top: 242px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_ImageList15 {
-  left: 171px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_ImageList15 {
-  width: 25px;
-}
-
-#AreaPageManualP1_Vytah_ImageList15 {
-  height: 25px;
-}
-
-#AreaPageManualP1_Vytah_ImageList15 {
-  z-index: 4;
-}
-
-#AreaPageManualP1_Vytah_ImageList15 {
-  border-style: none;
-}
-
-#AreaPageManualP1_Vytah_ImageList15 {
-  border-width: 0px;
-}
-
 #AreaPageManualP1_Vytah_Line3 {
-  z-index: 5;
+  z-index: 4;
 }
 
 #AreaPageManualP1_Vytah_Line3 line {
@@ -760,7 +726,7 @@
 }
 
 #AreaPageManualP1_Vytah_Label12 {
-  z-index: 6;
+  z-index: 5;
 }
 
 #AreaPageManualP1_Vytah_Label12 {
@@ -811,36 +777,6 @@
   font-weight: bold;
 }
 
-#AreaPageManualP1_Vytah_ImageList16 {
-  top: 295px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_ImageList16 {
-  left: 171px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_ImageList16 {
-  width: 25px;
-}
-
-#AreaPageManualP1_Vytah_ImageList16 {
-  height: 25px;
-}
-
-#AreaPageManualP1_Vytah_ImageList16 {
-  z-index: 7;
-}
-
-#AreaPageManualP1_Vytah_ImageList16 {
-  border-style: none;
-}
-
-#AreaPageManualP1_Vytah_ImageList16 {
-  border-width: 0px;
-}
-
 #AreaPageManualP1_Vytah_Label27 {
   top: 141px;
   position: absolute;
@@ -860,7 +796,7 @@
 }
 
 #AreaPageManualP1_Vytah_Label27 {
-  z-index: 8;
+  z-index: 6;
 }
 
 #AreaPageManualP1_Vytah_Label27 {
@@ -937,7 +873,7 @@
 }
 
 #AreaPageManualP1_Vytah_Label28 {
-  z-index: 9;
+  z-index: 7;
 }
 
 #AreaPageManualP1_Vytah_Label28 {
@@ -1014,7 +950,7 @@
 }
 
 #AreaPageManualP1_Vytah_Label16 {
-  z-index: 10;
+  z-index: 8;
 }
 
 #AreaPageManualP1_Vytah_Label16 {
@@ -1065,36 +1001,6 @@
   font-weight: bold;
 }
 
-#AreaPageManualP1_Vytah_ImageList6 {
-  top: 26px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_ImageList6 {
-  left: 381px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Vytah_ImageList6 {
-  width: 25px;
-}
-
-#AreaPageManualP1_Vytah_ImageList6 {
-  height: 25px;
-}
-
-#AreaPageManualP1_Vytah_ImageList6 {
-  z-index: 11;
-}
-
-#AreaPageManualP1_Vytah_ImageList6 {
-  border-style: none;
-}
-
-#AreaPageManualP1_Vytah_ImageList6 {
-  border-width: 0px;
-}
-
 #AreaPageManualP1_Vytah_NumericOutput2 {
   height: 30px;
 }
@@ -1114,7 +1020,7 @@
 }
 
 #AreaPageManualP1_Vytah_NumericOutput2 {
-  z-index: 12;
+  z-index: 9;
 }
 
 #AreaPageManualP1_Vytah_NumericOutput2 input {
@@ -1149,7 +1055,7 @@
 }
 
 #AreaPageManualP1_Vytah_NumericInput_6 {
-  z-index: 13;
+  z-index: 10;
 }
 
 #AreaPageManualP1_Vytah_NumericInput_6.active:not(.disabled) {
@@ -1167,6 +1073,180 @@
 #AreaPageManualP1_Vytah_NumericInput_6 input {
   justify-content: center;
   text-align: center;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  top: 338px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  left: 11px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  width: 195px;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  height: 45px;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  z-index: 11;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  border-width: 2px;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  background-color: silver;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Label13:before {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Label13:after {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  border-style: outset;
+}
+
+#AreaPageManualP1_Vytah_Label13:before {
+  border-style: outset;
+}
+
+#AreaPageManualP1_Vytah_Label13:after {
+  border-style: outset;
+}
+
+#AreaPageManualP1_Vytah_Label13 span {
+  color: black;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  font-size: 14px;
+}
+
+#AreaPageManualP1_Vytah_Label13 {
+  font-weight: bold;
+}
+
+#AreaPageManualP1_Vytah_ImageList5 {
+  top: 243px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList5 {
+  left: 174px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList5 {
+  width: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList5 {
+  height: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList5 {
+  z-index: 12;
+}
+
+#AreaPageManualP1_Vytah_ImageList5 {
+  border-width: 0px;
+}
+
+#AreaPageManualP1_Vytah_ImageList6 {
+  top: 27px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList6 {
+  left: 384px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList6 {
+  width: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList6 {
+  height: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList6 {
+  z-index: 13;
+}
+
+#AreaPageManualP1_Vytah_ImageList6 {
+  border-width: 0px;
+}
+
+#AreaPageManualP1_Vytah_ImageList7 {
+  top: 296px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList7 {
+  left: 174px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList7 {
+  width: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList7 {
+  height: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList7 {
+  z-index: 14;
+}
+
+#AreaPageManualP1_Vytah_ImageList7 {
+  border-width: 0px;
+}
+
+#AreaPageManualP1_Vytah_ImageList8 {
+  top: 349px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList8 {
+  left: 174px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList8 {
+  width: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList8 {
+  height: 24px;
+}
+
+#AreaPageManualP1_Vytah_ImageList8 {
+  z-index: 15;
+}
+
+#AreaPageManualP1_Vytah_ImageList8 {
+  border-width: 0px;
 }
 
 #AreaPageManualP1_Vytah_GroupBox_OvladanieOsvetleniaKamier {

@@ -249,6 +249,21 @@ PROGRAM _CYCLIC
 	END_IF  
 	
 	
+	//Tlaèítko výtah èítanie paletky//
+	IF P1_Vytah.RFID_hlava.PritomnostPaletky THEN
+		P1_Vizu.Vytah_CitaniePaletky_ENABLE:= TRUE;
+	ELSE	
+		P1_Vizu.Vytah_CitaniePaletky_ENABLE:= FALSE;
+	END_IF	
+	
+	//Tlaèítko výah zápis paletky//
+	IF P1_Vytah.RFID_hlava.PritomnostPaletky THEN
+		P1_Vizu.Vytah_ZapisPaletky_ENABLE:= TRUE;
+	ELSE
+		P1_Vizu.Vytah_ZapisPaletky_ENABLE:= FALSE;
+	END_IF	
+	
+	
 	//**************************Zamknutie editácie parametrov*********************************//
 	IF P1_UrovenPrihlasenehoUzivatela >= 20 THEN
 		P1_Vizu.EditaciaParametrov_ENABLE:= TRUE;

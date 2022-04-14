@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageManualP1_Vytah_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.RFID_hlava.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="ImageList9" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.RFID_hlava.ZadaneCisloPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="NumericInput_7" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.CMD.RR_ChodDopravnika_VZAD" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="MomentaryPushButton_DopravnikVZAD" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.CMD.RR_ChodDopravnika_VPRED" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="MomentaryPushButton_DopravnikVPRED" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Pracovisko.OUT.Osvetlenie_CAM4_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="ToggleSwitch_OsvetlenieKameryKAM4" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.ServoZdvihuVytahu.Status.Ready" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="ImageList6" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.PAR.Zdvih_JoggRychlost" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="NumericInput_6" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.ServoZdvihuVytahu.Status.ActPosition" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="NumericOutput2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.IN.PrechodDopravnika" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="ImageList8" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.IN.Zdvih_SpodnyLimSnimac" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="ImageList7" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.IN.Zdvih_HornyLimSnimac" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="ImageList5" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.CMD.RR_ZdvihVytahu_DOLE" attribute="value" samplingRate="fast" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="MomentaryPushButton_JoggZdvihuDOLE" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.CMD.RR_ZdvihVytahu_HORE" attribute="value" samplingRate="fast" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="MomentaryPushButton_JoggZdvihuHORE" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.PAR.RR_PrecitaneCisloPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="NumericOutput4" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.Vytah_ZapisPaletky_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="Button_PrecitajPaletku1" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.Vytah_CitaniePaletky_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="Button_PrecitajPaletku" attribute="enable" />
+</Binding>
+</Bindings>
+</BindingsSet>

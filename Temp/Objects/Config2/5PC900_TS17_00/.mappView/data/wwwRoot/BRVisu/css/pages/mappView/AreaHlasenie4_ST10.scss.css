@@ -21,11 +21,11 @@
 }
 
 #AreaHlasenie4_ST10_GroupBox1 {
-  border-width: 4px;
+  border-width: 6px;
 }
 
 #AreaHlasenie4_ST10_GroupBox1 > .header {
-  border-width: 4px;
+  border-width: 6px;
 }
 
 #AreaHlasenie4_ST10_GroupBox1 {
@@ -56,6 +56,14 @@
 
 #AreaHlasenie4_ST10_Image1 {
   z-index: 0;
+}
+
+#AreaHlasenie4_ST10_Image1 {
+  border-radius: 50px;
+}
+
+#AreaHlasenie4_ST10_Image1 {
+  box-shadow: 2px 2px 10px black;
 }
 
 #AreaHlasenie4_ST10_Label1 {

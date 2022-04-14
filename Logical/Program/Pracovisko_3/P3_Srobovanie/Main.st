@@ -806,7 +806,7 @@ PROGRAM _CYCLIC
 		129:
 			SC_P3_Srobovanie.StepName:='129 - Automaticky Rezim - model 45F, cakam na ukoncenie skrutkovania skrutkovacky K40 a M5';
 			SC_P3_Srobovanie.IdleTime.PT:= T#30s;
-			SC_P3_Srobovanie.AlarmTime.PT:= T#10s;
+			SC_P3_Srobovanie.AlarmTime.PT:= T#30s;
 			SC_P3_Srobovanie.IdleTime.IN:= TRUE;
 			SC_P3_Srobovanie.AlarmTime.IN:= TRUE;
 			

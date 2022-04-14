@@ -227,7 +227,7 @@ PROGRAM _CYCLIC
 				P4_ZdvizkaZaFunkcTestB.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			END_IF	
 			
-			IF P4_ZdvizkaZaFunkcTestA.KoniecCyklu AND NOT P3_LeakageTestA.Automat THEN
+			IF P4_ZdvizkaZaFunkcTestA.KoniecCyklu AND NOT P4_FunkcnyTestA.Automat THEN
 				SC_P4_ZdvizkaZaFunkcTestA.ResetStep:= TRUE;
 				SC_P4_ZdvizkaZaFunkcTestA.Step:= 0;
 			ELSIF SC_P4_ZdvizkaZaFunkcTestA.IdleTime.Q THEN

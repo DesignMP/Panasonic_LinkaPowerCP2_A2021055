@@ -21,11 +21,11 @@
 }
 
 #AreaHlasenie2_ST8_GroupBox1 {
-  border-width: 4px;
+  border-width: 6px;
 }
 
 #AreaHlasenie2_ST8_GroupBox1 > .header {
-  border-width: 4px;
+  border-width: 6px;
 }
 
 #AreaHlasenie2_ST8_GroupBox1 {
@@ -152,6 +152,10 @@
 
 #AreaHlasenie2_ST8_Label2 {
   font-weight: bold;
+}
+
+#AreaHlasenie2_ST8_Label2 {
+  box-shadow: 2px 2px 10px black;
 }
 
 #AreaHlasenie2_ST8_Button_OpatovnyDopyt {

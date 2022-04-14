@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageManualP1_Dopravniky_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Dopravniky.OUT.DopravnikBunky_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ToggleSwitch_HornyDopravnik" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Dopravniky.OUT.VratnyDopravnik_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ToggleSwitch_SpodnyDopravnik" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_StoperSrobovania.OUT.ZasunStoper" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ToggleSwitch_ZasunStoperPoz1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_StoperSrobovania.IN.Centrovanie_VYSUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ImageList7" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_StoperSrobovania.RFID_hlava.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ImageList2" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_StoperSrobovania.CMD.RR_VysunCentrovanie" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ToggleSwitch_ZasunStoperPoz4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_StoperSrobovania.IN.Centrovanie_ZASUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ImageList6" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_AkumulacnyStoper.OUT.ZasunStoper" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ToggleSwitch_ZasunStoperPoz2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_AkumulacnyStoper.IN.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ImageList3" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_SpodnyStoper.IN.ZaplnenieDopravnika" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ImageList5" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_SpodnyStoper.IN.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ImageList4" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_SpodnyStoper.OUT.ZasunStoper" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Dopravniky" widgetRefId="ToggleSwitch_ZasunStoperPoz3" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

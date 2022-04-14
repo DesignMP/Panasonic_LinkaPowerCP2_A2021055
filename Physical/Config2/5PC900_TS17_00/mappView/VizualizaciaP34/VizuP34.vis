@@ -38,6 +38,8 @@
     <BindingsSet refId="AreaPageAutomatP34_binding" />
     <BindingsSet refId="AreaPageAlarmyP34_binding" />
   	<BindingsSet refId="AreaHlasenie2_ST9_binding" />
+	<BindingsSet refId="AreaPageManualP4_Etiketovanie_binding" />	
+		
 		
 		
   </BindingsSets>
@@ -46,7 +48,10 @@
     <EventBindingsSet refId="PataP34_eventbinding" />
     <EventBindingsSet refId="AreaPageAutomatP34_eventbinding" />
     <EventBindingsSet refId="AreaPageAlarmyP34_eventbinding" />
-    
+    <EventBindingsSet refId="AreaPageManualP4_Etiketovanie_eventbinding" />
+		
+		
+		
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="Hlasenie1_ST7" />

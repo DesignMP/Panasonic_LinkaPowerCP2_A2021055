@@ -72,6 +72,8 @@
           <Variable Name="TL_ZamkniZadnyZamok" />
           <Variable Name="Srobovanie_OvlManipOsX_ENABLE" />
           <Variable Name="Srobovanie_OvlManipOsY_ENABLE" />
+          <Variable Name="Vytah_CitaniePaletky_ENABLE" />
+          <Variable Name="Vytah_ZapisPaletky_ENABLE" />
         </Variable>
         <Variable Name="P1_Pracovisko">
           <Variable Name="Manual" />
@@ -81,6 +83,7 @@
           <Variable Name="OUT">
             <Variable Name="PredneDvere_ZAMKNI" />
             <Variable Name="ZadneDvere_ZAMKNI" />
+            <Variable Name="Osvetlenie_CAM4_ON" />
           </Variable>
         </Variable>
         <Variable Name="Vizu">
@@ -491,6 +494,82 @@
         <Variable Name="P4_Etiketovacka">
           <Variable Name="STAV">
             <Variable Name="Etiketa_ZhodaQRkodu_OK" />
+            <Variable Name="RR_SekvenciaEtiketovania_BUSY" />
+          </Variable>
+          <Variable Name="CMD">
+            <Variable Name="RR_ZdvihAplikatora_HORE" />
+            <Variable Name="RR_ZdvihAplikatora_DOLE" />
+            <Variable Name="RR_NalepEtiketu" />
+          </Variable>
+        </Variable>
+        <Variable Name="P1_Dopravniky">
+          <Variable Name="OUT">
+            <Variable Name="DopravnikBunky_ON" />
+            <Variable Name="VratnyDopravnik_ON" />
+          </Variable>
+        </Variable>
+        <Variable Name="P1_SpodnyStoper">
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="ZaplnenieDopravnika" />
+          </Variable>
+        </Variable>
+        <Variable Name="P1_AkumulacnyStoper">
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+          </Variable>
+        </Variable>
+        <Variable Name="P1_StoperSrobovania">
+          <Variable Name="IN">
+            <Variable Name="Centrovanie_VYSUNUTE" />
+            <Variable Name="Centrovanie_ZASUNUTE" />
+          </Variable>
+          <Variable Name="RFID_hlava">
+            <Variable Name="PritomnostPaletky" />
+          </Variable>
+          <Variable Name="CMD">
+            <Variable Name="RR_VysunCentrovanie" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+          </Variable>
+        </Variable>
+        <Variable Name="P1_Vytah">
+          <Variable Name="CMD">
+            <Variable Name="RR_ChodDopravnika_VPRED" />
+            <Variable Name="RR_ChodDopravnika_VZAD" />
+            <Variable Name="RR_ZdvihVytahu_HORE" />
+            <Variable Name="RR_ZdvihVytahu_DOLE" />
+          </Variable>
+          <Variable Name="RFID_hlava">
+            <Variable Name="PrecitajChipRFID" />
+            <Variable Name="ZapisNaChipRFID" />
+            <Variable Name="ZadaneCisloPaletky" />
+            <Variable Name="PritomnostPaletky" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="Zdvih_HornyLimSnimac" />
+            <Variable Name="Zdvih_SpodnyLimSnimac" />
+            <Variable Name="PrechodDopravnika" />
+          </Variable>
+          <Variable Name="ServoZdvihuVytahu">
+            <Variable Name="Command">
+              <Variable Name="ErrReset" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="Ready" />
+              <Variable Name="ActPosition" />
+            </Variable>
+          </Variable>
+          <Variable Name="PAR">
+            <Variable Name="Zdvih_JoggRychlost" />
+            <Variable Name="RR_PrecitaneCisloPaletky" />
           </Variable>
         </Variable>
       </GlobalVariables>

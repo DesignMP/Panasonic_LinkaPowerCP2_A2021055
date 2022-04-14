@@ -46,6 +46,7 @@ PROGRAM _CYCLIC
 			P1_StoperSrobovania.Manual:= FALSE;
 			P1_StoperSrobovania.STAV.PoINIT:= FALSE;
 			P1_StoperSrobovania.OUT.ZasunStoper:= FALSE;
+			P1_StoperSrobovania.CMD.RR_VysunCentrovanie:= FALSE;
 			P1_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 			P1_Srobovanie.COM_IN.Model45F_ZaskrutkujLavu_K30:= FALSE;
 			P1_Srobovanie.COM_IN.Model45F_ZaskrutkujPravu_K30:= FALSE;
@@ -3240,7 +3241,14 @@ PROGRAM _CYCLIC
 			SC_P1_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
 		
-		
+		//Ovládanie zdvižky//
+			IF P1_StoperSrobovania.CMD.RR_VysunCentrovanie THEN
+				P1_StoperSrobovania.OUT.Centrovanie_ZASUN:= FALSE;
+				P1_StoperSrobovania.OUT.Centrovanie_VYSUN:= TRUE;
+			ELSE 
+				P1_StoperSrobovania.OUT.Centrovanie_ZASUN:= TRUE;
+				P1_StoperSrobovania.OUT.Centrovanie_VYSUN:= FALSE;
+			END_IF	
 		
 		
 	

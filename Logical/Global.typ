@@ -64,6 +64,8 @@ TYPE
 		EditaciaParametrov_ENABLE : BOOL;
 		RR_CistenieSkrutkovaciek_ENABLE : BOOL;
 		RR_PozicieSkrutiek_ENABLE : BOOL;
+		Vytah_CitaniePaletky_ENABLE : BOOL;
+		Vytah_ZapisPaletky_ENABLE : BOOL;
 		Warnings_Farba : WSTRING[80];
 		Warnings_Index : USINT;
 		IndexStavu_Dopravnik : USINT;
@@ -759,6 +761,7 @@ TYPE
 		StaryQRkod_PowerCP : STRING[30];
 		StaryQRkod_DPS_4F5F : STRING[32];
 		Zdvih_JoggRychlost : REAL;
+		RR_PrecitaneCisloPaletky : USINT;
 	END_STRUCT;
 	P1_Vytah_STAV_typ : 	STRUCT 
 		PrebiehaVyvezeniePaletky : BOOL;
@@ -842,7 +845,7 @@ TYPE
 		KoniecCyklu : BOOL;
 	END_STRUCT;
 	P1_StoperSrobovania_CMD_typ : 	STRUCT 
-		New_Member : USINT;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P1_StoperSrobovania_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*IS1_1*)
@@ -3070,6 +3073,7 @@ TYPE
 		PrebiehaVyvezeniePaletky : BOOL;
 		PowerCP_ZhodaQRkodu_OK : BOOL;
 		Etiketa_ZhodaQRkodu_OK : BOOL;
+		RR_SekvenciaEtiketovania_BUSY : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -3546,7 +3550,7 @@ END_TYPE
 (****************Kamerove kontroly**************************)
 
 TYPE
-	CAM1_typ : 	STRUCT  (*P2_ST1_ZaklTesnenia - Kontrola tesnenia a QR kódu Power CP*)
+	CAM1_typ : 	STRUCT  (*P2_ST1_ZaklTesnenia - Kontrola tesnenia a QR kódu Power CP //CAM4//*)
 		CMD : CAM1_Commands_typ;
 		PAR : CAM1_Parametre_typ;
 		STAV : CAM1_Status_typ;
@@ -3573,12 +3577,9 @@ TYPE
 		Command_AKCEPTOVANY : BOOL;
 	END_STRUCT;
 	CAM1_Results_typ : 	STRUCT 
-		PritomnTesnenia_OK : BOOL;
 		ZalozenieTesnenia_OK : BOOL;
-		PritomnPowerCP_5H5F : BOOL;
-		PritomnPowerCP_4F : BOOL;
 	END_STRUCT;
-	CAM2_typ : 	STRUCT  (*P1_ST1_Vytah - kontrola kusov na paletke*)
+	CAM2_typ : 	STRUCT  (*P1_ST1_Vytah - kontrola kusov na paletke //CAM1//*)
 		CMD : CAM2_Commands_typ;
 		PAR : CAM2_Parametre_typ;
 		STAV : CAM2_Status_typ;
@@ -3615,23 +3616,16 @@ TYPE
 		Pritom_PowerCP_5F : BOOL;
 		Pritom_PowerCP_4F : BOOL;
 		Pritom_PowerCP_5H : BOOL;
-		Pritom_Busbar_SpodnyLavy_5H : BOOL;
-		Pritom_Busbar_SpodnyPravy_5H : BOOL;
-		Pritom_KrytuBusbarov_5H : BOOL;
-		Pritom_DPS_4F5F : BOOL;
+		Pritomn_Skeletonu_5H : BOOL;
+		Pritomn_Skeletonu_4F5F : BOOL;
+		Pritom_Busbarov_Spodne_5H : BOOL;
 		Pritom_Busbaru_Spodny_5F : BOOL;
 		Pritom_Busbaru_Spodny_4F : BOOL;
-		Pritom_Foamu_4F5F : BOOL;
-		Pritomn_Skeletonu_4F5F : BOOL;
-		Pritomn_Skeletonu_5H : BOOL;
-		Nepritomn_TopCoveru_4F : BOOL;
-		Nepritomn_TopCoveru_5F5H : BOOL;
-		Pritomn_LavyMVcase : BOOL;
-		Pritomn_PravyMVcase : BOOL;
-		OsadeniePlastuDPS_OK : BOOL;
-		KompletSpodneBusbary_OK : BOOL;
+		Pritom_DPS_4F5F : BOOL;
+		Pritom_Foamu_Lavy_4F5F : BOOL;
+		Pritom_Foamu_Pravy_4F5F : BOOL;
 	END_STRUCT;
-	CAM3_typ : 	STRUCT  (*P1_ST1_Vytah - kontrola QR kódu DPS*)
+	CAM3_typ : 	STRUCT  (*P1_ST1_Vytah - kontrola QR kódu DPS //Smart kamera//*)
 		CMD : CAM3_Commands_typ;
 		PAR : CAM3_Parametre_typ;
 		STAV : CAM3_Status_typ;
@@ -3666,7 +3660,7 @@ TYPE
 		CitanieQRkodu_DPS_OK : BOOL;
 		PrecitanyQRkod_DPS : STRING[32];
 	END_STRUCT;
-	CAM4_typ : 	STRUCT  (*P1_ST1_Vytah - kontrola klipov krytu DPS*)
+	CAM4_typ : 	STRUCT  (*P1_ST1_Vytah - kontrola klipov krytu DPS //CAM2//*)
 		CMD : CAM4_Commands_typ;
 		PAR : CAM4_Parametre_typ;
 		STAV : CAM4_Status_typ;

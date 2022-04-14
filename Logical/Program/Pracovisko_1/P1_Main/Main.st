@@ -287,7 +287,7 @@ PROGRAM _CYCLIC
 	
 		
 	//*****************************Zapnutie osvetlenia pracoviska*********************************************************//
-	P1_Pracovisko.OUT.OsvetlenieBunky_ON:= FALSE;
+	P1_Pracovisko.OUT.OsvetlenieBunky_ON:= TRUE;
 	P1_Vytah.OUT.OsvetlenieVytahu_ON:= TRUE;
 	P1_Pracovisko.OUT.Osvetlenie_CAM5_ON:= TRUE;
 	P1_Pracovisko.OUT.Osvetlenie_CAM6_ON:= TRUE;

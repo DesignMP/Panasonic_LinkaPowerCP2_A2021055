@@ -15,10 +15,10 @@ ACTION ProfinetKomunikaciaKAM1:
     CAM1.STAV.Command_ERROR:= CAM1.Profinet_PLC_INPUTS[0].5;
 	
 	//Výsledky kamery//
-	CAM1.RESULT.ZalozenieTesnenia_OK:= CAM1.Profinet_PLC_INPUTS[2].0;
-	CAM1.RESULT.PritomnTesnenia_OK:= CAM1.Profinet_PLC_INPUTS[2].1;
-	CAM1.RESULT.PritomnPowerCP_5H5F:= CAM1.Profinet_PLC_INPUTS[2].2;
-	CAM1.RESULT.PritomnPowerCP_4F:= CAM1.Profinet_PLC_INPUTS[2].3;
+//	CAM1.RESULT.ZalozenieTesnenia_OK:= CAM1.Profinet_PLC_INPUTS[2].0;
+//	CAM1.RESULT.PritomnTesnenia_OK:= CAM1.Profinet_PLC_INPUTS[2].1;
+//	CAM1.RESULT.PritomnPowerCP_5H5F:= CAM1.Profinet_PLC_INPUTS[2].2;
+//	CAM1.RESULT.PritomnPowerCP_4F:= CAM1.Profinet_PLC_INPUTS[2].3;
 	
 	///Stav výsledky READY//
 	IF EDGE(CAM1.STAV.SWITCH)THEN

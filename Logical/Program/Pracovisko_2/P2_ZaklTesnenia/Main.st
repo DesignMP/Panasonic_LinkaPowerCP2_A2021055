@@ -539,160 +539,160 @@ PROGRAM _CYCLIC
                        
             
             
-		131:
-			SC_P2_ZakladacTesnenia.StepName:='131 - Automaticky Rezim - cakam na opatovny triger kamery CAM1';
-			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#1s;
-			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
-            
-			IF SC_P2_ZakladacTesnenia.IdleTime.Q THEN
-				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-				SC_P2_ZakladacTesnenia.Step:= 130;
-			END_IF
-            
+//		131:
+//			SC_P2_ZakladacTesnenia.StepName:='131 - Automaticky Rezim - cakam na opatovny triger kamery CAM1';
+//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#1s;
+//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+//			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
+//            
+//			IF SC_P2_ZakladacTesnenia.IdleTime.Q THEN
+//				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//				SC_P2_ZakladacTesnenia.Step:= 130;
+//			END_IF
+//            
+//            
+//			
+//		133:
+//			SC_P2_ZakladacTesnenia.StepName:='133 - Automaticky Rezim - vysledok kamerovej kontroly pritomnosti tesnenia na Power CP';
+//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#500ms;
+//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+//			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
+//			
             
 			
-		133:
-			SC_P2_ZakladacTesnenia.StepName:='133 - Automaticky Rezim - vysledok kamerovej kontroly pritomnosti tesnenia na Power CP';
-			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#500ms;
-			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
-			
-            
-			
-			IF NOT CAM1.STAV.BUSY THEN
-				CAM1.CMD.Triger:= FALSE;
-				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					IF CAM1.RESULT.PritomnTesnenia_OK AND
-						CAM1.RESULT.PritomnPowerCP_4F THEN
-						CAM1.PAR.ResultFotky:= 'PASS';
-						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-						SC_P2_ZakladacTesnenia.Step:= 135; 
-					ELSE
-						CAM1.PAR.ResultFotky:= 'FAIL';
-						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-						SC_P2_ZakladacTesnenia.Step:= 135;
-					END_IF	
-				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					IF CAM1.RESULT.PritomnTesnenia_OK AND
-						CAM1.RESULT.PritomnPowerCP_5H5F THEN
-						CAM1.PAR.ResultFotky:= 'PASS';
-						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-						SC_P2_ZakladacTesnenia.Step:= 135;   
-					ELSE
-						CAM1.PAR.ResultFotky:= 'FAIL';
-						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-						SC_P2_ZakladacTesnenia.Step:= 135;
-					END_IF
-				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					IF CAM1.RESULT.PritomnTesnenia_OK AND
-						CAM1.RESULT.PritomnPowerCP_5H5F THEN    
-						CAM1.PAR.ResultFotky:= 'PASS';
-						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-						SC_P2_ZakladacTesnenia.Step:= 135;   
-					ELSE
-						CAM1.PAR.ResultFotky:= 'FAIL';
-						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-						SC_P2_ZakladacTesnenia.Step:= 135;
-					END_IF
-				END_IF	
-			END_IF
+//			IF NOT CAM1.STAV.BUSY THEN
+//				CAM1.CMD.Triger:= FALSE;
+//				IF Linka.PAR.ZvolenyModel = '4F' THEN
+//					IF CAM1.RESULT.PritomnTesnenia_OK AND
+//						CAM1.RESULT.PritomnPowerCP_4F THEN
+//						CAM1.PAR.ResultFotky:= 'PASS';
+//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//						SC_P2_ZakladacTesnenia.Step:= 135; 
+//					ELSE
+//						CAM1.PAR.ResultFotky:= 'FAIL';
+//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//						SC_P2_ZakladacTesnenia.Step:= 135;
+//					END_IF	
+//				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+//					IF CAM1.RESULT.PritomnTesnenia_OK AND
+//						CAM1.RESULT.PritomnPowerCP_5H5F THEN
+//						CAM1.PAR.ResultFotky:= 'PASS';
+//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//						SC_P2_ZakladacTesnenia.Step:= 135;   
+//					ELSE
+//						CAM1.PAR.ResultFotky:= 'FAIL';
+//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//						SC_P2_ZakladacTesnenia.Step:= 135;
+//					END_IF
+//				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
+//					IF CAM1.RESULT.PritomnTesnenia_OK AND
+//						CAM1.RESULT.PritomnPowerCP_5H5F THEN    
+//						CAM1.PAR.ResultFotky:= 'PASS';
+//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//						SC_P2_ZakladacTesnenia.Step:= 135;   
+//					ELSE
+//						CAM1.PAR.ResultFotky:= 'FAIL';
+//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//						SC_P2_ZakladacTesnenia.Step:= 135;
+//					END_IF
+//				END_IF	
+//			END_IF
 		
 		
-		135:
-			SC_P2_ZakladacTesnenia.StepName:='135 - Automaticky Rezim - rozhodnutie podla kamerovej kontroly '; 
-			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
-			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-			
-			IF CAM1.PAR.ResultFotky = 'PASS' THEN
-				IF CAM1.RESULT.ZalozenieTesnenia_OK THEN
-					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-					SC_P2_ZakladacTesnenia.Step:= 180;
-				ELSIF NOT CAM1.RESULT.ZalozenieTesnenia_OK THEN
-					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-					SC_P2_ZakladacTesnenia.Step:= 145;
-				END_IF	
-			ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
-				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-				SC_P2_ZakladacTesnenia.Step:= 140;
-			END_IF
-			
-		
-		140:
-			SC_P2_ZakladacTesnenia.StepName:='140 - Automaticky Rezim - zobrazenie hlasenia vloz tesnenie alebo Power CP';
-			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
-			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-			
-			P2_StoperZaklTesnenia.Banner.IN.CervenaLED_ON:= Blikac500ms;
-			P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= Blikac500ms;
-			
-			IF NOT SC_P2_ZakladacTesnenia.Switch1 THEN	
-				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					IF NOT CAM1.RESULT.PritomnTesnenia_OK THEN
-						P2_Vizu.ZobrazHL6_ST3:= TRUE;
-					ELSIF NOT CAM1.RESULT.PritomnPowerCP_4F THEN
-						P2_Vizu.ZobrazHL5_ST3:= TRUE;
-					END_IF
-				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					IF NOT CAM1.RESULT.PritomnTesnenia_OK THEN
-						P2_Vizu.ZobrazHL6_ST3:= TRUE;
-					ELSIF NOT CAM1.RESULT.PritomnPowerCP_5H5F THEN
-						P2_Vizu.ZobrazHL5_ST3:= TRUE;
-					END_IF   
-				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					IF NOT CAM1.RESULT.PritomnTesnenia_OK THEN
-						P2_Vizu.ZobrazHL6_ST3:= TRUE;
-					ELSIF NOT CAM1.RESULT.PritomnPowerCP_5H5F THEN
-						P2_Vizu.ZobrazHL5_ST3:= TRUE;
-					END_IF 
-				END_IF    
-				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
-			END_IF	
-				
-					
-			
-			IF EDGEPOS(Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE) THEN
-				CAM1.STAV.Results_READY:= FALSE;
-				P2_Vizu.ZobrazHL6_ST3:= FALSE;
-				P2_Vizu.ZobrazHL5_ST3:= FALSE;
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE; //Zhasnem banner//	
-				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-				SC_P2_ZakladacTesnenia.Step:= 145;
-			END_IF
-			
-		
-		145:
-			SC_P2_ZakladacTesnenia.StepName:='145 - Automaticky Rezim - vymazanie fotky kamery CAM1';
-			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
-			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-            
-			IF Linka.KOM_FTP_OFF THEN
-				IF CAM1.PAR.ResultFotky = 'PASS' THEN
-					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-					SC_P2_ZakladacTesnenia.Step:= 150;
-				ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
-					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-					SC_P2_ZakladacTesnenia.Step:= 105;
-				END_IF
-			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 THEN
-				FTP_CAM1.CMD.VymazFotku:= TRUE;
-				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
-			END_IF	
-			
-			IF FTP_CAM1.STATUS.KomunikaciaUkoncena THEN
-				FTP_CAM1.CMD.VymazFotku:= FALSE;
-				IF CAM1.PAR.ResultFotky = 'PASS' THEN
-					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-					SC_P2_ZakladacTesnenia.Step:= 150;
-				ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
-					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-					SC_P2_ZakladacTesnenia.Step:= 105;
-				END_IF
-			ELSIF FTP_CAM1.STATUS.KomunikaciaError THEN
-				P2_Alarmy[225]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
-			END_IF
-            
+//		135:
+//			SC_P2_ZakladacTesnenia.StepName:='135 - Automaticky Rezim - rozhodnutie podla kamerovej kontroly '; 
+//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
+//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+//			
+//			IF CAM1.PAR.ResultFotky = 'PASS' THEN
+//				IF CAM1.RESULT.ZalozenieTesnenia_OK THEN
+//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//					SC_P2_ZakladacTesnenia.Step:= 180;
+//				ELSIF NOT CAM1.RESULT.ZalozenieTesnenia_OK THEN
+//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//					SC_P2_ZakladacTesnenia.Step:= 145;
+//				END_IF	
+//			ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
+//				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//				SC_P2_ZakladacTesnenia.Step:= 140;
+//			END_IF
+//			
+//		
+//		140:
+//			SC_P2_ZakladacTesnenia.StepName:='140 - Automaticky Rezim - zobrazenie hlasenia vloz tesnenie alebo Power CP';
+//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
+//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+//			
+//			P2_StoperZaklTesnenia.Banner.IN.CervenaLED_ON:= Blikac500ms;
+//			P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= Blikac500ms;
+//			
+//			IF NOT SC_P2_ZakladacTesnenia.Switch1 THEN	
+//				IF Linka.PAR.ZvolenyModel = '4F' THEN
+//					IF NOT CAM1.RESULT.PritomnTesnenia_OK THEN
+//						P2_Vizu.ZobrazHL6_ST3:= TRUE;
+//					ELSIF NOT CAM1.RESULT.PritomnPowerCP_4F THEN
+//						P2_Vizu.ZobrazHL5_ST3:= TRUE;
+//					END_IF
+//				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+//					IF NOT CAM1.RESULT.PritomnTesnenia_OK THEN
+//						P2_Vizu.ZobrazHL6_ST3:= TRUE;
+//					ELSIF NOT CAM1.RESULT.PritomnPowerCP_5H5F THEN
+//						P2_Vizu.ZobrazHL5_ST3:= TRUE;
+//					END_IF   
+//				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
+//					IF NOT CAM1.RESULT.PritomnTesnenia_OK THEN
+//						P2_Vizu.ZobrazHL6_ST3:= TRUE;
+//					ELSIF NOT CAM1.RESULT.PritomnPowerCP_5H5F THEN
+//						P2_Vizu.ZobrazHL5_ST3:= TRUE;
+//					END_IF 
+//				END_IF    
+//				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
+//			END_IF	
+//				
+//					
+//			
+//			IF EDGEPOS(Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE) THEN
+//				CAM1.STAV.Results_READY:= FALSE;
+//				P2_Vizu.ZobrazHL6_ST3:= FALSE;
+//				P2_Vizu.ZobrazHL5_ST3:= FALSE;
+//				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE; //Zhasnem banner//	
+//				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//				SC_P2_ZakladacTesnenia.Step:= 145;
+//			END_IF
+//			
+//		
+//		145:
+//			SC_P2_ZakladacTesnenia.StepName:='145 - Automaticky Rezim - vymazanie fotky kamery CAM1';
+//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
+//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+//            
+//			IF Linka.KOM_FTP_OFF THEN
+//				IF CAM1.PAR.ResultFotky = 'PASS' THEN
+//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//					SC_P2_ZakladacTesnenia.Step:= 150;
+//				ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
+//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//					SC_P2_ZakladacTesnenia.Step:= 105;
+//				END_IF
+//			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 THEN
+//				FTP_CAM1.CMD.VymazFotku:= TRUE;
+//				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
+//			END_IF	
+//			
+//			IF FTP_CAM1.STATUS.KomunikaciaUkoncena THEN
+//				FTP_CAM1.CMD.VymazFotku:= FALSE;
+//				IF CAM1.PAR.ResultFotky = 'PASS' THEN
+//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//					SC_P2_ZakladacTesnenia.Step:= 150;
+//				ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
+//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+//					SC_P2_ZakladacTesnenia.Step:= 105;
+//				END_IF
+//			ELSIF FTP_CAM1.STATUS.KomunikaciaError THEN
+//				P2_Alarmy[225]:= TRUE;
+//				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
+//			END_IF
+//            
             
           
 			

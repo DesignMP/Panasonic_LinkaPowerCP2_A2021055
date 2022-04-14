@@ -1,9 +1,9 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_Stoper1 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=1 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=118 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                     SC_P2_StoperZvarania                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                             560"    1    6    1   10    0    0         
-                                 Paletka                       Paletka_typ[0..30]    0 "                                                               *"    0   24   31    0    0    0         
+                                    Step                                     UINT    0 "                                                             100"    1    6    1   10    0    0         
+                                 Paletka                       Paletka_typ[0..30]    0 "                                                               *"    0   24   31    0    0    1         
                               Paletka[0]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
                                      PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
                             CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
@@ -718,5 +718,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                  P2_Vizu                              P2_Vizu_typ    0 "                                                               *"    0   24    1    0    0    1         
-                           ZobrazHL4_ST6                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-               P2_Zvaranie_KAM_Result_OK                                     BOOL    0 "                                                           FALSE"    0    1    1    2    0    0         
+                           ZobrazHL4_ST6                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+               P2_Zvaranie_KAM_Result_OK                                     BOOL    0 "                                                               *"    0    1    1    2    0    0         
+                       P2_StoperZvarania                    P2_StoperZvarania_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                 Automat                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         

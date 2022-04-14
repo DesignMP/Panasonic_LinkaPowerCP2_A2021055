@@ -1,1 +1,41 @@
 ﻿@import "mixins.scss";
+div[data-brease-dialogId='LoginDialogP34'] {
+	.breaseDialogWindowHeader{
+	height: 0px;
+	}
+}
+div[data-brease-dialogId='LoginDialogP34'] {
+	.breaseDialogWindowHeader .breaseWindowClose{
+	height: 0px;
+	}
+}
+div[data-brease-dialogId='LoginDialogP34'] {
+	.breaseDialogWindowHeader .breaseWindowClose{
+	line-height: 0px;
+	}
+}
+div[data-brease-dialogId='LoginDialogP34'] {
+	.breaseDialogWindowHeader .imageDiv{
+	min-width: 0px;
+	}
+}
+div[data-brease-dialogId='LoginDialogP34'] {
+	.breaseDialogWindowHeader div.innerHeader{
+	line-height: 0px;
+	}
+}
+div[data-brease-dialogId='LoginDialogP34'] {
+	.breaseDialogWindowHeader div.textDiv{
+	line-height: 0px;
+	}
+}
+div[data-brease-dialogId='LoginDialogP34'] {
+	.breaseDialogWindowHeader div.innerHeader{
+	height: 0px;
+	}
+}
+div[data-brease-dialogId='LoginDialogP34'] {
+	.breaseDialogWindowHeader div.imageDiv{
+@include factor('max-width',0px, 2);
+	}
+}

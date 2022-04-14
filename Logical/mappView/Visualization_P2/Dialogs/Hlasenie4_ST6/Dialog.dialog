@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ddef:Dialog xmlns:ddef="http://www.br-automation.com/iat2015/dialogDefinition/v2" id="Hlasenie4_ST6" layoutRefId="LayoutHlasenieVacsie">
+<ddef:Dialog xmlns:ddef="http://www.br-automation.com/iat2015/dialogDefinition/v2" id="Hlasenie4_ST6" layoutRefId="LayoutHlasenieVacsie" headerBackColor="rgba(128, 128, 128, 1)">
   <Assignments>
     <Assignment type="Content" baseContentRefId="AreaHlasenie4_ST6" areaRefId="Area" />
   </Assignments>

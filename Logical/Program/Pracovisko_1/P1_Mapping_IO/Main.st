@@ -408,7 +408,9 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_VentilovyTerminal[5].7;
 	
 	
-	
+	//LimitnÈ snÌmaËe serva zdvihu v˝ùahu//
+	P1_Vytah.IN.Zdvih_HornyLimSnimac:= P1_Vytah.ServoZdvihuVytahu.IN.PositiveLimitSwitch_Bit9;
+	P1_Vytah.IN.Zdvih_SpodnyLimSnimac:= P1_Vytah.ServoZdvihuVytahu.IN.NegativeLimitSwitch_Bit8;
 	
 	
 	//Volanie kniûnic//

@@ -1,0 +1,31 @@
+div[data-brease-dialogId='LoginDialogP1'] .breaseDialogWindowHeader {
+  height: 0px;
+}
+
+div[data-brease-dialogId='LoginDialogP1'] .breaseDialogWindowHeader .breaseWindowClose {
+  height: 0px;
+}
+
+div[data-brease-dialogId='LoginDialogP1'] .breaseDialogWindowHeader .breaseWindowClose {
+  line-height: 0px;
+}
+
+div[data-brease-dialogId='LoginDialogP1'] .breaseDialogWindowHeader .imageDiv {
+  min-width: 0px;
+}
+
+div[data-brease-dialogId='LoginDialogP1'] .breaseDialogWindowHeader div.innerHeader {
+  line-height: 0px;
+}
+
+div[data-brease-dialogId='LoginDialogP1'] .breaseDialogWindowHeader div.textDiv {
+  line-height: 0px;
+}
+
+div[data-brease-dialogId='LoginDialogP1'] .breaseDialogWindowHeader div.innerHeader {
+  height: 0px;
+}
+
+div[data-brease-dialogId='LoginDialogP1'] .breaseDialogWindowHeader div.imageDiv {
+  max-width: 0px;
+}

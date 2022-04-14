@@ -15,11 +15,11 @@
 		z-index: 0;
 }
 #AreaHlasenie1_ST4_GroupBox1 {
-		border-width: 4px;
+		border-width: 6px;
 }
 #AreaHlasenie1_ST4_GroupBox1 {
 	> .header{
-		border-width: 4px;
+		border-width: 6px;
 	}
 }
 #AreaHlasenie1_ST4_GroupBox1 {
@@ -91,6 +91,9 @@
 }
 #AreaHlasenie1_ST4_Label1 {
 	@include font-weight-bold(true);
+}
+#AreaHlasenie1_ST4_Label1 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }
 #AreaHlasenie1_ST4_Button_OznacPaletkuOK {
 	@include elemTop(416);
@@ -188,10 +191,26 @@
 		z-index: 3;
 }
 #AreaHlasenie1_ST4_Label2 {
-	@include border-radius(2px);
+	@include border-radius(4px);
 }
 #AreaHlasenie1_ST4_Label2 {
 		background-color: rgba(224, 224, 224, 1);
+}
+#AreaHlasenie1_ST4_Label2 {
+		border-style: none;
+}
+#AreaHlasenie1_ST4_Label2 {
+	&:before{
+		border-style: none;
+	}
+}
+#AreaHlasenie1_ST4_Label2 {
+	&:after{
+		border-style: none;
+	}
+}
+#AreaHlasenie1_ST4_Label2 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }
 #AreaHlasenie1_ST4_ImageList1 {
 	@include elemTop(130);
@@ -207,6 +226,12 @@
 }
 #AreaHlasenie1_ST4_ImageList1 {
 		z-index: 4;
+}
+#AreaHlasenie1_ST4_ImageList1 {
+	@include border-radius(50px);
+}
+#AreaHlasenie1_ST4_ImageList1 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }
 #AreaHlasenie1_ST4_Label3 {
 	@include elemTop(166);
@@ -224,10 +249,26 @@
 		z-index: 5;
 }
 #AreaHlasenie1_ST4_Label3 {
-	@include border-radius(2px);
+	@include border-radius(4px);
 }
 #AreaHlasenie1_ST4_Label3 {
 		background-color: rgba(224, 224, 224, 1);
+}
+#AreaHlasenie1_ST4_Label3 {
+		border-style: none;
+}
+#AreaHlasenie1_ST4_Label3 {
+	&:before{
+		border-style: none;
+	}
+}
+#AreaHlasenie1_ST4_Label3 {
+	&:after{
+		border-style: none;
+	}
+}
+#AreaHlasenie1_ST4_Label3 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }
 #AreaHlasenie1_ST4_ImageList2 {
 	@include elemTop(170);
@@ -243,4 +284,10 @@
 }
 #AreaHlasenie1_ST4_ImageList2 {
 		z-index: 6;
+}
+#AreaHlasenie1_ST4_ImageList2 {
+	@include border-radius(50px);
+}
+#AreaHlasenie1_ST4_ImageList2 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }

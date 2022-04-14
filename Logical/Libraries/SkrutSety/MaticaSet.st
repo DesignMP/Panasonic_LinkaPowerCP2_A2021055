@@ -40,6 +40,13 @@ FUNCTION_BLOCK MaticaSet
 	Internal.CasVypnZasobnika();
 	
 	
+	//*******************************Zapnutie zásobníka keï je prázdna lišta zásobníka*****************//
+	IF CMD.ENABLE AND NOT IN.ZaplnenieListyZasobnika AND NOT OUT.VibropohonZasobnika_RUN AND IN.PodavacMatice_ZASUNUTY THEN
+		OUT.VibropohonZasobnika_RUN:= TRUE;
+	END_IF	
+	
+	
+	
 	//***********************************Enable knižnice***************************************//
 	IF NOT CMD.ENABLE AND Step <> 0 THEN
 		OUT.VibropohonZasobnika_RUN:= FALSE;

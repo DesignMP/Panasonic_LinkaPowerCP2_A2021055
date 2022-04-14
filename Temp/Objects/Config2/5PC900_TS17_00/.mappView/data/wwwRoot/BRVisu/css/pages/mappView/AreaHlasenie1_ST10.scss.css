@@ -21,11 +21,11 @@
 }
 
 #AreaHlasenie1_ST10_GroupBox1 {
-  border-width: 4px;
+  border-width: 6px;
 }
 
 #AreaHlasenie1_ST10_GroupBox1 > .header {
-  border-width: 4px;
+  border-width: 6px;
 }
 
 #AreaHlasenie1_ST10_GroupBox1 {
@@ -64,6 +64,14 @@
 
 #AreaHlasenie1_ST10_Image1 {
   z-index: 0;
+}
+
+#AreaHlasenie1_ST10_Image1 {
+  border-radius: 50px;
+}
+
+#AreaHlasenie1_ST10_Image1 {
+  box-shadow: 2px 2px 10px black;
 }
 
 #AreaHlasenie1_ST10_Label1 {
@@ -163,6 +171,14 @@
   z-index: 3;
 }
 
+#AreaHlasenie1_ST10_ImageList1 {
+  border-radius: 50px;
+}
+
+#AreaHlasenie1_ST10_ImageList1 {
+  box-shadow: 2px 2px 10px black;
+}
+
 #AreaHlasenie1_ST10_ImageList2 {
   top: 191px;
   position: absolute;
@@ -183,6 +199,14 @@
 
 #AreaHlasenie1_ST10_ImageList2 {
   z-index: 4;
+}
+
+#AreaHlasenie1_ST10_ImageList2 {
+  border-radius: 50px;
+}
+
+#AreaHlasenie1_ST10_ImageList2 {
+  box-shadow: 2px 2px 10px black;
 }
 
 #AreaHlasenie1_ST10_ImageList7 {
@@ -207,6 +231,14 @@
   z-index: 5;
 }
 
+#AreaHlasenie1_ST10_ImageList7 {
+  border-radius: 50px;
+}
+
+#AreaHlasenie1_ST10_ImageList7 {
+  box-shadow: 2px 2px 10px black;
+}
+
 #AreaHlasenie1_ST10_ImageList8 {
   top: 276px;
   position: absolute;
@@ -227,6 +259,14 @@
 
 #AreaHlasenie1_ST10_ImageList8 {
   z-index: 6;
+}
+
+#AreaHlasenie1_ST10_ImageList8 {
+  border-radius: 50px;
+}
+
+#AreaHlasenie1_ST10_ImageList8 {
+  box-shadow: 2px 2px 10px black;
 }
 
 #AreaHlasenie1_ST10_Button_IgnorujKameru {

@@ -15,11 +15,11 @@
 		z-index: 0;
 }
 #AreaHlasenie1_ST7_GroupBox1 {
-		border-width: 4px;
+		border-width: 6px;
 }
 #AreaHlasenie1_ST7_GroupBox1 {
 	> .header{
-		border-width: 4px;
+		border-width: 6px;
 	}
 }
 #AreaHlasenie1_ST7_GroupBox1 {
@@ -120,6 +120,9 @@
 }
 #AreaHlasenie1_ST7_Label2 {
 	@include font-weight-bold(true);
+}
+#AreaHlasenie1_ST7_Label2 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }
 #AreaHlasenie1_ST7_Button_OpatovnyDopyt {
 	@include elemTop(211);

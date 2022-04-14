@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP1_Vytah">
+    <EventBinding id="AreaPageManualP1_Vytah.Button_PrecitajPaletku.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP1_Vytah_Button_PrecitajPaletku" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Vytah.RFID_hlava.PrecitajChipRFID">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP1_Vytah">
+    <EventBinding id="AreaPageManualP1_Vytah.Button_PrecitajPaletku1.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP1_Vytah_Button_PrecitajPaletku1" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Vytah.RFID_hlava.ZapisNaChipRFID">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP1_Vytah">
+    <EventBinding id="AreaPageManualP1_Vytah.Button_ResetServa.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP1_Vytah_Button_ResetServa" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Vytah.ServoZdvihuVytahu.Command.ErrReset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

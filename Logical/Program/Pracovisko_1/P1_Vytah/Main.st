@@ -3,7 +3,7 @@ PROGRAM _INIT
 	
 	//Init parametre serva zdvihu výahu//
 	P1_Vytah.ServoZdvihuVytahu.Parameters.Override:= 100;
-	P1_Vytah.PAR.Zdvih_JoggRychlost:= 0.1;
+	P1_Vytah.PAR.Zdvih_JoggRychlost:= 5;
 	P1_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= TRUE;
 	P1_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.0;
 	
@@ -324,7 +324,7 @@ PROGRAM _CYCLIC
 			SC_P1_Vytah.IdleTime.PT:= T#5s;
 			SC_P1_Vytah.AlarmTime.PT:= T#10s;
 		
-            P1_Vytah.Banner.IN.ModraLED_ON:= TRUE;           
+			P1_Vytah.Banner.IN.ModraLED_ON:= TRUE;           
             
 			
 			IF Linka.P1_Kamery_OFF THEN
@@ -391,12 +391,10 @@ PROGRAM _CYCLIC
 				IF Linka.PAR.ZvolenyModel = '4F' THEN
 					IF CAM2.RESULT.Paletka.Pritom_Busbaru_Spodny_4F AND
 						CAM2.RESULT.Paletka.Pritom_DPS_4F5F AND
-						CAM2.RESULT.Paletka.Pritom_Foamu_4F5F AND 
+						CAM2.RESULT.Paletka.Pritom_Foamu_Lavy_4F5F AND 
+						CAM2.RESULT.Paletka.Pritom_Foamu_Pravy_4F5F AND 
 						CAM2.RESULT.Paletka.Pritom_PowerCP_4F AND
-						CAM2.RESULT.Paletka.Pritomn_Skeletonu_4F5F AND
-						CAM2.RESULT.Paletka.OsadeniePlastuDPS_OK AND
-						CAM2.RESULT.Paletka.Pritomn_LavyMVcase AND
-						CAM2.RESULT.Paletka.Pritomn_PravyMVcase  THEN
+						CAM2.RESULT.Paletka.Pritomn_Skeletonu_4F5F THEN
 						CAM2.PAR.ResultFotky:= 'PASS';
 					ELSE
 						CAM2.PAR.ResultFotky:= 'FAIL';
@@ -404,24 +402,18 @@ PROGRAM _CYCLIC
 				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
 					IF CAM2.RESULT.Paletka.Pritom_Busbaru_Spodny_5F AND
 						CAM2.RESULT.Paletka.Pritom_DPS_4F5F AND
-						CAM2.RESULT.Paletka.Pritom_Foamu_4F5F AND
+						CAM2.RESULT.Paletka.Pritom_Foamu_Lavy_4F5F AND 
+						CAM2.RESULT.Paletka.Pritom_Foamu_Pravy_4F5F AND 
 						CAM2.RESULT.Paletka.Pritom_PowerCP_5F AND
-						CAM2.RESULT.Paletka.Pritomn_Skeletonu_4F5F AND
-						CAM2.RESULT.Paletka.OsadeniePlastuDPS_OK AND
-						CAM2.RESULT.Paletka.Pritomn_LavyMVcase AND
-						CAM2.RESULT.Paletka.Pritomn_PravyMVcase THEN
+						CAM2.RESULT.Paletka.Pritomn_Skeletonu_4F5F THEN
 						CAM2.PAR.ResultFotky:= 'PASS';
 					ELSE
 						CAM2.PAR.ResultFotky:= 'FAIL';
 					END_IF
 				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					IF CAM2.RESULT.Paletka.Pritom_Busbar_SpodnyLavy_5H AND
-						CAM2.RESULT.Paletka.Pritom_Busbar_SpodnyPravy_5H AND
-						CAM2.RESULT.Paletka.Pritom_KrytuBusbarov_5H AND
+					IF CAM2.RESULT.Paletka.Pritom_Busbarov_Spodne_5H AND
 						CAM2.RESULT.Paletka.Pritom_PowerCP_5H AND
-						CAM2.RESULT.Paletka.Pritomn_Skeletonu_5H AND
-						CAM2.RESULT.Paletka.Pritomn_LavyMVcase AND
-						CAM2.RESULT.Paletka.Pritomn_PravyMVcase THEN
+						CAM2.RESULT.Paletka.Pritomn_Skeletonu_5H THEN
 						CAM2.PAR.ResultFotky:= 'PASS';
 					ELSE
 						CAM2.PAR.ResultFotky:= 'FAIL';
@@ -565,7 +557,7 @@ PROGRAM _CYCLIC
             
 			
 			
-		//********************************************************Automatický režim****************************************************************************//
+			//********************************************************Automatický režim****************************************************************************//
 	
 		100:
 			SC_P1_Vytah.StepName:='100 - Automaticky Rezim - cakam na navezenie paletky na vytah zo spodneho dopravnika';
@@ -916,12 +908,10 @@ PROGRAM _CYCLIC
 				IF Linka.PAR.ZvolenyModel = '4F' THEN
 					IF CAM2.RESULT.Paletka.Pritom_Busbaru_Spodny_4F AND
 						CAM2.RESULT.Paletka.Pritom_DPS_4F5F AND
-						CAM2.RESULT.Paletka.Pritom_Foamu_4F5F AND 
+						CAM2.RESULT.Paletka.Pritom_Foamu_Lavy_4F5F AND 
+						CAM2.RESULT.Paletka.Pritom_Foamu_Pravy_4F5F AND 
 						CAM2.RESULT.Paletka.Pritom_PowerCP_4F AND
-						CAM2.RESULT.Paletka.Pritomn_Skeletonu_4F5F AND
-						CAM2.RESULT.Paletka.OsadeniePlastuDPS_OK AND
-						CAM2.RESULT.Paletka.Pritomn_LavyMVcase AND
-						CAM2.RESULT.Paletka.Pritomn_PravyMVcase  THEN
+						CAM2.RESULT.Paletka.Pritomn_Skeletonu_4F5F THEN
 						CAM2.PAR.ResultFotky:= 'PASS';
 					ELSE
 						CAM2.PAR.ResultFotky:= 'FAIL';
@@ -929,24 +919,18 @@ PROGRAM _CYCLIC
 				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
 					IF CAM2.RESULT.Paletka.Pritom_Busbaru_Spodny_5F AND
 						CAM2.RESULT.Paletka.Pritom_DPS_4F5F AND
-						CAM2.RESULT.Paletka.Pritom_Foamu_4F5F AND
+						CAM2.RESULT.Paletka.Pritom_Foamu_Lavy_4F5F AND
+						CAM2.RESULT.Paletka.Pritom_Foamu_Pravy_4F5F AND
 						CAM2.RESULT.Paletka.Pritom_PowerCP_5F AND
-						CAM2.RESULT.Paletka.Pritomn_Skeletonu_4F5F AND
-						CAM2.RESULT.Paletka.OsadeniePlastuDPS_OK AND
-						CAM2.RESULT.Paletka.Pritomn_LavyMVcase AND
-						CAM2.RESULT.Paletka.Pritomn_PravyMVcase THEN
+						CAM2.RESULT.Paletka.Pritomn_Skeletonu_4F5F THEN
 						CAM2.PAR.ResultFotky:= 'PASS';
 					ELSE
 						CAM2.PAR.ResultFotky:= 'FAIL';
 					END_IF
 				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					IF CAM2.RESULT.Paletka.Pritom_Busbar_SpodnyLavy_5H AND
-						CAM2.RESULT.Paletka.Pritom_Busbar_SpodnyPravy_5H AND
-						CAM2.RESULT.Paletka.Pritom_KrytuBusbarov_5H AND
+					IF CAM2.RESULT.Paletka.Pritom_Busbarov_Spodne_5H AND
 						CAM2.RESULT.Paletka.Pritom_PowerCP_5H AND
-						CAM2.RESULT.Paletka.Pritomn_Skeletonu_5H AND
-						CAM2.RESULT.Paletka.Pritomn_LavyMVcase AND
-						CAM2.RESULT.Paletka.Pritomn_PravyMVcase THEN
+						CAM2.RESULT.Paletka.Pritomn_Skeletonu_5H THEN
 						CAM2.PAR.ResultFotky:= 'PASS';
 					ELSE
 						CAM2.PAR.ResultFotky:= 'FAIL';
@@ -1399,7 +1383,7 @@ PROGRAM _CYCLIC
 			SC_P1_Vytah.IdleTime.PT:= T#5s;
 			SC_P1_Vytah.AlarmTime.PT:= T#10s;
 		
-            P1_Vytah.Banner.IN.ModraLED_ON:= TRUE;
+			P1_Vytah.Banner.IN.ModraLED_ON:= TRUE;
 			
 			IF NOT SC_P1_Vytah.Switch1 THEN
 				CAM3.CMD.Triger:= TRUE;
@@ -1993,7 +1977,7 @@ PROGRAM _CYCLIC
 			
 			
 				
-		//*******************************Odoslanie fotiek na server*****************************************//	
+			//*******************************Odoslanie fotiek na server*****************************************//	
 		
 		540:
 			SC_P1_Vytah.StepName:='540 - Automaticky Rezim - odoslanie fotky kontroly paletky a pinov na server Panasonic';//CAM 2 a CAM 4
@@ -2091,7 +2075,7 @@ PROGRAM _CYCLIC
                        
             
          				
-		//*********************************Odoslanie stavu paletky na server**************************************//	
+			//*********************************Odoslanie stavu paletky na server**************************************//	
 		
 		550:
 			SC_P1_Vytah.StepName:='550 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
@@ -2254,7 +2238,7 @@ PROGRAM _CYCLIC
 			
 			
 
-		//************************************Vyvezenie paletky*****************************************//	
+			//************************************Vyvezenie paletky*****************************************//	
 		
 		560:
 			SC_P1_Vytah.StepName:='560 - Automaticky Rezim - cakam na vyvezenie na stoper srobovania';
@@ -2327,22 +2311,30 @@ PROGRAM _CYCLIC
 				
 					
 			
-			//Parametre serva pre jogging//
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Jog.Acc:= 50;
-			P1_Vytah.ServoZdvihuVytahu.Parameters.Jog.Velocity:= P1_Vytah.PAR.Zdvih_JoggRychlost;
+			
+			
+			//Ovládanie zdvihu výahu//
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Acc:= 10;
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= 50;
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Velocity:= P1_Vytah.PAR.Zdvih_JoggRychlost/1000;
 			P1_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= TRUE;
+			P1_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			
-			
-			IF P1_Vytah.CMD.RR_ZdvihVytahu_DOLE AND P1_Vytah.ServoZdvihuVytahu.Status.ActPosition > P1_RemPremenne.P1_Vytah_PoziciaNakladania THEN
-				P1_Vytah.ServoZdvihuVytahu.Command.JogPos:= FALSE;
-				P1_Vytah.ServoZdvihuVytahu.Command.JogNeg:= TRUE;
-			ELSIF P1_Vytah.CMD.RR_ZdvihVytahu_HORE AND P1_Vytah.ServoZdvihuVytahu.Status.ActPosition < P1_RemPremenne.P1_Vytah_PoziciaVykladania THEN
-				P1_Vytah.ServoZdvihuVytahu.Command.JogNeg:= FALSE;
-				P1_Vytah.ServoZdvihuVytahu.Command.JogPos:= TRUE;
+			IF P1_Vytah.CMD.RR_ZdvihVytahu_DOLE AND NOT P1_Vytah.ServoZdvihuVytahu.Command.Pause THEN
+				P1_Vytah.ServoZdvihuVytahu.Parameters.Position:= P1_RemPremenne.P1_Vytah_PoziciaNakladania;
+				P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
+			ELSIF P1_Vytah.CMD.RR_ZdvihVytahu_HORE AND NOT P1_Vytah.ServoZdvihuVytahu.Command.Pause THEN
+				P1_Vytah.ServoZdvihuVytahu.Parameters.Position:= P1_RemPremenne.P1_Vytah_PoziciaVykladania;
+				P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
 			ELSE
-				P1_Vytah.ServoZdvihuVytahu.Command.JogNeg:= FALSE;
-				P1_Vytah.ServoZdvihuVytahu.Command.JogPos:= FALSE;
+				P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= FALSE;
+				P1_Vytah.ServoZdvihuVytahu.Command.Pause:= TRUE;
 			END_IF	
+					
+			IF P1_Vytah.ServoZdvihuVytahu.Command.Pause AND P1_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
+				P1_Vytah.ServoZdvihuVytahu.Command.Pause:= FALSE;
+			END_IF	
+			
 			
         
 			//Ovládanie dopravníka výahu//
@@ -2358,7 +2350,15 @@ PROGRAM _CYCLIC
 			END_IF    
         
 		
+			//Èítanie a zápis na paletku//
+			IF P1_Vytah.RFID_hlava.PrecitajChipRFID AND (P1_Vytah.RFID_hlava.Stav_CitanieZapis_OK OR P1_Vytah.RFID_hlava.Stav_CitanieZapis_NG) THEN
+				P1_Vytah.PAR.RR_PrecitaneCisloPaletky:= P1_Vytah.RFID_hlava.PrecitaneCisloPaletky;
+				P1_Vytah.RFID_hlava.PrecitajChipRFID:= FALSE;
+			END_IF		
 		
+			IF P1_Vytah.RFID_hlava.ZapisNaChipRFID AND (P1_Vytah.RFID_hlava.Stav_CitanieZapis_OK OR P1_Vytah.RFID_hlava.Stav_CitanieZapis_NG) THEN
+				P1_Vytah.RFID_hlava.ZapisNaChipRFID:= FALSE;
+			END_IF	
 		
 		
 		

@@ -2,15 +2,15 @@ WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P3_Srobova
 Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=15 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                         SC_P3_Srobovanie                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                               1"    1    6    1   10    0    0         
+                                    Step                                     UINT    0 "                                                             100"    1    6    1   10    0    0         
                            P3_Srobovanie                        P3_Srobovanie_typ    0 "                                                               *"    0   24    1    0    0    1         
                                   COM_IN                 P3_Srobovanie_COM_IN_typ    0 "                                                               *"    1   24    1    0    0    1         
                 PresunManipulatora_VPRED                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                 Automat                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                 Automat                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                              SkrutSet_M5                             PickAndPlace    0 "                                                               *"    1   24    1    0    0    1         
                                      CMD                     PickAndPlace_CMD_typ    0 "                                                               *"    2   24    1    0    0    1         
                                   ENABLE                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                            PodajSkrutku                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                            PodajSkrutku                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                               RucnyRezim                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                         RR_ZapniZasobnik                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                       RR_ZapniVibrolistu                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
@@ -105,4 +105,4 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                StartTime                                     TIME    0 "                                                               *"    4   12    1    1    0    0         
                                        M                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                                  Restart                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
-                                    Step                                    USINT    0 "                                                              30"    2    5    1   10    0    0         
+                                    Step                                    USINT    0 "                                                               1"    2    5    1   10    0    0         

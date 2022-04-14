@@ -83,7 +83,8 @@ PROGRAM _CYCLIC
 			
 			P4_Etiketovacka.CMD.RR_ZdvihAplikatora_DOLE:= FALSE;
 			P4_Etiketovacka.CMD.RR_ZdvihAplikatora_HORE:= FALSE;
-			P4_Etiketovacka.CMD.RR_NalepEtiketu:= FALSE;			
+			P4_Etiketovacka.CMD.RR_NalepEtiketu:= FALSE;
+			P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY:= FALSE;
 			
 			CAM14.CMD.Triger:= FALSE;
 			CAM14.STAV.Results_READY:= FALSE;
@@ -1441,6 +1442,7 @@ PROGRAM _CYCLIC
 			IF P4_Etiketovacka.IN.Centrovanie_ZASUNUTE THEN
 				IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
 					P4_Etiketovacka.CMD.RR_NalepEtiketu:= FALSE;
+					P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY:= FALSE;
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 700;
 				ELSE    
@@ -1625,6 +1627,7 @@ PROGRAM _CYCLIC
 		
 		//Spustenie sekvencie nalepenia etikety//
 			IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
+				P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY:= TRUE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 118;
 			END_IF	

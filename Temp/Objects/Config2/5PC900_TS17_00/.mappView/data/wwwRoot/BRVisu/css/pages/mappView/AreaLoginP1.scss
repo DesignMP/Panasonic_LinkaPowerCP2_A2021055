@@ -51,6 +51,9 @@
 #AreaLoginP1_Image1 {
 		z-index: 2;
 }
+#AreaLoginP1_Image1 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+}
 #AreaLoginP1_LogoutButton1 {
 	@include elemTop(260);
 }

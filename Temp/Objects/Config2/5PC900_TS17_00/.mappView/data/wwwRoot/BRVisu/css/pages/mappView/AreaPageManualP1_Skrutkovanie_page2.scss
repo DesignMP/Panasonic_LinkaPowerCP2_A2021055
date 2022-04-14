@@ -1301,78 +1301,9 @@
 		z-index: 16;
 }
 #AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	&:not(.active):not(.disabled){
-		border-width: 4px 4px 4px 4px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	&.disabled{
-		border-width: 3px 3px 3px 3px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	@include border-radius(4px);
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
 	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	&.disabled{
-		border-color: rgba(255, 136, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	&.active:not(.disabled){
-		background-color: rgba(255, 255, 255, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	&.active:not(.disabled) input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	&.active:not(.disabled) span.breaseNumericInput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-		border-style: ridge;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	&.disabled{
-		border-style: ridge;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	&.disabled input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	&.disabled span.breaseNumericInput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	input{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	input{
-		font-size: 18px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	.breaseNumericInput_unit{
-		font-size: 10px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_7 {
-	@include box-shadow(none);
 }
 #AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
 	@include elemAutoHeight(30);
@@ -1388,43 +1319,6 @@
 }
 #AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
 		z-index: 15;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
-		border-width: 4px;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
-	@include border-radius(4px);
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
-		background-color: rgba(224, 224, 224, 1);
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
-		border-style: ridge;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
-	input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
-	span.breaseNumericOutput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
-	input{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
-	input{
-		font-size: 18px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput3 {
-	.breaseNumericOutput_unit{
-		font-size: 10px;
-	}
 }
 #AreaPageManualP1_Skrutkovanie_page2_GroupBox7 {
 	@include elemTop(70);
@@ -2105,78 +1999,9 @@
 		z-index: 16;
 }
 #AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	&:not(.active):not(.disabled){
-		border-width: 4px 4px 4px 4px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	&.disabled{
-		border-width: 3px 3px 3px 3px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	@include border-radius(4px);
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
 	&.disabled{
 		background-color: rgba(192, 192, 192, 1);
 	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	&.disabled{
-		border-color: rgba(255, 136, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	&.active:not(.disabled){
-		background-color: rgba(255, 255, 255, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	&.active:not(.disabled) input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	&.active:not(.disabled) span.breaseNumericInput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-		border-style: ridge;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	&.disabled{
-		border-style: ridge;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	&.disabled input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	&.disabled span.breaseNumericInput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	input{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	input{
-		font-size: 18px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	.breaseNumericInput_unit{
-		font-size: 10px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericInput_6 {
-	@include box-shadow(none);
 }
 #AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
 	@include elemAutoHeight(30);
@@ -2193,43 +2018,6 @@
 #AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
 		z-index: 15;
 }
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
-		border-width: 4px;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
-	@include border-radius(4px);
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
-		background-color: rgba(224, 224, 224, 1);
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
-		border-style: ridge;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
-	input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
-	span.breaseNumericOutput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
-	input{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
-	input{
-		font-size: 18px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput4 {
-	.breaseNumericOutput_unit{
-		font-size: 10px;
-	}
-}
 #AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
 	@include elemAutoHeight(30);
 }
@@ -2244,41 +2032,4 @@
 }
 #AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
 		z-index: 7;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
-		border-width: 4px;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
-	@include border-radius(4px);
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
-		background-color: rgba(224, 224, 224, 1);
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
-		border-style: ridge;
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
-	input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
-	span.breaseNumericOutput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
-	input{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
-	input{
-		font-size: 18px;
-	}
-}
-#AreaPageManualP1_Skrutkovanie_page2_NumericOutput2 {
-	.breaseNumericOutput_unit{
-		font-size: 10px;
-	}
 }

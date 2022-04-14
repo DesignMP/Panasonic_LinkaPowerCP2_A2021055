@@ -2,16 +2,16 @@ WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_Zvarani
 Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=9 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                           SC_P2_Zvaranie                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                               1"    1    6    1   10    0    0         
+                                    Step                                     UINT    0 "                                                             100"    1    6    1   10    0    0         
                              P2_Zvaranie                          P2_Zvaranie_typ    0 "                                                               *"    0   24    1    0    0    1         
                                       IN                       P2_Zvaranie_IN_typ    0 "                                                               *"    1   24    1    0    0    1         
-                      ZvarackaStav_READY                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                      ZvarackaStav_READY                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
                                      OUT                      P2_Zvaranie_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
                           Zvaracka_START                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                           Zvaracka_RESET                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                   COM_IN                   P2_Zvaranie_COM_IN_typ    0 "                                                               *"    1   24    1    0    0    1         
                           Zvaranie_START                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                 Automat                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                 Automat                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                      ServoZdvihuZvarania                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
                                  Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    1         
                                  PowerON                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
@@ -30,7 +30,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                 Override                                     REAL    0 "                                                           100.0"    3    8    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                             0.3"    3    8    1   10    0    0         
                                      Dcc                                     REAL    0 "                                                             2.0"    3    8    1   10    0    0         
-                                     Acc                                     REAL    0 "                                                             3.0"    3    8    1   10    0    0         
+                                     Acc                                     REAL    0 "                                                             5.0"    3    8    1   10    0    0         
                                      Jog                                 JogStruc    0 "                                                               *"    3   24    1    0    0    0         
                                      Acc                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         

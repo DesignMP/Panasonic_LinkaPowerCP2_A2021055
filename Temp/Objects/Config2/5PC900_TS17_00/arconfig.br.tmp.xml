@@ -32,7 +32,7 @@
     <Parameter ID="Startmode" Value="2" />
     <Parameter ID="ShowBootlogoWeb" Value="0" />
     <Parameter ID="Mode" Value="Manual" />
-    <Parameter ID="InternetAddress" Value="192.168.148.11" />
+    <Parameter ID="InternetAddress" Value="10.128.148.11" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
     <Parameter ID="ActivateDns" Value="1" />
     <Parameter ID="DnsDefaultDomain" Value="DnsSuffix" />
@@ -52,7 +52,7 @@
     <Parameter ID="ActivateRFBext" Value="0" />
     <Parameter ID="ConnMonVNC" Value="0" />
     <Parameter ID="LocalScaling" Value="0" />
-    <Parameter ID="SelectedFavoriteWeb" Value="192.168.148.2:85/index.html?visuId=Vizu_P1" />
+    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.2:85/index.html?visuId=Vizu_P1" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="DisablePinchZoom" Value="0" />
     <Parameter ID="EnableViewportOvrd" Value="0" />
@@ -81,7 +81,7 @@
     <Parameter ID="Startmode" Value="2" />
     <Parameter ID="ShowBootlogoWeb" Value="0" />
     <Parameter ID="Mode" Value="Manual" />
-    <Parameter ID="InternetAddress" Value="192.168.148.21" />
+    <Parameter ID="InternetAddress" Value="10.128.148.21" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
     <Parameter ID="ActivateDns" Value="1" />
     <Parameter ID="DnsDefaultDomain" Value="DnsSuffix" />
@@ -101,7 +101,7 @@
     <Parameter ID="ActivateRFBext" Value="0" />
     <Parameter ID="ConnMonVNC" Value="0" />
     <Parameter ID="LocalScaling" Value="0" />
-    <Parameter ID="SelectedFavoriteWeb" Value="192.168.148.2:85/index.html?visuId=Vizu_P2" />
+    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.2:85/index.html?visuId=Vizu_P2" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="DisablePinchZoom" Value="0" />
     <Parameter ID="EnableViewportOvrd" Value="0" />
@@ -130,7 +130,7 @@
     <Parameter ID="Startmode" Value="2" />
     <Parameter ID="ShowBootlogoWeb" Value="0" />
     <Parameter ID="Mode" Value="Manual" />
-    <Parameter ID="InternetAddress" Value="192.168.148.40" />
+    <Parameter ID="InternetAddress" Value="10.128.148.40" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
     <Parameter ID="ActivateDns" Value="1" />
     <Parameter ID="DnsDefaultDomain" Value="DnsSuffix" />
@@ -150,7 +150,7 @@
     <Parameter ID="ActivateRFBext" Value="0" />
     <Parameter ID="ConnMonVNC" Value="0" />
     <Parameter ID="LocalScaling" Value="0" />
-    <Parameter ID="SelectedFavoriteWeb" Value="192.168.148.2:85/index.html?visuId=Vizu_P34" />
+    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.2:85/index.html?visuId=Vizu_P34" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="DisablePinchZoom" Value="0" />
     <Parameter ID="EnableViewportOvrd" Value="0" />

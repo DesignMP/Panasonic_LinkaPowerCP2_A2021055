@@ -15,18 +15,18 @@
 		z-index: 0;
 }
 #AreaHlasenie5_ST10_GroupBox1 {
-		border-width: 4px;
+		border-width: 6px;
 }
 #AreaHlasenie5_ST10_GroupBox1 {
 	> .header{
-		border-width: 4px;
+		border-width: 6px;
 	}
 }
 #AreaHlasenie5_ST10_GroupBox1 {
 	@include border-radius(0px);
 }
 #AreaHlasenie5_ST10_GroupBox1 {
-		background-color: rgba(0, 255, 255, 1);
+		background-color: rgba(135, 206, 235, 1);
 }
 #AreaHlasenie5_ST10_GroupBox1 {
 		border-style: solid;
@@ -50,6 +50,12 @@
 }
 #AreaHlasenie5_ST10_Image1 {
 		z-index: 0;
+}
+#AreaHlasenie5_ST10_Image1 {
+	@include border-radius(50px);
+}
+#AreaHlasenie5_ST10_Image1 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }
 #AreaHlasenie5_ST10_Label1 {
 	@include elemTop(96);

@@ -2,7 +2,7 @@
 <?AutomationStudio FileVersion="4.9"?>
 <BR.AS.HardwareTopology>
   <TimeStamps>
-    <TimeStamp LogicalPath="Config2.Hardware.hw" LastWriteTime="04/12/2022 17:10:41" />
+    <TimeStamp LogicalPath="Config2.Hardware.hw" LastWriteTime="04/13/2022 15:31:32" />
   </TimeStamps>
   <Modules>
     <Module Name="P1_IOmodul_PowerlinkMaster" Type="FBE.00000230_UR20_FBC_PL" X="348" Y="89" />
@@ -706,7 +706,7 @@ NodNumber:2</Text>
     <InfoElementText Id="Textbox_9" X="793.2727" Y="608.5441" Width="214.926117" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P1_Operačný panel_OP1
-Ethernet:192.168.148.11</Text>
+Ethernet:10.128.148.11</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -795,7 +795,7 @@ NodNumber:5</Text>
     <InfoElementText Id="Textbox_25" X="476.001831" Y="1907.977" Width="208.701752" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P2_Operačný panel_OP2
-Ethernet:192.168.148.21</Text>
+Ethernet:10.128.148.21</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -999,7 +999,7 @@ Profinet:192.168.82.6</Text>
     <InfoElementText Id="Textbox_56" X="368.2727" Y="4183.60547" Width="208.701752" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">B&amp;R - Ethernet
 P4_Operačný panel_OP3
-Ethernet:192.168.148.40</Text>
+Ethernet:10.128.148.40</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>
@@ -1048,7 +1048,7 @@ Profinet:192.168.81.18</Text>
     <InfoElementText Id="Textbox_64" X="822.798" Y="4295" Width="208.701752" Height="59.4808044">
       <Text Color="Black" FontName="Arial" FontSize="12" FontStyle="Regular" AlignmentHorizontal="Left">Tlačiareň - Ethernet
 
-Ethernet:192.168.148.41</Text>
+Ethernet:10.128.148.41</Text>
       <Background Color="White" Transparent="False" />
       <Border Color="Black" Transparent="False" DashStyle="Solid" Width="1" />
     </InfoElementText>

@@ -2,7 +2,7 @@ WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P4_Funkcny
 Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=73 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                       SC_P4_FunkcnyTestA                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                               1"    1    6    1   10    0    0         
+                                    Step                                     UINT    0 "                                                             560"    1    6    1   10    0    0         
                          P4_FunkcnyTestA                      P4_FunkcnyTestA_typ    0 "                                                               *"    0   24    1    0    0    1         
                                       IN                   P4_FunkcnyTestA_IN_typ    0 "                                                               *"    1   24    1    0    0    1         
                  SpodneKontakty_VYSUNUTE                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
@@ -11,10 +11,10 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                    KontaktyTestera_VYSUN                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                     STAV                 P4_FunkcnyTestA_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
                 PrebiehaVyvezeniePaletky                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                 Automat                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                 Automat                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                                    Linka                                Linka_typ    0 "                                                               *"    0   24    1    0    0    1         
                                      PAR                            Linka_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
-                            ZvolenyModel                                STRING[2]    0 "                                                            '4F'"    2    9    3    1    0    0         
+                            ZvolenyModel                                STRING[2]    0 "                                                            '5F'"    2    9    3    1    0    0         
                            P4_Pracovisko                        P4_Pracovisko_typ    0 "                                                               *"    0   24    1    0    0    1         
                                     STAV                    P4_PracoviskoSTAV_typ    0 "                                                               *"    1   24    1    0    0    1         
                              Porucha_ST1                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
@@ -78,9 +78,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                TypModelu                                STRING[5]    0 "                                                              ''"    3    9    6    1    0    0         
                                KodModelu                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
                   CisloTestovacejStanice                               STRING[20]    0 "                                                              ''"    3    9   21    1    0    0         
-                  CisloRevorkovejStanice                               STRING[20]    0 "                                                              ''"    3    9   21    1    0    0         
-                       Zvaranie_Ukoncene                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        HV_Test_Ukonceny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                  CisloRevorkovejStanice                               STRING[20]    0 "                                                               *"    3    9   21    1    0    0         
+                       Zvaranie_Ukoncene                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        HV_Test_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         

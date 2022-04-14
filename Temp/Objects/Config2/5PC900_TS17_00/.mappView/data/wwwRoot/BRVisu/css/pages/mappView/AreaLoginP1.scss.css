@@ -66,6 +66,10 @@
   z-index: 2;
 }
 
+#AreaLoginP1_Image1 {
+  box-shadow: 2px 2px 10px black;
+}
+
 #AreaLoginP1_LogoutButton1 {
   top: 260px;
   position: absolute;

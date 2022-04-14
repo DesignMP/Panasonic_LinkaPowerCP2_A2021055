@@ -1,9 +1,12 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P4_Dopravn 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=3 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=5 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                         SC_P4_Dopravniky                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                               0"    1    6    1   10    0    0         
+                                    Step                                     UINT    0 "                                                               1"    1    6    1   10    0    0         
                            P4_Dopravniky                        P4_Dopravniky_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     OUT                    P4_Dopravniky_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
+                      VratnyDopravnik_ON                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                 PrednyDopravnikBunky_ON                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
                                  Automat                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                                 P4_Vytah                             P4_Vytah_typ    0 "                                                               *"    0   24    1    0    0    1         
                                     STAV                        P4_Vytah_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
