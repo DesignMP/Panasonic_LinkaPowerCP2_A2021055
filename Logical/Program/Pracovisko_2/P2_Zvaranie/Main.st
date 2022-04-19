@@ -20,7 +20,7 @@ PROGRAM _CYCLIC
 	
 	
 	//Enable serva//
-	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset THEN
+	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset AND P2_Pracovisko.IN.ServoZvaraniaOsZ_KomOK THEN
 		P2_Zvaranie.ServoZdvihuZvarania.Command.PowerON:= TRUE;
 	ELSE
 		P2_Zvaranie.ServoZdvihuZvarania.Command.PowerON:= FALSE;

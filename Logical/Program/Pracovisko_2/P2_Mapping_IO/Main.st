@@ -95,8 +95,8 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.1:= P2_Pracovisko.OUT.Srobovanie_BodoveOsvetlenie_ON;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.2;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.3;
-	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.4;
-	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.5;
+	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.4:= Safety.OUT.Linka_ResetCS;
+	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.5:= Safety.OUT.P2_ResetZonyBunky;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.6;
 	P2_Pracovisko.COM_Weidmuller.AB2_13_8DO.7;
 	

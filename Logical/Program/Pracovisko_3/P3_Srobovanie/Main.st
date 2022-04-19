@@ -30,13 +30,13 @@ PROGRAM _CYCLIC
 	
 	
 	//Enable serv//
-	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsY.Command.ErrReset THEN
+	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsY.Command.ErrReset AND P3_Pracovisko.IN.ServoManipulatorOsY_KomOK THEN
 		P3_Srobovanie.ServoManipulOsY.Command.PowerON:= TRUE;
 	ELSE
 		P3_Srobovanie.ServoManipulOsY.Command.PowerON:= FALSE;
 	END_IF	
 	
-	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset THEN
+	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset AND P3_Pracovisko.IN.ServoManipulatorOsZ_M5_KomOK THEN
 		P3_Srobovanie.ServoManipulOsZ_M5.Command.PowerON:= TRUE;
 	ELSE
 		P3_Srobovanie.ServoManipulOsZ_M5.Command.PowerON:= FALSE;

@@ -22,7 +22,7 @@ PROGRAM _CYCLIC
 	SequenceControl(SC:= SC_P1_Vytah);
 	
 	//Enable serva//
-	IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND NOT P1_Vytah.ServoZdvihuVytahu.Command.ErrReset THEN
+	IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND NOT P1_Vytah.ServoZdvihuVytahu.Command.ErrReset AND P1_Pracovisko.IN.ServoZdvihuVytahu_KomOK THEN
 		P1_Vytah.ServoZdvihuVytahu.Command.PowerON:= TRUE;
 	ELSE
 		P1_Vytah.ServoZdvihuVytahu.Command.PowerON:= FALSE;
@@ -2320,19 +2320,19 @@ PROGRAM _CYCLIC
 			P1_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= TRUE;
 			P1_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			
-			IF P1_Vytah.CMD.RR_ZdvihVytahu_DOLE AND NOT P1_Vytah.ServoZdvihuVytahu.Command.Pause THEN
+			IF P1_Vytah.CMD.RR_ZdvihVytahu_DOLE AND NOT P1_Vytah.ServoZdvihuVytahu.Command.Stop THEN
 				P1_Vytah.ServoZdvihuVytahu.Parameters.Position:= P1_RemPremenne.P1_Vytah_PoziciaNakladania;
 				P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
-			ELSIF P1_Vytah.CMD.RR_ZdvihVytahu_HORE AND NOT P1_Vytah.ServoZdvihuVytahu.Command.Pause THEN
+			ELSIF P1_Vytah.CMD.RR_ZdvihVytahu_HORE AND NOT P1_Vytah.ServoZdvihuVytahu.Command.Stop THEN
 				P1_Vytah.ServoZdvihuVytahu.Parameters.Position:= P1_RemPremenne.P1_Vytah_PoziciaVykladania;
 				P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
 			ELSE
 				P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= FALSE;
-				P1_Vytah.ServoZdvihuVytahu.Command.Pause:= TRUE;
+				P1_Vytah.ServoZdvihuVytahu.Command.Stop:= TRUE;
 			END_IF	
 					
-			IF P1_Vytah.ServoZdvihuVytahu.Command.Pause AND P1_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
-				P1_Vytah.ServoZdvihuVytahu.Command.Pause:= FALSE;
+			IF P1_Vytah.ServoZdvihuVytahu.Command.Stop AND P1_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
+				P1_Vytah.ServoZdvihuVytahu.Command.Stop:= FALSE;
 			END_IF	
 			
 			

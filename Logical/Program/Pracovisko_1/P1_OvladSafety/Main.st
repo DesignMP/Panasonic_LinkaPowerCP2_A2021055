@@ -28,8 +28,30 @@ PROGRAM _CYCLIC
 	END_IF
 	
 
+	//******************************************Reset zóny výtahu*********************************************//
+	IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
+		(Safety.STAV.P1_Vytah_Bariera_AKTIVNA OR Safety.STAV.P1_Vytah_Muting_AKTIVNY) AND
+		NOT Safety.STAV.P1_ZonaVytahu_AKTIVNA THEN
+		Safety.OUT.P1_ResetZonyVytahu:= TRUE;
+	ELSE
+		Safety.OUT.P1_ResetZonyVytahu:= FALSE;
+	END_IF	
 	
 	
+	
+	//*****************************************Reset zóny bunky************************************************//
+	IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
+		Safety.STAV.P1_Bunka_Zamky_AKTIVNE AND
+		NOT Safety.STAV.P1_ZonaBunky_AKTIVNA AND
+		Safety.STAV.P1_VstupBunky_VstupBar_AKTIVNA AND
+		Safety.STAV.P1_VstupBunky_VystupBar_AKTIVNA AND
+		Safety.STAV.P1_VystupBunky_VstupBar_AKTIVNA AND
+		Safety.STAV.P1_VystupBunky_VystupBar_AKTIVNA THEN
+		Safety.OUT.P1_ResetZonyBunky:= TRUE;
+	ELSE
+		Safety.OUT.P1_ResetZonyBunky:= FALSE;
+	END_IF	
+
 	
 	 
 END_PROGRAM

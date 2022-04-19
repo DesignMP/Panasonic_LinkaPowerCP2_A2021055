@@ -28,6 +28,7 @@
     <Task Name="OvladanieV" Source="Program.Linka.OvladanieVizu.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#3">
+    <Task Name="OvladanieS" Source="Program.Linka.OvladanieSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P1_OvladSa" Source="Program.Pracovisko_1.P1_OvladSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_OvladSa" Source="Program.Pracovisko_2.P2_OvladSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P3_OvladSa" Source="Program.Pracovisko_3.P3_OvladSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />

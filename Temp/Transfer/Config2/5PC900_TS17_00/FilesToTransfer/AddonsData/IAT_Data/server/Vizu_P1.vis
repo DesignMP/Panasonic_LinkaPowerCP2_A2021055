@@ -34,11 +34,10 @@
     <BindingsSet refId="1948756856" />
     <BindingsSet refId="946432131" />
     <BindingsSet refId="1472554209" />
-	<BindingsSet refId="1163903829" />
-	<BindingsSet refId="-176492834" />	
-		
-	</BindingsSets>
-	
+    <BindingsSet refId="1163903829" />
+    <BindingsSet refId="-176492834" />
+    <BindingsSet refId="-1443671686" />
+  </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="747011459" />
     <EventBindingsSet refId="-554006622" />
@@ -49,9 +48,8 @@
     <EventBindingsSet refId="1634982777" />
     <EventBindingsSet refId="-627506400" />
     <EventBindingsSet refId="314177444" />
-	</EventBindingsSets>
-	
-	
+    <EventBindingsSet refId="23042272" />
+  </EventBindingsSets>
   <Dialogs>
     <Dialog refId="Hlasenie1_ST1" />
     <Dialog refId="Hlasenie2_ST1" />

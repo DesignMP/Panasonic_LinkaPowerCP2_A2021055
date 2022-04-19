@@ -23,7 +23,7 @@ PROGRAM _CYCLIC
 	VytvorenieEtikety;
 	
 	//Enable serva//
-	IF Safety.STAV.P4_ZonaBunky_AKTIVNA AND NOT P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset THEN
+	IF Safety.STAV.P4_ZonaBunky_AKTIVNA AND NOT P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset AND P4_Pracovisko.IN.ServoZdvihuAplikEtikiet_KomOK THEN
 		P4_Etiketovacka.ServoZdvihuAplikatora.Command.PowerON:= TRUE;
 	ELSE
 		P4_Etiketovacka.ServoZdvihuAplikatora.Command.PowerON:= FALSE;

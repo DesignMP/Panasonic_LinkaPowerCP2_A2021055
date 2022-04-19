@@ -47,29 +47,18 @@ PROGRAM _CYCLIC
 		
 	
 	
+	//***************************************PrÌznak safety PLC nabehlo*********************************************//
+    CasNabehnutiaSafetyPLC.PT:= T#10s;    
+	CasNabehnutiaSafetyPLC();
 	
-	
-	
-	
-	
-	
-	//    //Reset bariÈry vstupnÈho v˝ùahu//
-	//    IF NOT Safety.STAV.P1_Vytah_Bariera_AKTIVNA THEN
-	//        Safety.OUT.P1_ResetBarieryVytahu:= Blikac500ms;
-	//    ELSE
-	//        Safety.OUT.P1_ResetBarieryVytahu:= FALSE;
-//    END_IF    
-//  
-//    
-//    //Reset bariÈry v˝stupnÈho v˝ùahu//
-//    IF NOT Safety.STAV.P4_Vytah_Bariera_AKTIVNA THEN
-//        Safety.OUT.P4_ResetBarieryVytahu:= Blikac500ms;
-//    ELSE
-//        Safety.OUT.P4_ResetBarieryVytahu:= FALSE;
-//    END_IF    
+	CasNabehnutiaSafetyPLC.IN:= Linka.IN.SafetyMaster_OK;
     
-        
-        
+	IF CasNabehnutiaSafetyPLC.Q THEN
+		Safety.STAV.Linka_SafetyPLC_Nabehlo:= TRUE;
+	ELSE	
+		Safety.STAV.Linka_SafetyPLC_Nabehlo:= FALSE;
+	END_IF	
+	
 	
 	 
 END_PROGRAM

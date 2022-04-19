@@ -8277,123 +8277,113 @@
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_System_status" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_System_status" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Reserved" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Reserved" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_0" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_0" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[2]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[0]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_1" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_1" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[3]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[1]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_2" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_2" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[4]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[2]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_3" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_3" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[5]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[3]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_4" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_4" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[6]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[4]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_5" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_5" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[7]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[5]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_6" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_6" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[8]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[6]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_7" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_7" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[9]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[7]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_8" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_8" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[10]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[8]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_9" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_9" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[11]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[9]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_10" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_10" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[12]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[10]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_11" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_11" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[13]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[11]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_12" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_12" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[14]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[12]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_13" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_13" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[15]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[13]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_14" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_14" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[16]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[14]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Input_status_byte_15" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Input_status_byte_15" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[17]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[15]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_External_Input_status_EI_byte_0" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_External_Input_status_EI_byte_0" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[18]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_External_Input_status_EI_byte_1" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_External_Input_status_EI_byte_1" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[19]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_External_Input_status_EI_byte_2" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_External_Input_status_EI_byte_2" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[20]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_External_Input_status_EI_byte_3" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_External_Input_status_EI_byte_3" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[21]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_External_Output_status_EQ_byte_0" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_External_Output_status_EQ_byte_0" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[22]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[16]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_External_Output_status_EQ_byte_1" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_External_Output_status_EQ_byte_1" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[23]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[17]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_External_Output_status_EQ_byte_2" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_External_Output_status_EQ_byte_2" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[24]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[18]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_External_Output_status_EQ_byte_3" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_External_Output_status_EQ_byte_3" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[25]" Kind="pv"/>
+<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[19]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Output_status_byte_0" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Output_status_byte_0" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[26]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Output_status_byte_1" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Output_status_byte_1" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[27]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Output_status_byte_2" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Output_status_byte_2" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[28]" Kind="pv"/>
 </LN>
 <LN ID="%IB.SL1.IF1.ST20.SS1.IF1.ST6.Module002_Output_status_byte_3" Type="USINT">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST6" DPName="Module002_Output_status_byte_3" Kind="io"/>
-<Cons Device="TC#1-CPYDEV" DPName="Safety.Mapping_BYTE_IN[29]" Kind="pv"/>
 </LN>
 <LN ID="%IX.SL1.IF1.ST20.SS1.IF1.ST7.ModuleOk" Type="BOOL">
 <Prod Device="SL1.IF1.ST20.SS1.IF1.ST7" DPName="ModuleOk" Kind="io"/>

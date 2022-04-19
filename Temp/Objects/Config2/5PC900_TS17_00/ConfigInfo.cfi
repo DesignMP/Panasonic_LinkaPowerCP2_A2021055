@@ -298,6 +298,18 @@
   <TaskClass
     Name="Cyclic#3">
     <Task
+      Name="OvladanieS"
+      Disable="false"
+      Source="Program.Linka.OvladanieSafety"
+      Language="IEC">
+      <InternalFile
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Temp\Objects\Config2\5PC900_TS17_00\OvladanieS\Main.st.var" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Linka\OvladanieSafety\Types.typ" />
+      <File
+        Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Linka\OvladanieSafety\Variables.var" />
+    </Task>
+    <Task
       Name="P1_OvladSa"
       Disable="false"
       Source="Program.Pracovisko_1.P1_OvladSafety"

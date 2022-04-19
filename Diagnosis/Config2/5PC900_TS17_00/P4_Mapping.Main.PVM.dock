@@ -1,17 +1,8 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P4_Mapping 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=13 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=4 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                           P4_Pracovisko                        P4_Pracovisko_typ    0 "                                                               *"    0   24    1    0    0    1         
-                               COM_Festo                         P4_COM_Festo_typ    0 "                                                               *"    1   24    1    0    0    1         
-                               DI4_1_8DI                               BOOL[0..7]    0 "                                                               *"    2    1    8    0    0    1         
-                            DI4_1_8DI[0]                                     BOOL    1 "                                                            TRUE"    3    1    1    2    0    0         
-                            DI4_1_8DI[1]                                     BOOL    1 "                                                           FALSE"    3    1    1    2    0    0         
-                            DI4_1_8DI[2]                                     BOOL    1 "                                                            TRUE"    3    1    1    2    0    0         
-                            DI4_1_8DI[3]                                     BOOL    1 "                                                           FALSE"    3    1    1    2    0    0         
-                            DI4_1_8DI[4]                                     BOOL    1 "                                                            TRUE"    3    1    1    2    0    0         
-                            DI4_1_8DI[5]                                     BOOL    1 "                                                           FALSE"    3    1    1    2    0    0         
-                            DI4_1_8DI[6]                                     BOOL    1 "                                                           FALSE"    3    1    1    2    0    0         
-                            DI4_1_8DI[7]                                     BOOL    1 "                                                           FALSE"    3    1    1    2    0    0         
-                         P4_FunkcnyTestA                      P4_FunkcnyTestA_typ    0 "                                                               *"    0   24    1    0    0    1         
-                                     OUT                  P4_FunkcnyTestA_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
-                    PritlakPowerCP_VYSUN                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  Safety                               Safety_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     OUT                           Safety_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
+                           Linka_ResetCS                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                       P4_ResetZonyBunky                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                      P4_ResetZonyVytahu                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         

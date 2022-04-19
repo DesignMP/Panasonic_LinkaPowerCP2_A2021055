@@ -84,56 +84,6 @@
   border-width: 2px;
 }
 
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1 {
-  top: 145px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1 {
-  left: 525px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1 {
-  width: 150px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1 {
-  height: 50px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1 {
-  z-index: 17;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1:not(.disabled):not(.checked) .wrapper .before {
-  color: black;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1:not(.disabled):not(.checked) .wrapper .after {
-  color: black;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1 .wrapper .before {
-  font-size: 16px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1 .wrapper .after {
-  font-size: 16px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1:not(.active):not(.checked) {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1.disabled.active {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz1.disabled.checked {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
 #AreaPageManualP1_Dopravniky_ImageList2 {
   top: 220px;
   position: absolute;
@@ -338,108 +288,8 @@
   box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
 }
 
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2 {
-  top: 295px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2 {
-  left: 805px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2 {
-  width: 150px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2 {
-  height: 50px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2 {
-  z-index: 19;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2:not(.disabled):not(.checked) .wrapper .before {
-  color: black;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2:not(.disabled):not(.checked) .wrapper .after {
-  color: black;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2 .wrapper .before {
-  font-size: 16px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2 .wrapper .after {
-  font-size: 16px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2:not(.active):not(.checked) {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2.disabled.active {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz2.disabled.checked {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3 {
-  top: 480px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3 {
-  left: 355px;
-  position: absolute;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3 {
-  width: 150px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3 {
-  height: 50px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3 {
-  z-index: 20;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3:not(.disabled):not(.checked) .wrapper .before {
-  color: black;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3:not(.disabled):not(.checked) .wrapper .after {
-  color: black;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3 .wrapper .before {
-  font-size: 16px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3 .wrapper .after {
-  font-size: 16px;
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3:not(.active):not(.checked) {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3.disabled.active {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz3.disabled.checked {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
 #AreaPageManualP1_Dopravniky_ImageList6 {
-  top: 320px;
+  top: 165px;
   position: absolute;
 }
 
@@ -465,7 +315,7 @@
 }
 
 #AreaPageManualP1_Dopravniky_ImageList7 {
-  top: 295px;
+  top: 140px;
   position: absolute;
 }
 
@@ -491,7 +341,7 @@
 }
 
 #AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz4 {
-  top: 295px;
+  top: 140px;
   position: absolute;
 }
 
@@ -509,7 +359,7 @@
 }
 
 #AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz4 {
-  z-index: 18;
+  z-index: 17;
 }
 
 #AreaPageManualP1_Dopravniky_ToggleSwitch_ZasunStoperPoz4:not(.disabled):not(.checked) .wrapper .before {
@@ -787,4 +637,154 @@
 
 #AreaPageManualP1_Dopravniky_Label4 {
   font-weight: bold;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper {
+  top: 480px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper {
+  left: 370px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper {
+  width: 150px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper {
+  height: 50px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper {
+  z-index: 18;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper .wrapper .before {
+  font-size: 16px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper .wrapper .after {
+  font-size: 16px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1 {
+  top: 300px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1 {
+  left: 525px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1 {
+  width: 150px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1 {
+  height: 50px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1 {
+  z-index: 19;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1 .wrapper .before {
+  font-size: 16px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1 .wrapper .after {
+  font-size: 16px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper1.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2 {
+  top: 300px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2 {
+  left: 790px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2 {
+  width: 150px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2 {
+  height: 50px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2 {
+  z-index: 20;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2 .wrapper .before {
+  font-size: 16px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2 .wrapper .after {
+  font-size: 16px;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP1_Dopravniky_ToggleSwitch_Stoper2.disabled.checked {
+  box-shadow: 4px 4px 14px black;
 }

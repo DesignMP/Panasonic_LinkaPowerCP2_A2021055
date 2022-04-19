@@ -27,6 +27,33 @@ PROGRAM _CYCLIC
 		P34_Vizu.TL_ZamkniZadnyZamok_P4:= FALSE;
 	END_IF
 	 
+	
+	//******************************************Reset zóny výtahu*********************************************//
+	IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
+		(Safety.STAV.P4_Vytah_Bariera_AKTIVNA OR Safety.STAV.P4_Vytah_Muting_AKTIVNY) AND
+		NOT Safety.STAV.P4_ZonaVytahu_AKTIVNA THEN
+		Safety.OUT.P4_ResetZonyVytahu:= TRUE;
+	ELSE
+		Safety.OUT.P4_ResetZonyVytahu:= FALSE;
+	END_IF	
+	
+	//*****************************************Reset zóny bunky************************************************//
+	IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
+		Safety.STAV.P4_Bunka_Zamky_AKTIVNE AND
+		NOT Safety.STAV.P4_ZonaBunky_AKTIVNA AND
+		(Safety.STAV.P4_Bunka_VstupBariera_AKTIVNA OR Safety.STAV.P3_Bunka_Zamky_AKTIVNE)AND
+		Safety.STAV.P4_VystupBunky_VstupBar_AKTIVNA AND
+		Safety.STAV.P4_VystupBunky_VystupBar_AKTIVNA THEN
+		Safety.OUT.P4_ResetZonyBunky:= TRUE;
+	ELSE
+		Safety.OUT.P4_ResetZonyBunky:= FALSE;
+	END_IF	
+	
+	
+	
+	
+	
+	
 END_PROGRAM
 
 PROGRAM _EXIT

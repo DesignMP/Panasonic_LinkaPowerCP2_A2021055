@@ -46,6 +46,7 @@
   <Operation Delete="P3_OvladSa.br"/>
   <Operation Delete="P2_OvladSa.br"/>
   <Operation Delete="P1_OvladSa.br"/>
+  <Operation Delete="OvladanieS.br"/>
   <Operation Delete="OvladanieV.br"/>
   <Operation Delete="P4_OvladVi.br"/>
   <Operation Delete="P4_Vytah.br"/>
@@ -177,6 +178,7 @@
   <Operation Download="P4_Vytah.br" Memory="UserROM"/>
   <Operation Download="P4_OvladVi.br" Memory="UserROM"/>
   <Operation Download="OvladanieV.br" Memory="UserROM"/>
+  <Operation Download="OvladanieS.br" Memory="UserROM"/>
   <Operation Download="P1_OvladSa.br" Memory="UserROM"/>
   <Operation Download="P2_OvladSa.br" Memory="UserROM"/>
   <Operation Download="P3_OvladSa.br" Memory="UserROM"/>

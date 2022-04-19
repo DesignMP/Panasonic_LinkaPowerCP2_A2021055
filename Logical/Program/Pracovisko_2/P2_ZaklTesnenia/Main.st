@@ -32,11 +32,11 @@ PROGRAM _CYCLIC
 	
 	
 	//Enable serv//
-	IF Safety.STAV.P2_ZonaZakladacaPojazd_AKTIVNA AND NOT P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.ErrReset THEN
+	IF Safety.STAV.P2_ZonaZakladacaPojazd_AKTIVNA AND NOT P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.ErrReset AND P2_Pracovisko.IN.ServoZaklTesneniaPojazd_KomOK THEN
 		P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.PowerON:= TRUE;
 	END_IF	
 	
-	IF Safety.STAV.P2_ZonaZakladacaZdvih_AKTIVNA AND NOT P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.ErrReset THEN
+	IF Safety.STAV.P2_ZonaZakladacaZdvih_AKTIVNA AND NOT P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.ErrReset AND P2_Pracovisko.IN.ServoZaklTesneniaZdvih_KomOK THEN
 		P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.PowerON:= TRUE;
 	END_IF
 	
@@ -94,6 +94,7 @@ PROGRAM _CYCLIC
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.JogPos:= FALSE;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MoveAdditive:= FALSE;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition:= FALSE;
+			P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= FALSE;
 			IF NOT P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.StandStill THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= TRUE;
 			END_IF	
@@ -247,11 +248,11 @@ PROGRAM _CYCLIC
 			
 			IF P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition AND NOT Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition:= FALSE;
-				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= TRUE;
+				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= TRUE;
 			END_IF	
 			
 			IF P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.StandStill THEN
-				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= FALSE;
+				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= FALSE;
 			END_IF	
 			
 			
@@ -259,7 +260,7 @@ PROGRAM _CYCLIC
 			
 			IF EDGEPOS(P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.InPosition) THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition:= FALSE;
-				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= FALSE;
+				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= FALSE;
 				P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= FALSE;
 				Stav_PojazdPoINIT:= TRUE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
@@ -722,11 +723,11 @@ PROGRAM _CYCLIC
 			
 			IF P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition AND NOT Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition:= FALSE;
-				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= TRUE;
+				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= TRUE;
 			END_IF	
 			
 			IF P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.StandStill THEN
-				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= FALSE;
+				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= FALSE;
 			END_IF	
 			
 					
@@ -735,7 +736,7 @@ PROGRAM _CYCLIC
 			
 			IF P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.InPosition THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition:= FALSE;
-				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= FALSE;
+				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= FALSE;
 				P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= FALSE;
 				PocetZatlaceni:= 0;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
@@ -1120,17 +1121,17 @@ PROGRAM _CYCLIC
 			
 			IF P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition AND NOT Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition:= FALSE;
-				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= TRUE;
+				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= TRUE;
 			END_IF	
 			
 			IF P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.StandStill THEN
-				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= FALSE;
+				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= FALSE;
 			END_IF	
 			
 			
 			IF P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.InPosition THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition:= FALSE;
-				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Stop:= FALSE;
+				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.Pause:= FALSE;
 				P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= FALSE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 100;

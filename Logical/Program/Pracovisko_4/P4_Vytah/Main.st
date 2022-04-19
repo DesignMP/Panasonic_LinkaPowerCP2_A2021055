@@ -24,7 +24,7 @@ PROGRAM _CYCLIC
 	SequenceControl(SC:= SC_P4_Vytah);
 	
 	//Enable serva//
-	IF Safety.STAV.P4_ZonaVytahu_AKTIVNA AND NOT P4_Vytah.ServoZdvihuVytahu.Command.ErrReset THEN
+	IF Safety.STAV.P4_ZonaVytahu_AKTIVNA AND NOT P4_Vytah.ServoZdvihuVytahu.Command.ErrReset AND P4_Pracovisko.IN.ServoZdvihuVytahu_KomOK THEN
 		P4_Vytah.ServoZdvihuVytahu.Command.PowerON:= TRUE;
 	ELSE
 		P4_Vytah.ServoZdvihuVytahu.Command.PowerON:= FALSE;

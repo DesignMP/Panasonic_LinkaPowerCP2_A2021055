@@ -72,9 +72,9 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.2;
 	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.3;
 	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.4;
-	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.5;
-	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.6;
-	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.7;
+	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.5:= Safety.OUT.Linka_ResetCS;
+	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.6:= Safety.OUT.P3_ResetZonyBunky;
+	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.7:= Safety.OUT.P3_ResetZonyHVtest;
 	
 	
 	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.0 := P3_Dopravniky.OUT.PrednyDopravnikBunky_ON;
@@ -82,9 +82,9 @@ PROGRAM _CYCLIC
 	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.2 := P3_Dopravniky.OUT.PriecnyDopravnik2_VPRED;
 	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.3 := P3_Dopravniky.OUT.ZadnyDopravnikBunky_ON;
 	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.4 := P3_Dopravniky.OUT.VratnyDopravnik_ON;
-	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.5;   // Safety resety
-	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.6;    // Safety resety                                              
-	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.7;    // Safety resety                                              
+	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.5;  
+	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.6;                                            
+	P3_Pracovisko.COM_Weidmuller.AB3_10_8DO.7;                                           
 	
 	
 	

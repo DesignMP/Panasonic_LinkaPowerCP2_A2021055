@@ -61,12 +61,12 @@ PROGRAM _CYCLIC
 	P4_Pracovisko.COM_Weidmuller.AB4_6_8DO.4 := P4_Dopravniky.OUT.PriecnyDopravnik_VPRED;
 	P4_Pracovisko.COM_Weidmuller.AB4_6_8DO.5 := P4_Dopravniky.OUT.ZadnyDopravnikBunky_ON;
 	P4_Pracovisko.COM_Weidmuller.AB4_6_8DO.6 := P4_Dopravniky.OUT.VratnyDopravnik_ON;
-	P4_Pracovisko.COM_Weidmuller.AB4_6_8DO.7 ;
+	P4_Pracovisko.COM_Weidmuller.AB4_6_8DO.7 := Safety.OUT.Linka_ResetCS;
 	
 	
 	//************Karta AB 4.8 8DO**************//
-	P4_Pracovisko.COM_Weidmuller.AB4_8_8DO.0;
-	P4_Pracovisko.COM_Weidmuller.AB4_8_8DO.1;
+	P4_Pracovisko.COM_Weidmuller.AB4_8_8DO.0:= Safety.OUT.P4_ResetZonyBunky;
+	P4_Pracovisko.COM_Weidmuller.AB4_8_8DO.1:= Safety.OUT.P4_ResetZonyVytahu;
 	P4_Pracovisko.COM_Weidmuller.AB4_8_8DO.2;
 	P4_Pracovisko.COM_Weidmuller.AB4_8_8DO.3;
 	P4_Pracovisko.COM_Weidmuller.AB4_8_8DO.4;

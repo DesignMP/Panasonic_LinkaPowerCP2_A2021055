@@ -572,7 +572,158 @@
             <Variable Name="RR_PrecitaneCisloPaletky" />
           </Variable>
         </Variable>
+        <Variable Name="P1_Srobovanie">
+          <Variable Name="CMD">
+            <Variable Name="RR_SkrutkovackuK30_VYSUN" />
+            <Variable Name="RR_Manipulator_OsX_VPRAVO" />
+            <Variable Name="RR_Manipulator_OsX_VLAVO" />
+            <Variable Name="RR_Manipulator_OsY_VPRED" />
+            <Variable Name="RR_Manipulator_OsY_VZAD" />
+            <Variable Name="RR_SkrutkovackaM4_OsZ_HORE" />
+            <Variable Name="RR_SkrutkovackaM4_OsZ_DOLE" />
+            <Variable Name="RR_SkrutkovackaM5_OsZ_HORE" />
+            <Variable Name="RR_SkrutkovackaM5_OsZ_DOLE" />
+            <Variable Name="RR_PrisavanieSkrutkyM5_ON" />
+            <Variable Name="RR_PrisavanieSkrutkyM4_ON" />
+            <Variable Name="RR_PrisavanieSkrutkyK30_ON" />
+            <Variable Name="RR_CistenieSkrutkovackyK30" />
+            <Variable Name="RR_SkrutSetK30_Zasobnik_RUN" />
+            <Variable Name="RR_SkrutSetK30_PodajSkrutku" />
+            <Variable Name="RR_SkrutSetM4_Zasobnik_RUN" />
+            <Variable Name="RR_SkrutSetM4_Vibrolista_RUN" />
+            <Variable Name="RR_SkrutSetM4_PodajSkrutku" />
+            <Variable Name="RR_SkrutSetM4_OtocPodavac_Vstup" />
+            <Variable Name="RR_SkrutSetM4_OtocPodavac_Vystup" />
+            <Variable Name="RR_SkrutSetM5_Zasobnik_RUN" />
+            <Variable Name="RR_SkrutSetM5_Vibrolista_RUN" />
+            <Variable Name="RR_SkrutSetM5_PodajSkrutku" />
+            <Variable Name="RR_SkrutSetM5_OtocPodavac_Vstup" />
+            <Variable Name="RR_SkrutSetM5_OtocPodavac_Vystup" />
+            <Variable Name="RR_PolohujManipulator" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="ManipulOsX_LimSnimac_POS" />
+            <Variable Name="ManipulOsX_LimSnimac_NEG" />
+            <Variable Name="ManipulOsY_LimSnimac_POS" />
+            <Variable Name="ManipulOsY_LimSnimac_NEG" />
+            <Variable Name="ManipulOsZ_M4_LimSnimacHorny" />
+            <Variable Name="ManipulOsZ_M4_LimSnimacSpodny" />
+            <Variable Name="ManipulOsZ_M5_LimSnimacHorny" />
+            <Variable Name="ManipulOsZ_M5_LimSnimacSpodny" />
+            <Variable Name="Skrutkovacka_K30_ZASUNUTA" />
+            <Variable Name="Skrutkovacka_M5_Vakum_OK" />
+            <Variable Name="Skrutkovacka_M4_Vakum_OK" />
+          </Variable>
+          <Variable Name="OUT" />
+          <Variable Name="PAR">
+            <Variable Name="ManipulOsX_JoggRychlost" />
+            <Variable Name="ManipulOsY_JoggRychlost" />
+            <Variable Name="ManipulOsZ_M5_JoggRychlost" />
+            <Variable Name="ManipulOsZ_M4_JoggRychlost" />
+          </Variable>
+          <Variable Name="STAV">
+            <Variable Name="RR_Polohovanie_BUSY" />
+          </Variable>
+          <Variable Name="ServoManipulOsX">
+            <Variable Name="Command">
+              <Variable Name="ErrReset" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="ActPosition" />
+              <Variable Name="Ready" />
+            </Variable>
+          </Variable>
+          <Variable Name="ServoManipulOsY">
+            <Variable Name="Command">
+              <Variable Name="ErrReset" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="ActPosition" />
+              <Variable Name="Ready" />
+            </Variable>
+          </Variable>
+          <Variable Name="ServoManipulOsZ_M4">
+            <Variable Name="Command">
+              <Variable Name="ErrReset" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="Ready" />
+              <Variable Name="ActPosition" />
+            </Variable>
+          </Variable>
+          <Variable Name="ServoManipulOsZ_M5">
+            <Variable Name="Command">
+              <Variable Name="ErrReset" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="ActPosition" />
+              <Variable Name="Ready" />
+            </Variable>
+          </Variable>
+          <Variable Name="SkrutSet_K30">
+            <Variable Name="Cmd">
+              <Variable Name="ManualStartHrniec" />
+              <Variable Name="PodajSkrutku" />
+            </Variable>
+            <Variable Name="IN">
+              <Variable Name="Brzda">
+                <Variable Name="SkrutkaPritomnaVBrzde" />
+                <Variable Name="ZakladnaPoloha" />
+              </Variable>
+              <Variable Name="VibracnyHrniec">
+                <Variable Name="PritomnostSkrutiekVHrnci" />
+                <Variable Name="VibracnaListaZaplnena" />
+                <Variable Name="PreletovySnimac" />
+              </Variable>
+            </Variable>
+            <Variable Name="OUT">
+              <Variable Name="Brzda">
+                <Variable Name="ZakladnaPoloha" />
+              </Variable>
+            </Variable>
+          </Variable>
+          <Variable Name="SkrutSet_M5">
+            <Variable Name="CMD">
+              <Variable Name="RR_ZapniZasobnik" />
+              <Variable Name="RR_ZapniVibrolistu" />
+              <Variable Name="RR_OtocPodavac_Vstup" />
+              <Variable Name="RR_OtocPodavac_Vystup" />
+            </Variable>
+            <Variable Name="IN">
+              <Variable Name="ZasobnikSkrutiekPrazdny" />
+              <Variable Name="ZaplnenieListyZasobnika" />
+              <Variable Name="ZaplnenieVibrolisty_MIN" />
+              <Variable Name="ZaplnenieVibrolisty_MAX" />
+              <Variable Name="PodavacOtoceny_VSTUP" />
+              <Variable Name="PodavacOtoceny_VYSTUP" />
+              <Variable Name="Podavac_SkrutkaNaVstupe" />
+              <Variable Name="Podavac_SkrutkaNaVystupe" />
+            </Variable>
+          </Variable>
+          <Variable Name="SkrutSet_M4">
+            <Variable Name="CMD">
+              <Variable Name="RR_ZapniZasobnik" />
+              <Variable Name="RR_ZapniVibrolistu" />
+              <Variable Name="RR_OtocPodavac_Vstup" />
+              <Variable Name="RR_OtocPodavac_Vystup" />
+            </Variable>
+            <Variable Name="IN">
+              <Variable Name="ZasobnikSkrutiekPrazdny" />
+              <Variable Name="ZaplnenieListyZasobnika" />
+              <Variable Name="ZaplnenieVibrolisty_MIN" />
+              <Variable Name="ZaplnenieVibrolisty_MAX" />
+              <Variable Name="PodavacOtoceny_VSTUP" />
+              <Variable Name="PodavacOtoceny_VYSTUP" />
+              <Variable Name="Podavac_SkrutkaNaVstupe" />
+              <Variable Name="Podavac_SkrutkaNaVystupe" />
+            </Variable>
+          </Variable>
+        </Variable>
       </GlobalVariables>
+      <Task Name="P1_StoperS">
+        <Variable Name="Centrovacku_VYSUN" />
+        <Variable Name="Centrovacku_ZASUN" />
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>

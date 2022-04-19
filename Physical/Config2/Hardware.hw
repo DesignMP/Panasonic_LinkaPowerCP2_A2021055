@@ -97,6 +97,7 @@
     <Group ID="FileDevice8" />
     <Parameter ID="FileDeviceName8" Value="HDD_Fotky" />
     <Parameter ID="FileDevicePath8" Value="F:\Fotky" />
+    <Parameter ID="EthernetDefaultGateway" Value="10.128.148.1" />
     <Group ID="FtpUser1" />
     <Parameter ID="FtpUsername1" Value="admin" />
     <Parameter ID="FtpUserPassword1" Value="ECGRQEqr8oWsLYs7yIUsO3V/H6leyvCr8E/NknMgEcE=" />
@@ -171,6 +172,7 @@
     <Parameter ID="Mode" Value="Manual" />
     <Parameter ID="InternetAddress" Value="10.128.148.11" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
+    <Parameter ID="DefaultGateway" Value="10.128.148.1" />
     <Parameter ID="TimeZone" Value="145" />
     <Parameter ID="PasswordVNC" Value="" />
     <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.2:85/index.html?visuId=Vizu_P1" />
@@ -285,6 +287,7 @@
     <Parameter ID="Mode" Value="Manual" />
     <Parameter ID="InternetAddress" Value="10.128.148.21" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
+    <Parameter ID="DefaultGateway" Value="10.128.148.1" />
     <Parameter ID="TimeZone" Value="145" />
     <Parameter ID="PasswordVNC" Value="" />
     <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.2:85/index.html?visuId=Vizu_P2" />
@@ -521,6 +524,7 @@
     <Parameter ID="Mode" Value="Manual" />
     <Parameter ID="InternetAddress" Value="10.128.148.40" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
+    <Parameter ID="DefaultGateway" Value="10.128.148.1" />
     <Parameter ID="TimeZone" Value="145" />
     <Parameter ID="PasswordVNC" Value="" />
     <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.2:85/index.html?visuId=Vizu_P34" />

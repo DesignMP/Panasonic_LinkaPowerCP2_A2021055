@@ -3,25 +3,25 @@ PROGRAM _INIT
 	
 	//Init parametre serva manipulátora Os X//
 	P1_Srobovanie.ServoManipulOsX.Parameters.Override:= 100;
-	P1_Srobovanie.PAR.ManipulOsX_JoggRychlost:= 0.1;
+	P1_Srobovanie.PAR.ManipulOsX_JoggRychlost:= 5;
 	P1_Srobovanie.ServoManipulOsX.Command.TorqueLimitation:= TRUE;
 	P1_Srobovanie.ServoManipulOsX.Parameters.Torque:= 1.0;
 	
 	//Init parametre serva manipulátora Os Y//
 	P1_Srobovanie.ServoManipulOsY.Parameters.Override:= 100;
-	P1_Srobovanie.PAR.ManipulOsY_JoggRychlost:= 0.1;	
+	P1_Srobovanie.PAR.ManipulOsY_JoggRychlost:= 5;	
 	P1_Srobovanie.ServoManipulOsY.Command.TorqueLimitation:= TRUE;
 	P1_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1.0;
 	
 	//Init parametre serva zdvihu skrutkovacky M4//
 	P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Override:= 100;
-	P1_Srobovanie.PAR.ManipulOsZ_M4_JoggRychlost:= 0.1;
+	P1_Srobovanie.PAR.ManipulOsZ_M4_JoggRychlost:= 5;
 	P1_Srobovanie.ServoManipulOsZ_M4.Command.TorqueLimitation:= TRUE;
 	P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Torque:= 1.0;
 	
 	//Init parametre serva zdvihu skrutkovacky M5//
 	P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Override:= 100;
-	P1_Srobovanie.PAR.ManipulOsZ_M5_JoggRychlost:= 0.1;
+	P1_Srobovanie.PAR.ManipulOsZ_M5_JoggRychlost:= 5;
 	P1_Srobovanie.ServoManipulOsZ_M5.Command.TorqueLimitation:= TRUE;
 	P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1.0;
 	
@@ -44,25 +44,25 @@ PROGRAM _CYCLIC
 	
 	
 	//Enable serv//
-	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Srobovanie.ServoManipulOsX.Command.ErrReset THEN
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Srobovanie.ServoManipulOsX.Command.ErrReset AND P1_Pracovisko.IN.ServoManipulatorOsX_KomOK THEN
 		P1_Srobovanie.ServoManipulOsX.Command.PowerON:= TRUE;
 	ELSE
 		P1_Srobovanie.ServoManipulOsX.Command.PowerON:= FALSE;
 	END_IF
 	
-	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Srobovanie.ServoManipulOsY.Command.ErrReset THEN
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Srobovanie.ServoManipulOsY.Command.ErrReset AND P1_Pracovisko.IN.ServoManipulatorOsY_KomOK THEN
 		P1_Srobovanie.ServoManipulOsY.Command.PowerON:= TRUE;
 	ELSE
 		P1_Srobovanie.ServoManipulOsY.Command.PowerON:= FALSE;
 	END_IF
 	
-	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Srobovanie.ServoManipulOsZ_M4.Command.ErrReset THEN
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Srobovanie.ServoManipulOsZ_M4.Command.ErrReset AND P1_Pracovisko.IN.ServoManipulatorOsZ_M4_KomOK THEN
 		P1_Srobovanie.ServoManipulOsZ_M4.Command.PowerON:= TRUE;
 	ELSE
 		P1_Srobovanie.ServoManipulOsZ_M4.Command.PowerON:= FALSE;
 	END_IF
 	
-	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset THEN
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset AND P1_Pracovisko.IN.ServoManipulatorOsZ_M5_KomOK THEN
 		P1_Srobovanie.ServoManipulOsZ_M5.Command.PowerON:= TRUE;
 	ELSE
 		P1_Srobovanie.ServoManipulOsZ_M5.Command.PowerON:= FALSE;
@@ -141,6 +141,7 @@ PROGRAM _CYCLIC
 			P1_Srobovanie.ServoManipulOsX.Command.JogPos:= FALSE;
 			P1_Srobovanie.ServoManipulOsX.Command.MoveAdditive:= FALSE;
 			P1_Srobovanie.ServoManipulOsX.Command.MovePosition:= FALSE;
+			P1_Srobovanie.ServoManipulOsX.Command.Pause:= FALSE;
 			IF NOT P1_Srobovanie.ServoManipulOsX.Status.StandStill THEN
 				P1_Srobovanie.ServoManipulOsX.Command.Stop:= TRUE;
 			END_IF	
@@ -148,6 +149,7 @@ PROGRAM _CYCLIC
 			P1_Srobovanie.ServoManipulOsY.Command.JogPos:= FALSE;
 			P1_Srobovanie.ServoManipulOsY.Command.MoveAdditive:= FALSE;
 			P1_Srobovanie.ServoManipulOsY.Command.MovePosition:= FALSE;
+			P1_Srobovanie.ServoManipulOsY.Command.Pause:= FALSE;
 			IF NOT P1_Srobovanie.ServoManipulOsY.Status.StandStill THEN
 				P1_Srobovanie.ServoManipulOsY.Command.Stop:= TRUE;
 			END_IF	
@@ -155,6 +157,7 @@ PROGRAM _CYCLIC
 			P1_Srobovanie.ServoManipulOsZ_M4.Command.JogPos:= FALSE;
 			P1_Srobovanie.ServoManipulOsZ_M4.Command.MoveAdditive:= FALSE;
 			P1_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= FALSE;
+			P1_Srobovanie.ServoManipulOsZ_M4.Command.Pause:= FALSE;
 			IF NOT P1_Srobovanie.ServoManipulOsZ_M4.Status.StandStill THEN
 				P1_Srobovanie.ServoManipulOsZ_M4.Command.Stop:= TRUE;
 			END_IF	
@@ -162,6 +165,7 @@ PROGRAM _CYCLIC
 			P1_Srobovanie.ServoManipulOsZ_M5.Command.JogPos:= FALSE;
 			P1_Srobovanie.ServoManipulOsZ_M5.Command.MoveAdditive:= FALSE;
 			P1_Srobovanie.ServoManipulOsZ_M5.Command.MovePosition:= FALSE;
+			P1_Srobovanie.ServoManipulOsZ_M5.Command.Pause:= FALSE;
 			IF NOT P1_Srobovanie.ServoManipulOsZ_M5.Status.StandStill THEN
 				P1_Srobovanie.ServoManipulOsZ_M5.Command.Stop:= TRUE;
 			END_IF	
@@ -4532,43 +4536,104 @@ PROGRAM _CYCLIC
 			SC_P1_Srobovanie.IdleTime.PT:= T#8s;
 			SC_P1_Srobovanie.AlarmTime.PT:= T#5s;
 		
-			//Parametre serv pre jogging//
-			P1_Srobovanie.ServoManipulOsX.Parameters.Jog.Acc:= 1;
-			P1_Srobovanie.ServoManipulOsX.Parameters.Jog.Velocity:= P1_Srobovanie.PAR.ManipulOsX_JoggRychlost;
-			P1_Srobovanie.ServoManipulOsY.Parameters.Jog.Acc:= 1;
-			P1_Srobovanie.ServoManipulOsY.Parameters.Jog.Velocity:= P1_Srobovanie.PAR.ManipulOsY_JoggRychlost;
-			P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Jog.Acc:= 1;
-			P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Jog.Velocity:= P1_Srobovanie.PAR.ManipulOsZ_M4_JoggRychlost;
-			P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Jog.Acc:= 1;
-			P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Jog.Velocity:= P1_Srobovanie.PAR.ManipulOsZ_M5_JoggRychlost;
+			
+			
+			
+				
+			//Ovládanie manipulátora os X//
+			P1_Srobovanie.ServoManipulOsX.Parameters.Acc:= 1;
+			P1_Srobovanie.ServoManipulOsX.Parameters.Dcc:= 1;
+			P1_Srobovanie.ServoManipulOsX.Parameters.Velocity:= P1_Srobovanie.PAR.ManipulOsX_JoggRychlost/1000;
 			P1_Srobovanie.ServoManipulOsX.Command.TorqueLimitation:= TRUE;
-			P1_Srobovanie.ServoManipulOsY.Command.TorqueLimitation:= TRUE;
-			P1_Srobovanie.ServoManipulOsZ_M4.Command.TorqueLimitation:= TRUE;
-			P1_Srobovanie.ServoManipulOsZ_M5.Command.TorqueLimitation:= TRUE;
-	
-			//Ovládanie vysunutia skrutkovaèky M4//
-			IF P1_Srobovanie.CMD.RR_SkrutkovackaM4_OsZ_DOLE AND P1_Srobovanie.ServoManipulOsZ_M4.Status.ActPosition < 100 THEN
-				P1_Srobovanie.ServoManipulOsZ_M4.Command.JogNeg:= FALSE;
-				P1_Srobovanie.ServoManipulOsZ_M4.Command.JogPos:= TRUE;
-			ELSIF P1_Srobovanie.CMD.RR_SkrutkovackaM4_OsZ_HORE AND P1_Srobovanie.ServoManipulOsZ_M4.Status.ActPosition > 5 THEN
-				P1_Srobovanie.ServoManipulOsZ_M4.Command.JogPos:= FALSE;	
-				P1_Srobovanie.ServoManipulOsZ_M4.Command.JogNeg:= TRUE;
+			P1_Srobovanie.ServoManipulOsX.Parameters.Torque:= 1;
+			
+			IF P1_Srobovanie.CMD.RR_Manipulator_OsX_VPRAVO AND NOT P1_Srobovanie.ServoManipulOsX.Command.Stop THEN
+				P1_Srobovanie.ServoManipulOsX.Parameters.Position:= 45;
+				P1_Srobovanie.ServoManipulOsX.Command.MovePosition:= TRUE;
+			ELSIF P1_Srobovanie.CMD.RR_Manipulator_OsX_VLAVO AND NOT P1_Srobovanie.ServoManipulOsX.Command.Stop THEN
+				P1_Srobovanie.ServoManipulOsX.Parameters.Position:= 0;
+				P1_Srobovanie.ServoManipulOsX.Command.MovePosition:= TRUE;
 			ELSE
-				P1_Srobovanie.ServoManipulOsZ_M4.Command.JogNeg:= FALSE;
-				P1_Srobovanie.ServoManipulOsZ_M4.Command.JogPos:= FALSE;
+				P1_Srobovanie.ServoManipulOsX.Command.MovePosition:= FALSE;
+				P1_Srobovanie.ServoManipulOsX.Command.Stop:= TRUE;
 			END_IF	
+					
+			IF P1_Srobovanie.ServoManipulOsX.Command.Stop AND P1_Srobovanie.ServoManipulOsX.Status.StandStill THEN
+				P1_Srobovanie.ServoManipulOsX.Command.Stop:= FALSE;
+			END_IF	
+			
+			
+			//Ovládanie manipulátora os Y//
+			P1_Srobovanie.ServoManipulOsY.Parameters.Acc:= 1;
+			P1_Srobovanie.ServoManipulOsY.Parameters.Dcc:= 1;
+			P1_Srobovanie.ServoManipulOsY.Parameters.Velocity:= P1_Srobovanie.PAR.ManipulOsY_JoggRychlost/1000;
+			P1_Srobovanie.ServoManipulOsY.Command.TorqueLimitation:= TRUE;
+			P1_Srobovanie.ServoManipulOsY.Parameters.Torque:= 1;
+			
+			IF P1_Srobovanie.CMD.RR_Manipulator_OsY_VPRED AND NOT P1_Srobovanie.ServoManipulOsY.Command.Stop THEN
+				P1_Srobovanie.ServoManipulOsY.Parameters.Position:= 320;
+				P1_Srobovanie.ServoManipulOsY.Command.MovePosition:= TRUE;
+			ELSIF P1_Srobovanie.CMD.RR_Manipulator_OsY_VZAD AND NOT P1_Srobovanie.ServoManipulOsY.Command.Stop THEN
+				P1_Srobovanie.ServoManipulOsY.Parameters.Position:= 0;
+				P1_Srobovanie.ServoManipulOsY.Command.MovePosition:= TRUE;
+			ELSE
+				P1_Srobovanie.ServoManipulOsY.Command.MovePosition:= FALSE;
+				P1_Srobovanie.ServoManipulOsY.Command.Stop:= TRUE;
+			END_IF	
+					
+			IF P1_Srobovanie.ServoManipulOsY.Command.Stop AND P1_Srobovanie.ServoManipulOsY.Status.StandStill THEN
+				P1_Srobovanie.ServoManipulOsY.Command.Stop:= FALSE;
+			END_IF		
+			
+			
+			
+			
+			//Ovládanie vysunutia skrutkovaèky M4//
+			P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Acc:= 1;
+			P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Dcc:= 1;
+			P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Velocity:= P1_Srobovanie.PAR.ManipulOsZ_M4_JoggRychlost/1000;
+			P1_Srobovanie.ServoManipulOsZ_M4.Command.TorqueLimitation:= TRUE;
+			P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Torque:= 1;
+			
+			IF P1_Srobovanie.CMD.RR_SkrutkovackaM4_OsZ_DOLE AND NOT P1_Srobovanie.ServoManipulOsZ_M4.Command.Stop THEN
+				P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Position:= 100;
+				P1_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= TRUE;
+			ELSIF P1_Srobovanie.CMD.RR_SkrutkovackaM4_OsZ_HORE AND NOT P1_Srobovanie.ServoManipulOsZ_M4.Command.Stop THEN
+				P1_Srobovanie.ServoManipulOsZ_M4.Parameters.Position:= 0;
+				P1_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= TRUE;
+			ELSE
+				P1_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= FALSE;
+				P1_Srobovanie.ServoManipulOsZ_M4.Command.Stop:= TRUE;
+			END_IF	
+					
+			IF P1_Srobovanie.ServoManipulOsZ_M4.Command.Stop AND P1_Srobovanie.ServoManipulOsZ_M4.Status.StandStill THEN
+				P1_Srobovanie.ServoManipulOsZ_M4.Command.Stop:= FALSE;
+			END_IF	
+			
+		
+	
 				
             
 			//Ovládanie vysunutia skrutkovaèky M5//
-			IF P1_Srobovanie.CMD.RR_SkrutkovackaM5_OsZ_DOLE AND P1_Srobovanie.ServoManipulOsZ_M5.Status.ActPosition < 100 THEN
-				P1_Srobovanie.ServoManipulOsZ_M5.Command.JogNeg:= FALSE;
-				P1_Srobovanie.ServoManipulOsZ_M5.Command.JogPos:= TRUE;
-			ELSIF P1_Srobovanie.CMD.RR_SkrutkovackaM5_OsZ_HORE AND P1_Srobovanie.ServoManipulOsZ_M4.Status.ActPosition > 5 THEN
-				P1_Srobovanie.ServoManipulOsZ_M5.Command.JogPos:= FALSE;	
-				P1_Srobovanie.ServoManipulOsZ_M5.Command.JogNeg:= TRUE;
+			P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Acc:= 1;
+			P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Dcc:= 1;
+			P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Velocity:= P1_Srobovanie.PAR.ManipulOsZ_M5_JoggRychlost/1000;
+			P1_Srobovanie.ServoManipulOsZ_M5.Command.TorqueLimitation:= TRUE;
+			P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Torque:= 1;
+			
+			IF P1_Srobovanie.CMD.RR_SkrutkovackaM5_OsZ_DOLE AND NOT P1_Srobovanie.ServoManipulOsZ_M5.Command.Stop THEN
+				P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 100;
+				P1_Srobovanie.ServoManipulOsZ_M5.Command.MovePosition:= TRUE;
+			ELSIF P1_Srobovanie.CMD.RR_SkrutkovackaM5_OsZ_HORE AND NOT P1_Srobovanie.ServoManipulOsZ_M5.Command.Stop THEN
+				P1_Srobovanie.ServoManipulOsZ_M5.Parameters.Position:= 0;
+				P1_Srobovanie.ServoManipulOsZ_M5.Command.MovePosition:= TRUE;
 			ELSE
-				P1_Srobovanie.ServoManipulOsZ_M5.Command.JogNeg:= FALSE;
-				P1_Srobovanie.ServoManipulOsZ_M5.Command.JogPos:= FALSE;
+				P1_Srobovanie.ServoManipulOsZ_M5.Command.MovePosition:= FALSE;
+				P1_Srobovanie.ServoManipulOsZ_M5.Command.Stop:= TRUE;
+			END_IF	
+					
+			IF P1_Srobovanie.ServoManipulOsZ_M5.Command.Stop AND P1_Srobovanie.ServoManipulOsZ_M5.Status.StandStill THEN
+				P1_Srobovanie.ServoManipulOsZ_M5.Command.Stop:= FALSE;
 			END_IF	
 			
 			       

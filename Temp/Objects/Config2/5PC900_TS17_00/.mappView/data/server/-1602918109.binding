@@ -60,4 +60,16 @@
 			<Target xsi:type="brease" refId="HlavickaP2_ButtonZadneDvere" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 		</Binding>
   </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_OvladaniaZamkov_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonPredneDvere" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_OvladaniaZamkov_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_ButtonZadneDvere" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
 </BindingDefinition>

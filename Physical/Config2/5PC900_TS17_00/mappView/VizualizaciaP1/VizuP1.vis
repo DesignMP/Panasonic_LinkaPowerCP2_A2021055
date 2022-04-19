@@ -34,11 +34,10 @@
     <BindingsSet refId="AreaPageParametreP1_page2_binding" />
     <BindingsSet refId="AreaLoginP1_binding" />
     <BindingsSet refId="AreaTimeP1_binding" />
-	<BindingsSet refId="AreaPageManualP1_Dopravniky_binding" />
-	<BindingsSet refId="AreaPageManualP1_Vytah_binding" />	
-		
-	</BindingsSets>
-	
+    <BindingsSet refId="AreaPageManualP1_Dopravniky_binding" />
+    <BindingsSet refId="AreaPageManualP1_Vytah_binding" />
+    <BindingsSet refId="AreaPageManualP1_Skrutkovanie_binding" />
+  </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="PataP1_eventbinding" />
     <EventBindingsSet refId="HlavickaP1_eventbinding" />
@@ -49,9 +48,8 @@
     <EventBindingsSet refId="AreaTimeP1_eventbinding" />
     <EventBindingsSet refId="AreaHlasenie5_ST1_eventbinding" />
     <EventBindingsSet refId="AreaPageManualP1_Vytah_eventbinding" />
-	</EventBindingsSets>
-	
-	
+    <EventBindingsSet refId="AreaPageManualP1_Skrutkovanie_eventbinding" />
+  </EventBindingsSets>
   <Dialogs>
     <Dialog refId="Hlasenie1_ST1" />
     <Dialog refId="Hlasenie2_ST1" />

@@ -17,7 +17,7 @@ PROGRAM _CYCLIC
 			Vizu.TL_ResetCS_Farba:= "Operate";
 		END_IF	
 	ELSE
-		Vizu.TL_ResetCS_Farba:= "Operate";
+		Vizu.TL_ResetCS_Farba:= "Button_Red";
 	END_IF	
 	
 	

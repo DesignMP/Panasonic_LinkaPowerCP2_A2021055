@@ -1,9 +1,12 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_ZaklTes 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=10 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=23 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                   SC_P2_ZakladacTesnenia                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                               1"    1    6    1   10    0    0         
+                                    Step                                     UINT    0 "                                                             100"    1    6    1   10    0    0         
                      P2_ZakladacTesnenia                  P2_ZakladacTesnenia_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                  COM_IN           P2_ZakladacTesnenia_COM_IN_typ    0 "                                                               *"    1   24    1    0    0    1         
+                           ZalozTesnenie                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 Automat                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                    ServoPojazduZakladaca                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
                                  Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    1         
                                  PowerON                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
@@ -18,11 +21,11 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                               Parameters                               ParamStruc    0 "                                                               *"    2   24    1    0    0    1         
                                   Torque                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
                                 Distance                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                                Position                                     REAL    0 "                                                             4.0"    3    8    1   10    0    0         
+                                Position                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                 Override                                     REAL    0 "                                                           100.0"    3    8    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                             0.3"    3    8    1   10    0    0         
-                                     Dcc                                     REAL    0 "                                                            20.0"    3    8    1   10    0    0         
-                                     Acc                                     REAL    0 "                                                            50.0"    3    8    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                     Dcc                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                     Acc                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                      Jog                                 JogStruc    0 "                                                               *"    3   24    1    0    0    0         
                                      Acc                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         

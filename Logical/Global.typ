@@ -516,12 +516,9 @@ TYPE
 		Linka_ResetCS : BOOL;
 		P1_ResetZonyVytahu : BOOL;
 		P1_ResetZonyBunky : BOOL;
-		P1_ResetDeadMan : BOOL;
-		P2_ResetZonyZaklTesn_Pojazd : BOOL;
-		P2_ResetZonyZaklTesn_Zdvih : BOOL;
 		P2_ResetZonyBunky : BOOL;
-		P2_ResetZonyMaticovacky : BOOL;
 		P3_ResetZonyBunky : BOOL;
+		P3_ResetZonyHVtest : BOOL;
 		P4_ResetZonyBunky : BOOL;
 		P4_ResetZonyVytahu : BOOL;
 	END_STRUCT;
@@ -536,8 +533,10 @@ TYPE
 		P1_Vytah_Bariera_AKTIVNA : BOOL;
 		P1_Vytah_Muting_AKTIVNY : BOOL;
 		P1_Bunka_Zamky_AKTIVNE : BOOL;
-		P1_Bunka_VstupBariera_AKTIVNA : BOOL;
-		P1_Bunka_VystupBariera_AKTIVNA : BOOL;
+		P1_VstupBunky_VstupBar_AKTIVNA : BOOL;
+		P1_VstupBunky_VystupBar_AKTIVNA : BOOL;
+		P1_VystupBunky_VstupBar_AKTIVNA : BOOL;
+		P1_VystupBunky_VystupBar_AKTIVNA : BOOL;
 		P1_ZonaVytahu_AKTIVNA : BOOL;
 		P1_ZonaBunky_AKTIVNA : BOOL;
 		P1_DeadMan_AKTIVNY : BOOL;
@@ -561,20 +560,21 @@ TYPE
 		P3_Rozvadzac_TlacitkoCS_ODBLOK : BOOL;
 		P3_DeadMan_AKTIVNY : BOOL;
 		P3_Bunka_VstupBariera_AKTIVNA : BOOL;
-		P3_Bunka_VystupBariera_AKTIVNA : BOOL;
 		P3_Bunka_Zamky_AKTIVNE : BOOL;
 		P3_ZonaBunky_AKTIVNA : BOOL;
+		P3_ZonaHVtest_AKTIVNA : BOOL;
 		P4_Panel_TlacitkoCS_ODBLOK : BOOL;
 		P4_Rozvadzac_TlacitkoCS_ODBLOK : BOOL;
 		P4_VyblokovanieZamkov_AKTIVNE : BOOL;
 		P4_DeadMan_AKTIVNY : BOOL;
 		P4_ZonaVytahu_AKTIVNA : BOOL;
+		P4_Bunka_VstupBariera_AKTIVNA : BOOL;
 		P4_ZonaBunky_AKTIVNA : BOOL;
 		P4_Vytah_Bariera_AKTIVNA : BOOL;
 		P4_Vytah_Muting_AKTIVNY : BOOL;
 		P4_Bunka_Zamky_AKTIVNE : BOOL;
-		P4_Bunka_VstupBariera_AKTIVNA : BOOL;
-		P4_Bunka_VystupBariera_AKTIVNA : BOOL;
+		P4_VystupBunky_VstupBar_AKTIVNA : BOOL;
+		P4_VystupBunky_VystupBar_AKTIVNA : BOOL;
 	END_STRUCT;
 END_TYPE
 

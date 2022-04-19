@@ -37,19 +37,19 @@ PROGRAM _CYCLIC
 	
 	
 	//Enable serv//
-	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Srobovanie.ServoManipulOsX.Command.ErrReset THEN
+	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Srobovanie.ServoManipulOsX.Command.ErrReset AND P2_Pracovisko.IN.ServoManipulatorOsX_KomOK THEN
 		P2_Srobovanie.ServoManipulOsX.Command.PowerON:= TRUE;
 	ELSE
 		P2_Srobovanie.ServoManipulOsX.Command.PowerON:= FALSE;
 	END_IF
 	
-	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Srobovanie.ServoManipulOsY.Command.ErrReset THEN
+	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Srobovanie.ServoManipulOsY.Command.ErrReset AND P2_Pracovisko.IN.ServoManipulatorOsY_KomOK THEN
 		P2_Srobovanie.ServoManipulOsY.Command.PowerON:= TRUE;
 	ELSE
 		P2_Srobovanie.ServoManipulOsY.Command.PowerON:= FALSE;
 	END_IF
 	
-	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Srobovanie.ServoManipulOsZ_M4.Command.ErrReset THEN
+	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Srobovanie.ServoManipulOsZ_M4.Command.ErrReset AND P2_Pracovisko.IN.ServoManipulatorOsZ_M4_KomOK THEN
 		P2_Srobovanie.ServoManipulOsZ_M4.Command.PowerON:= TRUE;
 	ELSE
 		P2_Srobovanie.ServoManipulOsZ_M4.Command.PowerON:= FALSE;

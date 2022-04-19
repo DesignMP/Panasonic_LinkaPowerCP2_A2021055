@@ -85,9 +85,9 @@ PROGRAM _CYCLIC
 	
 		
 	//**********Karta AB 1.10 8DO***************//
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.0;  //Safety resety
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.1; //Safety resety
-	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.2; //Safety resety
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.0:= Safety.OUT.Linka_ResetCS;
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.1:= Safety.OUT.P1_ResetZonyBunky;
+	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.2:= Safety.OUT.P1_ResetZonyVytahu;
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.3; //Safety resety
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.4:= P1_Pracovisko.OUT.Srobovanie_OsvetleniePaletky_ON;
 	P1_Pracovisko.COM_Weidmuller.AB1_10_8DO.5:= P1_Pracovisko.OUT.Srobovanie_BodoveOsvetlenie_ON;
