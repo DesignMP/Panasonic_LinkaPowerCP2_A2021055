@@ -53,7 +53,7 @@ PROGRAM _CYCLIC
 	
 	//*****************************Reset zóny HV test*****************************************//
 	IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
-		Safety.STAV.P3_Bunka_Zamky_AKTIVNE AND
+		(Safety.STAV.P3_Bunka_Zamky_AKTIVNE OR Safety.STAV.P3_VyblokovanieZamkov_AKTIVNE) AND
 		NOT Safety.STAV.P3_ZonaHVtest_AKTIVNA AND
 		(Safety.STAV.P3_Bunka_VstupBariera_AKTIVNA OR Safety.STAV.P2_Bunka_Zamky_AKTIVNE)AND
 		(Safety.STAV.P4_Bunka_VstupBariera_AKTIVNA OR Safety.STAV.P4_Bunka_Zamky_AKTIVNE)THEN
@@ -65,7 +65,7 @@ PROGRAM _CYCLIC
 	
 	//*****************************************Reset zóny bunky************************************************//
 	IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
-		Safety.STAV.P3_Bunka_Zamky_AKTIVNE AND
+		(Safety.STAV.P3_Bunka_Zamky_AKTIVNE OR Safety.STAV.P3_VyblokovanieZamkov_AKTIVNE) AND
 		NOT Safety.STAV.P3_ZonaBunky_AKTIVNA AND
 		(Safety.STAV.P3_Bunka_VstupBariera_AKTIVNA OR Safety.STAV.P2_Bunka_Zamky_AKTIVNE)AND
 		(Safety.STAV.P4_Bunka_VstupBariera_AKTIVNA OR Safety.STAV.P4_Bunka_Zamky_AKTIVNE)THEN

@@ -20,17 +20,27 @@ PROGRAM _CYCLIC
 	
 	
 	//Enable serva//
-	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset AND P2_Pracovisko.IN.ServoZvaraniaOsZ_KomOK THEN
+	IF Safety.STAV.P2_ZonaBunky_AKTIVNA AND NOT P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset THEN
 		P2_Zvaranie.ServoZdvihuZvarania.Command.PowerON:= TRUE;
 	ELSE
 		P2_Zvaranie.ServoZdvihuZvarania.Command.PowerON:= FALSE;
 	END_IF	
 	
 	
+	
+	
 	//Reset poruchy serva//
-	IF P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset AND NOT P2_Zvaranie.ServoZdvihuZvarania.Status.Error THEN
+	CasResetServo_1.IN:= P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset;
+	IF CasResetServo_1.Q  AND NOT P2_Zvaranie.ServoZdvihuZvarania.Status.Error THEN
 		P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset:= FALSE;
 	END_IF
+	
+	
+	CasResetServo_1.PT:= T#500ms;
+	CasResetServo_1();
+	
+	
+	
 	
 	
 	//Reset sekcie //
@@ -79,7 +89,7 @@ PROGRAM _CYCLIC
 				NOT P2_Pracovisko.STAV.Porucha_ST3 AND
 				NOT P2_Pracovisko.STAV.Porucha_ST4 AND
 				NOT P2_Pracovisko.STAV.Porucha_ST5 AND
-				P2_Zvaranie.ServoZdvihuZvarania.Status.Ready AND P2_Zvaranie.ServoZdvihuZvarania.Status.StandStill THEN
+				(P2_Zvaranie.ServoZdvihuZvarania.Status.Ready AND P2_Zvaranie.ServoZdvihuZvarania.Status.StandStill) THEN
 				P2_Zvaranie.ServoZdvihuZvarania.Command.Stop:= FALSE;
 				SC_P2_Zvaranie.ResetStep:= TRUE;
 				SC_P2_Zvaranie.Step:= 1;

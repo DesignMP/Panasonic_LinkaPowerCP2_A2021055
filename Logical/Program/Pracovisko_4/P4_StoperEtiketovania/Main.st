@@ -23,19 +23,23 @@ PROGRAM _CYCLIC
 	VytvorenieEtikety;
 	
 	//Enable serva//
-	IF Safety.STAV.P4_ZonaBunky_AKTIVNA AND NOT P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset AND P4_Pracovisko.IN.ServoZdvihuAplikEtikiet_KomOK THEN
+	IF Safety.STAV.P4_ZonaBunky_AKTIVNA AND NOT P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset THEN
 		P4_Etiketovacka.ServoZdvihuAplikatora.Command.PowerON:= TRUE;
 	ELSE
 		P4_Etiketovacka.ServoZdvihuAplikatora.Command.PowerON:= FALSE;
 	END_IF	
 	
 	
+	
+	
 	//Reset poruchy serva//
-	IF P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset AND NOT P4_Etiketovacka.ServoZdvihuAplikatora.Status.Error THEN
+	CasResetServo_1.IN:= P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset;
+	IF CasResetServo_1.Q AND NOT P4_Etiketovacka.ServoZdvihuAplikatora.Status.Error THEN
 		P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset:= FALSE;
 	END_IF
 	
-	
+	CasResetServo_1.PT:= T#500ms;
+	CasResetServo_1();
 	
 	
 	//Reset sekcie //
@@ -123,6 +127,7 @@ PROGRAM _CYCLIC
 			
 			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
 				Safety.STAV.P4_ZonaBunky_AKTIVNA AND
+				(P4_Etiketovacka.ServoZdvihuAplikatora.Status.Ready AND P4_Etiketovacka.ServoZdvihuAplikatora.Status.StandStill) AND
 				P4_Pracovisko.STAV.HardwareBunky_OK AND
 				NOT P4_Pracovisko.STAV.Porucha_ST1 AND
 				NOT P4_Pracovisko.STAV.Porucha_ST2 AND
@@ -130,6 +135,7 @@ PROGRAM _CYCLIC
 				NOT P4_Pracovisko.STAV.Porucha_ST4 AND
 				NOT P4_Pracovisko.STAV.Porucha_ST5 AND
 				NOT P4_Pracovisko.STAV.Porucha_ST6 THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.Stop:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 1;
 			END_IF

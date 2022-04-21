@@ -25,4 +25,6 @@ VAR
 	VstupnePoleUSINT : ARRAY[1..31] OF USINT;
 	EtiketaPanasonic : EtiketaPanasonic_typ;
 	Etiketa : Etiketa_typ := (0);
+	CasEnable_1 : TON;
+	CasResetServo_1 : TON;
 END_VAR

@@ -2,7 +2,7 @@ WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P4_Vytah
 Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=13 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                              SC_P4_Vytah                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                               1"    1    6    1   10    0    0         
+                                    Step                                     UINT    0 "                                                             100"    1    6    1   10    0    0         
                                 P4_Vytah                             P4_Vytah_typ    0 "                                                               *"    0   24    1    0    0    1         
                                      OUT                         P4_Vytah_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
                      DopravnikChod_VPRED                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
@@ -21,7 +21,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                               Parameters                               ParamStruc    0 "                                                               *"    2   24    1    0    0    1         
                                   Torque                                     REAL    0 "                                                             1.5"    3    8    1   10    0    0         
                                 Distance                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                                Position                                     REAL    0 "                                                             4.0"    3    8    1   10    0    0         
+                                Position                                     REAL    0 "                                                           628.0"    3    8    1   10    0    0         
                                 Override                                     REAL    0 "                                                           100.0"    3    8    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                             0.5"    3    8    1   10    0    0         
                                      Dcc                                     REAL    0 "                                                            50.0"    3    8    1   10    0    0         
@@ -118,7 +118,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                ActTorque                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                              ActVelocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                              ActPosition                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                 Automat                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                 Automat                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                                  Paletka                       Paletka_typ[0..30]    0 "                                                               *"    0   24   31    0    0    0         
                               Paletka[0]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
                                      PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         

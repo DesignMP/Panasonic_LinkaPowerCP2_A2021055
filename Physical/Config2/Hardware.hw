@@ -115,7 +115,7 @@
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
       <Parameter ID="ActivateDevice" Value="1" />
       <Parameter ID="Mode" Value="Manual" />
-      <Parameter ID="InternetAddress" Value="10.128.148.2" />
+      <Parameter ID="InternetAddress" Value="10.128.148.3" />
       <Parameter ID="SubnetMask" Value="255.255.255.0" />
       <Parameter ID="ActivateSnmp" Value="2" />
     </Connector>
@@ -175,7 +175,7 @@
     <Parameter ID="DefaultGateway" Value="10.128.148.1" />
     <Parameter ID="TimeZone" Value="145" />
     <Parameter ID="PasswordVNC" Value="" />
-    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.2:85/index.html?visuId=Vizu_P1" />
+    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.3:85/index.html?visuId=Vizu_P1" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="PasswordCIFS" Value="" />
     <Parameter ID="PasswordService" Value="" />
@@ -290,7 +290,7 @@
     <Parameter ID="DefaultGateway" Value="10.128.148.1" />
     <Parameter ID="TimeZone" Value="145" />
     <Parameter ID="PasswordVNC" Value="" />
-    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.2:85/index.html?visuId=Vizu_P2" />
+    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.3:85/index.html?visuId=Vizu_P2" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="PasswordCIFS" Value="" />
     <Parameter ID="PasswordService" Value="" />
@@ -527,7 +527,7 @@
     <Parameter ID="DefaultGateway" Value="10.128.148.1" />
     <Parameter ID="TimeZone" Value="145" />
     <Parameter ID="PasswordVNC" Value="" />
-    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.2:85/index.html?visuId=Vizu_P34" />
+    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.3:85/index.html?visuId=Vizu_P34" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="PasswordCIFS" Value="" />
     <Parameter ID="PasswordService" Value="" />

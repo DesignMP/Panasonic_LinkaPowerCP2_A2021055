@@ -53,8 +53,11 @@ PROGRAM _CYCLIC
 	P2_Pracovisko.COM_Weidmuller.AB2_8_8DI.6;
 	P2_Pracovisko.COM_Weidmuller.AB2_8_8DI.7;
 	
-	
-	
+	IF P2_Pracovisko.COM_Weidmuller.AB2_8_8DI.6 AND	P2_Pracovisko.COM_Weidmuller.AB2_8_8DI.7 THEN
+		Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE:= TRUE;
+	ELSE	
+		Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE:= FALSE;
+	END_IF	
 	
 	//************Karta AB 2.9 8DO***************//
 	P2_Pracovisko.COM_Weidmuller.AB2_9_8DO.0 := P2_Pracovisko.OUT.Majak_ZeleneSvetlo_ON;

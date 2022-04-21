@@ -22,7 +22,7 @@ PROGRAM _CYCLIC
 	
 	//Volanie podprogramov a knižníc//
 	AtlasCopcoKomunikacia;	
-	
+	OvlSkrutkovacichSetov;
 	
 	
 	//Volanie funkcie SequenceControl//
@@ -30,26 +30,39 @@ PROGRAM _CYCLIC
 	
 	
 	//Enable serv//
-	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsY.Command.ErrReset AND P3_Pracovisko.IN.ServoManipulatorOsY_KomOK THEN
+	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsY.Command.ErrReset THEN
 		P3_Srobovanie.ServoManipulOsY.Command.PowerON:= TRUE;
 	ELSE
 		P3_Srobovanie.ServoManipulOsY.Command.PowerON:= FALSE;
 	END_IF	
 	
-	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset AND P3_Pracovisko.IN.ServoManipulatorOsZ_M5_KomOK THEN
+	IF Safety.STAV.P3_ZonaBunky_AKTIVNA AND NOT P3_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset THEN
 		P3_Srobovanie.ServoManipulOsZ_M5.Command.PowerON:= TRUE;
 	ELSE
 		P3_Srobovanie.ServoManipulOsZ_M5.Command.PowerON:= FALSE;
 	END_IF	
 	
+	
+
+	
+	
 	//Reset poruchy serv//
-	IF P3_Srobovanie.ServoManipulOsY.Command.ErrReset AND NOT P3_Srobovanie.ServoManipulOsY.Status.Error THEN
+	CasResetServo_1.IN:= P3_Srobovanie.ServoManipulOsY.Command.ErrReset;
+	IF CasResetServo_1.Q AND NOT P3_Srobovanie.ServoManipulOsY.Status.Error THEN
 		P3_Srobovanie.ServoManipulOsY.Command.ErrReset:= FALSE;
 	END_IF
 	
-	IF P3_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset AND NOT P3_Srobovanie.ServoManipulOsZ_M5.Status.Error THEN
+	CasResetServo_2.IN:= P3_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset;
+	IF CasResetServo_2.Q AND NOT P3_Srobovanie.ServoManipulOsZ_M5.Status.Error THEN
 		P3_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset:= FALSE;
 	END_IF
+	
+	
+	CasResetServo_1.PT:= T#500ms;
+	CasResetServo_1();
+	
+	CasResetServo_2.PT:= T#500ms;
+	CasResetServo_2();
 	
 	
 	
@@ -64,6 +77,7 @@ PROGRAM _CYCLIC
 		SC_P3_Srobovanie.Step:= 0;
 		P3_Srobovanie.ServoManipulOsY.Command.ErrReset:= TRUE;
 		P3_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset:= TRUE;
+		P3_Srobovanie.SkrutSet_M5.CMD.ResetPoruchy:= TRUE;
 		P3_Srobovanie.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P3_Srobovanie.Step:= 0;
@@ -162,8 +176,8 @@ PROGRAM _CYCLIC
 				NOT P3_Pracovisko.STAV.Porucha_ST6 AND
 				NOT P3_Pracovisko.STAV.Porucha_ST7 AND
 				NOT P3_Pracovisko.STAV.Porucha_ST8 AND
-				P3_Srobovanie.ServoManipulOsY.Status.Ready AND P3_Srobovanie.ServoManipulOsY.Status.StandStill AND
-				P3_Srobovanie.ServoManipulOsZ_M5.Status.Ready AND P3_Srobovanie.ServoManipulOsZ_M5.Status.StandStill THEN
+				(P3_Srobovanie.ServoManipulOsY.Status.Ready AND P3_Srobovanie.ServoManipulOsY.Status.StandStill) AND
+				(P3_Srobovanie.ServoManipulOsZ_M5.Status.Ready AND P3_Srobovanie.ServoManipulOsZ_M5.Status.StandStill) THEN
 				P3_Srobovanie.ServoManipulOsY.Command.Stop:= FALSE;
 				P3_Srobovanie.ServoManipulOsZ_M5.Command.Stop:= FALSE;
 				SC_P3_Srobovanie.ResetStep:= TRUE;

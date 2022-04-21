@@ -919,6 +919,9 @@ TYPE
 		RR_SkrutSetM5_OtocPodavac_Vstup : BOOL;
 		RR_SkrutSetM5_OtocPodavac_Vystup : BOOL;
 		RR_PolohujManipulator : BOOL;
+		PodajSkrutku_K30 : BOOL;
+		PodajSkrutku_M4 : BOOL;
+		PodajSkrutku_M5 : BOOL;
 	END_STRUCT;
 	P1_Srobovanie_IN_typ : 	STRUCT 
 		ManipulOsX_LimSnimac_POS : BOOL; (*IS1_21*)
@@ -1009,6 +1012,9 @@ TYPE
 		M4_Uhol_ToleranciaMIN_REAL : REAL;
 		M4_Uhol_ToleranciaMIN : UDINT;
 		ManipulatorNadPodavacmi : BOOL;
+		SkrutkaK30_READY : BOOL;
+		SkrutkaM5_READY : BOOL;
+		SkrutkaM4_READY : BOOL;
 	END_STRUCT;
 	P1_Srobovanie_COM_IN_typ : 	STRUCT 
 		PresunManipulatora_VPRED : BOOL;
@@ -1615,6 +1621,9 @@ TYPE
 		RR_SkrutSetM4_OtocPodavac_Vstup : BOOL;
 		RR_SkrutSetM4_OtocPodavac_Vystup : BOOL;
 		RR_PolohujManipulator : BOOL;
+		PodajSkrutku_M4 : BOOL;
+		PodajSkrutku_M5 : BOOL;
+		PodajSkrutku_M6 : BOOL;
 	END_STRUCT;
 	P2_Srobovanie_IN_typ : 	STRUCT 
 		ManipulOsX_LimSnimac_POS : BOOL; (*IS2_14*)
@@ -1701,6 +1710,9 @@ TYPE
 		M4_Uhol_ToleranciaMIN_REAL : REAL;
 		M4_Uhol_ToleranciaMIN : UDINT;
 		ManipulatorNadPodavacmi : BOOL;
+		SkrutkaM6_READY : BOOL;
+		SkrutkaM5_READY : BOOL;
+		SkrutkaM4_READY : BOOL;
 	END_STRUCT;
 	P2_Srobovanie_COM_IN_typ : 	STRUCT 
 		PresunManipulatora_VPRED : BOOL;
@@ -2295,6 +2307,8 @@ TYPE
 		RR_SkrutSetM5_OtocPodavac_Vstup : BOOL;
 		RR_SkrutSetM5_OtocPodavac_Vystup : BOOL;
 		RR_PolohujManipulator : BOOL;
+		PodajSkrutku_K40 : BOOL;
+		PodajSkrutku_M5 : BOOL;
 	END_STRUCT;
 	P3_Srobovanie_IN_typ : 	STRUCT 
 		ManipulOsY_LimSnimac_POS : BOOL; (*IS3_2*)
@@ -2355,6 +2369,8 @@ TYPE
 		M5_Uhol_ToleranciaMAX : UDINT;
 		M5_Uhol_ToleranciaMIN_REAL : REAL;
 		M5_Uhol_ToleranciaMIN : UDINT;
+		SkrutkaK40_READY : BOOL;
+		SkrutkaM5_READY : BOOL;
 	END_STRUCT;
 	P3_Srobovanie_COM_IN_typ : 	STRUCT 
 		PresunManipulatora_VPRED : BOOL;

@@ -6,4 +6,6 @@ VAR
 	ZadanaPoziciaUINT : UINT := 0;
 	AktualnaPoziciaUINT : UINT := 0;
 	i : USINT;
+	CasEnable_1 : TON;
+	CasResetServo_1 : TON := (0);
 END_VAR

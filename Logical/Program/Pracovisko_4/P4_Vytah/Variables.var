@@ -5,4 +5,6 @@ VAR
 	TestovaciKus : BOOL := 0;
 	i : USINT := 0;
 	Stav_VlozenaPaletka : BOOL := 0;
+	CasEnable_1 : TON;
+	CasResetServo_1 : TON;
 END_VAR

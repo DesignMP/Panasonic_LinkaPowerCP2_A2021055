@@ -14,7 +14,7 @@ PROGRAM _CYCLIC
 	Safety.Mapping_BYTE_IN[0].3;
 	Safety.STAV.P2_DvojrucOvl_TlacitkoCS_ODBLOK:= Safety.Mapping_BYTE_IN[0].4;
 	Safety.Mapping_BYTE_IN[0].5;
-	Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE:= Safety.Mapping_BYTE_IN[0].6;
+	(*Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE:= Safety.Mapping_BYTE_IN[0].6;*)
 	Safety.Mapping_BYTE_IN[0].7;
 	
 	Safety.STAV.P1_Robot_TlacitkoCS_ODBLOK:= Safety.Mapping_BYTE_IN[1].0;
@@ -44,7 +44,7 @@ PROGRAM _CYCLIC
 	Safety.STAV.P2_Rozvadzac_TlacitkoCS_ODBLOK:= Safety.Mapping_BYTE_IN[3].6;
 	Safety.Mapping_BYTE_IN[3].7;
 	
-	Safety.Mapping_BYTE_IN[4].0;
+	Safety.STAV.P2_ZaklTesn_PojazdMuting_AKTIVNY:= Safety.Mapping_BYTE_IN[4].0;
 	Safety.Mapping_BYTE_IN[4].1;
 	Safety.STAV.P2_DeadMan_AKTIVNY:= Safety.Mapping_BYTE_IN[4].2;
 	Safety.Mapping_BYTE_IN[4].3;
@@ -118,7 +118,7 @@ PROGRAM _CYCLIC
 	Safety.STAV.P4_ZonaBunky_AKTIVNA:= Safety.Mapping_BYTE_IN[16].6;
 	Safety.STAV.P4_ZonaVytahu_AKTIVNA:= Safety.Mapping_BYTE_IN[16].7;
 	
-	IF Safety.Mapping_BYTE_IN[17].0 AND Safety.Mapping_BYTE_IN[17].1 THEN
+	IF Safety.STAV.P2_ZaklTesn_Bariera_AKTIVNA AND Safety.STAV.P2_ZaklTesn_PojazdMuting_AKTIVNY THEN
 		Safety.STAV.P2_ZonaZakladacaZdvih_AKTIVNA:= TRUE;
 	ELSE	
 		Safety.STAV.P2_ZonaZakladacaZdvih_AKTIVNA:= FALSE;

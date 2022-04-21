@@ -5,4 +5,15 @@ VAR
 	K30_PrevodMomentu : PrevodMomentu;
 	M4_PrevodMomentu : PrevodMomentu;
 	M5_PrevodMomentu : PrevodMomentu;
+	CasEnable_1 : TON := (0);
+	CasEnable_2 : TON;
+	CasEnable_3 : TON;
+	CasEnable_4 : TON;
+	CasResetServo_1 : TON;
+	CasResetServo_2 : TON;
+	CasResetServo_3 : TON;
+	CasResetServo_4 : TON;
+	SC_SkrutkovaciSet_K30 : SequenceControlTyp := (0);
+	SC_SkrutkovaciSet_M4 : SequenceControlTyp := (0);
+	SC_SkrutkovaciSet_M5 : SequenceControlTyp := (0);
 END_VAR

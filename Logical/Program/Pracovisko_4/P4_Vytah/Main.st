@@ -24,17 +24,27 @@ PROGRAM _CYCLIC
 	SequenceControl(SC:= SC_P4_Vytah);
 	
 	//Enable serva//
-	IF Safety.STAV.P4_ZonaVytahu_AKTIVNA AND NOT P4_Vytah.ServoZdvihuVytahu.Command.ErrReset AND P4_Pracovisko.IN.ServoZdvihuVytahu_KomOK THEN
+	IF Safety.STAV.P4_ZonaVytahu_AKTIVNA AND NOT P4_Vytah.ServoZdvihuVytahu.Command.ErrReset THEN
 		P4_Vytah.ServoZdvihuVytahu.Command.PowerON:= TRUE;
 	ELSE
 		P4_Vytah.ServoZdvihuVytahu.Command.PowerON:= FALSE;
 	END_IF	
 	
 	
+
+	
+	
+	
 	//Reset poruchy serva//
-	IF P4_Vytah.ServoZdvihuVytahu.Command.ErrReset AND NOT P4_Vytah.ServoZdvihuVytahu.Status.Error THEN
+	CasResetServo_1.IN:= P4_Vytah.ServoZdvihuVytahu.Command.ErrReset;
+	IF CasResetServo_1.Q AND NOT P4_Vytah.ServoZdvihuVytahu.Status.Error THEN
 		P4_Vytah.ServoZdvihuVytahu.Command.ErrReset:= FALSE;
 	END_IF	
+	
+	
+	CasResetServo_1.PT:= T#500ms;
+	CasResetServo_1();
+	
 	
 	
 	//Zhasnutie Bannera//
@@ -123,8 +133,7 @@ PROGRAM _CYCLIC
 			IF Safety.STAV.P4_ZonaVytahu_AKTIVNA AND
 				P4_Pracovisko.STAV.HardwareVytahu_OK AND
 				NOT P4_Pracovisko.STAV.Porucha_ST6 AND
-				P4_Vytah.ServoZdvihuVytahu.Status.Ready AND
-				P4_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
+				(P4_Vytah.ServoZdvihuVytahu.Status.Ready AND P4_Vytah.ServoZdvihuVytahu.Status.StandStill) THEN
 				P4_Vytah.ServoZdvihuVytahu.Command.Stop:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 1;

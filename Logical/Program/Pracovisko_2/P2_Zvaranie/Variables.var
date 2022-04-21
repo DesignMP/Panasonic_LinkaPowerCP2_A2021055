@@ -2,4 +2,6 @@ VAR
 	SC_OvlPojazdu : SequenceControlTyp;
 	PresunVPRAVO : BOOL;
 	PresunVLAVO : BOOL;
+	CasEnable_1 : TON;
+	CasResetServo_1 : TON;
 END_VAR

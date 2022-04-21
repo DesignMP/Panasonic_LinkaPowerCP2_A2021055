@@ -22,17 +22,23 @@ PROGRAM _CYCLIC
 	SequenceControl(SC:= SC_P1_Vytah);
 	
 	//Enable serva//
-	IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND NOT P1_Vytah.ServoZdvihuVytahu.Command.ErrReset AND P1_Pracovisko.IN.ServoZdvihuVytahu_KomOK THEN
+	IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND NOT P1_Vytah.ServoZdvihuVytahu.Command.ErrReset THEN
 		P1_Vytah.ServoZdvihuVytahu.Command.PowerON:= TRUE;
 	ELSE
 		P1_Vytah.ServoZdvihuVytahu.Command.PowerON:= FALSE;
 	END_IF	
 	
+
 	
 	//Reset poruchy serva//
-	IF P1_Vytah.ServoZdvihuVytahu.Command.ErrReset AND NOT P1_Vytah.ServoZdvihuVytahu.Status.Error THEN
+	CasResetServo_1.IN:= P1_Vytah.ServoZdvihuVytahu.Command.ErrReset;
+	IF CasResetServo_1.Q AND NOT P1_Vytah.ServoZdvihuVytahu.Status.Error THEN
 		P1_Vytah.ServoZdvihuVytahu.Command.ErrReset:= FALSE;
 	END_IF	
+	
+	
+	CasResetServo_1.PT:= T#500ms;
+	CasResetServo_1();
 	
 	
 	//Zhasnutie Bannera//
@@ -132,7 +138,10 @@ PROGRAM _CYCLIC
 			P1_Pracovisko.OUT.Osvetlenie_CAM4_ON:= FALSE;
             
 			
-			IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND NOT P1_Pracovisko.STAV.Porucha_ST1 AND P1_Pracovisko.STAV.HardwareVytahu_OK AND P1_Vytah.ServoZdvihuVytahu.Status.Ready AND P1_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
+			IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND
+				NOT P1_Pracovisko.STAV.Porucha_ST1 AND
+				P1_Pracovisko.STAV.HardwareVytahu_OK AND
+				(P1_Vytah.ServoZdvihuVytahu.Status.Ready AND P1_Vytah.ServoZdvihuVytahu.Status.StandStill) THEN
 				P1_Vytah.ServoZdvihuVytahu.Command.Stop:= FALSE;
 				SC_P1_Vytah.ResetStep:= TRUE;
 				SC_P1_Vytah.Step:= 1;
@@ -248,7 +257,7 @@ PROGRAM _CYCLIC
 			
 			P1_Vytah.Banner.IN.OranzovaLED_ON:= Blikac1s;		
 					
-			IF NOT SC_P1_Vytah.Switch1 AND SC_P1_Vytah.IdleTime.Q THEN
+			IF NOT SC_P1_Vytah.Switch1 AND SC_P1_Vytah.IdleTime.Q AND P1_Vytah.ServoZdvihuVytahu.Status.Ready THEN
 				P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
 				SC_P1_Vytah.Switch1:= TRUE;
 			END_IF
@@ -599,7 +608,7 @@ PROGRAM _CYCLIC
 			
 			
 					
-			IF NOT SC_P1_Vytah.Switch1 AND NOT P1_Vytah.IN.PrechodDopravnika THEN
+			IF NOT SC_P1_Vytah.Switch1 AND NOT P1_Vytah.IN.PrechodDopravnika AND P1_Vytah.ServoZdvihuVytahu.Status.Ready THEN
 				P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
 				P1_Vytah.OUT.DopravnikChod_VZAD:= TRUE;
 				SC_P1_Vytah.Switch1:= TRUE;
@@ -676,7 +685,7 @@ PROGRAM _CYCLIC
 			
 						
 					
-			IF NOT SC_P1_Vytah.Switch1 AND NOT P1_Vytah.IN.PrechodDopravnika THEN
+			IF NOT SC_P1_Vytah.Switch1 AND NOT P1_Vytah.IN.PrechodDopravnika AND P1_Vytah.ServoZdvihuVytahu.Status.Ready THEN
 				P1_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
 				SC_P1_Vytah.Switch1:= TRUE;
 			END_IF

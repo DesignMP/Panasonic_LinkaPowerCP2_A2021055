@@ -551,7 +551,10 @@ PROGRAM _CYCLIC
 				P2_StoperZaklTesnenia.Banner.IN.ZelenaLED_ON:= TRUE;
 			END_IF
 			
-			IF P2_ZakladacTesnenia.COM_OUT.Stav_ZalozenieTesneniaUkoncene AND NOT P2_ZakladacTesnenia.IN.Pojazd_PritomPowerCP AND NOT P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
+			IF P2_StoperZaklTesnenia.KoniecCyklu AND NOT P2_ZakladacTesnenia.Automat THEN
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 0;
+			ELSIF P2_ZakladacTesnenia.COM_OUT.Stav_ZalozenieTesneniaUkoncene AND NOT P2_ZakladacTesnenia.IN.Pojazd_PritomPowerCP AND NOT P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
 				P2_ZakladacTesnenia.COM_OUT.Stav_ZalozenieTesneniaUkoncene:= FALSE;
 				P2_ZakladacTesnenia.COM_IN.ZalozTesnenie:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;

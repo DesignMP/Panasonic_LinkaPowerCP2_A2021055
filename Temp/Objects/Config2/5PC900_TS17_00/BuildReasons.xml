@@ -1,119 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BuildReasons>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\transformations\eventbinding\parametertypemapping.xml">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\mappview\visualization_p2\pages\areacontents\hlavicka.content" differs.
-</BuildReason>
-  </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\iat_media.job._markerfile">
     <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\iat_media.job" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\server\-1602918109.binding._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\physical\config2\5pc900_ts17_00\mappview\vizualizaciap2\hlavickap2.binding" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\server\288981427.eventbinding">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\mappview\visualization_p2\pages\areacontents\hlavicka.content" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\validatebindings._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\physical\config2\5pc900_ts17_00\mappview\vizualizaciap2\hlavickap2.binding" differs.
-</BuildReason>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova\main.st.o">
+    <BuildReason>Target "main.st.o" does not exist</BuildReason>
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\brvisu\css\themes\grunt.themescsso._markerfile">
     <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\brvisu\release\burtheme1.min.css" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\mappview\visualization_p2\pages\areacontents\hlavicka.content" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova\_bur_pvdef.st.o">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova\main.st.o" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\duplicatebindingsfinder._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\validatebindings._markerfile" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova\a.out">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova\main.st.o" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagealarmyp2.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova\p3_srobova.ox">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova\a.out" differs.
 </BuildReason>
   </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pageautomatp2.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pageinfop2.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualp2_dopravniky.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualmainp2.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualp2_cistenie.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualp2_maticovacka.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualp2_skrutkovanie.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualp2_zakladanietesnenia.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualp2_zvaranie.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pageparametremainp2.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pageparametrep2_page1.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagesetupp2.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagestavystanicp2.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagetolerancieskrutkovaniap2_page1.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualp2_skrutkovanie_page2.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualp2_skrutkovanie_page3.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagemanualp2_skrutkovanie_page4.page._markerfile">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\brvisu\css\pages\mappview\hlavickap2.scss.css">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\contents\mappview\hlavickap2._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\vizu_p2.json">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\pagealarmyp2.page._markerfile" differs.
-</BuildReason>
-  </Rule>
-  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\brvisu\css\brease_core.css">
-    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\brvisu\css\pages\mappview\hlavickap2.scss.css" differs.
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova.br">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova\p3_srobova.ox" differs.
 </BuildReason>
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\.mappview\data\wwwroot\grunt.breasecsso._markerfile">
@@ -128,5 +39,9 @@
   </Rule>
   <Rule ID="#cpu_tp.mak">
     <BuildReason>Rule is forced.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\binaries\config2\5pc900_ts17_00\transfer.lst">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\config2\5pc900_ts17_00\p3_srobova.br" differs.
+</BuildReason>
   </Rule>
 </BuildReasons>

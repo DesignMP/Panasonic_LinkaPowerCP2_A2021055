@@ -6,34 +6,35 @@
     <Task Name="P2_Mapping" Source="Program.Pracovisko_2.P2_Mapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P3_Mapping" Source="Program.Pracovisko_3.P3_Mapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P4_Mapping" Source="Program.Pracovisko_4.P4_Mapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P1_Srobova" Source="Program.Pracovisko_1.P1_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_Srobova" Source="Program.Pracovisko_2.P2_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P2_StoperS" Source="Program.Pracovisko_2.P2_StoperSrobovania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P2_Zvarani" Source="Program.Pracovisko_2.P2_Zvaranie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P2_Stoper1" Source="Program.Pracovisko_2.P2_StoperZvarania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P2_Robot" Source="Program.Pracovisko_2.P2_Robot.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P3_Srobova" Source="Program.Pracovisko_3.P3_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="SafetyMapp" Source="Program.Linka.SafetyMapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Statistik1" Source="Program.Linka.StatistikaLinky.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="P2_SkrutSe" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2">
     <Task Name="P1_Vytah" Source="Program.Pracovisko_1.P1_Vytah.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P1_Srobova" Source="Program.Pracovisko_1.P1_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P1_OvladVi" Source="Program.Pracovisko_1.P1_OvladVizu.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P2_ZaklTes" Source="Program.Pracovisko_2.P2_ZaklTesnenia.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_Cisteni" Source="Program.Pracovisko_2.P2_Cistenie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_OvladVi" Source="Program.Pracovisko_2.P2_OvladVizu.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P1_Robot" Source="Program.Pracovisko_1.P1_Robot.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P3_Srobova" Source="Program.Pracovisko_3.P3_Srobovanie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P2_ZaklTes" Source="Program.Pracovisko_2.P2_ZaklTesnenia.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P2_Zvarani" Source="Program.Pracovisko_2.P2_Zvaranie.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P2_Robot" Source="Program.Pracovisko_2.P2_Robot.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P2_Stoper1" Source="Program.Pracovisko_2.P2_StoperZvarania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P2_StoperS" Source="Program.Pracovisko_2.P2_StoperSrobovania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P4_StoperE" Source="Program.Pracovisko_4.P4_StoperEtiketovania.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P4_Vytah" Source="Program.Pracovisko_4.P4_Vytah.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="P4_OvladVi" Source="Program.Pracovisko_4.P4_OvladVizu.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="OvladanieV" Source="Program.Linka.OvladanieVizu.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-  </TaskClass>
-  <TaskClass Name="Cyclic#3">
-    <Task Name="OvladanieS" Source="Program.Linka.OvladanieSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P1_OvladSa" Source="Program.Pracovisko_1.P1_OvladSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P2_OvladSa" Source="Program.Pracovisko_2.P2_OvladSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P3_OvladSa" Source="Program.Pracovisko_3.P3_OvladSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="P4_OvladSa" Source="Program.Pracovisko_4.P4_OvladSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="SafetyMapp" Source="Program.Linka.SafetyMapping_IO.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="OvladanieS" Source="Program.Linka.OvladanieSafety.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="P4_OvladVi" Source="Program.Pracovisko_4.P4_OvladVizu.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="OvladanieV" Source="Program.Linka.OvladanieVizu.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+  </TaskClass>
+  <TaskClass Name="Cyclic#3">
     <Task Name="Blikanie10" Source="Blikace.Blikanie100ms.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#4">
@@ -143,6 +144,7 @@
     <LibraryObject Name="RoCa_Festo" Source="Libraries.RoCa_Festo.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="ScrewLoad" Source="Libraries.ScrewLoad.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="MpServer" Source="Libraries.MpServer.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="Statistika" Source="Libraries.Statistika.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="arssl" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="aruser" Source="" Memory="UserROM" Language="Binary" Debugging="true" />

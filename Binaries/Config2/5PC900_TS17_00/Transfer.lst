@@ -41,33 +41,34 @@
   <Operation Delete="Blikanie20.br"/>
   <Operation Delete="Main.br"/>
   <Operation Delete="Blikanie10.br"/>
-  <Operation Delete="SafetyMapp.br"/>
+  <Operation Delete="OvladanieV.br"/>
+  <Operation Delete="P4_OvladVi.br"/>
+  <Operation Delete="OvladanieS.br"/>
   <Operation Delete="P4_OvladSa.br"/>
   <Operation Delete="P3_OvladSa.br"/>
   <Operation Delete="P2_OvladSa.br"/>
   <Operation Delete="P1_OvladSa.br"/>
-  <Operation Delete="OvladanieS.br"/>
-  <Operation Delete="OvladanieV.br"/>
-  <Operation Delete="P4_OvladVi.br"/>
   <Operation Delete="P4_Vytah.br"/>
   <Operation Delete="P4_StoperE.br"/>
-  <Operation Delete="P3_Srobova.br"/>
+  <Operation Delete="P2_StoperS.br"/>
+  <Operation Delete="P2_Stoper1.br"/>
+  <Operation Delete="P2_Robot.br"/>
+  <Operation Delete="P2_Zvarani.br"/>
+  <Operation Delete="P2_ZaklTes.br"/>
   <Operation Delete="P1_Robot.br"/>
   <Operation Delete="P2_OvladVi.br"/>
   <Operation Delete="P2_Cisteni.br"/>
-  <Operation Delete="P2_ZaklTes.br"/>
   <Operation Delete="P1_OvladVi.br"/>
-  <Operation Delete="P1_Srobova.br"/>
   <Operation Delete="P1_Vytah.br"/>
-  <Operation Delete="P2_Robot.br"/>
-  <Operation Delete="P2_Stoper1.br"/>
-  <Operation Delete="P2_Zvarani.br"/>
-  <Operation Delete="P2_StoperS.br"/>
+  <Operation Delete="SafetyMapp.br"/>
+  <Operation Delete="P3_Srobova.br"/>
   <Operation Delete="P2_Srobova.br"/>
+  <Operation Delete="P1_Srobova.br"/>
   <Operation Delete="P4_Mapping.br"/>
   <Operation Delete="P3_Mapping.br"/>
   <Operation Delete="P2_Mapping.br"/>
   <Operation Delete="P1_Mapping.br"/>
+  <Operation Delete="Statistika.br"/>
   <Operation Delete="MpServer.br"/>
   <Operation Delete="RFID.br"/>
   <Operation Delete="MpAlarmX.br"/>
@@ -157,33 +158,34 @@
   <Operation Download="MpAlarmX.br" Memory="UserROM"/>
   <Operation Download="RFID.br" Memory="UserROM"/>
   <Operation Download="MpServer.br" Memory="UserROM"/>
+  <Operation Download="Statistika.br" Memory="UserROM"/>
   <Operation Download="P1_Mapping.br" Memory="UserROM"/>
   <Operation Download="P2_Mapping.br" Memory="UserROM"/>
   <Operation Download="P3_Mapping.br" Memory="UserROM"/>
   <Operation Download="P4_Mapping.br" Memory="UserROM"/>
-  <Operation Download="P2_Srobova.br" Memory="UserROM"/>
-  <Operation Download="P2_StoperS.br" Memory="UserROM"/>
-  <Operation Download="P2_Zvarani.br" Memory="UserROM"/>
-  <Operation Download="P2_Stoper1.br" Memory="UserROM"/>
-  <Operation Download="P2_Robot.br" Memory="UserROM"/>
-  <Operation Download="P1_Vytah.br" Memory="UserROM"/>
   <Operation Download="P1_Srobova.br" Memory="UserROM"/>
+  <Operation Download="P2_Srobova.br" Memory="UserROM"/>
+  <Operation Download="P3_Srobova.br" Memory="UserROM"/>
+  <Operation Download="SafetyMapp.br" Memory="UserROM"/>
+  <Operation Download="P1_Vytah.br" Memory="UserROM"/>
   <Operation Download="P1_OvladVi.br" Memory="UserROM"/>
-  <Operation Download="P2_ZaklTes.br" Memory="UserROM"/>
   <Operation Download="P2_Cisteni.br" Memory="UserROM"/>
   <Operation Download="P2_OvladVi.br" Memory="UserROM"/>
   <Operation Download="P1_Robot.br" Memory="UserROM"/>
-  <Operation Download="P3_Srobova.br" Memory="UserROM"/>
+  <Operation Download="P2_ZaklTes.br" Memory="UserROM"/>
+  <Operation Download="P2_Zvarani.br" Memory="UserROM"/>
+  <Operation Download="P2_Robot.br" Memory="UserROM"/>
+  <Operation Download="P2_Stoper1.br" Memory="UserROM"/>
+  <Operation Download="P2_StoperS.br" Memory="UserROM"/>
   <Operation Download="P4_StoperE.br" Memory="UserROM"/>
   <Operation Download="P4_Vytah.br" Memory="UserROM"/>
-  <Operation Download="P4_OvladVi.br" Memory="UserROM"/>
-  <Operation Download="OvladanieV.br" Memory="UserROM"/>
-  <Operation Download="OvladanieS.br" Memory="UserROM"/>
   <Operation Download="P1_OvladSa.br" Memory="UserROM"/>
   <Operation Download="P2_OvladSa.br" Memory="UserROM"/>
   <Operation Download="P3_OvladSa.br" Memory="UserROM"/>
   <Operation Download="P4_OvladSa.br" Memory="UserROM"/>
-  <Operation Download="SafetyMapp.br" Memory="UserROM"/>
+  <Operation Download="OvladanieS.br" Memory="UserROM"/>
+  <Operation Download="P4_OvladVi.br" Memory="UserROM"/>
+  <Operation Download="OvladanieV.br" Memory="UserROM"/>
   <Operation Download="Blikanie10.br" Memory="UserROM"/>
   <Operation Download="Main.br" Memory="UserROM"/>
   <Operation Download="Blikanie20.br" Memory="UserROM"/>

@@ -1,13 +1,13 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_ZaklTes 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=23 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=13 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                   SC_P2_ZakladacTesnenia                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                             100"    1    6    1   10    0    0         
+                                    Step                                     UINT    0 "                                                             180"    1    6    1   10    0    0         
                      P2_ZakladacTesnenia                  P2_ZakladacTesnenia_typ    0 "                                                               *"    0   24    1    0    0    1         
                                   COM_IN           P2_ZakladacTesnenia_COM_IN_typ    0 "                                                               *"    1   24    1    0    0    1         
-                           ZalozTesnenie                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           ZalozTesnenie                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
                                  Automat                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                   ServoPojazduZakladaca                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
+                    ServoZdvihuZakladaca                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
                                  Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    1         
                                  PowerON                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
                                 ErrReset                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
@@ -18,14 +18,125 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         TorqueLimitation                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
                                     Stop                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                                    Pause                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              Parameters                               ParamStruc    0 "                                                               *"    2   24    1    0    0    1         
-                                  Torque                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
-                                Distance                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                                Position                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                                Override                                     REAL    0 "                                                           100.0"    3    8    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                                     Dcc                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                                     Acc                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                              Parameters                               ParamStruc    0 "                                                               *"    2   24    1    0    0    0         
+                                  Torque                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                Distance                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                Position                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                Override                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                     Dcc                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                     Acc                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                     Jog                                 JogStruc    0 "                                                               *"    3   24    1    0    0    0         
+                                     Acc                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                          OUT_forMapping                           OutputRawStruc    0 "                                                               *"    2   24    1    0    0    0         
+              Control_word_or_setpoint_0                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+              Control_word_or_setpoint_1                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+              Control_word_or_setpoint_2                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+              Control_word_or_setpoint_3                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+              Control_word_or_setpoint_4                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+              Control_word_or_setpoint_5                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+              Control_word_or_setpoint_6                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+              Control_word_or_setpoint_7                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+              Control_word_or_setpoint_8                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+              Control_word_or_setpoint_9                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+             Control_word_or_setpoint_10                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+             Control_word_or_setpoint_11                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+             Control_word_or_setpoint_12                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+             Control_word_or_setpoint_13                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+             Control_word_or_setpoint_14                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+             Control_word_or_setpoint_15                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                                   User1                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                       MDI_decceleration                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                        MDI_acceleration                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                            MDI_velocity                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
+                     MDI_target_position                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
+                                Override                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                  Position_Controlword_2                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                  Position_Controlword_1                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          Control_word_2                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          Control_word_1                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                                     OUT                              OutputStruc    0 "                                                               *"    2   24    1    0    0    0         
+                          ExtendedParam0                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          ExtendedParam1                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          ExtendedParam2                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          ExtendedParam3                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          ExtendedParam4                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          ExtendedParam5                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          ExtendedParam6                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          ExtendedParam7                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          ExtendedParam8                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                          ExtendedParam9                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                         ExtendedParam10                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                         ExtendedParam11                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                         ExtendedParam12                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                         ExtendedParam13                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                         ExtendedParam14                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                         ExtendedParam15                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                                    user                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+             TraverseToFixedEndstop_Bit8                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+          ActivateHardwLimitSwitch_Bit15                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           ActivateSoftLimitSwitch_Bit14                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           TouchProbeEdgeSelection_Bit11                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+               TouchProbeSelection_Bit10                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 JoggingIncremental_Bit5                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      MDIselection_Bit15                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           NegModuloPositioningDir_Bit10                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+            PosModuloPositioningDir_Bit9                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                AbsolutePositioning_Bit8                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           TraversingBlockSelection_Bit0                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           TraversingBlockSelection_Bit1                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           TraversingBlockSelection_Bit2                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           TraversingBlockSelection_Bit3                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           TraversingBlockSelection_Bit4                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           TraversingBlockSelection_Bit5                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+           TraversingBlockSelection_Bit6                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                  OpenHoldingBrake_Bit12                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+              StartHomingProcedure_Bit11                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      ControlByPLC_Bit10                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               Jog2_Bit9                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               Jog1_Bit8                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                           FaultAck_Bit7                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+             ActivateTraversingTask_Bit6                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 NoIntermediateStop_Bit5                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+          DoNotRejectTraversingTask_Bit4                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    EnableOperation_Bit3                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        NoQuickStop_Bit2                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        NoCoastStop_Bit1                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                           SwitchON_Bit0                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                    Step                                    USINT    0 "                                                             100"    2    5    1   10    0    0         
+                                    Info                              WSTRING[80]    0 "                                     "Pripraveny cakam na povel""    2   21  162    1    0    0         
+                                  Status                              StatusStruc    0 "                                                               *"    2   24    1    0    0    1         
+                          WarningMessage                              WSTRING[80]    0 "                                                    "No warning""    3   21  162    1    0    0         
+                            ErrorMessage                              WSTRING[80]    0 "                                                      "No error""    3   21  162    1    0    0         
+                                InTorque                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                              InPosition                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                              StandStill                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                                 Warning                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Error                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Ready                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                               ActTorque                                     REAL    0 "                                                   -0.0135966577"    3    8    1   10    0    0         
+                             ActVelocity                                     REAL    0 "                                                  4.57735769E-05"    3    8    1   10    0    0         
+                             ActPosition                                     REAL    0 "                                                            0.04"    3    8    1   10    0    0         
+                   ServoPojazduZakladaca                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
+                                 Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    1         
+                                 PowerON                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                                ErrReset                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                  JogNeg                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                  JogPos                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            MoveAdditive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            MovePosition                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        TorqueLimitation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                    Stop                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                   Pause                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                              Parameters                               ParamStruc    0 "                                                               *"    2   24    1    0    0    0         
+                                  Torque                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                Distance                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                Position                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                Override                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                     Dcc                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                     Acc                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                      Jog                                 JogStruc    0 "                                                               *"    3   24    1    0    0    0         
                                      Acc                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
@@ -77,9 +188,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         NoQuickStop_Bit2                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         NoCoastStop_Bit1                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                            SwitchON_Bit0                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                    Step                                    USINT    0 "                                                             100"    2    5    1   10    0    0         
-                                    Info                              WSTRING[80]    0 "                                     "Pripraveny cakam na povel""    2   21  162    1    0    0         
-                                  Status                              StatusStruc    0 "                                                               *"    2   24    1    0    0    0         
+                                    Step                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                    Info                              WSTRING[80]    0 "                                                               *"    2   21  162    1    0    0         
+                                  Status                              StatusStruc    0 "                                                               *"    2   24    1    0    0    1         
                           WarningMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         
                             ErrorMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         
                                 InTorque                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         

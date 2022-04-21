@@ -1,8 +1,8 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
 
-#ifndef _LIBRARIES_20220419173701_
-#define _LIBRARIES_20220419173701_
+#ifndef _LIBRARIES_20220421160827_
+#define _LIBRARIES_20220421160827_
 
 __asm__(".section \".plc\"");
 
@@ -93,6 +93,9 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/CoTrace/CoTrace.var\\\" scope \\
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/MpServer/Constants.var\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/MpServer/Types.typ\\\" scope \\\"global\\\"\\n\"");
 __asm__(".ascii \"iecfile \\\"Logical/Libraries/MpServer/MpServer.fun\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/Statistika/Types.typ\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/Statistika/Constants.var\\\" scope \\\"global\\\"\\n\"");
+__asm__(".ascii \"iecfile \\\"Logical/Libraries/Statistika/Statistika.fun\\\" scope \\\"global\\\"\\n\"");
 
 /* Exported library functions and function blocks */
 #ifdef _RUNTIME_EXPORT
@@ -844,9 +847,12 @@ __asm__(".ascii \"iecfile \\\"Logical/Libraries/MpServer/MpServer.fun\\\" scope 
 	__asm__(".ascii \"plcexport \\\"CoTraceDataReadRecords\\\" FUB\\n\"");
 	__asm__(".ascii \"plcexport \\\"CoTraceDataSaveCsv\\\" FUB\\n\"");
 #endif
+#ifdef _STATISTIKA_EXPORT
+	__asm__(".ascii \"plcexport \\\"Taktime\\\" FUB\\n\"");
+#endif
 
 __asm__(".previous");
 
 
-#endif /* _LIBRARIES_20220419173701_ */
+#endif /* _LIBRARIES_20220421160827_ */
 

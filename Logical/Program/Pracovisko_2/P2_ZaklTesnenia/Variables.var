@@ -4,4 +4,8 @@ VAR
 	Stav_PojazdPoINIT : BOOL := 0;
 	PocetTrigrovKamery : USINT := 0;
 	i : USINT := 0;
+	CasEnable_1 : TON;
+	CasEnable_2 : TON;
+	CasResetServo_1 : TON;
+	CasResetServo_2 : TON;
 END_VAR

@@ -7,4 +7,10 @@ VAR
 	SkrutkovanieM5_Ukoncene : BOOL := 0;
 	M5_PrevodMomentu : PrevodMomentu;
 	K40_PrevodMomentu : PrevodMomentu;
+	CasEnable_1 : TON;
+	CasEnable_2 : TON;
+	CasResetServo_1 : TON;
+	CasResetServo_2 : TON := (0);
+	SC_SkrutkovaciSet_K40 : SequenceControlTyp := (0);
+	SC_SkrutkovaciSet_M5 : SequenceControlTyp := (0);
 END_VAR

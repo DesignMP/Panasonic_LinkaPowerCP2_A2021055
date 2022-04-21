@@ -3,4 +3,4 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                     name                                     type force                                                            value level type len format place expand specs
                                   Safety                               Safety_typ    0 "                                                               *"    0   24    1    0    0    1         
                                     STAV                          Safety_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
-                 Linka_SafetyPLC_Nabehlo                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                 Linka_SafetyPLC_Nabehlo                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         

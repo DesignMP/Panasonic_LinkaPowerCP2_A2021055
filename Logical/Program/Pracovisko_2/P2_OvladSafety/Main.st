@@ -60,7 +60,7 @@ PROGRAM _CYCLIC
 	
 	//*****************************************Reset zóny bunky************************************************//
 	IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
-		Safety.STAV.P2_Bunka_Zamky_AKTIVNE AND
+		(Safety.STAV.P2_Bunka_Zamky_AKTIVNE OR Safety.STAV.P2_VyblokovanieZamkov_AKTIVNE) AND
 		NOT Safety.STAV.P2_ZonaBunky_AKTIVNA AND
 		Safety.STAV.P2_Bunka_VstupBariera_AKTIVNA AND
 		(Safety.STAV.P3_Bunka_VstupBariera_AKTIVNA OR Safety.STAV.P3_Bunka_Zamky_AKTIVNE)THEN
