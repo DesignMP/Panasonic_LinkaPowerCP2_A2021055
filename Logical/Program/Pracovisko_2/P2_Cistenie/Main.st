@@ -20,7 +20,7 @@ PROGRAM _CYCLIC
 		P2_Cistenie.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_Cistenie.Step:= 0;
-	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+	ELSIF NOT P2_Cistenie.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
 		SC_P2_Cistenie.Step:= 0;
 	END_IF	
 	
@@ -107,7 +107,7 @@ PROGRAM _CYCLIC
 		
 		
 		
-		//********************************************************Automatický režim****************************************************************************//
+			//********************************************************Automatický režim****************************************************************************//
 		
 		100:  
 			SC_P2_Cistenie.StepName:='100 - Automaticky Rezim - cakam na spustenie cistenia';
@@ -288,12 +288,22 @@ PROGRAM _CYCLIC
 	
 		
 		
-		//**************************************************Ruèný režim***********************************************************//
+			//**************************************************Ruèný režim***********************************************************//
 		
 		700:
 			SC_P2_Cistenie.StepName:='700 - Rucny rezim';
 			SC_P2_Cistenie.IdleTime.PT:= T#200ms;
 			SC_P2_Cistenie.AlarmTime.PT:= T#5s;	
+		
+		
+			//Otvorenie zatvorenie èistenia//
+			IF P2_Cistenie.CMD.RR_Cistenie_OTVOR THEN
+				Dvere_OTVOR:= TRUE;
+				P2_Cistenie.CMD.RR_Cistenie_OTVOR:= FALSE;
+			ELSIF P2_Cistenie.CMD.RR_Cistenie_ZATVOR THEN
+				Dvere_ZATVOR:= TRUE;
+				P2_Cistenie.CMD.RR_Cistenie_ZATVOR:= FALSE;
+			END_IF	
 		
 		
 		

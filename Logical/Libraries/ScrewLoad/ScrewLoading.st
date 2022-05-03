@@ -7,8 +7,9 @@ FUNCTION_BLOCK ScrewLoading
 		Internal.Step.Brzda:=1;
 		Internal.Step.VibracnyHrniec:=1;
 	ELSIF EDGEPOS (Cmd.ManualStartHrniec) THEN
-		Internal.Step.Brzda:=0;
 		Internal.Step.VibracnyHrniec:=120;
+	ELSIF EDGEPOS (Cmd.ManualPresunBrzdu) THEN
+		Internal.Step.Brzda:=120;
 	ELSIF EDGEPOS(Cmd.AutomatStart=0) OR EDGEPOS(Cmd.ManualStartHrniec=0) THEN
 		Internal.Step.Brzda:=0;
 		Internal.Step.VibracnyHrniec:=140;
@@ -132,6 +133,21 @@ FUNCTION_BLOCK ScrewLoading
 		105: Internal.Status.Brzda:="Automat - Ukoncenie";
 			Internal.Step.Brzda:=100;
 		
+		120: Internal.Status.Brzda:="Manual - Presuvam brzdu na vypustenie skrutky";
+			
+			OUT.Brzda.ZakladnaPoloha:=0;
+			OUT.Brzda.PodajSkrutku:= 1;
+		
+			IF Cmd.ManualPresunBrzdu=0 THEN
+				OUT.Brzda.PodajSkrutku:= 0;
+				OUT.Brzda.ZakladnaPoloha:=1;
+				IF IN.Brzda.ZakladnaPoloha THEN
+					Internal.Step.Brzda:=0;
+				END_IF	
+			END_IF
+				
+					
+			
 			//---Error-----------------------
 		150: Internal.Status.Brzda:="Error - Brzda sa neda presunut";
 			Error.ErrorBit:=1;
@@ -143,7 +159,15 @@ FUNCTION_BLOCK ScrewLoading
 			Error.ErrorMessage:=Internal.Status.Brzda;
 		
 			//---Manual----------------------
-		250: Internal.Status.Brzda:="Manual";
+		250: Internal.Status.Brzda:="Manual - Presuvam brzdu";
+			OUT.Brzda.PodajSkrutku:=1;
+			OUT.Brzda.ZakladnaPoloha:=0;
+		
+			IF Cmd.ManualPresunBrzdu=0 THEN
+				OUT.Brzda.PodajSkrutku:=0;
+				OUT.Brzda.ZakladnaPoloha:=1;
+				Internal.Step.Brzda:=0;
+			END_IF		
 	END_CASE
 
 	

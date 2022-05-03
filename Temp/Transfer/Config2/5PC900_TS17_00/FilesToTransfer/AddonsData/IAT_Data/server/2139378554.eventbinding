@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP1_Skrutkovanie_page4">
+    <EventBinding id="AreaPageManualP1_Skrutkovanie_page4.Button_TestPozicii_4F.Click">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP1_Skrutkovanie_page4_Button_TestPozicii_4F" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_PolohujManipulator">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+</EventBindingDefinition>

@@ -15,5 +15,6 @@
 		zzEdge00001 : BOOL;
 		zzEdge00002 : BOOL;
 		zzEdge00003 : BOOL;
+		zzEdge00004 : BOOL;
 	END_VAR
 END_FUNCTION_BLOCK

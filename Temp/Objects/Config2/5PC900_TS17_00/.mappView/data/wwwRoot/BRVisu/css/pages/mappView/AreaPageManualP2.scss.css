@@ -97,12 +97,12 @@
 }
 
 #AreaPageManualP2_NavigationButtonRR_Dopravniky {
-  top: 355px;
+  top: 366px;
   position: absolute;
 }
 
 #AreaPageManualP2_NavigationButtonRR_Dopravniky {
-  left: 1015px;
+  left: 1022px;
   position: absolute;
 }
 
@@ -162,6 +162,14 @@
   color: black;
 }
 
+#AreaPageManualP2_NavigationButtonRR_Dopravniky.active:not(.disabled):not(.editMode) span {
+  color: black;
+}
+
+#AreaPageManualP2_NavigationButtonRR_Dopravniky.active.checked:not(.disabled) span {
+  color: black;
+}
+
 #AreaPageManualP2_NavigationButtonRR_Dopravniky span {
   font-size: 22px;
 }
@@ -179,12 +187,12 @@
 }
 
 #AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
-  top: 320px;
+  top: 294px;
   position: absolute;
 }
 
 #AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
-  left: 20px;
+  left: 24px;
   position: absolute;
 }
 
@@ -233,6 +241,14 @@
 }
 
 #AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia.active:not(.disabled):not(.editMode) span {
+  color: black;
+}
+
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia.active.checked:not(.disabled) span {
   color: black;
 }
 
@@ -310,6 +326,14 @@
   color: black;
 }
 
+#AreaPageManualP2_NavigationButtonRR_Maticovacka.active:not(.disabled):not(.editMode) span {
+  color: black;
+}
+
+#AreaPageManualP2_NavigationButtonRR_Maticovacka.active.checked:not(.disabled) span {
+  color: black;
+}
+
 #AreaPageManualP2_NavigationButtonRR_Maticovacka span {
   font-size: 22px;
 }
@@ -368,11 +392,27 @@
   border-radius: 5px;
 }
 
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie.active:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie.checked:not(.disabled) {
+  background-image: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%);
+}
+
 #AreaPageManualP2_NavigationButtonRR_Skrutkovanie:not(.disabled):not(.checked) {
   border-color: #e6b800;
 }
 
 #AreaPageManualP2_NavigationButtonRR_Skrutkovanie:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie.active:not(.disabled):not(.editMode) span {
+  color: black;
+}
+
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie.active.checked:not(.disabled) span {
   color: black;
 }
 
@@ -447,6 +487,14 @@
 }
 
 #AreaPageManualP2_NavigationButtonRR_Zvaranie:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
+#AreaPageManualP2_NavigationButtonRR_Zvaranie.active:not(.disabled):not(.editMode) span {
+  color: black;
+}
+
+#AreaPageManualP2_NavigationButtonRR_Zvaranie.active.checked:not(.disabled) span {
   color: black;
 }
 

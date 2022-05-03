@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP2_ZakladanieTesnenia">
+    <EventBinding id="AreaPageManualP2_ZakladanieTesnenia.Button_ResetServa.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP2_ZakladanieTesnenia_Button_ResetServa" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.ErrReset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP2_ZakladanieTesnenia">
+    <EventBinding id="AreaPageManualP2_ZakladanieTesnenia.Button_ResetServa1.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP2_ZakladanieTesnenia_Button_ResetServa1" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.ErrReset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

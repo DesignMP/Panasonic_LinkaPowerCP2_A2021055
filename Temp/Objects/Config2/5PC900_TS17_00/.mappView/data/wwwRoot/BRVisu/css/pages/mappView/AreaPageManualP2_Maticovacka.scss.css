@@ -62,851 +62,1868 @@
   border-style: ridge;
 }
 
-#AreaPageManualP2_Maticovacka_Image1 {
-  top: 110px;
+#AreaPageManualP2_Maticovacka_GroupBox2 {
+  top: 64px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_Image1 {
-  left: 1120px;
+#AreaPageManualP2_Maticovacka_GroupBox2 {
+  left: 18px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_Image1 {
-  width: 235px;
+#AreaPageManualP2_Maticovacka_GroupBox2 {
+  width: 430px;
 }
 
-#AreaPageManualP2_Maticovacka_Image1 {
-  height: 400px;
+#AreaPageManualP2_Maticovacka_GroupBox2 {
+  height: 250px;
 }
 
-#AreaPageManualP2_Maticovacka_Image1 {
+#AreaPageManualP2_Maticovacka_GroupBox2 {
   z-index: 2;
 }
 
-#AreaPageManualP2_Maticovacka_Image1 {
-  background-color: gainsboro;
+#AreaPageManualP2_Maticovacka_GroupBox2 {
+  background-color: oldlace;
 }
 
-#AreaPageManualP2_Maticovacka_Image1 {
-  border-style: solid;
+#AreaPageManualP2_Maticovacka_GroupBox2 > .header span {
+  color: black;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBoxRR_SkrutkovackaMatic {
-  top: 75px;
+#AreaPageManualP2_Maticovacka_GroupBox2 {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList8 {
+  top: 83px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBoxRR_SkrutkovackaMatic {
-  left: 575px;
+#AreaPageManualP2_Maticovacka_ImageList8 {
+  left: 301px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBoxRR_SkrutkovackaMatic {
-  width: 520px;
+#AreaPageManualP2_Maticovacka_ImageList8 {
+  width: 25px;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBoxRR_SkrutkovackaMatic {
-  height: 328px;
+#AreaPageManualP2_Maticovacka_ImageList8 {
+  height: 25px;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBoxRR_SkrutkovackaMatic {
-  z-index: 3;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun {
-  top: 26px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun {
-  left: 29px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun {
-  width: 186px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun {
-  height: 50px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun {
+#AreaPageManualP2_Maticovacka_ImageList8 {
   z-index: 0;
 }
 
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun:not(.disabled):not(.checked) .wrapper .before {
-  color: black;
+#AreaPageManualP2_Maticovacka_ImageList8 {
+  border-width: 0px;
 }
 
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun:not(.disabled):not(.checked) .wrapper .after {
-  color: black;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun .wrapper .before {
-  font-size: 18px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun .wrapper .after {
-  font-size: 18px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun:not(.active):not(.checked) {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun.disabled.active {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_MaticovackuVysun.disabled.checked {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP2_Maticovacka_Label_VysunutieMaticovacky {
-  top: 16px;
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4 {
+  top: 81px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_Label_VysunutieMaticovacky {
-  left: 284px;
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4 {
+  left: 139px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_Label_VysunutieMaticovacky {
-  width: 200px;
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4 {
+  width: 150px;
 }
 
-#AreaPageManualP2_Maticovacka_Label_VysunutieMaticovacky {
-  height: 75px;
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4 {
+  height: 50px;
 }
 
-#AreaPageManualP2_Maticovacka_Label_VysunutieMaticovacky {
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4 {
   z-index: 1;
 }
 
-#AreaPageManualP2_Maticovacka_Label_VysunutieMaticovacky {
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4 .wrapper .before {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4 .wrapper .after {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4:not(.active):not(.checked) {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4.disabled.active {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_ZasunStoperPoz4.disabled.checked {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Maticovacka_ImageList9 {
+  top: 111px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList9 {
+  left: 301px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList9 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList9 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList9 {
+  z-index: 2;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList9 {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox4 {
+  top: 324px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox4 {
+  left: 18px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox4 {
+  width: 430px;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox4 {
+  height: 250px;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox4 {
+  z-index: 3;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox4 {
+  background-color: oldlace;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox4 > .header span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox4 {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper {
+  top: 107px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper {
+  left: 139px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper {
+  width: 150px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper {
+  height: 50px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper {
+  z-index: 0;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper .wrapper .before {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper .wrapper .after {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  top: 13px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  left: 11px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  z-index: 1;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label15:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label15:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label15:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label15:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label15 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList10 {
+  top: 24px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList10 {
+  left: 171px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList10 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList10 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList10 {
+  z-index: 2;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList10 {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox5 {
+  top: 64px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox5 {
+  left: 469px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox5 {
+  width: 430px;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox5 {
+  height: 510px;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox5 {
+  z-index: 8;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox5 {
+  background-color: oldlace;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox5 > .header span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox5 {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30 {
+  top: 35px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30 {
+  left: 26px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30 {
+  width: 165px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30 {
+  z-index: 0;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30 .wrapper .before {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30 .wrapper .after {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30 {
+  top: 111px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30 {
+  left: 236px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30 {
+  width: 165px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30 {
+  z-index: 1;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30 .wrapper .before {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30 .wrapper .after {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30 {
+  top: 111px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30 {
+  left: 26px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30 {
+  width: 165px;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30 {
+  z-index: 2;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30 {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30 span {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_CistenieSkrutkovackyK30.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  top: 19px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  left: 221px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  height: 77px;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  z-index: 3;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label27:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label27:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label27:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label27:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label27 {
   justify-content: center;
   text-align: center;
   -ms-flex-align: start;
   align-items: flex-start;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky {
-  height: 30px;
+#AreaPageManualP2_Maticovacka_Label27 {
+  font-size: 14px;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky {
-  top: 54px;
+#AreaPageManualP2_Maticovacka_Label27 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_Label12 {
+  top: 311px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky {
-  left: 304px;
+#AreaPageManualP2_Maticovacka_Label12 {
+  left: 11px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky {
-  width: 160px;
+#AreaPageManualP2_Maticovacka_Label12 {
+  width: 195px;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky {
-  z-index: 2;
+#AreaPageManualP2_Maticovacka_Label12 {
+  height: 45px;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky {
+#AreaPageManualP2_Maticovacka_Label12 {
+  z-index: 4;
+}
+
+#AreaPageManualP2_Maticovacka_Label12 {
   border-width: 2px;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky {
-  background-color: white;
+#AreaPageManualP2_Maticovacka_Label12 {
+  border-radius: 5px;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky {
-  background-image: linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%);
+#AreaPageManualP2_Maticovacka_Label12 {
+  background-color: silver;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky {
-  border-style: solid;
+#AreaPageManualP2_Maticovacka_Label12 {
+  border-color: black;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky input {
+#AreaPageManualP2_Maticovacka_Label12:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label12:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label12 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label12:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label12:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label12 span {
   color: black;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky span.breaseNumericOutput_unit {
+#AreaPageManualP2_Maticovacka_Label12 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label12 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList11 {
+  top: 323px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList11 {
+  left: 173px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList11 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList11 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList11 {
+  z-index: 5;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList11 {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList12 {
+  top: 121px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList12 {
+  left: 160px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList12 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList12 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList12 {
+  z-index: 6;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList12 {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_NumericOutput2 {
+  height: 30px;
+}
+
+#AreaPageManualP2_Maticovacka_NumericOutput2 {
+  top: 55px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_NumericOutput2 {
+  left: 236px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_NumericOutput2 {
+  width: 165px;
+}
+
+#AreaPageManualP2_Maticovacka_NumericOutput2 {
+  z-index: 7;
+}
+
+#AreaPageManualP2_Maticovacka_Line4 {
+  z-index: 8;
+}
+
+#AreaPageManualP2_Maticovacka_Line4 line {
+  stroke-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  top: 259px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  left: 11px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  z-index: 9;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label13:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label13:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label13:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label13:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label13 span {
   color: black;
 }
 
-#AreaPageManualP2_Maticovacka_NumericOutput_VysunutieMaticovacky input {
-  justify-content: center;
-  text-align: center;
+#AreaPageManualP2_Maticovacka_Label13 {
+  font-size: 14px;
 }
 
-#AreaPageManualP2_Maticovacka_Button_PodajMaticu {
-  top: 106px;
+#AreaPageManualP2_Maticovacka_Label13 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList15 {
+  top: 269px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_Button_PodajMaticu {
-  left: 39px;
+#AreaPageManualP2_Maticovacka_ImageList15 {
+  left: 173px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_Button_PodajMaticu {
-  width: 170px;
+#AreaPageManualP2_Maticovacka_ImageList15 {
+  width: 25px;
 }
 
-#AreaPageManualP2_Maticovacka_Button_PodajMaticu {
-  height: 50px;
+#AreaPageManualP2_Maticovacka_ImageList15 {
+  height: 25px;
 }
 
-#AreaPageManualP2_Maticovacka_Button_PodajMaticu {
-  z-index: 3;
+#AreaPageManualP2_Maticovacka_ImageList15 {
+  z-index: 10;
 }
 
-#AreaPageManualP2_Maticovacka_Button_PodajMaticu {
-  justify-content: flex-start;
-  text-align: left;
+#AreaPageManualP2_Maticovacka_ImageList15 {
+  border-width: 0px;
 }
 
-#AreaPageManualP2_Maticovacka_ImageListPodajMaticu {
-  top: 119px;
+#AreaPageManualP2_Maticovacka_Label14 {
+  top: 363px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_ImageListPodajMaticu {
+#AreaPageManualP2_Maticovacka_Label14 {
+  left: 11px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  z-index: 11;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label14:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label14:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label14:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label14:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label14 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList13 {
+  top: 375px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList13 {
+  left: 173px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList13 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList13 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList13 {
+  z-index: 12;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList13 {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  top: 415px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  left: 11px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  z-index: 13;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label16:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label16:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label16:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label16:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label16 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList17 {
+  top: 427px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList17 {
+  left: 173px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList17 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList17 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList17 {
+  z-index: 14;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList17 {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31 {
+  top: 181px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31 {
+  left: 236px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31 {
+  width: 165px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31 {
+  z-index: 15;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31 .wrapper .before {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31 .wrapper .after {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox10 {
+  top: 64px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox10 {
+  left: 920px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox10 {
+  width: 430px;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox10 {
+  height: 510px;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox10 {
+  z-index: 9;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox10 {
+  background-color: oldlace;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox10 > .header span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_GroupBox10 {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList31 {
+  top: 233px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList31 {
   left: 174px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_ImageListPodajMaticu {
+#AreaPageManualP2_Maticovacka_ImageList31 {
   width: 25px;
 }
 
-#AreaPageManualP2_Maticovacka_ImageListPodajMaticu {
+#AreaPageManualP2_Maticovacka_ImageList31 {
   height: 25px;
 }
 
-#AreaPageManualP2_Maticovacka_ImageListPodajMaticu {
-  z-index: 4;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodajMaticu {
-  border-width: 0px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni {
-  top: 106px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni {
-  left: 289px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni {
-  width: 186px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni {
-  height: 50px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni {
-  z-index: 5;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni:not(.disabled):not(.checked) .wrapper .before {
-  color: black;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni:not(.disabled):not(.checked) .wrapper .after {
-  color: black;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni .wrapper .before {
-  font-size: 18px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni .wrapper .after {
-  font-size: 18px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni:not(.active):not(.checked) {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni.disabled.active {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieZapni.disabled.checked {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP2_Maticovacka_Line1 {
-  z-index: 6;
-}
-
-#AreaPageManualP2_Maticovacka_Line1 line {
-  stroke-width: 2px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticVysunuty {
-  top: 191px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticVysunuty {
-  left: 34px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticVysunuty {
-  width: 200px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticVysunuty {
-  height: 40px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticVysunuty {
+#AreaPageManualP2_Maticovacka_ImageList31 {
   z-index: 7;
 }
 
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticVysunuty {
-  top: 199px;
-  position: absolute;
+#AreaPageManualP2_Maticovacka_ImageList31 {
+  border-style: none;
 }
 
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticVysunuty {
-  left: 198px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticVysunuty {
-  width: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticVysunuty {
-  height: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticVysunuty {
-  z-index: 8;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticVysunuty {
+#AreaPageManualP2_Maticovacka_ImageList31 {
   border-width: 0px;
 }
 
-#AreaPageManualP2_Maticovacka_LabelPritomnostMatice {
-  top: 236px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPritomnostMatice {
-  left: 34px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPritomnostMatice {
-  width: 200px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPritomnostMatice {
-  height: 40px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPritomnostMatice {
-  z-index: 9;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPritomnostMatice {
-  top: 244px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPritomnostMatice {
-  left: 198px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPritomnostMatice {
-  width: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPritomnostMatice {
-  height: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPritomnostMatice {
-  z-index: 10;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPritomnostMatice {
-  border-width: 0px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticZasunuty {
-  top: 191px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticZasunuty {
-  left: 284px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticZasunuty {
-  width: 200px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticZasunuty {
-  height: 40px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPodavacMaticZasunuty {
-  z-index: 11;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticZasunuty {
-  top: 199px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticZasunuty {
-  left: 448px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticZasunuty {
-  width: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticZasunuty {
-  height: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticZasunuty {
-  z-index: 12;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListPodavacMaticZasunuty {
-  border-width: 0px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelMaticovackaZasunuta {
-  top: 236px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelMaticovackaZasunuta {
-  left: 284px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelMaticovackaZasunuta {
-  width: 200px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelMaticovackaZasunuta {
-  height: 40px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelMaticovackaZasunuta {
-  z-index: 13;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListMaticovackaZasunuta {
-  top: 244px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListMaticovackaZasunuta {
-  left: 448px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListMaticovackaZasunuta {
-  width: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListMaticovackaZasunuta {
-  height: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListMaticovackaZasunuta {
-  z-index: 14;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListMaticovackaZasunuta {
-  border-width: 0px;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox2 {
-  top: 75px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox2 {
-  left: 35px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox2 {
-  width: 520px;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox2 {
-  height: 328px;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox2 {
-  z-index: 4;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika {
-  top: 26px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika {
-  left: 34px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika {
-  width: 186px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika {
-  height: 50px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika {
+#AreaPageManualP2_Maticovacka_Line6 {
   z-index: 0;
 }
 
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika:not(.disabled):not(.checked) .wrapper .before {
-  color: black;
+#AreaPageManualP2_Maticovacka_Line6 line {
+  stroke-width: 2px;
 }
 
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika:not(.disabled):not(.checked) .wrapper .after {
-  color: black;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika .wrapper .before {
-  font-size: 18px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika .wrapper .after {
-  font-size: 18px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika:not(.active):not(.checked) {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika.disabled.active {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnika.disabled.checked {
-  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
-}
-
-#AreaPageManualP2_Maticovacka_LabelZasobnikMaticPrazdny {
-  top: 186px;
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4 {
+  top: 19px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_LabelZasobnikMaticPrazdny {
-  left: 29px;
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4 {
+  left: 24px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_LabelZasobnikMaticPrazdny {
-  width: 200px;
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4 {
+  width: 170px;
 }
 
-#AreaPageManualP2_Maticovacka_LabelZasobnikMaticPrazdny {
-  height: 40px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelZasobnikMaticPrazdny {
-  z-index: 1;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListZasobnikMaticPrazdny {
-  top: 194px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListZasobnikMaticPrazdny {
-  left: 193px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListZasobnikMaticPrazdny {
-  width: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListZasobnikMaticPrazdny {
-  height: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListZasobnikMaticPrazdny {
-  z-index: 2;
-}
-
-#AreaPageManualP2_Maticovacka_ImageListZasobnikMaticPrazdny {
-  border-width: 0px;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox1 {
-  top: 415px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox1 {
-  left: 575px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox1 {
-  width: 520px;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox1 {
-  height: 160px;
-}
-
-#AreaPageManualP2_Maticovacka_GroupBox1 {
-  z-index: 5;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper1 {
-  top: 33px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper1 {
-  left: 294px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper1 {
-  width: 165px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper1 {
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4 {
   height: 45px;
 }
 
-#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper1 {
-  z-index: 0;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper1:not(.disabled):not(.checked) .wrapper .before {
-  color: black;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper1:not(.disabled):not(.checked) .wrapper .after {
-  color: black;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper1 .wrapper .before {
-  font-size: 16px;
-}
-
-#AreaPageManualP2_Maticovacka_ToggleSwitch_Stoper1 .wrapper .after {
-  font-size: 16px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPritomnostPaletky {
-  top: 38px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPritomnostPaletky {
-  left: 39px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPritomnostPaletky {
-  width: 200px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPritomnostPaletky {
-  height: 40px;
-}
-
-#AreaPageManualP2_Maticovacka_LabelPritomnostPaletky {
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4 {
   z-index: 1;
 }
 
-#AreaPageManualP2_Maticovacka_ImagePritomnostPaletky {
-  top: 45px;
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4 .wrapper .before {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4 .wrapper .after {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ToggleSwitch_VibracieZasobnikaM4.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList33 {
+  top: 233px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_ImagePritomnostPaletky {
-  left: 208px;
+#AreaPageManualP2_Maticovacka_ImageList33 {
+  left: 384px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_ImagePritomnostPaletky {
+#AreaPageManualP2_Maticovacka_ImageList33 {
   width: 25px;
 }
 
-#AreaPageManualP2_Maticovacka_ImagePritomnostPaletky {
+#AreaPageManualP2_Maticovacka_ImageList33 {
   height: 25px;
 }
 
-#AreaPageManualP2_Maticovacka_ImagePritomnostPaletky {
-  z-index: 2;
+#AreaPageManualP2_Maticovacka_ImageList33 {
+  z-index: 11;
 }
 
-#AreaPageManualP2_Maticovacka_ImagePritomnostPaletky {
+#AreaPageManualP2_Maticovacka_ImageList33 {
+  border-style: none;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList33 {
   border-width: 0px;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBox3 {
-  top: 415px;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD {
+  top: 95px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBox3 {
-  left: 35px;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD {
+  left: 235px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBox3 {
-  width: 520px;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD {
+  width: 170px;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBox3 {
-  height: 160px;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD {
+  height: 45px;
 }
 
-#AreaPageManualP2_Maticovacka_GroupBox3 {
-  z-index: 6;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD {
+  z-index: 2;
 }
 
-#AreaPageManualP2_Maticovacka_Button_CentrovanieDOLE {
-  top: 38px;
-  position: absolute;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD {
+  border-radius: 5px;
 }
 
-#AreaPageManualP2_Maticovacka_Button_CentrovanieDOLE {
-  left: 44px;
-  position: absolute;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD:not(.disabled):not(.active):not(.checked) span {
+  color: black;
 }
 
-#AreaPageManualP2_Maticovacka_Button_CentrovanieDOLE {
-  width: 180px;
-}
-
-#AreaPageManualP2_Maticovacka_Button_CentrovanieDOLE {
-  height: 50px;
-}
-
-#AreaPageManualP2_Maticovacka_Button_CentrovanieDOLE {
-  z-index: 0;
-}
-
-#AreaPageManualP2_Maticovacka_Button_CentrovanieDOLE {
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD {
   justify-content: flex-start;
   text-align: left;
 }
 
-#AreaPageManualP2_Maticovacka_Button_CentrovanieDOLE span {
-  font-size: 18px;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD span {
+  font-size: 16px;
 }
 
-#AreaPageManualP2_Maticovacka_Button_CentrovanieHORE {
-  top: 38px;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VZAD.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED {
+  top: 95px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_Button_CentrovanieHORE {
-  left: 279px;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED {
+  left: 24px;
   position: absolute;
 }
 
-#AreaPageManualP2_Maticovacka_Button_CentrovanieHORE {
-  width: 180px;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED {
+  width: 170px;
 }
 
-#AreaPageManualP2_Maticovacka_Button_CentrovanieHORE {
-  height: 50px;
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED {
+  height: 45px;
 }
 
-#AreaPageManualP2_Maticovacka_Button_CentrovanieHORE {
-  z-index: 1;
-}
-
-#AreaPageManualP2_Maticovacka_Button_CentrovanieHORE {
-  justify-content: flex-end;
-  text-align: right;
-}
-
-#AreaPageManualP2_Maticovacka_Button_CentrovanieHORE span {
-  font-size: 18px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieDOLE {
-  top: 51px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieDOLE {
-  left: 184px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieDOLE {
-  width: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieDOLE {
-  height: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieDOLE {
-  z-index: 2;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieDOLE {
-  border-width: 0px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieHORE {
-  top: 51px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieHORE {
-  left: 294px;
-  position: absolute;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieHORE {
-  width: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieHORE {
-  height: 25px;
-}
-
-#AreaPageManualP2_Maticovacka_ImageCentrovanieHORE {
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED {
   z-index: 3;
 }
 
-#AreaPageManualP2_Maticovacka_ImageCentrovanieHORE {
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED span {
+  font-size: 16px;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED span {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_Button_OtocPodavac_M4_VPRED.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList35 {
+  top: 179px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList35 {
+  left: 174px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList35 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList35 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList35 {
+  z-index: 5;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList35 {
+  border-style: none;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList35 {
   border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList36 {
+  top: 179px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList36 {
+  left: 384px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList36 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList36 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList36 {
+  z-index: 9;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList36 {
+  border-style: none;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList36 {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  top: 169px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  left: 11px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  z-index: 4;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label23:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label23:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label23:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label23:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label23 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  top: 223px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  left: 11px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  z-index: 6;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label24:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label24:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label24:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label24:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label24 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  top: 169px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  left: 222px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  z-index: 8;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label26:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label26:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label26:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label26:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label26 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  top: 223px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  left: 222px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  z-index: 10;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label28:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label28:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label28:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label28:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label28 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList32 {
+  top: 287px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList32 {
+  left: 174px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList32 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList32 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList32 {
+  z-index: 13;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList32 {
+  border-style: none;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList32 {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  top: 277px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  left: 11px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  z-index: 12;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label25:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label25:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label25:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label25:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label25 {
+  font-weight: bold;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList34 {
+  top: 287px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList34 {
+  left: 384px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList34 {
+  width: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList34 {
+  height: 25px;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList34 {
+  z-index: 15;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList34 {
+  border-style: none;
+}
+
+#AreaPageManualP2_Maticovacka_ImageList34 {
+  border-width: 0px;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  top: 277px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  left: 222px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  width: 195px;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  height: 45px;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  z-index: 14;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  border-width: 2px;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  background-color: silver;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label29:before {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label29:after {
+  border-color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label29:before {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label29:after {
+  border-style: outset;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 span {
+  color: black;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  font-size: 14px;
+}
+
+#AreaPageManualP2_Maticovacka_Label29 {
+  font-weight: bold;
 }

@@ -16,7 +16,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Global.typ"
     LogicalPath="Global.typ"
     Type="File"
-    LastWriteTime="132950049468465475"
+    LastWriteTime="132960597914228040"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Global.var"
@@ -28,7 +28,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\Package.pkg"
     LogicalPath="Libraries"
     Type="Package"
-    LastWriteTime="132949098795166146" />
+    LastWriteTime="132959512886731396" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\Runtime\Binary.lby"
     LogicalPath="Libraries.Runtime"
@@ -665,7 +665,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\SkrutSety\Types.typ"
     LogicalPath="Libraries.SkrutSety.Types.typ"
     Type="File"
-    LastWriteTime="132929411540000000"
+    LastWriteTime="132960394116106842"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\SkrutSety\Constants.var"
@@ -683,13 +683,13 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\SkrutSety\PickAndPlace.st"
     LogicalPath="Libraries.SkrutSety.PickAndPlace.st"
     Type="File"
-    LastWriteTime="132943993826367370"
+    LastWriteTime="132960388327831650"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\SkrutSety\MaticaSet.st"
     LogicalPath="Libraries.SkrutSety.MaticaSet.st"
     Type="File"
-    LastWriteTime="132944003162391075"
+    LastWriteTime="132960395089745446"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\RoCa_Festo\IEC.lby"
@@ -737,35 +737,6 @@
     LogicalPath="Libraries.RoCa_Festo.Linear_scaling.st"
     Type="File"
     LastWriteTime="132895632760000000"
-    Private="false" />
-  <Object
-    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\IEC.lby"
-    LogicalPath="Libraries.ScrewLoad"
-    Type="Library"
-    LastWriteTime="132905072300000000" />
-  <Object
-    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\Types.typ"
-    LogicalPath="Libraries.ScrewLoad.Types.typ"
-    Type="File"
-    LastWriteTime="132930189140000000"
-    Private="false" />
-  <Object
-    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\Constants.var"
-    LogicalPath="Libraries.ScrewLoad.Constants.var"
-    Type="File"
-    LastWriteTime="132905072300000000"
-    Private="false" />
-  <Object
-    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\ScrewLoad.fun"
-    LogicalPath="Libraries.ScrewLoad.ScrewLoad.fun"
-    Type="File"
-    LastWriteTime="132905072300000000"
-    Private="false" />
-  <Object
-    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\ScrewLoading.st"
-    LogicalPath="Libraries.ScrewLoad.ScrewLoading.st"
-    Type="File"
-    LastWriteTime="132919905500000000"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\MpAlarmX\Binary.lby"
@@ -930,6 +901,35 @@
     LastWriteTime="132949098795137217"
     Private="false" />
   <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\IEC.lby"
+    LogicalPath="Libraries.ScrewLoad"
+    Type="Library"
+    LastWriteTime="132959512886721506" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\Types.typ"
+    LogicalPath="Libraries.ScrewLoad.Types.typ"
+    Type="File"
+    LastWriteTime="132959512886681517"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\Constants.var"
+    LogicalPath="Libraries.ScrewLoad.Constants.var"
+    Type="File"
+    LastWriteTime="132959512886681517"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\ScrewLoad.fun"
+    LogicalPath="Libraries.ScrewLoad.ScrewLoad.fun"
+    Type="File"
+    LastWriteTime="132959512886701462"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Libraries\ScrewLoad\ScrewLoading.st"
+    LogicalPath="Libraries.ScrewLoad.ScrewLoading.st"
+    Type="File"
+    LastWriteTime="132959531428053543"
+    Private="false" />
+  <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Package.pkg"
     LogicalPath="Program"
     Type="Package"
@@ -948,7 +948,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Linka\Main\Main.st"
     LogicalPath="Program.Linka.Main.Main.st"
     Type="File"
-    LastWriteTime="132948521757866713"
+    LastWriteTime="132959765417495256"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Linka\Main\Types.typ"
@@ -1173,7 +1173,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Vytah\Main.st"
     LogicalPath="Program.Pracovisko_1.P1_Vytah.Main.st"
     Type="File"
-    LastWriteTime="132949913653099607"
+    LastWriteTime="132959472886335873"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Vytah\Types.typ"
@@ -1202,7 +1202,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_StoperSrobovania\Main.st"
     LogicalPath="Program.Pracovisko_1.P1_StoperSrobovania.Main.st"
     Type="File"
-    LastWriteTime="132944090203112280"
+    LastWriteTime="132959547133189754"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_StoperSrobovania\Types.typ"
@@ -1237,7 +1237,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Srobovanie\Main.st"
     LogicalPath="Program.Pracovisko_1.P1_Srobovanie.Main.st"
     Type="File"
-    LastWriteTime="132950215389951489"
+    LastWriteTime="132960513292297946"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Srobovanie\Types.typ"
@@ -1261,7 +1261,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Srobovanie\OvlSkrutkovacichSetov.st"
     LogicalPath="Program.Pracovisko_1.P1_Srobovanie.OvlSkrutkovacichSetov.st"
     Type="File"
-    LastWriteTime="132950141795450135"
+    LastWriteTime="132959571997400285"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_Robot\IEC.prg"
@@ -1301,7 +1301,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_AkumStoper\Main.st"
     LogicalPath="Program.Pracovisko_1.P1_AkumStoper.Main.st"
     Type="File"
-    LastWriteTime="132944079563235215"
+    LastWriteTime="132959547623802686"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_AkumStoper\Types.typ"
@@ -1324,7 +1324,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_OvladVizu\Main.st"
     LogicalPath="Program.Pracovisko_1.P1_OvladVizu.Main.st"
     Type="File"
-    LastWriteTime="132944176171632123"
+    LastWriteTime="132959540870497098"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_1\P1_OvladVizu\Types.typ"
@@ -1398,7 +1398,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Main\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_Main.Main.st"
     Type="File"
-    LastWriteTime="132948269803980613"
+    LastWriteTime="132959647661602268"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Main\Types.typ"
@@ -1492,7 +1492,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_SpodnyStoper\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_SpodnyStoper.Main.st"
     Type="File"
-    LastWriteTime="132941545086646522"
+    LastWriteTime="132959787735136269"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_SpodnyStoper\Types.typ"
@@ -1544,7 +1544,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_ZaklTesnenia\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_ZaklTesnenia.Main.st"
     Type="File"
-    LastWriteTime="132949916285335144"
+    LastWriteTime="132959746569869082"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_ZaklTesnenia\Types.typ"
@@ -1567,7 +1567,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperMaticovacky\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_StoperMaticovacky.Main.st"
     Type="File"
-    LastWriteTime="132937280135618538"
+    LastWriteTime="132960414906798673"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperMaticovacky\Types.typ"
@@ -1608,7 +1608,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_AkumStoper\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_AkumStoper.Main.st"
     Type="File"
-    LastWriteTime="132923372120000000"
+    LastWriteTime="132959549552404032"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_AkumStoper\Types.typ"
@@ -1631,7 +1631,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperSrobovania\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_StoperSrobovania.Main.st"
     Type="File"
-    LastWriteTime="132937246726059853"
+    LastWriteTime="132959691520907661"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperSrobovania\Types.typ"
@@ -1666,7 +1666,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Srobovanie\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_Srobovanie.Main.st"
     Type="File"
-    LastWriteTime="132950000061353881"
+    LastWriteTime="132960540550192178"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Srobovanie\Types.typ"
@@ -1690,7 +1690,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Srobovanie\OvlSkrutkovacichSetov.st"
     LogicalPath="Program.Pracovisko_2.P2_Srobovanie.OvlSkrutkovacichSetov.st"
     Type="File"
-    LastWriteTime="132950223096790902"
+    LastWriteTime="132959572002386620"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Robot\IEC.prg"
@@ -1730,7 +1730,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperZvarania\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_StoperZvarania.Main.st"
     Type="File"
-    LastWriteTime="132942408058138084"
+    LastWriteTime="132959693382480393"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_StoperZvarania\Types.typ"
@@ -1765,7 +1765,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Zvaranie\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_Zvaranie.Main.st"
     Type="File"
-    LastWriteTime="132949926037256436"
+    LastWriteTime="132960594404337648"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Zvaranie\Types.typ"
@@ -1794,7 +1794,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Cistenie\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_Cistenie.Main.st"
     Type="File"
-    LastWriteTime="132938141263881292"
+    LastWriteTime="132960599121991622"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_Cistenie\Types.typ"
@@ -1823,7 +1823,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_OvladVizu\Main.st"
     LogicalPath="Program.Pracovisko_2.P2_OvladVizu.Main.st"
     Type="File"
-    LastWriteTime="132941611605042168"
+    LastWriteTime="132960582176058644"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_2\P2_OvladVizu\Types.typ"
@@ -1926,7 +1926,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Dopravniky\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_Dopravniky.Main.st"
     Type="File"
-    LastWriteTime="132918250080000000"
+    LastWriteTime="132959599687452322"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Dopravniky\Types.typ"
@@ -1949,7 +1949,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_SpodnyStoper\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_SpodnyStoper.Main.st"
     Type="File"
-    LastWriteTime="132941549428421636"
+    LastWriteTime="132959787909028625"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_SpodnyStoper\Types.typ"
@@ -1972,7 +1972,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_StoperSrobovania\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_StoperSrobovania.Main.st"
     Type="File"
-    LastWriteTime="132937248198005641"
+    LastWriteTime="132959600105499380"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_StoperSrobovania\Types.typ"
@@ -2007,7 +2007,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Srobovanie\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_Srobovanie.Main.st"
     Type="File"
-    LastWriteTime="132950000215701743"
+    LastWriteTime="132960352889292525"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Srobovanie\Types.typ"
@@ -2031,7 +2031,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_Srobovanie\OvlSkrutkovacichSetov.st"
     LogicalPath="Program.Pracovisko_3.P3_Srobovanie.OvlSkrutkovacichSetov.st"
     Type="File"
-    LastWriteTime="132950236978712105"
+    LastWriteTime="132959598977440616"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_HV_Test\IEC.prg"
@@ -2042,7 +2042,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_HV_Test\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_HV_Test.Main.st"
     Type="File"
-    LastWriteTime="132937248810347450"
+    LastWriteTime="132959604733416910"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_HV_Test\Types.typ"
@@ -2095,7 +2095,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_ZdvizkaPredLeakTestA\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestA.Main.st"
     Type="File"
-    LastWriteTime="132919805060000000"
+    LastWriteTime="132959605075962799"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_ZdvizkaPredLeakTestA\Types.typ"
@@ -2124,7 +2124,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_ZdvizkaPredLeakTestB\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_ZdvizkaPredLeakTestB.Main.st"
     Type="File"
-    LastWriteTime="132919061380000000"
+    LastWriteTime="132959605339192509"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_ZdvizkaPredLeakTestB\Types.typ"
@@ -2153,7 +2153,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_LeakageTestA\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_LeakageTestA.Main.st"
     Type="File"
-    LastWriteTime="132937249322593852"
+    LastWriteTime="132959606043152806"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_LeakageTestA\Types.typ"
@@ -2200,7 +2200,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_LeakageTestB\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_LeakageTestB.Main.st"
     Type="File"
-    LastWriteTime="132937249752553381"
+    LastWriteTime="132959606362810011"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_LeakageTestB\Types.typ"
@@ -2247,7 +2247,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_ZdvizkaZaLeakTestA\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestA.Main.st"
     Type="File"
-    LastWriteTime="132937977925591794"
+    LastWriteTime="132959606621506198"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_ZdvizkaZaLeakTestA\Types.typ"
@@ -2276,7 +2276,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_ZdvizkaZaLeakTestB\Main.st"
     LogicalPath="Program.Pracovisko_3.P3_ZdvizkaZaLeakTestB.Main.st"
     Type="File"
-    LastWriteTime="132937978096290171"
+    LastWriteTime="132959606967317577"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_3\P3_ZdvizkaZaLeakTestB\Types.typ"
@@ -2356,7 +2356,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Main\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_Main.Main.st"
     Type="File"
-    LastWriteTime="132939958542242811"
+    LastWriteTime="132956936736009346"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Main\Types.typ"
@@ -2420,7 +2420,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_SpodnyStoper\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_SpodnyStoper.Main.st"
     Type="File"
-    LastWriteTime="132941549679068080"
+    LastWriteTime="132959788110517129"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_SpodnyStoper\Types.typ"
@@ -2443,7 +2443,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_FunkcnyTestA\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_FunkcnyTestA.Main.st"
     Type="File"
-    LastWriteTime="132937956654642863"
+    LastWriteTime="132959609187147486"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_FunkcnyTestA\Types.typ"
@@ -2496,7 +2496,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_FunkcnyTestB\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_FunkcnyTestB.Main.st"
     Type="File"
-    LastWriteTime="132937250818403571"
+    LastWriteTime="132959609482004955"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_FunkcnyTestB\Types.typ"
@@ -2549,7 +2549,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_ZdvizkaZaFunkcTestA\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_ZdvizkaZaFunkcTestA.Main.st"
     Type="File"
-    LastWriteTime="132944006127320395"
+    LastWriteTime="132959609753291276"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_ZdvizkaZaFunkcTestA\Types.typ"
@@ -2578,7 +2578,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_ZdvizkaZaFunkcTestB\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_ZdvizkaZaFunkcTestB.Main.st"
     Type="File"
-    LastWriteTime="132937977532679690"
+    LastWriteTime="132959610010110457"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_ZdvizkaZaFunkcTestB\Types.typ"
@@ -2607,7 +2607,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_StoperEtiketovania\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_StoperEtiketovania.Main.st"
     Type="File"
-    LastWriteTime="132949928926968676"
+    LastWriteTime="132959658000622762"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_StoperEtiketovania\Types.typ"
@@ -2660,7 +2660,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Vytah\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_Vytah.Main.st"
     Type="File"
-    LastWriteTime="132949930203011819"
+    LastWriteTime="132959658822426741"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Vytah\Types.typ"
@@ -2689,7 +2689,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_OvladVizu\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_OvladVizu.Main.st"
     Type="File"
-    LastWriteTime="132942156623580540"
+    LastWriteTime="132959660405109190"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_OvladVizu\Types.typ"
@@ -2735,7 +2735,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Mapping_IO\Main.st"
     LogicalPath="Program.Pracovisko_4.P4_Mapping_IO.Main.st"
     Type="File"
-    LastWriteTime="132948505962489518"
+    LastWriteTime="132956934798124509"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\Program\Pracovisko_4\P4_Mapping_IO\Types.typ"
@@ -5643,7 +5643,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Dopravniky\AreaPageManual.content"
     LogicalPath="mappView.Visualization_P1.Pages.PageManual_Dopravniky.AreaPageManual.content"
     Type="File"
-    LastWriteTime="132948253341450429"
+    LastWriteTime="132959681019043816"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Vytah\Package.pkg"
@@ -5660,7 +5660,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Vytah\AreaPageManual.content"
     LogicalPath="mappView.Visualization_P1.Pages.PageManual_Vytah.AreaPageManual.content"
     Type="File"
-    LastWriteTime="132944169186394550"
+    LastWriteTime="132959756786588251"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Skrutkovanie\Package.pkg"
@@ -5677,7 +5677,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Skrutkovanie\AreaPageManual.content"
     LogicalPath="mappView.Visualization_P1.Pages.PageManual_Skrutkovanie.AreaPageManual.content"
     Type="File"
-    LastWriteTime="132948296861134352"
+    LastWriteTime="132960454098974402"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Skrutkovanie_page2\Package.pkg"
@@ -5694,7 +5694,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Skrutkovanie_page2\AreaPageManual.content"
     LogicalPath="mappView.Visualization_P1.Pages.PageManual_Skrutkovanie_page2.AreaPageManual.content"
     Type="File"
-    LastWriteTime="132943252295066266"
+    LastWriteTime="132960517343061500"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Skrutkovanie_page3\Package.pkg"
@@ -5711,7 +5711,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Skrutkovanie_page3\AreaPageManual.content"
     LogicalPath="mappView.Visualization_P1.Pages.PageManual_Skrutkovanie_page3.AreaPageManual.content"
     Type="File"
-    LastWriteTime="132938883957768089"
+    LastWriteTime="132960525282485640"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Skrutkovanie_page4\Package.pkg"
@@ -5728,7 +5728,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageManual_Skrutkovanie_page4\AreaPageManual.content"
     LogicalPath="mappView.Visualization_P1.Pages.PageManual_Skrutkovanie_page4.AreaPageManual.content"
     Type="File"
-    LastWriteTime="132943253208603947"
+    LastWriteTime="132960534766107797"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P1\Pages\PageUsers\Package.pkg"
@@ -6317,7 +6317,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManualMain\AreaPageManualP2.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManualMain.AreaPageManualP2.content"
     Type="File"
-    LastWriteTime="132942442653070854"
+    LastWriteTime="132960457673521196"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Dopravniky\Package.pkg"
@@ -6334,7 +6334,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Dopravniky\AreaPageManualP2_Dopravniky.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManual_Dopravniky.AreaPageManualP2_Dopravniky.content"
     Type="File"
-    LastWriteTime="132939786623076789"
+    LastWriteTime="132959717822175301"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_ZakladanieTesnenia\Package.pkg"
@@ -6351,7 +6351,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_ZakladanieTesnenia\AreaPageManualP2_ZakladanieTesnenia.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManual_ZakladanieTesnenia.AreaPageManualP2_ZakladanieTesnenia.content"
     Type="File"
-    LastWriteTime="132939786633893033"
+    LastWriteTime="132959736000153066"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Maticovacka\Package.pkg"
@@ -6368,7 +6368,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Maticovacka\AreaPageManualP2_Maticovacka.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManual_Maticovacka.AreaPageManualP2_Maticovacka.content"
     Type="File"
-    LastWriteTime="132939787069022757"
+    LastWriteTime="132960431751406036"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Skrutkovanie\Package.pkg"
@@ -6385,7 +6385,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Skrutkovanie\AreaPageManualP2_Skrutkovanie.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManual_Skrutkovanie.AreaPageManualP2_Skrutkovanie.content"
     Type="File"
-    LastWriteTime="132938885632148658"
+    LastWriteTime="132960453266455927"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Skrutkovanie_page2\Package.pkg"
@@ -6402,7 +6402,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Skrutkovanie_page2\AreaPageManual_Skrutkovanie_page2.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManual_Skrutkovanie_page2.AreaPageManual_Skrutkovanie_page2.content"
     Type="File"
-    LastWriteTime="132938885886444198"
+    LastWriteTime="132960498880251911"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Skrutkovanie_page3\Package.pkg"
@@ -6419,7 +6419,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Skrutkovanie_page3\AreaPageManual_Skrutkovanie_page3.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManual_Skrutkovanie_page3.AreaPageManual_Skrutkovanie_page3.content"
     Type="File"
-    LastWriteTime="132938886160828180"
+    LastWriteTime="132960548907443635"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Skrutkovanie_page4\Package.pkg"
@@ -6436,7 +6436,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Skrutkovanie_page4\AreaPageManual_Skrutkovanie_page4.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManual_Skrutkovanie_page4.AreaPageManual_Skrutkovanie_page4.content"
     Type="File"
-    LastWriteTime="132938886464238214"
+    LastWriteTime="132960534578288238"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Zvaranie\Package.pkg"
@@ -6453,7 +6453,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Zvaranie\AreaPageManualP2_Zvaranie.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManual_Zvaranie.AreaPageManualP2_Zvaranie.content"
     Type="File"
-    LastWriteTime="132939787400323895"
+    LastWriteTime="132960580861076846"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Cistenie\Package.pkg"
@@ -6470,7 +6470,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageManual_Cistenie\AreaPageManualP2_Cistenie.content"
     LogicalPath="mappView.Visualization_P2.Pages.PageManual_Cistenie.AreaPageManualP2_Cistenie.content"
     Type="File"
-    LastWriteTime="132939787589253604"
+    LastWriteTime="132960603305489481"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Logical\mappView\Visualization_P2\Pages\PageSetupMain\Package.pkg"
@@ -8565,18 +8565,18 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\Hardware.hwl"
     LogicalPath="Config2.Hardware.hwl"
     Type="File"
-    LastWriteTime="132949946832225351"
+    LastWriteTime="132959647666219870"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\Cpu.pkg"
     LogicalPath="Config2.5PC900_TS17_00"
     Type="Cpu"
-    LastWriteTime="132949944645844920" />
+    LastWriteTime="132960594770233713" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\Cpu.sw"
     LogicalPath="Config2.5PC900_TS17_00.Cpu.sw"
     Type="File"
-    LastWriteTime="132949914370084306"
+    LastWriteTime="132959512911377129"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\Cpu.per"
@@ -8610,7 +8610,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\Connectivity\OpcUA\OpcUaMap.uad"
     LogicalPath="Config2.5PC900_TS17_00.Connectivity.OpcUA.OpcUaMap.uad"
     Type="File"
-    LastWriteTime="132948240372099011"
+    LastWriteTime="132960600019234565"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\TextSystem\Package.pkg"
@@ -8761,7 +8761,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\Package.pkg"
     LogicalPath="Config2.5PC900_TS17_00.mappView"
     Type="Package"
-    LastWriteTime="132948217933708551" />
+    LastWriteTime="132960602490868444" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\Config.mappviewcfg"
     LogicalPath="Config2.5PC900_TS17_00.mappView.Config.mappviewcfg"
@@ -8772,12 +8772,12 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\Package.pkg"
     LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1"
     Type="Package"
-    LastWriteTime="132948217934286941" />
+    LastWriteTime="132959491751179737" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\VizuP1.vis"
     LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1.VizuP1.vis"
     Type="File"
-    LastWriteTime="132948216821684624"
+    LastWriteTime="132959679624983106"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\PataP1.eventbinding"
@@ -8891,7 +8891,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\AreaPageManualP1_Vytah.binding"
     LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1.AreaPageManualP1_Vytah.binding"
     Type="File"
-    LastWriteTime="132944169186404907"
+    LastWriteTime="132959733240621768"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\AreaPageManualP1_Skrutkovanie.binding"
@@ -8909,18 +8909,54 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\AreaPageManualP1_Vytah.eventbinding"
     LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1.AreaPageManualP1_Vytah.eventbinding"
     Type="File"
-    LastWriteTime="132944120509111150"
+    LastWriteTime="132956945067829001"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\AreaPageManualP1_Skrutkovanie_page2.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1.AreaPageManualP1_Skrutkovanie_page2.eventbinding"
+    Type="File"
+    LastWriteTime="132959796852614321"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\AreaPageManualP1_Skrutkovanie_page2.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1.AreaPageManualP1_Skrutkovanie_page2.binding"
+    Type="File"
+    LastWriteTime="132960513297204848"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\AreaPageManualP1_Skrutkovanie_page3.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1.AreaPageManualP1_Skrutkovanie_page3.binding"
+    Type="File"
+    LastWriteTime="132959540086140853"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\AreaPageManualP1_Skrutkovanie_page3.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1.AreaPageManualP1_Skrutkovanie_page3.eventbinding"
+    Type="File"
+    LastWriteTime="132959491721242758"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\AreaPageManualP1_Skrutkovanie_page4.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1.AreaPageManualP1_Skrutkovanie_page4.eventbinding"
+    Type="File"
+    LastWriteTime="132959508081848241"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP1\AreaPageManualP1_Skrutkovanie_page4.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP1.AreaPageManualP1_Skrutkovanie_page4.binding"
+    Type="File"
+    LastWriteTime="132959507405624769"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\Package.pkg"
     LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2"
     Type="Package"
-    LastWriteTime="132942410343125555" />
+    LastWriteTime="132960595329725844" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\VizuP2.vis"
     LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.VizuP2.vis"
     Type="File"
-    LastWriteTime="132942411300966075"
+    LastWriteTime="132960602491008048"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\HlavickaP2.eventbinding"
@@ -8974,7 +9010,97 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageAlarmyP2.eventbinding"
     LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageAlarmyP2.eventbinding"
     Type="File"
-    LastWriteTime="132941470036962281"
+    LastWriteTime="132959681471892861"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManualP2_Dopravniky.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManualP2_Dopravniky.binding"
+    Type="File"
+    LastWriteTime="132959724753769692"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManualP2_ZakladanieTesnenia.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManualP2_ZakladanieTesnenia.binding"
+    Type="File"
+    LastWriteTime="132959736000222751"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManualP2_ZakladanieTesnenia.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManualP2_ZakladanieTesnenia.eventbinding"
+    Type="File"
+    LastWriteTime="132960411393539609"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManualP2_Maticovacka.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManualP2_Maticovacka.eventbinding"
+    Type="File"
+    LastWriteTime="132960423032623415"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManualP2_Skrutkovanie.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManualP2_Skrutkovanie.binding"
+    Type="File"
+    LastWriteTime="132960493722099905"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManualP2_Skrutkovanie.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManualP2_Skrutkovanie.eventbinding"
+    Type="File"
+    LastWriteTime="132960493745319496"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManual_Skrutkovanie_page2.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManual_Skrutkovanie_page2.binding"
+    Type="File"
+    LastWriteTime="132960498880291804"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManual_Skrutkovanie_page2.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManual_Skrutkovanie_page2.eventbinding"
+    Type="File"
+    LastWriteTime="132960498481805481"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManual_Skrutkovanie_page3.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManual_Skrutkovanie_page3.binding"
+    Type="File"
+    LastWriteTime="132960546363235705"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManual_Skrutkovanie_page3.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManual_Skrutkovanie_page3.eventbinding"
+    Type="File"
+    LastWriteTime="132960526008936581"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManual_Skrutkovanie_page4.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManual_Skrutkovanie_page4.binding"
+    Type="File"
+    LastWriteTime="132960534650526556"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManual_Skrutkovanie_page4.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManual_Skrutkovanie_page4.eventbinding"
+    Type="File"
+    LastWriteTime="132960534667372793"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManualP2_Zvaranie.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManualP2_Zvaranie.eventbinding"
+    Type="File"
+    LastWriteTime="132960595329715594"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManualP2_Zvaranie.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManualP2_Zvaranie.binding"
+    Type="File"
+    LastWriteTime="132960595309644238"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP2\AreaPageManualP2_Maticovacka.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP2.AreaPageManualP2_Maticovacka.binding"
+    Type="File"
+    LastWriteTime="132960431751535684"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\VizualizaciaP34\Package.pkg"
@@ -9052,6 +9178,18 @@
     LogicalPath="Config2.5PC900_TS17_00.mappView.VizualizaciaP34.AreaPageManualP4_Etiketovanie.eventbinding"
     Type="File"
     LastWriteTime="132943238855439467"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\AreaPageManualP2_Cistenie.eventbinding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.AreaPageManualP2_Cistenie.eventbinding"
+    Type="File"
+    LastWriteTime="132960602204717599"
+    Private="false" />
+  <Object
+    Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappView\AreaPageManualP2_Cistenie.binding"
+    LogicalPath="Config2.5PC900_TS17_00.mappView.AreaPageManualP2_Cistenie.binding"
+    Type="File"
+    LastWriteTime="132960603182435373"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\mappCockpit\Package.pkg"
@@ -9575,7 +9713,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\DTM\X20IF10E1_1\X20IF10E1_1.dtm"
     LogicalPath="Config2.5PC900_TS17_00.DTM.X20IF10E1_1.X20IF10E1_1.dtm"
     Type="File"
-    LastWriteTime="132948300988703429"
+    LastWriteTime="132959649914934630"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\DTM\X20IF10E1_1\X20IF10E1_1_IF1\Package.pkg"
@@ -9586,7 +9724,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\DTM\X20IF10E1_1\X20IF10E1_1_IF1\X20IF10E1_1_IF1.dtmdre"
     LogicalPath="Config2.5PC900_TS17_00.DTM.X20IF10E1_1.X20IF10E1_1_IF1.X20IF10E1_1_IF1.dtmdre"
     Type="File"
-    LastWriteTime="132948300963305420"
+    LastWriteTime="132959649891464424"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\DTM\X20IF10E1_1\X20IF10E1_1_IF1\X20IF10E1_1_IF1.dtmdra"
@@ -9604,7 +9742,7 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\DTM\X20IF10E1_1\X20IF10E1_1_IF1\X20IF10E1_1_IF1.dtmdri"
     LogicalPath="Config2.5PC900_TS17_00.DTM.X20IF10E1_1.X20IF10E1_1_IF1.X20IF10E1_1_IF1.dtmdri"
     Type="File"
-    LastWriteTime="132948300963295721"
+    LastWriteTime="132959649891454416"
     Private="false" />
   <Object
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\5PC900_TS17_00\DTM\X20IF10E1_1\P2_Robot_IRB1200\Package.pkg"
@@ -10179,6 +10317,6 @@
     Path="D:\Projekty BER\Panasonic_LinkaPowerCP2_A2021055\Physical\Config2\Hardware.jpg"
     LogicalPath="Config2.Hardware.jpg"
     Type="File"
-    LastWriteTime="132949946845953558"
+    LastWriteTime="132959647666838529"
     Private="false" />
 </Objects>

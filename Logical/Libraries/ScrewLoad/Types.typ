@@ -89,6 +89,7 @@ TYPE
 	END_STRUCT;
 	CmdStruc : 	STRUCT 
 		AutomatStart : BOOL;
+		ManualPresunBrzdu : BOOL;
 		ManualStartHrniec : BOOL;
 		PodajSkrutku : BOOL;
 	END_STRUCT;

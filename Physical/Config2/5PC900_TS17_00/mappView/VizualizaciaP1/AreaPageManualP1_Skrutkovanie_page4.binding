@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageManualP1_Skrutkovanie_page4_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_PolohujManipulator_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page4" widgetRefId="Button_TestPozicii_4F" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.PAR.RR_IndexPolohovaniaManipulatora" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page4" widgetRefId="DropDownBox1" attribute="selectedIndex" />
+		</Binding>
+	</Bindings>
+</BindingsSet>

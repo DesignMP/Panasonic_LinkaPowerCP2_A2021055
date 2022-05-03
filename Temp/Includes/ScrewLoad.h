@@ -104,6 +104,7 @@ typedef struct StatusFBStruc
 
 typedef struct CmdStruc
 {	plcbit AutomatStart;
+	plcbit ManualPresunBrzdu;
 	plcbit ManualStartHrniec;
 	plcbit PodajSkrutku;
 } CmdStruc;
@@ -134,6 +135,7 @@ typedef struct ScrewLoading
 	plcbit zzEdge00001;
 	plcbit zzEdge00002;
 	plcbit zzEdge00003;
+	plcbit zzEdge00004;
 } ScrewLoading_typ;
 
 

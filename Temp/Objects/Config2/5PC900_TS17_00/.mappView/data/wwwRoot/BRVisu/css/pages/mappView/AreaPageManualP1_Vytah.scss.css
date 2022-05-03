@@ -299,12 +299,12 @@
 }
 
 #AreaPageManualP1_Vytah_NumericOutput4 {
-  left: 126px;
+  left: 115px;
   position: absolute;
 }
 
 #AreaPageManualP1_Vytah_NumericOutput4 {
-  width: 60px;
+  width: 70px;
 }
 
 #AreaPageManualP1_Vytah_NumericOutput4 {
@@ -313,6 +313,11 @@
 
 #AreaPageManualP1_Vytah_NumericOutput4 {
   background-color: #e0e0e0;
+}
+
+#AreaPageManualP1_Vytah_NumericOutput4 input {
+  justify-content: flex-start;
+  text-align: left;
 }
 
 #AreaPageManualP1_Vytah_NumericInput_7 {
@@ -325,12 +330,12 @@
 }
 
 #AreaPageManualP1_Vytah_NumericInput_7 {
-  left: 276px;
+  left: 265px;
   position: absolute;
 }
 
 #AreaPageManualP1_Vytah_NumericInput_7 {
-  width: 60px;
+  width: 70px;
 }
 
 #AreaPageManualP1_Vytah_NumericInput_7 {
@@ -338,8 +343,8 @@
 }
 
 #AreaPageManualP1_Vytah_NumericInput_7 input {
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 #AreaPageManualP1_Vytah_Button_PrecitajPaletku {
@@ -447,11 +452,11 @@
 }
 
 #AreaPageManualP1_Vytah_ImageList9 {
-  width: 24px;
+  width: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList9 {
-  height: 24px;
+  height: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList9 {
@@ -1156,11 +1161,11 @@
 }
 
 #AreaPageManualP1_Vytah_ImageList5 {
-  width: 24px;
+  width: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList5 {
-  height: 24px;
+  height: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList5 {
@@ -1182,11 +1187,11 @@
 }
 
 #AreaPageManualP1_Vytah_ImageList6 {
-  width: 24px;
+  width: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList6 {
-  height: 24px;
+  height: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList6 {
@@ -1208,11 +1213,11 @@
 }
 
 #AreaPageManualP1_Vytah_ImageList7 {
-  width: 24px;
+  width: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList7 {
-  height: 24px;
+  height: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList7 {
@@ -1234,11 +1239,11 @@
 }
 
 #AreaPageManualP1_Vytah_ImageList8 {
-  width: 24px;
+  width: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList8 {
-  height: 24px;
+  height: 25px;
 }
 
 #AreaPageManualP1_Vytah_ImageList8 {
@@ -1246,6 +1251,102 @@
 }
 
 #AreaPageManualP1_Vytah_ImageList8 {
+  border-width: 0px;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  top: 391px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  left: 11px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  width: 195px;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  height: 45px;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  z-index: 16;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  border-width: 2px;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  border-radius: 5px;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  background-color: silver;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Label14:before {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Label14:after {
+  border-color: black;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  border-style: outset;
+}
+
+#AreaPageManualP1_Vytah_Label14:before {
+  border-style: outset;
+}
+
+#AreaPageManualP1_Vytah_Label14:after {
+  border-style: outset;
+}
+
+#AreaPageManualP1_Vytah_Label14 span {
+  color: black;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  font-size: 14px;
+}
+
+#AreaPageManualP1_Vytah_Label14 {
+  font-weight: bold;
+}
+
+#AreaPageManualP1_Vytah_ImageList10 {
+  top: 403px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList10 {
+  left: 174px;
+  position: absolute;
+}
+
+#AreaPageManualP1_Vytah_ImageList10 {
+  width: 25px;
+}
+
+#AreaPageManualP1_Vytah_ImageList10 {
+  height: 25px;
+}
+
+#AreaPageManualP1_Vytah_ImageList10 {
+  z-index: 17;
+}
+
+#AreaPageManualP1_Vytah_ImageList10 {
   border-width: 0px;
 }
 

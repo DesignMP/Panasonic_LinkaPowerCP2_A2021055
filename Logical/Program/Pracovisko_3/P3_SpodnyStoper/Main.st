@@ -21,8 +21,6 @@ PROGRAM _CYCLIC
 		P3_SpodnyStoper.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P3_SpodnyStoper.Step:= 0;
-	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
-		SC_P3_SpodnyStoper.Step:= 0;
 	END_IF	
 	
 
@@ -102,7 +100,7 @@ PROGRAM _CYCLIC
 		
 		101:
 			SC_P3_SpodnyStoper.StepName:='101 - Automaticky Rezim - cakam na vyvezenie paletky na spodny stoper bunky 2';
-			SC_P3_SpodnyStoper.IdleTime.PT:= T#1s;
+			SC_P3_SpodnyStoper.IdleTime.PT:= T#2s;
 			SC_P3_SpodnyStoper.AlarmTime.PT:= T#5s;
 			
 			SC_P3_SpodnyStoper.IdleTime.IN:= NOT P2_SpodnyStoper.IN.ZaplnenieDopravnika;

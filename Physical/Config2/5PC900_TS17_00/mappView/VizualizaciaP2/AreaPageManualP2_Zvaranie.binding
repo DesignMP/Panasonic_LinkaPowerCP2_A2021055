@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageManualP2_Zvaranie_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.STAV.RR_SekvenciaZvarania_BUSY" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList20" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.IN.ZvarackaStav_RUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList22" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.IN.ZvarackaStav_READY" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList21" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.IN.ZdvihZvarania_HornyLimSnimac" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList17" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.PAR.ZdvihZvarania_JoggRychlost" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="NumericInput_7" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.ServoZdvihuZvarania.Status.ActPosition" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="NumericOutput4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.CMD.RR_ZdvihZvarania_HORE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="MomentaryPushButton_JoggOsZ_M4_HORE" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.CMD.RR_ZdvihZvarania_DOLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="MomentaryPushButton_JoggOsZ_M4_DOLE" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.ServoZdvihuZvarania.Status.Ready" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList15" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperZvarania.OUT.ZasunStoper" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ToggleSwitch_Stoper" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperZvarania.RFID_hlava.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList10" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperZvarania.IN.Centrovanie_ZASUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList9" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperZvarania.IN.Centrovanie_VYSUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList8" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperZvarania.CMD.RR_VysunCentrovanie" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ToggleSwitch_ZasunStoperPoz4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.IN.ZvaraniePresunute_VLAVO" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList19" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie.IN.ZvaraniePresunute_VPRAVO" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="ImageList18" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_PresunZvarania_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="Button_SET1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_PresunZvarania_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="Button_SET" attribute="enable" />
+</Binding>
+</Bindings>
+</BindingsSet>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP2_Zvaranie">
+    <EventBinding id="AreaPageManualP2_Zvaranie.Button_ResetServaOsZ_M4.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP2_Zvaranie_Button_ResetServaOsZ_M4" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Zvaranie.ServoZdvihuZvarania.Command.ErrReset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP2_Zvaranie">
+    <EventBinding id="AreaPageManualP2_Zvaranie.Button_ResetServaOsZ_M5.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP2_Zvaranie_Button_ResetServaOsZ_M5" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Zvaranie.CMD.RR_SekvenciaZvarania_START">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP2_Zvaranie">
+    <EventBinding id="AreaPageManualP2_Zvaranie.Button_SET1.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP2_Zvaranie_Button_SET1" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Zvaranie.CMD.RR_Presun_VPRAVO">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP2_Zvaranie">
+    <EventBinding id="AreaPageManualP2_Zvaranie.Button_SET.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP2_Zvaranie_Button_SET" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Zvaranie.CMD.RR_Presun_VLAVO">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

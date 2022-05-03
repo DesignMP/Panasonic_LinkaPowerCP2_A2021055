@@ -68,5 +68,9 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.Vytah_CitaniePaletky_ENABLE" attribute="value" />
 <Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="Button_PrecitajPaletku" attribute="enable" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vytah.Banner.OUT.Stlaceny" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Vytah" widgetRefId="ImageList10" attribute="selectedIndex" />
+</Binding>
 </Bindings>
 </BindingsSet>

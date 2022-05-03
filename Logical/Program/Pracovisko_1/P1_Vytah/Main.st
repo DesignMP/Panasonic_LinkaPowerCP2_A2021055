@@ -31,6 +31,10 @@ PROGRAM _CYCLIC
 
 	
 	//Reset poruchy serva//
+	IF EDGEPOS(Safety.STAV.P1_ZonaVytahu_AKTIVNA)THEN
+		P1_Vytah.ServoZdvihuVytahu.Command.ErrReset:= TRUE;
+	END_IF	
+	
 	CasResetServo_1.IN:= P1_Vytah.ServoZdvihuVytahu.Command.ErrReset;
 	IF CasResetServo_1.Q AND NOT P1_Vytah.ServoZdvihuVytahu.Status.Error THEN
 		P1_Vytah.ServoZdvihuVytahu.Command.ErrReset:= FALSE;
@@ -59,9 +63,9 @@ PROGRAM _CYCLIC
 		SC_P1_Vytah.Step:= 0;
 		P1_Vytah.ServoZdvihuVytahu.Command.ErrReset:= TRUE;
 		P1_Vytah.Reset:= FALSE;
+	ELSIF NOT P1_Vytah.Manual AND NOT Safety.STAV.P1_ZonaVytahu_AKTIVNA THEN
+		SC_P1_Vytah.Step:= 0;	
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
-		SC_P1_Vytah.Step:= 0;
-	ELSIF NOT Safety.STAV.P1_ZonaVytahu_AKTIVNA THEN
 		SC_P1_Vytah.Step:= 0;
 	END_IF	
 	

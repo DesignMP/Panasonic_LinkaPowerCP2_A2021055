@@ -1,14 +1,14 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_Srobova 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=405 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=91 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                         SC_P2_Srobovanie                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                               1"    1    6    1   10    0    0         
+                                    Step                                     UINT    0 "                                                             700"    1    6    1   10    0    0         
                            P2_Pracovisko                        P2_Pracovisko_typ    0 "                                                               *"    0   24    1    0    0    1         
                                     STAV                   P2_Pracovisko_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
                              Porucha_ST4                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                            P2_Srobovanie                        P2_Srobovanie_typ    0 "                                                               *"    0   24    1    0    0    1         
                                  Automat                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                         ServoManipulOsX                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
+                         ServoManipulOsX                              ServoDriver    0 "                                                               *"    1   24    1    0    0    0         
                                  Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    0         
                                  PowerON                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                 ErrReset                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -78,8 +78,8 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         NoQuickStop_Bit2                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         NoCoastStop_Bit1                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                            SwitchON_Bit0                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                    Step                                    USINT    0 "                                                             100"    2    5    1   10    0    0         
-                                    Info                              WSTRING[80]    0 "                                     "Pripraveny cakam na povel""    2   21  162    1    0    0         
+                                    Step                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                    Info                              WSTRING[80]    0 "                                                               *"    2   21  162    1    0    0         
                                   Status                              StatusStruc    0 "                                                               *"    2   24    1    0    0    0         
                           WarningMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         
                             ErrorMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         
@@ -92,7 +92,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                ActTorque                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                              ActVelocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                              ActPosition                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         ServoManipulOsY                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
+                         ServoManipulOsY                              ServoDriver    0 "                                                               *"    1   24    1    0    0    0         
                                       IN                               InputStruc    0 "                                                               *"    2   24    1    0    0    0         
                           ExtendedParam0                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                           ExtendedParam1                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
@@ -241,8 +241,8 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         NoQuickStop_Bit2                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         NoCoastStop_Bit1                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                            SwitchON_Bit0                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                    Step                                    USINT    0 "                                                             100"    2    5    1   10    0    0         
-                                    Info                              WSTRING[80]    0 "                                     "Pripraveny cakam na povel""    2   21  162    1    0    0         
+                                    Step                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                    Info                              WSTRING[80]    0 "                                                               *"    2   21  162    1    0    0         
                                   Status                              StatusStruc    0 "                                                               *"    2   24    1    0    0    0         
                           WarningMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         
                             ErrorMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         

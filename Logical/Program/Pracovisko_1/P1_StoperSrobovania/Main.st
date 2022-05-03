@@ -29,7 +29,7 @@ PROGRAM _CYCLIC
 		P1_StoperSrobovania.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P1_StoperSrobovania.Step:= 0;
-	ELSIF NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
+	ELSIF NOT P1_StoperSrobovania.Manual AND NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
 		SC_P1_StoperSrobovania.Step:= 0;
 	END_IF	
 	

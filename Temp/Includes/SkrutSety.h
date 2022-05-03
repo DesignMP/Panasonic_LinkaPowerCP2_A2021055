@@ -71,6 +71,9 @@ typedef struct MaticaSet_CMD_typ
 	plcbit PodajMaticu;
 	plcbit RucnyRezim;
 	plcbit RR_ZapniZasobnik;
+	plcbit RR_VysunPodavacMatic;
+	plcbit RR_OtocPodavac_Vstup;
+	plcbit RR_OtocPodavac_Vystup;
 	plcbit ResetPoruchy;
 } MaticaSet_CMD_typ;
 
@@ -101,6 +104,7 @@ typedef struct MaticaSet_STAV_typ
 	plcbit ERROR;
 	unsigned char CisloPoruchy;
 	plcstring PopisPoruchy[101];
+	plcbit PodanieMatice_BUSY;
 } MaticaSet_STAV_typ;
 
 typedef struct MaticaSet_Internal_typ

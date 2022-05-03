@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP2_Skrutkovanie">
+    <EventBinding id="AreaPageManualP2_Skrutkovanie.Button_ResetServaOsX.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP2_Skrutkovanie_Button_ResetServaOsX" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Srobovanie.ServoManipulOsX.Command.ErrReset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP2_Skrutkovanie">
+    <EventBinding id="AreaPageManualP2_Skrutkovanie.Button_ResetServaOsY.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP2_Skrutkovanie_Button_ResetServaOsY" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_Srobovanie.ServoManipulOsY.Command.ErrReset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

@@ -23,7 +23,7 @@ PROGRAM _CYCLIC
 		P4_FunkcnyTestB.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P4_FunkcnyTestB.Step:= 0;
-	ELSIF NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN
+	ELSIF NOT P4_FunkcnyTestB.Manual AND NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN
 		SC_P4_FunkcnyTestB.Step:= 0;	
 	END_IF	
 	

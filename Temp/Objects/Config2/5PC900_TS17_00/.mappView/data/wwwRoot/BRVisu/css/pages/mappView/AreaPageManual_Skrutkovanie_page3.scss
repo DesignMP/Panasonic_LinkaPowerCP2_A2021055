@@ -264,7 +264,7 @@
 	@include elemTop(70);
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox6 {
-	@include elemLeft(15);
+	@include elemLeft(10);
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox6 {
 	@include elemWidth(430);
@@ -335,27 +335,6 @@
 	&.disabled.checked{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList19 {
-	@include elemTop(100);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList19 {
-	@include elemLeft(171);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList19 {
-	@include elemWidth(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList19 {
-	@include elemHeight(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList19 {
-		z-index: 3;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList19 {
-		border-style: none;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList19 {
-		border-width: 0px;
 }
 #AreaPageManual_Skrutkovanie_page3_Line3 {
 		z-index: 1;
@@ -426,27 +405,6 @@
 #AreaPageManual_Skrutkovanie_page3_Label11 {
 	@include font-weight-bold(true);
 }
-#AreaPageManual_Skrutkovanie_page3_ImageList27 {
-	@include elemTop(153);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList27 {
-	@include elemLeft(171);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList27 {
-	@include elemWidth(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList27 {
-	@include elemHeight(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList27 {
-		z-index: 5;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList27 {
-		border-style: none;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList27 {
-		border-width: 0px;
-}
 #AreaPageManual_Skrutkovanie_page3_Label19 {
 	@include elemTop(143);
 }
@@ -460,782 +418,101 @@
 	@include elemAutoHeight(45);
 }
 #AreaPageManual_Skrutkovanie_page3_Label19 {
-		z-index: 4;
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-		border-width: 2px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-		background-color: rgba(192, 192, 192, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-		border-color: rgba(0, 0, 0, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-	&:before{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-	&:after{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-		border-style: outset;
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-	&:before{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-	&:after{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-	& span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-		font-size: 14px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label19 {
-	@include font-weight-bold(true);
-}
-#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
-	@include elemTop(70);
-}
-#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
-	@include elemLeft(917);
-}
-#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
-	@include elemWidth(430);
-}
-#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
-	@include elemHeight(510);
-}
-#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
-		z-index: 5;
-}
-#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
-		background-color: rgba(253, 245, 230, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
-	> .header span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList21 {
-	@include elemTop(233);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList21 {
-	@include elemLeft(174);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList21 {
-	@include elemWidth(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList21 {
-	@include elemHeight(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList21 {
-		z-index: 8;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList21 {
-		border-style: none;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList21 {
-		border-width: 0px;
-}
-#AreaPageManual_Skrutkovanie_page3_Line5 {
-		z-index: 0;
-}
-#AreaPageManual_Skrutkovanie_page3_Line5 {
-	line{
-		stroke-width: 2px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	@include elemTop(19);
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	@include elemLeft(24);
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	@include elemAutoWidth(170);
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-		z-index: 1;
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	&:not(.disabled):not(.checked) .wrapper .before{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	&:not(.disabled):not(.checked) .wrapper .after{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	.wrapper .before{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	.wrapper .after{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaM5 {
-	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	@include elemTop(19);
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	@include elemLeft(235);
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	@include elemAutoWidth(170);
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-		z-index: 2;
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	&:not(.disabled):not(.checked) .wrapper .before{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	&:not(.disabled):not(.checked) .wrapper .after{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	.wrapper .before{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	.wrapper .after{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieVibrolistyM5 {
-	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList22 {
-	@include elemTop(288);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList22 {
-	@include elemLeft(174);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList22 {
-	@include elemWidth(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList22 {
-	@include elemHeight(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList22 {
-		z-index: 10;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList22 {
-		border-style: none;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList22 {
-		border-width: 0px;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList25 {
-	@include elemTop(233);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList25 {
-	@include elemLeft(384);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList25 {
-	@include elemWidth(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList25 {
-	@include elemHeight(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList25 {
-		z-index: 14;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList25 {
-		border-style: none;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList25 {
-		border-width: 0px;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList26 {
-	@include elemTop(288);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList26 {
-	@include elemLeft(384);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList26 {
-	@include elemWidth(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList26 {
-	@include elemHeight(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList26 {
-		z-index: 16;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList26 {
-		border-style: none;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList26 {
-		border-width: 0px;
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	@include elemTop(95);
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	@include elemLeft(235);
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	@include elemAutoWidth(170);
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
 		z-index: 3;
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+		border-width: 2px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label19 {
 	@include border-radius(5px);
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	&:not(.disabled):not(.active):not(.checked) span{
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+		border-style: outset;
+}
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+	& span{
 		color: rgba(0, 0, 0, 1);
 	}
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	@include text-alignment(left);
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+		font-size: 14px;
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	span{
-		font-size: 16px;
-	}
+#AreaPageManual_Skrutkovanie_page3_Label19 {
+	@include font-weight-bold(true);
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
+#AreaPageManual_Skrutkovanie_page3_ImageList37 {
+	@include elemTop(100);
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
+#AreaPageManual_Skrutkovanie_page3_ImageList37 {
+	@include elemLeft(172);
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD {
-	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
+#AreaPageManual_Skrutkovanie_page3_ImageList37 {
+	@include elemWidth(25);
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	@include elemTop(95);
+#AreaPageManual_Skrutkovanie_page3_ImageList37 {
+	@include elemHeight(25);
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	@include elemLeft(24);
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	@include elemAutoWidth(170);
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
+#AreaPageManual_Skrutkovanie_page3_ImageList37 {
 		z-index: 4;
 }
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	&:not(.disabled):not(.active):not(.checked) span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	@include text-alignment(left);
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	span{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	span{
-	@include font-weight-bold(true);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED {
-	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList23 {
-	@include elemTop(179);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList23 {
-	@include elemLeft(174);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList23 {
-	@include elemWidth(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList23 {
-	@include elemHeight(25);
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList23 {
-		z-index: 6;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList23 {
+#AreaPageManual_Skrutkovanie_page3_ImageList37 {
 		border-style: none;
 }
-#AreaPageManual_Skrutkovanie_page3_ImageList23 {
+#AreaPageManual_Skrutkovanie_page3_ImageList37 {
 		border-width: 0px;
 }
-#AreaPageManual_Skrutkovanie_page3_ImageList24 {
-	@include elemTop(179);
+#AreaPageManual_Skrutkovanie_page3_ImageList38 {
+	@include elemTop(153);
 }
-#AreaPageManual_Skrutkovanie_page3_ImageList24 {
-	@include elemLeft(384);
+#AreaPageManual_Skrutkovanie_page3_ImageList38 {
+	@include elemLeft(172);
 }
-#AreaPageManual_Skrutkovanie_page3_ImageList24 {
+#AreaPageManual_Skrutkovanie_page3_ImageList38 {
 	@include elemWidth(25);
 }
-#AreaPageManual_Skrutkovanie_page3_ImageList24 {
+#AreaPageManual_Skrutkovanie_page3_ImageList38 {
 	@include elemHeight(25);
 }
-#AreaPageManual_Skrutkovanie_page3_ImageList24 {
-		z-index: 12;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList24 {
-		border-style: none;
-}
-#AreaPageManual_Skrutkovanie_page3_ImageList24 {
-		border-width: 0px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	@include elemTop(169);
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	@include elemLeft(11);
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	@include elemAutoWidth(195);
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
+#AreaPageManual_Skrutkovanie_page3_ImageList38 {
 		z-index: 5;
 }
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-		border-width: 2px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-		background-color: rgba(192, 192, 192, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-		border-color: rgba(0, 0, 0, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	&:before{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	&:after{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-		border-style: outset;
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	&:before{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	&:after{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	& span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-		font-size: 14px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label13 {
-	@include font-weight-bold(true);
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	@include elemTop(223);
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	@include elemLeft(11);
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	@include elemAutoWidth(195);
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-		z-index: 7;
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-		border-width: 2px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-		background-color: rgba(192, 192, 192, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-		border-color: rgba(0, 0, 0, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	&:before{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	&:after{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-		border-style: outset;
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	&:before{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	&:after{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	& span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-		font-size: 14px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label14 {
-	@include font-weight-bold(true);
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	@include elemTop(278);
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	@include elemLeft(11);
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	@include elemAutoWidth(195);
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-		z-index: 9;
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-		border-width: 2px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-		background-color: rgba(192, 192, 192, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-		border-color: rgba(0, 0, 0, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	&:before{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	&:after{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-		border-style: outset;
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	&:before{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	&:after{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	& span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-		font-size: 14px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label15 {
-	@include font-weight-bold(true);
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	@include elemTop(169);
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	@include elemLeft(222);
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	@include elemAutoWidth(195);
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-		z-index: 11;
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-		border-width: 2px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-		background-color: rgba(192, 192, 192, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-		border-color: rgba(0, 0, 0, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	&:before{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	&:after{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-		border-style: outset;
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	&:before{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	&:after{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	& span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-		font-size: 14px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label16 {
-	@include font-weight-bold(true);
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	@include elemTop(223);
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	@include elemLeft(222);
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	@include elemAutoWidth(195);
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-		z-index: 13;
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-		border-width: 2px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-		background-color: rgba(192, 192, 192, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-		border-color: rgba(0, 0, 0, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	&:before{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	&:after{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-		border-style: outset;
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	&:before{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	&:after{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	& span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-		font-size: 14px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label17 {
-	@include font-weight-bold(true);
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	@include elemTop(278);
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	@include elemLeft(222);
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	@include elemAutoWidth(195);
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-		z-index: 15;
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-		border-width: 2px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-		background-color: rgba(192, 192, 192, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-		border-color: rgba(0, 0, 0, 1);
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	&:before{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	&:after{
-		border-color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-		border-style: outset;
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	&:before{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	&:after{
-		border-style: outset;
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	& span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-		font-size: 14px;
-}
-#AreaPageManual_Skrutkovanie_page3_Label18 {
-	@include font-weight-bold(true);
+#AreaPageManual_Skrutkovanie_page3_ImageList38 {
+		border-style: none;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList38 {
+		border-width: 0px;
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox7 {
-	@include elemTop(330);
+	@include elemTop(335);
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox7 {
-	@include elemLeft(15);
+	@include elemLeft(10);
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox7 {
 	@include elemWidth(430);
@@ -1244,7 +521,7 @@
 	@include elemHeight(245);
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox7 {
-		z-index: 6;
+		z-index: 5;
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox7 {
 		background-color: rgba(253, 245, 230, 1);
@@ -1647,7 +924,7 @@
 	@include elemTop(70);
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox10 {
-	@include elemLeft(465);
+	@include elemLeft(468);
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox10 {
 	@include elemWidth(430);
@@ -1656,7 +933,7 @@
 	@include elemHeight(510);
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox10 {
-		z-index: 7;
+		z-index: 6;
 }
 #AreaPageManual_Skrutkovanie_page3_GroupBox10 {
 		background-color: rgba(253, 245, 230, 1);
@@ -2364,5 +1641,829 @@
 		font-size: 14px;
 }
 #AreaPageManual_Skrutkovanie_page3_Label28 {
+	@include font-weight-bold(true);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList39 {
+	@include elemTop(343);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList39 {
+	@include elemLeft(384);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList39 {
+	@include elemWidth(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList39 {
+	@include elemHeight(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList39 {
+		z-index: 18;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList39 {
+		border-style: none;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList39 {
+		border-width: 0px;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList40 {
+	@include elemTop(343);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList40 {
+	@include elemLeft(174);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList40 {
+	@include elemWidth(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList40 {
+	@include elemHeight(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList40 {
+		z-index: 20;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList40 {
+		border-style: none;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList40 {
+		border-width: 0px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	@include elemTop(333);
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	@include elemLeft(222);
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	@include elemAutoWidth(195);
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+		z-index: 17;
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+		border-width: 2px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	@include border-radius(5px);
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+		border-style: outset;
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+		font-size: 14px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label29 {
+	@include font-weight-bold(true);
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	@include elemTop(333);
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	@include elemLeft(11);
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	@include elemAutoWidth(195);
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+		z-index: 19;
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+		border-width: 2px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	@include border-radius(5px);
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+		border-style: outset;
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+		font-size: 14px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label30 {
+	@include font-weight-bold(true);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox8 {
+	@include elemTop(70);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox8 {
+	@include elemLeft(925);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox8 {
+	@include elemWidth(430);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox8 {
+	@include elemHeight(245);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox8 {
+		z-index: 7;
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox8 {
+		background-color: rgba(253, 245, 230, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox8 {
+	> .header span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox8 {
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	@include elemTop(19);
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	@include elemLeft(26);
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	@include elemAutoWidth(165);
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+		z-index: 0;
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	&:not(.disabled):not(.checked) .wrapper .before{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	&:not(.disabled):not(.checked) .wrapper .after{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	.wrapper .before{
+		font-size: 16px;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	.wrapper .after{
+		font-size: 16px;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_VibracieZasobnikaK31 {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Line5 {
+		z-index: 1;
+}
+#AreaPageManual_Skrutkovanie_page3_Line5 {
+	line{
+		stroke-width: 2px;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	@include elemTop(90);
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	@include elemLeft(11);
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	@include elemAutoWidth(195);
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+		z-index: 2;
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+		border-width: 2px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	@include border-radius(5px);
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+		border-style: outset;
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+		font-size: 14px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label13 {
+	@include font-weight-bold(true);
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	@include elemTop(143);
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	@include elemLeft(11);
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	@include elemAutoWidth(195);
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+		z-index: 3;
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+		border-width: 2px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	@include border-radius(5px);
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+		border-style: outset;
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+		font-size: 14px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label31 {
+	@include font-weight-bold(true);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList41 {
+	@include elemTop(100);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList41 {
+	@include elemLeft(172);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList41 {
+	@include elemWidth(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList41 {
+	@include elemHeight(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList41 {
+		z-index: 4;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList41 {
+		border-style: none;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList41 {
+		border-width: 0px;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList42 {
+	@include elemTop(153);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList42 {
+	@include elemLeft(172);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList42 {
+	@include elemWidth(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList42 {
+	@include elemHeight(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList42 {
+		z-index: 5;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList42 {
+		border-style: none;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList42 {
+		border-width: 0px;
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
+	@include elemTop(335);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
+	@include elemLeft(925);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
+	@include elemWidth(430);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
+	@include elemHeight(245);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
+		z-index: 8;
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
+		background-color: rgba(253, 245, 230, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
+	> .header span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_GroupBox9 {
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	@include elemTop(19);
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	@include elemLeft(26);
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	@include elemAutoWidth(165);
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+		z-index: 0;
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	&:not(.disabled):not(.checked) .wrapper .before{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	&:not(.disabled):not(.checked) .wrapper .after{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	.wrapper .before{
+		font-size: 16px;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	.wrapper .after{
+		font-size: 16px;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ToggleSwitch_OvladanieBrzdy_K31 {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList21 {
+	@include elemTop(103);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList21 {
+	@include elemLeft(171);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList21 {
+	@include elemWidth(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList21 {
+	@include elemHeight(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList21 {
+		z-index: 3;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList21 {
+		border-style: none;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList21 {
+		border-width: 0px;
+}
+#AreaPageManual_Skrutkovanie_page3_Line7 {
+		z-index: 1;
+}
+#AreaPageManual_Skrutkovanie_page3_Line7 {
+	line{
+		stroke-width: 2px;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	@include elemTop(93);
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	@include elemLeft(11);
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	@include elemAutoWidth(195);
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+		z-index: 2;
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+		border-width: 2px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	@include border-radius(5px);
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+		border-style: outset;
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+		font-size: 14px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label14 {
+	@include font-weight-bold(true);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList43 {
+	@include elemTop(153);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList43 {
+	@include elemLeft(171);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList43 {
+	@include elemWidth(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList43 {
+	@include elemHeight(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList43 {
+		z-index: 5;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList43 {
+		border-style: none;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList43 {
+		border-width: 0px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	@include elemTop(143);
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	@include elemLeft(11);
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	@include elemAutoWidth(195);
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+		z-index: 4;
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+		border-width: 2px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	@include border-radius(5px);
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+		border-style: outset;
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+		font-size: 14px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label32 {
+	@include font-weight-bold(true);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList44 {
+	@include elemTop(103);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList44 {
+	@include elemLeft(381);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList44 {
+	@include elemWidth(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList44 {
+	@include elemHeight(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList44 {
+		z-index: 7;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList44 {
+		border-style: none;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList44 {
+		border-width: 0px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	@include elemTop(93);
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	@include elemLeft(221);
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	@include elemAutoWidth(195);
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+		z-index: 6;
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+		border-width: 2px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	@include border-radius(5px);
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+		border-style: outset;
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+		font-size: 14px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label33 {
+	@include font-weight-bold(true);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList45 {
+	@include elemTop(153);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList45 {
+	@include elemLeft(381);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList45 {
+	@include elemWidth(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList45 {
+	@include elemHeight(25);
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList45 {
+		z-index: 9;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList45 {
+		border-style: none;
+}
+#AreaPageManual_Skrutkovanie_page3_ImageList45 {
+		border-width: 0px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	@include elemTop(143);
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	@include elemLeft(221);
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	@include elemAutoWidth(195);
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+		z-index: 8;
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+		border-width: 2px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	@include border-radius(5px);
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+		border-style: outset;
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
+		font-size: 14px;
+}
+#AreaPageManual_Skrutkovanie_page3_Label34 {
 	@include font-weight-bold(true);
 }

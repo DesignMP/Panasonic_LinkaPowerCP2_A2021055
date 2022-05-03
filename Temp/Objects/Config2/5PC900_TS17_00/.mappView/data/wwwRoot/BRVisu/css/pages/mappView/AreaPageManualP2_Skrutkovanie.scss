@@ -52,7 +52,7 @@
 	@include elemTop(10);
 }
 #AreaPageManualP2_Skrutkovanie_NavigationButton_NextPage {
-	@include elemLeft(1250);
+	@include elemLeft(1245);
 }
 #AreaPageManualP2_Skrutkovanie_NavigationButton_NextPage {
 	@include elemAutoWidth(105);
@@ -158,7 +158,7 @@
 	@include elemTop(70);
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox2 {
-	@include elemLeft(15);
+	@include elemLeft(12);
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox2 {
 	@include elemWidth(430);
@@ -180,135 +180,97 @@
 #AreaPageManualP2_Skrutkovanie_GroupBox2 {
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	@include elemTop(81);
+#AreaPageManualP2_Skrutkovanie_ImageList8 {
+	@include elemTop(83);
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	@include elemLeft(17);
+#AreaPageManualP2_Skrutkovanie_ImageList8 {
+	@include elemLeft(301);
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	@include elemAutoWidth(165);
+#AreaPageManualP2_Skrutkovanie_ImageList8 {
+	@include elemWidth(25);
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	@include elemAutoHeight(45);
+#AreaPageManualP2_Skrutkovanie_ImageList8 {
+	@include elemHeight(25);
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
+#AreaPageManualP2_Skrutkovanie_ImageList8 {
 		z-index: 0;
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	@include border-radius(10px);
-}
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	&:not(.disabled):not(.active):not(.checked) span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	@include text-alignment(left);
-}
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManualP2_Skrutkovanie_Button_ZostupCentrovania {
-	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManualP2_Skrutkovanie_ImageList5 {
-	@include elemTop(91);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList5 {
-	@include elemLeft(147);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList5 {
-	@include elemWidth(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList5 {
-	@include elemHeight(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList5 {
-		z-index: 1;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList5 {
-		border-style: none;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList5 {
+#AreaPageManualP2_Skrutkovanie_ImageList8 {
 		border-width: 0px;
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
 	@include elemTop(81);
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
-	@include elemLeft(245);
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
+	@include elemLeft(139);
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
-	@include elemAutoWidth(165);
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
+	@include elemAutoWidth(150);
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
-	@include elemAutoHeight(45);
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
+	@include elemAutoHeight(50);
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
-		z-index: 2;
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
+		z-index: 1;
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
-	@include border-radius(10px);
-}
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
-	&:not(.disabled):not(.active):not(.checked) span{
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
+	&:not(.disabled):not(.checked) .wrapper .before{
 		color: rgba(0, 0, 0, 1);
 	}
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
-	@include text-alignment(left);
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
+	&:not(.disabled):not(.checked) .wrapper .after{
+		color: rgba(0, 0, 0, 1);
+	}
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
+	.wrapper .before{
+		font-size: 16px;
+	}
+}
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
+	.wrapper .after{
+		font-size: 16px;
+	}
+}
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
 	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(4px 4px 10px rgba(62, 79, 92, 0.75));
 	}
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
 	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(4px 4px 10px rgba(62, 79, 92, 0.75));
 	}
 }
-#AreaPageManualP2_Skrutkovanie_Button_ZdvihCentrovania {
+#AreaPageManualP2_Skrutkovanie_ToggleSwitch_ZasunStoperPoz4 {
 	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	@include box-shadow(4px 4px 10px rgba(62, 79, 92, 0.75));
 	}
 }
-#AreaPageManualP2_Skrutkovanie_ImageList4 {
-	@include elemTop(91);
+#AreaPageManualP2_Skrutkovanie_ImageList9 {
+	@include elemTop(109);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList4 {
-	@include elemLeft(373);
+#AreaPageManualP2_Skrutkovanie_ImageList9 {
+	@include elemLeft(301);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList4 {
+#AreaPageManualP2_Skrutkovanie_ImageList9 {
 	@include elemWidth(25);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList4 {
+#AreaPageManualP2_Skrutkovanie_ImageList9 {
 	@include elemHeight(25);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList4 {
-		z-index: 3;
+#AreaPageManualP2_Skrutkovanie_ImageList9 {
+		z-index: 2;
 }
-#AreaPageManualP2_Skrutkovanie_ImageList4 {
-		border-style: none;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList4 {
+#AreaPageManualP2_Skrutkovanie_ImageList9 {
 		border-width: 0px;
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox4 {
 	@include elemTop(330);
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox4 {
-	@include elemLeft(15);
+	@include elemLeft(12);
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox4 {
 	@include elemWidth(430);
@@ -334,13 +296,13 @@
 	@include elemTop(107);
 }
 #AreaPageManualP2_Skrutkovanie_ToggleSwitch_Stoper {
-	@include elemLeft(132);
+	@include elemLeft(139);
 }
 #AreaPageManualP2_Skrutkovanie_ToggleSwitch_Stoper {
-	@include elemAutoWidth(165);
+	@include elemAutoWidth(150);
 }
 #AreaPageManualP2_Skrutkovanie_ToggleSwitch_Stoper {
-	@include elemAutoHeight(45);
+	@include elemAutoHeight(50);
 }
 #AreaPageManualP2_Skrutkovanie_ToggleSwitch_Stoper {
 		z-index: 0;
@@ -387,7 +349,7 @@
 	@include elemLeft(11);
 }
 #AreaPageManualP2_Skrutkovanie_Label15 {
-	@include elemAutoWidth(269);
+	@include elemAutoWidth(195);
 }
 #AreaPageManualP2_Skrutkovanie_Label15 {
 	@include elemAutoHeight(45);
@@ -441,73 +403,29 @@
 #AreaPageManualP2_Skrutkovanie_Label15 {
 	@include font-weight-bold(true);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList19 {
-	@include elemTop(23);
+#AreaPageManualP2_Skrutkovanie_ImageList10 {
+	@include elemTop(24);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList19 {
-	@include elemLeft(246);
+#AreaPageManualP2_Skrutkovanie_ImageList10 {
+	@include elemLeft(171);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList19 {
+#AreaPageManualP2_Skrutkovanie_ImageList10 {
 	@include elemWidth(25);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList19 {
+#AreaPageManualP2_Skrutkovanie_ImageList10 {
 	@include elemHeight(25);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList19 {
+#AreaPageManualP2_Skrutkovanie_ImageList10 {
 		z-index: 2;
 }
-#AreaPageManualP2_Skrutkovanie_ImageList19 {
-		border-style: none;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList19 {
+#AreaPageManualP2_Skrutkovanie_ImageList10 {
 		border-width: 0px;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-	@include elemAutoHeight(30);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-	@include elemTop(21);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-	@include elemLeft(166);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-	@include elemAutoWidth(71);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-		z-index: 3;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-		border-width: 4px;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-		border-style: ridge;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-	input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-	span.breaseNumericOutput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-	input{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_SrobovanieCisloPaletky {
-	input{
-		font-size: 16px;
-	}
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox3 {
 	@include elemTop(70);
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox3 {
-	@include elemLeft(465);
+	@include elemLeft(468);
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox3 {
 	@include elemWidth(430);
@@ -528,70 +446,6 @@
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox3 {
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-	@include elemAutoHeight(30);
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-	@include elemTop(187);
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-	@include elemLeft(238);
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-	@include elemAutoWidth(165);
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-		z-index: 10;
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-	&:not(.active):not(.disabled){
-		border-width: 2px 4px 2px 2px;
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-	input{
-		font-size: 18px;
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsX_ZadanaRychlost {
-	@include box-shadow(4px 4px 8px rgba(0, 0, 0, 1));
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-	@include elemAutoHeight(30);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-	@include elemTop(187);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-	@include elemLeft(26);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-	@include elemAutoWidth(165);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-		z-index: 8;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-		border-width: 4px;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-		border-style: ridge;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-	input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-	span.breaseNumericOutput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsX_AktualnaPozicia {
-	input{
-		font-size: 16px;
-	}
 }
 #AreaPageManualP2_Skrutkovanie_MomentaryPushButton_JoggOsX_VZAD {
 	@include elemTop(81);
@@ -736,29 +590,8 @@
 #AreaPageManualP2_Skrutkovanie_Label11 {
 	@include font-weight-bold(true);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList15 {
-	@include elemTop(283);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList15 {
-	@include elemLeft(171);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList15 {
-	@include elemWidth(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList15 {
-	@include elemHeight(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList15 {
-		z-index: 3;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList15 {
-		border-style: none;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList15 {
-		border-width: 0px;
-}
 #AreaPageManualP2_Skrutkovanie_Line3 {
-		z-index: 4;
+		z-index: 3;
 }
 #AreaPageManualP2_Skrutkovanie_Line3 {
 	line{
@@ -778,7 +611,7 @@
 	@include elemAutoHeight(45);
 }
 #AreaPageManualP2_Skrutkovanie_Label12 {
-		z-index: 5;
+		z-index: 4;
 }
 #AreaPageManualP2_Skrutkovanie_Label12 {
 		border-width: 2px;
@@ -826,27 +659,6 @@
 #AreaPageManualP2_Skrutkovanie_Label12 {
 	@include font-weight-bold(true);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList16 {
-	@include elemTop(335);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList16 {
-	@include elemLeft(171);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList16 {
-	@include elemWidth(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList16 {
-	@include elemHeight(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList16 {
-		z-index: 6;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList16 {
-		border-style: none;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList16 {
-		border-width: 0px;
-}
 #AreaPageManualP2_Skrutkovanie_Label27 {
 	@include elemTop(151);
 }
@@ -860,7 +672,7 @@
 	@include elemAutoHeight(77);
 }
 #AreaPageManualP2_Skrutkovanie_Label27 {
-		z-index: 7;
+		z-index: 5;
 }
 #AreaPageManualP2_Skrutkovanie_Label27 {
 		border-width: 2px;
@@ -924,7 +736,7 @@
 	@include elemAutoHeight(77);
 }
 #AreaPageManualP2_Skrutkovanie_Label28 {
-		z-index: 9;
+		z-index: 6;
 }
 #AreaPageManualP2_Skrutkovanie_Label28 {
 		border-width: 2px;
@@ -975,27 +787,6 @@
 #AreaPageManualP2_Skrutkovanie_Label28 {
 	@include font-weight-bold(true);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList6 {
-	@include elemTop(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList6 {
-	@include elemLeft(381);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList6 {
-	@include elemWidth(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList6 {
-	@include elemHeight(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList6 {
-		z-index: 13;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList6 {
-		border-style: none;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList6 {
-		border-width: 0px;
-}
 #AreaPageManualP2_Skrutkovanie_Label17 {
 	@include elemTop(15);
 }
@@ -1009,7 +800,7 @@
 	@include elemAutoHeight(45);
 }
 #AreaPageManualP2_Skrutkovanie_Label17 {
-		z-index: 12;
+		z-index: 8;
 }
 #AreaPageManualP2_Skrutkovanie_Label17 {
 		border-width: 2px;
@@ -1070,7 +861,7 @@
 	@include elemAutoHeight(45);
 }
 #AreaPageManualP2_Skrutkovanie_Button_ResetServaOsX {
-		z-index: 11;
+		z-index: 7;
 }
 #AreaPageManualP2_Skrutkovanie_Button_ResetServaOsX {
 	@include border-radius(10px);
@@ -1098,6 +889,118 @@
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
+#AreaPageManualP2_Skrutkovanie_NumericInput_6 {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_6 {
+	@include elemTop(187);
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_6 {
+	@include elemLeft(238);
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_6 {
+	@include elemAutoWidth(165);
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_6 {
+		z-index: 10;
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_6 {
+	&.disabled{
+		background-color: rgba(192, 192, 192, 1);
+	}
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_6 {
+	&.active:not(.disabled){
+		background-color: rgba(255, 255, 255, 1);
+	}
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput2 {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput2 {
+	@include elemTop(187);
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput2 {
+	@include elemLeft(26);
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput2 {
+	@include elemAutoWidth(165);
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput2 {
+		z-index: 9;
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput2 {
+		border-style: ridge;
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput2 {
+	input{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput2 {
+	span.breaseNumericOutput_unit{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput2 {
+	input{
+	@include text-alignment(center);
+	}
+}
+#AreaPageManualP2_Skrutkovanie_ImageList11 {
+	@include elemTop(26);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList11 {
+	@include elemLeft(381);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList11 {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList11 {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList11 {
+		z-index: 11;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList11 {
+		border-width: 0px;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList12 {
+	@include elemTop(284);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList12 {
+	@include elemLeft(171);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList12 {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList12 {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList12 {
+		z-index: 12;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList12 {
+		border-width: 0px;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList13 {
+	@include elemTop(336);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList13 {
+	@include elemLeft(171);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList13 {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList13 {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList13 {
+		z-index: 13;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList13 {
+		border-width: 0px;
+}
 #AreaPageManualP2_Skrutkovanie_GroupBox5 {
 	@include elemTop(70);
 }
@@ -1123,70 +1026,6 @@
 }
 #AreaPageManualP2_Skrutkovanie_GroupBox5 {
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-	@include elemAutoHeight(30);
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-	@include elemTop(187);
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-	@include elemLeft(239);
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-	@include elemAutoWidth(165);
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-		z-index: 10;
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-	&:not(.active):not(.disabled){
-		border-width: 2px 4px 2px 2px;
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-	input{
-		font-size: 18px;
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericInput_OsY_ZadanaRychlost {
-	@include box-shadow(4px 4px 8px rgba(0, 0, 0, 1));
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-	@include elemAutoHeight(30);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-	@include elemTop(187);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-	@include elemLeft(26);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-	@include elemAutoWidth(165);
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-		z-index: 8;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-		border-width: 4px;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-		border-style: ridge;
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-	input{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-	span.breaseNumericOutput_unit{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManualP2_Skrutkovanie_NumericOutput_OsY_AktualnaPozicia {
-	input{
-		font-size: 16px;
-	}
 }
 #AreaPageManualP2_Skrutkovanie_MomentaryPushButton_JoggOsY_VPRED {
 	@include elemTop(81);
@@ -1270,27 +1109,6 @@
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
 }
-#AreaPageManualP2_Skrutkovanie_ImageList17 {
-	@include elemTop(283);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList17 {
-	@include elemLeft(171);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList17 {
-	@include elemWidth(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList17 {
-	@include elemHeight(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList17 {
-		z-index: 4;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList17 {
-		border-style: none;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList17 {
-		border-width: 0px;
-}
 #AreaPageManualP2_Skrutkovanie_Line4 {
 		z-index: 2;
 }
@@ -1298,27 +1116,6 @@
 	line{
 		stroke-width: 2px;
 	}
-}
-#AreaPageManualP2_Skrutkovanie_ImageList18 {
-	@include elemTop(335);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList18 {
-	@include elemLeft(171);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList18 {
-	@include elemWidth(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList18 {
-	@include elemHeight(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList18 {
-		z-index: 6;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList18 {
-		border-style: none;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList18 {
-		border-width: 0px;
 }
 #AreaPageManualP2_Skrutkovanie_Label13 {
 	@include elemTop(273);
@@ -1394,7 +1191,7 @@
 	@include elemAutoHeight(45);
 }
 #AreaPageManualP2_Skrutkovanie_Label14 {
-		z-index: 5;
+		z-index: 4;
 }
 #AreaPageManualP2_Skrutkovanie_Label14 {
 		border-width: 2px;
@@ -1455,7 +1252,7 @@
 	@include elemAutoHeight(77);
 }
 #AreaPageManualP2_Skrutkovanie_Label29 {
-		z-index: 7;
+		z-index: 5;
 }
 #AreaPageManualP2_Skrutkovanie_Label29 {
 		border-width: 2px;
@@ -1519,7 +1316,7 @@
 	@include elemAutoHeight(77);
 }
 #AreaPageManualP2_Skrutkovanie_Label30 {
-		z-index: 9;
+		z-index: 6;
 }
 #AreaPageManualP2_Skrutkovanie_Label30 {
 		border-width: 2px;
@@ -1570,27 +1367,6 @@
 #AreaPageManualP2_Skrutkovanie_Label30 {
 	@include font-weight-bold(true);
 }
-#AreaPageManualP2_Skrutkovanie_ImageList7 {
-	@include elemTop(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList7 {
-	@include elemLeft(386);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList7 {
-	@include elemWidth(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList7 {
-	@include elemHeight(25);
-}
-#AreaPageManualP2_Skrutkovanie_ImageList7 {
-		z-index: 13;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList7 {
-		border-style: none;
-}
-#AreaPageManualP2_Skrutkovanie_ImageList7 {
-		border-width: 0px;
-}
 #AreaPageManualP2_Skrutkovanie_Label18 {
 	@include elemTop(15);
 }
@@ -1604,7 +1380,7 @@
 	@include elemAutoHeight(45);
 }
 #AreaPageManualP2_Skrutkovanie_Label18 {
-		z-index: 12;
+		z-index: 8;
 }
 #AreaPageManualP2_Skrutkovanie_Label18 {
 		border-width: 2px;
@@ -1665,7 +1441,7 @@
 	@include elemAutoHeight(45);
 }
 #AreaPageManualP2_Skrutkovanie_Button_ResetServaOsY {
-		z-index: 11;
+		z-index: 7;
 }
 #AreaPageManualP2_Skrutkovanie_Button_ResetServaOsY {
 	@include border-radius(10px);
@@ -1692,4 +1468,98 @@
 	&.disabled.checked{
 	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
 	}
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_7 {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_7 {
+	@include elemTop(187);
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_7 {
+	@include elemLeft(239);
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_7 {
+	@include elemAutoWidth(165);
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_7 {
+		z-index: 10;
+}
+#AreaPageManualP2_Skrutkovanie_NumericInput_7 {
+	input{
+	@include text-alignment(center);
+	}
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput3 {
+	@include elemAutoHeight(30);
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput3 {
+	@include elemTop(187);
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput3 {
+	@include elemLeft(26);
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput3 {
+	@include elemAutoWidth(165);
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput3 {
+		z-index: 9;
+}
+#AreaPageManualP2_Skrutkovanie_NumericOutput3 {
+	input{
+	@include text-alignment(center);
+	}
+}
+#AreaPageManualP2_Skrutkovanie_ImageList14 {
+	@include elemTop(26);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList14 {
+	@include elemLeft(386);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList14 {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList14 {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList14 {
+		z-index: 11;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList14 {
+		border-width: 0px;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList15 {
+	@include elemTop(284);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList15 {
+	@include elemLeft(171);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList15 {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList15 {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList15 {
+		z-index: 12;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList15 {
+		border-width: 0px;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList16 {
+	@include elemTop(336);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList16 {
+	@include elemLeft(171);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList16 {
+	@include elemWidth(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList16 {
+	@include elemHeight(25);
+}
+#AreaPageManualP2_Skrutkovanie_ImageList16 {
+		z-index: 13;
+}
+#AreaPageManualP2_Skrutkovanie_ImageList16 {
+		border-width: 0px;
 }

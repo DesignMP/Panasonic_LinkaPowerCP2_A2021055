@@ -6,6 +6,15 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	
+	//*************************************Prepnutie obrazovky pri stlaèení tlaèítka CS*********************************//
+	IF EDGEPOS(P2_Pracovisko.STAV.Manual AND NOT Safety.STAV.Linka_ZonaCS_AKTIVNA) THEN
+		P2_Vizu.GoPage:= 'PageAutomatP2';
+	END_IF	
+	
+	
+	
+	
+	
 	//************************************Filter alarmov**************************************************************//
 	FilterVizu_P2:= '[{"logicalOperator":"and","value":200,"conditionType":">=","columnType":"cod","useAlarmState":false,"alarmState":0},{"value":299,"conditionType":"<=","columnType":"cod","useAlarmState":false,"alarmState":0}]';
 
@@ -176,7 +185,6 @@ PROGRAM _CYCLIC
     
     
 	//Tlaèítko Režim Automat//
-	
 	P2_Vizu.TL_RezimAutomat_ENABLE:= TRUE;
     	
 	
@@ -190,6 +198,143 @@ PROGRAM _CYCLIC
 	ELSE
 		P2_Vizu.TL_RezimManual_ENABLE:= TRUE;
 	END_IF	
+	
+	//RR - Tlaèítko èistenia skrutkovaèky M6//
+	IF P2_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM6_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM6_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM6_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM6_BUSY THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM6_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM5_BUSY THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM6_ENABLE:= FALSE;	
+	ELSIF NOT P2_Pracovisko.STAV.SkrutkovackyZasunute THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM6_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.CMD.RR_SkrutSetM6_VysunBrzdu THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM6_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.CMD.RR_SkrutSetM6_Zasobnik_RUN THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM6_ENABLE:= FALSE;
+	ELSE	
+		P2_Vizu.TL_VycistiSkrutkovackuM6_ENABLE:= TRUE;
+	END_IF
+	
+	
+	//RR - Tlaèítko èistenia skrutkovaèky M5//
+	IF P2_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM5_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM5_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM5_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM6_BUSY THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM5_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM5_BUSY THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM5_ENABLE:= FALSE;	
+	ELSIF NOT P2_Pracovisko.STAV.SkrutkovackyZasunute THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM5_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.CMD.RR_SkrutSetM5_VysunBrzdu THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM5_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.CMD.RR_SkrutSetM5_Zasobnik_RUN THEN
+		P2_Vizu.TL_VycistiSkrutkovackuM5_ENABLE:= FALSE;
+	ELSE	
+		P2_Vizu.TL_VycistiSkrutkovackuM5_ENABLE:= TRUE;
+	END_IF
+	
+	
+	//RR - Tlaèítko polohovania aplikátora//
+	IF P2_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P2_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P2_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM6_BUSY THEN
+		P2_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM5_BUSY THEN
+		P2_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;	
+	ELSIF NOT P2_Pracovisko.STAV.SkrutkovackyZasunute THEN
+		P2_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSE	
+		P2_Vizu.TL_PolohujManipulator_ENABLE:= TRUE;
+	END_IF
+	
+	
+	//RR - Tlaèítko vysunutia skrutkovaèky M6//
+	IF P2_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM6_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM6_BUSY THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM6_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM5_BUSY THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM6_ENABLE:= FALSE;	
+	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM6_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM6_ENABLE:= FALSE;
+	ELSE
+		P2_Vizu.Tl_VysunutieSkrutkovM6_ENABLE:= TRUE;
+	END_IF	
+	
+	
+	
+	//RR - Tlaèítko vysunutia skrutkovaèky M5//
+	IF P2_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM5_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM6_BUSY THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM5_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM5_BUSY THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM5_ENABLE:= FALSE;	
+	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM5_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P2_Vizu.Tl_VysunutieSkrutkovM5_ENABLE:= FALSE;
+	ELSE
+		P2_Vizu.Tl_VysunutieSkrutkovM5_ENABLE:= TRUE;
+	END_IF	
+	
+	
+	//RR - Tlaèítko vysunutia skrutkovaèky M4//
+	IF P2_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P2_Vizu.TL_OvladaniaVysunSkrutkovM4:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM6_BUSY THEN
+		P2_Vizu.TL_OvladaniaVysunSkrutkovM4:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM5_BUSY THEN
+		P2_Vizu.TL_OvladaniaVysunSkrutkovM4:= FALSE;	
+	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.TL_OvladaniaVysunSkrutkovM4:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P2_Vizu.TL_OvladaniaVysunSkrutkovM4:= FALSE;
+	ELSE	
+		P2_Vizu.TL_OvladaniaVysunSkrutkovM4:= TRUE;
+	END_IF
+	
+	
+	//RR - Ovládanie skrutkovacieho setu M6//
+	IF P2_Srobovanie.STAV.CistenieSkrutkovackyM6_BUSY THEN
+		P2_Vizu.TL_OvladSkrutkovSetuM6_ENABLE:= FALSE;
+	ELSE	
+		P2_Vizu.TL_OvladSkrutkovSetuM6_ENABLE:= TRUE;
+	END_IF	
+	
+	//RR - Ovládanie skrutkovacieho setu M5//
+	IF P2_Srobovanie.STAV.CistenieSkrutkovackyM5_BUSY THEN
+		P2_Vizu.TL_OvladSkrutkovSetuM5_ENABLE:= FALSE;
+	ELSE	
+		P2_Vizu.TL_OvladSkrutkovSetuM5_ENABLE:= TRUE;
+	END_IF	
+	
+	
+	//RR - Ovládanie presunu zvárania//
+	IF P2_Zvaranie.STAV.RR_SekvenciaZvarania_BUSY THEN
+		P2_Vizu.TL_PresunZvarania_ENABLE:= FALSE;
+	ELSIF P2_Zvaranie.ServoZdvihuZvarania.Status.ActPosition > 200 THEN
+		P2_Vizu.TL_PresunZvarania_ENABLE:= FALSE;
+	ELSE
+		P2_Vizu.TL_PresunZvarania_ENABLE:= TRUE;
+	END_IF	
+	
+	
 	
 	
 	//**************************Zamknutie editácie parametrov*********************************//

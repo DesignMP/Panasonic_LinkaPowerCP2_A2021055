@@ -73,10 +73,10 @@
 		border-style: hidden;
 }
 #AreaPageManualP2_NavigationButtonRR_Dopravniky {
-	@include elemTop(355);
+	@include elemTop(366);
 }
 #AreaPageManualP2_NavigationButtonRR_Dopravniky {
-	@include elemLeft(1015);
+	@include elemLeft(1022);
 }
 #AreaPageManualP2_NavigationButtonRR_Dopravniky {
 	@include elemAutoWidth(310);
@@ -141,6 +141,16 @@
 	}
 }
 #AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Dopravniky {
 	span{
 		font-size: 22px;
 	}
@@ -161,10 +171,10 @@
 	}
 }
 #AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
-	@include elemTop(320);
+	@include elemTop(294);
 }
 #AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
-	@include elemLeft(20);
+	@include elemLeft(24);
 }
 #AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
 	@include elemAutoWidth(300);
@@ -215,6 +225,16 @@
 }
 #AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
 	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_ZakladanieTesnenia {
+	&.active.checked:not(.disabled) span{
 		color: rgba(0, 0, 0, 1);
 	}
 }
@@ -297,6 +317,16 @@
 	}
 }
 #AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Maticovacka {
 	span{
 		font-size: 22px;
 	}
@@ -355,12 +385,32 @@
 	@include border-radius(5px);
 }
 #AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&.active:not(.disabled){
+	@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%)');
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&.checked:not(.disabled){
+	@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%)');
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
 	&:not(.disabled):not(.checked){
 		border-color: rgba(230, 184, 0, 1);
 	}
 }
 #AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
 	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Skrutkovanie {
+	&.active.checked:not(.disabled) span{
 		color: rgba(0, 0, 0, 1);
 	}
 }
@@ -439,6 +489,16 @@
 }
 #AreaPageManualP2_NavigationButtonRR_Zvaranie {
 	&:not(.disabled):not(.active):not(.checked) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP2_NavigationButtonRR_Zvaranie {
+	&.active.checked:not(.disabled) span{
 		color: rgba(0, 0, 0, 1);
 	}
 }

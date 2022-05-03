@@ -19,7 +19,7 @@ PROGRAM _CYCLIC
 		P3_ZdvizkaZaLeakTestB.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P3_ZdvizkaZaLeakTestB.Step:= 0;
-	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
+	ELSIF NOT P3_ZdvizkaZaLeakTestB.Manual AND NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
 		SC_P3_ZdvizkaZaLeakTestB.Step:= 0;	
 	END_IF	
 	

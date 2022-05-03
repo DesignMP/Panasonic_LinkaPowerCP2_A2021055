@@ -23,7 +23,7 @@ PROGRAM _CYCLIC
 		P2_StoperMaticovacky.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN	
 		SC_P2_StoperMaticovacky.Step:= 0;
-	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+	ELSIF NOT P2_StoperMaticovacky.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
 		SC_P2_StoperMaticovacky.Step:= 0;
 	END_IF	
 	
@@ -55,14 +55,16 @@ PROGRAM _CYCLIC
 			P2_StoperMaticovacky.OUT.Maticovacka_M4_Odvzdusn_ON:= FALSE;
 			P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON:= FALSE;
 			P2_StoperMaticovacky.RFID_hlava.PrecitajChipRFID:= FALSE;
-			P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.RR_ZapniZasobnik:= FALSE;
-			P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.PodajMaticu:= FALSE;
 			P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.ENABLE:= FALSE;
-			P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.RucnyRezim:= FALSE;
+			
 			P2_StoperMaticovacky.Maticovacka_M4.RESET_Poruchy:= FALSE;
 			P2_StoperMaticovacky.Maticovacka_M4.RESET_Vysledkov:= FALSE;
 			P2_StoperMaticovacky.Maticovacka_M4.START_Skrutkovania:= FALSE;
 			P2_StoperMaticovacky.Maticovacka_M4.START_Utahovania:= FALSE;
+			P2_StoperMaticovacky.CMD.RR_VysunCentrovanie:= FALSE;
+			P2_StoperMaticovacky.CMD.RR_PrisavanieMaticeM4_ON:= FALSE;
+			P2_StoperMaticovacky.CMD.RR_Maticovacku_VYSUN:= FALSE;
+			
 			CAM9.CMD.Triger:= FALSE;
 			CAM9.STAV.Results_READY:= FALSE;
 			FTP_CAM9.CMD.OdosliFotku:= FALSE;
@@ -71,6 +73,7 @@ PROGRAM _CYCLIC
 			TRCB_P2_Maticovacka_ST4.CMD.PriradQRkodFiltra_TYP3:= FALSE;
 			TRCB_P2_Maticovacka_ST4.CMD.OdosliStavPaletky_TYP2:= FALSE;
 			TRCB_P2_Maticovacka_ST4.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+			
 			P2_StoperMaticovacky.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P2_StoperZaklTesnenia.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P2_Maticov_KAM_Result_Ignoruj:= FALSE;
@@ -1327,15 +1330,34 @@ PROGRAM _CYCLIC
 			SC_P2_StoperMaticovacky.IdleTime.PT:= T#8s;
 			SC_P2_StoperMaticovacky.AlarmTime.PT:= T#5s;
 		
+			P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.ENABLE:= TRUE;
+			P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.RucnyRezim:= TRUE;
 		
 			//Vysunutie maticovaèky//
 			IF P2_StoperMaticovacky.CMD.RR_Maticovacku_VYSUN THEN
 				P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN:= TRUE;
-				P2_StoperMaticovacky.CMD.RR_Maticovacku_VYSUN:= FALSE;
-			ELSIF P2_StoperMaticovacky.CMD.RR_Maticovacku_ZASUN THEN
+			ELSE 
 				P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN:= FALSE;
-				P2_StoperMaticovacky.CMD.RR_Maticovacku_ZASUN:= FALSE;
 			END_IF	
+		
+		
+			//Ovládanie zdvižky//
+			IF P2_StoperMaticovacky.CMD.RR_VysunCentrovanie THEN
+				P2_StoperMaticovacky.OUT.Centrovanie_ZASUN:= FALSE;
+				P2_StoperMaticovacky.OUT.Centrovanie_VYSUN:= TRUE;
+			ELSE 
+				P2_StoperMaticovacky.OUT.Centrovanie_ZASUN:= TRUE;
+				P2_StoperMaticovacky.OUT.Centrovanie_VYSUN:= FALSE;
+			END_IF	
+		
+		
+			//Ovládanie prisávania matice//
+			IF P2_StoperMaticovacky.CMD.RR_PrisavanieMaticeM4_ON THEN
+				P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON:= TRUE;
+			ELSE
+				P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON:= FALSE;
+			END_IF	
+		
 		
 		
 	

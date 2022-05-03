@@ -6,6 +6,16 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	
+	//*************************************Prepnutie obrazovky pri stlaèení tlaèítka CS*********************************//
+	IF EDGEPOS(P3_Pracovisko.STAV.Manual AND NOT Safety.STAV.Linka_ZonaCS_AKTIVNA) THEN
+		P34_Vizu.GoPage:= 'PageAutomatP34';
+	ELSIF EDGEPOS(P4_Pracovisko.STAV.Manual AND NOT Safety.STAV.Linka_ZonaCS_AKTIVNA) THEN
+		P34_Vizu.GoPage:= 'PageAutomatP34';	
+	END_IF	
+	
+	
+	
+	
 	//************************************Filter alarmov**************************************************************//
 	FilterVizu_P34:= '[{"logicalOperator":"and","value":300,"conditionType":">=","columnType":"cod","useAlarmState":false,"alarmState":0},{"value":500,"conditionType":"<=","columnType":"cod","useAlarmState":false,"alarmState":0}]';
 

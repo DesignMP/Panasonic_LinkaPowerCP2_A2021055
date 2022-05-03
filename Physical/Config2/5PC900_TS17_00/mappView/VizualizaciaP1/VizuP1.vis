@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<vdef:Visualization id="Vizu_P1" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+<vdef:Visualization id="Vizu_P1"  xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
   <StartPage pageRefId="PageBootP1" />
   <Pages>
     <Page refId="PageBootP1" />
@@ -37,6 +37,9 @@
     <BindingsSet refId="AreaPageManualP1_Dopravniky_binding" />
     <BindingsSet refId="AreaPageManualP1_Vytah_binding" />
     <BindingsSet refId="AreaPageManualP1_Skrutkovanie_binding" />
+    <BindingsSet refId="AreaPageManualP1_Skrutkovanie_page2_binding" />
+    <BindingsSet refId="AreaPageManualP1_Skrutkovanie_page3_binding" />
+    <BindingsSet refId="AreaPageManualP1_Skrutkovanie_page4_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="PataP1_eventbinding" />
@@ -49,6 +52,9 @@
     <EventBindingsSet refId="AreaHlasenie5_ST1_eventbinding" />
     <EventBindingsSet refId="AreaPageManualP1_Vytah_eventbinding" />
     <EventBindingsSet refId="AreaPageManualP1_Skrutkovanie_eventbinding" />
+    <EventBindingsSet refId="AreaPageManualP1_Skrutkovanie_page2_eventbinding" />
+    <EventBindingsSet refId="AreaPageManualP1_Skrutkovanie_page3_eventbinding" />
+    <EventBindingsSet refId="AreaPageManualP1_Skrutkovanie_page4_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="Hlasenie1_ST1" />

@@ -54,6 +54,7 @@ FUNCTION_BLOCK MaticaSet
 		OUT.NastrelenieMatice_RUN:= FALSE;
 		Internal.PoInit:= FALSE;
 		STAV.ERROR:= FALSE;
+		STAV.PodanieMatice_BUSY:= FALSE;
 		STAV.CisloPoruchy:= 0;
 		STAV.PopisPoruchy:= '';
 		Step:= 0;
@@ -88,6 +89,13 @@ FUNCTION_BLOCK MaticaSet
 			OUT.PodavacMatice_Vysun:= FALSE;
 			OUT.OtocOddelovacMatice_NaVystup:= FALSE;
 			OUT.NastrelenieMatice_RUN:= FALSE;
+			CMD.RR_OtocPodavac_Vstup:= FALSE;
+			CMD.RR_OtocPodavac_Vystup:= FALSE;
+			CMD.RR_VysunPodavacMatic:= FALSE;
+			CMD.RR_ZapniZasobnik:= FALSE;
+			CMD.RucnyRezim:= FALSE;
+			CMD.PodajMaticu:=FALSE;
+			STAV.PodanieMatice_BUSY:= FALSE;
 			IF NOT CMD.PodajMaticu AND CMD.ENABLE AND NOT STAV.ERROR THEN
 				Step:= 1;
 			END_IF	
@@ -101,6 +109,7 @@ FUNCTION_BLOCK MaticaSet
 			END_IF	
 		
 		10: //Kontrola matice na vystupe//
+			STAV.PodanieMatice_BUSY:= TRUE;
 			IF IN.PritomnostMaticeNaVystupe THEN
 				Step:= 0;
 			ELSE	
@@ -271,11 +280,23 @@ FUNCTION_BLOCK MaticaSet
 				OUT.VibropohonZasobnika_RUN:= FALSE;
 				Step:= 0;
 			ELSIF CMD.PodajMaticu THEN
+				OUT.PodavacMatice_Vysun:= FALSE;
 				Step:= 10;
 			END_IF	
 		
-				
-				
+			IF CMD.RR_OtocPodavac_Vstup THEN
+				OUT.OtocOddelovacMatice_NaVystup:= FALSE;
+				CMD.RR_OtocPodavac_Vstup:= FALSE;
+			ELSIF CMD.RR_OtocPodavac_Vystup THEN	
+				OUT.OtocOddelovacMatice_NaVystup:= TRUE;
+				CMD.RR_OtocPodavac_Vystup:= FALSE;
+			END_IF	
+			
+			OUT.PodavacMatice_Vysun:= CMD.RR_VysunPodavacMatic;
+		
+		
+		
+		
 				
 	END_CASE
 	

@@ -52,7 +52,7 @@
 	@include elemTop(10);
 }
 #AreaPageManual_Skrutkovanie_page4_NavigationButton_PreviewPage {
-	@include elemLeft(10);
+	@include elemLeft(16);
 }
 #AreaPageManual_Skrutkovanie_page4_NavigationButton_PreviewPage {
 	@include elemAutoWidth(105);
@@ -155,10 +155,10 @@
 	}
 }
 #AreaPageManual_Skrutkovanie_page4_GroupBox8 {
-	@include elemTop(172);
+	@include elemTop(100);
 }
 #AreaPageManual_Skrutkovanie_page4_GroupBox8 {
-	@include elemLeft(17);
+	@include elemLeft(16);
 }
 #AreaPageManual_Skrutkovanie_page4_GroupBox8 {
 	@include elemWidth(429);
@@ -230,11 +230,11 @@
 	@include elemTop(18);
 }
 #AreaPageManual_Skrutkovanie_page4_DropDownBox1 {
-	@include elemLeft(79);
+	@include elemLeft(22);
 }
 #AreaPageManual_Skrutkovanie_page4_DropDownBox1 {
 	&.DropDownBoxView{
-	@include elemWidth(270);
+	@include elemWidth(385);
 	}
 }
 #AreaPageManual_Skrutkovanie_page4_DropDownBox1 {
@@ -296,298 +296,6 @@
 	}
 }
 #AreaPageManual_Skrutkovanie_page4_DropDownBox1_listBoxWrapper {
-	& .TextView{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox9 {
-	@include elemTop(172);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox9 {
-	@include elemLeft(466);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox9 {
-	@include elemWidth(429);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox9 {
-	@include elemHeight(245);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox9 {
-		z-index: 4;
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox9 {
-		background-color: rgba(253, 245, 230, 1);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox9 {
-	> .header span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox9 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	@include elemTop(131);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	@include elemLeft(131);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	@include elemAutoWidth(165);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-		z-index: 0;
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	&:not(.disabled):not(.active):not(.checked) span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	@include text-alignment(left);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	span{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5F {
-	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	@include elemTop(18);
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	@include elemLeft(79);
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	&.DropDownBoxView{
-	@include elemWidth(270);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	&.DropDownBoxView{
-	@include elemHeight(50);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-		z-index: 1;
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	&.DropDownBoxView{
-	@include border-radius(10px);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	& > .ItemView{
-	@include border-radius(10px);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2_listBoxWrapper {
-	& > .ListView.Container{
-	@include border-radius(10px);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	&.DropDownBoxView{
-	@include box-shadow(4px 4px 8px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	& > .ItemView{
-		border-style: solid;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	& > .ItemView:not(.itemSelected):not(.itemDisabled) > .TextView:not(.textSelected){
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2_listBoxWrapper {
-	& > .ListView.Container{
-		border-width: 4px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	& .TextView{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2_listBoxWrapper {
-	& .TextView{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2 {
-	& .TextView{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox2_listBoxWrapper {
-	& .TextView{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox10 {
-	@include elemTop(172);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox10 {
-	@include elemLeft(921);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox10 {
-	@include elemWidth(429);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox10 {
-	@include elemHeight(245);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox10 {
-		z-index: 5;
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox10 {
-		background-color: rgba(253, 245, 230, 1);
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox10 {
-	> .header span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_GroupBox10 {
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	@include elemTop(131);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	@include elemLeft(131);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	@include elemAutoWidth(165);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	@include elemAutoHeight(45);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-		z-index: 0;
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	@include border-radius(5px);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	&:not(.disabled):not(.active):not(.checked) span{
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	@include text-alignment(left);
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	span{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	&:not(.active):not(.checked){
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	&.disabled.active{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_Button_TestPozicii_5H {
-	&.disabled.checked{
-	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	@include elemTop(18);
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	@include elemLeft(79);
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	&.DropDownBoxView{
-	@include elemWidth(270);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	&.DropDownBoxView{
-	@include elemHeight(50);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-		z-index: 1;
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	&.DropDownBoxView{
-	@include border-radius(10px);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	& > .ItemView{
-	@include border-radius(10px);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3_listBoxWrapper {
-	& > .ListView.Container{
-	@include border-radius(10px);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	&.DropDownBoxView{
-	@include box-shadow(4px 4px 8px rgba(0, 0, 0, 1));
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	& > .ItemView{
-		border-style: solid;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	& > .ItemView:not(.itemSelected):not(.itemDisabled) > .TextView:not(.textSelected){
-		color: rgba(0, 0, 0, 1);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3_listBoxWrapper {
-	& > .ListView.Container{
-		border-width: 4px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	& .TextView{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3_listBoxWrapper {
-	& .TextView{
-	@include text-alignment(center);
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3 {
-	& .TextView{
-		font-size: 16px;
-	}
-}
-#AreaPageManual_Skrutkovanie_page4_DropDownBox3_listBoxWrapper {
 	& .TextView{
 		font-size: 16px;
 	}

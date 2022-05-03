@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP1_Skrutkovanie_page3">
+    <EventBinding id="AreaPageManualP1_Skrutkovanie_page3.Button_OtocPodavac_M4_VPRED.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP1_Skrutkovanie_page3_Button_OtocPodavac_M4_VPRED" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetM4_OtocPodavac_Vystup">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP1_Skrutkovanie_page3">
+    <EventBinding id="AreaPageManualP1_Skrutkovanie_page3.Button_OtocPodavac_M4_VZAD.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP1_Skrutkovanie_page3_Button_OtocPodavac_M4_VZAD" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetM4_OtocPodavac_Vstup">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP1_Skrutkovanie_page3">
+    <EventBinding id="AreaPageManualP1_Skrutkovanie_page3.Button_OtocPodavac_M5_VPRED.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP1_Skrutkovanie_page3_Button_OtocPodavac_M5_VPRED" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetM5_OtocPodavac_Vystup">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP1_Skrutkovanie_page3">
+    <EventBinding id="AreaPageManualP1_Skrutkovanie_page3.Button_OtocPodavac_M5_VZAD.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP1_Skrutkovanie_page3_Button_OtocPodavac_M5_VZAD" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetM5_OtocPodavac_Vstup">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

@@ -51,6 +51,9 @@ TYPE
 		PodajMaticu : BOOL;
 		RucnyRezim : BOOL;
 		RR_ZapniZasobnik : BOOL;
+		RR_VysunPodavacMatic : BOOL;
+		RR_OtocPodavac_Vstup : BOOL;
+		RR_OtocPodavac_Vystup : BOOL;
 		ResetPoruchy : BOOL;
 	END_STRUCT;
 	MaticaSet_IN_typ : 	STRUCT 
@@ -78,6 +81,7 @@ TYPE
 		ERROR : BOOL;
 		CisloPoruchy : USINT;
 		PopisPoruchy : STRING[100];
+		PodanieMatice_BUSY : BOOL;
 	END_STRUCT;
 	MaticaSet_Internal_typ : 	STRUCT 
 		PoInit : BOOL;

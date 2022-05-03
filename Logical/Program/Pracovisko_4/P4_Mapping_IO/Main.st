@@ -49,7 +49,7 @@ PROGRAM _CYCLIC
 	P4_Pracovisko.COM_Weidmuller.AB4_5_8DO.3 := P4_Pracovisko.OUT.Majak_Hukacka_ON;
 	P4_Pracovisko.COM_Weidmuller.AB4_5_8DO.4;
 	P4_Pracovisko.COM_Weidmuller.AB4_5_8DO.5;
-	P4_Pracovisko.COM_Weidmuller.AB4_5_8DO.6 := P4_Pracovisko.OUT.Osvetlenie_CAM16_ON;
+	P4_Pracovisko.COM_Weidmuller.AB4_5_8DO.6 := P4_Vytah.OUT.OsvetlenieVytahu_ON;
 	P4_Pracovisko.COM_Weidmuller.AB4_5_8DO.7 := P4_Pracovisko.OUT.OsvetlenieBunky_ON;
 	
 	

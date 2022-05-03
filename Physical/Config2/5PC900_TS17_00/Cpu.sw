@@ -142,11 +142,11 @@
     <LibraryObject Name="RFID" Source="Libraries.RFID.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="SkrutSety" Source="Libraries.SkrutSety.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="RoCa_Festo" Source="Libraries.RoCa_Festo.lby" Memory="UserROM" Language="IEC" Debugging="true" />
-    <LibraryObject Name="ScrewLoad" Source="Libraries.ScrewLoad.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="MpServer" Source="Libraries.MpServer.lby" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="Statistika" Source="Libraries.Statistika.lby" Memory="UserROM" Language="IEC" Debugging="true" />
     <LibraryObject Name="arssl" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="aruser" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="ScrewLoad" Source="Libraries.ScrewLoad.lby" Memory="UserROM" Language="IEC" Debugging="true" />
   </Libraries>
 </SwConfiguration>

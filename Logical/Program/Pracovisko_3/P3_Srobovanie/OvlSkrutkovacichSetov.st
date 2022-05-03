@@ -14,6 +14,8 @@ ACTION OvlSkrutkovacichSetov:
 			P3_Srobovanie.SkrutSet_K40.Cmd.PodajSkrutku:= FALSE;
 			P3_Srobovanie.CMD.RR_SkrutSetK40_PodajSkrutku:= FALSE;
 			P3_Srobovanie.CMD.RR_SkrutSetK40_Zasobnik_RUN:= FALSE;
+			P3_Srobovanie.CMD.RR_SkrutSetK40_VysunBrzdu:= FALSE;
+			
 			P3_Srobovanie.STAV.SkrutkaK40_READY:= FALSE;
 			IF SC_P3_Srobovanie.Step <> 0 THEN
 				SC_SkrutkovaciSet_K40.ResetStep:= TRUE;
@@ -96,11 +98,23 @@ ACTION OvlSkrutkovacichSetov:
 			END_IF
 			
 			
+			//Ovládanie brzdy//
+			IF P3_Srobovanie.CMD.RR_SkrutSetK40_VysunBrzdu THEN
+				P3_Srobovanie.SkrutSet_K40.Cmd.AutomatStart:= FALSE;
+				P3_Srobovanie.SkrutSet_K40.Cmd.ManualPresunBrzdu:= TRUE;
+			ELSE
+				P3_Srobovanie.SkrutSet_K40.Cmd.ManualPresunBrzdu:= FALSE;
+			END_IF	
+			
+			
+			
+			
 			//Podanie skrutky//
 			IF P3_Srobovanie.CMD.RR_SkrutSetK40_PodajSkrutku THEN
 				P3_Srobovanie.CMD.RR_SkrutSetK40_PodajSkrutku:= FALSE;
 				P3_Srobovanie.CMD.RR_SkrutSetK40_Zasobnik_RUN:= FALSE;
 				P3_Srobovanie.SkrutSet_K40.Cmd.ManualStartHrniec:= FALSE;
+				P3_Srobovanie.SkrutSet_K40.Cmd.ManualPresunBrzdu:= FALSE;
 				P3_Srobovanie.CMD.PodajSkrutku_K40:= TRUE;
 				SC_SkrutkovaciSet_K40.ResetStep:= TRUE;
 				SC_SkrutkovaciSet_K40.Step:= 10;
@@ -124,7 +138,7 @@ ACTION OvlSkrutkovacichSetov:
 			P3_Srobovanie.SkrutSet_M5.CMD.RR_OtocPodavac_Vystup:= FALSE;
 			P3_Srobovanie.SkrutSet_M5.CMD.RR_ZapniVibrolistu:= FALSE;
 			P3_Srobovanie.SkrutSet_M5.CMD.RR_ZapniZasobnik:= FALSE;
-			P3_Srobovanie.STAV.SkrutkaM5_READY:= FALSE;
+			
 			IF SC_P3_Srobovanie.Step <> 0 THEN
 				SC_SkrutkovaciSet_M5.ResetStep:= TRUE;
 				SC_SkrutkovaciSet_M5.Step:= 1;
@@ -167,7 +181,6 @@ ACTION OvlSkrutkovacichSetov:
 			END_IF	
 				
 			IF P3_Srobovanie.SkrutSet_M5.STAV.SkrutkaPripravena THEN
-				P3_Srobovanie.STAV.SkrutkaM5_READY:= TRUE;
 				P3_Srobovanie.SkrutSet_M5.CMD.PodajSkrutku:= FALSE;
 				SC_SkrutkovaciSet_M5.ResetStep:= TRUE;
 				SC_SkrutkovaciSet_M5.Step:= 15;
@@ -179,16 +192,16 @@ ACTION OvlSkrutkovacichSetov:
 			
 			
 		15:
-			SC_SkrutkovaciSet_M5.StepName:='15 - Automaticky rezim - cakam na zrusenie stavu skrutka M5 READY';
+			SC_SkrutkovaciSet_M5.StepName:='15 - Automaticky rezim - ukoncenie podania skrutky M5';
 			SC_SkrutkovaciSet_M5.IdleTime.PT:= T#2s;
 			SC_SkrutkovaciSet_M5.AlarmTime.PT:= T#5s;	
 		
-			IF NOT P3_Srobovanie.STAV.SkrutkaM5_READY THEN
-				SC_SkrutkovaciSet_M5.ResetStep:= TRUE;
-				SC_SkrutkovaciSet_M5.Step:= 10;
-			ELSIF P3_Srobovanie.Manual THEN
+			IF P3_Srobovanie.Manual THEN
 				SC_SkrutkovaciSet_M5.ResetStep:= TRUE;
 				SC_SkrutkovaciSet_M5.Step:= 20;
+			ELSE
+				SC_SkrutkovaciSet_M5.ResetStep:= TRUE;
+				SC_SkrutkovaciSet_M5.Step:= 10;
 			END_IF
 			
 			

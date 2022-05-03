@@ -21,7 +21,7 @@ PROGRAM _CYCLIC
 		P2_StoperSrobovania.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_StoperSrobovania.Step:= 0;
-	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+	ELSIF NOT P2_StoperSrobovania.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
 		SC_P2_StoperSrobovania.Step:= 0;
 	END_IF	
 	
@@ -49,6 +49,7 @@ PROGRAM _CYCLIC
 			P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= FALSE;
 			P2_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny:= FALSE;
 			P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene:= FALSE;
+			P2_StoperSrobovania.CMD.RR_VysunCentrovanie:= FALSE;
 			P2_Robot.COM_OUT.Odober_Busbary4F:= FALSE;
 			P2_Robot.COM_OUT.Odober_Busbary5F:= FALSE;
 			P2_Robot.COM_OUT.Odober_Busbary5H:= FALSE;
@@ -2445,6 +2446,14 @@ PROGRAM _CYCLIC
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
 		
+			//Ovládanie zdvižky//
+			IF P2_StoperSrobovania.CMD.RR_VysunCentrovanie THEN
+				P2_StoperSrobovania.OUT.Centrovanie_ZASUN:= FALSE;
+				P2_StoperSrobovania.OUT.Centrovanie_VYSUN:= TRUE;
+			ELSE 
+				P2_StoperSrobovania.OUT.Centrovanie_ZASUN:= TRUE;
+				P2_StoperSrobovania.OUT.Centrovanie_VYSUN:= FALSE;
+			END_IF	
 		
 		
 		

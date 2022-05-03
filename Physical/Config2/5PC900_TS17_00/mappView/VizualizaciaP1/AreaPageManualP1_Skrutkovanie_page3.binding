@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageManualP1_Skrutkovanie_page3_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_K30.IN.VibracnyHrniec.VibracnaListaZaplnena" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList38" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_K30.IN.VibracnyHrniec.PritomnostSkrutiekVHrnci" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList37" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_K30.IN.VibracnyHrniec.PreletovySnimac" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList29" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_K30.IN.Brzda.SkrutkaPritomnaVBrzde" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList28" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_K30.IN.Brzda.ZakladnaPoloha" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList20" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_K30.IN.Brzda.PreletSkrutky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList30" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetM4_Zasobnik_RUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ToggleSwitch_VibracieZasobnikaM4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetM4_Vibrolista_RUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ToggleSwitch_VibracieVibrolistyM4" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M4.IN.ZaplnenieVibrolisty_MAX" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList34" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M4.IN.ZaplnenieVibrolisty_MIN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList32" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M4.IN.ZaplnenieListyZasobnika" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList33" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M4.IN.ZasobnikSkrutiekPrazdny" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList31" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M4.IN.PodavacOtoceny_VSTUP" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList36" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M4.IN.PodavacOtoceny_VYSTUP" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList35" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetM5_Vibrolista_RUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ToggleSwitch_VibracieVibrolistyM5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetM5_Zasobnik_RUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ToggleSwitch_VibracieZasobnikaM5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M5.IN.ZaplnenieVibrolisty_MAX" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList26" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M5.IN.ZaplnenieVibrolisty_MIN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList22" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M5.IN.ZaplnenieListyZasobnika" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList25" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M5.IN.ZasobnikSkrutiekPrazdny" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList21" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M5.IN.PodavacOtoceny_VSTUP" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList24" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M5.IN.PodavacOtoceny_VYSTUP" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList23" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M5.IN.Podavac_SkrutkaNaVystupe" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList42" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M5.IN.Podavac_SkrutkaNaVstupe" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList41" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M4.IN.Podavac_SkrutkaNaVystupe" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList40" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_M4.IN.Podavac_SkrutkaNaVstupe" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList39" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetK30_VysunBrzdu" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ToggleSwitch_OvladanieBrzdy_K30" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutSetK30_Zasobnik_RUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ToggleSwitch_VibracieZasobnikaK30" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_OvladSkrutkovSetuK30_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ToggleSwitch_VibracieZasobnikaK30" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_OvladSkrutkovSetuK30_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ToggleSwitch_OvladanieBrzdy_K30" attribute="enable" />
+</Binding>
+</Bindings>
+</BindingsSet>

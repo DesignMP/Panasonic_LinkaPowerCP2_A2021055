@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_Remanen 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=63 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=12 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                          P2_UlozPremenne                                     BOOL    0 "                                                           FALSE"    0    1    1    2    0    0         
                           P2_RemPremenne                       P2_RemPremenne_typ    0 "                                                               *"    0   24    1    0    0    1         
@@ -67,8 +67,8 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
               P2_Zvaranie_RychlostZdvihu                                     REAL    0 "                                                           400.0"    1    8    1   10    0    0         
           P2_Srob45F_LavaM6_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
           P2_Srob45F_LavaM6_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-         P2_Srob45F_PravaM6_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-         P2_Srob45F_PravaM6_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+         P2_Srob45F_PravaM6_Vysunutie_LO                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+         P2_Srob45F_PravaM6_Vysunutie_HI                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
           P2_Srob45F_LavaM4_Vysunutie_LO                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
           P2_Srob45F_LavaM4_Vysunutie_HI                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
          P2_Srob45F_PravaM4_Vysunutie_LO                                     REAL    0 "                                                               *"    1    8    1   10    0    0         

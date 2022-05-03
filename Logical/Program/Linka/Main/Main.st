@@ -104,6 +104,18 @@ ProfinetKomunikaciaCU;
 	END_IF	
 	
 	
+	//***************************Stav linka po init********************************//
+	
+	IF P1_Pracovisko.STAV.PoINIT AND
+		P2_Pracovisko.STAV.PoINIT AND
+		P3_Pracovisko.STAV.PoINIT AND
+		P4_Pracovisko.STAV.PoINIT THEN
+		Linka.STAV.PoINIT:= TRUE;
+	ELSE
+		Linka.STAV.PoINIT:= FALSE;
+	END_IF	
+	
+	
 	
 END_PROGRAM
 

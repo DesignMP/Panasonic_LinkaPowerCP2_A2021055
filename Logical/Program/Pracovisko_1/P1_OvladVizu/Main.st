@@ -6,6 +6,13 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	
+	//*************************************Prepnutie obrazovky pri stlaèení tlaèítka CS*********************************//
+	IF EDGEPOS(P1_Pracovisko.STAV.Manual AND NOT Safety.STAV.Linka_ZonaCS_AKTIVNA) THEN
+		P1_Vizu.GoPage:= 'PageAutomatP1';
+	END_IF	
+	
+	
+	
 	//************************************Filter alarmov**************************************************************//
 	FilterVizu_P1:= '[{"logicalOperator":"and","value":100,"conditionType":">=","columnType":"cod","useAlarmState":false,"alarmState":0},{"value":199,"conditionType":"<=","columnType":"cod","useAlarmState":false,"alarmState":0}]';
 
@@ -262,6 +269,78 @@ PROGRAM _CYCLIC
 	ELSE
 		P1_Vizu.Vytah_ZapisPaletky_ENABLE:= FALSE;
 	END_IF	
+	
+	
+	//RR - Tlaèítko èistenia skrutkovaèky K30//
+	IF P1_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
+		P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE:= FALSE;
+	ELSIF P1_Srobovanie.STAV.CistenieSkrutkovackyK30_BUSY THEN
+		P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE:= FALSE;
+	ELSIF NOT P1_Pracovisko.STAV.SkrutkovackyZasunute THEN
+		P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE:= FALSE;
+	ELSIF P1_Srobovanie.CMD.RR_SkrutSetK30_VysunBrzdu THEN
+		P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE:= FALSE;
+	ELSIF P1_Srobovanie.CMD.RR_SkrutSetK30_Zasobnik_RUN THEN
+		P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE:= FALSE;
+	ELSE	
+		P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE:= TRUE;
+	END_IF
+		
+		
+		
+	//RR - Tlaèítko polohovania aplikátora//
+	IF P1_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P1_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
+		P1_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P1_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF P1_Srobovanie.STAV.CistenieSkrutkovackyK30_BUSY THEN
+		P1_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF NOT P1_Pracovisko.STAV.SkrutkovackyZasunute THEN
+		P1_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSE	
+		P1_Vizu.TL_PolohujManipulator_ENABLE:= TRUE;
+	END_IF
+	
+	//RR - Tlaèítko vysunutia skrutkovaèky K30//
+	IF P1_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P1_Vizu.Tl_VysunutieSkrutkovK30_ENABLE:= FALSE;
+	ELSIF P1_Srobovanie.STAV.CistenieSkrutkovackyK30_BUSY THEN
+		P1_Vizu.Tl_VysunutieSkrutkovK30_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
+		P1_Vizu.Tl_VysunutieSkrutkovK30_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P1_Vizu.Tl_VysunutieSkrutkovK30_ENABLE:= FALSE;
+	ELSE
+		P1_Vizu.Tl_VysunutieSkrutkovK30_ENABLE:= TRUE;
+	END_IF	
+	
+	//RR - Tlaèítko vysunutia skrutkovaèiek M4 a M5//
+	IF P1_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P1_Vizu.TL_OvladaniaVysunSkrutkovM4_M5:= FALSE;
+	ELSIF P1_Srobovanie.STAV.CistenieSkrutkovackyK30_BUSY THEN
+		P1_Vizu.TL_OvladaniaVysunSkrutkovM4_M5:= FALSE;
+	ELSIF NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
+		P1_Vizu.TL_OvladaniaVysunSkrutkovM4_M5:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P1_Vizu.TL_OvladaniaVysunSkrutkovM4_M5:= FALSE;
+	ELSE	
+		P1_Vizu.TL_OvladaniaVysunSkrutkovM4_M5:= TRUE;
+	END_IF
+	
+	
+	//RR - Ovládanie skrutkovacieho setu//
+	IF P1_Srobovanie.STAV.CistenieSkrutkovackyK30_BUSY THEN
+		P1_Vizu.TL_OvladSkrutkovSetuK30_ENABLE:= FALSE;
+	ELSE	
+		P1_Vizu.TL_OvladSkrutkovSetuK30_ENABLE:= TRUE;
+	END_IF	
+	
 	
 	
 	//**************************Zamknutie editácie parametrov*********************************//

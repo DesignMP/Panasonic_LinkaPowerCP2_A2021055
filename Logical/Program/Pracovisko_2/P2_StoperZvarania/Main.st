@@ -21,7 +21,7 @@ PROGRAM _CYCLIC
 		P2_StoperZvarania.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_StoperZvarania.Step:= 0;
-	ELSIF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+	ELSIF NOT P2_StoperZvarania.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
 		SC_P2_StoperZvarania.Step:= 0;
 	END_IF	
 	
@@ -69,6 +69,7 @@ PROGRAM _CYCLIC
 			P2_Robot.COM_OUT.ZopakujOdoberanie:= FALSE;
 			P2_Robot.COM_OUT.ZmenaGripra_4F5F:= FALSE;
 			P2_Robot.COM_OUT.ZmenaGripra_5H:= FALSE;
+			P2_StoperZvarania.CMD.RR_VysunCentrovanie:= FALSE;
 			CAM11.CMD.Triger:= FALSE;
 			CAM11.STAV.Results_READY:= FALSE;
 			FTP_CAM11.CMD.OdosliFotku:= FALSE;
@@ -1945,6 +1946,15 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#8s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 		
+			
+			//Ovládanie zdvižky//
+			IF P2_StoperZvarania.CMD.RR_VysunCentrovanie THEN
+				P2_StoperZvarania.OUT.Centrovanie_ZASUN:= FALSE;
+				P2_StoperZvarania.OUT.Centrovanie_VYSUN:= TRUE;
+			ELSE 
+				P2_StoperZvarania.OUT.Centrovanie_ZASUN:= TRUE;
+				P2_StoperZvarania.OUT.Centrovanie_VYSUN:= FALSE;
+			END_IF	
 		
 		
 		

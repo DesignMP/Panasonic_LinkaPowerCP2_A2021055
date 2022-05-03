@@ -391,8 +391,8 @@ PROGRAM _CYCLIC
 	
 	//*****************************Zapnutie osvetlenia pracoviska*********************************************************//
 	P4_Pracovisko.OUT.OsvetlenieBunky_ON:= TRUE;
-			
-		
+	P4_Vytah.OUT.OsvetlenieVytahu_ON:= TRUE;		
+	P4_Pracovisko.OUT.Osvetlenie_CAM15_ON:= TRUE;	
 	//****************************************Ovládanie majáka***********************************************//
 	//Zelené svetlo//
     

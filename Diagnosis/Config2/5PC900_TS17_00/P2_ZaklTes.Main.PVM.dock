@@ -1,11 +1,13 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_ZaklTes 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=13 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=15 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                   SC_P2_ZakladacTesnenia                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                             180"    1    6    1   10    0    0         
+                                    Step                                     UINT    0 "                                                             100"    1    6    1   10    0    0         
                      P2_ZakladacTesnenia                  P2_ZakladacTesnenia_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     PAR              P2_ZakladacTesnenia_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
+              ZakladacZdvih_JoggRychlost                                     REAL    0 "                                                            10.0"    2    8    1   10    0    0         
                                   COM_IN           P2_ZakladacTesnenia_COM_IN_typ    0 "                                                               *"    1   24    1    0    0    1         
-                           ZalozTesnenie                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                           ZalozTesnenie                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                  Automat                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                     ServoZdvihuZakladaca                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
                                  Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    1         
@@ -18,17 +20,17 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         TorqueLimitation                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
                                     Stop                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                                    Pause                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              Parameters                               ParamStruc    0 "                                                               *"    2   24    1    0    0    0         
-                                  Torque                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                Distance                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                Position                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                Override                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                     Dcc                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                     Acc                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                     Jog                                 JogStruc    0 "                                                               *"    3   24    1    0    0    0         
-                                     Acc                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
+                              Parameters                               ParamStruc    0 "                                                               *"    2   24    1    0    0    1         
+                                  Torque                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                                Distance                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                Position                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                Override                                     REAL    0 "                                                           100.0"    3    8    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                            0.08"    3    8    1   10    0    0         
+                                     Dcc                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                                     Acc                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                                     Jog                                 JogStruc    0 "                                                               *"    3   24    1    0    0    1         
+                                     Acc                                     REAL    0 "                                                             1.0"    4    8    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                             0.1"    4    8    1   10    0    0         
                           OUT_forMapping                           OutputRawStruc    0 "                                                               *"    2   24    1    0    0    0         
               Control_word_or_setpoint_0                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
               Control_word_or_setpoint_1                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
@@ -109,18 +111,18 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                   Status                              StatusStruc    0 "                                                               *"    2   24    1    0    0    1         
                           WarningMessage                              WSTRING[80]    0 "                                                    "No warning""    3   21  162    1    0    0         
                             ErrorMessage                              WSTRING[80]    0 "                                                      "No error""    3   21  162    1    0    0         
-                                InTorque                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              InPosition                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              StandStill                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                                 Warning                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                   Error                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                   Ready                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                               ActTorque                                     REAL    0 "                                                   -0.0135966577"    3    8    1   10    0    0         
-                             ActVelocity                                     REAL    0 "                                                  4.57735769E-05"    3    8    1   10    0    0         
-                             ActPosition                                     REAL    0 "                                                            0.04"    3    8    1   10    0    0         
-                   ServoPojazduZakladaca                              ServoDriver    0 "                                                               *"    1   24    1    0    0    1         
-                                 Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    1         
-                                 PowerON                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                                InTorque                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                              InPosition                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                              StandStill                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                 Warning                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                   Error                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                   Ready                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               ActTorque                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                             ActVelocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                             ActPosition                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                   ServoPojazduZakladaca                              ServoDriver    0 "                                                               *"    1   24    1    0    0    0         
+                                 Command                             CommandStruc    0 "                                                               *"    2   24    1    0    0    0         
+                                 PowerON                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                 ErrReset                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                   JogNeg                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                   JogPos                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -190,7 +192,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                            SwitchON_Bit0                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                     Step                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
                                     Info                              WSTRING[80]    0 "                                                               *"    2   21  162    1    0    0         
-                                  Status                              StatusStruc    0 "                                                               *"    2   24    1    0    0    1         
+                                  Status                              StatusStruc    0 "                                                               *"    2   24    1    0    0    0         
                           WarningMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         
                             ErrorMessage                              WSTRING[80]    0 "                                                               *"    3   21  162    1    0    0         
                                 InTorque                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         

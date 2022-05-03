@@ -1,5 +1,5 @@
 
-<vdef:Visualization id="Vizu_P1" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+<vdef:Visualization id="Vizu_P1" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
   <StartPage pageRefId="PageBootP1" />
   <Pages>
     <Page refId="PageBootP1" />
@@ -37,6 +37,9 @@
     <BindingsSet refId="1163903829" />
     <BindingsSet refId="-176492834" />
     <BindingsSet refId="-1443671686" />
+    <BindingsSet refId="-229956454" />
+    <BindingsSet refId="-231072549" />
+    <BindingsSet refId="-232328168" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="747011459" />
@@ -49,6 +52,9 @@
     <EventBindingsSet refId="-627506400" />
     <EventBindingsSet refId="314177444" />
     <EventBindingsSet refId="23042272" />
+    <EventBindingsSet refId="284601460" />
+    <EventBindingsSet refId="-1154136397" />
+    <EventBindingsSet refId="2139378554" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="Hlasenie1_ST1" />

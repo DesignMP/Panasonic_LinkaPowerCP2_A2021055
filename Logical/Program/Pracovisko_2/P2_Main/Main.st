@@ -423,17 +423,17 @@ PROGRAM _CYCLIC
 		P2_Pracovisko.IN.ServoZvaraniaOsZ_KomOK AND
 		P2_Pracovisko.IN.Skrutkovacka_M4_KomOK AND
 		P2_Pracovisko.IN.Skrutkovacka_M5_KomOK AND
-		(*P2_Pracovisko.IN.Skrutkovacka_M6_KomOK AND*)
+		P2_Pracovisko.IN.Skrutkovacka_M6_KomOK AND
 		P2_Pracovisko.IN.VentilovyTerminal_KomOK AND
 		P2_Srobovanie.IN.NapajanieSkrutkovackyM4_OK AND
-	(*	P2_Srobovanie.IN.NapajanieSkrutkovackyM5_OK AND*)
+		P2_Srobovanie.IN.NapajanieSkrutkovackyM5_OK AND
 		P2_Srobovanie.IN.NapajanieSkrutkovackyM6_OK AND
 		P2_Srobovanie.IN.NapajanieVibrolistyM4_OK AND
 		P2_Srobovanie.IN.NapajanieZasobnikaM6_OK AND
 		P2_Srobovanie.IN.NapajanieZasobnikaM4_OK AND
-		(*P2_Pracovisko.IN.SmartKamera8_KomOK AND*)
+		P2_Pracovisko.IN.SmartKamera8_KomOK AND
 		(*P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND*)
-		(*P2_Pracovisko.IN.SmartKamera9_KomOK AND *)
+		P2_Pracovisko.IN.SmartKamera9_KomOK AND 
 		P2_Srobovanie.IN.NapajanieZasobnikaM5_OK THEN
 		P2_Pracovisko.STAV.HardwareBunky_OK:= TRUE;
 	ELSE	

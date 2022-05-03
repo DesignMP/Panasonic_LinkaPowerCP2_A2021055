@@ -20,7 +20,7 @@ PROGRAM _CYCLIC
 		P1_AkumulacnyStoper.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P1_AkumulacnyStoper.Step:= 0;
-	ELSIF NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
+	ELSIF NOT P1_AkumulacnyStoper.Manual AND NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
 		SC_P1_AkumulacnyStoper.Step:= 0;
 	END_IF
 	

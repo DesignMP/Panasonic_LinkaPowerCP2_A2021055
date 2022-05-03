@@ -56,9 +56,13 @@ TYPE
 		TL_TestovaciKus_ENABLE : BOOL;
 		TL_Revork_ENABLE : BOOL;
 		TL_OvladanieVytahu_ENABLE : BOOL;
-		TL_HomingVytahu_ENABLE : BOOL;
 		TL_PrihlasenieOperatora_ENABLE : BOOL;
 		TL_PrihlasovOperatora_AKTIVNE : BOOL;
+		TL_VycistiSkrutkovackuK30_ENABLE : BOOL;
+		TL_PolohujManipulator_ENABLE : BOOL;
+		Tl_VysunutieSkrutkovK30_ENABLE : BOOL;
+		TL_OvladaniaVysunSkrutkovM4_M5 : BOOL;
+		TL_OvladSkrutkovSetuK30_ENABLE : BOOL;
 		Srobovanie_OvlManipOsX_ENABLE : BOOL;
 		Srobovanie_OvlManipOsY_ENABLE : BOOL;
 		EditaciaParametrov_ENABLE : BOOL;
@@ -93,6 +97,15 @@ TYPE
 		TL_RRZdvihZaklTesnenia_ENABLE : BOOL;
 		TL_RRPojazdZaklTesnenia_ENABLE : BOOL;
 		TL_OvladaniaZamkov_ENABLE : BOOL;
+		TL_VycistiSkrutkovackuM6_ENABLE : BOOL;
+		TL_VycistiSkrutkovackuM5_ENABLE : BOOL;
+		TL_PolohujManipulator_ENABLE : BOOL;
+		Tl_VysunutieSkrutkovM6_ENABLE : BOOL;
+		Tl_VysunutieSkrutkovM5_ENABLE : BOOL;
+		TL_OvladaniaVysunSkrutkovM4 : BOOL;
+		TL_OvladSkrutkovSetuM6_ENABLE : BOOL;
+		TL_OvladSkrutkovSetuM5_ENABLE : BOOL;
+		TL_PresunZvarania_ENABLE : BOOL;
 		EditaciaParametrov_ENABLE : BOOL;
 		ZaklTesnenia_OvlZdvihu_ENABLE : BOOL;
 		ZaklTesnenia_OvlZostupu_ENABLE : BOOL;
@@ -903,11 +916,14 @@ TYPE
 		RR_SkrutkovackaM5_OsZ_HORE : BOOL;
 		RR_SkrutkovackaM5_OsZ_DOLE : BOOL;
 		RR_PrisavanieSkrutkyM5_ON : BOOL;
+		RR_PrisavanieSkrutkyM5_OFF : BOOL;
 		RR_PrisavanieSkrutkyM4_ON : BOOL;
+		RR_PrisavanieSkrutkyM4_OFF : BOOL;
 		RR_PrisavanieSkrutkyK30_ON : BOOL;
 		RR_CistenieSkrutkovackyK30 : BOOL;
 		RR_SkrutSetK30_Zasobnik_RUN : BOOL;
 		RR_SkrutSetK30_PodajSkrutku : BOOL;
+		RR_SkrutSetK30_VysunBrzdu : BOOL;
 		RR_SkrutSetM4_Zasobnik_RUN : BOOL;
 		RR_SkrutSetM4_Vibrolista_RUN : BOOL;
 		RR_SkrutSetM4_PodajSkrutku : BOOL;
@@ -1013,8 +1029,7 @@ TYPE
 		M4_Uhol_ToleranciaMIN : UDINT;
 		ManipulatorNadPodavacmi : BOOL;
 		SkrutkaK30_READY : BOOL;
-		SkrutkaM5_READY : BOOL;
-		SkrutkaM4_READY : BOOL;
+		CistenieSkrutkovackyK30_BUSY : BOOL;
 	END_STRUCT;
 	P1_Srobovanie_COM_IN_typ : 	STRUCT 
 		PresunManipulatora_VPRED : BOOL;
@@ -1466,7 +1481,8 @@ TYPE
 	END_STRUCT;
 	P2_StoperMaticovacky_CMD_typ : 	STRUCT 
 		RR_Maticovacku_VYSUN : BOOL;
-		RR_Maticovacku_ZASUN : BOOL;
+		RR_VysunCentrovanie : BOOL;
+		RR_PrisavanieMaticeM4_ON : BOOL;
 	END_STRUCT;
 	P2_StoperMaticovacky_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*IS2_1*)
@@ -1551,7 +1567,7 @@ TYPE
 		KoniecCyklu : BOOL;
 	END_STRUCT;
 	P2_StoperSrobovania_CMD_typ : 	STRUCT 
-		New_Member : USINT;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P2_StoperSrobovania_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*IS2_4*)
@@ -1609,12 +1625,15 @@ TYPE
 		RR_PrisavanieSkrutkyM6_ON : BOOL;
 		RR_PrisavanieSkrutkyM5_ON : BOOL;
 		RR_PrisavanieSkrutkyM4_ON : BOOL;
+		RR_PrisavanieSkrutkyM4_OFF : BOOL;
 		RR_CistenieSkrutkovackyM6 : BOOL;
 		RR_CistenieSkrutkovackyM5 : BOOL;
 		RR_SkrutSetM6_Zasobnik_RUN : BOOL;
 		RR_SkrutSetM6_PodajSkrutku : BOOL;
+		RR_SkrutSetM6_VysunBrzdu : BOOL;
 		RR_SkrutSetM5_Zasobnik_RUN : BOOL;
 		RR_SkrutSetM5_PodajSkrutku : BOOL;
+		RR_SkrutSetM5_VysunBrzdu : BOOL;
 		RR_SkrutSetM4_Zasobnik_RUN : BOOL;
 		RR_SkrutSetM4_Vibrolista_RUN : BOOL;
 		RR_SkrutSetM4_PodajSkrutku : BOOL;
@@ -1712,7 +1731,8 @@ TYPE
 		ManipulatorNadPodavacmi : BOOL;
 		SkrutkaM6_READY : BOOL;
 		SkrutkaM5_READY : BOOL;
-		SkrutkaM4_READY : BOOL;
+		CistenieSkrutkovackyM5_BUSY : BOOL;
+		CistenieSkrutkovackyM6_BUSY : BOOL;
 	END_STRUCT;
 	P2_Srobovanie_COM_IN_typ : 	STRUCT 
 		PresunManipulatora_VPRED : BOOL;
@@ -1924,7 +1944,7 @@ TYPE
 		KoniecCyklu : BOOL;
 	END_STRUCT;
 	P2_StoperZvarania_CMD_typ : 	STRUCT 
-		New_Member : USINT;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P2_StoperZvarania_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*IS2_6*)
@@ -1965,6 +1985,9 @@ TYPE
 	P2_Zvaranie_CMD_typ : 	STRUCT 
 		RR_ZdvihZvarania_HORE : BOOL;
 		RR_ZdvihZvarania_DOLE : BOOL;
+		RR_SekvenciaZvarania_START : BOOL;
+		RR_Presun_VPRAVO : BOOL;
+		RR_Presun_VLAVO : BOOL;
 	END_STRUCT;
 	P2_Zvaranie_IN_typ : 	STRUCT 
 		ZdvihZvarania_HornyLimSnimac : BOOL; (*IS2_19*)
@@ -1986,6 +2009,7 @@ TYPE
 	P2_Zvaranie_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
 		Vysledok_Zvarania : STRING[2]; (*OK alebo NG*)
+		RR_SekvenciaZvarania_BUSY : BOOL;
 	END_STRUCT;
 	P2_Zvaranie_COM_IN_typ : 	STRUCT 
 		Zvaranie_START : BOOL;
@@ -2014,7 +2038,8 @@ TYPE
 		KoniecCyklu : BOOL;
 	END_STRUCT;
 	P2_Cistenie_CMD_typ : 	STRUCT 
-		New_Member : USINT;
+		RR_Cistenie_OTVOR : BOOL;
+		RR_Cistenie_ZATVOR : BOOL;
 	END_STRUCT;
 	P2_Cistenie_IN_typ : 	STRUCT 
 		Dvere_OTVORENE : BOOL; (*MS2_1*)
@@ -2245,7 +2270,7 @@ TYPE
 		KoniecCyklu : BOOL;
 	END_STRUCT;
 	P3_StoperSrobovania_CMD_typ : 	STRUCT 
-		New_Member : USINT;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P3_StoperSrobovania_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*IS3_5*)
@@ -2295,12 +2320,14 @@ TYPE
 		RR_M5H_PresunNaPozSkrutkov : BOOL;
 		RR_PrisavanieSkrutkyK40_ON : BOOL;
 		RR_PrisavanieSkrutkyM5_ON : BOOL;
+		RR_PrisavanieSkrutkyM5_OFF : BOOL;
 		RR_SkrutkovackuK40_VYSUN : BOOL;
 		RR_SkrutkovackaM5_OsZ_HORE : BOOL;
 		RR_SkrutkovackaM5_OsZ_DOLE : BOOL;
 		RR_CistenieSkrutkovackyK40 : BOOL;
 		RR_SkrutSetK40_Zasobnik_RUN : BOOL;
 		RR_SkrutSetK40_PodajSkrutku : BOOL;
+		RR_SkrutSetK40_VysunBrzdu : BOOL;
 		RR_SkrutSetM5_Zasobnik_RUN : BOOL;
 		RR_SkrutSetM5_Vibrolista_RUN : BOOL;
 		RR_SkrutSetM5_PodajSkrutku : BOOL;
@@ -2370,7 +2397,7 @@ TYPE
 		M5_Uhol_ToleranciaMIN_REAL : REAL;
 		M5_Uhol_ToleranciaMIN : UDINT;
 		SkrutkaK40_READY : BOOL;
-		SkrutkaM5_READY : BOOL;
+		CistenieSkrutkovackyK40_BUSY : BOOL;
 	END_STRUCT;
 	P3_Srobovanie_COM_IN_typ : 	STRUCT 
 		PresunManipulatora_VPRED : BOOL;
@@ -2404,6 +2431,7 @@ TYPE
 		RR_OtvorTester : BOOL;
 		RR_ZatvorTester : BOOL;
 		StartTestovania : BOOL;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P3_HV_Test_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*MS3_12*)
@@ -2528,6 +2556,7 @@ TYPE
 		RR_ZatvorTester : BOOL;
 		RR_VysunSpodneKopito : BOOL;
 		RR_TestovaciaSekvencia_START : BOOL;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P3_LeakageTestA_IN_typ : 	STRUCT 
 		NapajanieTestera_OK : BOOL;
@@ -2586,6 +2615,7 @@ TYPE
 		RR_ZatvorTester : BOOL;
 		RR_VysunSpodneKopito : BOOL;
 		RR_TestovaciaSekvencia_START : BOOL;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P3_LeakageTestB_IN_typ : 	STRUCT 
 		NapajanieTestera_OK : BOOL;
@@ -2873,6 +2903,7 @@ TYPE
 		RR_ZatvorTester : BOOL;
 		RR_OtvorTester : BOOL;
 		StartTestovania : BOOL;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P4_FunkcnyTestA_IN_typ : 	STRUCT 
 		HorneKontakty_VYSUNUTE : BOOL; (*MS4_2*)
@@ -2928,6 +2959,7 @@ TYPE
 		RR_ZatvorTester : BOOL;
 		RR_OtvorTester : BOOL;
 		StartTestovania : BOOL;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P4_FunkcnyTestB_IN_typ : 	STRUCT 
 		HorneKontakty_VYSUNUTE : BOOL; (*MS4_8*)
@@ -3051,6 +3083,7 @@ TYPE
 		RR_ZdvihAplikatora_HORE : BOOL;
 		RR_ZdvihAplikatora_DOLE : BOOL;
 		RR_NalepEtiketu : BOOL;
+		RR_VysunCentrovanie : BOOL;
 	END_STRUCT;
 	P4_Etiketovacka_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*IS4_13*)
@@ -3127,6 +3160,7 @@ TYPE
 	P4_Vytah_OUT_typ : 	STRUCT 
 		DopravnikChod_VPRED : BOOL; (*M4_3*)
 		DopravnikChod_VZAD : BOOL; (*M4_3*)
+		OsvetlenieVytahu_ON : BOOL;
 	END_STRUCT;
 	P4_Vytah_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];

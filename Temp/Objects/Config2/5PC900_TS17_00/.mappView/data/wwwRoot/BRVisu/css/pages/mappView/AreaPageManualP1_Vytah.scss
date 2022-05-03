@@ -238,16 +238,21 @@
 	@include elemTop(83);
 }
 #AreaPageManualP1_Vytah_NumericOutput4 {
-	@include elemLeft(126);
+	@include elemLeft(115);
 }
 #AreaPageManualP1_Vytah_NumericOutput4 {
-	@include elemAutoWidth(60);
+	@include elemAutoWidth(70);
 }
 #AreaPageManualP1_Vytah_NumericOutput4 {
 		z-index: 4;
 }
 #AreaPageManualP1_Vytah_NumericOutput4 {
 		background-color: rgba(224, 224, 224, 1);
+}
+#AreaPageManualP1_Vytah_NumericOutput4 {
+	input{
+	@include text-alignment(left);
+	}
 }
 #AreaPageManualP1_Vytah_NumericInput_7 {
 	@include elemAutoHeight(30);
@@ -256,17 +261,17 @@
 	@include elemTop(83);
 }
 #AreaPageManualP1_Vytah_NumericInput_7 {
-	@include elemLeft(276);
+	@include elemLeft(265);
 }
 #AreaPageManualP1_Vytah_NumericInput_7 {
-	@include elemAutoWidth(60);
+	@include elemAutoWidth(70);
 }
 #AreaPageManualP1_Vytah_NumericInput_7 {
 		z-index: 5;
 }
 #AreaPageManualP1_Vytah_NumericInput_7 {
 	input{
-	@include text-alignment(center);
+	@include text-alignment(left);
 	}
 }
 #AreaPageManualP1_Vytah_Button_PrecitajPaletku {
@@ -358,10 +363,10 @@
 	@include elemLeft(171);
 }
 #AreaPageManualP1_Vytah_ImageList9 {
-	@include elemWidth(24);
+	@include elemWidth(25);
 }
 #AreaPageManualP1_Vytah_ImageList9 {
-	@include elemHeight(24);
+	@include elemHeight(25);
 }
 #AreaPageManualP1_Vytah_ImageList9 {
 		z-index: 8;
@@ -962,10 +967,10 @@
 	@include elemLeft(174);
 }
 #AreaPageManualP1_Vytah_ImageList5 {
-	@include elemWidth(24);
+	@include elemWidth(25);
 }
 #AreaPageManualP1_Vytah_ImageList5 {
-	@include elemHeight(24);
+	@include elemHeight(25);
 }
 #AreaPageManualP1_Vytah_ImageList5 {
 		z-index: 12;
@@ -980,10 +985,10 @@
 	@include elemLeft(384);
 }
 #AreaPageManualP1_Vytah_ImageList6 {
-	@include elemWidth(24);
+	@include elemWidth(25);
 }
 #AreaPageManualP1_Vytah_ImageList6 {
-	@include elemHeight(24);
+	@include elemHeight(25);
 }
 #AreaPageManualP1_Vytah_ImageList6 {
 		z-index: 13;
@@ -998,10 +1003,10 @@
 	@include elemLeft(174);
 }
 #AreaPageManualP1_Vytah_ImageList7 {
-	@include elemWidth(24);
+	@include elemWidth(25);
 }
 #AreaPageManualP1_Vytah_ImageList7 {
-	@include elemHeight(24);
+	@include elemHeight(25);
 }
 #AreaPageManualP1_Vytah_ImageList7 {
 		z-index: 14;
@@ -1016,15 +1021,94 @@
 	@include elemLeft(174);
 }
 #AreaPageManualP1_Vytah_ImageList8 {
-	@include elemWidth(24);
+	@include elemWidth(25);
 }
 #AreaPageManualP1_Vytah_ImageList8 {
-	@include elemHeight(24);
+	@include elemHeight(25);
 }
 #AreaPageManualP1_Vytah_ImageList8 {
 		z-index: 15;
 }
 #AreaPageManualP1_Vytah_ImageList8 {
+		border-width: 0px;
+}
+#AreaPageManualP1_Vytah_Label14 {
+	@include elemTop(391);
+}
+#AreaPageManualP1_Vytah_Label14 {
+	@include elemLeft(11);
+}
+#AreaPageManualP1_Vytah_Label14 {
+	@include elemAutoWidth(195);
+}
+#AreaPageManualP1_Vytah_Label14 {
+	@include elemAutoHeight(45);
+}
+#AreaPageManualP1_Vytah_Label14 {
+		z-index: 16;
+}
+#AreaPageManualP1_Vytah_Label14 {
+		border-width: 2px;
+}
+#AreaPageManualP1_Vytah_Label14 {
+	@include border-radius(5px);
+}
+#AreaPageManualP1_Vytah_Label14 {
+		background-color: rgba(192, 192, 192, 1);
+}
+#AreaPageManualP1_Vytah_Label14 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaPageManualP1_Vytah_Label14 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP1_Vytah_Label14 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP1_Vytah_Label14 {
+		border-style: outset;
+}
+#AreaPageManualP1_Vytah_Label14 {
+	&:before{
+		border-style: outset;
+	}
+}
+#AreaPageManualP1_Vytah_Label14 {
+	&:after{
+		border-style: outset;
+	}
+}
+#AreaPageManualP1_Vytah_Label14 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualP1_Vytah_Label14 {
+		font-size: 14px;
+}
+#AreaPageManualP1_Vytah_Label14 {
+	@include font-weight-bold(true);
+}
+#AreaPageManualP1_Vytah_ImageList10 {
+	@include elemTop(403);
+}
+#AreaPageManualP1_Vytah_ImageList10 {
+	@include elemLeft(174);
+}
+#AreaPageManualP1_Vytah_ImageList10 {
+	@include elemWidth(25);
+}
+#AreaPageManualP1_Vytah_ImageList10 {
+	@include elemHeight(25);
+}
+#AreaPageManualP1_Vytah_ImageList10 {
+		z-index: 17;
+}
+#AreaPageManualP1_Vytah_ImageList10 {
 		border-width: 0px;
 }
 #AreaPageManualP1_Vytah_GroupBox_OvladanieOsvetleniaKamier {
