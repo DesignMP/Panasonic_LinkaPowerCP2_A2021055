@@ -14,6 +14,7 @@ FUNCTION_BLOCK Taktime
 		IntVAR.CelkoveSekundy:= 0;
 		IntVAR.CelkoveMinuty:= 0;
 		IntVAR.CelkoveHodiny:= 0;
+		IntVAR.NameraneSekundy_REAL:= 0;
 	END_IF	
     
     
@@ -24,19 +25,17 @@ FUNCTION_BLOCK Taktime
         
 		IF IntVAR.Milisekundy >= 1000 THEN
 			IntVAR.Sekundy:= IntVAR.Sekundy + 1;
-			IntVAR.CelkoveSekundy:= IntVAR.CelkoveSekundy + 1;
+			IntVAR.NameraneSekundy_REAL:= IntVAR.NameraneSekundy_REAL + 1;
 			IntVAR.Milisekundy:= 0;
 		END_IF
         
 		IF IntVAR.Sekundy >= 60 THEN
 			IntVAR.Minuty:= IntVAR.Minuty + 1;
-			IntVAR.CelkoveMinuty:= IntVAR.CelkoveMinuty + 1;
 			IntVAR.Sekundy:= 0;
 		END_IF	
         
 		IF IntVAR.Minuty >= 60 THEN
 			IntVAR.Hodiny:= IntVAR.Hodiny + 1;
-			IntVAR.CelkoveHodiny:= IntVAR.CelkoveHodiny + 1;
 			IntVAR.Minuty:= 0;
 		END_IF
           
@@ -44,17 +43,14 @@ FUNCTION_BLOCK Taktime
 	
     	
 	//Ulozenie nameraného èasu a resetovanie èasovaèa//
-	IF IN.ZAPIS_MeraniaCasu AND NOT OUT.Stav_ZapisCasu_DONE THEN
-		IntVAR.NameraneHodiny_REAL:= UINT_TO_REAL(IntVAR.CelkoveHodiny);
-		IntVAR.NameraneMinuty_REAL:= UINT_TO_REAL(IntVAR.CelkoveMinuty);
-		IntVAR.NameraneSekundy_REAL:= UINT_TO_REAL(IntVAR.CelkoveSekundy);
+	IF IN.ZAPIS_MeraniaCasu THEN
 		IntVAR.NameraneMilisekundy_REAL:= UINT_TO_REAL(IntVAR.Milisekundy);
 		//Zobrazenie celkového èasu v sekundách//
 		OUT.NameranyCas_v_Sekundach:= IntVAR.NameraneSekundy_REAL + (IntVAR.NameraneMilisekundy_REAL / 1000);
 		//Zobrazenie celkového èasu v minútach//
-		OUT.NameranyCas_v_Minutach:= IntVAR.NameraneMinuty_REAL + (IntVAR.NameraneSekundy_REAL / 100);
+		OUT.NameranyCas_v_Minutach:= OUT.NameranyCas_v_Sekundach / 60;
 		//Zobrazenie celkového èasu v hodinách//
-		OUT.NameranyCas_v_Hodinach:= IntVAR.NameraneHodiny_REAL + (IntVAR.NameraneMinuty_REAL / 100);
+		OUT.NameranyCas_v_Hodinach:= OUT.NameranyCas_v_Minutach / 60;
 		//Zápis do historie meraní//
 		OUT.HistoriaMerani_v_Sekundach[IntVAR.i]:= OUT.NameranyCas_v_Sekundach;
 		OUT.HistoriaMerani_v_Minutach[IntVAR.i]:= OUT.NameranyCas_v_Minutach;
@@ -72,12 +68,10 @@ FUNCTION_BLOCK Taktime
 		IntVAR.CelkoveSekundy:= 0;
 		IntVAR.CelkoveMinuty:= 0;
 		IntVAR.CelkoveHodiny:= 0;
-		OUT.Stav_ZapisCasu_DONE:= TRUE;
+		IntVAR.NameraneSekundy_REAL:= 0;
+		IN.ZAPIS_MeraniaCasu:= FALSE;
 	END_IF	
    
-	IF NOT IN.ZAPIS_MeraniaCasu THEN
-		OUT.Stav_ZapisCasu_DONE:= FALSE;
-	END_IF    
         
     
 	//Vyrátanie priemernej hodnoty v sekundách//
@@ -115,79 +109,113 @@ FUNCTION_BLOCK Taktime
 	END_FOR
     
 	//Reset celkových poèítadiel èasu//
-	IF IN.RESET_CelkovehoCasu AND NOT OUT.Stav_RESET_CelkCasu_DONE THEN
+	IF IN.RESET_CelkovehoCasu THEN
 		OUT.CelkovyPocetNameranychSekund:= 0;
 		OUT.CelkovyPocetNameranychMinut:= 0;
 		OUT.CelkovyPocetNameranychHodin:= 0;
-		OUT.Stav_RESET_CelkCasu_DONE:= TRUE;
+		IN.RESET_CelkovehoCasu:= FALSE;
 	END_IF    
-    
-	IF NOT IN.RESET_CelkovehoCasu THEN
-		OUT.Stav_RESET_CelkCasu_DONE:= FALSE;
-	END_IF    
-    
+   
 	//Reset historie merani//
-	IF IN.RESET_HistorieMeraniCasu AND NOT OUT.Stav_RESET_HistorieMerani_DONE THEN
+	IF IN.RESET_HistorieMeraniCasu THEN
 		brsmemset(ADR(OUT.HistoriaMerani_v_Sekundach),0,SIZEOF(OUT.HistoriaMerani_v_Sekundach));
 		brsmemset(ADR(OUT.HistoriaMerani_v_Minutach),0,SIZEOF(OUT.HistoriaMerani_v_Minutach));
-		OUT.Stav_RESET_HistorieMerani_DONE:= TRUE;
+		IN.RESET_HistorieMeraniCasu:= FALSE;
 	END_IF    
     
-	IF NOT IN.RESET_HistorieMeraniCasu THEN
-		OUT.Stav_RESET_HistorieMerani_DONE:= FALSE;
-	END_IF    
+
     
 	//***************************************************************************Rátanie kusov****************************************************************************//
     
 	//Rátanie kusov OK//
-	IF IN.PriratajKus_OK AND NOT OUT.Stav_PriratanieKusu_OK_DONE THEN
+	IF IN.PriratajKus_OK THEN
 		OUT.CelkovyPocetKusov:= OUT.CelkovyPocetKusov + 1;
 		OUT.PocetKusov_OK:= OUT.PocetKusov_OK + 1;
-		OUT.Stav_PriratanieKusu_OK_DONE:= TRUE;
+		IN.PriratajKus_OK:= FALSE;
 	END_IF
     
-	IF NOT IN.PriratajKus_OK THEN
-		OUT.Stav_PriratanieKusu_OK_DONE:= FALSE;
-	END_IF
     
 	//Rátanie kusov NG//
-	IF IN.PriratajKus_NG AND NOT OUT.Stav_PriratanieKusu_NG_DONE THEN
+	IF IN.PriratajKus_NG THEN
 		OUT.CelkovyPocetKusov:= OUT.CelkovyPocetKusov + 1;
 		OUT.PocetKusov_NG:= OUT.PocetKusov_NG + 1;
-		OUT.Stav_PriratanieKusu_NG_DONE:= TRUE;
+		IN.PriratajKus_NG:= FALSE;
 	END_IF
-    
-	IF NOT IN.PriratajKus_NG THEN
-		OUT.Stav_PriratanieKusu_NG_DONE:= FALSE;
-	END_IF
+  
 	
 	
 	
 	//Reset poètu kusov //
-	IF IN.RESET_PoctuKusov AND NOT OUT.Stav_RESET_PoctuKusov_DONE THEN
+	IF IN.RESET_PoctuKusov THEN
 		OUT.PocetKusov_OK:= 0;
 		OUT.PocetKusov_NG:= 0;
-		OUT.Stav_RESET_PoctuKusov_DONE:= TRUE;
+		IN.RESET_PoctuKusov:= FALSE;
 	END_IF
-    
-	IF NOT IN.RESET_PoctuKusov THEN
-		OUT.Stav_RESET_PoctuKusov_DONE:= FALSE;
-	END_IF    
-    
+       
     
     
 	//Reset celkového poètu kusov//
-	IF IN.RESET_CelkovehoPoctuKusov AND NOT OUT.Stav_RESET_CelkPoctuKusov_DONE THEN
+	IF IN.RESET_CelkovehoPoctuKusov THEN
 		OUT.CelkovyPocetKusov:= 0;
-		OUT.Stav_RESET_CelkPoctuKusov_DONE:= TRUE;
+		IN.RESET_CelkovehoPoctuKusov:= FALSE;
 	END_IF
     
-	IF NOT IN.RESET_CelkovehoPoctuKusov THEN
-		OUT.Stav_RESET_CelkPoctuKusov_DONE:= FALSE;
-	END_IF        
+  
 
 	
-
+  //*********************************************Meranie stratoveho èasu*****************************************//
     
-    
+	//Spustenie merania//
+	IF IN.START_MeraniaStratovehoCasu THEN
+        
+		IntVAR.StratoveMilisekundy:= IntVAR.StratoveMilisekundy + IN.TaskovaTrieda_ms;//Ak je v taskovej triede 2ms tak prirátaváme + 2//
+        
+		IF IntVAR.StratoveMilisekundy >= 1000 THEN
+			IntVAR.StratoveSekundy:= IntVAR.StratoveSekundy + 1;
+			IntVAR.CelkoveStratoveSekundy_REAL:= IntVAR.CelkoveStratoveSekundy_REAL + 1;
+			IntVAR.StratoveMilisekundy:= 0;
+		END_IF
+        
+		IF IntVAR.StratoveSekundy >= 60 THEN
+			IntVAR.StratoveMinuty:= IntVAR.StratoveMinuty + 1;
+			IntVAR.StratoveSekundy:= 0;
+		END_IF	
+        
+		IF IntVAR.StratoveMinuty >= 60 THEN
+			IntVAR.StratoveHodiny:= IntVAR.StratoveHodiny + 1;
+			IntVAR.StratoveMinuty:= 0;
+		END_IF
+          
+	END_IF	
+	
+	
+	
+	
+	//Zapísanie stratového èasu//
+	IF IN.ZAPIS_StratovyCas THEN
+		//Zobrazenie celkového èasu v sekundách//
+		IntVAR.CelkoveStratoveMilisekundy_REAL:= UINT_TO_REAL(IntVAR.StratoveMilisekundy);
+		OUT.StratoveSekundy:= IntVAR.CelkoveStratoveSekundy_REAL + (IntVAR.CelkoveStratoveMilisekundy_REAL / 1000);
+		//Zobrazenie celkového èasu v minútach//
+		OUT.StratoveMinuty:= OUT.StratoveSekundy / 60;
+		//Zobrazenie celkového èasu v hodinách//
+		OUT.StratoveHodiny:= OUT.StratoveMinuty / 60;
+		IntVAR.StratoveMilisekundy:= 0;
+		IntVAR.CelkoveStratoveSekundy_REAL:= 0;
+		IN.ZAPIS_StratovyCas:= FALSE;
+	END_IF	
+	
+	
+	
+	//Reset merania//
+	
+	IF IN.RESET_StratovehoCasu THEN
+		IntVAR.StratoveMilisekundy:= 0;
+		IntVAR.CelkoveStratoveSekundy_REAL:= 0;
+		OUT.StratoveSekundy:= 0;
+		IN.RESET_StratovehoCasu:= FALSE;
+	END_IF	
+	
+	
+	
 END_FUNCTION_BLOCK

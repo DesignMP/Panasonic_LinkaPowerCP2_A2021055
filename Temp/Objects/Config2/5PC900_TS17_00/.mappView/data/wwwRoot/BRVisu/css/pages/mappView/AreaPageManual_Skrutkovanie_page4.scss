@@ -230,11 +230,11 @@
 	@include elemTop(18);
 }
 #AreaPageManual_Skrutkovanie_page4_DropDownBox1 {
-	@include elemLeft(22);
+	@include elemLeft(10);
 }
 #AreaPageManual_Skrutkovanie_page4_DropDownBox1 {
 	&.DropDownBoxView{
-	@include elemWidth(385);
+	@include elemWidth(408);
 	}
 }
 #AreaPageManual_Skrutkovanie_page4_DropDownBox1 {
@@ -292,11 +292,11 @@
 }
 #AreaPageManual_Skrutkovanie_page4_DropDownBox1 {
 	& .TextView{
-		font-size: 16px;
+		font-size: 15px;
 	}
 }
 #AreaPageManual_Skrutkovanie_page4_DropDownBox1_listBoxWrapper {
 	& .TextView{
-		font-size: 16px;
+		font-size: 15px;
 	}
 }

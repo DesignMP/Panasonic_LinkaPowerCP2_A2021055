@@ -16,6 +16,10 @@ $(AS_PROJECT_PATH)/Logical/Libraries/RoCa_Festo/Types.typ
 $(AS_PROJECT_PATH)/Logical/Libraries/RoCa_Festo/RoCa_Festo.fun
 $(AS_PROJECT_PATH)/Logical/Alarmy/AlarmyGlobal.var
 $(AS_PROJECT_PATH)/Logical/Program/Pracovisko_4/P4_StoperEtiketovania/Types.typ
+$(AS_PROJECT_PATH)/Logical/UkladacieBuffery/UkladacieBufferyGlobal.var
+$(AS_PROJECT_PATH)/Logical/UkladacieBuffery/UkladacieBufferyGlobal.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/Statistika/Types.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/Statistika/Statistika.fun
 $(AS_PROJECT_PATH)/Logical/Libraries/SC/Types.typ
 $(AS_PROJECT_PATH)/Logical/DatumCasPLC/DatumCasGlobal.var
 $(AS_PROJECT_PATH)/Logical/Libraries/AsTCP/AsTCP.typ

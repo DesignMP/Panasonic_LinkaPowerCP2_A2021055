@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
-<OpcUaSource FileVersion="7" ArVersion="D4.91">
+<OpcUaSource FileVersion="7" ArVersion="G4.90">
   <Aliases>
     <ACLAliases />
     <EURangeViolationAliases />
@@ -10,7 +10,7 @@
   <DefaultView>
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
-        <Variable Name="P1_Vizu">
+        <Variable Name="P1_Vizu" AutomaticEnable="True">
           <Variable Name="TL_RezimAutomat" />
           <Variable Name="TL_StartAutomat_ENABLE" />
           <Variable Name="TL_KoniecCyklu_ENABLE" />
@@ -97,7 +97,7 @@
           <Variable Name="NastavCasPLC" />
           <Variable Name="AktualnyCasPLC" />
         </Variable>
-        <Variable Name="UsersVizu">
+        <Variable Name="UsersVizu" AutomaticEnable="True">
           <Variable Name="KartaPrilozena_Panel1" />
           <Variable Name="KartaPrilozena_Panel2" />
           <Variable Name="KartaPrilozena_Panel3" />
@@ -353,13 +353,6 @@
           <Variable Name="TL_StartAutomat_ENABLE_P4" />
           <Variable Name="TL_KoniecCyklu_ENABLE_P4" />
           <Variable Name="TL_STOP_ENABLE_P4" />
-          <Variable Name="LeakageTestA_Testovanie_ENABLE" />
-          <Variable Name="LeakageTestB_Testovanie_ENABLE" />
-          <Variable Name="LeakageTestA_RR_ENABLE" />
-          <Variable Name="LeakageTestB_RR_ENABLE" />
-          <Variable Name="FunkcnyTestA_Testovanie_ENABLE" />
-          <Variable Name="FunkcnyTestB_Testovanie_ENABLE" />
-          <Variable Name="Etiketovacka_Testovanie_ENABLE" />
           <Variable Name="Srobovanie_OvlManipOsY_ENABLE" />
           <Variable Name="VolbaLeakageTestu_ENABLE" />
           <Variable Name="VolbaFunkcnehoTestu_ENABLE" />
@@ -374,9 +367,6 @@
           <Variable Name="WarningsP3_Index" />
           <Variable Name="WarningsP4_Farba" />
           <Variable Name="WarningsP4_Index" />
-          <Variable Name="TL_OvladanieVytahu_ENABLE" />
-          <Variable Name="TL_HomingVytahu_ENABLE" />
-          <Variable Name="TL_OvlZdvihuAplikEtikety_ENABLE" />
           <Variable Name="TL_VyprazdnenieLinky_ENABLE" />
           <Variable Name="IndexStavu_ZdvizkPredLeakTestomA" />
           <Variable Name="IndexStavu_ZdvizkPredLeakTestomB" />
@@ -394,21 +384,138 @@
         <Variable Name="P3_LeakageTestA">
           <Variable Name="STAV">
             <Variable Name="Tester_ON" />
+            <Variable Name="RR_TestovaciaSekvencia_BUSY" />
+          </Variable>
+          <Variable Name="CMD">
+            <Variable Name="RR_VysunSpodneKopito" />
+            <Variable Name="RR_TestovaciaSekvencia_START" />
+            <Variable Name="RR_VysunCentrovanie" />
+            <Variable Name="RR_HornyPritlak_VYSUN" />
+            <Variable Name="RR_HornyPritlak_ZASUN" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="HornyPritlak_TlakOK" />
+            <Variable Name="HornyPritlak_VYSUNUTY" />
+            <Variable Name="HornyPritlak_ZASUNUTY" />
+            <Variable Name="Centrovanie_VYSUNUTE" />
+            <Variable Name="Centrovanie_ZASUNUTE" />
+            <Variable Name="PritomnostKopita" />
+            <Variable Name="Kopito_ZASUNUTE" />
+            <Variable Name="VyrovnavaciTlak_OK" />
+            <Variable Name="Tester_TypKonektoru_4F" />
+            <Variable Name="Tester_TypKonektoru_5F_5H" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+          </Variable>
+          <Variable Name="RFID_hlava">
+            <Variable Name="PritomnostPaletky" />
+          </Variable>
+          <Variable Name="PAR">
+            <Variable Name="PreratanyVyrovnavaciTlak_Bar" />
           </Variable>
         </Variable>
         <Variable Name="P3_LeakageTestB">
           <Variable Name="STAV">
             <Variable Name="Tester_ON" />
+            <Variable Name="RR_TestovaciaSekvencia_BUSY" />
+          </Variable>
+          <Variable Name="CMD">
+            <Variable Name="RR_VysunSpodneKopito" />
+            <Variable Name="RR_TestovaciaSekvencia_START" />
+            <Variable Name="RR_VysunCentrovanie" />
+            <Variable Name="RR_HornyPritlak_VYSUN" />
+            <Variable Name="RR_HornyPritlak_ZASUN" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="HornyPritlak_TlakOK" />
+            <Variable Name="HornyPritlak_VYSUNUTY" />
+            <Variable Name="HornyPritlak_ZASUNUTY" />
+            <Variable Name="Centrovanie_VYSUNUTE" />
+            <Variable Name="Centrovanie_ZASUNUTE" />
+            <Variable Name="PritomnostKopita" />
+            <Variable Name="Kopito_ZASUNUTE" />
+            <Variable Name="VyrovnavaciTlak_OK" />
+            <Variable Name="Tester_TypKonektoru_4F" />
+            <Variable Name="Tester_TypKonektoru_5F_5H" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+          </Variable>
+          <Variable Name="RFID_hlava">
+            <Variable Name="PritomnostPaletky" />
+          </Variable>
+          <Variable Name="PAR">
+            <Variable Name="PreratanyVyrovnavaciTlak_Bar" />
           </Variable>
         </Variable>
         <Variable Name="P4_FunkcnyTestA">
           <Variable Name="STAV">
             <Variable Name="Tester_ON" />
+            <Variable Name="RR_SekvenciaTestera_BUSY" />
+            <Variable Name="PaletkaOznacena_NG" />
+          </Variable>
+          <Variable Name="CMD">
+            <Variable Name="RR_ZatvorTester" />
+            <Variable Name="RR_VysunCentrovanie" />
+            <Variable Name="RR_VysunPruzenieKontaktov" />
+            <Variable Name="OpatovnyTest" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="HorneKontakty_VYSUNUTE" />
+            <Variable Name="HorneKontakty_ZASUNUTE" />
+            <Variable Name="SpodneKontakty_VYSUNUTE" />
+            <Variable Name="SpodneKontakty_ZASUNUTE" />
+            <Variable Name="Centrovanie_VYSUNUTE" />
+            <Variable Name="Centrovanie_ZASUNUTE" />
+            <Variable Name="TypSpodnychKontaktov_4F" />
+            <Variable Name="TypSpodnychKontaktov_5F_5H" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+            <Variable Name="PritlakPowerCP_VYSUN" />
+            <Variable Name="KontaktyTestera_VYSUN" />
+            <Variable Name="HorneKontakty_VYSUN" />
+            <Variable Name="HorneKontakty_ZASUN" />
+            <Variable Name="SpodneKontakty_VYSUN" />
+            <Variable Name="SpodneKontakty_ZASUN" />
+          </Variable>
+          <Variable Name="RFID_hlava">
+            <Variable Name="PritomnostPaletky" />
           </Variable>
         </Variable>
         <Variable Name="P4_FunkcnyTestB">
           <Variable Name="STAV">
             <Variable Name="Tester_ON" />
+            <Variable Name="PaletkaOznacena_NG" />
+          </Variable>
+          <Variable Name="CMD">
+            <Variable Name="RR_ZatvorTester" />
+            <Variable Name="RR_VysunCentrovanie" />
+            <Variable Name="RR_VysunPruzenieKontaktov" />
+            <Variable Name="OpatovnyTest" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="HorneKontakty_VYSUNUTE" />
+            <Variable Name="HorneKontakty_ZASUNUTE" />
+            <Variable Name="SpodneKontakty_VYSUNUTE" />
+            <Variable Name="SpodneKontakty_ZASUNUTE" />
+            <Variable Name="Centrovanie_VYSUNUTE" />
+            <Variable Name="Centrovanie_ZASUNUTE" />
+            <Variable Name="TypSpodnychKontaktov_4F" />
+            <Variable Name="TypSpodnychKontaktov_5F_5H" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+            <Variable Name="PritlakPowerCP_VYSUN" />
+            <Variable Name="KontaktyTestera_VYSUN" />
+            <Variable Name="HorneKontakty_VYSUN" />
+            <Variable Name="HorneKontakty_ZASUN" />
+            <Variable Name="SpodneKontakty_VYSUN" />
+            <Variable Name="SpodneKontakty_ZASUN" />
+          </Variable>
+          <Variable Name="RFID_hlava">
+            <Variable Name="PritomnostPaletky" />
           </Variable>
         </Variable>
         <Variable Name="P2_Pracovisko">
@@ -500,11 +607,49 @@
           <Variable Name="STAV">
             <Variable Name="Etiketa_ZhodaQRkodu_OK" />
             <Variable Name="RR_SekvenciaEtiketovania_BUSY" />
+            <Variable Name="PowerCP_ZhodaQRkodu_OK" />
           </Variable>
           <Variable Name="CMD">
             <Variable Name="RR_ZdvihAplikatora_HORE" />
             <Variable Name="RR_ZdvihAplikatora_DOLE" />
             <Variable Name="RR_NalepEtiketu" />
+            <Variable Name="RR_PrisavanieEtikety" />
+            <Variable Name="RR_VysunCentrovanie" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="Centrovanie_VYSUNUTE" />
+            <Variable Name="Centrovanie_ZASUNUTE" />
+            <Variable Name="ZdvihAplikatora_HornyLimSnimac" />
+            <Variable Name="ZdvihAplikatora_SpodnyLimSnimac" />
+            <Variable Name="Aplikator_OtocenyVPRED" />
+            <Variable Name="Aplikator_OtocenyVZAD" />
+            <Variable Name="Aplikator_VYSUNUTY" />
+            <Variable Name="Aplikator_ZASUNUTY" />
+            <Variable Name="PrisavanieEtikety_Vakum_OK" />
+            <Variable Name="PritlakPowerCP_ZASUNUTY" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="OfukEtikety_ON" />
+            <Variable Name="Aplikator_OtocVPRED" />
+            <Variable Name="Aplikator_OtocVZAD" />
+            <Variable Name="Aplikator_VYSUN" />
+            <Variable Name="PritlakPowerCP_VYSUN" />
+            <Variable Name="ZasunStoper" />
+          </Variable>
+          <Variable Name="PAR">
+            <Variable Name="ZdvihAplikatora_JoggRychlost" />
+          </Variable>
+          <Variable Name="RFID_hlava">
+            <Variable Name="PritomnostPaletky" />
+          </Variable>
+          <Variable Name="ServoZdvihuAplikatora">
+            <Variable Name="Command">
+              <Variable Name="ErrReset" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="Ready" />
+              <Variable Name="ActPosition" />
+            </Variable>
           </Variable>
         </Variable>
         <Variable Name="P1_Dopravniky">
@@ -584,7 +729,6 @@
         </Variable>
         <Variable Name="P1_Srobovanie">
           <Variable Name="CMD">
-            <Variable Name="RR_SkrutkovackuK30_VYSUN" />
             <Variable Name="RR_Manipulator_OsX_VPRAVO" />
             <Variable Name="RR_Manipulator_OsX_VLAVO" />
             <Variable Name="RR_Manipulator_OsY_VPRED" />
@@ -595,7 +739,6 @@
             <Variable Name="RR_SkrutkovackaM5_OsZ_DOLE" />
             <Variable Name="RR_PrisavanieSkrutkyM5_ON" />
             <Variable Name="RR_PrisavanieSkrutkyM4_ON" />
-            <Variable Name="RR_PrisavanieSkrutkyK30_ON" />
             <Variable Name="RR_CistenieSkrutkovackyK30" />
             <Variable Name="RR_SkrutSetK30_Zasobnik_RUN" />
             <Variable Name="RR_SkrutSetK30_PodajSkrutku" />
@@ -629,6 +772,7 @@
           </Variable>
           <Variable Name="OUT">
             <Variable Name="Skrutkovacka_K30_Prisavanie_ON" />
+            <Variable Name="Skrutkovacku_K30_VYSUN" />
           </Variable>
           <Variable Name="PAR">
             <Variable Name="ManipulOsX_JoggRychlost" />
@@ -637,6 +781,7 @@
             <Variable Name="ManipulOsZ_M4_JoggRychlost" />
             <Variable Name="Skrutkov_K30_AktualHodnVysunutia" />
             <Variable Name="RR_IndexPolohovaniaManipulatora" />
+            <Variable Name="Skrutkov_K30_RoundHodnotaREAL" />
           </Variable>
           <Variable Name="STAV">
             <Variable Name="RR_Polohovanie_BUSY" />
@@ -689,6 +834,7 @@
                 <Variable Name="SkrutkaPritomnaVBrzde" />
                 <Variable Name="ZakladnaPoloha" />
                 <Variable Name="PreletSkrutky" />
+                <Variable Name="PodajSkrutku" />
               </Variable>
               <Variable Name="VibracnyHrniec">
                 <Variable Name="PritomnostSkrutiekVHrnci" />
@@ -755,12 +901,13 @@
               <Variable Name="Stlaceny" />
             </Variable>
           </Variable>
+          <Variable Name="STAV">
+            <Variable Name="ObsluhaOznacilaPaletku_NG" />
+          </Variable>
         </Variable>
         <Variable Name="P2_StoperMaticovacky">
           <Variable Name="CMD">
-            <Variable Name="RR_Maticovacku_VYSUN" />
             <Variable Name="RR_VysunCentrovanie" />
-            <Variable Name="RR_PrisavanieMaticeM4_ON" />
           </Variable>
           <Variable Name="RFID_hlava">
             <Variable Name="PritomnostPaletky" />
@@ -772,6 +919,8 @@
           </Variable>
           <Variable Name="OUT">
             <Variable Name="ZasunStoper" />
+            <Variable Name="Maticovacku_M4_VYSUN" />
+            <Variable Name="Maticovacka_M4_Prisavanie_ON" />
           </Variable>
           <Variable Name="SkrutSet_MaticaM4">
             <Variable Name="CMD">
@@ -798,6 +947,7 @@
           </Variable>
           <Variable Name="PAR">
             <Variable Name="Maticov_M4_AktualHodnVysunutia" />
+            <Variable Name="Maticov_M4_RoundHodnotaREAL" />
           </Variable>
         </Variable>
         <Variable Name="P2_AkumulacnyStoper">
@@ -894,16 +1044,12 @@
         </Variable>
         <Variable Name="P2_Srobovanie">
           <Variable Name="CMD">
-            <Variable Name="RR_SkrutkovackuM6_VYSUN" />
-            <Variable Name="RR_SkrutkovackuM5_VYSUN" />
             <Variable Name="RR_Manipulator_OsX_VPRAVO" />
             <Variable Name="RR_Manipulator_OsX_VLAVO" />
             <Variable Name="RR_Manipulator_OsY_VPRED" />
             <Variable Name="RR_Manipulator_OsY_VZAD" />
             <Variable Name="RR_SkrutkovackaM4_OsZ_HORE" />
             <Variable Name="RR_SkrutkovackaM4_OsZ_DOLE" />
-            <Variable Name="RR_PrisavanieSkrutkyM6_ON" />
-            <Variable Name="RR_PrisavanieSkrutkyM5_ON" />
             <Variable Name="RR_PrisavanieSkrutkyM4_ON" />
             <Variable Name="RR_PrisavanieSkrutkyM4_OFF" />
             <Variable Name="RR_CistenieSkrutkovackyM6" />
@@ -935,6 +1081,8 @@
           <Variable Name="OUT">
             <Variable Name="Skrutkovacka_M6_Prisavanie_ON" />
             <Variable Name="Skrutkovacka_M5_Prisavanie_ON" />
+            <Variable Name="Skrutkovacku_M6_VYSUN" />
+            <Variable Name="Skrutkovacku_M5_VYSUN" />
           </Variable>
           <Variable Name="PAR">
             <Variable Name="Skrutkov_M5_AktualHodnVysunutia" />
@@ -943,6 +1091,8 @@
             <Variable Name="ManipulOsX_JoggRychlost" />
             <Variable Name="ManipulOsY_JoggRychlost" />
             <Variable Name="ManipulOsZ_M4_JoggRychlost" />
+            <Variable Name="Skrutkov_M6_RoundHodnotaREAL" />
+            <Variable Name="Skrutkov_M5_RoundHodnotaREAL" />
           </Variable>
           <Variable Name="STAV">
             <Variable Name="RR_Polohovanie_BUSY" />
@@ -992,6 +1142,7 @@
                 <Variable Name="ZakladnaPoloha" />
                 <Variable Name="PreletSkrutky" />
                 <Variable Name="SkrutkaPritomnaVBrzde" />
+                <Variable Name="PodajSkrutku" />
               </Variable>
             </Variable>
           </Variable>
@@ -1006,6 +1157,7 @@
                 <Variable Name="ZakladnaPoloha" />
                 <Variable Name="PreletSkrutky" />
                 <Variable Name="SkrutkaPritomnaVBrzde" />
+                <Variable Name="PodajSkrutku" />
               </Variable>
               <Variable Name="VibracnyHrniec">
                 <Variable Name="PritomnostSkrutiekVHrnci" />
@@ -1075,15 +1227,703 @@
             <Variable Name="Vakum_OK" />
           </Variable>
           <Variable Name="OUT">
-            <Variable Name="Ionizator_ON" />
             <Variable Name="VzduchPreIonizator_ON" />
             <Variable Name="Odsavanie_ON" />
+            <Variable Name="Ionizator_OFF" />
+            <Variable Name="OdsavanieOfuk_ON" />
           </Variable>
         </Variable>
+        <Variable Name="P3_SpodnyStoper">
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="ZaplnenieDopravnika" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_Dopravniky">
+          <Variable Name="OUT">
+            <Variable Name="PrednyDopravnikBunky_ON" />
+            <Variable Name="ZadnyDopravnikBunky_ON" />
+            <Variable Name="VratnyDopravnik_ON" />
+            <Variable Name="PriecnyDopravnik1_VPRED" />
+            <Variable Name="PriecnyDopravnik2_VPRED" />
+            <Variable Name="PriecnyDopravnik2_VZAD" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_Srobovanie">
+          <Variable Name="CMD">
+            <Variable Name="RR_Manipulator_OsY_VPRED" />
+            <Variable Name="RR_Manipulator_OsY_VZAD" />
+            <Variable Name="RR_M45F_PresunNaPozSkrutkov" />
+            <Variable Name="RR_M5H_PresunNaPozSkrutkov" />
+            <Variable Name="RR_PrisavanieSkrutkyM5_ON" />
+            <Variable Name="RR_PrisavanieSkrutkyM5_OFF" />
+            <Variable Name="RR_SkrutkovackaM5_OsZ_HORE" />
+            <Variable Name="RR_SkrutkovackaM5_OsZ_DOLE" />
+            <Variable Name="RR_CistenieSkrutkovackyK40" />
+            <Variable Name="RR_SkrutSetK40_Zasobnik_RUN" />
+            <Variable Name="RR_SkrutSetK40_PodajSkrutku" />
+            <Variable Name="RR_SkrutSetK40_VysunBrzdu" />
+            <Variable Name="RR_SkrutSetM5_Zasobnik_RUN" />
+            <Variable Name="RR_SkrutSetM5_Vibrolista_RUN" />
+            <Variable Name="RR_SkrutSetM5_PodajSkrutku" />
+            <Variable Name="RR_SkrutSetM5_OtocPodavac_Vstup" />
+            <Variable Name="RR_SkrutSetM5_OtocPodavac_Vystup" />
+            <Variable Name="RR_PolohujManipulator" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="ManipulOsY_LimSnimac_POS" />
+            <Variable Name="ManipulOsY_LimSnimac_NEG" />
+            <Variable Name="ManipulOsZ_M5_LimSnimacHorny" />
+            <Variable Name="ManipulOsZ_M5_LimSnimacSpodny" />
+            <Variable Name="Skrutkovacka_K40_ZASUNUTA" />
+            <Variable Name="Skrutkovacka_M5_Vakum_OK" />
+          </Variable>
+          <Variable Name="STAV">
+            <Variable Name="RR_Polohovanie_BUSY" />
+            <Variable Name="CistenieSkrutkovackyK40_BUSY" />
+          </Variable>
+          <Variable Name="PAR">
+            <Variable Name="RR_IndexPolohovaniaManipulatora" />
+            <Variable Name="ManipulOsY_JoggRychlost" />
+            <Variable Name="ManipulOsZ_M5_JoggRychlost" />
+            <Variable Name="Skrutkov_K40_AktualHodnVysunutia" />
+            <Variable Name="Skrutkov_K40_RoundHodnotaREAL" />
+          </Variable>
+          <Variable Name="ServoManipulOsY">
+            <Variable Name="Command">
+              <Variable Name="ErrReset" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="Ready" />
+              <Variable Name="ActPosition" />
+            </Variable>
+          </Variable>
+          <Variable Name="ServoManipulOsZ_M5">
+            <Variable Name="Command">
+              <Variable Name="ErrReset" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="Ready" />
+              <Variable Name="ActPosition" />
+            </Variable>
+          </Variable>
+          <Variable Name="SkrutSet_K40">
+            <Variable Name="IN">
+              <Variable Name="Brzda">
+                <Variable Name="ZakladnaPoloha" />
+                <Variable Name="PreletSkrutky" />
+                <Variable Name="SkrutkaPritomnaVBrzde" />
+                <Variable Name="PodajSkrutku" />
+              </Variable>
+              <Variable Name="VibracnyHrniec">
+                <Variable Name="PritomnostSkrutiekVHrnci" />
+                <Variable Name="VibracnaListaZaplnena" />
+                <Variable Name="PreletovySnimac" />
+              </Variable>
+            </Variable>
+            <Variable Name="Cmd">
+              <Variable Name="ManualPresunBrzdu" />
+              <Variable Name="ManualStartHrniec" />
+              <Variable Name="PodajSkrutku" />
+            </Variable>
+          </Variable>
+          <Variable Name="SkrutSet_M5">
+            <Variable Name="CMD">
+              <Variable Name="RR_ZapniZasobnik" />
+              <Variable Name="RR_ZapniVibrolistu" />
+              <Variable Name="RR_OtocPodavac_Vstup" />
+              <Variable Name="RR_OtocPodavac_Vystup" />
+            </Variable>
+            <Variable Name="IN">
+              <Variable Name="ZasobnikSkrutiekPrazdny" />
+              <Variable Name="ZaplnenieListyZasobnika" />
+              <Variable Name="ZaplnenieVibrolisty_MIN" />
+              <Variable Name="ZaplnenieVibrolisty_MAX" />
+              <Variable Name="PodavacOtoceny_VSTUP" />
+              <Variable Name="PodavacOtoceny_VYSTUP" />
+              <Variable Name="Podavac_SkrutkaNaVstupe" />
+              <Variable Name="Podavac_SkrutkaNaVystupe" />
+            </Variable>
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="Skrutkovacku_K40_VYSUN" />
+            <Variable Name="Skrutkovacka_K40_Prisavanie_ON" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_StoperSrobovania">
+          <Variable Name="CMD">
+            <Variable Name="RR_VysunCentrovanie" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="Centrovanie_VYSUNUTE" />
+            <Variable Name="Centrovanie_ZASUNUTE" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+          </Variable>
+          <Variable Name="RFID_hlava">
+            <Variable Name="PritomnostPaletky" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_HV_Test">
+          <Variable Name="CMD">
+            <Variable Name="RR_ZatvorTester" />
+            <Variable Name="RR_VysunCentrovanie" />
+            <Variable Name="RR_VysunPruzenieKontaktov" />
+            <Variable Name="OpatovnyTest" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="Centrovanie_VYSUNUTE" />
+            <Variable Name="Centrovanie_ZASUNUTE" />
+            <Variable Name="SpodneKontakty_ZASUNUTE" />
+            <Variable Name="SpodneKontakty_VYSUNUTE" />
+            <Variable Name="HorneKontakty_ZASUNUTE" />
+            <Variable Name="HorneKontakty_VYSUNUTE" />
+            <Variable Name="TypKonektoru_4F" />
+            <Variable Name="TypKonektoru_5F_5H" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+            <Variable Name="SpodneKontakty_ZASUN" />
+            <Variable Name="SpodneKontakty_VYSUN" />
+            <Variable Name="HorneKontakty_ZASUN" />
+            <Variable Name="HorneKontakty_VYSUN" />
+            <Variable Name="PritlacenieKontaktovTestera_ON" />
+            <Variable Name="PruzenieHornychKontaktov_VYSUN" />
+            <Variable Name="PruzenieHornychKontaktov_ZASUN" />
+          </Variable>
+          <Variable Name="RFID_hlava">
+            <Variable Name="PritomnostPaletky" />
+          </Variable>
+          <Variable Name="STAV">
+            <Variable Name="RR_SekvenciaTestera_BUSY" />
+            <Variable Name="PaletkaOznacena_NG" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_ZdvizkaPredLeakTestA">
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="Zdvizka_HornaPoloha" />
+            <Variable Name="Zdvizka_SpodnaPoloha" />
+            <Variable Name="Zdvizka_StrednaPoloha" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="TlmicPaletky_VYSUN" />
+            <Variable Name="Zdvizku_ZASUN" />
+            <Variable Name="Zdvizku_VYSUN" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_ZdvizkaPredLeakTestB">
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="PoziciaPaletky_OK" />
+            <Variable Name="Zdvizka_HornaPoloha" />
+            <Variable Name="Zdvizka_SpodnaPoloha" />
+            <Variable Name="Zdvizka_StrednaPoloha" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="Zdvizku_ZASUN" />
+            <Variable Name="Zdvizku_VYSUN" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_ZdvizkaZaLeakTestA">
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="PoziciaPaletky_OK" />
+            <Variable Name="Zdvizka_HornaPoloha" />
+            <Variable Name="Zdvizka_SpodnaPoloha" />
+            <Variable Name="Zdvizka_StrednaPoloha" />
+            <Variable Name="TlmicPaletky_ZASUNUTY" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="Zdvizku_ZASUN" />
+            <Variable Name="Zdvizku_VYSUN" />
+            <Variable Name="TlmicPaletky_VYSUN" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_ZdvizkaZaLeakTestB">
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="PoziciaPaletky_OK" />
+            <Variable Name="Zdvizka_HornaPoloha" />
+            <Variable Name="Zdvizka_SpodnaPoloha" />
+            <Variable Name="Zdvizka_StrednaPoloha" />
+            <Variable Name="TlmicPaletky_ZASUNUTY" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="Zdvizku_ZASUN" />
+            <Variable Name="Zdvizku_VYSUN" />
+            <Variable Name="TlmicPaletky_VYSUN" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_Vytah">
+          <Variable Name="RFID_hlava">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="PrecitajChipRFID" />
+            <Variable Name="ZapisNaChipRFID" />
+            <Variable Name="ZadaneCisloPaletky" />
+          </Variable>
+          <Variable Name="CMD">
+            <Variable Name="RR_ChodDopravnika_VPRED" />
+            <Variable Name="RR_ChodDopravnika_VZAD" />
+            <Variable Name="RR_ZdvihVytahu_HORE" />
+            <Variable Name="RR_ZdvihVytahu_DOLE" />
+          </Variable>
+          <Variable Name="IN">
+            <Variable Name="PrechodDopravnika" />
+            <Variable Name="ZdvihVytahu_HornyLimitnySnimac" />
+            <Variable Name="ZdvihVytahu_SpodnyLimitnySnimac" />
+          </Variable>
+          <Variable Name="Banner">
+            <Variable Name="OUT">
+              <Variable Name="Stlaceny" />
+            </Variable>
+          </Variable>
+          <Variable Name="ServoZdvihuVytahu">
+            <Variable Name="Command">
+              <Variable Name="ErrReset" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="Ready" />
+              <Variable Name="ActPosition" />
+            </Variable>
+          </Variable>
+          <Variable Name="PAR">
+            <Variable Name="RR_PrecitaneCisloPaletky" />
+            <Variable Name="Zdvih_JoggRychlost" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_SpodnyStoper">
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="ZaplnenieDopravnika" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="ZasunStoper" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_Dopravniky">
+          <Variable Name="OUT">
+            <Variable Name="VratnyDopravnik_ON" />
+            <Variable Name="PrednyDopravnikBunky_ON" />
+            <Variable Name="ZadnyDopravnikBunky_ON" />
+            <Variable Name="PriecnyDopravnik_VPRED" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_ZdvizkaZaFunkcTestA">
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="Zdvizka_HornaPoloha" />
+            <Variable Name="Zdvizka_SpodnaPoloha" />
+            <Variable Name="Zdvizka_StrednaPoloha" />
+            <Variable Name="TlmicPaletky_ZASUNUTY" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="Zdvizku_ZASUN" />
+            <Variable Name="Zdvizku_VYSUN" />
+            <Variable Name="TlmicPaletky_VYSUN" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_ZdvizkaZaFunkcTestB">
+          <Variable Name="IN">
+            <Variable Name="PritomnostPaletky" />
+            <Variable Name="Zdvizka_HornaPoloha" />
+            <Variable Name="Zdvizka_StrednaPoloha" />
+          </Variable>
+          <Variable Name="OUT">
+            <Variable Name="Zdvizku_VYSUN" />
+            <Variable Name="TlmicPaletky_VYSUN" />
+          </Variable>
+        </Variable>
+        <Variable Name="CAM2">
+          <Variable Name="RESULT">
+            <Variable Name="Paletka">
+              <Variable Name="Pritom_PowerCP_5F" />
+              <Variable Name="Pritom_PowerCP_4F" />
+              <Variable Name="Pritom_PowerCP_5H" />
+              <Variable Name="Pritomn_Skeletonu_5H" />
+              <Variable Name="Pritomn_Skeletonu_4F5F" />
+              <Variable Name="Pritom_Busbarov_Spodne_5H" />
+              <Variable Name="Pritom_Busbaru_Spodny_5F" />
+              <Variable Name="Pritom_Busbaru_Spodny_4F" />
+              <Variable Name="Pritom_DPS_4F5F" />
+              <Variable Name="Pritom_Foamu_Lavy_4F5F" />
+              <Variable Name="Pritom_Foamu_Pravy_4F5F" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="CAM6">
+          <Variable Name="RESULT">
+            <Variable Name="Paletka">
+              <Variable Name="Pritom_PowerCP_5H" />
+              <Variable Name="Pritom_PowerCP_4F" />
+              <Variable Name="Pritom_PowerCP_5F" />
+              <Variable Name="Pritom_DPS_45F" />
+              <Variable Name="Pritom_SpodnychBusbarov_5H" />
+              <Variable Name="Pritom_SpodnyBusbar_5F" />
+              <Variable Name="Pritom_SpodnyBusbar_4F" />
+              <Variable Name="Pritom_LavyFoam_4F5F" />
+              <Variable Name="Pritom_PravyFoam_4F5F" />
+            </Variable>
+            <Variable Name="PowerCP">
+              <Variable Name="Nepritom_LavyFoam_4F5F" />
+              <Variable Name="Nepritom_PravyFoam_4F5F" />
+              <Variable Name="Pritom_LavejSkrutkyK30" />
+              <Variable Name="Pritom_PravejSkrutkyK30" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="P2_ZaklTesn_KAM_Result_Ignoruj" />
+        <Variable Name="CAM17">
+          <Variable Name="RESULT">
+            <Variable Name="Paletka">
+              <Variable Name="Pritomn_TopCoveru_4F" />
+              <Variable Name="Pritomn_TopCoveru_5F" />
+              <Variable Name="Pritomn_TopCoveru_5H" />
+              <Variable Name="Pritomn_Busbary_5H" />
+              <Variable Name="Pritomn_Busbary_5F" />
+              <Variable Name="Pritomn_Busbary_4F" />
+              <Variable Name="Pritomn_LavyMVcase" />
+              <Variable Name="Pritomn_PravyMVcase" />
+              <Variable Name="Pritomn_PowerCP_4F" />
+              <Variable Name="Pritomn_PowerCP_5F" />
+              <Variable Name="Pritomn_PowerCP_5H" />
+              <Variable Name="PrazdnaPoziciaTopCoveru" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="CAM9">
+          <Variable Name="RESULT">
+            <Variable Name="PowerCP">
+              <Variable Name="PritomnBusbaru_5H" />
+              <Variable Name="PritomMatice" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="CAM10">
+          <Variable Name="RESULT">
+            <Variable Name="Paletka">
+              <Variable Name="Pritomn_Busbarov_45F" />
+              <Variable Name="Pritomn_Busbarov_5H" />
+              <Variable Name="Pritomn_PowerCP_5H" />
+              <Variable Name="Pritomn_PowerCP_4F" />
+              <Variable Name="Pritomn_PowerCP_5F" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="CAM12">
+          <Variable Name="RESULT">
+            <Variable Name="Paletka">
+              <Variable Name="Pritomn_TopCover_5H" />
+              <Variable Name="Pritomn_TopCover_4F" />
+              <Variable Name="Pritomn_TopCover_5F" />
+              <Variable Name="Pritomn_LavyMVcase" />
+              <Variable Name="Pritomn_PravyMVcase" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="P1_Srobov_KAM_Result_NG" />
+        <Variable Name="P1_Srobov_KAM_Result_OK" />
+        <Variable Name="P1_Srobov_KAM_Result_Ignoruj" />
+        <Variable Name="P2_Maticov_KAM_Result_NG" />
+        <Variable Name="P2_Maticov_KAM_Result_OK" />
+        <Variable Name="P2_Maticov_KAM_Result_Ignoruj" />
+        <Variable Name="P2_Srobov_KAM_Result_Ignoruj" />
+        <Variable Name="P2_Srobov_KAM_Result_NG" />
+        <Variable Name="P2_Srobov_KAM_Result_OK" />
+        <Variable Name="P3_Srobov_KAM_Result_Ignoruj" />
+        <Variable Name="P3_Srobov_KAM_Result_NG" />
+        <Variable Name="P3_Srobov_KAM_Result_OK" />
+        <Variable Name="P4_Vytah_KAM_Result_NG" />
+        <Variable Name="P4_Vytah_KAM_Result_OK" />
+        <Variable Name="P4_Vytah_KAM_Result_Ignoruj" />
+        <Variable Name="TRCB_P1_Srobov_OpatovnyDopyt" />
+        <Variable Name="TRCB_P1_Srobov_PaletkaNG" />
+        <Variable Name="TRCB_P2_Maticov_OpatovnyDopyt" />
+        <Variable Name="TRCB_P2_Maticov_PaletkaNG" />
+        <Variable Name="TRCB_P2_Srobov_OpatovnyDopyt" />
+        <Variable Name="TRCB_P2_Srobov_PaletkaNG" />
+        <Variable Name="TRCB_P2_ZaklTesn_OpatovnyDopyt" />
+        <Variable Name="TRCB_P2_ZaklTesn_PaletkaNG" />
+        <Variable Name="TRCB_P2_Zvaranie_OpatovnyDopyt" />
+        <Variable Name="TRCB_P2_Zvaranie_PaletkaNG" />
+        <Variable Name="TRCB_P3_LeakTestA_OpatovnyDopyt" />
+        <Variable Name="TRCB_P3_LeakTestA_PaletkaNG" />
+        <Variable Name="TRCB_P3_LeakTestB_OpatovnyDopyt" />
+        <Variable Name="TRCB_P3_LeakTestB_PaletkaNG" />
+        <Variable Name="TRCB_P3_Srobov_OpatovnyDopyt" />
+        <Variable Name="TRCB_P3_Srobov_PaletkaNG" />
+        <Variable Name="TRCB_P4_Etiketov_OpatovnyDopyt" />
+        <Variable Name="TRCB_P4_Etiketov_PaletkaNG" />
+        <Variable Name="TRCB_P4_Vytah_OpatovnyDopyt" />
+        <Variable Name="TRCB_P4_Vytah_PaletkaNG" />
+        <Variable Name="CAM14">
+          <Variable Name="RESULT">
+            <Variable Name="PowerCP">
+              <Variable Name="CitanieQRkodu_PowerCP_OK" />
+              <Variable Name="PrecitanyQRkod_PowerCP" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="CAM16">
+          <Variable Name="RESULT">
+            <Variable Name="Paletka">
+              <Variable Name="Pritomn_Busbarov_4F" />
+              <Variable Name="Pritomn_Busbarov_5F" />
+              <Variable Name="Pritomn_Busbarov_5H" />
+              <Variable Name="Pritomn_LavyMVcase" />
+              <Variable Name="Pritomn_PravyMVcase" />
+              <Variable Name="Pritomn_PowerCP" />
+              <Variable Name="PrazdnaPaletka" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="SC_P1_Robot">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P1_Dopravniky">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P1_AkumulacnyStoper">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P1_SpodnyStoper">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P1_Srobovanie">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P1_StoperSrobovania">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P1_Vytah">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_AkumulacnyStoper">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_Cistenie">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_Dopravniky">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_Robot">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_SpodnyStoper">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_Srobovanie">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_StoperMaticovacky">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_StoperSrobovania">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_StoperZaklTesnenia">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_StoperZvarania">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_ZakladacTesnenia">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P2_Zvaranie">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_Dopravniky">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_HV_Test">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_LeakageTestA">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_LeakageTestB">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_SpodnyStoper">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_Srobovanie">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_StoperSrobovania">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_ZdvizkaPredLeakTestA">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_ZdvizkaPredLeakTestB">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_ZdvizkaZaLeakTestA">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P3_ZdvizkaZaLeakTestB">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P4_Dopravniky">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P4_Etiketovacka">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P4_FunkcnyTestA">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P4_FunkcnyTestB">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P4_SpodnyStoper">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P4_Vytah">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P4_ZdvizkaZaFunkcTestA">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="SC_P4_ZdvizkaZaFunkcTestB">
+          <Variable Name="StepName" />
+        </Variable>
+        <Variable Name="P1_Vytah_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P2_Maticovacka_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P2_Skrutkovanie_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P2_ZakladanieTesnenia_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P2_Zvaranie_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_HVtest_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_LeakageTestA_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_LeakageTestB_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P3_Skrutkovanie_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_Etiketovanie_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_FinalTestA_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_FinalTestB_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P4_Vytah_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="P1_Skrutkovanie_Taktime">
+          <Variable Name="OUT">
+            <Variable Name="NameranyCas_v_Sekundach" />
+            <Variable Name="PriemernyCas_v_Sekundach" />
+            <Variable Name="StratoveSekundy" />
+          </Variable>
+        </Variable>
+        <Variable Name="TRCB_P1_Vytah_OpatovnyDopyt" />
+        <Variable Name="TRCB_P1_Vytah_PaletkaNG" />
       </GlobalVariables>
       <Task Name="P1_StoperS">
-        <Variable Name="Centrovacku_VYSUN" />
-        <Variable Name="Centrovacku_ZASUN" />
+        <Variable Name="P1_Skrutk_45F_DPS_M4_Vysunutie" />
+        <Variable Name="P1_Skrutk_45F_LavaK30_Vysunutie" />
+        <Variable Name="P1_Skrutk_45F_PravaK30_Vysunutie" />
+        <Variable Name="P1_Skrutk_45F_PrednaM4_Vysunutie" />
+        <Variable Name="P1_Skrutk_45F_ZadnaM4_Vysunutie" />
+        <Variable Name="P1_Skrutk_5H_LavaK30_Vysunutie" />
+        <Variable Name="P1_Skrutk_5H_LavaM5_Vysunutie" />
+        <Variable Name="P1_Skrutk_5H_PravaK30_Vysunutie" />
+        <Variable Name="P1_Skrutk_5H_PravaM5_Vysunutie" />
+        <Variable Name="P1_Skrutk_5H_StrednaM5_Vysunutie" />
+      </Task>
+      <Task Name="P2_StoperS">
+        <Variable Name="P2_Skrutk_45F_LavaM4_Vysunutie" />
+        <Variable Name="P2_Skrutk_45F_LavaM6_Vysunutie" />
+        <Variable Name="P2_Skrutk_45F_PravaM4_Vysunutie" />
+        <Variable Name="P2_Skrutk_45F_PravaM6_Vysunutie" />
+        <Variable Name="P2_Skrutk_5H_LavaM5_Vysunutie" />
+        <Variable Name="P2_Skrutk_5H_PravaM5_Vysunutie" />
+        <Variable Name="P2_Skrutk_5H_StrednaM4_Vysunutie" />
+      </Task>
+      <Task Name="P3_StoperS">
+        <Variable Name="P3_Skrutk_45F_StredK40_Vysunutie" />
+        <Variable Name="P3_Skrutk_45F_StredM5_Vysunutie" />
+        <Variable Name="P3_Skrutk_5H_StredM5_Vysunutie" />
+      </Task>
+      <Task Name="P2_StoperM">
+        <Variable Name="P2_Maticovacka_5H_Vysunutie" />
       </Task>
     </Module>
   </DefaultView>

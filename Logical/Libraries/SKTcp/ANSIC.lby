@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
-<Library Version="1.00.8" SubType="ANSIC" Description="Panasonic TCP Client Traceabilita" xmlns="http://br-automation.co.at/AS/Library">
+<Library Version="1.00.9" SubType="ANSIC" Description="Panasonic TCP Client Traceabilita" xmlns="http://br-automation.co.at/AS/Library">
   <Files>
     <File Description="Exported data types">Types.typ</File>
     <File Description="Exported constants">Constants.var</File>
@@ -13,8 +13,8 @@
     <File Description="SKTcpClientEdge">SKTcpClientEdge.c</File>
     <File Description="SKTcpClientNewCsvEntry">SKTcpClientNewCsvEntry.c</File>
     <File Description="SKTcpClientNewLoggerEntry">SKTcpClientNewLoggerEntry.c</File>
-    <File Description="SKTcpClientFTP">SKTcpClientFTP.c</File>
     <File Description="SKTcpClientSC">SKTcpClientSC.c</File>
+    <File Description="SKTcpLogger">SKTcpLogger.c</File>
   </Files>
   <Dependencies>
     <Dependency ObjectName="AsBrStr" />

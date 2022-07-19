@@ -8,4 +8,5 @@ VAR
 	i : USINT;
 	CasEnable_1 : TON;
 	CasResetServo_1 : TON := (0);
+	TEST : BOOL := 0;
 END_VAR

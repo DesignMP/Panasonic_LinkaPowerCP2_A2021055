@@ -54,8 +54,6 @@ PROGRAM _CYCLIC
 		P2_Zvaranie.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_Zvaranie.Step:= 0;
-	ELSIF NOT P2_Zvaranie.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
-		SC_P2_Zvaranie.Step:= 0;
 	END_IF	
 	
 	
@@ -607,7 +605,7 @@ PROGRAM _CYCLIC
 			SC_P2_Zvaranie.AlarmTime.PT:= T#5s;
 			SC_P2_Zvaranie.IdleTime.IN:= TRUE;
 			
-			IF NOT P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition AND SC_P2_Zvaranie.IdleTime.Q THEN
+			IF NOT P2_Zvaranie.ServoZdvihuZvarania.Status.InPosition THEN
 				SC_P2_Zvaranie.ResetStep:= TRUE;
 				SC_P2_Zvaranie.Step:= 208;
 			END_IF

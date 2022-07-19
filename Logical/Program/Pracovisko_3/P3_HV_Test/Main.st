@@ -1,6 +1,7 @@
 
 PROGRAM _INIT
-	(* Insert code here *)
+	
+	 P3_HV_Test.PAR.CisloPortuKlienta:= 1031;
 	 
 END_PROGRAM
 
@@ -24,8 +25,6 @@ PROGRAM _CYCLIC
 		P3_HV_Test.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P3_HV_Test.Step:= 0;
-	ELSIF NOT P3_HV_Test.Manual AND NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
-		SC_P3_HV_Test.Step:= 0;	
 	END_IF	
 	
 	
@@ -50,15 +49,18 @@ PROGRAM _CYCLIC
 			P3_HV_Test.OUT.SpodneKontakty_VYSUN:= FALSE;
 			P3_HV_Test.OUT.SpodneKontakty_ZASUN:= TRUE;
 			P3_HV_Test.RFID_hlava.PrecitajChipRFID:= FALSE;
-			P3_HV_Test.CMD.RR_OtvorTester:= FALSE;
 			P3_HV_Test.CMD.RR_ZatvorTester:= FALSE;
 			P3_HV_Test.CMD.StartTestovania:= FALSE;
-			
-			
+			P3_HV_Test.CMD.RR_VysunPruzenieKontaktov:= FALSE;
+			P3_HV_Test.STAV.RR_SekvenciaTestera_BUSY:= FALSE;
+			P3_HV_Test.CMD.OpatovnyTest:= FALSE;
+			P34_Vizu.ZobrazHL1_HVtest:= FALSE;
 			P3_StoperSrobovania.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P3_HV_Test.STAV.PrebiehaVyvezeniePaletky:= FALSE;
+			P3_HV_Test.STAV.PaletkaOznacena_NG:= FALSE;
 			TestovaciKus:= FALSE;
-			
+			P3_HVtest_Taktime.IN.START_MeraniaCasu:= FALSE;
+			P3_HVtest_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 			
 			PocetDopytovNaTester:= 0;
 		
@@ -234,8 +236,11 @@ PROGRAM _CYCLIC
 			SC_P3_HV_Test.IdleTime.PT:= T#200ms;
 			SC_P3_HV_Test.AlarmTime.PT:= T#5s;
 		
-		
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				P3_HV_Test.STAV.PoINIT:= TRUE;
 				SC_P3_HV_Test.ResetStep:= TRUE;
 				SC_P3_HV_Test.Step:= 560;
@@ -248,7 +253,11 @@ PROGRAM _CYCLIC
 				P3_HV_Test.STAV.PoINIT:= TRUE;
 				SC_P3_HV_Test.ResetStep:= TRUE;
 				SC_P3_HV_Test.Step:= 560;
-			ELSIF Paletka[i].STAV.StavPaletky = 'REV' THEN
+			ELSIF Paletka[i].STAV.StavPaletky = 'REV' AND Paletka[i].STAV.CisloRevorkovejStanice = 'ST_7_HV' THEN
+				P3_HV_Test.STAV.PoINIT:= TRUE;
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 110;
+			ELSIF Paletka[i].STAV.StavPaletky = 'REV' AND Paletka[i].STAV.CisloRevorkovejStanice <> 'ST_7_HV' THEN
 				P3_HV_Test.STAV.PoINIT:= TRUE;
 				SC_P3_HV_Test.ResetStep:= TRUE;
 				SC_P3_HV_Test.Step:= 560;
@@ -289,7 +298,17 @@ PROGRAM _CYCLIC
 			IF P3_HV_Test.RFID_hlava.PritomnostPaletky THEN
 				P3_StoperSrobovania.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			END_IF
-                
+             
+			IF NOT SC_P3_HV_Test.Switch1 AND P3_HV_Test.RFID_hlava.PritomnostPaletky THEN
+				P3_HVtest_Taktime.IN.START_MeraniaCasu:= TRUE;
+				P3_HVtest_Taktime.IN.ZAPIS_MeraniaCasu:= TRUE;
+				P3_HVtest_Taktime.IN.ZAPIS_StratovyCas:= TRUE;
+				Buffer_8.Hodnota:= P3_HVtest_Taktime.OUT.StratoveSekundy;
+				Buffer_8.ZapisHodnotu:= TRUE;
+				SC_P3_HV_Test.Switch1:= TRUE;
+			END_IF	
+			
+			
 			           
 			IF P3_HV_Test.KoniecCyklu THEN
 				SC_P3_HV_Test.ResetStep:= TRUE;
@@ -339,8 +358,11 @@ PROGRAM _CYCLIC
 			SC_P3_HV_Test.IdleTime.PT:= T#200ms;
 			SC_P3_HV_Test.AlarmTime.PT:= T#5s;
 		
-		
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				SC_P3_HV_Test.ResetStep:= TRUE;
 				SC_P3_HV_Test.Step:= 560;
 			ELSIF Paletka[i].STAV.StavPaletky = 'TEST' AND Paletka[i].STAV.CisloTestovacejStanice = 'ST_7' THEN
@@ -350,9 +372,12 @@ PROGRAM _CYCLIC
 			ELSIF Paletka[i].STAV.StavPaletky = 'TEST' AND Paletka[i].STAV.CisloTestovacejStanice <> 'ST_7' THEN 
 				SC_P3_HV_Test.ResetStep:= TRUE;
 				SC_P3_HV_Test.Step:= 560;
-			ELSIF Paletka[i].STAV.StavPaletky = 'REV' THEN
+			ELSIF Paletka[i].STAV.StavPaletky = 'REV' AND Paletka[i].STAV.CisloRevorkovejStanice = 'ST_7_HV' THEN
 				SC_P3_HV_Test.ResetStep:= TRUE;
-				SC_P3_HV_Test.Step:= 560;
+				SC_P3_HV_Test.Step:= 110;
+			ELSIF Paletka[i].STAV.StavPaletky = 'REV' AND Paletka[i].STAV.CisloRevorkovejStanice <> 'ST_7_HV' THEN
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 560;	
 			ELSIF Paletka[i].STAV.StavPaletky = 'OK' THEN
 				SC_P3_HV_Test.ResetStep:= TRUE;
 				SC_P3_HV_Test.Step:= 110;
@@ -385,7 +410,7 @@ PROGRAM _CYCLIC
 		
 		113:
 			SC_P3_HV_Test.StepName:='113 - Automaticky Rezim - vysunutie pruzenia hornych kontaktov';
-			SC_P3_HV_Test.IdleTime.PT:= T#500ms;
+			SC_P3_HV_Test.IdleTime.PT:= T#300ms;
 			SC_P3_HV_Test.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P3_HV_Test.Switch1 THEN
@@ -442,11 +467,11 @@ PROGRAM _CYCLIC
 			SC_P3_HV_Test.IdleTime.IN:= TRUE;
 		
 			IF SC_P3_HV_Test.IdleTime.Q THEN
-				IF P3_HV_Test.CMD.RR_ZatvorTester THEN
-					P3_HV_Test.CMD.RR_ZatvorTester:= FALSE;
-					P3_HV_Test.CMD.RR_OtvorTester:= FALSE;
-					SC_P3_HV_Test.ResetStep:= TRUE;
-					SC_P3_HV_Test.Step:= 700;
+				IF P3_HV_Test.Manual THEN
+					IF NOT P3_HV_Test.CMD.RR_ZatvorTester THEN
+						SC_P3_HV_Test.ResetStep:= TRUE;
+						SC_P3_HV_Test.Step:= 140;
+					END_IF	
 				ELSE	
 					SC_P3_HV_Test.ResetStep:= TRUE;
 					SC_P3_HV_Test.Step:= 130;
@@ -461,16 +486,18 @@ PROGRAM _CYCLIC
 			SC_P3_HV_Test.AlarmTime.PT:= T#5s;
 		
 			SC_P3_HV_Test.IdleTime.IN:= TRUE;
-			
-			IF Linka.KOM_Panatrace_OFF AND SC_P3_HV_Test.IdleTime.Q THEN
-				SC_P3_HV_Test.ResetStep:= TRUE;
-				SC_P3_HV_Test.Step:= 140;
-			ELSIF NOT Linka.KOM_Panatrace_OFF THEN	
+			IF Linka.KOM_Panatrace_OFF THEN
+				IF SC_P3_HV_Test.IdleTime.Q THEN
+					SC_P3_HV_Test.ResetStep:= TRUE;
+					SC_P3_HV_Test.Step:= 140;
+				END_IF
+			ELSE	
 				P3_HV_Test.STAV.Vysledok_HV_Testu:= '';
 				P3_HV_Test.CMD.StartTestovania:= TRUE;
+				P3_HVtest_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P3_HV_Test.ResetStep:= TRUE;
 				SC_P3_HV_Test.Step:= 133;
-			END_IF	
+			END_IF
 		
 		133:
 			SC_P3_HV_Test.StepName:='133 - Automaticky Rezim - cakam na ukoncenie HV testu';
@@ -478,12 +505,13 @@ PROGRAM _CYCLIC
 			SC_P3_HV_Test.AlarmTime.PT:= T#5s;
 		
 			IF P3_HV_Test.STAV.TestovanieUkoncene THEN
+				P3_HVtest_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				Paletka[i].STAV.HV_Test_Ukonceny:= TRUE;
 				P3_HV_Test.CMD.StartTestovania:= FALSE;
 				IF Paletka[i].STAV.StavPaletky = 'TEST' THEN
 					SC_P3_HV_Test.ResetStep:= TRUE;
 					SC_P3_HV_Test.Step:= 135;
-				ELSIF Paletka[i].STAV.StavPaletky = 'OK' THEN	
+				ELSE 
 					IF P3_HV_Test.STAV.Vysledok_HV_Testu = 'OK' THEN
 						Paletka[i].STAV.StavPaletky:= 'OK';
 					ELSIF P3_HV_Test.STAV.Vysledok_HV_Testu = 'NG' THEN
@@ -492,9 +520,37 @@ PROGRAM _CYCLIC
 					SC_P3_HV_Test.ResetStep:= TRUE;
 					SC_P3_HV_Test.Step:= 135;
 				END_IF
+			ELSIF P3_HV_Test.STAV.TesterNeodpoveda THEN
+				P3_HV_Test.CMD.StartTestovania:= FALSE;
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 134;
 			END_IF	
 						
 		
+		134:
+			SC_P3_HV_Test.StepName:='134 - Automaticky Rezim - zobrazenie hlasenia tester neodpoveda';
+			SC_P3_HV_Test.IdleTime.PT:= T#1s;
+			SC_P3_HV_Test.AlarmTime.PT:= T#5s;
+			
+			P34_Vizu.ZobrazHL1_HVtest:= TRUE;
+			
+			IF P3_HV_Test.CMD.OpatovnyTest THEN
+				P3_HV_Test.CMD.OpatovnyTest:= FALSE;
+				P34_Vizu.ZobrazHL1_HVtest:= FALSE;
+				IF P3_HV_Test.PAR.CisloPortuKlienta < 1039 THEN
+					P3_HV_Test.PAR.CisloPortuKlienta:= P3_HV_Test.PAR.CisloPortuKlienta + 1;
+				ELSE
+					P3_HV_Test.PAR.CisloPortuKlienta:= 1031;
+				END_IF	
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 130;
+			ELSIF P3_HV_Test.STAV.PaletkaOznacena_NG THEN
+				P3_HV_Test.STAV.PaletkaOznacena_NG:= FALSE;
+				P34_Vizu.ZobrazHL1_HVtest:= FALSE;
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 135;
+			END_IF	
 		
 		135:
 			SC_P3_HV_Test.StepName:='135 - Automaticky Rezim - cakam na zrusenie signalu HV test ukonceny';
@@ -583,9 +639,8 @@ PROGRAM _CYCLIC
 		
 				
 			IF P3_HV_Test.IN.Centrovanie_ZASUNUTE THEN
-				IF P3_HV_Test.CMD.RR_OtvorTester THEN
-					P3_HV_Test.CMD.RR_OtvorTester:= FALSE;
-					P3_HV_Test.CMD.RR_ZatvorTester:= FALSE;
+				IF P3_HV_Test.Manual THEN
+					P3_HV_Test.STAV.RR_SekvenciaTestera_BUSY:= FALSE;
 					SC_P3_HV_Test.ResetStep:= TRUE;
 					SC_P3_HV_Test.Step:= 700;
 				ELSE	
@@ -656,23 +711,31 @@ PROGRAM _CYCLIC
 			SC_P3_HV_Test.AlarmTime.PT:= T#5s;
 		
 		
-			//Otváranie a zatváranie testera//
+			//Sekvencia zatvorenia testera//
 			IF P3_HV_Test.CMD.RR_ZatvorTester THEN
-				IF P3_HV_Test.RFID_hlava.PritomnostPaletky THEN 
-					SC_P3_HV_Test.ResetStep:= TRUE;
-					SC_P3_HV_Test.Step:= 110;
-				ELSE
-					P3_HV_Test.CMD.RR_ZatvorTester:= FALSE;
-				END_IF	
-			ELSIF P3_HV_Test.CMD.RR_OtvorTester THEN
-				IF P3_HV_Test.RFID_hlava.PritomnostPaletky THEN 
-					SC_P3_HV_Test.ResetStep:= TRUE;
-					SC_P3_HV_Test.Step:= 140;
-				ELSE
-					P3_HV_Test.CMD.RR_OtvorTester:= FALSE;
-				END_IF	
+				P3_HV_Test.STAV.RR_SekvenciaTestera_BUSY:= TRUE;
+				SC_P3_HV_Test.ResetStep:= TRUE;
+				SC_P3_HV_Test.Step:= 110;
 			END_IF	
 		
+		
+			//Ovládanie zdvižky//
+			IF P3_HV_Test.CMD.RR_VysunCentrovanie THEN
+				P3_HV_Test.OUT.Centrovanie_VYSUN:= TRUE;
+				P3_HV_Test.OUT.Centrovanie_ZASUN:= FALSE;
+			ELSE
+				P3_HV_Test.OUT.Centrovanie_VYSUN:= FALSE;
+				P3_HV_Test.OUT.Centrovanie_ZASUN:= TRUE;
+			END_IF	
+		
+			//Ovládanie pruženia horných kontaktov//
+			IF P3_HV_Test.CMD.RR_VysunPruzenieKontaktov THEN
+				P3_HV_Test.OUT.PruzenieHornychKontaktov_ZASUN:= FALSE;
+				P3_HV_Test.OUT.PruzenieHornychKontaktov_VYSUN:= TRUE;
+			ELSE
+				P3_HV_Test.OUT.PruzenieHornychKontaktov_ZASUN:= TRUE;
+				P3_HV_Test.OUT.PruzenieHornychKontaktov_VYSUN:= FALSE;
+			END_IF	
 		
 		
 	END_CASE

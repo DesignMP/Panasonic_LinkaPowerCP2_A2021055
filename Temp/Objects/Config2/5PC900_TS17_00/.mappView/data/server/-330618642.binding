@@ -38,21 +38,6 @@
   </Content>
   <Content id="AreaPageManualP2_Maticovacka">
     <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.CMD.RR_Maticovacku_VYSUN" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-</Binding><Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.CMD.RR_Maticovacku_VYSUN" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-</Binding>
-  </Content>
-  <Content id="AreaPageManualP2_Maticovacka">
-    <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.PAR.Maticov_M4_AktualHodnVysunutia" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_NumericOutput2" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-</Binding>
-  </Content>
-  <Content id="AreaPageManualP2_Maticovacka">
-    <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.IN.Maticovacka_M4_ZASUNUTA" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 <Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ImageList11" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding>
@@ -70,15 +55,6 @@
 </Binding><Binding mode="oneWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.RR_VysunPodavacMatic" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 <Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK31" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-</Binding>
-  </Content>
-  <Content id="AreaPageManualP2_Maticovacka">
-    <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.CMD.RR_PrisavanieMaticeM4_ON" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-</Binding><Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.CMD.RR_PrisavanieMaticeM4_ON" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding>
   </Content>
   <Content id="AreaPageManualP2_Maticovacka">
@@ -142,6 +118,36 @@
     <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.SkrutSet_MaticaM4.IN.Oddelovac_SnimPrechoduMatice" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 <Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ImageList32" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="AreaPageManualP2_Maticovacka">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding><Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_PrisavanieSkrutkyK30" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="AreaPageManualP2_Maticovacka">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding><Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="AreaPageManualP2_Maticovacka">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.PAR.Maticov_M4_RoundHodnotaREAL" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_NumericOutput2" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="AreaPageManualP2_Maticovacka">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_VysunutiaMaticovacM4_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP2_Maticovacka_ToggleSwitch_VysunutieSkrutkovackyK30" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding>
   </Content>
 </BindingDefinition>

@@ -42,8 +42,7 @@ PROGRAM _CYCLIC
 		(Safety.STAV.P4_Bunka_Zamky_AKTIVNE OR Safety.STAV.P4_VyblokovanieZamkov_AKTIVNE) AND
 		NOT Safety.STAV.P4_ZonaBunky_AKTIVNA AND
 		(Safety.STAV.P4_Bunka_VstupBariera_AKTIVNA OR Safety.STAV.P3_Bunka_Zamky_AKTIVNE)AND
-		Safety.STAV.P4_VystupBunky_VstupBar_AKTIVNA AND
-		Safety.STAV.P4_VystupBunky_VystupBar_AKTIVNA THEN
+		(Safety.STAV.P4_VystupBunky_VstupBar_AKTIVNA OR Safety.STAV.P4_VystupBunky_VystupBar_AKTIVNA) THEN
 		Safety.OUT.P4_ResetZonyBunky:= TRUE;
 	ELSE
 		Safety.OUT.P4_ResetZonyBunky:= FALSE;

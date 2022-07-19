@@ -1,11 +1,9 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P1_OvladVi 
 Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=5 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                  Safety                               Safety_typ    0 "                                                               *"    0   24    1    0    0    1         
-                                    STAV                          Safety_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
-                 Linka_SafetyPLC_Nabehlo                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
                                  P1_Vizu                              P1_Vizu_typ    0 "                                                               *"    0   24    1    0    0    1         
+                              ActualPage                               STRING[80]    0 "                                                 'PageAutomatP1'"    1    9   81    1    0    0         
                                   GoPage                               STRING[80]    0 "                                                              ''"    1    9   81    1    0    0         
-                           P1_Pracovisko                        P1_Pracovisko_typ    0 "                                                               *"    0   24    1    0    0    1         
-                                    STAV                   P1_Pracovisko_STAV_typ    0 "                                                               *"    1   24    1    0    0    1         
-                                 PORUCHA                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                   Linka                                Linka_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     PAR                            Linka_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
+                            RevorkovyKus                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         

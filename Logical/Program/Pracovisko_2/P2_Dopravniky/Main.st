@@ -73,23 +73,28 @@ PROGRAM _CYCLIC
 			SC_P2_Dopravniky.AlarmTime.PT:= T#5s;
 			
 			
-			IF P2_StoperZaklTesnenia.RFID_hlava.PritomnostPaletky AND P2_StoperMaticovacky.RFID_hlava.PritomnostPaletky AND P2_AkumulacnyStoper.IN.PritomnostPaletky AND P2_StoperSrobovania.RFID_hlava.PritomnostPaletky AND P2_StoperZvarania.RFID_hlava.PritomnostPaletky AND P2_SpodnyStoper.IN.PritomnostPaletky THEN
+			IF P2_StoperZaklTesnenia.RFID_hlava.PritomnostPaletky AND
+				P2_StoperMaticovacky.RFID_hlava.PritomnostPaletky AND
+				P2_AkumulacnyStoper.IN.PritomnostPaletky AND
+				P2_StoperSrobovania.RFID_hlava.PritomnostPaletky AND
+				P2_StoperZvarania.RFID_hlava.PritomnostPaletky AND
+				P2_SpodnyStoper.IN.PritomnostPaletky THEN
 				SC_P2_Dopravniky.ResetStep:= TRUE;
 				SC_P2_Dopravniky.Step:= 5;
 			ELSE
 				IF NOT P2_StoperZaklTesnenia.RFID_hlava.PritomnostPaletky THEN
 					P2_StoperZaklTesnenia.OUT.ZasunStoper:= TRUE;
 				END_IF	
-				IF NOT P2_StoperMaticovacky.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P2_StoperMaticovacky.RFID_hlava.PritomnostPaletky AND P2_StoperMaticovacky.IN.Centrovanie_ZASUNUTE THEN
 					P2_StoperMaticovacky.OUT.ZasunStoper:= TRUE;
 				END_IF
 				IF NOT P2_AkumulacnyStoper.IN.PritomnostPaletky THEN
 					P2_AkumulacnyStoper.OUT.ZasunStoper:= TRUE;
 				END_IF
-				IF NOT P2_StoperSrobovania.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P2_StoperSrobovania.RFID_hlava.PritomnostPaletky AND P2_StoperSrobovania.IN.Centrovanie_ZASUNUTE THEN
 					P2_StoperSrobovania.OUT.ZasunStoper:= TRUE;
 				END_IF
-				IF NOT P2_StoperZvarania.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P2_StoperZvarania.RFID_hlava.PritomnostPaletky AND P2_StoperZvarania.IN.Centrovanie_ZASUNUTE THEN
 					P2_StoperZvarania.OUT.ZasunStoper:= TRUE;
 				END_IF	
 				IF NOT P2_SpodnyStoper.IN.PritomnostPaletky THEN

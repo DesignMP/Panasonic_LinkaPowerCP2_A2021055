@@ -15,6 +15,12 @@
 		z-index: 0;
 }
 #AreaTimeP2_Rectangle1 {
+		border-width: 2px;
+}
+#AreaTimeP2_Rectangle1 {
+	@include border-radius(10px);
+}
+#AreaTimeP2_Rectangle1 {
 		background-color: rgba(153, 180, 209, 1);
 }
 #AreaTimeP2_Line1 {

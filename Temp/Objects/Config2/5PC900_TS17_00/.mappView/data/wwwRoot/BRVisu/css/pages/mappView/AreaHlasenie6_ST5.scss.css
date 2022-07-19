@@ -1,0 +1,201 @@
+#AreaHlasenie6_ST5_GroupBox1 {
+  top: 0px;
+  position: absolute;
+}
+
+#AreaHlasenie6_ST5_GroupBox1 {
+  left: 0px;
+  position: absolute;
+}
+
+#AreaHlasenie6_ST5_GroupBox1 {
+  width: 500px;
+}
+
+#AreaHlasenie6_ST5_GroupBox1 {
+  height: 300px;
+}
+
+#AreaHlasenie6_ST5_GroupBox1 {
+  z-index: 0;
+}
+
+#AreaHlasenie6_ST5_GroupBox1 {
+  border-width: 6px;
+}
+
+#AreaHlasenie6_ST5_GroupBox1 > .header {
+  border-width: 6px;
+}
+
+#AreaHlasenie6_ST5_GroupBox1 {
+  border-radius: 0px;
+}
+
+#AreaHlasenie6_ST5_GroupBox1 {
+  background-color: #ffc080;
+}
+
+#AreaHlasenie6_ST5_Label1 {
+  top: 81px;
+  position: absolute;
+}
+
+#AreaHlasenie6_ST5_Label1 {
+  left: 21px;
+  position: absolute;
+}
+
+#AreaHlasenie6_ST5_Label1 {
+  width: 450px;
+}
+
+#AreaHlasenie6_ST5_Label1 {
+  height: 100px;
+}
+
+#AreaHlasenie6_ST5_Label1 {
+  z-index: 0;
+}
+
+#AreaHlasenie6_ST5_Label1 span {
+  color: black;
+}
+
+#AreaHlasenie6_ST5_Label1 {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#AreaHlasenie6_ST5_Label1 {
+  font-size: 25px;
+}
+
+#AreaHlasenie6_ST5_Label1 {
+  font-weight: bold;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  top: 21px;
+  position: absolute;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  left: 71px;
+  position: absolute;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  width: 350px;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  height: 40px;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  z-index: 1;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  border-width: 2px;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  border-radius: 2px;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  background-color: darkgray;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  border-color: black;
+}
+
+#AreaHlasenie6_ST5_Label2:before {
+  border-color: black;
+}
+
+#AreaHlasenie6_ST5_Label2:after {
+  border-color: black;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  border-style: solid;
+}
+
+#AreaHlasenie6_ST5_Label2:before {
+  border-style: solid;
+}
+
+#AreaHlasenie6_ST5_Label2:after {
+  border-style: solid;
+}
+
+#AreaHlasenie6_ST5_Label2 span {
+  color: black;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  font-size: 20px;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  font-weight: bold;
+}
+
+#AreaHlasenie6_ST5_Label2 {
+  box-shadow: 2px 2px 10px black;
+}
+
+#AreaHlasenie6_ST5_Button_Close {
+  top: 211px;
+  position: absolute;
+}
+
+#AreaHlasenie6_ST5_Button_Close {
+  left: 161px;
+  position: absolute;
+}
+
+#AreaHlasenie6_ST5_Button_Close {
+  width: 170px;
+}
+
+#AreaHlasenie6_ST5_Button_Close {
+  height: 45px;
+}
+
+#AreaHlasenie6_ST5_Button_Close {
+  z-index: 2;
+}
+
+#AreaHlasenie6_ST5_Button_Close:not(.disabled):not(.active):not(.checked) {
+  background-image: linear-gradient(to bottom, rgba(255, 192, 192, 1) 20%,rgba(255,0,0,1) 100%);
+}
+
+#AreaHlasenie6_ST5_Button_Close span {
+  font-size: 18px;
+}
+
+#AreaHlasenie6_ST5_Button_Close:not(.active):not(.checked) {
+  box-shadow: 2px 2px 10px black;
+}
+
+#AreaHlasenie6_ST5_Button_Close.disabled.active {
+  box-shadow: 2px 2px 10px black;
+}
+
+#AreaHlasenie6_ST5_Button_Close.disabled.checked {
+  box-shadow: 2px 2px 10px black;
+}

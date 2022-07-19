@@ -121,5 +121,9 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_OvladSkrutkovSetuK30_ENABLE" attribute="value" />
 <Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ToggleSwitch_OvladanieBrzdy_K30" attribute="enable" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.SkrutSet_K30.IN.Brzda.PodajSkrutku" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page3" widgetRefId="ImageList27" attribute="selectedIndex" />
+</Binding>
 </Bindings>
 </BindingsSet>

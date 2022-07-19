@@ -1,7 +1,8 @@
 
 PROGRAM _INIT
 	(* Insert code here *)
-    SKTcpClientTrace_1.Params.IPportClient := 23000;
+	SKTcpClientTrace_1.Params.IPportClient := 23000;
+	SKTcpClientTrace_1.Cmd.LoggerOn:= FALSE;
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -9,23 +10,23 @@ PROGRAM _CYCLIC
 	
 	//Priradenie indexu paletky//
     a:= P4_Vytah.PAR.CisloPaletky;
-	
+	P4_Vytah.PAR.CisloPaletky_STRING:= USINT_TO_STRING(a);
 	
 	
     //Parametre komunikácie//
-    memcpy(ADR(SKTcpClientTrace_1.Params.IPaddrServ),ADR('192.168.122.250'),SIZEOF('192.168.122.250'));
+    memcpy(ADR(SKTcpClientTrace_1.Params.IPaddrServ),ADR('192.168.128.250'),SIZEOF('192.168.128.250'));
 
 	
     SKTcpClientTrace_1.Params.IPportServ := 12000;
-    SKTcpClientTrace_1.Params.RecvTimeout := 10000;
+	
+	SKTcpClientTrace_1.pDevice := ADR('HDD_LOGGER');
+	SKTcpClientTrace_1.pFile := ADR('logger_sktcpclienttrace_10.log');
     SKTcpClientTrace_1();
 	
     //Parametre komunikácie//
     //Vstupy pre server//
     SKTcpClientTrace_1.Params.Packet.type := TRCB_P4_Vytah_ST10.INPUTS.TYP_Prikazu;
     SKTcpClientTrace_1.Params.Packet.workplace := TRCB_P4_Vytah_ST10.INPUTS.CisloStanice;
-    TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky:= 'Pal';
-    brsstrcat(ADR(TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky), ADR(P4_Vytah.PAR.CisloPaletky_STRING));
     SKTcpClientTrace_1.Params.Packet.rfid := TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky;
     SKTcpClientTrace_1.Params.Packet.master := TRCB_P4_Vytah_ST10.INPUTS.QRkodPowerCP;
     SKTcpClientTrace_1.Params.Packet.dps1:= TRCB_P4_Vytah_ST10.INPUTS.QRkodFiltra;
@@ -59,20 +60,21 @@ PROGRAM _CYCLIC
     SequenceControl(SC:= SC_KOM_Server);
 	
       
+	
     
     CASE SC_KOM_Server.Step OF
 		
         0:
             SC_KOM_Server.StepName:= '0 - Nulovanie';
             SKTcpClientTrace_1.Cmd.Send:= FALSE;
-            SKTcpClientTrace_1.Cmd.Close:= FALSE;
             TRCB_P4_Vytah_ST10.CMD.VyziadajStavPaletky_TYP1:= FALSE;
             TRCB_P4_Vytah_ST10.CMD.PriradQRkodFiltra_TYP3:= FALSE;
             TRCB_P4_Vytah_ST10.CMD.VyziadajCisloEtikety_TYP0:= FALSE;
 			TRCB_P4_Vytah_ST10.CMD.OdosliStavPaletky_TYP2:= FALSE;
 			TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
             TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena:= FALSE;
-            TRCB_P4_Vytah_ST10.STATUS.KomunikaciaError:= FALSE;
+			TRCB_P4_Vytah_ST10.STATUS.KomunikaciaError:= FALSE;
+			TRCB_P4_Vytah_ST10.STATUS.KOM_READY:= FALSE;
             PocetDopytovNaServer:= 0;
             
             
@@ -90,15 +92,21 @@ PROGRAM _CYCLIC
 	
         1:
             SC_KOM_Server.StepName:= '1 - Rozhodnutie o cinnosti';
-            IF TRCB_P4_Vytah_ST10.CMD.VyziadajStavPaletky_TYP1 THEN
-                SC_KOM_Server.Step:= 10;
+            TRCB_P4_Vytah_ST10.STATUS.KOM_READY:= TRUE;
+			IF TRCB_P4_Vytah_ST10.CMD.VyziadajStavPaletky_TYP1 THEN
+                TRCB_P4_Vytah_ST10.STATUS.KOM_READY:= FALSE;
+				SC_KOM_Server.Step:= 10;
             ELSIF TRCB_P4_Vytah_ST10.CMD.PriradQRkodFiltra_TYP3 THEN
-                SC_KOM_Server.Step:= 20;
+                TRCB_P4_Vytah_ST10.STATUS.KOM_READY:= FALSE;
+				SC_KOM_Server.Step:= 20;
             ELSIF TRCB_P4_Vytah_ST10.CMD.VyziadajCisloEtikety_TYP0 THEN
-                SC_KOM_Server.Step:= 30;
+                TRCB_P4_Vytah_ST10.STATUS.KOM_READY:= FALSE;
+				SC_KOM_Server.Step:= 30;
             ELSIF TRCB_P4_Vytah_ST10.CMD.OdosliStavPaletky_TYP2 THEN
+				TRCB_P4_Vytah_ST10.STATUS.KOM_READY:= FALSE;
 				SC_KOM_Server.Step:= 40;
 			ELSIF TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4 THEN
+				TRCB_P4_Vytah_ST10.STATUS.KOM_READY:= FALSE;
 				SC_KOM_Server.Step:= 50;	
             END_IF
 		
@@ -108,34 +116,32 @@ PROGRAM _CYCLIC
             SC_KOM_Server.AlarmTime.PT:= T#10s;
             SC_KOM_Server.AlarmTime.IN:= TRUE;
 		
+			TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky:= 'Pal';
+			brsstrcat(ADR(TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky), ADR(P4_Vytah.PAR.CisloPaletky_STRING));
+			
             TRCB_P4_Vytah_ST10.INPUTS.TYP_Prikazu:= '1';
             TRCB_P4_Vytah_ST10.INPUTS.CisloStanice:= 'ST10';
-            TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky; //Z programu
             TRCB_P4_Vytah_ST10.INPUTS.QRkodPowerCP:= Paletka[a].PAR.QRkodPowerCP;
             TRCB_P4_Vytah_ST10.INPUTS.QRkodFiltra:= '';
             TRCB_P4_Vytah_ST10.INPUTS.ID_Operatora:= Paletka[a].PAR.ID_Operatora;
             TRCB_P4_Vytah_ST10.INPUTS.Report:= '';
             TRCB_P4_Vytah_ST10.INPUTS.StavPaletky:= 'OK';
-            SKTcpClientTrace_1.Cmd.Send:= TRUE;
-			
+            			
 						
 			
-            IF SKTcpClientTrace_1.Cmd.Send AND NOT SKTcpClientTrace_1.Status.staReceived AND NOT SKTcpClientTrace_1.Status.staError THEN
-                SC_KOM_Server.ResetStep:= TRUE;
-                SC_KOM_Server.Step:= 13;
-            ELSIF SC_KOM_Server.AlarmTime.Q AND (SKTcpClientTrace_1.Status.staReceived OR SKTcpClientTrace_1.Status.staError) THEN
-                PocetDopytovNaServer:= PocetDopytovNaServer + 1;
-                SKTcpClientTrace_1.Cmd.Send:= FALSE;
-                SC_KOM_Server.ResetStep:= TRUE;
-                SC_KOM_Server.Step:= 14;    
-            END_IF	
+			IF SKTcpClientTrace_1.Status.staReadyToSend AND NOT SKTcpClientTrace_1.Cmd.Close THEN
+				TRCB_P4_Vytah_ST10.OUTPUTS.TYP_Prikazu:= '';
+				SKTcpClientTrace_1.Cmd.Send:= TRUE;
+				SC_KOM_Server.ResetStep:= TRUE;
+				SC_KOM_Server.Step:= 13;
+			END_IF
 			
 			
 		
-        13:
+		13:
             SC_KOM_Server.StepName:= '13 - Vyziadanie stavu paletky - odpoved servera';
             SC_KOM_Server.IdleTime.PT:= T#3s;
-            SC_KOM_Server.AlarmTime.PT:= T#20s;
+            SC_KOM_Server.AlarmTime.PT:= T#7s;
             SC_KOM_Server.AlarmTime.IN:= TRUE;
 			
             IF SKTcpClientTrace_1.Status.staReceived AND 
@@ -144,9 +150,11 @@ PROGRAM _CYCLIC
                 TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena:= TRUE;
                 SC_KOM_Server.ResetStep:= TRUE;
                 SC_KOM_Server.Step:= 15;
-            ELSIF SC_KOM_Server.AlarmTime.Q THEN
+            ELSIF SC_KOM_Server.AlarmTime.Q AND NOT SKTcpClientTrace_1.Status.staSending THEN
                 PocetDopytovNaServer:= PocetDopytovNaServer + 1;
-                SC_KOM_Server.ResetStep:= TRUE;
+				SKTcpClientTrace_1.Cmd.Send:= FALSE;
+				SKTcpClientTrace_1.Cmd.Close:= TRUE;
+				SC_KOM_Server.ResetStep:= TRUE;
                 SC_KOM_Server.Step:= 14;
             END_IF	
 		
@@ -322,32 +330,29 @@ PROGRAM _CYCLIC
             
                
             
-            
+			TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky:= 'Pal';
+			brsstrcat(ADR(TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky), ADR(P4_Vytah.PAR.CisloPaletky_STRING));
             
             TRCB_P4_Vytah_ST10.INPUTS.TYP_Prikazu:= '2';
             TRCB_P4_Vytah_ST10.INPUTS.CisloStanice:= 'ST10';
-            TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky;
             TRCB_P4_Vytah_ST10.INPUTS.QRkodPowerCP:= Paletka[a].PAR.QRkodPowerCP;  
             TRCB_P4_Vytah_ST10.INPUTS.QRkodFiltra:= '';
             TRCB_P4_Vytah_ST10.INPUTS.ID_Operatora:= Paletka[a].PAR.ID_Operatora;
             TRCB_P4_Vytah_ST10.INPUTS.Report:= '';
             TRCB_P4_Vytah_ST10.INPUTS.StavPaletky:= Paletka[a].PAR.StavPowerCP;
-            SKTcpClientTrace_1.Cmd.Send:= TRUE;
-			
+            			
 						
-            IF SKTcpClientTrace_1.Cmd.Send AND NOT SKTcpClientTrace_1.Status.staReceived AND NOT SKTcpClientTrace_1.Status.staError THEN
-                SC_KOM_Server.ResetStep:= TRUE;
-                SC_KOM_Server.Step:= 43;
-            ELSIF SC_KOM_Server.AlarmTime.Q AND (SKTcpClientTrace_1.Status.staReceived OR SKTcpClientTrace_1.Status.staError) THEN
-                PocetDopytovNaServer:= PocetDopytovNaServer + 1;
-                SC_KOM_Server.ResetStep:= TRUE;
-                SC_KOM_Server.Step:= 44;    
-            END_IF	
+			IF SKTcpClientTrace_1.Status.staReadyToSend AND NOT SKTcpClientTrace_1.Cmd.Close THEN
+				TRCB_P4_Vytah_ST10.OUTPUTS.TYP_Prikazu:= '';
+				SKTcpClientTrace_1.Cmd.Send:= TRUE;
+				SC_KOM_Server.ResetStep:= TRUE;
+				SC_KOM_Server.Step:= 43;
+			END_IF
 		
         43:
             SC_KOM_Server.StepName:= '43 - Odoslanie stavu paletky - odpoved servera';
-            SC_KOM_Server.IdleTime.PT:= T#3s;
-            SC_KOM_Server.AlarmTime.PT:= T#20s;
+			SC_KOM_Server.IdleTime.PT:= T#3s;
+            SC_KOM_Server.AlarmTime.PT:= T#7s;
             SC_KOM_Server.AlarmTime.IN:= TRUE;
 			
             IF SKTcpClientTrace_1.Status.staReceived AND 
@@ -356,9 +361,11 @@ PROGRAM _CYCLIC
                 TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena:= TRUE;
                 SC_KOM_Server.ResetStep:= TRUE;
                 SC_KOM_Server.Step:= 45;
-            ELSIF SC_KOM_Server.AlarmTime.Q THEN
+            ELSIF SC_KOM_Server.AlarmTime.Q AND NOT SKTcpClientTrace_1.Status.staSending THEN
                 PocetDopytovNaServer:= PocetDopytovNaServer + 1;
-                SC_KOM_Server.ResetStep:= TRUE;
+				SKTcpClientTrace_1.Cmd.Send:= FALSE;
+				SKTcpClientTrace_1.Cmd.Close:= TRUE;
+				SC_KOM_Server.ResetStep:= TRUE;
                 SC_KOM_Server.Step:= 44;   
             END_IF	
 			
@@ -402,41 +409,38 @@ PROGRAM _CYCLIC
 			SC_KOM_Server.AlarmTime.IN:= TRUE;
             
 			TRCB_P4_Vytah_ST10.INPUTS.TYP_Prikazu:= '4';
-			TRCB_P4_Vytah_ST10.INPUTS.CisloStanice:= 'ST2';
+			TRCB_P4_Vytah_ST10.INPUTS.CisloStanice:= 'ST10';
 			TRCB_P4_Vytah_ST10.INPUTS.CisloPaletky:= '';
 			TRCB_P4_Vytah_ST10.INPUTS.QRkodPowerCP:= '';
 			TRCB_P4_Vytah_ST10.INPUTS.QRkodFiltra:= '';
 			TRCB_P4_Vytah_ST10.INPUTS.ID_Operatora:= '';
 			TRCB_P4_Vytah_ST10.INPUTS.Report:= '';
 			TRCB_P4_Vytah_ST10.INPUTS.StavPaletky:= '';
-			SKTcpClientTrace_1.Cmd.Send:= TRUE;
+					
 
-		
-
-			IF SKTcpClientTrace_1.Cmd.Send AND NOT SKTcpClientTrace_1.Status.staReceived AND NOT SKTcpClientTrace_1.Status.staError THEN
+			IF SKTcpClientTrace_1.Status.staReadyToSend AND NOT SKTcpClientTrace_1.Cmd.Close THEN
+				TRCB_P4_Vytah_ST10.OUTPUTS.TYP_Prikazu:= '';
+				SKTcpClientTrace_1.Cmd.Send:= TRUE;
 				SC_KOM_Server.ResetStep:= TRUE;
 				SC_KOM_Server.Step:= 53;
-			ELSIF SC_KOM_Server.AlarmTime.Q AND (SKTcpClientTrace_1.Status.staReceived OR SKTcpClientTrace_1.Status.staError) THEN
-				PocetDopytovNaServer:= PocetDopytovNaServer + 1;
-				SKTcpClientTrace_1.Cmd.Send:= FALSE;
-				SC_KOM_Server.ResetStep:= TRUE;
-				SC_KOM_Server.Step:= 54;
-			END_IF	
+			END_IF
 
 
 
 		53:
 			SC_KOM_Server.StepName:= '53 - Vyziadanie stavu paletky - odpoved servera';
 			SC_KOM_Server.IdleTime.PT:= T#30s;
-			SC_KOM_Server.AlarmTime.PT:= T#20s;
+			SC_KOM_Server.AlarmTime.PT:= T#7s;
 			SC_KOM_Server.AlarmTime.IN:= TRUE;
             
 			IF SKTcpClientTrace_1.Status.staReceived AND TRCB_P4_Vytah_ST10.OUTPUTS.TYP_Prikazu = TRCB_P4_Vytah_ST10.INPUTS.TYP_Prikazu THEN
 				TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena:= TRUE;
 				SC_KOM_Server.ResetStep:= TRUE;
 				SC_KOM_Server.Step:= 55;
-			ELSIF SC_KOM_Server.AlarmTime.Q THEN
+			ELSIF SC_KOM_Server.AlarmTime.Q AND NOT SKTcpClientTrace_1.Status.staSending THEN
 				PocetDopytovNaServer:= PocetDopytovNaServer + 1;
+				SKTcpClientTrace_1.Cmd.Send:= FALSE;
+				SKTcpClientTrace_1.Cmd.Close:= TRUE;
 				SC_KOM_Server.ResetStep:= TRUE;
 				SC_KOM_Server.Step:= 54;
 			END_IF		

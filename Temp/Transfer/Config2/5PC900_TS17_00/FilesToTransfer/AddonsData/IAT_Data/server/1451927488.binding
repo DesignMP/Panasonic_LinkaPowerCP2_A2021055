@@ -198,4 +198,16 @@
 <Target xsi:type="brease" refId="AreaPageManual_Skrutkovanie_page3_ImageList41" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding>
   </Content>
+  <Content id="AreaPageManual_Skrutkovanie_page3">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Srobovanie.SkrutSet_M6.IN.Brzda.PodajSkrutku" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManual_Skrutkovanie_page3_ImageList22" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="AreaPageManual_Skrutkovanie_page3">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Srobovanie.SkrutSet_M5.IN.Brzda.PodajSkrutku" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManual_Skrutkovanie_page3_ImageList23" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
 </BindingDefinition>

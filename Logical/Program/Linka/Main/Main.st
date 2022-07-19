@@ -6,6 +6,18 @@ PROGRAM _INIT
 	P4_FunkcnyTestA.STAV.Tester_ON:= TRUE;
 	P4_FunkcnyTestB.STAV.Tester_ON:= TRUE;
 	Linka.PAR.IndexModelu:= 1;
+	Linka.KOM_FTP_OFF:= FALSE;
+	Linka.KOM_Panatrace_OFF:= FALSE;
+	Linka.P1_Kamery_OFF:= FALSE;
+	Linka.P2_Kamery_OFF:= FALSE;
+	Linka.P3_Kamery_OFF:= FALSE;
+	Linka.P4_Kamery_OFF:= FALSE;
+	Linka.P1_SkrutkovanieResult_OFF:= FALSE;
+	Linka.P2_SkrutkovanieResult_OFF:= FALSE;
+	Linka.P3_SkrutkovanieResult_OFF:= FALSE;
+	P2_Vizu.ZobrazHL5_ST5:= FALSE;
+	P2_Vizu.ZobrazHL6_ST5:= TRUE;
+	P2_Vizu.ZobrazHL7_ST5:= FALSE;
 	
 END_PROGRAM
 
@@ -15,19 +27,9 @@ PROGRAM _CYCLIC
 ProfinetKomunikaciaCU;	
 	
 
-	Linka.KOM_FTP_OFF:= TRUE;
-	Linka.KOM_Panatrace_OFF:= TRUE;
-	Linka.P1_Kamery_OFF:= TRUE;
-	Linka.P2_Kamery_OFF:= TRUE;
-	Linka.P3_Kamery_OFF:= TRUE;
-	Linka.P4_Kamery_OFF:= TRUE;
-	Linka.P1_SkrutkovanieResult_OFF:= TRUE;
-	Linka.P2_SkrutkovanieResult_OFF:= TRUE;
-	Linka.P3_SkrutkovanieResult_OFF:= TRUE;
-	P1_UzivatelPrihlaseny:= TRUE;
-	P2_UzivatelPrihlaseny:= TRUE;
-	P34_UzivatelPrihlaseny:= TRUE;
+
 	
+	TypFotky_BMP;
 	
 	
 	

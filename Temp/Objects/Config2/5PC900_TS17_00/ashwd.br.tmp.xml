@@ -307,20 +307,6 @@
         <Parameter ID="Direction" Value="IN" />
         <Parameter ID="Type" Value="DINT" />
       </Channel>
-      <Channel ID="MinimalLatencyInputMargin">
-        <Filter Value="(Operation='EPL-V2')" />
-        <Parameter ID="Ext" Value="/INFO" />
-        <Parameter ID="Address" Value="0x8000000D" Type="UDINT" />
-        <Parameter ID="Direction" Value="IN" />
-        <Parameter ID="Type" Value="DINT" />
-      </Channel>
-      <Channel ID="FailedMinimalLatencyInputCount">
-        <Filter Value="(Operation='EPL-V2')" />
-        <Parameter ID="Ext" Value="/INFO" />
-        <Parameter ID="Address" Value="0x8000000E" Type="UDINT" />
-        <Parameter ID="Direction" Value="IN" />
-        <Parameter ID="Type" Value="UDINT" />
-      </Channel>
     </Resource>
     <Resource ID="SRAM">
       <Parameter ID="PCIFuncNo" Value="1" Type="UDINT" />

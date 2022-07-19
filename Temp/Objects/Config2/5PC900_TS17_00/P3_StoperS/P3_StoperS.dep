@@ -1,4 +1,5 @@
 $(AS_PROJECT_PATH)/Logical/Libraries/IecCheck/IecCheck.fun
+$(AS_PROJECT_PATH)/Logical/Libraries/AtlasCopco/AtlasCopco.fun
 $(AS_PROJECT_PATH)/Logical/Libraries/SC/SC.fun
 $(AS_PROJECT_PATH)/Logical/Libraries/RFID_Heads/RFID_Heads.fun
 $(AS_PROJECT_PATH)/Logical/Libraries/standard/standard.fun
@@ -6,6 +7,10 @@ $(AS_PROJECT_PATH)/Logical/Global.var
 $(AS_PROJECT_PATH)/Logical/Global.typ
 $(AS_PROJECT_PATH)/Logical/Program/Pracovisko_3/P3_StoperSrobovania/Variables.var
 $(AS_PROJECT_PATH)/Physical/Config2/5PC900_TS17_00/Cpu.per
+$(AS_PROJECT_PATH)/Logical/Libraries/Statistika/Types.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/Statistika/Statistika.fun
+$(AS_PROJECT_PATH)/Logical/UkladacieBuffery/UkladacieBufferyGlobal.var
+$(AS_PROJECT_PATH)/Logical/UkladacieBuffery/UkladacieBufferyGlobal.typ
 $(AS_PROJECT_PATH)/Logical/Alarmy/AlarmyGlobal.var
 $(AS_PROJECT_PATH)/Logical/Libraries/RoCa_Festo/Types.typ
 $(AS_PROJECT_PATH)/Logical/Libraries/RoCa_Festo/RoCa_Festo.fun

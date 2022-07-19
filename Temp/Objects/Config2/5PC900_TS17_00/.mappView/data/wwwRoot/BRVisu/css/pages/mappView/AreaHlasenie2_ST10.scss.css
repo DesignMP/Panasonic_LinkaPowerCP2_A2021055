@@ -239,36 +239,6 @@
   box-shadow: 2px 2px 10px black;
 }
 
-#AreaHlasenie2_ST10_ImageList8 {
-  top: 276px;
-  position: absolute;
-}
-
-#AreaHlasenie2_ST10_ImageList8 {
-  left: 146px;
-  position: absolute;
-}
-
-#AreaHlasenie2_ST10_ImageList8 {
-  width: 32px;
-}
-
-#AreaHlasenie2_ST10_ImageList8 {
-  height: 32px;
-}
-
-#AreaHlasenie2_ST10_ImageList8 {
-  z-index: 6;
-}
-
-#AreaHlasenie2_ST10_ImageList8 {
-  border-radius: 50px;
-}
-
-#AreaHlasenie2_ST10_ImageList8 {
-  box-shadow: 2px 2px 10px black;
-}
-
 #AreaHlasenie2_ST10_Button_IgnorujKameru {
   top: 111px;
   position: absolute;
@@ -288,7 +258,7 @@
 }
 
 #AreaHlasenie2_ST10_Button_IgnorujKameru {
-  z-index: 7;
+  z-index: 6;
 }
 
 #AreaHlasenie2_ST10_Button_IgnorujKameru span {
@@ -304,5 +274,35 @@
 }
 
 #AreaHlasenie2_ST10_Button_IgnorujKameru.disabled.checked {
+  box-shadow: 2px 2px 10px black;
+}
+
+#AreaHlasenie2_ST10_ImageList8 {
+  top: 268px;
+  position: absolute;
+}
+
+#AreaHlasenie2_ST10_ImageList8 {
+  left: 144px;
+  position: absolute;
+}
+
+#AreaHlasenie2_ST10_ImageList8 {
+  width: 32px;
+}
+
+#AreaHlasenie2_ST10_ImageList8 {
+  height: 32px;
+}
+
+#AreaHlasenie2_ST10_ImageList8 {
+  z-index: 7;
+}
+
+#AreaHlasenie2_ST10_ImageList8 {
+  border-radius: 50px;
+}
+
+#AreaHlasenie2_ST10_ImageList8 {
   box-shadow: 2px 2px 10px black;
 }

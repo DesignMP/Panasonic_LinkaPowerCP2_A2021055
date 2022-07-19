@@ -121,5 +121,13 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Srobovanie.SkrutSet_M5.IN.VibracnyHrniec.PritomnostSkrutiekVHrnci" attribute="value" />
 <Target xsi:type="brease" contentRefId="AreaPageManual_Skrutkovanie_page3" widgetRefId="ImageList41" attribute="selectedIndex" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Srobovanie.SkrutSet_M6.IN.Brzda.PodajSkrutku" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManual_Skrutkovanie_page3" widgetRefId="ImageList22" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Srobovanie.SkrutSet_M5.IN.Brzda.PodajSkrutku" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManual_Skrutkovanie_page3" widgetRefId="ImageList23" attribute="selectedIndex" />
+</Binding>
 </Bindings>
 </BindingsSet>

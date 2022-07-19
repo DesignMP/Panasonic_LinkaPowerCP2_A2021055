@@ -19,8 +19,6 @@ PROGRAM _CYCLIC
 		P4_ZdvizkaZaFunkcTestB.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P4_ZdvizkaZaFunkcTestB.Step:= 0;
-	ELSIF NOT P4_ZdvizkaZaFunkcTestB.Manual AND NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN
-		SC_P4_ZdvizkaZaFunkcTestB.Step:= 0;	
 	END_IF	
 	
 	CASE SC_P4_ZdvizkaZaFunkcTestB.Step OF 

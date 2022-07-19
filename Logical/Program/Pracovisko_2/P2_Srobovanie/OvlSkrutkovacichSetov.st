@@ -15,6 +15,7 @@ ACTION OvlSkrutkovacichSetov:
 			P2_Srobovanie.CMD.RR_SkrutSetM6_PodajSkrutku:= FALSE;
 			P2_Srobovanie.CMD.RR_SkrutSetM6_Zasobnik_RUN:= FALSE;
 			P2_Srobovanie.CMD.RR_SkrutSetM6_VysunBrzdu:= FALSE;
+			P2_Srobovanie.SkrutSet_M6.Cmd.ManualPresunBrzdu:= FALSE;
 			P2_Srobovanie.STAV.SkrutkaM6_READY:= FALSE;
 			IF SC_P2_Srobovanie.Step <> 0 THEN
 				SC_SkrutkovaciSet_M6.ResetStep:= TRUE;
@@ -273,7 +274,9 @@ ACTION OvlSkrutkovacichSetov:
 			P2_Srobovanie.CMD.RR_SkrutSetM5_PodajSkrutku:= FALSE;
 			P2_Srobovanie.CMD.RR_SkrutSetM5_Zasobnik_RUN:= FALSE;
 			P2_Srobovanie.CMD.RR_SkrutSetM5_VysunBrzdu:= FALSE;
+			P2_Srobovanie.SkrutSet_M5.Cmd.ManualPresunBrzdu:= FALSE;
 			P2_Srobovanie.STAV.SkrutkaM5_READY:= FALSE;
+			
 			IF SC_P2_Srobovanie.Step <> 0 THEN
 				SC_SkrutkovaciSet_M5.ResetStep:= TRUE;
 				SC_SkrutkovaciSet_M5.Step:= 1;

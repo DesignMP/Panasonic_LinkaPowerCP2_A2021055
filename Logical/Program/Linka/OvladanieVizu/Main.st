@@ -62,6 +62,13 @@ PROGRAM _CYCLIC
 	END_IF    
 	
 	
+	//************************************Zamknutie tlaèítka editácia uživatelov***********************************************//
+	IF P1_UrovenPrihlasenehoUzivatela < 100 THEN
+		P1_Vizu.TL_Uzivatelia_ENABLE:= FALSE;
+	ELSE	
+		P1_Vizu.TL_Uzivatelia_ENABLE:= TRUE;
+	END_IF
+	
 	 
 END_PROGRAM
 

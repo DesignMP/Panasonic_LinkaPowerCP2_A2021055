@@ -66,5 +66,9 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_OvladaniaZamkov_ENABLE" attribute="value" />
 <Target xsi:type="brease" contentRefId="HlavickaP2" widgetRefId="ButtonZadneDvere" attribute="enable" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Vizu.AktualnyCasPLC" attribute="value" />
+<Target xsi:type="brease" contentRefId="HlavickaP2" widgetRefId="DateTimeOutput1" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

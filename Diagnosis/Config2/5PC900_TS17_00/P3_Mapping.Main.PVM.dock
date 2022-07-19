@@ -1,8 +1,12 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P3_Mapping 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=4 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=6 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                  Safety                               Safety_typ    0 "                                                               *"    0   24    1    0    0    1         
-                                     OUT                           Safety_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
-                           Linka_ResetCS                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                       P3_ResetZonyBunky                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                      P3_ResetZonyHVtest                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                         P3_LeakageTestA                      P3_LeakageTestA_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     PAR                  P3_LeakageTestA_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
+            PreratanyVyrovnavaciTlak_Bar                                     REAL    0 "                                                          1632.9"    2    8    1   10    0    0         
+                         P3_LeakageTestB                      P3_LeakageTestB_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     PAR                  P3_LeakageTestB_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
+            PreratanyVyrovnavaciTlak_Bar                                     REAL    0 "                                                          1636.0"    2    8    1   10    0    0         
+                           P3_Srobovanie                        P3_Srobovanie_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     PAR                    P3_Srobovanie_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
+        Skrutkov_K40_AktualHodnVysunutia                                     UINT    0 "                                                               0"    2    6    1   10    0    0         

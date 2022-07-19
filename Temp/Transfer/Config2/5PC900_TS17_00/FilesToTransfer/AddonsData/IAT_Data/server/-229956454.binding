@@ -2,12 +2,6 @@
 <BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
   <Content id="AreaPageManualP1_Skrutkovanie_page2">
     <Binding mode="oneWay">
-			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.PAR.Skrutkov_K30_AktualHodnVysunutia" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-			<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_NumericOutput2" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-		</Binding>
-  </Content>
-  <Content id="AreaPageManualP1_Skrutkovanie_page2">
-    <Binding mode="oneWay">
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 			<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_Button_CistenieSkrutkovackyK30" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 		</Binding>
@@ -170,20 +164,26 @@
   </Content>
   <Content id="AreaPageManualP1_Skrutkovanie_page2">
     <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutkovackuK30_VYSUN" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_ToggleSwitch_VysunutieSkrutkovackyK30" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.OUT.Skrutkovacka_K30_Prisavanie_ON" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_ToggleSwitch_PrisavanieSkrutkyK30" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding><Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutkovackuK30_VYSUN" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_ToggleSwitch_VysunutieSkrutkovackyK30" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.OUT.Skrutkovacka_K30_Prisavanie_ON" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_ToggleSwitch_PrisavanieSkrutkyK30" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding>
   </Content>
   <Content id="AreaPageManualP1_Skrutkovanie_page2">
     <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_PrisavanieSkrutkyK30_ON" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_ToggleSwitch_PrisavanieSkrutkyK30" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.OUT.Skrutkovacku_K30_VYSUN" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_ToggleSwitch_VysunutieSkrutkovackyK30" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding><Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_PrisavanieSkrutkyK30_ON" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_ToggleSwitch_PrisavanieSkrutkyK30" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.OUT.Skrutkovacku_K30_VYSUN" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_ToggleSwitch_VysunutieSkrutkovackyK30" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
+  <Content id="AreaPageManualP1_Skrutkovanie_page2">
+    <Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.PAR.Skrutkov_K30_RoundHodnotaREAL" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="AreaPageManualP1_Skrutkovanie_page2_NumericOutput2" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding>
   </Content>
 </BindingDefinition>

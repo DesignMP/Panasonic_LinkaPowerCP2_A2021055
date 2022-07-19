@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaHlasenie7_ST2_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM6.RESULT.Paletka.Pritom_SpodnychBusbarov_5H" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie7_ST2" widgetRefId="ImageList6" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM6.RESULT.Paletka.Pritom_PowerCP_5H" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie7_ST2" widgetRefId="ImageList5" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM6.RESULT.PowerCP.Pritom_LavejSkrutkyK30" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie7_ST2" widgetRefId="ImageList2" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM6.RESULT.PowerCP.Pritom_PravejSkrutkyK30" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie7_ST2" widgetRefId="ImageList1" attribute="selectedIndex" />
+</Binding>
+</Bindings>
+</BindingsSet>

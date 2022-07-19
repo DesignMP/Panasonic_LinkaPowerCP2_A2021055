@@ -95,16 +95,16 @@ PROGRAM _CYCLIC
 				SC_P3_Dopravniky.ResetStep:= TRUE;
 				SC_P3_Dopravniky.Step:= 5;
 			ELSE
-				IF NOT P3_StoperSrobovania.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P3_StoperSrobovania.RFID_hlava.PritomnostPaletky AND P3_StoperSrobovania.IN.Centrovanie_ZASUNUTE THEN
 					P3_StoperSrobovania.OUT.ZasunStoper:= TRUE;
 				END_IF	
-				IF NOT P3_HV_Test.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P3_HV_Test.RFID_hlava.PritomnostPaletky AND P3_HV_Test.IN.Centrovanie_ZASUNUTE THEN
 					P3_HV_Test.OUT.ZasunStoper:= TRUE;
 				END_IF
-				IF NOT P3_LeakageTestA.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P3_LeakageTestA.RFID_hlava.PritomnostPaletky AND P3_LeakageTestA.IN.Centrovanie_ZASUNUTE THEN
 					P3_LeakageTestA.OUT.ZasunStoper:= TRUE;
 				END_IF
-				IF NOT P3_LeakageTestB.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P3_LeakageTestB.RFID_hlava.PritomnostPaletky AND P3_LeakageTestB.IN.Centrovanie_ZASUNUTE THEN
 					P3_LeakageTestB.OUT.ZasunStoper:= TRUE;
 				END_IF
 				IF NOT P3_SpodnyStoper.IN.PritomnostPaletky THEN

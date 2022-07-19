@@ -175,27 +175,6 @@
 #AreaHlasenie3_ST10_ImageList7 {
 	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }
-#AreaHlasenie3_ST10_ImageList8 {
-	@include elemTop(276);
-}
-#AreaHlasenie3_ST10_ImageList8 {
-	@include elemLeft(146);
-}
-#AreaHlasenie3_ST10_ImageList8 {
-	@include elemWidth(32);
-}
-#AreaHlasenie3_ST10_ImageList8 {
-	@include elemHeight(32);
-}
-#AreaHlasenie3_ST10_ImageList8 {
-		z-index: 6;
-}
-#AreaHlasenie3_ST10_ImageList8 {
-	@include border-radius(50px);
-}
-#AreaHlasenie3_ST10_ImageList8 {
-	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
-}
 #AreaHlasenie3_ST10_Button_IgnorujKameru {
 	@include elemTop(111);
 }
@@ -209,7 +188,7 @@
 	@include elemAutoHeight(45);
 }
 #AreaHlasenie3_ST10_Button_IgnorujKameru {
-		z-index: 7;
+		z-index: 6;
 }
 #AreaHlasenie3_ST10_Button_IgnorujKameru {
 	span{
@@ -230,4 +209,25 @@
 	&.disabled.checked{
 	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 	}
+}
+#AreaHlasenie3_ST10_ImageList8 {
+	@include elemTop(268);
+}
+#AreaHlasenie3_ST10_ImageList8 {
+	@include elemLeft(144);
+}
+#AreaHlasenie3_ST10_ImageList8 {
+	@include elemWidth(32);
+}
+#AreaHlasenie3_ST10_ImageList8 {
+	@include elemHeight(32);
+}
+#AreaHlasenie3_ST10_ImageList8 {
+		z-index: 7;
+}
+#AreaHlasenie3_ST10_ImageList8 {
+	@include border-radius(50px);
+}
+#AreaHlasenie3_ST10_ImageList8 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
 }

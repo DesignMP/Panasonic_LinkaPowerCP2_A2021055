@@ -11,6 +11,7 @@
 	VAR
 		Internal : PickAndPlace_Internal_typ;
 		Step : USINT;
+		zzEdge00000 : BOOL;
 	END_VAR
 END_FUNCTION_BLOCK
 

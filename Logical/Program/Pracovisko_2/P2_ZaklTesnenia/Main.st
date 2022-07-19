@@ -86,10 +86,6 @@ PROGRAM _CYCLIC
 		P2_ZakladacTesnenia.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_ZakladacTesnenia.Step:= 0;
-	ELSIF NOT P2_ZakladacTesnenia.Manual AND NOT Safety.STAV.P2_ZonaZakladacaPojazd_AKTIVNA THEN
-		SC_P2_ZakladacTesnenia.Step:= 0;
-	ELSIF NOT P2_ZakladacTesnenia.Manual AND NOT Safety.STAV.P2_ZonaZakladacaZdvih_AKTIVNA AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition THEN
-		SC_P2_ZakladacTesnenia.Step:= 0;	
 	END_IF	
 	
 	
@@ -192,9 +188,8 @@ PROGRAM _CYCLIC
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 27;
 			ELSIF Stav_ZvihPoINIT AND Stav_PojazdPoINIT AND NOT Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE THEN
-				P2_ZakladacTesnenia.STAV.PoINIT:= TRUE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-				SC_P2_ZakladacTesnenia.Step:= 100;
+				SC_P2_ZakladacTesnenia.Step:= 30;
 			END_IF    
           			
             
@@ -286,8 +281,20 @@ PROGRAM _CYCLIC
 				SC_P2_ZakladacTesnenia.Step:= 20;
 			END_IF	
 						
-			            
-            
+	
+		30:
+			SC_P2_ZakladacTesnenia.StepName:='30 - Inicializacia - kontrola pritomnosti PowerCP vo voziku';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+		
+			P2_ZakladacTesnenia.STAV.PoINIT:= TRUE;
+			IF P2_ZakladacTesnenia.IN.Pojazd_PritomPowerCP THEN
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 166;
+			ELSE
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 100;
+			END_IF	
             
 	
 		//********************************************************Automatický režim****************************************************************************//
@@ -335,7 +342,7 @@ PROGRAM _CYCLIC
 		
 		105:
 			SC_P2_ZakladacTesnenia.StepName:='105 - Automaticky Rezim - cakam na zasunutie suflika pod pritlacanie';
-			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#100ms;
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
 			
 			IF P2_ZakladacTesnenia.IN.Pojazd_PritomPowerCP THEN
@@ -351,11 +358,12 @@ PROGRAM _CYCLIC
 			IF P2_ZakladacTesnenia.KoniecCyklu THEN
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 0;
-			ELSIF SC_P2_ZakladacTesnenia.IdleTime.Q AND NOT P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
+			ELSIF SC_P2_ZakladacTesnenia.IdleTime.Q THEN
 				P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= FALSE;
 				P2_Vizu.ZobrazHL14_ST3:= FALSE;
 				CAM1.STAV.Results_READY:= FALSE;
 				IF Linka.PAR.ZvolenyModel = '5H' THEN
+					CAM7.STAV.OldRunCounter:= CAM7.STAV.RunCounter;
 					CAM7.STAV.Results_READY:= FALSE;
 					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 					SC_P2_ZakladacTesnenia.Step:= 108;
@@ -363,12 +371,6 @@ PROGRAM _CYCLIC
 					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 					SC_P2_ZakladacTesnenia.Step:= 120;
 				END_IF	
-			ELSIF P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
-				P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= FALSE;
-				P2_Vizu.ZobrazHL14_ST3:= FALSE;
-				CAM1.STAV.Results_READY:= FALSE;
-				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-				SC_P2_ZakladacTesnenia.Step:= 180;
 			END_IF
 		
 		108:
@@ -378,19 +380,16 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;	
 			
-			IF Linka.P2_Kamery_OFF THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-				SC_P2_ZakladacTesnenia.Step:= 120;
-			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM7.STAV.Command_READY THEN
+			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM7.STAV.Command_READY THEN
 				CAM7.CMD.Triger:= TRUE;
 				SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM7.STAV.Results_READY AND CAM7.STAV.Command_AKCEPTOVANY THEN
+			IF CAM7.STAV.Results_READY AND CAM7.STAV.Command_AKCEPTOVANY AND CAM7.STAV.OldRunCounter <> CAM7.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM7.STAV.Results_READY:= FALSE;
+				CAM7.STAV.OldRunCounter:= CAM7.STAV.RunCounter;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 110;
@@ -398,6 +397,7 @@ PROGRAM _CYCLIC
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				CAM7.STAV.Results_READY:= FALSE;
+				CAM7.STAV.OldRunCounter:= CAM7.STAV.RunCounter;
 				CAM7.CMD.Triger:= FALSE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 109;
@@ -431,8 +431,12 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
 			
             
-			
-			IF NOT CAM7.STAV.BUSY THEN
+			IF Linka.P2_Kamery_OFF THEN
+				CAM7.CMD.Triger:= FALSE;
+				CAM7.PAR.ResultFotky:= 'PASS';
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 115;
+			ELSIF NOT CAM7.STAV.BUSY THEN
 				CAM7.CMD.Triger:= FALSE;
 				IF CAM7.RESULT.CitanieQRkodu_Filtra5H_OK THEN
 					Paletka[i].PAR.QRkodFiltra_5H:= CAM7.RESULT.PrecitanyQRkod_Filtra5H;
@@ -478,6 +482,7 @@ PROGRAM _CYCLIC
 			
 			IF EDGEPOS(Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE) THEN
 				CAM7.STAV.Results_READY:= FALSE;
+				CAM7.STAV.OldRunCounter:= CAM7.STAV.RunCounter;
 				P2_Vizu.ZobrazHL4_ST3:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE; //Zhasnem banner//	
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
@@ -492,6 +497,7 @@ PROGRAM _CYCLIC
 			
 			IF P2_ZakladacTesnenia.IN.Pojazd_PritomPowerCP THEN
 				CAM1.STAV.Results_READY:= FALSE;
+				CAM1.STAV.OldRunCounter:= CAM1.STAV.RunCounter;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 130;
 			ELSE
@@ -530,25 +536,23 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
             
-			IF Linka.P2_Kamery_OFF THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-				SC_P2_ZakladacTesnenia.Step:= 150;
-			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM1.STAV.Command_READY THEN
+			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM1.STAV.Command_READY THEN
 				CAM1.CMD.Triger:= TRUE;
 				SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM1.STAV.Results_READY AND CAM1.STAV.Command_AKCEPTOVANY THEN
+			IF CAM1.STAV.Results_READY AND CAM1.STAV.Command_AKCEPTOVANY AND CAM1.STAV.OldRunCounter <> CAM1.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM1.STAV.Results_READY:= FALSE;
+				CAM1.STAV.OldRunCounter:= CAM1.STAV.RunCounter;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 133;
 			ELSIF SC_P2_ZakladacTesnenia.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM1.STAV.Results_READY:= FALSE;
+				CAM1.STAV.OldRunCounter:= CAM1.STAV.RunCounter;
 				CAM1.CMD.Triger:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
@@ -562,160 +566,143 @@ PROGRAM _CYCLIC
                        
             
             
-//		131:
-//			SC_P2_ZakladacTesnenia.StepName:='131 - Automaticky Rezim - cakam na opatovny triger kamery CAM1';
-//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#1s;
-//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-//			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
-//            
-//			IF SC_P2_ZakladacTesnenia.IdleTime.Q THEN
-//				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//				SC_P2_ZakladacTesnenia.Step:= 130;
-//			END_IF
-//            
-//            
-//			
-//		133:
-//			SC_P2_ZakladacTesnenia.StepName:='133 - Automaticky Rezim - vysledok kamerovej kontroly pritomnosti tesnenia na Power CP';
-//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#500ms;
-//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-//			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
-//			
+		131:
+			SC_P2_ZakladacTesnenia.StepName:='131 - Automaticky Rezim - cakam na opatovny triger kamery CAM1';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#1s;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
+            
+			IF SC_P2_ZakladacTesnenia.IdleTime.Q THEN
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 130;
+			END_IF
+            
             
 			
-//			IF NOT CAM1.STAV.BUSY THEN
-//				CAM1.CMD.Triger:= FALSE;
-//				IF Linka.PAR.ZvolenyModel = '4F' THEN
-//					IF CAM1.RESULT.PritomnTesnenia_OK AND
-//						CAM1.RESULT.PritomnPowerCP_4F THEN
-//						CAM1.PAR.ResultFotky:= 'PASS';
-//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//						SC_P2_ZakladacTesnenia.Step:= 135; 
-//					ELSE
-//						CAM1.PAR.ResultFotky:= 'FAIL';
-//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//						SC_P2_ZakladacTesnenia.Step:= 135;
-//					END_IF	
-//				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-//					IF CAM1.RESULT.PritomnTesnenia_OK AND
-//						CAM1.RESULT.PritomnPowerCP_5H5F THEN
-//						CAM1.PAR.ResultFotky:= 'PASS';
-//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//						SC_P2_ZakladacTesnenia.Step:= 135;   
-//					ELSE
-//						CAM1.PAR.ResultFotky:= 'FAIL';
-//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//						SC_P2_ZakladacTesnenia.Step:= 135;
-//					END_IF
-//				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-//					IF CAM1.RESULT.PritomnTesnenia_OK AND
-//						CAM1.RESULT.PritomnPowerCP_5H5F THEN    
-//						CAM1.PAR.ResultFotky:= 'PASS';
-//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//						SC_P2_ZakladacTesnenia.Step:= 135;   
-//					ELSE
-//						CAM1.PAR.ResultFotky:= 'FAIL';
-//						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//						SC_P2_ZakladacTesnenia.Step:= 135;
-//					END_IF
-//				END_IF	
-//			END_IF
+		133:
+			SC_P2_ZakladacTesnenia.StepName:='133 - Automaticky Rezim - vysledok kamerovej kontroly pritomnosti tesnenia na Power CP';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#500ms;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
+			
+            
+			IF Linka.P2_Kamery_OFF THEN
+				CAM1.CMD.Triger:= FALSE;
+				CAM1.PAR.ResultFotky:= 'PASS';
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 135; 
+			ELSIF NOT CAM1.STAV.BUSY THEN
+				CAM1.CMD.Triger:= FALSE;
+				IF Linka.PAR.ZvolenyModel = '4F' THEN
+					IF NOT CAM1.RESULT.NepritomnostTesnenia THEN
+						CAM1.PAR.ResultFotky:= 'PASS';
+						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+						SC_P2_ZakladacTesnenia.Step:= 135; 
+					ELSE
+						CAM1.PAR.ResultFotky:= 'FAIL';
+						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+						SC_P2_ZakladacTesnenia.Step:= 135;
+					END_IF	
+				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+					IF NOT CAM1.RESULT.NepritomnostTesnenia THEN
+						CAM1.PAR.ResultFotky:= 'PASS';
+						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+						SC_P2_ZakladacTesnenia.Step:= 135;   
+					ELSE
+						CAM1.PAR.ResultFotky:= 'FAIL';
+						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+						SC_P2_ZakladacTesnenia.Step:= 135;
+					END_IF
+				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
+					IF NOT CAM1.RESULT.NepritomnostTesnenia THEN    
+						CAM1.PAR.ResultFotky:= 'PASS';
+						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+						SC_P2_ZakladacTesnenia.Step:= 135;   
+					ELSE
+						CAM1.PAR.ResultFotky:= 'FAIL';
+						SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+						SC_P2_ZakladacTesnenia.Step:= 135;
+					END_IF
+				END_IF	
+			END_IF
 		
 		
-//		135:
-//			SC_P2_ZakladacTesnenia.StepName:='135 - Automaticky Rezim - rozhodnutie podla kamerovej kontroly '; 
-//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
-//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-//			
-//			IF CAM1.PAR.ResultFotky = 'PASS' THEN
-//				IF CAM1.RESULT.ZalozenieTesnenia_OK THEN
-//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//					SC_P2_ZakladacTesnenia.Step:= 180;
-//				ELSIF NOT CAM1.RESULT.ZalozenieTesnenia_OK THEN
-//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//					SC_P2_ZakladacTesnenia.Step:= 145;
-//				END_IF	
-//			ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
-//				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//				SC_P2_ZakladacTesnenia.Step:= 140;
-//			END_IF
-//			
-//		
-//		140:
-//			SC_P2_ZakladacTesnenia.StepName:='140 - Automaticky Rezim - zobrazenie hlasenia vloz tesnenie alebo Power CP';
-//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
-//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-//			
-//			P2_StoperZaklTesnenia.Banner.IN.CervenaLED_ON:= Blikac500ms;
-//			P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= Blikac500ms;
-//			
-//			IF NOT SC_P2_ZakladacTesnenia.Switch1 THEN	
-//				IF Linka.PAR.ZvolenyModel = '4F' THEN
-//					IF NOT CAM1.RESULT.PritomnTesnenia_OK THEN
-//						P2_Vizu.ZobrazHL6_ST3:= TRUE;
-//					ELSIF NOT CAM1.RESULT.PritomnPowerCP_4F THEN
-//						P2_Vizu.ZobrazHL5_ST3:= TRUE;
-//					END_IF
-//				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-//					IF NOT CAM1.RESULT.PritomnTesnenia_OK THEN
-//						P2_Vizu.ZobrazHL6_ST3:= TRUE;
-//					ELSIF NOT CAM1.RESULT.PritomnPowerCP_5H5F THEN
-//						P2_Vizu.ZobrazHL5_ST3:= TRUE;
-//					END_IF   
-//				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-//					IF NOT CAM1.RESULT.PritomnTesnenia_OK THEN
-//						P2_Vizu.ZobrazHL6_ST3:= TRUE;
-//					ELSIF NOT CAM1.RESULT.PritomnPowerCP_5H5F THEN
-//						P2_Vizu.ZobrazHL5_ST3:= TRUE;
-//					END_IF 
-//				END_IF    
-//				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
-//			END_IF	
-//				
-//					
-//			
-//			IF EDGEPOS(Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE) THEN
-//				CAM1.STAV.Results_READY:= FALSE;
-//				P2_Vizu.ZobrazHL6_ST3:= FALSE;
-//				P2_Vizu.ZobrazHL5_ST3:= FALSE;
-//				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE; //Zhasnem banner//	
-//				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//				SC_P2_ZakladacTesnenia.Step:= 145;
-//			END_IF
-//			
-//		
-//		145:
-//			SC_P2_ZakladacTesnenia.StepName:='145 - Automaticky Rezim - vymazanie fotky kamery CAM1';
-//			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
-//			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
-//            
-//			IF Linka.KOM_FTP_OFF THEN
-//				IF CAM1.PAR.ResultFotky = 'PASS' THEN
-//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//					SC_P2_ZakladacTesnenia.Step:= 150;
-//				ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
-//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//					SC_P2_ZakladacTesnenia.Step:= 105;
-//				END_IF
-//			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 THEN
-//				FTP_CAM1.CMD.VymazFotku:= TRUE;
-//				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
-//			END_IF	
-//			
-//			IF FTP_CAM1.STATUS.KomunikaciaUkoncena THEN
-//				FTP_CAM1.CMD.VymazFotku:= FALSE;
-//				IF CAM1.PAR.ResultFotky = 'PASS' THEN
-//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//					SC_P2_ZakladacTesnenia.Step:= 150;
-//				ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
-//					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-//					SC_P2_ZakladacTesnenia.Step:= 105;
-//				END_IF
-//			ELSIF FTP_CAM1.STATUS.KomunikaciaError THEN
-//				P2_Alarmy[225]:= TRUE;
-//				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
-//			END_IF
-//            
+		135:
+			SC_P2_ZakladacTesnenia.StepName:='135 - Automaticky Rezim - rozhodnutie podla kamerovej kontroly '; 
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+			
+			IF CAM1.PAR.ResultFotky = 'PASS' THEN
+				IF CAM1.RESULT.ZalozenieTesnenia_OK THEN
+					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+					SC_P2_ZakladacTesnenia.Step:= 180;
+				ELSIF NOT CAM1.RESULT.ZalozenieTesnenia_OK THEN
+					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+					SC_P2_ZakladacTesnenia.Step:= 145;
+				END_IF	
+			ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 140;
+			END_IF
+			
+		
+		140:
+			SC_P2_ZakladacTesnenia.StepName:='140 - Automaticky Rezim - zobrazenie hlasenia vloz tesnenie ';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+			
+			P2_StoperZaklTesnenia.Banner.IN.CervenaLED_ON:= Blikac500ms;
+			P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= Blikac500ms;
+			
+			IF NOT SC_P2_ZakladacTesnenia.Switch1 THEN	
+				P2_Vizu.ZobrazHL6_ST3:= TRUE;
+				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
+			END_IF	
+				
+					
+			
+			IF EDGEPOS(Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE) THEN
+				CAM1.STAV.Results_READY:= FALSE;
+				CAM1.STAV.OldRunCounter:= CAM1.STAV.RunCounter;
+				P2_Vizu.ZobrazHL6_ST3:= FALSE;
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE; //Zhasnem banner//	
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 145;
+			END_IF
+			
+		
+		145:
+			SC_P2_ZakladacTesnenia.StepName:='145 - Automaticky Rezim - vymazanie fotky kamery CAM1';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#300ms;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+            
+			IF Linka.KOM_FTP_OFF THEN
+				IF CAM1.PAR.ResultFotky = 'PASS' THEN
+					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+					SC_P2_ZakladacTesnenia.Step:= 150;
+				ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
+					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+					SC_P2_ZakladacTesnenia.Step:= 105;
+				END_IF
+			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 THEN
+				FTP_CAM1.CMD.VymazFotku:= TRUE;
+				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
+			END_IF	
+			
+			IF FTP_CAM1.STATUS.KomunikaciaUkoncena THEN
+				FTP_CAM1.CMD.VymazFotku:= FALSE;
+				IF CAM1.PAR.ResultFotky = 'PASS' THEN
+					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+					SC_P2_ZakladacTesnenia.Step:= 150;
+				ELSIF CAM1.PAR.ResultFotky = 'FAIL' THEN
+					SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+					SC_P2_ZakladacTesnenia.Step:= 105;
+				END_IF
+			ELSIF FTP_CAM1.STATUS.KomunikaciaError THEN
+				P2_Alarmy[225]:= TRUE;
+				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
+			END_IF
+            
             
           
 			
@@ -729,7 +716,7 @@ PROGRAM _CYCLIC
 			P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= Blikac500ms;
 			
 			
-			SC_P2_ZakladacTesnenia.IdleTime.IN:= Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE;
+			SC_P2_ZakladacTesnenia.IdleTime.IN:= Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE AND P2_ZakladacTesnenia.IN.Pojazd_PritomPowerCP;
 			
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Acc;
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Dcc;
@@ -786,7 +773,80 @@ PROGRAM _CYCLIC
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlostZdvihu/1000;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.0;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 55;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 60;
+			
+			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.Ready THEN
+				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= TRUE;
+				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
+			END_IF	
+			
+			
+					
+			IF EDGEPOS(P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.InPosition) THEN
+				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= FALSE;
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 156;
+			END_IF	
+		
+		156:
+			SC_P2_ZakladacTesnenia.StepName:='156 - Automaticky Rezim - cakam na zrusenie stavu serva v pozicii';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+			
+			IF NOT P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.InPosition THEN
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 157;
+			END_IF	
+			
+			
+		157:
+			SC_P2_ZakladacTesnenia.StepName:='157 - Automaticky Rezim - presun zdvihu do pozicie prveho zatlacenia na poziciu';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+		
+                       
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Acc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlZatlacen/1000;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.5;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 85; 
+			
+			
+			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.Ready THEN
+				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= TRUE;
+				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
+			END_IF	
+			
+			
+			IF EDGEPOS(P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.InPosition) THEN
+				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= FALSE;
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 158;
+			END_IF
+			
+		158:
+			SC_P2_ZakladacTesnenia.StepName:='158 - Automaticky Rezim - cakam na zrusenie stavu serva v pozicii';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+			
+			IF NOT P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.InPosition THEN
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 159;
+			END_IF		
+		
+			
+		159:
+			SC_P2_ZakladacTesnenia.StepName:='159 - Automaticky Rezim - presun zdvihu do pozicie pred pritlakom';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+		
+		 
+            
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Acc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlostZdvihu/1000;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.0;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 60;
 			
 			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.Ready THEN
 				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= TRUE;
@@ -799,13 +859,21 @@ PROGRAM _CYCLIC
 				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= FALSE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 160;
-			END_IF	
+			END_IF		
+			
+		160:
+			SC_P2_ZakladacTesnenia.StepName:='160 - Automaticky Rezim - cakam na zrusenie stavu serva v pozicii';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+			
+			IF NOT P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.InPosition THEN
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 161;
+			END_IF		
 			
 		
-           
-			
 				
-		160:
+		161:
 			SC_P2_ZakladacTesnenia.StepName:='160 - Automaticky Rezim - presun zdvihu do pozicie zatlacenia na moment';
 			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
@@ -815,7 +883,7 @@ PROGRAM _CYCLIC
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlZatlacen/1000;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= P2_RemPremenne.P2_ZaklTesn_Zdvih_MomZatlacen;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 100; 
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 150; 
 			
 			
 			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.Ready THEN
@@ -824,7 +892,7 @@ PROGRAM _CYCLIC
 			END_IF	
 			
 			
-			IF P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.InTorque THEN
+			IF EDGEPOS(P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.InTorque) THEN
 				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= FALSE;
 				PocetZatlaceni:= PocetZatlaceni + 1;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
@@ -857,7 +925,7 @@ PROGRAM _CYCLIC
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlZatlacen/1000;
 			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.0;
-			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 55;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 60;
 			
 			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.Ready THEN
 				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= TRUE;
@@ -871,9 +939,33 @@ PROGRAM _CYCLIC
 				SC_P2_ZakladacTesnenia.Step:= 160;
 			END_IF	
 		
-		
 		164:
-			SC_P2_ZakladacTesnenia.StepName:='164 - Automaticky Rezim - presun zdvihu do vychodiskovej pozicie ';
+			SC_P2_ZakladacTesnenia.StepName:='164 - Automaticky Rezim - presun zdvihu do pozicie pred pritlakom po ukonceni zatlacenia';
+			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
+			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
+		            
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Acc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Dcc:= P2_RemPremenne.P2_ZaklTesn_Zdvih_Dcc;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Velocity:= P2_RemPremenne.P2_ZaklTesn_Zdvih_RychlZatlacen/1000;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Torque:= 1.0;
+			P2_ZakladacTesnenia.ServoZdvihuZakladaca.Parameters.Position:= 60;
+			
+			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.Ready THEN
+				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= TRUE;
+				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
+			END_IF	
+			
+								
+			IF EDGEPOS(P2_ZakladacTesnenia.ServoZdvihuZakladaca.Status.InPosition) THEN
+				P2_ZakladacTesnenia.ServoZdvihuZakladaca.Command.MovePosition:= FALSE;
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 165;
+			END_IF		
+			
+			
+		
+		165:
+			SC_P2_ZakladacTesnenia.StepName:='165 - Automaticky Rezim - presun zdvihu do vychodiskovej pozicie ';
 			SC_P2_ZakladacTesnenia.IdleTime.PT:= T#8s;
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;
 		
@@ -922,6 +1014,7 @@ PROGRAM _CYCLIC
 		
 			IF EDGEPOS(P2_ZakladacTesnenia.ServoPojazduZakladaca.Status.InPosition) THEN
 				P2_ZakladacTesnenia.ServoPojazduZakladaca.Command.MovePosition:= FALSE;
+				CAM1.STAV.OldRunCounter:= CAM1.STAV.RunCounter;
 				CAM1.STAV.Results_READY:= FALSE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 168;
@@ -937,25 +1030,23 @@ PROGRAM _CYCLIC
 			
             P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
 			
-			IF Linka.P2_Kamery_OFF THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
-				SC_P2_ZakladacTesnenia.Step:= 180;
-			ELSIF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM1.STAV.Command_READY THEN
+			IF NOT SC_P2_ZakladacTesnenia.Switch1 AND CAM1.STAV.Command_READY THEN
 				CAM1.CMD.Triger:= TRUE;
 				SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_ZakladacTesnenia.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM1.STAV.Results_READY AND CAM1.STAV.Command_AKCEPTOVANY THEN
+			IF CAM1.STAV.Results_READY AND CAM1.STAV.Command_AKCEPTOVANY AND CAM1.STAV.OldRunCounter <> CAM1.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM1.STAV.Results_READY:= FALSE;
+				CAM1.STAV.OldRunCounter:= CAM1.STAV.RunCounter;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
 				SC_P2_ZakladacTesnenia.Step:= 172;
 			ELSIF SC_P2_ZakladacTesnenia.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM1.STAV.Results_READY:= FALSE;
+				CAM1.STAV.OldRunCounter:= CAM1.STAV.RunCounter;
 				CAM1.CMD.Triger:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
@@ -989,8 +1080,12 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.IdleTime.IN:= TRUE;
 			
             
-			
-			IF NOT CAM1.STAV.BUSY THEN
+			IF Linka.P2_Kamery_OFF THEN
+				CAM1.CMD.Triger:= FALSE;
+				CAM1.PAR.ResultFotky:= 'PASS';
+				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
+				SC_P2_ZakladacTesnenia.Step:= 174;
+			ELSIF NOT CAM1.STAV.BUSY THEN
 				CAM1.CMD.Triger:= FALSE;
 				IF CAM1.RESULT.ZalozenieTesnenia_OK THEN
 					CAM1.PAR.ResultFotky:= 'PASS';
@@ -1045,6 +1140,7 @@ PROGRAM _CYCLIC
 			
 			IF EDGEPOS(Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE) THEN
 				CAM1.STAV.Results_READY:= FALSE;
+				CAM1.STAV.OldRunCounter:= CAM1.STAV.RunCounter;
 				P2_Vizu.ZobrazHL7_ST3:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE; //Zhasnem banner//	
 				SC_P2_ZakladacTesnenia.ResetStep:= TRUE;
@@ -1123,7 +1219,7 @@ PROGRAM _CYCLIC
 			SC_P2_ZakladacTesnenia.AlarmTime.PT:= T#5s;	
 		
 			P2_ZakladacTesnenia.OUT.LED_DvojrucneOvladanie_ON:= Blikac500ms;
-			SC_P2_ZakladacTesnenia.IdleTime.IN:= Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE;
+			SC_P2_ZakladacTesnenia.IdleTime.IN:= Safety.STAV.P2_DvojrucneOvladanie_AKTIVNE AND NOT P2_ZakladacTesnenia.IN.Pojazd_PritomPowerCP;
 				
 					
 			P2_ZakladacTesnenia.ServoPojazduZakladaca.Parameters.Acc:= P2_RemPremenne.P2_ZaklTesn_Pojazd_Acc;

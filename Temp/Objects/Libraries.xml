@@ -8,6 +8,12 @@
     UseAsStatic="false"
     Version="" />
   <Library
+    Name="AsICMP"
+    IsDeployed="true"
+    IsStatic="false"
+    UseAsStatic="false"
+    Version="" />
+  <Library
     Name="AsIecCon"
     IsDeployed="true"
     IsStatic="false"
@@ -60,7 +66,7 @@
     IsDeployed="true"
     IsStatic="false"
     UseAsStatic="false"
-    Version="5.17.0" />
+    Version="5.15.0" />
   <Library
     Name="dvframe"
     IsDeployed="true"
@@ -162,7 +168,7 @@
     IsDeployed="true"
     IsStatic="false"
     UseAsStatic="false"
-    Version="1.00.8" />
+    Version="1.00.9" />
   <Library
     Name="standard"
     IsDeployed="true"

@@ -1,25 +1,25 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P1_Remanen 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=52 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=78 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                           P1_RemPremenne                       P1_RemPremenne_typ    0 "                                                               *"    0   24    1    0    0    1         
-         P1_Srob45F_PozX_LavejSkrutkyK30                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-         P1_Srob45F_PozY_LavejSkrutkyK30                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-        P1_Srob45F_PozX_PravejSkrutkyK30                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-        P1_Srob45F_PozY_PravejSkrutkyK30                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-          P1_Srob4F_PozX_ZadnejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-          P1_Srob4F_PozY_ZadnejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-          P1_Srob5F_PozX_ZadnejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-          P1_Srob5F_PozY_ZadnejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-          P1_Srob45F_Mom_ZadnejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-        P1_Srob45F_Rychl_ZadnejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-         P1_Srob4F_PozX_PrednejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-         P1_Srob4F_PozY_PrednejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-         P1_Srob5F_PozX_PrednejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-         P1_Srob5F_PozY_PrednejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-         P1_Srob45F_Mom_PrednejSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-        P1_Srob45F_Rychl_PredneSkrutkyM4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-           P1_Srob45F_PozX_SkrutkyDPS_M4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-           P1_Srob45F_PozY_SkrutkyDPS_M4                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+         P1_Srob45F_PozX_LavejSkrutkyK30                                     REAL    0 "                                                            11.5"    1    8    1   10    0    0         
+         P1_Srob45F_PozY_LavejSkrutkyK30                                     REAL    0 "                                                           213.0"    1    8    1   10    0    0         
+        P1_Srob45F_PozX_PravejSkrutkyK30                                     REAL    0 "                                                            37.5"    1    8    1   10    0    0         
+        P1_Srob45F_PozY_PravejSkrutkyK30                                     REAL    0 "                                                           213.0"    1    8    1   10    0    0         
+          P1_Srob4F_PozX_ZadnejSkrutkyM4                                     REAL    0 "                                                           23.37"    1    8    1   10    0    0         
+          P1_Srob4F_PozY_ZadnejSkrutkyM4                                     REAL    0 "                                                          299.26"    1    8    1   10    0    0         
+          P1_Srob5F_PozX_ZadnejSkrutkyM4                                     REAL    0 "                                                            24.0"    1    8    1   10    0    0         
+          P1_Srob5F_PozY_ZadnejSkrutkyM4                                     REAL    0 "                                                           296.5"    1    8    1   10    0    0         
+          P1_Srob45F_Mom_ZadnejSkrutkyM4                                     REAL    0 "                                                            0.15"    1    8    1   10    0    0         
+        P1_Srob45F_Rychl_ZadnejSkrutkyM4                                     REAL    0 "                                                            20.0"    1    8    1   10    0    0         
+         P1_Srob4F_PozX_PrednejSkrutkyM4                                     REAL    0 "                                                           23.01"    1    8    1   10    0    0         
+         P1_Srob4F_PozY_PrednejSkrutkyM4                                     REAL    0 "                                                          325.97"    1    8    1   10    0    0         
+         P1_Srob5F_PozX_PrednejSkrutkyM4                                     REAL    0 "                                                            24.0"    1    8    1   10    0    0         
+         P1_Srob5F_PozY_PrednejSkrutkyM4                                     REAL    0 "                                                           328.0"    1    8    1   10    0    0         
+         P1_Srob45F_Mom_PrednejSkrutkyM4                                     REAL    0 "                                                            0.15"    1    8    1   10    0    0         
+        P1_Srob45F_Rychl_PredneSkrutkyM4                                     REAL    0 "                                                            20.0"    1    8    1   10    0    0         
+           P1_Srob45F_PozX_SkrutkyDPS_M4                                     REAL    0 "                                                            24.0"    1    8    1   10    0    0         
+           P1_Srob45F_PozY_SkrutkyDPS_M4                                     REAL    0 "                                                           313.0"    1    8    1   10    0    0         
             P1_Srob45F_Mom_SkrutkyDPS_M4                                     REAL    0 "                                                             0.1"    1    8    1   10    0    0         
           P1_Srob45F_Rychl_SkrutkyDPS_M4                                     REAL    0 "                                                            20.0"    1    8    1   10    0    0         
           P1_Srob5H_PozX_LavejSkrutkyK30                                     REAL    0 "                                                            11.5"    1    8    1   10    0    0         
@@ -44,11 +44,11 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
            P1_Srob_PozX_OdobratSkrutkyM4                                     REAL    0 "                                                             2.5"    1    8    1   10    0    0         
            P1_Srob_PozY_OdobratSkrutkyM4                                     REAL    0 "                                                            21.0"    1    8    1   10    0    0         
            P1_Srob_PozZ_OdobratSkrutkyM4                                     REAL    0 "                                                            53.0"    1    8    1   10    0    0         
-                 P1_Vytah_RychlostZdvihu                                     REAL    0 "                                                           500.0"    1    8    1   10    0    0         
+                 P1_Vytah_RychlostZdvihu                                     REAL    0 "                                                           400.0"    1    8    1   10    0    0         
                       P1_Vytah_Zdvih_Acc                                     REAL    0 "                                                            50.0"    1    8    1   10    0    0         
                       P1_Vytah_Zdvih_Dcc                                     REAL    0 "                                                            50.0"    1    8    1   10    0    0         
-              P1_Vytah_PoziciaNakladania                                     REAL    0 "                                                             6.0"    1    8    1   10    0    0         
-              P1_Vytah_PoziciaVykladania                                     REAL    0 "                                                           625.0"    1    8    1   10    0    0         
+              P1_Vytah_PoziciaNakladania                                     REAL    0 "                                                             4.0"    1    8    1   10    0    0         
+              P1_Vytah_PoziciaVykladania                                     REAL    0 "                                                           624.0"    1    8    1   10    0    0         
                P1_ManipSrob_OsX_Rychlost                                     REAL    0 "                                                            80.0"    1    8    1   10    0    0         
                P1_ManipSrob_OsY_Rychlost                                     REAL    0 "                                                           350.0"    1    8    1   10    0    0         
                    P1_ManipSrob_OsXY_Acc                                     REAL    0 "                                                             7.0"    1    8    1   10    0    0         
@@ -60,23 +60,23 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                  P1_ManipSrob_OsZ_M5_Acc                                     REAL    0 "                                                            10.0"    1    8    1   10    0    0         
                  P1_ManipSrob_OsZ_M5_Dcc                                     REAL    0 "                                                             2.0"    1    8    1   10    0    0         
          P1_Srob45F_LavaK30_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-         P1_Srob45F_LavaK30_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+         P1_Srob45F_LavaK30_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
         P1_Srob45F_PravaK30_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-        P1_Srob45F_PravaK30_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+        P1_Srob45F_PravaK30_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
          P1_Srob45F_ZadnaM4_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-         P1_Srob45F_ZadnaM4_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+         P1_Srob45F_ZadnaM4_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
         P1_Srob45F_PrednaM4_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-        P1_Srob45F_PrednaM4_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+        P1_Srob45F_PrednaM4_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
           P1_Srob45F_DPS_M4_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-          P1_Srob45F_DPS_M4_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+          P1_Srob45F_DPS_M4_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
           P1_Srob5H_LavaK30_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-          P1_Srob5H_LavaK30_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+          P1_Srob5H_LavaK30_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
          P1_Srob5H_PravaK30_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-         P1_Srob5H_PravaK30_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+         P1_Srob5H_PravaK30_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
            P1_Srob5H_LavaM5_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-           P1_Srob5H_LavaM5_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+           P1_Srob5H_LavaM5_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
         P1_Srob5H_StrednaM5_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-        P1_Srob5H_StrednaM5_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+        P1_Srob5H_StrednaM5_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
           P1_Srob5H_PravaM5_Vysunutie_LO                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-          P1_Srob5H_PravaM5_Vysunutie_HI                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+          P1_Srob5H_PravaM5_Vysunutie_HI                                     REAL    0 "                                                          5000.0"    1    8    1   10    0    0         
                          P1_UlozPremenne                                     BOOL    0 "                                                           FALSE"    0    1    1    2    0    0         

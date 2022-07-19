@@ -20,8 +20,6 @@ PROGRAM _CYCLIC
 		P2_Cistenie.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_Cistenie.Step:= 0;
-	ELSIF NOT P2_Cistenie.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
-		SC_P2_Cistenie.Step:= 0;
 	END_IF	
 	
 	
@@ -35,7 +33,7 @@ PROGRAM _CYCLIC
 			P2_Cistenie.KoniecCyklu:= FALSE;
 			P2_Cistenie.Manual:= FALSE;
 			P2_Cistenie.STAV.PoINIT:= FALSE;
-			P2_Cistenie.OUT.Ionizator_ON:= FALSE;
+			P2_Cistenie.OUT.Ionizator_OFF:= TRUE;
 			P2_Cistenie.OUT.OdsavanieOfuk_ON:= FALSE;
 			P2_Cistenie.OUT.Odsavanie_ON:= FALSE;
 			P2_Cistenie.OUT.VzduchPreIonizator_ON:= FALSE;
@@ -168,7 +166,7 @@ PROGRAM _CYCLIC
 			SC_P2_Cistenie.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P2_Cistenie.Switch1 THEN
-				P2_Cistenie.OUT.Ionizator_ON:= TRUE;
+				P2_Cistenie.OUT.Ionizator_OFF:= FALSE;
 				P2_Cistenie.OUT.VzduchPreIonizator_ON:= TRUE;
 				Dvere_ZATVOR:= TRUE;
 				P2_Robot.COM_OUT.Cistenie_BezpecnaPozicia:= FALSE;
@@ -227,7 +225,7 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			IF P2_Cistenie.IN.Dvere_OTVORENE THEN
-				P2_Cistenie.OUT.Ionizator_ON:= FALSE;
+				P2_Cistenie.OUT.Ionizator_OFF:= TRUE;
 				P2_Cistenie.OUT.VzduchPreIonizator_ON:= FALSE;
 				P2_Robot.COM_OUT.Cistenie_BezpecnaPozicia:= TRUE;
 				SC_P2_Cistenie.ResetStep:= TRUE;

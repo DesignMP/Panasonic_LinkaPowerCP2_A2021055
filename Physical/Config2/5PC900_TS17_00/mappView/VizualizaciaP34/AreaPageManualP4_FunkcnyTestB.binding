@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageManualP4_FunkcnyTestB_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_SekvencieFunkcTestuB_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_Stoper2" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_ZasunStoperPoz4" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_Stoper3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="MomentaryPushButton_JoggOsY_VZAD" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="MomentaryPushButton_JoggOsY_VPRED" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="MomentaryPushButton_JoggOsY_VPRED1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_Stoper1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="MomentaryPushButton_JoggOsY_VZAD1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_ZasunStoperPoz5" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.TypSpodnychKontaktov_5F_5H" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ImageList16" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.TypSpodnychKontaktov_4F" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ImageList15" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.PritlakPowerCP_VYSUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_Stoper3" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.KontaktyTestera_VYSUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_ZasunStoperPoz5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.CMD.RR_VysunPruzenieKontaktov" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_Stoper1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.SpodneKontakty_ZASUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ImageList20" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.SpodneKontakty_VYSUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ImageList19" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.HorneKontakty_ZASUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ImageList17" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.HorneKontakty_VYSUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ImageList18" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.CMD.RR_ZatvorTester" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_Stoper2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.ZasunStoper" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_Stoper" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.RFID_hlava.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ImageList10" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.Centrovanie_ZASUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ImageList9" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.Centrovanie_VYSUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ImageList8" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.CMD.RR_VysunCentrovanie" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_FunkcnyTestB" widgetRefId="ToggleSwitch_ZasunStoperPoz4" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

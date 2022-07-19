@@ -18,7 +18,7 @@
 		opacity: 0.15;
 }
 #AreaPageManualMainP3_Label1 {
-	@include elemTop(20);
+	@include elemTop(13);
 }
 #AreaPageManualMainP3_Label1 {
 	@include elemLeft(483);
@@ -31,6 +31,9 @@
 }
 #AreaPageManualMainP3_Label1 {
 		z-index: 1;
+}
+#AreaPageManualMainP3_Label1 {
+		border-width: 3px;
 }
 #AreaPageManualMainP3_Image1 {
 	@include elemTop(70);
@@ -60,7 +63,7 @@
 	@include elemTop(75);
 }
 #AreaPageManualMainP3_NavigationButtonRR_LeakageBP3 {
-	@include elemLeft(528);
+	@include elemLeft(643);
 }
 #AreaPageManualMainP3_NavigationButtonRR_LeakageBP3 {
 	@include elemAutoWidth(310);
@@ -110,6 +113,16 @@
 	}
 }
 #AreaPageManualMainP3_NavigationButtonRR_LeakageBP3 {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageBP3 {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageBP3 {
 	span{
 		font-size: 22px;
 	}
@@ -130,10 +143,10 @@
 	}
 }
 #AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 {
-	@include elemTop(500);
+	@include elemTop(498);
 }
 #AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 {
-	@include elemLeft(528);
+	@include elemLeft(643);
 }
 #AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 {
 	@include elemAutoWidth(310);
@@ -180,6 +193,16 @@
 #AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 {
 	&:not(.disabled):not(.checked){
 		border-color: rgba(255, 117, 26, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
 	}
 }
 #AreaPageManualMainP3_NavigationButtonRR_LeakageAP3 {
@@ -256,6 +279,16 @@
 	}
 }
 #AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3 {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3 {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_DopravnikyP3 {
 	span{
 		font-size: 22px;
 	}
@@ -326,6 +359,16 @@
 #AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3 {
 	&:not(.disabled):not(.checked){
 		border-color: rgba(0, 128, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3 {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3 {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
 	}
 }
 #AreaPageManualMainP3_NavigationButtonRR_SkrutkovanieP3 {
@@ -428,4 +471,114 @@
 }
 #AreaPageManualMainP3_Rectangle3 {
 		border-color: rgba(0, 82, 204, 1);
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	@include elemTop(498);
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	@include elemLeft(306);
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	@include elemAutoWidth(310);
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	@include elemAutoHeight(65);
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+		z-index: 10;
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	img{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	svg{
+	@include imageHeight(55);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&:not(.active):not(.checked){
+		border-width: 3px;
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&.disabled{
+		border-width: 3px;
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	@include border-radius(5px);
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&.active:not(.disabled){
+	@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%)');
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&.checked:not(.disabled){
+	@include backGroundGradient('linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,133,0,1) 100%)');
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&:not(.disabled):not(.checked){
+		border-color: rgba(255, 255, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&.active:not(.disabled):not(.editMode) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&.active.checked:not(.disabled) span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	span{
+		font-size: 22px;
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&:not(.active):not(.checked){
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&.disabled.active{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualMainP3_NavigationButtonRR_LeakageAP4 {
+	&.disabled.checked{
+	@include box-shadow(4px 4px 14px rgba(0, 0, 0, 1));
+	}
+}
+#AreaPageManualMainP3_Rectangle4 {
+	@include elemTop(290);
+}
+#AreaPageManualMainP3_Rectangle4 {
+	@include elemLeft(492);
+}
+#AreaPageManualMainP3_Rectangle4 {
+	@include elemWidth(130);
+}
+#AreaPageManualMainP3_Rectangle4 {
+	@include elemHeight(200);
+}
+#AreaPageManualMainP3_Rectangle4 {
+		z-index: 11;
+}
+#AreaPageManualMainP3_Rectangle4 {
+		border-style: solid;
+}
+#AreaPageManualMainP3_Rectangle4 {
+		border-width: 4px;
+}
+#AreaPageManualMainP3_Rectangle4 {
+	@include border-radius(5px);
+}
+#AreaPageManualMainP3_Rectangle4 {
+		border-color: rgba(255, 255, 0, 1);
 }

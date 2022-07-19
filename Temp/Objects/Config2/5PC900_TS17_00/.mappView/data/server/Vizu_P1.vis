@@ -1,5 +1,5 @@
 
-<vdef:Visualization id="Vizu_P1" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+<vdef:Visualization id="Vizu_P1" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
   <StartPage pageRefId="PageBootP1" />
   <Pages>
     <Page refId="PageBootP1" />
@@ -40,6 +40,20 @@
     <BindingsSet refId="-229956454" />
     <BindingsSet refId="-231072549" />
     <BindingsSet refId="-232328168" />
+    <BindingsSet refId="1019205438" />
+    <BindingsSet refId="-2067099009" />
+    <BindingsSet refId="-1568186816" />
+    <BindingsSet refId="1013485183" />
+    <BindingsSet refId="-2061378754" />
+    <BindingsSet refId="-1569442179" />
+    <BindingsSet refId="-1787264708" />
+    <BindingsSet refId="142589307" />
+    <BindingsSet refId="1362692666" />
+    <BindingsSet refId="1854629241" />
+    <BindingsSet refId="825423432" />
+    <BindingsSet refId="-1288991902" />
+    <BindingsSet refId="-1583792902" />
+    <BindingsSet refId="-1042306043" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="747011459" />
@@ -55,6 +69,12 @@
     <EventBindingsSet refId="284601460" />
     <EventBindingsSet refId="-1154136397" />
     <EventBindingsSet refId="2139378554" />
+    <EventBindingsSet refId="-1704074212" />
+    <EventBindingsSet refId="46325983" />
+    <EventBindingsSet refId="-2036698978" />
+    <EventBindingsSet refId="-975253488" />
+    <EventBindingsSet refId="1387227970" />
+    <EventBindingsSet refId="-1168034715" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="Hlasenie1_ST1" />
@@ -128,8 +148,8 @@
     <Dialog refId="Hlasenie7_ST10" />
     <Dialog refId="Hlasenie8_ST10" />
     <Dialog refId="Hlasenie9_ST10" />
-    <Dialog refId="LoginDialogP34" />
-    <Dialog refId="TimeDialogP34" />
+    <Dialog refId="Hlasenie10_ST2" />
+    <Dialog refId="Hlasenie15_ST1" />
   </Dialogs>
   <Contents>
     <Content refId="AreaLoginP1" />
@@ -204,6 +224,8 @@
     <Content refId="AreaHlasenie8_ST3" />
     <Content refId="AreaHlasenie8_ST6" />
     <Content refId="AreaHlasenie9_ST3" />
+    <Content refId="AreaHlasenie10_ST2" />
+    <Content refId="AreaHlasenie15_ST1" />
   </Contents>
   <VariablesSets />
   <SnippetsSets>

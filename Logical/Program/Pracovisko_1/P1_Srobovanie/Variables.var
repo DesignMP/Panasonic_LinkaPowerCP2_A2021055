@@ -16,4 +16,5 @@ VAR
 	SC_SkrutkovaciSet_K30 : SequenceControlTyp := (0);
 	SC_SkrutkovaciSet_M4 : SequenceControlTyp := (0);
 	SC_SkrutkovaciSet_M5 : SequenceControlTyp := (0);
+	TEST : BOOL := 0;
 END_VAR

@@ -1,5 +1,6 @@
 
 ACTION ProfinetKomunikaciaKAM13: 
+	//Kamerová kontrola zrušená//
 
 	//Vstupy pre kameru//
 	CAM13.Profinet_PLC_OUTPUTS[0].3:= CAM13.CMD.Triger;
@@ -22,7 +23,12 @@ ACTION ProfinetKomunikaciaKAM13:
 		CAM13.STAV.Results_READY:= TRUE;
 	END_IF
 	
+	//Run counter kamery//
+	Convert_0.IN_Byte0:= CAM13.STAV.RunCounter_Byte1;
+	Convert_0.IN_Byte1:= CAM13.STAV.RunCounter_Byte0;
 	
+	CAM13.STAV.RunCounter:= Convert_0.OUT_UINT;
+	Convert_0();
 	
 	
 END_ACTION

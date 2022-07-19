@@ -82,35 +82,35 @@ PROGRAM _CYCLIC
     
     
 	//******************************Configur·cia alarmov**************************************//
-    MpAlarmXCore_1.Enable:= TRUE;
-    MpAlarmXCore_1.MpLink:= ADR(gAlarmXCore);
-    MpAlarmXCore_1();
+	MpAlarmXCore_1.Enable:= TRUE;
+	MpAlarmXCore_1.MpLink:= ADR(gAlarmXCore);
+	MpAlarmXCore_1();
 	
 	
-    //*****************************Configur·cia histÛrie alarmov*****************************//
+	//*****************************Configur·cia histÛrie alarmov*****************************//
 	
-    MpAlarmXHistory_1.Enable:= TRUE;
-    MpAlarmXHistory_1.MpLink:= ADR(gAlarmXHistory);
-    MpAlarmXHistory_1.DeviceName:= ADR('HDD_AlarmHistory');
-    MpAlarmXHistory_1();
+	MpAlarmXHistory_1.Enable:= TRUE;
+	MpAlarmXHistory_1.MpLink:= ADR(gAlarmXHistory);
+	MpAlarmXHistory_1.DeviceName:= ADR('HDD_AlarmHistory');
+	MpAlarmXHistory_1();
 	
-    //****************************Archiv·cia alarmov na disk PLC******************************//
-    IF P1_AlarmyVizu.ArchivaciaAlarmov THEN
-        MpAlarmXHistory_1.Export:= TRUE;
-        P1_AlarmyVizu.ArchivaciaAlarmov:= FALSE;
-    ELSIF P2_AlarmyVizu.ArchivaciaAlarmov THEN
-        MpAlarmXHistory_1.Export:= TRUE;
-        P2_AlarmyVizu.ArchivaciaAlarmov:= FALSE;	
-    ELSIF P34_AlarmyVizu.ArchivaciaAlarmov THEN
-        MpAlarmXHistory_1.Export:= TRUE;
-        P34_AlarmyVizu.ArchivaciaAlarmov:= FALSE;	
-    END_IF
+	//****************************Archiv·cia alarmov na disk PLC******************************//
+	IF P1_AlarmyVizu.ArchivaciaAlarmov THEN
+		MpAlarmXHistory_1.Export:= TRUE;
+		P1_AlarmyVizu.ArchivaciaAlarmov:= FALSE;
+	ELSIF P2_AlarmyVizu.ArchivaciaAlarmov THEN
+		MpAlarmXHistory_1.Export:= TRUE;
+		P2_AlarmyVizu.ArchivaciaAlarmov:= FALSE;	
+	ELSIF P34_AlarmyVizu.ArchivaciaAlarmov THEN
+		MpAlarmXHistory_1.Export:= TRUE;
+		P34_AlarmyVizu.ArchivaciaAlarmov:= FALSE;	
+	END_IF
 	
-    IF MpAlarmXHistory_1.Error THEN
-        MpAlarmXHistory_1.Export:= FALSE;
-    ELSIF MpAlarmXHistory_1.CommandDone THEN
-        MpAlarmXHistory_1.Export:= FALSE;
-    END_IF	
+	IF MpAlarmXHistory_1.Error THEN
+		MpAlarmXHistory_1.Export:= FALSE;
+	ELSIF MpAlarmXHistory_1.CommandDone THEN
+		MpAlarmXHistory_1.Export:= FALSE;
+	END_IF	
 	
 	
 	
@@ -126,817 +126,779 @@ PROGRAM _CYCLIC
 	//**********************************Porucha tlaku vzduchu*********************************************************//
 	IF CasKontroly_TlakVzduchu.Q THEN
 		P1_Alarmy[124]:= TRUE;
-        P1_PoruchaST1:= TRUE;
-        P1_PoruchaST2:= TRUE;
-    END_IF    
+		P1_Pracovisko.STAV.Porucha_ST1:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST3:= TRUE;
+	END_IF    
     
     
-    IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.IN.PrivodVzduchu_SnimacTlaku_S18 THEN
-        CasKontroly_TlakVzduchu.IN:= TRUE;
-    ELSE    
-        CasKontroly_TlakVzduchu.IN:= FALSE;
-    END_IF    
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.IN.TlakVzduchu_OK THEN
+		CasKontroly_TlakVzduchu.IN:= TRUE;
+	ELSE    
+		CasKontroly_TlakVzduchu.IN:= FALSE;
+	END_IF    
     
-    CasKontroly_TlakVzduchu.PT:= T#10s;
-    CasKontroly_TlakVzduchu();    
+	CasKontroly_TlakVzduchu.PT:= T#5s;
+	CasKontroly_TlakVzduchu();    
         
-    //**********************************Porucha - kamerovy systÈm nieje online****************************************//
-    IF CasKontroly_KAMsystem.Q THEN
-        IF NOT Linka.STAV.WenglorControlUnit_OK THEN
-            P1_Alarmy[149]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT CAM3.STAV.READY THEN
-            P1_Alarmy[140]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT CAM5.STAV.READY THEN
-            P1_Alarmy[141]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-    END_IF    
+	//**********************************Porucha - kamerovy systÈm nieje online****************************************//
+	IF CasKontroly_KAMsystem.Q THEN
+		P1_Alarmy[149]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST1:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST3:= TRUE;
+	END_IF
+		
+	IF CasKontroly_KAM3.Q THEN
+		P1_Alarmy[140]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST1:= TRUE;
+	END_IF
+	
+	
+	IF CasKontroly_KAM5.Q THEN
+		P1_Alarmy[141]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST1:= TRUE;
+	END_IF
+  
         
-    IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.STAV.Kamery_OK THEN
-        CasKontroly_KAMsystem.IN:= TRUE;
-    ELSE    
-        CasKontroly_KAMsystem.IN:= FALSE;
-    END_IF    
+	IF NOT P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND P1_Pracovisko.Automat THEN
+		CasKontroly_KAMsystem.IN:= TRUE;
+	ELSE    
+		CasKontroly_KAMsystem.IN:= FALSE;
+	END_IF    
+     
+	IF NOT CAM3.STAV.READY AND P1_Pracovisko.Automat THEN
+		CasKontroly_KAM3.IN:= TRUE;
+	ELSE    
+		CasKontroly_KAM3.IN:= FALSE;
+	END_IF    
+	
+	IF NOT CAM5.STAV.READY AND P1_Pracovisko.Automat THEN
+		CasKontroly_KAM5.IN:= TRUE;
+	ELSE    
+		CasKontroly_KAM5.IN:= FALSE;
+	END_IF 
+	
+	
+	
+	CasKontroly_KAMsystem.PT:= T#2s;
+	CasKontroly_KAMsystem();
+	CasKontroly_KAM3.PT:= T#2s;
+	CasKontroly_KAM3();
+	CasKontroly_KAM5.PT:= T#2s;
+	CasKontroly_KAM5();  
+	
+	
+	
+    
+	//**********************************Porucha - IO moduly niesu online**************************************************//
+	IF CasKontroly_Moduly.Q THEN
+		P1_Alarmy[125]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST1:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST3:= TRUE;
+	END_IF
+		
+	    
+         
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND (NOT P1_Pracovisko.IN.ModulFesto_IO_KomOK OR NOT P1_Pracovisko.IN.ModulWeidmuller_IO_KomOK) THEN
+		CasKontroly_Moduly.IN:= TRUE;
+	ELSE
+		CasKontroly_Moduly.IN:= FALSE;
+	END_IF 
+	
+	
+	CasKontroly_Moduly.PT:= T#2s;
+	CasKontroly_Moduly();
+   
+    
+	//********************************Porucha - ventilovÈho termin·lu**********************************************//
+	IF CasKontroly_VentTerminalov.Q THEN
+		P1_Alarmy[134]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST1:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST3:= TRUE;
+	END_IF
+
+    
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.IN.VentilovyTerminal_KomOK THEN
+		CasKontroly_VentTerminalov.IN:= TRUE;
+	ELSE
+		CasKontroly_VentTerminalov.IN:= FALSE;
+	END_IF    
+    
+	CasKontroly_VentTerminalov.PT:= T#2s;
+	CasKontroly_VentTerminalov();
+    
+    
+	//********************************Porucha - skrutkovacky niesu online**********************************************//
+	IF CasKontroly_Skrutkovacky.Q THEN
+		IF NOT P1_Pracovisko.IN.Skrutkovacka_K30_KomOK THEN
+			P1_Alarmy[136]:= TRUE;
+			P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		END_IF
+		IF NOT P1_Pracovisko.IN.Skrutkovacka_M5_KomOK THEN
+			P1_Alarmy[137]:= TRUE;
+			P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		END_IF
+		IF NOT P1_Pracovisko.IN.Skrutkovacka_M4_KomOK THEN
+			P1_Alarmy[138]:= TRUE;
+			P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		END_IF
+	END_IF
+    
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND (NOT P1_Pracovisko.IN.Skrutkovacka_K30_KomOK OR NOT P1_Pracovisko.IN.Skrutkovacka_M4_KomOK OR NOT P1_Pracovisko.IN.Skrutkovacka_M5_KomOK) THEN
+		CasKontroly_Skrutkovacky.IN:= TRUE;
+	ELSE
+		CasKontroly_Skrutkovacky.IN:= FALSE;
+	END_IF    
+    
+	CasKontroly_Skrutkovacky.PT:= T#2s;
+	CasKontroly_Skrutkovacky();
+    
+	    
+    
+	//*********************************Porucha - robot nieje online************************************************//        
+	IF CasKontroly_Robota.Q THEN
+		P1_Alarmy[123]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+	END_IF    
+    
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.IN.Robot_KomOK THEN        
+		CasKontroly_Robota.IN:= TRUE;
+	ELSE
+		CasKontroly_Robota.IN:= FALSE;
+	END_IF    
         
-    CasKontroly_KAMsystem.PT:= T#2s;
-    CasKontroly_KAMsystem();
+        
+	CasKontroly_Robota.PT:= T#2s;
+	CasKontroly_Robota();
+    
+	    
+	//********************Pracovisko 1 - Porucha ochrannej bariÈry v˝ùahu****************************************//
+    
+	IF P1_Vytah.Automat AND NOT Safety.STAV.P1_Vytah_Bariera_AKTIVNA AND NOT Safety.STAV.P1_Vytah_Muting_AKTIVNY THEN
+		P1_Alarmy[101]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST1:= TRUE;
+	END_IF    
     
       
     
-    //**********************************Porucha - moduly niesu online**************************************************//
-    IF CasKontroly_Moduly.Q THEN
-        IF NOT P1_Pracovisko.STAV.ModulDI11_OK THEN
-            P1_Alarmy[125]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.ModulDI12_OK THEN
-            P1_Alarmy[126]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.ModulDI13_OK THEN
-            P1_Alarmy[127]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.ModulDI14_OK THEN
-            P1_Alarmy[128]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.ModulDM11_OK THEN
-            P1_Alarmy[129]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.ModulDS11_OK THEN
-            P1_Alarmy[130]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.ModulDS12_OK THEN
-            P1_Alarmy[131]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.ModulSI11_OK THEN
-            P1_Alarmy[132]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.ModulSI12_OK THEN
-            P1_Alarmy[133]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-    END_IF    
     
+	//*********************Pracovisko 1 - Porucha serva zdvihu vytahu***************//
+	IF CasPoruchyServaVytahu.Q THEN
+		P1_Alarmy[110]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST1:= TRUE;
+	END_IF
     
-    IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.STAV.Moduly_OK THEN
-        CasKontroly_Moduly.IN:= TRUE;
-    ELSE
-        CasKontroly_Moduly.IN:= FALSE;
-    END_IF    
-        
-    CasKontroly_Moduly.PT:= T#2s;
-    CasKontroly_Moduly();
-    
-    
-    
-    //********************************Porucha - ventilovÈ termin·ly niesu online**********************************************//
-    IF CasKontroly_VentTerminalov.Q THEN
-        IF NOT P1_Pracovisko.STAV.VentilovyTerminal_VT4_OK THEN
-            P1_Alarmy[134]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.VentilovyTerminal_VT5_OK THEN
-            P1_Alarmy[135]:= TRUE;
-            P1_PoruchaST1:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-    END_IF
-    
-    IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.STAV.VentiloveTerminaly_OK THEN
-        CasKontroly_VentTerminalov.IN:= TRUE;
-    ELSE
-        CasKontroly_VentTerminalov.IN:= FALSE;
-    END_IF    
-    
-    CasKontroly_VentTerminalov.PT:= T#2s;
-    CasKontroly_VentTerminalov();
-    
-    
-    //********************************Porucha - skrutkovacky niesu online**********************************************//
-    IF CasKontroly_Skrutkovacky.Q THEN
-        IF NOT P1_Pracovisko.STAV.Skrutkovacka_K30_OK THEN
-            P1_Alarmy[136]:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.Skrutkovacka_M5_OK THEN
-            P1_Alarmy[137]:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-        IF NOT P1_Pracovisko.STAV.Skrutkovacka_M4_OK THEN
-            P1_Alarmy[138]:= TRUE;
-            P1_PoruchaST2:= TRUE;
-        END_IF
-    END_IF
-    
-    IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.STAV.Skrutkovacky_OK THEN
-        CasKontroly_Skrutkovacky.IN:= TRUE;
-    ELSE
-        CasKontroly_Skrutkovacky.IN:= FALSE;
-    END_IF    
-    
-    CasKontroly_Skrutkovacky.PT:= T#2s;
-    CasKontroly_Skrutkovacky();
-    
-    
-    
-    //*********************************Porucha - robot nieje online************************************************//        
-    IF CasKontroly_Robota.Q THEN
-        P1_Alarmy[123]:= TRUE;
-        P1_PoruchaST2:= TRUE;
-    END_IF    
-    
-    IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND NOT P1_Pracovisko.STAV.KOM_Robot_OK THEN        
-        CasKontroly_Robota.IN:= TRUE;
-    ELSE
-        CasKontroly_Robota.IN:= FALSE;
-    END_IF    
-        
-        
-    CasKontroly_Robota.PT:= T#2s;
-    CasKontroly_Robota();
-    
-    //*******************************Porucha nap·jania robota*****************************************************//
-    IF CasKontroly_Robota.Q AND NOT P1_Pracovisko.IN.NapajaniaRobota_OK THEN
-        P1_Alarmy[122]:= TRUE;
-        P1_PoruchaST2:= TRUE;
-    END_IF    
-    
-    
-    //********************Pracovisko 1 - Porucha ochrannej bariÈry v˝ùahu****************************************//
-    
-    IF Safety.IN.P1_Vytah_Zdvih_BUSY AND NOT Safety.STAV.P1_Vytah_Bariera_AKTIVNA THEN
-        P1_Alarmy[101]:= TRUE;
-        P1_PoruchaST1:= TRUE;
-    END_IF    
-    
-    
-    IF Safety.IN.P1_Vytah_Zdvih_BUSY AND P1_Vytah.IN.VystupDopravnikaVytahu_OS12 THEN
-        P1_Alarmy[101]:= TRUE;
-        P1_PoruchaST1:= TRUE;
-    END_IF  
-    
-    
-    
-    
-    //*********************Pracovisko 1 - Porucha serva zdvihu vytahu***************//
-    IF CasPoruchyServaVytahu.Q THEN
-        P1_Alarmy[110]:= TRUE;
-        P1_PoruchaST1:= TRUE;
-    END_IF
-    
-    IF Safety.STAV.P1_ZonaVytahu_AKTIVNA AND P1_Vytah.ServoZdvihuVytahu_M31.STATUS.ERROR THEN
-        CasPoruchyServaVytahu.IN:= TRUE;
-    ELSE    
-        CasPoruchyServaVytahu.IN:= FALSE;
-    END_IF    
+	IF P1_Vytah.Automat AND P1_Vytah.ServoZdvihuVytahu.Status.Error THEN
+		CasPoruchyServaVytahu.IN:= TRUE;
+	ELSE    
+		CasPoruchyServaVytahu.IN:= FALSE;
+	END_IF    
         
     	
     
     
-    CasPoruchyServaVytahu.PT:= T#2s;
-    CasPoruchyServaVytahu();
+	CasPoruchyServaVytahu.PT:= T#2s;
+	CasPoruchyServaVytahu();
     
     
     
-    //*********************Pracovisko 1 - Porucha serva manipulatora örobovania os X***************//
-    IF CasPoruchyServaSrobovaniaOsX.Q THEN
-        P1_Alarmy[117]:= TRUE;
-        P1_PoruchaST2:= TRUE;
-    END_IF	
+	//*********************Pracovisko 1 - Porucha serva manipulatora örobovania os X***************//
+	IF CasPoruchyServaSrobovaniaOsX.Q THEN
+		P1_Alarmy[117]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+	END_IF	
 	
-    IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND P1_Srobovanie.ServoManipulOsX_M20.STATUS.ERROR THEN
-        CasPoruchyServaSrobovaniaOsX.IN:= TRUE;
-    ELSE    
-        CasPoruchyServaSrobovaniaOsX.IN:= FALSE;
-    END_IF  
-    
-	
-    CasPoruchyServaSrobovaniaOsX.PT:= T#2s;   
-    CasPoruchyServaSrobovaniaOsX();
-    
-    
-    
-    //*********************Pracovisko 1 - Porucha serva manipulatora örobovania os Y***************//
-    IF CasPoruchyServaSrobovaniaOsY.Q THEN
-        P1_Alarmy[118]:= TRUE;
-        P1_PoruchaST2:= TRUE;
-    END_IF	
-    
-    IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND P1_Srobovanie.ServoManipulOsY_M19.STATUS.ERROR THEN
-        CasPoruchyServaSrobovaniaOsY.IN:= TRUE;
-    ELSE    
-        CasPoruchyServaSrobovaniaOsY.IN:= FALSE;
-    END_IF  
-    
-    CasPoruchyServaSrobovaniaOsY.PT:= T#2s;   
-    CasPoruchyServaSrobovaniaOsY();
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND P1_Srobovanie.ServoManipulOsX.Status.Error THEN
+		CasPoruchyServaSrobovaniaOsX.IN:= TRUE;
+	ELSE    
+		CasPoruchyServaSrobovaniaOsX.IN:= FALSE;
+	END_IF  
     
 	
-    
-    //****************************Pracovisko 1 - porucha vrchnÈho dopravnÌka**********************************//
-    IF NOT P1_Dopravniky.IN.HornyDoprav_TeplotaMotora_OK AND P1_Pracovisko.STAV.Automat THEN
-        P1_Alarmy[152]:= TRUE;
-    END_IF    
+	CasPoruchyServaSrobovaniaOsX.PT:= T#2s;   
+	CasPoruchyServaSrobovaniaOsX();
     
     
-    //*****************************Pracovisko 1 - porucha spodnÈho dopravnÌka************************************//
-    IF NOT P1_Dopravniky.IN.SpodnyDoprav_TeplotaMotora_OK AND P1_Pracovisko.STAV.Automat THEN
-        P1_Alarmy[153]:= TRUE;
-    END_IF 
+    
+	//*********************Pracovisko 1 - Porucha serva manipulatora örobovania os Y***************//
+	IF CasPoruchyServaSrobovaniaOsY.Q THEN
+		P1_Alarmy[118]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+	END_IF	
+    
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND P1_Srobovanie.ServoManipulOsY.Status.Error THEN
+		CasPoruchyServaSrobovaniaOsY.IN:= TRUE;
+	ELSE    
+		CasPoruchyServaSrobovaniaOsY.IN:= FALSE;
+	END_IF  
+    
+	CasPoruchyServaSrobovaniaOsY.PT:= T#2s;   
+	CasPoruchyServaSrobovaniaOsY();
+    
+	
+	//*********************Pracovisko 1 - Porucha serva manipulatora örobovania os Z M4***************//
+	IF CasPoruchyServaSrobovaniaOsZ_M4.Q THEN
+		P1_Alarmy[126]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+	END_IF	
+    
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND P1_Srobovanie.ServoManipulOsZ_M4.Status.Error THEN
+		CasPoruchyServaSrobovaniaOsZ_M4.IN:= TRUE;
+	ELSE    
+		CasPoruchyServaSrobovaniaOsZ_M4.IN:= FALSE;
+	END_IF  
+    
+	CasPoruchyServaSrobovaniaOsZ_M4.PT:= T#2s;   
+	CasPoruchyServaSrobovaniaOsZ_M4();
+	
+	
+	//*********************Pracovisko 1 - Porucha serva manipulatora örobovania os Z M5***************//
+	IF CasPoruchyServaSrobovaniaOsZ_M5.Q THEN
+		P1_Alarmy[127]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+	END_IF	
+    
+	IF Safety.STAV.P1_ZonaBunky_AKTIVNA AND P1_Srobovanie.ServoManipulOsZ_M5.Status.Error THEN
+		CasPoruchyServaSrobovaniaOsZ_M5.IN:= TRUE;
+	ELSE    
+		CasPoruchyServaSrobovaniaOsZ_M5.IN:= FALSE;
+	END_IF  
+    
+	CasPoruchyServaSrobovaniaOsZ_M5.PT:= T#2s;   
+	CasPoruchyServaSrobovaniaOsZ_M5();
+	
+	//********************Pracovisko 1 - Porucha skrutkovacieho setu M4******************************//
+	IF P1_Srobovanie.Automat AND P1_Srobovanie.SkrutSet_M4.STAV.ERROR THEN
+		P1_Alarmy[128]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+	END_IF	
+	
+	
+	//********************Pracovisko 1 - Porucha skrutkovacieho setu M5******************************//
+	IF P1_Srobovanie.Automat AND P1_Srobovanie.SkrutSet_M4.STAV.ERROR THEN
+		P1_Alarmy[129]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+	END_IF	
+	
+	
+	
+	
+    
+	//****************************Pracovisko 1 - porucha vrchnÈho dopravnÌka**********************************//
+	IF NOT P1_Dopravniky.IN.TeplotaMotoraDopravBunky_OK AND P1_Pracovisko.STAV.Automat THEN
+		P1_Alarmy[152]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST3:= TRUE;
+	END_IF    
+    
+    
+	//*****************************Pracovisko 1 - porucha spodnÈho dopravnÌka************************************//
+	IF NOT P1_Dopravniky.IN.TeplotaMotoraVratnehoDoprav_OK AND P1_Pracovisko.STAV.Automat THEN
+		P1_Alarmy[153]:= TRUE;
+	END_IF 
         
      
-    //******************************Pracovisko 1 - naruöenie vstupnej bariery***********************************//
-    IF NOT Safety.STAV.P1_VstupBunky_Bariera_AKTIVNA AND NOT Safety.STAV.P1_VystupTunela_Bariera_AKTIVNA AND P1_Pracovisko.STAV.Automat THEN
-        P1_Alarmy[154]:= TRUE;
-    END_IF
+	//******************************Pracovisko 1 - naruöenie vstupnej bariery***********************************//
+	IF CasKontrolyVstupBariery.Q THEN
+		P1_Alarmy[154]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST3:= TRUE;
+	END_IF
+    
+	CasKontrolyVstupBariery.IN:= NOT Safety.STAV.P1_VstupBunky_VstupBar_AKTIVNA AND NOT Safety.STAV.P1_VstupBunky_VystupBar_AKTIVNA AND P1_Pracovisko.STAV.Automat;
+	CasKontrolyVstupBariery.PT:= T#2s;
+    CasKontrolyVstupBariery();
+	
+	
+	//******************************Pracovisko 1 - naruöenie v˝stupnej bariery***********************************//
+	IF CasKontrolyVystupBariery.Q THEN
+		P1_Alarmy[130]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST2:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST3:= TRUE;
+	END_IF
+	
+	CasKontrolyVystupBariery.IN:= NOT Safety.STAV.P1_VystupBunky_VstupBar_AKTIVNA AND NOT Safety.STAV.P1_VystupBunky_VystupBar_AKTIVNA AND P1_Pracovisko.STAV.Automat;
+	CasKontrolyVystupBariery.PT:= T#2s;
+	CasKontrolyVystupBariery();
     
     
+	//******************************V˝ùah - porucha dopravnÌka**************************************************//
+	IF NOT P1_Vytah.IN.TeplotaMotoraDopravVytahu_OK AND P1_Vytah.Automat THEN
+		P1_Alarmy[155]:= TRUE;
+		P1_Pracovisko.STAV.Porucha_ST1:= TRUE;
+	END_IF 
     
     
-    //******************************V˝ùah - porucha dopravnÌka**************************************************//
-    IF NOT P1_Vytah.IN.Dopravnik_TeplotaMotora_OK AND P1_Vytah.Automat THEN
-        P1_Alarmy[155]:= TRUE;
-        P1_PoruchaST1:= TRUE;
-    END_IF 
+	
+	//******************************StlaËenie tlaËÌtok CS*******************************************************//  
+	IF EDGENEG(Safety.STAV.P1_Panel_TlacitkoCS_ODBLOK) THEN
+		P1_Alarmy[156]:= TRUE;
+	END_IF
     
+	IF EDGENEG(Safety.STAV.P1_Rozvadzac_TlacitkoCS_ODBLOK) THEN
+		P1_Alarmy[157]:= TRUE;
+	END_IF
     
-    //******************************StlaËenie tlaËÌtok CS*******************************************************//  
-    IF EDGENEG(Safety.STAV.P1_Panel_TlacitkoCS_AKTIVNE) THEN
-        P1_Alarmy[156]:= TRUE;
-    END_IF
-    
-    IF EDGENEG(Safety.STAV.P1_Skrina_TlacitkoCS_AKTIVNE) THEN
-        P1_Alarmy[157]:= TRUE;
-    END_IF
-    
-    IF EDGENEG(Safety.STAV.P1_Robot_TlacitkoCS_AKTIVNE) THEN
-        P1_Alarmy[158]:= TRUE;
-    END_IF
+	IF EDGENEG(Safety.STAV.P1_Robot_TlacitkoCS_ODBLOK) THEN
+		P1_Alarmy[158]:= TRUE;
+	END_IF
    
     
     
     
 	
-    //***************************************************Nasetovanie alarmov****************************************************//
-    IF P1_Alarmy[100] THEN
-        MpAlarmXSet(gAlarmXCore, 'A100');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A100');
-    END_IF
+	//***************************************************Nasetovanie alarmov****************************************************//
+	IF P1_Alarmy[100] THEN
+		MpAlarmXSet(gAlarmXCore, 'A100');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A100');
+	END_IF
 	
-    IF P1_Alarmy[101] THEN
-        MpAlarmXSet(gAlarmXCore, 'A101');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A101');
-    END_IF
+	IF P1_Alarmy[101] THEN
+		MpAlarmXSet(gAlarmXCore, 'A101');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A101');
+	END_IF
 	
-    IF P1_Alarmy[102] THEN
-        MpAlarmXSet(gAlarmXCore, 'A102');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A102');
-    END_IF
+	IF P1_Alarmy[102] THEN
+		MpAlarmXSet(gAlarmXCore, 'A102');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A102');
+	END_IF
 	
-    IF P1_Alarmy[103] THEN
-        MpAlarmXSet(gAlarmXCore, 'A103');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A103');
-    END_IF
+	IF P1_Alarmy[103] THEN
+		MpAlarmXSet(gAlarmXCore, 'A103');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A103');
+	END_IF
 
-    IF P1_Alarmy[104] THEN
-        MpAlarmXSet(gAlarmXCore, 'A104');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A104');
-    END_IF
+	IF P1_Alarmy[104] THEN
+		MpAlarmXSet(gAlarmXCore, 'A104');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A104');
+	END_IF
 	
-    IF P1_Alarmy[105] THEN
-        MpAlarmXSet(gAlarmXCore, 'A105');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A105');
-    END_IF
+	IF P1_Alarmy[105] THEN
+		MpAlarmXSet(gAlarmXCore, 'A105');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A105');
+	END_IF
 	
-    IF P1_Alarmy[106] THEN
-        MpAlarmXSet(gAlarmXCore, 'A106');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A106');
-    END_IF
+	IF P1_Alarmy[106] THEN
+		MpAlarmXSet(gAlarmXCore, 'A106');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A106');
+	END_IF
 	
-    IF P1_Alarmy[107] THEN
-        MpAlarmXSet(gAlarmXCore, 'A107');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A107');
-    END_IF
+	IF P1_Alarmy[107] THEN
+		MpAlarmXSet(gAlarmXCore, 'A107');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A107');
+	END_IF
 	
-    IF P1_Alarmy[108] THEN
-        MpAlarmXSet(gAlarmXCore, 'A108');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A108');
-    END_IF
+	IF P1_Alarmy[108] THEN
+		MpAlarmXSet(gAlarmXCore, 'A108');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A108');
+	END_IF
 	
-    IF P1_Alarmy[109] THEN
-        MpAlarmXSet(gAlarmXCore, 'A109');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A109');
-    END_IF
+	IF P1_Alarmy[109] THEN
+		MpAlarmXSet(gAlarmXCore, 'A109');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A109');
+	END_IF
 	
-    IF P1_Alarmy[110] THEN
-        MpAlarmXSet(gAlarmXCore, 'A110');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A110');
-    END_IF
+	IF P1_Alarmy[110] THEN
+		MpAlarmXSet(gAlarmXCore, 'A110');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A110');
+	END_IF
 	
-    IF P1_Alarmy[111] THEN
-        MpAlarmXSet(gAlarmXCore, 'A111');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A111');
-    END_IF
+	IF P1_Alarmy[111] THEN
+		MpAlarmXSet(gAlarmXCore, 'A111');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A111');
+	END_IF
 	
-    IF P1_Alarmy[112] THEN
-        MpAlarmXSet(gAlarmXCore, 'A112');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A112');
-    END_IF
+	IF P1_Alarmy[112] THEN
+		MpAlarmXSet(gAlarmXCore, 'A112');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A112');
+	END_IF
 	
-    IF P1_Alarmy[113] THEN
-        MpAlarmXSet(gAlarmXCore, 'A113');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A113');
-    END_IF
+	IF P1_Alarmy[113] THEN
+		MpAlarmXSet(gAlarmXCore, 'A113');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A113');
+	END_IF
     
      
     
-    IF P1_Alarmy[114] THEN
-        MpAlarmXSet(gAlarmXCore, 'A114');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A114');
-    END_IF
+	IF P1_Alarmy[114] THEN
+		MpAlarmXSet(gAlarmXCore, 'A114');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A114');
+	END_IF
 	
    
 	
-    IF P1_Alarmy[115] THEN
-        MpAlarmXSet(gAlarmXCore, 'A115');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A115');
-    END_IF
+	IF P1_Alarmy[115] THEN
+		MpAlarmXSet(gAlarmXCore, 'A115');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A115');
+	END_IF
 	
-    IF P1_Alarmy[116] THEN
-        MpAlarmXSet(gAlarmXCore, 'A116');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A116');
-    END_IF
+	IF P1_Alarmy[116] THEN
+		MpAlarmXSet(gAlarmXCore, 'A116');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A116');
+	END_IF
 	
-    IF P1_Alarmy[117] THEN
-        MpAlarmXSet(gAlarmXCore, 'A117');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A117');
-    END_IF
+	IF P1_Alarmy[117] THEN
+		MpAlarmXSet(gAlarmXCore, 'A117');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A117');
+	END_IF
 	
-    IF P1_Alarmy[118] THEN
-        MpAlarmXSet(gAlarmXCore, 'A118');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A118');
-    END_IF
+	IF P1_Alarmy[118] THEN
+		MpAlarmXSet(gAlarmXCore, 'A118');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A118');
+	END_IF
 	
-    IF P1_Alarmy[119] THEN
-        MpAlarmXSet(gAlarmXCore, 'A119');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A119');
-    END_IF
+	IF P1_Alarmy[119] THEN
+		MpAlarmXSet(gAlarmXCore, 'A119');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A119');
+	END_IF
+    
+	IF P1_Alarmy[120] THEN
+		MpAlarmXSet(gAlarmXCore, 'A120');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A120');
+	END_IF
+    
+	IF P1_Alarmy[121] THEN
+		MpAlarmXSet(gAlarmXCore, 'A121');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A121');
+	END_IF
+	
+	IF P1_Alarmy[122] THEN
+		MpAlarmXSet(gAlarmXCore, 'A122');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A122');
+	END_IF
+	
+	IF P1_Alarmy[123] THEN
+		MpAlarmXSet(gAlarmXCore, 'A123');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A123');
+	END_IF
+    
+	IF P1_Alarmy[124] THEN
+		MpAlarmXSet(gAlarmXCore, 'A124');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A124');
+	END_IF
+	
+	IF P1_Alarmy[125] THEN
+		MpAlarmXSet(gAlarmXCore, 'A125');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A125');
+	END_IF
+	
+	IF P1_Alarmy[126] THEN
+		MpAlarmXSet(gAlarmXCore, 'A126');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A126');
+	END_IF
+	
+	IF P1_Alarmy[127] THEN
+		MpAlarmXSet(gAlarmXCore, 'A127');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A127');
+	END_IF
+	
+	IF P1_Alarmy[128] THEN
+		MpAlarmXSet(gAlarmXCore, 'A128');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A128');
+	END_IF
+	
+	IF P1_Alarmy[129] THEN
+		MpAlarmXSet(gAlarmXCore, 'A129');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A129');
+	END_IF
 	
     
-    IF P1_Alarmy[120] THEN
-        MpAlarmXSet(gAlarmXCore, 'A120');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A120');
-    END_IF
+	IF P1_Alarmy[130] THEN
+		MpAlarmXSet(gAlarmXCore, 'A130');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A130');
+	END_IF
     
-    IF P1_Alarmy[121] THEN
-        MpAlarmXSet(gAlarmXCore, 'A121');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A121');
-    END_IF
+	IF P1_Alarmy[131] THEN
+		MpAlarmXSet(gAlarmXCore, 'A131');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A131');
+	END_IF
 	
-    IF P1_Alarmy[122] THEN
-        MpAlarmXSet(gAlarmXCore, 'A122');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A122');
-    END_IF
+	IF P1_Alarmy[132] THEN
+		MpAlarmXSet(gAlarmXCore, 'A132');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A132');
+	END_IF
 	
-    IF P1_Alarmy[123] THEN
-        MpAlarmXSet(gAlarmXCore, 'A123');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A123');
-    END_IF
-    
+	IF P1_Alarmy[133] THEN
+		MpAlarmXSet(gAlarmXCore, 'A133');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A133');
+	END_IF
      
+	IF P1_Alarmy[134] THEN
+		MpAlarmXSet(gAlarmXCore, 'A134');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A134');
+	END_IF
+	
+	IF P1_Alarmy[135] THEN
+		MpAlarmXSet(gAlarmXCore, 'A135');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A135');
+	END_IF
+	
+	IF P1_Alarmy[136] THEN
+		MpAlarmXSet(gAlarmXCore, 'A136');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A136');
+	END_IF
+	
+	IF P1_Alarmy[137] THEN
+		MpAlarmXSet(gAlarmXCore, 'A137');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A137');
+	END_IF
+	
+	IF P1_Alarmy[138] THEN
+		MpAlarmXSet(gAlarmXCore, 'A138');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A138');
+	END_IF
+	
+	IF P1_Alarmy[139] THEN
+		MpAlarmXSet(gAlarmXCore, 'A139');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A139');
+	END_IF
     
-    IF P1_Alarmy[124] THEN
-        MpAlarmXSet(gAlarmXCore, 'A124');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A124');
-    END_IF
+	IF P1_Alarmy[140] THEN
+		MpAlarmXSet(gAlarmXCore, 'A140');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A140');
+	END_IF
 	
-   
+	IF P1_Alarmy[141] THEN
+		MpAlarmXSet(gAlarmXCore, 'A141');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A141');
+	END_IF
 	
-    IF P1_Alarmy[125] THEN
-        MpAlarmXSet(gAlarmXCore, 'A125');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A125');
-    END_IF
+	IF P1_Alarmy[142] THEN
+		MpAlarmXSet(gAlarmXCore, 'A142');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A142');
+	END_IF
 	
-    IF P1_Alarmy[126] THEN
-        MpAlarmXSet(gAlarmXCore, 'A126');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A126');
-    END_IF
+	IF P1_Alarmy[143] THEN
+		MpAlarmXSet(gAlarmXCore, 'A143');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A143');
+	END_IF
 	
-    IF P1_Alarmy[127] THEN
-        MpAlarmXSet(gAlarmXCore, 'A127');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A127');
-    END_IF
+	IF P1_Alarmy[144] THEN
+		MpAlarmXSet(gAlarmXCore, 'A144');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A144');
+	END_IF
 	
-    IF P1_Alarmy[128] THEN
-        MpAlarmXSet(gAlarmXCore, 'A128');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A128');
-    END_IF
+	IF P1_Alarmy[145] THEN
+		MpAlarmXSet(gAlarmXCore, 'A145');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A145');
+	END_IF
 	
-    IF P1_Alarmy[129] THEN
-        MpAlarmXSet(gAlarmXCore, 'A129');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A129');
-    END_IF
+	IF P1_Alarmy[146] THEN
+		MpAlarmXSet(gAlarmXCore, 'A146');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A146');
+	END_IF
 	
-    
-    IF P1_Alarmy[130] THEN
-        MpAlarmXSet(gAlarmXCore, 'A130');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A130');
-    END_IF
-    
-    IF P1_Alarmy[131] THEN
-        MpAlarmXSet(gAlarmXCore, 'A131');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A131');
-    END_IF
+	IF P1_Alarmy[147] THEN
+		MpAlarmXSet(gAlarmXCore, 'A147');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A147');
+	END_IF
 	
-    IF P1_Alarmy[132] THEN
-        MpAlarmXSet(gAlarmXCore, 'A132');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A132');
-    END_IF
+	IF P1_Alarmy[148] THEN
+		MpAlarmXSet(gAlarmXCore, 'A148');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A148');
+	END_IF
 	
-    IF P1_Alarmy[133] THEN
-        MpAlarmXSet(gAlarmXCore, 'A133');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A133');
-    END_IF
-    
-     
-    
-    IF P1_Alarmy[134] THEN
-        MpAlarmXSet(gAlarmXCore, 'A134');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A134');
-    END_IF
-	
-   
-	
-    IF P1_Alarmy[135] THEN
-        MpAlarmXSet(gAlarmXCore, 'A135');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A135');
-    END_IF
-	
-    IF P1_Alarmy[136] THEN
-        MpAlarmXSet(gAlarmXCore, 'A136');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A136');
-    END_IF
-	
-    IF P1_Alarmy[137] THEN
-        MpAlarmXSet(gAlarmXCore, 'A137');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A137');
-    END_IF
-	
-    IF P1_Alarmy[138] THEN
-        MpAlarmXSet(gAlarmXCore, 'A138');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A138');
-    END_IF
-	
-    IF P1_Alarmy[139] THEN
-        MpAlarmXSet(gAlarmXCore, 'A139');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A139');
-    END_IF
-   
-    
-    IF P1_Alarmy[140] THEN
-        MpAlarmXSet(gAlarmXCore, 'A140');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A140');
-    END_IF
-	
-    IF P1_Alarmy[141] THEN
-        MpAlarmXSet(gAlarmXCore, 'A141');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A141');
-    END_IF
-	
-    IF P1_Alarmy[142] THEN
-        MpAlarmXSet(gAlarmXCore, 'A142');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A142');
-    END_IF
-	
-    IF P1_Alarmy[143] THEN
-        MpAlarmXSet(gAlarmXCore, 'A143');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A143');
-    END_IF
-	
-    IF P1_Alarmy[144] THEN
-        MpAlarmXSet(gAlarmXCore, 'A144');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A144');
-    END_IF
-	
-    IF P1_Alarmy[145] THEN
-        MpAlarmXSet(gAlarmXCore, 'A145');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A145');
-    END_IF
-	
-    IF P1_Alarmy[146] THEN
-        MpAlarmXSet(gAlarmXCore, 'A146');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A146');
-    END_IF
-	
-    IF P1_Alarmy[147] THEN
-        MpAlarmXSet(gAlarmXCore, 'A147');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A147');
-    END_IF
-	
-    IF P1_Alarmy[148] THEN
-        MpAlarmXSet(gAlarmXCore, 'A148');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A148');
-    END_IF
-	
-    IF P1_Alarmy[149] THEN
-        MpAlarmXSet(gAlarmXCore, 'A149');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A149');
-    END_IF
-	
+	IF P1_Alarmy[149] THEN
+		MpAlarmXSet(gAlarmXCore, 'A149');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A149');
+	END_IF
     	
-    IF P1_Alarmy[150] THEN
-        MpAlarmXSet(gAlarmXCore, 'A150');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A150');
-    END_IF	
+	IF P1_Alarmy[150] THEN
+		MpAlarmXSet(gAlarmXCore, 'A150');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A150');
+	END_IF	
 
-    IF P1_Alarmy[151] THEN
-        MpAlarmXSet(gAlarmXCore, 'A151');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A151');
-    END_IF	
-
+	IF P1_Alarmy[151] THEN
+		MpAlarmXSet(gAlarmXCore, 'A151');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A151');
+	END_IF	
         
-    IF P1_Alarmy[152] THEN
-        MpAlarmXSet(gAlarmXCore, 'A152');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A152');
-    END_IF	
+	IF P1_Alarmy[152] THEN
+		MpAlarmXSet(gAlarmXCore, 'A152');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A152');
+	END_IF	
 
-    IF P1_Alarmy[153] THEN
-        MpAlarmXSet(gAlarmXCore, 'A153');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A153');
-    END_IF	
+	IF P1_Alarmy[153] THEN
+		MpAlarmXSet(gAlarmXCore, 'A153');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A153');
+	END_IF	
     
-    IF P1_Alarmy[154] THEN
-        MpAlarmXSet(gAlarmXCore, 'A154');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A154');
-    END_IF	
+	IF P1_Alarmy[154] THEN
+		MpAlarmXSet(gAlarmXCore, 'A154');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A154');
+	END_IF	
 
-    IF P1_Alarmy[155] THEN
-        MpAlarmXSet(gAlarmXCore, 'A155');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A155');
-    END_IF	
+	IF P1_Alarmy[155] THEN
+		MpAlarmXSet(gAlarmXCore, 'A155');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A155');
+	END_IF	
     
-    
-    IF P1_Alarmy[156] THEN
-        MpAlarmXSet(gAlarmXCore, 'A156');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A156');
-    END_IF	
+	IF P1_Alarmy[156] THEN
+		MpAlarmXSet(gAlarmXCore, 'A156');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A156');
+	END_IF	
 
-    IF P1_Alarmy[157] THEN
-        MpAlarmXSet(gAlarmXCore, 'A157');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A157');
-    END_IF	
+	IF P1_Alarmy[157] THEN
+		MpAlarmXSet(gAlarmXCore, 'A157');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A157');
+	END_IF	
     
-    IF P1_Alarmy[158] THEN
-        MpAlarmXSet(gAlarmXCore, 'A158');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A158');
-    END_IF	
+	IF P1_Alarmy[158] THEN
+		MpAlarmXSet(gAlarmXCore, 'A158');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A158');
+	END_IF	
 
-    IF P1_Alarmy[159] THEN
-        MpAlarmXSet(gAlarmXCore, 'A159');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A159');
-    END_IF	
+	IF P1_Alarmy[159] THEN
+		MpAlarmXSet(gAlarmXCore, 'A159');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A159');
+	END_IF	
     
-    IF P1_Alarmy[160] THEN
-        MpAlarmXSet(gAlarmXCore, 'A160');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A160');
-    END_IF
+	IF P1_Alarmy[160] THEN
+		MpAlarmXSet(gAlarmXCore, 'A160');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A160');
+	END_IF
     
-    
-    IF P1_Alarmy[161] THEN
-        MpAlarmXSet(gAlarmXCore, 'A161');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A161');
-    END_IF	
+	IF P1_Alarmy[161] THEN
+		MpAlarmXSet(gAlarmXCore, 'A161');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A161');
+	END_IF	
 
-    IF P1_Alarmy[162] THEN
-        MpAlarmXSet(gAlarmXCore, 'A162');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A162');
-    END_IF	
+	IF P1_Alarmy[162] THEN
+		MpAlarmXSet(gAlarmXCore, 'A162');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A162');
+	END_IF	
     
-    IF P1_Alarmy[163] THEN
-        MpAlarmXSet(gAlarmXCore, 'A163');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A163');
-    END_IF
+	IF P1_Alarmy[163] THEN
+		MpAlarmXSet(gAlarmXCore, 'A163');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A163');
+	END_IF
     
-    IF P1_Alarmy[164] THEN
-        MpAlarmXSet(gAlarmXCore, 'A164');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A164');
-    END_IF	
+	IF P1_Alarmy[164] THEN
+		MpAlarmXSet(gAlarmXCore, 'A164');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A164');
+	END_IF	
 
-    IF P1_Alarmy[165] THEN
-        MpAlarmXSet(gAlarmXCore, 'A165');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A165');
-    END_IF	
+	IF P1_Alarmy[165] THEN
+		MpAlarmXSet(gAlarmXCore, 'A165');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A165');
+	END_IF	
     
-    IF P1_Alarmy[166] THEN
-        MpAlarmXSet(gAlarmXCore, 'A166');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A166');
-    END_IF
+	IF P1_Alarmy[166] THEN
+		MpAlarmXSet(gAlarmXCore, 'A166');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A166');
+	END_IF
     
-    IF P1_Alarmy[167] THEN
-        MpAlarmXSet(gAlarmXCore, 'A167');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A167');
-    END_IF	
+	IF P1_Alarmy[167] THEN
+		MpAlarmXSet(gAlarmXCore, 'A167');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A167');
+	END_IF	
     
-    IF P1_Alarmy[168] THEN
-        MpAlarmXSet(gAlarmXCore, 'A168');
-    ELSE
-        MpAlarmXReset(gAlarmXCore, 'A168');
-    END_IF
-    
-    
+	IF P1_Alarmy[168] THEN
+		MpAlarmXSet(gAlarmXCore, 'A168');
+	ELSE
+		MpAlarmXReset(gAlarmXCore, 'A168');
+	END_IF
     
     
-    //********************************Zobrazenie symbolu alarmu*****************************************************//
-	
-    IF P1_Pracovisko.STAV.PORUCHA THEN
-        P1_AlarmyVizu.ZobrazSymbolAlarmu:= Blikac500ms;
-    ELSE
-        P1_AlarmyVizu.ZobrazSymbolAlarmu:= FALSE;
-    END_IF	
-	
-	
-  
-	
+    
+    
+   	
 	
 	
 	//*************************************Potvrdenie alarmov*********************************************************//
 	IF P1_AlarmyVizu.PotvrdAlarmy THEN
 		brsmemset(ADR(P1_Alarmy),0,SIZEOF(P1_Alarmy));
-		P1_Pracovisko.STAV.PORUCHA:= FALSE;
-		P1_PoruchaST1:= FALSE;
-		P1_PoruchaST2:= FALSE;
-		IF P1_Vytah.ServoZdvihuVytahu_M31.STATUS.ERROR AND P1_Vytah.ServoZdvihuVytahu_M31.STATUS.ReadyToPower_ON THEN
-            P1_Vytah.ServoZdvihuVytahu_M31.CMD.ErrorRESET:= TRUE;
-        END_IF    
-        IF P1_Srobovanie.ServoManipulOsX_M20.STATUS.ERROR AND P1_Srobovanie.ServoManipulOsX_M20.STATUS.ReadyToPower_ON THEN
-            P1_Srobovanie.ServoManipulOsX_M20.CMD.ErrorRESET:= TRUE;
-        END_IF    
-        IF P1_Srobovanie.ServoManipulOsY_M19.STATUS.ERROR AND P1_Srobovanie.ServoManipulOsY_M19.STATUS.ReadyToPower_ON THEN
-            P1_Srobovanie.ServoManipulOsY_M19.CMD.ErrorRESET:= TRUE;
-        END_IF    
-        P1_AlarmyVizu.PotvrdAlarmy:= FALSE;
-    END_IF	
+		P1_Pracovisko.STAV.Porucha_ST1:= FALSE;
+		P1_Pracovisko.STAV.Porucha_ST2:= FALSE;
+		P1_Pracovisko.STAV.Porucha_ST3:= FALSE;
+		IF NOT P1_Vytah.Automat THEN
+			P1_Vytah.ServoZdvihuVytahu.Command.ErrReset:= TRUE;
+		END_IF
+		IF NOT P1_Srobovanie.Automat THEN	
+			P1_Srobovanie.ServoManipulOsX.Command.ErrReset:= TRUE;
+			P1_Srobovanie.ServoManipulOsY.Command.ErrReset:= TRUE;
+			P1_Srobovanie.ServoManipulOsZ_M4.Command.ErrReset:= TRUE;
+			P1_Srobovanie.ServoManipulOsZ_M5.Command.ErrReset:= TRUE;
+			P1_Srobovanie.SkrutSet_M4.CMD.ResetPoruchy:= TRUE;
+			P1_Srobovanie.SkrutSet_M5.CMD.ResetPoruchy:= TRUE;
+		END_IF	
+		P1_AlarmyVizu.PotvrdAlarmy:= FALSE;
+	END_IF	
 	
 	
-    //Resetovanie serva zdvihu v˝ùahu//
-    IF EDGEPOS(Safety.STAV.P1_ZonaVytahu_AKTIVNA) THEN
-        P1_Vytah.ServoZdvihuVytahu_M31.CMD.ErrorRESET:= TRUE;
-    END_IF    
-    
-    //Resetovanie poruch serv pri zatvorenÌ bunky//
-    IF EDGEPOS(Safety.STAV.P1_ZonaBunky_AKTIVNA) THEN
-        P1_Srobovanie.ServoManipulOsX_M20.CMD.ErrorRESET:= TRUE;
-        P1_Srobovanie.ServoManipulOsY_M19.CMD.ErrorRESET:= TRUE;
-    END_IF   
-    
-    
-    
-    //Zruöenie resetovania por˙ch serv//
-    IF NOT P1_Vytah.ServoZdvihuVytahu_M31.STATUS.ERROR THEN
-        P1_Vytah.ServoZdvihuVytahu_M31.CMD.ErrorRESET:= FALSE;
-    ELSIF CasResetovaniaServaZdvihuVytahu.Q THEN
-        P1_Vytah.ServoZdvihuVytahu_M31.CMD.ErrorRESET:= FALSE;
-    END_IF    
-    
-    IF NOT P1_Srobovanie.ServoManipulOsX_M20.STATUS.ERROR THEN
-        P1_Srobovanie.ServoManipulOsX_M20.CMD.ErrorRESET:= FALSE;
-    ELSIF CasResetovaniaServaSrobovaniaOsX.Q THEN
-        P1_Srobovanie.ServoManipulOsX_M20.CMD.ErrorRESET:= FALSE;
-    END_IF
-    
-    IF NOT P1_Srobovanie.ServoManipulOsY_M19.STATUS.ERROR THEN
-        P1_Srobovanie.ServoManipulOsY_M19.CMD.ErrorRESET:= FALSE;
-    ELSIF CasResetovaniaServaSrobovaniaOsY.Q THEN
-        P1_Srobovanie.ServoManipulOsY_M19.CMD.ErrorRESET:= FALSE;
-    END_IF    
-    
-   	
-    
-    CasResetovaniaServaZdvihuVytahu.PT:= T#2s;
-    CasResetovaniaServaZdvihuVytahu.IN:= P1_Vytah.ServoZdvihuVytahu_M31.CMD.ErrorRESET;
-    CasResetovaniaServaZdvihuVytahu();
-    
-    CasResetovaniaServaSrobovaniaOsX.PT:= T#2s;
-    CasResetovaniaServaSrobovaniaOsX.IN:= P1_Srobovanie.ServoManipulOsX_M20.CMD.ErrorRESET;
-    CasResetovaniaServaSrobovaniaOsX();
-    
-    CasResetovaniaServaSrobovaniaOsY.PT:= T#2s;
-    CasResetovaniaServaSrobovaniaOsY.IN:= P1_Srobovanie.ServoManipulOsY_M19.CMD.ErrorRESET;
-    CasResetovaniaServaSrobovaniaOsY();
-    
 	
-        END_PROGRAM
+    END_PROGRAM
 
 PROGRAM _EXIT
         (* Insert code here *)

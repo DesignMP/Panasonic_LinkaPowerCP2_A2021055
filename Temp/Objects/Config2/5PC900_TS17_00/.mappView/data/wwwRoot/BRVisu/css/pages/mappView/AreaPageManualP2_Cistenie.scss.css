@@ -555,7 +555,7 @@
 }
 
 #AreaPageManualP2_Cistenie_Label13 {
-  top: 266px;
+  top: 360px;
   position: absolute;
 }
 
@@ -625,7 +625,7 @@
 }
 
 #AreaPageManualP2_Cistenie_ImageList17 {
-  top: 277px;
+  top: 369px;
   position: absolute;
 }
 
@@ -648,4 +648,54 @@
 
 #AreaPageManualP2_Cistenie_ImageList17 {
   border-width: 0px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1 {
+  top: 255px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1 {
+  left: 124px;
+  position: absolute;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1 {
+  width: 180px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1 {
+  height: 50px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1 {
+  z-index: 5;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1:not(.disabled):not(.checked) .wrapper .before {
+  color: black;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1:not(.disabled):not(.checked) .wrapper .after {
+  color: black;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1 .wrapper .before {
+  font-size: 17px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1 .wrapper .after {
+  font-size: 17px;
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1:not(.active):not(.checked) {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1.disabled.active {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
+}
+
+#AreaPageManualP2_Cistenie_ToggleSwitch_ZapniOdsavanie1.disabled.checked {
+  box-shadow: 4px 4px 10px rgba(62, 79, 92, 0.75);
 }

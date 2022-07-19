@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<vdef:Visualization id="Vizu_P2" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+<vdef:Visualization id="Vizu_P2"  xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
   <StartPage pageRefId="PageBootP2" />
   <Pages>
     <Page refId="PageAlarmyP2" />
@@ -16,11 +16,14 @@
     <Page refId="PageParametreMainP2" />
     <Page refId="PageParametreP2_page1" />
     <Page refId="PageSetupP2" />
-    <Page refId="PageStavyStanicP2" />
+    <Page refId="PageStavyStanicP2_page1" />
     <Page refId="PageTolerancieSkrutkovaniaP2_page1" />
     <Page refId="PageManualP2_Skrutkovanie_page2" />
     <Page refId="PageManualP2_Skrutkovanie_page3" />
     <Page refId="PageManualP2_Skrutkovanie_page4" />
+    <Page refId="PageStavyStanicP2_page2" />
+    <Page refId="PageParametreP2_page2" />
+    <Page refId="PageParametreP2_page3" />
   </Pages>
   <Navigations>
     <!--<Navigation refId="" />-->
@@ -30,7 +33,6 @@
     <BindingsSet refId="PataP2_binding" />
     <BindingsSet refId="AreaPageAutomatP2_binding" />
     <BindingsSet refId="AreaPageAlarmyP2_binding" />
-    <BindingsSet refId="AreaHlasenie4_ST6_binding" />
     <BindingsSet refId="AreaPageManualP2_Dopravniky_binding" />
     <BindingsSet refId="AreaPageManualP2_ZakladanieTesnenia_binding" />
     <BindingsSet refId="AreaPageManualP2_Maticovacka_binding" />
@@ -40,6 +42,29 @@
     <BindingsSet refId="AreaPageManual_Skrutkovanie_page4_binding" />
     <BindingsSet refId="AreaPageManualP2_Zvaranie_binding" />
     <BindingsSet refId="AreaPageManualP2_Cistenie_binding" />
+    <BindingsSet refId="AreaHlasenie1_ST3_binding" />
+    <BindingsSet refId="AreaHlasenie2_ST3_binding" />
+    <BindingsSet refId="AreaHlasenie3_ST3_binding" />
+    <BindingsSet refId="AreaHlasenie1_ST4_binding" />
+    <BindingsSet refId="AreaHlasenie2_ST4_binding" />
+    <BindingsSet refId="AreaHlasenie1_ST5_binding" />
+    <BindingsSet refId="AreaHlasenie2_ST5_binding" />
+    <BindingsSet refId="AreaHlasenie3_ST5_binding" />
+    <BindingsSet refId="AreaHlasenie4_ST6_binding" />
+    <BindingsSet refId="AreaHlasenie1_ST6_binding" />
+    <BindingsSet refId="AreaHlasenie2_ST6_binding" />
+    <BindingsSet refId="AreaHlasenie3_ST6_binding" />
+    <BindingsSet refId="AreaHlasenie5_ST6_binding" />
+    <BindingsSet refId="AreaHlasenie6_ST6_binding" />
+    <BindingsSet refId="AreaHlasenie7_ST6_binding" />
+    <BindingsSet refId="AreaLoginP2_binding" />
+    <BindingsSet refId="AreaTimeP2_binding" />
+    <BindingsSet refId="AreaPageStavyStanicP2_page1_binding" />
+    <BindingsSet refId="AreaPageStavyStanicP2_page2_binding" />
+    <BindingsSet refId="AreaPageParametreP2_page1_binding" />
+    <BindingsSet refId="AreaPageParametreP2_page2_binding" />
+    <BindingsSet refId="AreaPageTolerancieSkrutkovaniaP2_page1_binding" />
+    <BindingsSet refId="AreaPageParametreP2_page3_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="HlavickaP2_eventbinding" />
@@ -54,6 +79,19 @@
     <EventBindingsSet refId="AreaPageManual_Skrutkovanie_page4_eventbinding" />
     <EventBindingsSet refId="AreaPageManualP2_Zvaranie_eventbinding" />
     <EventBindingsSet refId="AreaPageManualP2_Cistenie_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie1_ST3_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie2_ST3_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie3_ST3_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie7_ST3_eventbinding" />
+    <EventBindingsSet refId="AreaLoginP2_eventbinding" />
+    <EventBindingsSet refId="AreaTimeP2_eventbinding" />
+    <EventBindingsSet refId="AreaPageParametreP2_page2_eventbinding" />
+    <EventBindingsSet refId="AreaPageParametreP2_page1_eventbinding" />
+    <EventBindingsSet refId="AreaPageTolerancieSkrutkovaniaP2_page1_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie5_ST5_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie6_ST5_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie7_ST5_eventbinding" />
+    <EventBindingsSet refId="AreaPageParametreP2_page3_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="Hlasenie1_ST3" />
@@ -85,6 +123,15 @@
     <Dialog refId="Hlasenie6_ST6" />
     <Dialog refId="Hlasenie7_ST6" />
     <Dialog refId="Hlasenie8_ST6" />
+    <Dialog refId="LoginDialogP2" />
+    <Dialog refId="TimeDialogP2" />
+    <Dialog refId="Hlasenie5_ST5" />
+    <Dialog refId="Hlasenie6_ST5" />
+    <Dialog refId="Hlasenie7_ST5" />
+    <Dialog refId="Hlasenie15_ST3" />
+    <Dialog refId="Hlasenie4_ST4" />
+    <Dialog refId="Hlasenie8_ST5" />
+    <Dialog refId="Hlasenie9_ST6" />
   </Dialogs>
   <Contents>
     <Content refId="HlavickaP2" />
@@ -123,6 +170,16 @@
     <Content refId="AreaPageAlarmyP2" />
     <Content refId="AreaPageAutomatP2" />
     <Content refId="AreaPageBootP2" />
+    <Content refId="AreaPageStavyStanicP2_page2" />
+    <Content refId="AreaPageParametreP2_page2" />
+    <Content refId="AreaHlasenie5_ST5" />
+    <Content refId="AreaHlasenie6_ST5" />
+    <Content refId="AreaHlasenie7_ST5" />
+    <Content refId="AreaHlasenie15_ST3" />
+    <Content refId="AreaHlasenie4_ST4" />
+    <Content refId="AreaHlasenie8_ST5" />
+    <Content refId="AreaHlasenie9_ST6" />
+    <Content refId="AreaPageParametreP2_page3" />
   </Contents>
   <VariablesSets />
   <SnippetsSets>

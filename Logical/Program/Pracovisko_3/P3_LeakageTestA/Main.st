@@ -23,9 +23,8 @@ PROGRAM _CYCLIC
 		P3_LeakageTestA.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P3_LeakageTestA.Step:= 0;
-	ELSIF NOT P3_LeakageTestA.Manual AND NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
-		SC_P3_LeakageTestA.Step:= 0;	
 	END_IF	
+	
 	
 	
 	CASE SC_P3_LeakageTestA.Step OF 
@@ -42,10 +41,10 @@ PROGRAM _CYCLIC
 			P3_LeakageTestA.OUT.Kopito_VYSUN:= FALSE;
 			P3_LeakageTestA.OUT.Kopito_ZASUN:= TRUE;
 			P3_LeakageTestA.RFID_hlava.PrecitajChipRFID:= FALSE;
-			P3_LeakageTestA.CMD.RR_OtvorTester:= FALSE;
-			P3_LeakageTestA.CMD.RR_ZatvorTester:= FALSE;
 			P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START:= FALSE;
 			P3_LeakageTestA.CMD.RR_VysunSpodneKopito:= FALSE;
+			P3_LeakageTestA.CMD.RR_HornyPritlak_VYSUN:= FALSE;
+			P3_LeakageTestA.CMD.RR_HornyPritlak_ZASUN:= FALSE;
 			P3_LeakageTestA.STAV.RR_TestovaciaSekvencia_BUSY:= FALSE;
 			TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPaletky_TYP1:= FALSE;
 			TRCB_P3_LeakageTestA_ST8A.CMD.PriradQRkodFiltra_TYP3:= FALSE;
@@ -54,12 +53,15 @@ PROGRAM _CYCLIC
 			AteqLeakageTester_A.CitajParametreTestera:= FALSE;	
 			AteqLeakageTester_A.START_Testovania:= FALSE;
 			P34_Vizu.ZobrazHL1_ST8:= FALSE;
+			P34_Vizu.ZobrazHL3_ST8:= FALSE;
 			TRCB_P3_LeakTestA_OpatovnyDopyt:= FALSE;
 			TRCB_P3_LeakTestA_PaletkaNG:= FALSE;
 			PocetDopytovNaServer:= 0;
 			PocetOpakovaniTestu:= 0;
 			OpakovanyTest:= FALSE;
 			TestovaciKus:= FALSE;
+			P3_LeakageTestA_Taktime.IN.START_MeraniaCasu:= FALSE;
+			P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 		
 			P3_ZdvizkaPredLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratA:= FALSE;
 			P3_LeakageTestA.STAV.PrebiehaVyvezeniePaletky:= FALSE;
@@ -194,6 +196,7 @@ PROGRAM _CYCLIC
 			
 			IF P3_LeakageTestA.RFID_hlava.Stav_CitanieZapis_OK AND P3_LeakageTestA.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P3_LeakageTestA.RFID_hlava.PrecitaneCisloPaletky;
+				P3_LeakageTestA.PAR.CisloPaletky:= P3_LeakageTestA.RFID_hlava.PrecitaneCisloPaletky;
 				P3_LeakageTestA.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 23;
@@ -219,8 +222,11 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
 			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
 		
-		
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				P3_LeakageTestA.STAV.PoINIT:= TRUE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 560;
@@ -284,7 +290,8 @@ PROGRAM _CYCLIC
 				SC_P3_LeakageTestA.Step:= 100;
 			END_IF		
 			
-	
+		
+			
 		
 			//********************************************************Automatický režim****************************************************************************//
 		
@@ -298,7 +305,15 @@ PROGRAM _CYCLIC
 			IF P3_LeakageTestA.RFID_hlava.PritomnostPaletky THEN
 				P3_ZdvizkaPredLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratA:= FALSE;
 			END_IF
-                
+            
+			IF NOT SC_P3_LeakageTestA.Switch1 AND P3_LeakageTestA.RFID_hlava.PritomnostPaletky THEN
+				P3_LeakageTestA_Taktime.IN.START_MeraniaCasu:= TRUE;
+				P3_LeakageTestA_Taktime.IN.ZAPIS_MeraniaCasu:= TRUE;
+				P3_LeakageTestA_Taktime.IN.ZAPIS_StratovyCas:= TRUE;
+				Buffer_9.Hodnota:= P3_LeakageTestA_Taktime.OUT.StratoveSekundy;
+				Buffer_9.ZapisHodnotu:= TRUE;
+				SC_P3_LeakageTestA.Switch1:= TRUE;
+			END_IF	
 			           
 			IF P3_LeakageTestA.KoniecCyklu THEN
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
@@ -323,6 +338,7 @@ PROGRAM _CYCLIC
 			
 			IF P3_LeakageTestA.RFID_hlava.Stav_CitanieZapis_OK AND P3_LeakageTestA.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P3_LeakageTestA.RFID_hlava.PrecitaneCisloPaletky;
+				P3_LeakageTestA.PAR.CisloPaletky:= P3_LeakageTestA.RFID_hlava.PrecitaneCisloPaletky;
 				P3_LeakageTestA.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 102;
@@ -348,8 +364,11 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
 			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
 		
-		
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 560;
 			ELSIF Paletka[i].STAV.StavPaletky = 'TEST' AND Paletka[i].STAV.CisloTestovacejStanice = 'ST_8A,8B' THEN
@@ -399,19 +418,23 @@ PROGRAM _CYCLIC
 			IF Linka.KOM_Panatrace_OFF THEN
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 120;
-			ELSIF NOT SC_P3_LeakageTestA.Switch1 THEN
+			ELSIF NOT SC_P3_LeakageTestA.Switch1 AND TRCB_P3_LeakageTestA_ST8A.STATUS.KOM_READY THEN
 				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				Centrovacku_VYSUN:= TRUE;
+				P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
 			END_IF 
-            
+			            
 			IF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 111;
 			ELSIF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaError THEN	
 				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
-				SC_P3_LeakageTestA.Step:= 117;
+				SC_P3_LeakageTestA.Step:= 112;
 			END_IF	
 			
 		111:
@@ -422,24 +445,54 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 111;
-				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
+					SC_P3_LeakageTestA.Step:= 112;
+				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 111;	
+					SC_P3_LeakageTestA.Step:= 115;	
 				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 111;
+					SC_P3_LeakageTestA.Step:= 120;
 				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 111;
-				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
+					SC_P3_LeakageTestA.Step:= 112;
+				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 111;
-				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
+					SC_P3_LeakageTestA.Step:= 112;
+				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 111;
+					SC_P3_LeakageTestA.Step:= 112;
+				ELSE
+					SC_P3_LeakageTestA.ResetStep:= TRUE;
+					SC_P3_LeakageTestA.Step:= 112;
 				END_IF   
 			END_IF	
+		
+			
+		112:
+			SC_P3_LeakageTestA.StepName:='112 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
+			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
+            
+            
+			P34_Vizu.ZobrazHL3_ST8:= TRUE;
+            
+			IF TRCB_P3_LeakTestA_OpatovnyDopyt THEN
+				TRCB_P3_LeakTestA_OpatovnyDopyt:= FALSE; 
+				P34_Vizu.ZobrazHL3_ST8:= FALSE;
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 110;
+			ELSIF TRCB_P3_LeakTestA_PaletkaNG THEN
+				TRCB_P3_LeakTestA_PaletkaNG:= FALSE;
+				P34_Vizu.ZobrazHL3_ST8:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 118;
+			END_IF   	
+			
+			
+			
+			
+			
 			
 		115:
 			SC_P3_LeakageTestA.StepName:='115 - Automaticky Rezim - vyziadanie stavu paletky zo servera, zacentrovanie paletky'; 
@@ -448,20 +501,22 @@ PROGRAM _CYCLIC
 			SC_P3_LeakageTestA.IdleTime.IN:= TRUE;
 			
                         
-			IF NOT SC_P3_LeakageTestA.Switch1 THEN
+			IF NOT SC_P3_LeakageTestA.Switch1 AND TRCB_P3_LeakageTestA_ST8A.STATUS.KOM_READY THEN
 				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPaletky_TYP1:= TRUE;
-				Centrovacku_VYSUN:= TRUE;
+				P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
 			END_IF
 			
 			IF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 116;
 			ELSIF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaError THEN	
 				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
-				SC_P3_LeakageTestA.Step:= 117;
+				SC_P3_LeakageTestA.Step:= 112;
 			END_IF	
 			
 				
@@ -593,17 +648,10 @@ PROGRAM _CYCLIC
 			IF SC_P3_LeakageTestA.IdleTime.Q THEN
 				P3_LeakageTestA.OUT.PneuZamokCentrovania_ODOMKNI:= FALSE;
 				P3_LeakageTestA.OUT.PneuZamokZvonu_ODOMKNI:= FALSE;
-				IF P3_LeakageTestA.CMD.RR_ZatvorTester THEN
-					P3_LeakageTestA.CMD.RR_ZatvorTester:= FALSE;
-					P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START:= FALSE;
-					P3_LeakageTestA.CMD.RR_OtvorTester:= FALSE;
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 700;
-				ELSE	
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 130;
-				END_IF	
-			END_IF		
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 130;
+			END_IF	
+			
 		
 		130:
 			SC_P3_LeakageTestA.StepName:='130 - Automaticky Rezim - spustenie testera';
@@ -647,7 +695,7 @@ PROGRAM _CYCLIC
 				Reports.LeakageTest.ToleranciaTlakUniku_MAX.StanicaA:= REAL_TO_STRING(AteqLeakageTester_A.Tolerancia);
 				Reports.LeakageTest.Tolerancia.StanicaA:= REAL_TO_STRING(AteqLeakageTester_A.Tolerancia);
 				AteqLeakageTester_A.CitajParametreTestera:= FALSE;
-				IF P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START THEN
+				IF P3_LeakageTestA.STAV.RR_TestovaciaSekvencia_BUSY THEN
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
 					SC_P3_LeakageTestA.Step:= 150;
 				ELSE	
@@ -666,6 +714,9 @@ PROGRAM _CYCLIC
 				Paletka[i].STAV.LeakageTest_Ukonceny:= TRUE;
 				Reports.LeakageTest.VyslednyReport.StanicaA:= 'PASS';
 				Paletka[i].PAR.StavPowerCP:= 'PASS';
+				IF Paletka[i].STAV.StavPaletky <> 'TEST'THEN
+					Paletka[i].STAV.StavPaletky:= 'OK';
+				END_IF	
 				PocetOpakovaniTestu:= 0;
 				OpakovanyTest:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
@@ -675,8 +726,11 @@ PROGRAM _CYCLIC
 					PocetOpakovaniTestu:= PocetOpakovaniTestu + 1;
 					OpakovanyTest:= TRUE;
 				END_IF    
-				Paletka[i].PAR.StavPowerCP:= 'FAIL';
 				Reports.LeakageTest.VyslednyReport.StanicaA:= 'FAIL';
+				Paletka[i].PAR.StavPowerCP:= 'FAIL';
+				IF Paletka[i].STAV.StavPaletky <> 'TEST'THEN
+					Paletka[i].STAV.StavPaletky:= 'NG';
+				END_IF	
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 150;
 			END_IF
@@ -706,6 +760,7 @@ PROGRAM _CYCLIC
 		
 			IF NOT SC_P3_LeakageTestA.Switch1 THEN
 				HornyPritlak_ZASUN:= TRUE;
+				Centrovacku_ZASUN:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
 			END_IF
 		
@@ -729,16 +784,8 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			IF P3_LeakageTestA.IN.Centrovanie_ZASUNUTE THEN
-				IF P3_LeakageTestA.CMD.RR_OtvorTester THEN
-					P3_LeakageTestA.CMD.RR_OtvorTester:= FALSE;
-					P3_LeakageTestA.CMD.RR_ZatvorTester:= FALSE;
-					P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START:= FALSE;
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 700;
-				ELSIF P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START THEN
-					P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START:= FALSE;
-					P3_LeakageTestA.CMD.RR_OtvorTester:= FALSE;
-					P3_LeakageTestA.CMD.RR_ZatvorTester:= FALSE;
+				IF P3_LeakageTestA.STAV.RR_TestovaciaSekvencia_BUSY THEN
+					P3_LeakageTestA.STAV.RR_TestovaciaSekvencia_BUSY:= FALSE;
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
 					SC_P3_LeakageTestA.Step:= 700;
 				ELSE	
@@ -770,81 +817,36 @@ PROGRAM _CYCLIC
 			
 			
 			//**************************Odoslanie dát na server************************************//	
-		
 		550:
-			SC_P3_LeakageTestA.StepName:='550 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+			SC_P3_LeakageTestA.StepName:='550 - Automaticky Rezim - odoslanie stavu paletky na server';
 			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
-			SC_P3_LeakageTestA.AlarmTime.PT:= T#10s;	
+			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
 			
 			IF Linka.KOM_Panatrace_OFF THEN
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 560;
-			ELSIF NOT SC_P3_LeakageTestA.Switch1 THEN
-				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
-				SC_P3_LeakageTestA.Switch1:= TRUE;
-			END_IF 
-            
-			IF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaUkoncena THEN
-				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
-				SC_P3_LeakageTestA.ResetStep:= TRUE;
-				SC_P3_LeakageTestA.Step:= 552;
-			ELSIF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaError THEN	
-				P34_Alarmy[311]:= TRUE;
-				P3_Pracovisko.STAV.Porucha_ST5:= TRUE;
-			END_IF	
-			
-		552:
-			SC_P3_LeakageTestA.StepName:='552 - Automaticky Rezim - kontrola odpovede servera';
-			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
-			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;		
-			
-			IF NOT TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaUkoncena THEN
-				IF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 552;
-				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 552;	
-				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 552;
-				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 552;
-				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 552;
-				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 552;
-				END_IF   
-			END_IF	
-		
-		
-		555:
-			SC_P3_LeakageTestA.StepName:='555 - Automaticky Rezim - odoslanie stavu paletky na server';
-			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
-			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
-			
-			
-			IF NOT SC_P3_LeakageTestA.Switch1 THEN
+			ELSIF NOT SC_P3_LeakageTestA.Switch1 AND TRCB_P3_LeakageTestA_ST8A.STATUS.KOM_READY THEN
 				TRCB_P3_LeakageTestA_ST8A.CMD.OdosliStavPaletky_TYP2:= TRUE;
+				P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P3_LeakageTestA.Switch1:= TRUE;
 			END_IF
 			
 			
 			IF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P3_LeakageTestA_ST8A.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
-				SC_P3_LeakageTestA.Step:= 556;
+				SC_P3_LeakageTestA.Step:= 552;
 			ELSIF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaError THEN
-				P34_Alarmy[311]:= TRUE;
-				P3_Pracovisko.STAV.Porucha_ST5:= TRUE;
+				TRCB_P3_LeakageTestA_ST8A.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P3_LeakageTestA_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 557;
 			END_IF
 			
 		
-		556:
-			SC_P3_LeakageTestA.StepName:='556 - Automaticky Rezim - kontrola odpovede servera';
+		552:
+			SC_P3_LeakageTestA.StepName:='552 - Automaticky Rezim - kontrola odpovede servera';
 			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
 			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
 			
@@ -854,12 +856,94 @@ PROGRAM _CYCLIC
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
 					SC_P3_LeakageTestA.Step:= 560;
 				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.PovolenieCinnostiNaPaletke = 'NG' THEN
-					Paletka[i].STAV.StavPaletky:= 'NG';
+					IF Paletka[i].STAV.StavPaletky <> 'TEST'THEN
+						Paletka[i].STAV.StavPaletky:= 'NG';
+					END_IF	
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
 					SC_P3_LeakageTestA.Step:= 560;
 				END_IF	
 			END_IF
+			
+			
+			
+		555:
+			SC_P3_LeakageTestA.StepName:='555 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
+			SC_P3_LeakageTestA.AlarmTime.PT:= T#10s;	
+			
+			
+			IF NOT SC_P3_LeakageTestA.Switch1 AND TRCB_P3_LeakageTestA_ST8A.STATUS.KOM_READY THEN
+				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				SC_P3_LeakageTestA.Switch1:= TRUE;
+			END_IF 
+			            
+			IF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaUkoncena THEN
+				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 556;
+			ELSIF TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaError THEN	
+				TRCB_P3_LeakageTestA_ST8A.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 557;
+			END_IF	
+			
+		556:
+			SC_P3_LeakageTestA.StepName:='556 - Automaticky Rezim - kontrola odpovede servera';
+			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
+			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;		
+			
+			IF NOT TRCB_P3_LeakageTestA_ST8A.STATUS.KomunikaciaUkoncena THEN
+				IF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
+					SC_P3_LeakageTestA.ResetStep:= TRUE;
+					SC_P3_LeakageTestA.Step:= 557;
+				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
+					SC_P3_LeakageTestA.ResetStep:= TRUE;
+					SC_P3_LeakageTestA.Step:= 557;	
+				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
+					SC_P3_LeakageTestA.ResetStep:= TRUE;
+					SC_P3_LeakageTestA.Step:= 550;
+				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
+					SC_P3_LeakageTestA.ResetStep:= TRUE;
+					SC_P3_LeakageTestA.Step:= 557;
+				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
+					SC_P3_LeakageTestA.ResetStep:= TRUE;
+					SC_P3_LeakageTestA.Step:= 557;
+				ELSIF TRCB_P3_LeakageTestA_ST8A.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
+					SC_P3_LeakageTestA.ResetStep:= TRUE;
+					SC_P3_LeakageTestA.Step:= 557;
+				ELSE
+					SC_P3_LeakageTestA.ResetStep:= TRUE;
+					SC_P3_LeakageTestA.Step:= 557;
+				END_IF   
+			END_IF	
 		
+				
+			
+		557:
+			SC_P3_LeakageTestA.StepName:='557 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P3_LeakageTestA.IdleTime.PT:= T#200ms;
+			SC_P3_LeakageTestA.AlarmTime.PT:= T#5s;
+            
+            
+			P34_Vizu.ZobrazHL3_ST8:= TRUE;
+            
+			IF TRCB_P3_LeakTestA_OpatovnyDopyt THEN
+				TRCB_P3_LeakTestA_OpatovnyDopyt:= FALSE; 
+				P34_Vizu.ZobrazHL3_ST8:= FALSE;
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 555;
+			ELSIF TRCB_P3_LeakTestA_PaletkaNG THEN
+				TRCB_P3_LeakTestA_PaletkaNG:= FALSE;
+				P34_Vizu.ZobrazHL3_ST8:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 560;
+			END_IF   	
+			
+			
+			
+			
+			
 			//***************************Vyvezenie paletky**********************************************//	
 		
 		
@@ -872,10 +956,14 @@ PROGRAM _CYCLIC
 			IF P3_LeakageTestA.KoniecCyklu THEN
 				SC_P3_LeakageTestA.ResetStep:= TRUE;
 				SC_P3_LeakageTestA.Step:= 0;
+			ELSIF P3_Pracovisko.STAV.Porucha_ST5 THEN
+				SC_P3_LeakageTestA.ResetStep:= TRUE;
+				SC_P3_LeakageTestA.Step:= 0;
 			ELSIF NOT P3_ZdvizkaZaLeakTestA.IN.PritomnostPaletky AND
 				SC_P3_ZdvizkaZaLeakTestA.Step = 100 AND
 				NOT P3_LeakageTestA.STAV.PrebiehaVyvezeniePaletky AND
 				NOT P3_ZdvizkaZaLeakTestB.STAV.PrebiehaVyvezeniePaletkyNaTratA AND
+				P3_ZdvizkaZaLeakTestA.IN.Zdvizka_StrednaPoloha AND
 				P3_ZdvizkaZaLeakTestA.STAV.PoINIT AND
 				P3_ZdvizkaZaLeakTestB.STAV.PoINIT THEN
 				P3_LeakageTestA.OUT.ZasunStoper:= TRUE;
@@ -939,31 +1027,37 @@ PROGRAM _CYCLIC
 			END_IF
 		
 		
-			//Otváranie a zatváranie testera//
+			//Testovacia sekvencia//
 			IF P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START THEN
 				IF P3_LeakageTestA.RFID_hlava.PritomnostPaletky THEN 
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 5;
-				ELSE
-					P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START:= FALSE;
-				END_IF	
-			ELSIF P3_LeakageTestA.CMD.RR_ZatvorTester THEN
-				IF P3_LeakageTestA.RFID_hlava.PritomnostPaletky THEN 
+					P3_LeakageTestA.STAV.RR_TestovaciaSekvencia_BUSY:= TRUE;
 					SC_P3_LeakageTestA.ResetStep:= TRUE;
 					SC_P3_LeakageTestA.Step:= 120;
-				ELSE
-					P3_LeakageTestA.CMD.RR_ZatvorTester:= FALSE;
 				END_IF	
-			ELSIF P3_LeakageTestA.CMD.RR_ZatvorTester THEN
-				IF P3_LeakageTestA.RFID_hlava.PritomnostPaletky THEN 
-					SC_P3_LeakageTestA.ResetStep:= TRUE;
-					SC_P3_LeakageTestA.Step:= 150;
-				ELSE
-					P3_LeakageTestA.CMD.RR_ZatvorTester:= FALSE;
-				END_IF	
+				P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START:= FALSE;
 			END_IF
 		
+			//Ovládanie centrovania paletky//
+			IF P3_LeakageTestA.CMD.RR_VysunCentrovanie THEN
+				P3_LeakageTestA.OUT.PneuZamokCentrovania_ODOMKNI:= TRUE;
+				P3_LeakageTestA.OUT.Centrovanie_VYSUN:= TRUE;
+			ELSE
+				P3_LeakageTestA.OUT.PneuZamokCentrovania_ODOMKNI:= TRUE;
+				P3_LeakageTestA.OUT.Centrovanie_VYSUN:= FALSE;
+			END_IF	
 		
+			//Ovládanie horného prítlaku//
+			IF P3_LeakageTestA.CMD.RR_HornyPritlak_VYSUN THEN
+				P3_LeakageTestA.OUT.PneuZamokZvonu_ODOMKNI:= TRUE;
+				P3_LeakageTestA.OUT.HornyPritlak_ZASUN:= FALSE;
+				P3_LeakageTestA.OUT.HornyPritlak_VYSUN:= TRUE;
+				P3_LeakageTestA.CMD.RR_HornyPritlak_VYSUN:= FALSE;
+			ELSIF P3_LeakageTestA.CMD.RR_HornyPritlak_ZASUN THEN
+				P3_LeakageTestA.OUT.PneuZamokZvonu_ODOMKNI:= TRUE;
+				P3_LeakageTestA.OUT.HornyPritlak_ZASUN:= TRUE;
+				P3_LeakageTestA.OUT.HornyPritlak_VYSUN:= FALSE;
+				P3_LeakageTestA.CMD.RR_HornyPritlak_ZASUN:= FALSE;
+			END_IF	
 		
 		
 		

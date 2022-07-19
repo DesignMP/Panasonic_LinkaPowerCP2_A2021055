@@ -7,6 +7,9 @@
  ********************************************************************
  * Global variables of project Zamazat_1
  ********************************************************************)
+VAR
+	QRkod_PowerCP : STRING[30] := '';
+END_VAR
 (**********Nastavenie èasu**************)
 VAR
 	DTSetTime_0 : DTSetTime;
@@ -67,6 +70,8 @@ VAR
 	TRCB_P3_LeakageTestB_ST8B : KOM_Server_typ;
 	TRCB_P4_Etiketovacka_ST9 : KOM_Server_typ;
 	TRCB_P4_Vytah_ST10 : KOM_Server_typ;
+	TRCB_P1_Vytah_OpatovnyDopyt : BOOL := FALSE;
+	TRCB_P1_Vytah_PaletkaNG : BOOL;
 	TRCB_P1_Srobov_OpatovnyDopyt : BOOL;
 	TRCB_P1_Srobov_PaletkaNG : BOOL;
 	TRCB_P2_ZaklTesn_OpatovnyDopyt : BOOL;
@@ -108,26 +113,40 @@ VAR
 	CAM15 : CAM15_typ; (*P4_ST3_StoperEtiketovania - kontrola nalepenej etikety*)
 	CAM16 : CAM16_typ; (*P4_ST4_Vytah - kontrola paletky*)
 	ControlUnit : ControlUnit_typ;
+	CAM1_PocetFotiek : USINT := 0;
+	CAM2_PocetFotiek : USINT := 0;
+	CAM3_PocetFotiek : USINT := 0;
+	CAM4_PocetFotiek : USINT := 0;
+	CAM5_PocetFotiek : USINT := 0;
+	CAM6_PocetFotiek : USINT := 0;
+	CAM7_PocetFotiek : USINT := 0;
+	CAM8_PocetFotiek : USINT := 0;
+	CAM9_PocetFotiek : USINT := 0;
+	CAM10_PocetFotiek : USINT := 0;
+	CAM11_PocetFotiek : USINT := 0;
+	CAM12_PocetFotiek : USINT := 0;
+	CAM13_PocetFotiek : USINT := 0;
+	CAM14_PocetFotiek : USINT := 0;
+	CAM15_PocetFotiek : USINT := 0;
+	CAM16_PocetFotiek : USINT := 0;
+	CAM17_PocetFotiek : USINT := 0;
 END_VAR
 (***************Odosielanie fotiek na server**************************)
 VAR
 	FTP_CAM1 : FTP_Kamery_typ; (*ST3 - zakladanie tesnenia - kontrola tesnenia*)
 	FTP_CAM2 : FTP_Kamery_typ; (*ST1 - výtah - kontrola paletky*)
-	FTP_CAM3 : FTP_Kamery_typ; (*ST1 - výtah - kontrola QR kodu DPS modely 4F a 5F*)
 	FTP_CAM4 : FTP_Kamery_typ; (*ST1 - výtah - kontrola krytu DPS modely 4F a 5F*)
-	FTP_CAM5 : FTP_Kamery_typ; (*ST1 - výtah - kontrola QR kodu Power CP*)
 	FTP_CAM6 : FTP_Kamery_typ; (*ST2 - srobovanie - kontrola paletky*)
-	FTP_CAM7 : FTP_Kamery_typ; (*ST3 - zakladanie tesnenia - kontrola filtra 5H*)
-	FTP_CAM8 : FTP_Kamery_typ; (*ST3 - zakladanie tesnenia - kontrola QR kodu Power CP*)
 	FTP_CAM9 : FTP_Kamery_typ; (*ST4 - maticovacka - kontrola paletky*)
 	FTP_CAM10 : FTP_Kamery_typ; (*ST5 - srobovanie - kontrola paletky*)
 	FTP_CAM11 : FTP_Kamery_typ; (*ST6 - zváranie - kontrola Power CP*)
 	FTP_CAM12 : FTP_Kamery_typ; (*ST6 - zváranie - kontrola paletky*)
-	FTP_CAM13 : FTP_Kamery_typ; (*ST7 - srobovanie - kontrola paletky*)
-	FTP_CAM14 : FTP_Kamery_typ; (*ST9 - etiketovacka - kontrola QR kodu Power CP*)
 	FTP_CAM15 : FTP_Kamery_typ; (*ST9 - etiketovacka - kontrola etikety*)
 	FTP_CAM16 : FTP_Kamery_typ; (*ST10 - vytah - kontrola paletky*)
 	FTP_CAM17 : FTP_Kamery_typ; (*ST3 - zakladanie tesnenia - kontrola paletky*)
+	OdpojServerFTP : BOOL := FALSE;
+	Stav_PripojenieFTP_OK : BOOL := FALSE;
+	TypFotky_BMP : BOOL := FALSE;
 END_VAR
 (******************Premenné linky***************************)
 VAR RETAIN
@@ -252,4 +271,21 @@ VAR
 	P4_Vytah_KAM_Result_NG : BOOL;
 	P4_Vytah_KAM_Result_OK : BOOL;
 	P4_Vytah_KAM_Result_Ignoruj : BOOL;
+END_VAR
+(************Taktime pracovisk****************)
+VAR
+	P1_Vytah_Taktime : Taktime := (0);
+	P1_Skrutkovanie_Taktime : Taktime := (0);
+	P2_ZakladanieTesnenia_Taktime : Taktime := (0);
+	P2_Maticovacka_Taktime : Taktime := (0);
+	P2_Skrutkovanie_Taktime : Taktime := (0);
+	P2_Zvaranie_Taktime : Taktime := (0);
+	P3_Skrutkovanie_Taktime : Taktime := (0);
+	P3_HVtest_Taktime : Taktime := (0);
+	P3_LeakageTestA_Taktime : Taktime := (0);
+	P3_LeakageTestB_Taktime : Taktime := (0);
+	P4_FinalTestA_Taktime : Taktime := (0);
+	P4_FinalTestB_Taktime : Taktime := (0);
+	P4_Etiketovanie_Taktime : Taktime := (0);
+	P4_Vytah_Taktime : Taktime := (0);
 END_VAR

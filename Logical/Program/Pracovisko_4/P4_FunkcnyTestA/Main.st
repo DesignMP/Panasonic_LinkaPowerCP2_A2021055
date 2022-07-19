@@ -1,6 +1,7 @@
 
 PROGRAM _INIT
-	(* Insert code here *)
+	
+	P4_FunkcnyTestA.PAR.CisloPortuKlienta:= 1040;
 	 
 END_PROGRAM
 
@@ -23,8 +24,6 @@ PROGRAM _CYCLIC
 		P4_FunkcnyTestA.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P4_FunkcnyTestA.Step:= 0;
-	ELSIF NOT P4_FunkcnyTestA.Manual AND NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN
-		SC_P4_FunkcnyTestA.Step:= 0;	
 	END_IF	
 	
 	CASE SC_P4_FunkcnyTestA.Step OF 
@@ -49,15 +48,18 @@ PROGRAM _CYCLIC
 			P4_FunkcnyTestA.OUT.HorneKontakty_VYSUN:= FALSE;
 			P4_FunkcnyTestA.OUT.HorneKontakty_ZASUN:= TRUE;
 			P4_FunkcnyTestA.RFID_hlava.PrecitajChipRFID:= FALSE;
-			P4_FunkcnyTestA.CMD.RR_OtvorTester:= FALSE;
 			P4_FunkcnyTestA.CMD.RR_ZatvorTester:= FALSE;
 			P4_FunkcnyTestA.CMD.StartTestovania:= FALSE;
-			
-			
+			P4_FunkcnyTestA.CMD.RR_VysunPruzenieKontaktov:= FALSE;
+			P4_FunkcnyTestA.CMD.OpatovnyTest:= FALSE;
+			P4_FunkcnyTestA.STAV.RR_SekvenciaTestera_BUSY:= FALSE;
+			P4_FunkcnyTestA.STAV.PaletkaOznacena_NG:= FALSE;
+			P34_Vizu.ZobrazHL1_FinalTestA:= FALSE;
 			P3_ZdvizkaZaLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratA:= FALSE;
 			P4_FunkcnyTestA.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			TestovaciKus:= FALSE;
-			
+			P4_FinalTestA_Taktime.IN.START_MeraniaCasu:= FALSE;
+			P4_FinalTestA_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 			
 			PocetDopytovNaTester:= 0;
 		
@@ -229,7 +231,11 @@ PROGRAM _CYCLIC
 			SC_P4_FunkcnyTestA.AlarmTime.PT:= T#5s;
 		
 		
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+				SC_P4_FunkcnyTestA.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				P4_FunkcnyTestA.STAV.PoINIT:= TRUE;
 				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
 				SC_P4_FunkcnyTestA.Step:= 560;
@@ -294,7 +300,16 @@ PROGRAM _CYCLIC
 			IF P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky THEN
 				P3_ZdvizkaZaLeakTestA.STAV.PrebiehaVyvezeniePaletkyNaTratA:= FALSE;
 			END_IF
-                
+            
+			IF NOT SC_P4_FunkcnyTestA.Switch1 AND P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky THEN
+				P4_FinalTestA_Taktime.IN.START_MeraniaCasu:= TRUE;
+				P4_FinalTestA_Taktime.IN.ZAPIS_MeraniaCasu:= TRUE;
+				P4_FinalTestA_Taktime.IN.ZAPIS_StratovyCas:= TRUE;
+				Buffer_11.Hodnota:= P4_FinalTestA_Taktime.OUT.StratoveSekundy;
+				Buffer_11.ZapisHodnotu:= TRUE;
+				SC_P4_FunkcnyTestA.Switch1:= TRUE;
+			END_IF	
+			
 			           
 			IF P4_FunkcnyTestA.KoniecCyklu THEN
 				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
@@ -345,7 +360,11 @@ PROGRAM _CYCLIC
 			SC_P4_FunkcnyTestA.IdleTime.PT:= T#200ms;
 			SC_P4_FunkcnyTestA.AlarmTime.PT:= T#5s;
 		
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+				SC_P4_FunkcnyTestA.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
 				SC_P4_FunkcnyTestA.Step:= 560;
 			ELSIF Paletka[i].STAV.StavPaletky = 'TEST' AND Paletka[i].STAV.CisloTestovacejStanice = 'ST_FT1,FT2' THEN
@@ -452,11 +471,11 @@ PROGRAM _CYCLIC
 			SC_P4_FunkcnyTestA.IdleTime.IN:= TRUE;
 		
 			IF SC_P4_FunkcnyTestA.IdleTime.Q THEN
-				IF P4_FunkcnyTestA.CMD.RR_ZatvorTester THEN
-					P4_FunkcnyTestA.CMD.RR_ZatvorTester:= FALSE;
-					P4_FunkcnyTestA.CMD.RR_OtvorTester:= FALSE;
-					SC_P4_FunkcnyTestA.ResetStep:= TRUE;
-					SC_P4_FunkcnyTestA.Step:= 700;
+				IF P4_FunkcnyTestA.Manual THEN
+					IF NOT P4_FunkcnyTestA.CMD.RR_ZatvorTester THEN
+						SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+						SC_P4_FunkcnyTestA.Step:= 140;
+					END_IF	
 				ELSE	
 					SC_P4_FunkcnyTestA.ResetStep:= TRUE;
 					SC_P4_FunkcnyTestA.Step:= 130;
@@ -470,15 +489,19 @@ PROGRAM _CYCLIC
 		
 			SC_P4_FunkcnyTestA.IdleTime.IN:= TRUE;
 			
-			IF Linka.KOM_Panatrace_OFF AND SC_P4_FunkcnyTestA.IdleTime.Q THEN
-				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
-				SC_P4_FunkcnyTestA.Step:= 140;
-			ELSIF NOT Linka.KOM_Panatrace_OFF THEN		
+			IF Linka.KOM_Panatrace_OFF THEN
+				IF SC_P4_FunkcnyTestA.IdleTime.Q THEN
+					SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+					SC_P4_FunkcnyTestA.Step:= 140;
+				END_IF
+			ELSE	
 				P4_FunkcnyTestA.STAV.Vysledok_FV_Testu:= '';
 				P4_FunkcnyTestA.CMD.StartTestovania:= TRUE;
+				P4_FinalTestA_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
 				SC_P4_FunkcnyTestA.Step:= 133;
 			END_IF	
+		
 		
 		
 		133:
@@ -487,12 +510,13 @@ PROGRAM _CYCLIC
 			SC_P4_FunkcnyTestA.AlarmTime.PT:= T#5s;
 		
 			IF P4_FunkcnyTestA.STAV.TestovanieUkoncene THEN
+				P4_FinalTestA_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				Paletka[i].STAV.FunkcnyTest_Ukonceny:= TRUE;
 				P4_FunkcnyTestA.CMD.StartTestovania:= FALSE;
 				IF Paletka[i].STAV.StavPaletky = 'TEST' THEN
 					SC_P4_FunkcnyTestA.ResetStep:= TRUE;
 					SC_P4_FunkcnyTestA.Step:= 135;
-				ELSIF Paletka[i].STAV.StavPaletky = 'OK' THEN	
+				ELSE 	
 					IF P4_FunkcnyTestA.STAV.Vysledok_FV_Testu = 'OK' THEN
 						Paletka[i].STAV.StavPaletky:= 'OK';
 					ELSIF P4_FunkcnyTestA.STAV.Vysledok_FV_Testu = 'NG' THEN
@@ -501,9 +525,42 @@ PROGRAM _CYCLIC
 					SC_P4_FunkcnyTestA.ResetStep:= TRUE;
 					SC_P4_FunkcnyTestA.Step:= 135;
 				END_IF
+			ELSIF P4_FunkcnyTestA.STAV.TesterNeodpoveda THEN
+				P4_FunkcnyTestA.CMD.StartTestovania:= FALSE;
+				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+				SC_P4_FunkcnyTestA.Step:= 134;
 			END_IF	
-		
-		
+	
+			
+			
+		134:
+			SC_P4_FunkcnyTestA.StepName:='134 - Automaticky Rezim - zobrazenie hlasenia tester neodpoveda';
+			SC_P4_FunkcnyTestA.IdleTime.PT:= T#1s;
+			SC_P4_FunkcnyTestA.AlarmTime.PT:= T#5s;
+			
+			P34_Vizu.ZobrazHL1_FinalTestA:= TRUE;
+			
+			IF P4_FunkcnyTestA.CMD.OpatovnyTest THEN
+				P4_FunkcnyTestA.CMD.OpatovnyTest:= FALSE;
+				P34_Vizu.ZobrazHL1_FinalTestA:= FALSE;
+				IF P4_FunkcnyTestA.PAR.CisloPortuKlienta < 1049 THEN
+					P4_FunkcnyTestA.PAR.CisloPortuKlienta:= P4_FunkcnyTestA.PAR.CisloPortuKlienta + 1;
+				ELSE
+					P4_FunkcnyTestA.PAR.CisloPortuKlienta:= 1040;
+				END_IF	
+				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+				SC_P4_FunkcnyTestA.Step:= 130;
+			ELSIF P4_FunkcnyTestA.STAV.PaletkaOznacena_NG THEN
+				P4_FunkcnyTestA.STAV.PaletkaOznacena_NG:= FALSE;
+				P34_Vizu.ZobrazHL1_FinalTestA:= FALSE;
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+				SC_P4_FunkcnyTestA.Step:= 135;
+			END_IF	
+			
+			
+			
+			
 		
 		135:
 			SC_P4_FunkcnyTestA.StepName:='135 - Automaticky Rezim - cakam na zrusenie signalu Funkcny test ukonceny';
@@ -595,9 +652,8 @@ PROGRAM _CYCLIC
 		
 				
 			IF P4_FunkcnyTestA.IN.Centrovanie_ZASUNUTE THEN
-				IF P4_FunkcnyTestA.CMD.RR_OtvorTester THEN
-					P4_FunkcnyTestA.CMD.RR_OtvorTester:= FALSE;
-					P4_FunkcnyTestA.CMD.RR_ZatvorTester:= FALSE;
+				IF P4_FunkcnyTestA.Manual THEN
+					P4_FunkcnyTestA.STAV.RR_SekvenciaTestera_BUSY:= FALSE;
 					SC_P4_FunkcnyTestA.ResetStep:= TRUE;
 					SC_P4_FunkcnyTestA.Step:= 700;
 				ELSE	
@@ -623,6 +679,7 @@ PROGRAM _CYCLIC
 				NOT P4_FunkcnyTestA.STAV.PrebiehaVyvezeniePaletky AND
 				NOT P4_ZdvizkaZaFunkcTestB.STAV.PrebiehaVyvezeniePaletky AND
 				P4_ZdvizkaZaFunkcTestA.STAV.PoINIT AND
+				P4_ZdvizkaZaFunkcTestA.IN.Zdvizka_StrednaPoloha AND
 				P4_ZdvizkaZaFunkcTestB.STAV.PoINIT THEN
 				P4_FunkcnyTestA.OUT.ZasunStoper:= TRUE;
 				P4_FunkcnyTestA.STAV.PrebiehaVyvezeniePaletky:= TRUE;
@@ -670,26 +727,31 @@ PROGRAM _CYCLIC
 			SC_P4_FunkcnyTestA.AlarmTime.PT:= T#5s;
 		
 		
-			//Otváranie a zatváranie testera//
+			//Sekvencia zatvárania testera//
 			IF P4_FunkcnyTestA.CMD.RR_ZatvorTester THEN
-				IF P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky THEN 
-					SC_P4_FunkcnyTestA.ResetStep:= TRUE;
-					SC_P4_FunkcnyTestA.Step:= 110;
-				ELSE
-					P4_FunkcnyTestA.CMD.RR_ZatvorTester:= FALSE;
-				END_IF	
-			ELSIF P4_FunkcnyTestA.CMD.RR_OtvorTester THEN
-				IF P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky THEN 
-					SC_P4_FunkcnyTestA.ResetStep:= TRUE;
-					SC_P4_FunkcnyTestA.Step:= 140;
-				ELSE
-					P4_FunkcnyTestA.CMD.RR_OtvorTester:= FALSE;
-				END_IF	
+				P4_FunkcnyTestA.STAV.RR_SekvenciaTestera_BUSY:= TRUE;
+				SC_P4_FunkcnyTestA.ResetStep:= TRUE;
+				SC_P4_FunkcnyTestA.Step:= 110;
 			END_IF	
 		
 		
+			//Ovládanie zdvižky//
+			IF P4_FunkcnyTestA.CMD.RR_VysunCentrovanie THEN
+				P4_FunkcnyTestA.OUT.Centrovanie_VYSUN:= TRUE;
+				P4_FunkcnyTestA.OUT.Centrovanie_ZASUN:= FALSE;
+			ELSE
+				P4_FunkcnyTestA.OUT.Centrovanie_VYSUN:= FALSE;
+				P4_FunkcnyTestA.OUT.Centrovanie_ZASUN:= TRUE;
+			END_IF	
 		
-		
+			//Ovládanie pruženia horných kontaktov//
+			IF P4_FunkcnyTestA.CMD.RR_VysunPruzenieKontaktov THEN
+				P4_FunkcnyTestA.OUT.OdpruzHornychKontaktov_ZASUN:= FALSE;
+				P4_FunkcnyTestA.OUT.OdpruzHornychKontaktov_VYSUN:= TRUE;
+			ELSE
+				P4_FunkcnyTestA.OUT.OdpruzHornychKontaktov_ZASUN:= TRUE;
+				P4_FunkcnyTestA.OUT.OdpruzHornychKontaktov_VYSUN:= FALSE;
+			END_IF	
 		
 		
 		

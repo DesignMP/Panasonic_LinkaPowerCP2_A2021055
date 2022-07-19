@@ -1,13 +1,14 @@
 
 ACTION ProfinetKomunikaciaKAM3: 
 
-	CAM3.STAV.READY;
+	//Smart kamera//
+	CAM3.STAV.READY:= P1_Pracovisko.IN.SmartKamera3_KomOK;
 	
 	//Vstupy pre kameru//
 	CAM3.Profinet_PLC_OUTPUTS[0].0:= CAM3.CMD.Triger;
 	
 	//Výstupy z kamery//
-	CAM3.STAV.SWITCH:= CAM3.Profinet_PLC_INPUTS[10].0;
+	CAM3.STAV.SWITCH:= CAM3.Profinet_PLC_INPUTS[12].0;
 	
 	
 	//Výsledky kamery//
@@ -23,4 +24,12 @@ ACTION ProfinetKomunikaciaKAM3:
 		CAM3.STAV.Results_READY:= TRUE;
 	END_IF
 	
-	END_ACTION
+	//Run counter kamery//
+	Convert_0.IN_Byte0:= CAM3.STAV.RunCounter_Byte1;
+	Convert_0.IN_Byte1:= CAM3.STAV.RunCounter_Byte0;
+	
+	CAM3.STAV.RunCounter:= Convert_0.OUT_UINT;
+	Convert_0();
+	
+	
+END_ACTION

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageParametreP2_page3_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_Acc" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_28" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_35" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_9" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_16" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_22" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_14" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_34" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_28" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_15" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_29" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_CasZvarania" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_16" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_PoziciaZvarania_LS" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_15" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_PoziciaZvarania_PS" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_14" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_RychlostZvarania" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_22" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_MomentZvarania_LS" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_35" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_MomentZvarania_PS" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_34" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_RychlostZdvihu" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_9" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_Dcc" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_29" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_36" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_17" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_23" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_CasZatlacania" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_17" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_MomentZatlacania" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_36" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_RemPremenne.P2_Zvaranie_RychlostZatlacania" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP2_page3" widgetRefId="NumericInput_23" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

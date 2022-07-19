@@ -16,13 +16,15 @@ ACTION OvlSkrutkovacichSetov:
 			P1_Srobovanie.CMD.RR_SkrutSetK30_PodajSkrutku:= FALSE;
 			P1_Srobovanie.CMD.RR_SkrutSetK30_Zasobnik_RUN:= FALSE;
 			P1_Srobovanie.CMD.RR_SkrutSetK30_VysunBrzdu:= FALSE;
-			
+			P1_Srobovanie.SkrutSet_K30.Cmd.ManualPresunBrzdu:= FALSE;
 			P1_Srobovanie.STAV.SkrutkaK30_READY:= FALSE;
+			
 			IF SC_P1_Srobovanie.Step <> 0 THEN
 				SC_SkrutkovaciSet_K30.ResetStep:= TRUE;
 				SC_SkrutkovaciSet_K30.Step:= 1;
 			END_IF	
 		
+			
 			
 		1:
 			SC_SkrutkovaciSet_K30.StepName:='1 - Rozhodnutie o cinnosti';
@@ -119,6 +121,7 @@ ACTION OvlSkrutkovacichSetov:
 				SC_SkrutkovaciSet_K30.ResetStep:= TRUE;
 				SC_SkrutkovaciSet_K30.Step:= 10;
 			END_IF	
+		
 				
 	END_CASE
 		

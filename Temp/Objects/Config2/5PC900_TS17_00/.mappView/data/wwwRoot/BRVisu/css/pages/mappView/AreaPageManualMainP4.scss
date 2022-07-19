@@ -18,7 +18,7 @@
 		opacity: 0.15;
 }
 #AreaPageManualMainP4_Label1 {
-	@include elemTop(20);
+	@include elemTop(13);
 }
 #AreaPageManualMainP4_Label1 {
 	@include elemLeft(483);
@@ -31,6 +31,9 @@
 }
 #AreaPageManualMainP4_Label1 {
 		z-index: 1;
+}
+#AreaPageManualMainP4_Label1 {
+		border-width: 3px;
 }
 #AreaPageManualMainP4_Image1 {
 	@include elemTop(85);
@@ -51,7 +54,7 @@
 		background-color: rgba(220, 220, 220, 1);
 }
 #AreaPageManualMainP4_Image1 {
-		border-style: hidden;
+		border-style: solid;
 }
 #AreaPageManualMainP4_NavigationButtonRR_FunkcnyTestAP4 {
 	@include elemTop(380);
@@ -254,7 +257,7 @@
 		border-color: rgba(255, 117, 26, 1);
 }
 #AreaPageManualMainP4_NavigationButtonRR_EtiketovanieP4 {
-	@include elemTop(505);
+	@include elemTop(498);
 }
 #AreaPageManualMainP4_NavigationButtonRR_EtiketovanieP4 {
 	@include elemLeft(528);
@@ -333,7 +336,7 @@
 	@include elemLeft(590);
 }
 #AreaPageManualMainP4_Rectangle3 {
-	@include elemWidth(195);
+	@include elemWidth(170);
 }
 #AreaPageManualMainP4_Rectangle3 {
 	@include elemHeight(165);
@@ -500,16 +503,16 @@
 	}
 }
 #AreaPageManualMainP4_Rectangle4 {
-	@include elemTop(310);
+	@include elemTop(326);
 }
 #AreaPageManualMainP4_Rectangle4 {
-	@include elemLeft(790);
+	@include elemLeft(768);
 }
 #AreaPageManualMainP4_Rectangle4 {
 	@include elemWidth(180);
 }
 #AreaPageManualMainP4_Rectangle4 {
-	@include elemHeight(160);
+	@include elemHeight(164);
 }
 #AreaPageManualMainP4_Rectangle4 {
 		z-index: 11;

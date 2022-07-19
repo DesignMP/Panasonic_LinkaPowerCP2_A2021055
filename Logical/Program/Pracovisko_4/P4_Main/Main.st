@@ -162,9 +162,6 @@ PROGRAM _CYCLIC
 	
 	//ST5 - Etiketovanie//
 	IF P4_Pracovisko.STAV.Porucha_ST5 THEN
-		IF P4_Etiketovacka.Automat THEN
-			P4_Etiketovacka.Reset:= TRUE;
-		END_IF
 		IF P4_Dopravniky.Automat THEN
 			P4_Dopravniky.KoniecCyklu:= TRUE;
 		END_IF
@@ -352,7 +349,7 @@ PROGRAM _CYCLIC
 		P4_Pracovisko.IN.ModulFesto_IO_KomOK AND
 		P4_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
 		P4_Pracovisko.IN.ServoZdvihuVytahu_KomOK AND
-		(*P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND*)
+		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
 		P4_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P4_Pracovisko.STAV.HardwareVytahu_OK:= TRUE;
 	ELSE	
@@ -365,7 +362,7 @@ PROGRAM _CYCLIC
 		P4_Pracovisko.IN.ModulWeidmuller_IO_KomOK AND
 		P4_Pracovisko.IN.ServoZdvihuAplikEtikiet_KomOK AND
 		P4_Pracovisko.IN.SmartKamera14_KomOK AND
-		(*P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND*)
+		P3_Pracovisko.IN.Kamery_ControlUnit_KomOK AND
 		P4_Pracovisko.IN.VentilovyTerminal_KomOK THEN
 		P4_Pracovisko.STAV.HardwareBunky_OK:= TRUE;
 	ELSE	
@@ -390,7 +387,7 @@ PROGRAM _CYCLIC
 	
 	
 	//*****************************Zapnutie osvetlenia pracoviska*********************************************************//
-	P4_Pracovisko.OUT.OsvetlenieBunky_ON:= TRUE;
+	P4_Pracovisko.OUT.OsvetlenieBunky_ON:= FALSE;
 	P4_Vytah.OUT.OsvetlenieVytahu_ON:= TRUE;		
 	P4_Pracovisko.OUT.Osvetlenie_CAM15_ON:= TRUE;	
 	//****************************************Ovládanie majáka***********************************************//

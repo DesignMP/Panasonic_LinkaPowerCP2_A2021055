@@ -27,7 +27,9 @@
     <Page refId="PageTolerancieSkrutkovaniaP3" />
     <Page refId="PageVseobecneParametreP3" />
     <Page refId="PageVseobecneParametreP4" />
-   
+    <Page refId="PageManualP3_Dopravniky_page2" />
+    <Page refId="PageManualP3_HVtest" />
+    <Page refId="PageManualP4_Dopravniky_page2" />
   </Pages>
   <Navigations>
     <!--<Navigation refId="" />-->
@@ -37,11 +39,32 @@
     <BindingsSet refId="-1789833607" />
     <BindingsSet refId="-1647342656" />
     <BindingsSet refId="209833439" />
-  	<BindingsSet refId="-2057628537" />
-	<BindingsSet refId="579692491" />	
-		
-		
-		
+    <BindingsSet refId="-2057628537" />
+    <BindingsSet refId="1604745043" />
+    <BindingsSet refId="1603497872" />
+    <BindingsSet refId="1602381777" />
+    <BindingsSet refId="1837340107" />
+    <BindingsSet refId="1564037709" />
+    <BindingsSet refId="-693323600" />
+    <BindingsSet refId="-467806739" />
+    <BindingsSet refId="-464327378" />
+    <BindingsSet refId="125370772" />
+    <BindingsSet refId="124115409" />
+    <BindingsSet refId="579692491" />
+    <BindingsSet refId="1871750317" />
+    <BindingsSet refId="-1547173548" />
+    <BindingsSet refId="668342780" />
+    <BindingsSet refId="1028675910" />
+    <BindingsSet refId="1360070482" />
+    <BindingsSet refId="-1723860145" />
+    <BindingsSet refId="-1227317424" />
+    <BindingsSet refId="326608057" />
+    <BindingsSet refId="1848767367" />
+    <BindingsSet refId="-1423918964" />
+    <BindingsSet refId="-203837829" />
+    <BindingsSet refId="-1576964744" />
+    <BindingsSet refId="-1587419979" />
+    <BindingsSet refId="-1793056689" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="1866021044" />
@@ -49,9 +72,28 @@
     <EventBindingsSet refId="1162211982" />
     <EventBindingsSet refId="511628375" />
     <EventBindingsSet refId="-2008686525" />
-		
-		
-		
+    <EventBindingsSet refId="-865472021" />
+    <EventBindingsSet refId="-1848532822" />
+    <EventBindingsSet refId="1007696617" />
+    <EventBindingsSet refId="166583891" />
+    <EventBindingsSet refId="-768797686" />
+    <EventBindingsSet refId="1837792973" />
+    <EventBindingsSet refId="1403362192" />
+    <EventBindingsSet refId="-446403662" />
+    <EventBindingsSet refId="-1733339279" />
+    <EventBindingsSet refId="1747698965" />
+    <EventBindingsSet refId="1694544622" />
+    <EventBindingsSet refId="209072760" />
+    <EventBindingsSet refId="408580951" />
+    <EventBindingsSet refId="-1155046858" />
+    <EventBindingsSet refId="-1900975871" />
+    <EventBindingsSet refId="2084062119" />
+    <EventBindingsSet refId="-2140204130" />
+    <EventBindingsSet refId="1910963227" />
+    <EventBindingsSet refId="1685535023" />
+    <EventBindingsSet refId="-141630464" />
+    <EventBindingsSet refId="263805945" />
+    <EventBindingsSet refId="-579182104" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="Hlasenie1_ST7" />
@@ -71,6 +113,14 @@
     <Dialog refId="Hlasenie9_ST10" />
     <Dialog refId="LoginDialogP34" />
     <Dialog refId="TimeDialogP34" />
+    <Dialog refId="Hlasenie1_HVtest" />
+    <Dialog refId="Hlasenie1_FinalTestA" />
+    <Dialog refId="Hlasenie1_FinalTestB" />
+    <Dialog refId="Hlasenie2_ST7" />
+    <Dialog refId="Hlasenie3_ST8" />
+    <Dialog refId="Hlasenie4_ST8" />
+    <Dialog refId="Hlasenie4_ST9" />
+    <Dialog refId="Hlasenie10_ST10" />
   </Dialogs>
   <Contents>
     <Content refId="AreaHlasenie1_ST7" />
@@ -88,19 +138,29 @@
     <Content refId="AreaHlasenie7_ST10" />
     <Content refId="AreaHlasenie8_ST10" />
     <Content refId="AreaHlasenie9_ST10" />
-    <Content refId="LoginDialogP34" />
-    <Content refId="AreaTimeDialogP34" />
     <Content refId="HlavickaP34" />
     <Content refId="PataP34" />
     <Content refId="AreaPageAlarmyP34" />
     <Content refId="AreaPageAutomatP34" />
     <Content refId="AreaPageBootP34" />
     <Content refId="AreaPageInfoP34" />
-   
+    <Content refId="AreaPageManualP3_Dopravniky_page2" />
+    <Content refId="AreaPageManualP3_HVtest" />
+    <Content refId="AreaPageManualP4_Dopravniky_page2" />
+    <Content refId="AreaLoginP34" />
+    <Content refId="AreaTimeP34" />
+    <Content refId="AreaHlasenie1_HVtest" />
+    <Content refId="AreaHlasenie1_FinalTestA" />
+    <Content refId="AreaHlasenie1_FinalTestB" />
+    <Content refId="AreaHlasenie2_ST7" />
+    <Content refId="AreaHlasenie3_ST8" />
+    <Content refId="AreaHlasenie4_ST8" />
+    <Content refId="AreaHlasenie4_ST9" />
+    <Content refId="AreaHlasenie10_ST10" />
   </Contents>
   <VariablesSets />
   <SnippetsSets>
-		<SnippetsSet refId="StavyStroja_snippet" />
+    <SnippetsSet refId="StavyStroja_snippet" />
   </SnippetsSets>
   <ExpressionsSets>
     <!--<ExpressionsSet refId=""/>-->

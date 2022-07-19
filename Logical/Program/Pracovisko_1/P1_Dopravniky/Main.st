@@ -74,11 +74,13 @@ PROGRAM _CYCLIC
 			SC_P1_Dopravniky.AlarmTime.PT:= T#5s;
 			
 			
-			IF P1_StoperSrobovania.RFID_hlava.PritomnostPaletky AND P1_AkumulacnyStoper.IN.PritomnostPaletky AND P1_SpodnyStoper.IN.PritomnostPaletky THEN
+			IF P1_StoperSrobovania.RFID_hlava.PritomnostPaletky AND
+				P1_AkumulacnyStoper.IN.PritomnostPaletky AND
+				P1_SpodnyStoper.IN.PritomnostPaletky THEN
 				SC_P1_Dopravniky.ResetStep:= TRUE;
 				SC_P1_Dopravniky.Step:= 5;
 			ELSE
-				IF NOT P1_StoperSrobovania.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P1_StoperSrobovania.RFID_hlava.PritomnostPaletky AND P1_StoperSrobovania.IN.Centrovanie_ZASUNUTE THEN
 					P1_StoperSrobovania.OUT.ZasunStoper:= TRUE;
 				END_IF	
 				IF NOT P1_AkumulacnyStoper.IN.PritomnostPaletky THEN

@@ -51,5 +51,225 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_11.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_11" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_15.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_15" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_12.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_12" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_13.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_13" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_14.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_14" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_26.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_26" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_28.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_28" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_30.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_30" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_44.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_44" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_17.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_17" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_18.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_18" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_19.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_19" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_20.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_20" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_21.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_21" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_27.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_27" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_29.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_29" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_31.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_31" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_45.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_45" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_16.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_16" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_24.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_24" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_49.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_49" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageParametreP1_page1.NumericInput_47.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="AreaPageParametreP1_page1" widgetRefId="NumericInput_47" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P1_UlozPremenne">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

@@ -1,8 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
   <Content id="AreaPageManualP4_Etiketovanie">
-    <EventBinding id="AreaPageManualP4_Etiketovanie.Button_TestovaciaSekvencia.Click">
-      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP4_Etiketovanie_Button_TestovaciaSekvencia" />
+    <EventBinding id="AreaPageManualP4_Etiketovanie.Button_ResetServaOsZ_M4.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP4_Etiketovanie_Button_ResetServaOsZ_M4" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_Etiketovanie">
+    <EventBinding id="AreaPageManualP4_Etiketovanie.Button_OtocPodavac_M5_VZAD.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP4_Etiketovanie_Button_OtocPodavac_M5_VZAD" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Etiketovacka.OUT.Aplikator_OtocVZAD">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Etiketovacka.OUT.Aplikator_OtocVPRED">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_Etiketovanie">
+    <EventBinding id="AreaPageManualP4_Etiketovanie.Button_OtocPodavac_M5_VPRED.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP4_Etiketovanie_Button_OtocPodavac_M5_VPRED" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Etiketovacka.OUT.Aplikator_OtocVPRED">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Etiketovacka.OUT.Aplikator_OtocVZAD">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_Etiketovanie">
+    <EventBinding id="AreaPageManualP4_Etiketovanie.MomentaryPushButton_DopravnikVPRED.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_Etiketovanie_MomentaryPushButton_DopravnikVPRED" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Etiketovacka.OUT.Aplikator_VYSUN">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_Etiketovanie">
+    <EventBinding id="AreaPageManualP4_Etiketovanie.MomentaryPushButton_DopravnikVZAD.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_Etiketovanie_MomentaryPushButton_DopravnikVZAD" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Etiketovacka.OUT.Aplikator_VYSUN">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_Etiketovanie">
+    <EventBinding id="AreaPageManualP4_Etiketovanie.Button_ResetServaOsZ_M5.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP4_Etiketovanie_Button_ResetServaOsZ_M5" />
       <EventHandler>
         <Action>
           <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_Etiketovacka.CMD.RR_NalepEtiketu">

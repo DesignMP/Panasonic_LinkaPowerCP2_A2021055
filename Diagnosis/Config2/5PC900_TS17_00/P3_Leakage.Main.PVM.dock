@@ -1,39 +1,16 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P3_Leakage 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=403 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=2 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                       SC_P3_LeakageTestA                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                             561"    1    6    1   10    0    0         
-                                 Paletka                       Paletka_typ[0..30]    0 "                                                               *"    0   24   31    0    0    1         
+                                    Step                                     UINT    0 "                                                             100"    1    6    1   10    0    0         
+                                 Paletka                       Paletka_typ[0..30]    0 "                                                               *"    0   24   31    0    0    0         
                               Paletka[0]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
                                      PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
-                            CisloPaletky                                STRING[2]    0 "                                                              ''"    3    9    3    1    0    0         
-                            QRkodPowerCP                               STRING[30]    0 "                                                              ''"    3    9   31    1    0    0         
-                          QRkodFiltra_5H                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                        QRkodFiltra_4F5F                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                            ID_Operatora                               STRING[80]    0 "                                                              ''"    3    9   81    1    0    0         
-                             StavPowerCP                                STRING[4]    0 "                                                              ''"    3    9    5    1    0    0         
-                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    0         
-                             StavPaletky                               STRING[10]    0 "                                                              ''"    3    9   11    1    0    0         
-                               TypModelu                                STRING[5]    0 "                                                              ''"    3    9    6    1    0    0         
-                               KodModelu                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                  CisloTestovacejStanice                               STRING[20]    0 "                                                              ''"    3    9   21    1    0    0         
-                  CisloRevorkovejStanice                               STRING[20]    0 "                                                              ''"    3    9   21    1    0    0         
-                       Zvaranie_Ukoncene                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        HV_Test_Ukonceny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    LeakageTest_Ukonceny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    FunkcnyTest_Ukonceny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    QRkodFiltraPriradeny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    OdoslanieFotiek_DONE                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        Komunikacia_DONE                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                   CisloEtiketyVyziadane                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              Paletka[1]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
-                                     PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
-                            CisloPaletky                                STRING[2]    0 "                                                              ''"    3    9    3    1    0    0         
-                            QRkodPowerCP                               STRING[30]    0 "                                                              ''"    3    9   31    1    0    0         
-                          QRkodFiltra_5H                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                        QRkodFiltra_4F5F                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                            ID_Operatora                               STRING[80]    0 "                                                              ''"    3    9   81    1    0    0         
+                            CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
+                            QRkodPowerCP                               STRING[30]    0 "                                                               *"    3    9   31    1    0    0         
+                          QRkodFiltra_5H                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                        QRkodFiltra_4F5F                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                            ID_Operatora                               STRING[80]    0 "                                                               *"    3    9   81    1    0    0         
                              StavPowerCP                                STRING[4]    0 "                                                               *"    3    9    5    1    0    0         
                                     STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    0         
                              StavPaletky                               STRING[10]    0 "                                                               *"    3    9   11    1    0    0         
@@ -46,7 +23,30 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                              Paletka[1]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
+                                     PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
+                            CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
+                            QRkodPowerCP                               STRING[30]    0 "                                                               *"    3    9   31    1    0    0         
+                          QRkodFiltra_5H                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                        QRkodFiltra_4F5F                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                            ID_Operatora                               STRING[80]    0 "                                                               *"    3    9   81    1    0    0         
+                             StavPowerCP                                STRING[4]    0 "                                                               *"    3    9    5    1    0    0         
+                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    0         
+                             StavPaletky                               STRING[10]    0 "                                                               *"    3    9   11    1    0    0         
+                               TypModelu                                STRING[5]    0 "                                                               *"    3    9    6    1    0    0         
+                               KodModelu                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                  CisloTestovacejStanice                               STRING[20]    0 "                                                               *"    3    9   21    1    0    0         
+                  CisloRevorkovejStanice                               STRING[20]    0 "                                                               *"    3    9   21    1    0    0         
+                       Zvaranie_Ukoncene                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        HV_Test_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -69,7 +69,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -92,7 +92,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -115,7 +115,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -138,7 +138,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -161,7 +161,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -184,7 +184,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -207,7 +207,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -230,7 +230,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -253,7 +253,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -276,7 +276,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -299,7 +299,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -322,7 +322,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -345,7 +345,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -368,7 +368,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -391,30 +391,30 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                             Paletka[17]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    1         
+                             Paletka[17]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
                                      PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
-                            CisloPaletky                                STRING[2]    0 "                                                            '17'"    3    9    3    1    0    0         
-                            QRkodPowerCP                               STRING[30]    0 "                                                              ''"    3    9   31    1    0    0         
-                          QRkodFiltra_5H                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                        QRkodFiltra_4F5F                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                            ID_Operatora                               STRING[80]    0 "                                                              ''"    3    9   81    1    0    0         
-                             StavPowerCP                                STRING[4]    0 "                                                              ''"    3    9    5    1    0    0         
-                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    1         
-                             StavPaletky                               STRING[10]    0 "                                                            'OK'"    3    9   11    1    0    0         
-                               TypModelu                                STRING[5]    0 "                                                              ''"    3    9    6    1    0    0         
-                               KodModelu                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                  CisloTestovacejStanice                               STRING[20]    0 "                                                              ''"    3    9   21    1    0    0         
-                  CisloRevorkovejStanice                               STRING[20]    0 "                                                              ''"    3    9   21    1    0    0         
-                       Zvaranie_Ukoncene                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        HV_Test_Ukonceny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    LeakageTest_Ukonceny                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                    FunkcnyTest_Ukonceny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    QRkodFiltraPriradeny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
+                            QRkodPowerCP                               STRING[30]    0 "                                                               *"    3    9   31    1    0    0         
+                          QRkodFiltra_5H                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                        QRkodFiltra_4F5F                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                            ID_Operatora                               STRING[80]    0 "                                                               *"    3    9   81    1    0    0         
+                             StavPowerCP                                STRING[4]    0 "                                                               *"    3    9    5    1    0    0         
+                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    0         
+                             StavPaletky                               STRING[10]    0 "                                                               *"    3    9   11    1    0    0         
+                               TypModelu                                STRING[5]    0 "                                                               *"    3    9    6    1    0    0         
+                               KodModelu                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                  CisloTestovacejStanice                               STRING[20]    0 "                                                               *"    3    9   21    1    0    0         
+                  CisloRevorkovejStanice                               STRING[20]    0 "                                                               *"    3    9   21    1    0    0         
+                       Zvaranie_Ukoncene                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        HV_Test_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -437,7 +437,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -460,7 +460,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -483,7 +483,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -506,7 +506,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -529,7 +529,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -552,7 +552,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -575,7 +575,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -598,7 +598,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -621,7 +621,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -644,7 +644,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -667,7 +667,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -690,7 +690,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -713,7 +713,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         

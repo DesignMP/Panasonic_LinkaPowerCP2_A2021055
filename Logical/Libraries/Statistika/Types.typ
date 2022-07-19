@@ -2,12 +2,15 @@
 TYPE
 	Statistika_IN_typ : 	STRUCT 
 		START_MeraniaCasu : BOOL;
+		START_MeraniaStratovehoCasu : BOOL;
 		ZAPIS_MeraniaCasu : BOOL;
+		ZAPIS_StratovyCas : BOOL;
 		TaskovaTrieda_ms : UINT;
 		RESET_CelkovehoCasu : BOOL;
 		RESET_HistorieMeraniCasu : BOOL;
 		RESET_PoctuKusov : BOOL;
 		RESET_CelkovehoPoctuKusov : BOOL;
+		RESET_StratovehoCasu : BOOL;
 		PriratajKus_OK : BOOL;
 		PriratajKus_NG : BOOL;
 	END_STRUCT;
@@ -17,22 +20,18 @@ TYPE
 		NameranyCas_v_Hodinach : REAL;
 		PriemernyCas_v_Sekundach : REAL;
 		PriemernyCas_v_Minutach : REAL;
-		Stav_ZapisCasu_DONE : BOOL;
-		Stav_RESET_CelkCasu_DONE : BOOL;
-		Stav_RESET_HistorieMerani_DONE : BOOL;
+		StratoveSekundy : REAL;
+		StratoveMinuty : REAL;
+		StratoveHodiny : REAL;
 		HistoriaMerani_v_Sekundach : ARRAY[0..14]OF REAL;
 		HistoriaMerani_v_Minutach : ARRAY[0..14]OF REAL;
 		HistoriaMerani_v_Hodinach : ARRAY[0..14]OF REAL;
 		CelkovyPocetNameranychSekund : REAL;
 		CelkovyPocetNameranychMinut : REAL;
 		CelkovyPocetNameranychHodin : REAL;
-		Stav_PriratanieKusu_OK_DONE : BOOL;
-		Stav_PriratanieKusu_NG_DONE : BOOL;
 		PocetKusov_OK : UDINT;
 		PocetKusov_NG : UDINT;
 		CelkovyPocetKusov : UDINT;
-		Stav_RESET_PoctuKusov_DONE : BOOL;
-		Stav_RESET_CelkPoctuKusov_DONE : BOOL;
 	END_STRUCT;
 	Statistika_VAR_typ : 	STRUCT 
 		NameraneMilisekundy_REAL : REAL;
@@ -54,5 +53,11 @@ TYPE
 		Priemer_SucetSekund_REAL : REAL;
 		Priemer_SucetMinut_REAL : REAL;
 		Priemer_SucetHodin_REAL : REAL;
+		StratoveMilisekundy : UINT;
+		StratoveSekundy : UINT;
+		StratoveMinuty : UINT;
+		StratoveHodiny : UINT;
+		CelkoveStratoveMilisekundy_REAL : REAL;
+		CelkoveStratoveSekundy_REAL : REAL;
 	END_STRUCT;
 END_TYPE

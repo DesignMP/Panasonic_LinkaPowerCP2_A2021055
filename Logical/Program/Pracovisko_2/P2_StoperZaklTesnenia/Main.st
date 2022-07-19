@@ -35,8 +35,7 @@ PROGRAM _CYCLIC
 		SC_P2_StoperZaklTesnenia.Step:= 0;
 	END_IF	
 	
-	
-	
+		
     
 	
 	CASE SC_P2_StoperZaklTesnenia.Step OF 
@@ -58,12 +57,10 @@ PROGRAM _CYCLIC
 			FTP_CAM1.CMD.VymazFotku:= FALSE;
 			CAM7.CMD.Triger:= FALSE;
 			CAM7.STAV.Results_READY:= FALSE;
-			FTP_CAM7.CMD.OdosliFotku:= FALSE;
-			FTP_CAM7.CMD.VymazFotku:= FALSE;
+			
 			CAM8.CMD.Triger:= FALSE;
 			CAM8.STAV.Results_READY:= FALSE;
-			FTP_CAM8.CMD.OdosliFotku:= FALSE;
-			FTP_CAM8.CMD.VymazFotku:= FALSE;
+			
 			CAM17.CMD.Triger:= FALSE;
 			CAM17.STAV.Results_READY:= FALSE;
 			FTP_CAM17.CMD.OdosliFotku:= FALSE;
@@ -86,6 +83,7 @@ PROGRAM _CYCLIC
 			P2_Vizu.ZobrazHL11_ST3:= FALSE;
 			P2_Vizu.ZobrazHL12_ST3:= FALSE;
 			P2_Vizu.ZobrazHL14_ST3:= FALSE;
+			P2_Vizu.ZobrazHL15_ST3:= FALSE;
 			PocetDopytovNaServer:= 0;
 			CisloFotky:= 0;
 			PocetTrigrovKamery:= 0;
@@ -97,8 +95,12 @@ PROGRAM _CYCLIC
 			PrecitaneCisloPaletky:= '';
 			TestovaciKus:= FALSE;
 			P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG:= FALSE;
+			P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaCasu:= FALSE;
+			P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
             
-			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND P2_Pracovisko.STAV.HardwareZaklTesnenia_OK AND NOT P2_Pracovisko.STAV.Porucha_ST1 THEN
+			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
+				P2_Pracovisko.STAV.HardwareZaklTesnenia_OK AND
+				NOT P2_Pracovisko.STAV.Porucha_ST1 THEN
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 1;
 			END_IF
@@ -134,11 +136,8 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
             
-			IF Linka.KOM_FTP_OFF THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 5;
-			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+		
+			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				FTP_CAM1.CMD.VymazFotku:= TRUE;
 				FTP_CAM17.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
@@ -195,6 +194,7 @@ PROGRAM _CYCLIC
 			
 			IF P2_StoperZaklTesnenia.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky;
+				P2_StoperZaklTesnenia.PAR.CisloPaletky:= P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperZaklTesnenia.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 23;
@@ -228,7 +228,12 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
 			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				P2_StoperZaklTesnenia.STAV.PoINIT:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 560;
@@ -267,49 +272,17 @@ PROGRAM _CYCLIC
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 560;
 			ELSE	
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 35;
-			END_IF	
-			
-			
-		35:
-			SC_P2_StoperZaklTesnenia.StepName:='35 - Inicializacia - kontrola priradenia QR kodu filtra 5H na server';
-			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;	
-			
-			IF Linka.PAR.ZvolenyModel = '5H' THEN
-				IF Paletka[i].STAV.QRkodFiltraPriradeny THEN
-					P2_StoperZaklTesnenia.STAV.PoINIT:= TRUE;
-					Paletka[i].PAR.StavPowerCP:= 'PASS';
-					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 140;
-				ELSE
-					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 38;
-				END_IF
-			ELSE
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 38;
-			END_IF	
-		
-			
-		38:
-			SC_P2_StoperZaklTesnenia.StepName:='38 - Inicializacia - kontrola odoslania fotiek';
-			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;	
-			
-			IF Paletka[i].STAV.OdoslanieFotiek_DONE THEN
-				P2_StoperZaklTesnenia.STAV.PoINIT:= TRUE;
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 120;
-			ELSE
 				P2_StoperZaklTesnenia.STAV.PoINIT:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 100;
 			END_IF	
+		
+				
 			
 			
-		     
+
+				
+	
             
 
 			
@@ -326,6 +299,15 @@ PROGRAM _CYCLIC
 		            
 			IF P2_StoperZaklTesnenia.RFID_hlava.PritomnostPaletky THEN
 				P1_AkumulacnyStoper.STAV.PrebiehaVyvezeniePaletky:= FALSE;
+			END_IF	
+			
+			IF NOT SC_P2_StoperZaklTesnenia.Switch1 AND P2_StoperZaklTesnenia.RFID_hlava.PritomnostPaletky THEN
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaCasu:= TRUE;
+				P2_ZakladanieTesnenia_Taktime.IN.ZAPIS_MeraniaCasu:= TRUE;
+				P2_ZakladanieTesnenia_Taktime.IN.ZAPIS_StratovyCas:= TRUE;
+				Buffer_3.Hodnota:= P2_ZakladanieTesnenia_Taktime.OUT.StratoveSekundy;
+				Buffer_3.ZapisHodnotu:= TRUE;
+				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF	
 			
 			IF P2_StoperZaklTesnenia.KoniecCyklu THEN
@@ -353,6 +335,7 @@ PROGRAM _CYCLIC
 					
 			IF P2_StoperZaklTesnenia.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky;
+				P2_StoperZaklTesnenia.PAR.CisloPaletky:= P2_StoperZaklTesnenia.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperZaklTesnenia.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 102;
@@ -385,7 +368,11 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
 			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 560;
 			ELSIF Paletka[i].STAV.StavPaletky = 'TEST' AND Paletka[i].STAV.CisloTestovacejStanice = 'ST_3' THEN
@@ -416,24 +403,28 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
 			
+			
 			IF Linka.KOM_Panatrace_OFF THEN
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 120;
-			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 AND TRCB_P2_ZakladacTesnenia_ST3.STATUS.KOM_READY THEN
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				(*P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF 
-            
+			            
 			IF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 106;
 			ELSIF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaError THEN	
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 115;
+				SC_P2_StoperZaklTesnenia.Step:= 107;
 			END_IF	
 		
 		
@@ -446,26 +437,51 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 106;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
+					SC_P2_StoperZaklTesnenia.Step:= 107;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 106;	
+					SC_P2_StoperZaklTesnenia.Step:= 108;	
 				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 106;
+					SC_P2_StoperZaklTesnenia.Step:= 160;
 				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 106;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
+					SC_P2_StoperZaklTesnenia.Step:= 130;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 106;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
+					SC_P2_StoperZaklTesnenia.Step:= 107;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 106;
+					SC_P2_StoperZaklTesnenia.Step:= 107;
+				ELSE
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 107;
 				END_IF   
 			END_IF
 		
 		
+		107:
+			SC_P2_StoperZaklTesnenia.StepName:='107 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
+        	
+			P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+			P2_Vizu.ZobrazHL15_ST3:= TRUE;
+            
+			IF TRCB_P2_ZaklTesn_OpatovnyDopyt THEN
+				TRCB_P2_ZaklTesn_OpatovnyDopyt:= FALSE; 
+				P2_Vizu.ZobrazHL15_ST3:= FALSE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 105;
+			ELSIF TRCB_P2_ZaklTesn_PaletkaNG THEN
+				TRCB_P2_ZaklTesn_PaletkaNG:= FALSE;
+				P2_Vizu.ZobrazHL15_ST3:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 560;
+			END_IF    	
+			
+			
 			
 		108:
 			SC_P2_StoperZaklTesnenia.StepName:='108 - Automaticky Rezim - vyziadanie stavu paletky zo servera';
@@ -474,19 +490,22 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
             
 			            
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF NOT SC_P2_StoperZaklTesnenia.Switch1 AND TRCB_P2_ZakladacTesnenia_ST3.STATUS.KOM_READY THEN
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPaletky_TYP1:= TRUE;
+				(*P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF
 			
 			IF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 110;
 			ELSIF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaError THEN	
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 115;
 			END_IF	
@@ -561,7 +580,23 @@ PROGRAM _CYCLIC
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 130;
 			ELSIF P2_ZakladacTesnenia.COM_OUT.Stav_ZalozenieTesneniaUkoncene AND NOT P2_ZakladacTesnenia.IN.Pojazd_PritomPowerCP AND P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
-				P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG:= FALSE;
+				P2_ZakladacTesnenia.COM_IN.ZalozTesnenie:= FALSE;
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 125;
+			END_IF
+		
+		125:
+			SC_P2_StoperZaklTesnenia.StepName:='125 - Automaticky Rezim - rozhodnutie po oznaceni paletky ako NG';
+			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
+		
+			IF Linka.PAR.ZvolenyModel = '5H' THEN
+				Paletka[i].PAR.StavPowerCP:= 'FAIL';
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 140;
+			ELSE	
 				Paletka[i].PAR.StavPowerCP:= 'FAIL';
 				Paletka[i].STAV.StavPaletky := 'NG';
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
@@ -569,15 +604,16 @@ PROGRAM _CYCLIC
 			END_IF
 		
 		
-		
-		
-		
+			
+			
+			
 		130:
 			SC_P2_StoperZaklTesnenia.StepName:='130 - Automaticky Rezim - kontrola typu modelu';
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
             
 			IF Linka.PAR.ZvolenyModel = '5H' THEN
+				CAM7.STAV.OldRunCounter:= CAM7.STAV.RunCounter;
 				CAM7.STAV.Results_READY:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 132;
@@ -587,6 +623,9 @@ PROGRAM _CYCLIC
 			END_IF 
 		
 		
+			
+			
+			
 		
 		
 		132:
@@ -596,25 +635,23 @@ PROGRAM _CYCLIC
 			    
 			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
 			
-			IF Linka.P2_Kamery_OFF THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 140;
-			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 AND CAM7.STAV.Command_READY THEN
+			IF NOT SC_P2_StoperZaklTesnenia.Switch1 AND CAM7.STAV.Command_READY THEN
 				CAM7.CMD.Triger:= TRUE;
 				SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM7.STAV.Results_READY AND CAM7.STAV.Command_AKCEPTOVANY THEN
+			IF CAM7.STAV.Results_READY AND CAM7.STAV.Command_AKCEPTOVANY AND CAM7.STAV.OldRunCounter <> CAM7.STAV.RunCounter  THEN
 				PocetTrigrovKamery:= 0;
 				CAM7.STAV.Results_READY:= FALSE;
+				CAM7.STAV.OldRunCounter:= CAM7.STAV.RunCounter;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 134;
 			ELSIF SC_P2_StoperZaklTesnenia.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM7.STAV.Results_READY:= FALSE;
+				CAM7.STAV.OldRunCounter:= CAM7.STAV.RunCounter;
 				CAM7.CMD.Triger:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
@@ -646,13 +683,25 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
 			SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 			
-						
-			IF NOT CAM7.STAV.BUSY THEN
+			IF Linka.P2_Kamery_OFF THEN
 				CAM7.CMD.Triger:= FALSE;
-				IF CAM7.RESULT.CitanieQRkodu_Filtra5H_OK THEN
+				CAM7.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 135;
+			ELSIF NOT CAM7.STAV.BUSY THEN
+				CAM7.CMD.Triger:= FALSE;
+				IF P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
+					CAM7.PAR.ResultFotky:= 'FAIL';
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 180;
+				ELSIF CAM7.RESULT.CitanieQRkodu_Filtra5H_OK THEN
 					IF P2_StoperZaklTesnenia.PAR.StaryQRkod_Filtra5H <> CAM7.RESULT.PrecitanyQRkod_Filtra5H THEN
 						Paletka[i].PAR.QRkodFiltra_5H:= CAM7.RESULT.PrecitanyQRkod_Filtra5H;
 						CAM7.PAR.ResultFotky:= 'PASS';
+						SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+						SC_P2_StoperZaklTesnenia.Step:= 135;
+					ELSE
+						CAM7.PAR.ResultFotky:= 'FAIL';
 						SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 						SC_P2_StoperZaklTesnenia.Step:= 135;
 					END_IF    
@@ -715,20 +764,24 @@ PROGRAM _CYCLIC
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 160;
-			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
-				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
-				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
-			END_IF 
-            
-			IF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+			ELSE
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 141;
-			ELSIF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaError THEN	
-				P2_Alarmy[230]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 145;
 			END_IF	
+			//			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			//				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+			//				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
+			//			END_IF 
+			//            
+			//			IF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
+			//				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+			//				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+			//				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+			//				SC_P2_StoperZaklTesnenia.Step:= 141;
+			//			ELSIF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaError THEN	
+			//				P2_Alarmy[230]:= TRUE;
+			//				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
+			//			END_IF	
 		
 		
 		
@@ -740,26 +793,44 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 141;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
+					SC_P2_StoperZaklTesnenia.Step:= 142;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 141;	
+					SC_P2_StoperZaklTesnenia.Step:= 142;	
 				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 141;
+					SC_P2_StoperZaklTesnenia.Step:= 160;
 				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 141;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
+					SC_P2_StoperZaklTesnenia.Step:= 145;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 141;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
+					SC_P2_StoperZaklTesnenia.Step:= 142;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 141;
+					SC_P2_StoperZaklTesnenia.Step:= 142;
 				END_IF   
 			END_IF
 		
-				
+		142:
+			SC_P2_StoperZaklTesnenia.StepName:='142 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
+        	
+			P2_Vizu.ZobrazHL15_ST3:= TRUE;
+            
+			IF TRCB_P2_ZaklTesn_OpatovnyDopyt THEN
+				TRCB_P2_ZaklTesn_OpatovnyDopyt:= FALSE; 
+				P2_Vizu.ZobrazHL15_ST3:= FALSE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 140;
+			ELSIF TRCB_P2_ZaklTesn_PaletkaNG THEN
+				TRCB_P2_ZaklTesn_PaletkaNG:= FALSE;
+				P2_Vizu.ZobrazHL15_ST3:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 560;
+			END_IF    		
 		
 		145:
 			SC_P2_StoperZaklTesnenia.StepName:='145 - Automaticky Rezim - priradenie QRkodu filtra';
@@ -769,17 +840,21 @@ PROGRAM _CYCLIC
             
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
             
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN    
+			IF NOT SC_P2_StoperZaklTesnenia.Switch1 AND TRCB_P2_ZakladacTesnenia_ST3.STATUS.KOM_READY THEN    
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.PriradQRkodFiltra_TYP3:= TRUE;
+				(*P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF
 			
 			IF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.PriradQRkodFiltra_TYP3:= FALSE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 148;
 			ELSIF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaError THEN	
+				TRCB_P2_ZakladacTesnenia_ST3.CMD.PriradQRkodFiltra_TYP3:= FALSE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				P2_Alarmy[230]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
 			END_IF	
@@ -793,7 +868,10 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#10s;
 			
 			IF NOT TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
-				IF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.PovolenieCinnostiNaPaletke = 'OK' THEN
+				IF P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 180;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.PovolenieCinnostiNaPaletke = 'OK' THEN
 					Paletka[i].STAV.QRkodFiltraPriradeny:= TRUE;
 					OpatovnaKontrolaFiltra_5H:= FALSE;
 					Paletka[i].PAR.StavPowerCP:= 'PASS';
@@ -801,8 +879,13 @@ PROGRAM _CYCLIC
 					SC_P2_StoperZaklTesnenia.Step:= 160;
 				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.PovolenieCinnostiNaPaletke = 'NG' THEN
 					Paletka[i].STAV.QRkodFiltraPriradeny:= FALSE;
-					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 150;
+					IF P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
+						SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+						SC_P2_StoperZaklTesnenia.Step:= 560;
+					ELSE	
+						SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+						SC_P2_StoperZaklTesnenia.Step:= 150;
+					END_IF	
 				END_IF	
 			END_IF
 		
@@ -877,6 +960,7 @@ PROGRAM _CYCLIC
 				Paletka[i].PAR.ID_Operatora:= 'E2';//UsersVizu.CisloPrihlasenejKarty_Panel2;
 				P2_Vizu.ZobrazHL12_ST3:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				CAM8.STAV.OldRunCounter:= CAM8.STAV.RunCounter;
 				CAM8.STAV.Results_READY:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 165; 
@@ -892,25 +976,23 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
 			
-			IF Linka.P2_Kamery_OFF THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 180;
-			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
 				CAM8.CMD.Triger:= TRUE;
 				SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM8.STAV.Results_READY THEN
+			IF CAM8.STAV.Results_READY AND CAM8.STAV.OldRunCounter <> CAM8.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM8.STAV.Results_READY:= FALSE;
+				CAM8.STAV.OldRunCounter:= CAM8.STAV.RunCounter;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 168;
 			ELSIF SC_P2_StoperZaklTesnenia.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM8.STAV.Results_READY:= FALSE;
+				CAM8.STAV.OldRunCounter:= CAM8.STAV.RunCounter;
 				CAM8.CMD.Triger:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
@@ -941,8 +1023,12 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 						
             
-			
-			IF NOT CAM8.STAV.BUSY AND SC_P2_StoperZaklTesnenia.IdleTime.Q THEN
+			IF Linka.P2_Kamery_OFF THEN
+				CAM8.CMD.Triger:= FALSE;
+				CAM8.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 170;
+			ELSIF NOT CAM8.STAV.BUSY AND SC_P2_StoperZaklTesnenia.IdleTime.Q THEN
 				CAM8.CMD.Triger:= FALSE;
 				IF CAM8.RESULT.PowerCP.CitanieQRkodu_PowerCP_OK THEN
 					SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
@@ -952,7 +1038,7 @@ PROGRAM _CYCLIC
 							SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 							SC_P2_StoperZaklTesnenia.Step:= 170;
 						ELSE
-							CAM8.PAR.ResultFotky:= 'FAIL';
+							CAM8.PAR.ResultFotky:= 'FAIL'; 
 							SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 							SC_P2_StoperZaklTesnenia.Step:= 170;
 						END_IF
@@ -973,6 +1059,7 @@ PROGRAM _CYCLIC
 				
 				
 			IF CAM8.PAR.ResultFotky = 'PASS' THEN
+				CAM17.STAV.OldRunCounter:= CAM17.STAV.RunCounter;
 				CAM17.STAV.Results_READY:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 180; 
@@ -1000,6 +1087,7 @@ PROGRAM _CYCLIC
 			
 			IF P2_StoperZaklTesnenia.Banner.OUT.Stlaceny THEN
 				CAM8.STAV.Results_READY:= FALSE;
+				CAM8.STAV.OldRunCounter:= CAM8.STAV.RunCounter;
 				P2_Vizu.ZobrazHL10_ST3:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE; //Zhasnem banner//
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
@@ -1015,25 +1103,23 @@ PROGRAM _CYCLIC
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraLED_ON:= TRUE;
 			
-			IF Linka.P2_Kamery_OFF THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 550;
-			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 AND CAM17.STAV.Command_READY THEN
+			IF NOT SC_P2_StoperZaklTesnenia.Switch1 AND CAM17.STAV.Command_READY THEN
 				CAM17.CMD.Triger:= TRUE;
 				SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM17.STAV.Results_READY AND CAM17.STAV.Command_AKCEPTOVANY THEN
+			IF CAM17.STAV.Results_READY AND CAM17.STAV.Command_AKCEPTOVANY AND CAM17.STAV.OldRunCounter <> CAM17.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM17.STAV.Results_READY:= FALSE;
+				CAM17.STAV.OldRunCounter:= CAM17.STAV.RunCounter;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 183;
 			ELSIF SC_P2_StoperZaklTesnenia.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM17.STAV.Results_READY:= FALSE;
+				CAM17.STAV.OldRunCounter:= CAM17.STAV.RunCounter;
 				CAM17.CMD.Triger:= FALSE;
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
@@ -1064,8 +1150,12 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 			
             
-			
-			IF NOT CAM17.STAV.BUSY THEN
+			IF Linka.P2_Kamery_OFF THEN
+				CAM17.CMD.Triger:= FALSE;
+				CAM17.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 185;
+			ELSIF NOT CAM17.STAV.BUSY THEN
 				CAM17.CMD.Triger:= FALSE;
 				IF Linka.PAR.ZvolenyModel = '4F' THEN
 					IF CAM17.RESULT.Paletka.Pritomn_Busbary_4F AND
@@ -1073,7 +1163,7 @@ PROGRAM _CYCLIC
 						CAM17.RESULT.Paletka.Pritomn_TopCoveru_4F AND
 						CAM17.RESULT.Paletka.Pritomn_LavyMVcase AND
 						CAM17.RESULT.Paletka.Pritomn_PravyMVcase AND
-						NOT CAM17.RESULT.Paletka.Pritomn_TopCoveru_5F THEN
+						CAM17.RESULT.Paletka.PrazdnaPoziciaTopCoveru THEN
 						CAM17.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 						SC_P2_StoperZaklTesnenia.Step:= 185;
@@ -1088,7 +1178,7 @@ PROGRAM _CYCLIC
 						CAM17.RESULT.Paletka.Pritomn_TopCoveru_5F AND
 						CAM17.RESULT.Paletka.Pritomn_LavyMVcase AND
 						CAM17.RESULT.Paletka.Pritomn_PravyMVcase AND
-						NOT CAM17.RESULT.Paletka.Pritomn_TopCoveru_4F THEN
+						CAM17.RESULT.Paletka.PrazdnaPoziciaTopCoveru THEN
 						CAM17.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 						SC_P2_StoperZaklTesnenia.Step:= 185;
@@ -1098,12 +1188,16 @@ PROGRAM _CYCLIC
 						SC_P2_StoperZaklTesnenia.Step:= 185;
 					END_IF
 				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN	
-					IF CAM17.RESULT.Paletka.Pritomn_Busbary_5H AND
+					IF P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
+						CAM17.PAR.ResultFotky:= 'FAIL';
+						SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+						SC_P2_StoperZaklTesnenia.Step:= 540;
+					ELSIF CAM17.RESULT.Paletka.Pritomn_Busbary_5H AND
 						CAM17.RESULT.Paletka.Pritomn_PowerCP_5H AND
 						CAM17.RESULT.Paletka.Pritomn_TopCoveru_5H AND
 						CAM17.RESULT.Paletka.Pritomn_LavyMVcase AND
 						CAM17.RESULT.Paletka.Pritomn_PravyMVcase AND
-						NOT CAM17.RESULT.Paletka.Pritomn_TopCoveru_4F THEN
+						CAM17.RESULT.Paletka.PrazdnaPoziciaTopCoveru THEN
 						CAM17.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 						SC_P2_StoperZaklTesnenia.Step:= 185;
@@ -1189,6 +1283,10 @@ PROGRAM _CYCLIC
 			
 			IF FTP_CAM17.STATUS.KomunikaciaUkoncena THEN
 				FTP_CAM17.CMD.VymazFotku:= FALSE;
+				CAM8.STAV.Results_READY:= FALSE;
+				CAM8.STAV.OldRunCounter:= CAM8.STAV.RunCounter;
+				CAM17.STAV.Results_READY:= FALSE;
+				CAM17.STAV.OldRunCounter:= CAM17.STAV.RunCounter;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 165;
 			ELSIF FTP_CAM17.STATUS.KomunikaciaError THEN
@@ -1224,6 +1322,7 @@ PROGRAM _CYCLIC
                        
 				FTP_CAM1.CMD.OdosliFotku:= TRUE;
 				FTP_CAM17.CMD.OdosliFotku:= TRUE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF
         	
@@ -1232,6 +1331,7 @@ PROGRAM _CYCLIC
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				FTP_CAM1.CMD.OdosliFotku:= FALSE;
 				FTP_CAM17.CMD.OdosliFotku:= FALSE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				Paletka[i].STAV.OdoslanieFotiek_DONE:= TRUE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 550;
@@ -1247,75 +1347,21 @@ PROGRAM _CYCLIC
 			
 			
 			//*****************************Odoslanie dát na server************************************//			
+		
 		550:
-			SC_P2_StoperZaklTesnenia.StepName:='550 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
-			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#10s;	
-			
-			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
-			
-			IF Linka.KOM_Panatrace_OFF THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 560;
-			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
-				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
-				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
-			END_IF 
-            
-			IF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 551;
-			ELSIF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaError THEN	
-				P2_Alarmy[230]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
-			END_IF	
-		
-		
-		
-		551:
-			SC_P2_StoperZaklTesnenia.StepName:='551 - Automaticky Rezim - kontrola odpovede servera';
-			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;		
-			
-			IF NOT TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
-				IF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
-					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 551;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
-					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 551;	
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
-					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 551;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
-					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 551;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
-					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 551;
-				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
-					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 551;
-				END_IF   
-			END_IF
-			
-			
-			
-			
-			
-			
-		555:
 			SC_P2_StoperZaklTesnenia.StepName:='550 - Automaticky Rezim - odoslanie stavu paletky na server';
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#10s;
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
             
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN    
+			IF Linka.KOM_Panatrace_OFF THEN
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 560;
+			ELSIF NOT SC_P2_StoperZaklTesnenia.Switch1 AND TRCB_P2_ZakladacTesnenia_ST3.STATUS.KOM_READY THEN    
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.OdosliStavPaletky_TYP2:= TRUE;
+				(*P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
 			END_IF
 			
@@ -1323,16 +1369,19 @@ PROGRAM _CYCLIC
 			IF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				TRCB_P2_ZakladacTesnenia_ST3.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 556;
+				SC_P2_StoperZaklTesnenia.Step:= 552;
 			ELSIF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaError THEN	
-				P2_Alarmy[230]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
+				TRCB_P2_ZakladacTesnenia_ST3.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P2_ZakladanieTesnenia_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 557;
 			END_IF
-			
-			
-		556:
-			SC_P2_StoperZaklTesnenia.StepName:='556 - Automaticky Rezim - kontrola odpovede servera';
+		
+		
+		552:
+			SC_P2_StoperZaklTesnenia.StepName:='552 - Automaticky Rezim - kontrola odpovede servera';
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#10s;
 			
@@ -1343,59 +1392,125 @@ PROGRAM _CYCLIC
 					SC_P2_StoperZaklTesnenia.Step:= 560;
 				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.PovolenieCinnostiNaPaletke = 'NG' THEN
 					Paletka[i].STAV.QRkodFiltraPriradeny:= FALSE;
+					Paletka[i].STAV.StavPaletky:= 'NG';
 					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-					SC_P2_StoperZaklTesnenia.Step:= 557;
+					SC_P2_StoperZaklTesnenia.Step:= 560;
 				END_IF	
 			END_IF		
 		
-            
-            
-		557:
-			SC_P2_StoperZaklTesnenia.StepName:='557 - Automaticky Rezim - zobrazenie hlasenia komunikacia zo serverom neprebehla korektne';
+		
+		
+		
+		555:
+			SC_P2_StoperZaklTesnenia.StepName:='555 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
 			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
-			
-			P2_StoperZaklTesnenia.Banner.IN.CervenaLED_ON:= Blikac500ms;
-			
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
-				P2_Vizu.ZobrazHL11_ST3:= TRUE;
-				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
-			END_IF
-					
-					
-			IF P2_StoperZaklTesnenia.Banner.OUT.Stlaceny THEN
-				P2_Vizu.ZobrazHL11_ST3:= FALSE;
-				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE; //Zhasnem banner
-				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 558;
-			END_IF	
-            
-		558:
-			SC_P2_StoperZaklTesnenia.StepName:='558 - Automaticky Rezim - vymazanie fotky kamery CAM17 a CAM1';
-			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
+			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#10s;	
 			
 			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
-            
-			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
-				FTP_CAM17.CMD.VymazFotku:= TRUE;
-				FTP_CAM1.CMD.VymazFotku:= TRUE;
-				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
-			END_IF	
 			
-			IF FTP_CAM17.STATUS.KomunikaciaUkoncena AND FTP_CAM1.STATUS.KomunikaciaUkoncena THEN
+			IF NOT SC_P2_StoperZaklTesnenia.Switch1 AND TRCB_P2_ZakladacTesnenia_ST3.STATUS.KOM_READY THEN
+				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
+			END_IF 
+			            
+			IF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
-				FTP_CAM17.CMD.VymazFotku:= FALSE;
-				(*OpatovnaKontrolaFiltra_5H:= TRUE;*)
+				TRCB_P2_ZakladacTesnenia_ST3.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
-				SC_P2_StoperZaklTesnenia.Step:= 105;
-			ELSIF FTP_CAM17.STATUS.KomunikaciaError THEN
-				P2_Alarmy[228]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
-			ELSIF FTP_CAM1.STATUS.KomunikaciaError THEN
-				P2_Alarmy[225]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;    
+				SC_P2_StoperZaklTesnenia.Step:= 556;
+			ELSIF TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaError THEN	
+				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 557;
+			END_IF	
+		
+		
+		
+		556:
+			SC_P2_StoperZaklTesnenia.StepName:='556 - Automaticky Rezim - kontrola odpovede servera';
+			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;		
+			
+			IF NOT TRCB_P2_ZakladacTesnenia_ST3.STATUS.KomunikaciaUkoncena THEN
+				IF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 557;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 557;	
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 550;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 557;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 557;
+				ELSIF TRCB_P2_ZakladacTesnenia_ST3.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 557;
+				ELSE
+					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+					SC_P2_StoperZaklTesnenia.Step:= 557;
+				END_IF   
 			END_IF
+			
+			
+		557:
+			SC_P2_StoperZaklTesnenia.StepName:='557 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
+        	
+			P2_Vizu.ZobrazHL15_ST3:= TRUE;
+            P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+			
+			IF TRCB_P2_ZaklTesn_OpatovnyDopyt THEN
+				TRCB_P2_ZaklTesn_OpatovnyDopyt:= FALSE; 
+				P2_Vizu.ZobrazHL15_ST3:= FALSE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 555;
+			ELSIF TRCB_P2_ZaklTesn_PaletkaNG THEN
+				TRCB_P2_ZaklTesn_PaletkaNG:= FALSE;
+				P2_Vizu.ZobrazHL15_ST3:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				Paletka[i].STAV.QRkodFiltraPriradeny:= FALSE;
+				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+				SC_P2_StoperZaklTesnenia.Step:= 560;
+			END_IF    		
+				
+	
+            
+//		558:
+//			SC_P2_StoperZaklTesnenia.StepName:='558 - Automaticky Rezim - vymazanie fotky kamery CAM17 a CAM1';
+//			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
+//			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;
+//			
+//			P2_StoperZaklTesnenia.Banner.IN.ModraRotujucaLED_ON:= TRUE;
+//            
+//			IF NOT SC_P2_StoperZaklTesnenia.Switch1 THEN
+//				FTP_CAM17.CMD.VymazFotku:= TRUE;
+//				FTP_CAM1.CMD.VymazFotku:= TRUE;
+//				SC_P2_StoperZaklTesnenia.Switch1:= TRUE;
+//			END_IF	
+//			
+//			IF FTP_CAM17.STATUS.KomunikaciaUkoncena AND FTP_CAM1.STATUS.KomunikaciaUkoncena THEN
+//				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
+//				FTP_CAM17.CMD.VymazFotku:= FALSE;
+//				IF P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG THEN
+//					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+//					SC_P2_StoperZaklTesnenia.Step:= 560;
+//				ELSE	
+//					SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
+//					SC_P2_StoperZaklTesnenia.Step:= 105;
+//				END_IF	
+//			ELSIF FTP_CAM17.STATUS.KomunikaciaError THEN
+//				P2_Alarmy[228]:= TRUE;
+//				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;
+//			ELSIF FTP_CAM1.STATUS.KomunikaciaError THEN
+//				P2_Alarmy[225]:= TRUE;
+//				P2_Pracovisko.STAV.Porucha_ST1:= TRUE;    
+//			END_IF
             
 		
 		
@@ -1403,22 +1518,27 @@ PROGRAM _CYCLIC
 		
 		560:
 			SC_P2_StoperZaklTesnenia.StepName:='560 - Automaticky Rezim - cakam na vyvezenie na stoper maticovacky';
-			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZaklTesnenia.IdleTime.PT:= T#1s;
 			SC_P2_StoperZaklTesnenia.AlarmTime.PT:= T#5s;		
 		
-			IF Paletka[i].STAV.StavPaletky = 'NG' THEN	
+			IF Paletka[i].STAV.StavPaletky = 'NG' THEN
+				SC_P2_StoperZaklTesnenia.IdleTime.IN:= TRUE;
 				P2_StoperZaklTesnenia.Banner.IN.CervenaLED_ON:= Blikac500ms;
 			ELSE            
 				P2_StoperZaklTesnenia.Banner.IN.ZelenaLED_ON:= Blikac500ms;
 			END_IF
             
+			
                
             
 						
 			IF P2_StoperZaklTesnenia.KoniecCyklu THEN
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 0;
-			ELSIF NOT P2_StoperMaticovacky.RFID_hlava.PritomnostPaletky AND SC_P2_StoperMaticovacky.Step = 100 AND NOT P2_StoperZaklTesnenia.STAV.PrebiehaVyvezeniePaletky THEN
+			ELSIF NOT P2_StoperMaticovacky.RFID_hlava.PritomnostPaletky AND
+				SC_P2_StoperMaticovacky.Step = 100 AND
+				NOT P2_StoperZaklTesnenia.STAV.PrebiehaVyvezeniePaletky AND
+				(Paletka[i].STAV.StavPaletky <> 'NG' OR SC_P2_StoperZaklTesnenia.IdleTime.Q) THEN
 				P2_StoperZaklTesnenia.CMD.Banner_LED_OFF:= TRUE;
 				P2_StoperZaklTesnenia.OUT.ZasunStoper:= TRUE;
 				P2_StoperZaklTesnenia.STAV.PrebiehaVyvezeniePaletky:= TRUE;
@@ -1448,6 +1568,7 @@ PROGRAM _CYCLIC
 				Reports.Kamery.P2_CAM1_KontrolaTesnenia:= '';
 				Reports.Kamery.P2_CAM17_KontrolaPaletky:= '';
 				P2_StoperZaklTesnenia.OUT.ZasunStoper:= FALSE;
+				P2_StoperZaklTesnenia.STAV.ObsluhaOznacilaPaletku_NG:= FALSE;
 				SC_P2_StoperZaklTesnenia.ResetStep:= TRUE;
 				SC_P2_StoperZaklTesnenia.Step:= 100;
 			ELSIF SC_P2_StoperZaklTesnenia.AlarmTime.Q THEN

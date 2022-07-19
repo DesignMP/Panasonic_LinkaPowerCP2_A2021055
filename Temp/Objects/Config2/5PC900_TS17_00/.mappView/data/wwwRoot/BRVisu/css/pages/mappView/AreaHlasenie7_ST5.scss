@@ -1,0 +1,166 @@
+﻿@import "mixins.scss";
+#AreaHlasenie7_ST5_GroupBox1 {
+	@include elemTop(0);
+}
+#AreaHlasenie7_ST5_GroupBox1 {
+	@include elemLeft(0);
+}
+#AreaHlasenie7_ST5_GroupBox1 {
+	@include elemWidth(500);
+}
+#AreaHlasenie7_ST5_GroupBox1 {
+	@include elemHeight(300);
+}
+#AreaHlasenie7_ST5_GroupBox1 {
+		z-index: 0;
+}
+#AreaHlasenie7_ST5_GroupBox1 {
+		border-width: 6px;
+}
+#AreaHlasenie7_ST5_GroupBox1 {
+	> .header{
+		border-width: 6px;
+	}
+}
+#AreaHlasenie7_ST5_GroupBox1 {
+	@include border-radius(0px);
+}
+#AreaHlasenie7_ST5_GroupBox1 {
+		background-color: rgba(255, 192, 128, 1);
+}
+#AreaHlasenie7_ST5_Label1 {
+	@include elemTop(81);
+}
+#AreaHlasenie7_ST5_Label1 {
+	@include elemLeft(21);
+}
+#AreaHlasenie7_ST5_Label1 {
+	@include elemAutoWidth(450);
+}
+#AreaHlasenie7_ST5_Label1 {
+	@include elemAutoHeight(100);
+}
+#AreaHlasenie7_ST5_Label1 {
+		z-index: 0;
+}
+#AreaHlasenie7_ST5_Label1 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaHlasenie7_ST5_Label1 {
+	@include text-alignment-all('center');
+}
+#AreaHlasenie7_ST5_Label1 {
+		font-size: 25px;
+}
+#AreaHlasenie7_ST5_Label1 {
+	@include font-weight-bold(true);
+}
+#AreaHlasenie7_ST5_Label2 {
+	@include elemTop(21);
+}
+#AreaHlasenie7_ST5_Label2 {
+	@include elemLeft(71);
+}
+#AreaHlasenie7_ST5_Label2 {
+	@include elemAutoWidth(350);
+}
+#AreaHlasenie7_ST5_Label2 {
+	@include elemAutoHeight(40);
+}
+#AreaHlasenie7_ST5_Label2 {
+		z-index: 1;
+}
+#AreaHlasenie7_ST5_Label2 {
+		border-width: 2px;
+}
+#AreaHlasenie7_ST5_Label2 {
+	@include border-radius(2px);
+}
+#AreaHlasenie7_ST5_Label2 {
+		background-color: rgba(169, 169, 169, 1);
+}
+#AreaHlasenie7_ST5_Label2 {
+		border-color: rgba(0, 0, 0, 1);
+}
+#AreaHlasenie7_ST5_Label2 {
+	&:before{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaHlasenie7_ST5_Label2 {
+	&:after{
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaHlasenie7_ST5_Label2 {
+		border-style: solid;
+}
+#AreaHlasenie7_ST5_Label2 {
+	&:before{
+		border-style: solid;
+	}
+}
+#AreaHlasenie7_ST5_Label2 {
+	&:after{
+		border-style: solid;
+	}
+}
+#AreaHlasenie7_ST5_Label2 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#AreaHlasenie7_ST5_Label2 {
+	@include text-alignment-all('center');
+}
+#AreaHlasenie7_ST5_Label2 {
+		font-size: 20px;
+}
+#AreaHlasenie7_ST5_Label2 {
+	@include font-weight-bold(true);
+}
+#AreaHlasenie7_ST5_Label2 {
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+}
+#AreaHlasenie7_ST5_Button_Close {
+	@include elemTop(211);
+}
+#AreaHlasenie7_ST5_Button_Close {
+	@include elemLeft(161);
+}
+#AreaHlasenie7_ST5_Button_Close {
+	@include elemAutoWidth(170);
+}
+#AreaHlasenie7_ST5_Button_Close {
+	@include elemAutoHeight(45);
+}
+#AreaHlasenie7_ST5_Button_Close {
+		z-index: 2;
+}
+#AreaHlasenie7_ST5_Button_Close {
+	&:not(.disabled):not(.active):not(.checked){
+	@include backGroundGradient('linear-gradient(to bottom, rgba(255, 192, 192, 1) 20%,rgba(255,0,0,1) 100%)');
+	}
+}
+#AreaHlasenie7_ST5_Button_Close {
+	span{
+		font-size: 18px;
+	}
+}
+#AreaHlasenie7_ST5_Button_Close {
+	&:not(.active):not(.checked){
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaHlasenie7_ST5_Button_Close {
+	&.disabled.active{
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}
+#AreaHlasenie7_ST5_Button_Close {
+	&.disabled.checked{
+	@include box-shadow(2px 2px 10px rgba(0, 0, 0, 1));
+	}
+}

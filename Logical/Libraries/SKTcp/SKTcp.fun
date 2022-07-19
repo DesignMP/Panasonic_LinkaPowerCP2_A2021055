@@ -52,6 +52,8 @@ END_FUNCTION_BLOCK
 		Cmd : SKTcpClientTraceCmd_Type;
 		Params : SKTcpClientTraceParams_Type;
 		DataSend : SKTcpClientTraceDataSend_Type;
+		pDevice : UDINT;
+		pFile : UDINT;
 	END_VAR
 	VAR_OUTPUT
 		Status : SKTcpClientTraceStatus_Type;
@@ -75,19 +77,21 @@ END_FUNCTION_BLOCK
 	END_VAR
 END_FUNCTION_BLOCK
 
-{REDUND_ERROR} FUNCTION_BLOCK SKTcpClientFTP (*SKTcpClient - FTP*) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
+{REDUND_ERROR} FUNCTION_BLOCK SKTcpLogger (*SKTcpLogger*) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
 	VAR_INPUT
 		enable : BOOL;
-		send : BOOL;
-		param : SKTcpClientFtpParam_Typ;
+		trigger : BOOL;
+		pDevice : UDINT;
+		pFile : UDINT;
+		pSrc : UDINT;
+		mode : USINT;
 	END_VAR
 	VAR_OUTPUT
 		active : BOOL;
-		status : SKTcpClientFtpStatus_Typ;
-		Errorcode : UINT;
+		done : BOOL;
 	END_VAR
 	VAR
-		internal : SKTcpClientFtpInternal_Typ;
+		internal : SKTcpLoggerInternal_Typ;
 	END_VAR
 END_FUNCTION_BLOCK
 

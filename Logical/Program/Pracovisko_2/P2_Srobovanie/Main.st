@@ -112,8 +112,6 @@ PROGRAM _CYCLIC
 		P2_Srobovanie.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_Srobovanie.Step:= 0;
-	ELSIF NOT P2_Srobovanie.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
-		SC_P2_Srobovanie.Step:= 0;
 	END_IF	
 	
 	
@@ -166,8 +164,7 @@ PROGRAM _CYCLIC
 			END_IF	
 						
 			
-			P2_Srobovanie.CMD.RR_SkrutkovackuM6_VYSUN:= FALSE;
-			P2_Srobovanie.CMD.RR_SkrutkovackuM5_VYSUN:= FALSE;
+			
 			P2_Srobovanie.CMD.RR_Manipulator_OsX_VLAVO:= FALSE;
 			P2_Srobovanie.CMD.RR_Manipulator_OsX_VPRAVO:= FALSE;
 			P2_Srobovanie.CMD.RR_Manipulator_OsY_VPRED:= FALSE;
@@ -175,8 +172,7 @@ PROGRAM _CYCLIC
 			P2_Srobovanie.CMD.RR_SkrutkovackaM4_OsZ_DOLE:= FALSE;
 			P2_Srobovanie.CMD.RR_SkrutkovackaM4_OsZ_HORE:= FALSE;
 			
-			P2_Srobovanie.CMD.RR_PrisavanieSkrutkyM6_ON:= FALSE;
-			P2_Srobovanie.CMD.RR_PrisavanieSkrutkyM5_ON:= FALSE;
+			
 			P2_Srobovanie.CMD.RR_PrisavanieSkrutkyM4_ON:= FALSE;
 			P2_Srobovanie.CMD.RR_PrisavanieSkrutkyM4_OFF:= FALSE;
 			P2_Srobovanie.CMD.RR_CistenieSkrutkovackyM5:= FALSE;
@@ -806,22 +802,25 @@ PROGRAM _CYCLIC
 			SC_P2_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P2_Srobovanie.AlarmTime.PT:= T#10s;
 			
-			SC_P2_Srobovanie.AlarmTime.IN:= (P2_Srobovanie.PAR.Skrutkov_M6_AktualHodnVysunutia < 5);
+			SC_P2_Srobovanie.AlarmTime.IN:= (P2_Srobovanie.PAR.Skrutkov_M6_RoundHodnotaREAL < 5);
             
 			IF NOT SC_P2_Srobovanie.Switch1 THEN
 				P2_Srobovanie.OUT.Skrutkovacka_M6_Prisavanie_ON:= TRUE;
 				P2_Srobovanie.OUT.Skrutkovacku_M6_VYSUN:= TRUE;
 				P2_Srobovanie.Skrutkovacka_M6.START_Utahovania:= TRUE;
+				P2_StoperSrobovania.STAV.VyrobaZacala:= TRUE;
 				SC_P2_Srobovanie.Switch1:= TRUE;
 			END_IF
 		
 			
-			IF NOT P2_Srobovanie.Skrutkovacka_M6.Stav_UtahovanieUkoncene AND P2_Srobovanie.PAR.Skrutkov_M6_AktualHodnVysunutia > 10 THEN
+			IF NOT P2_Srobovanie.Skrutkovacka_M6.Stav_UtahovanieUkoncene AND P2_Srobovanie.PAR.Skrutkov_M6_RoundHodnotaREAL > 10 THEN
 				SC_P2_Srobovanie.ResetStep:= TRUE;
 				SC_P2_Srobovanie.Step:= 120;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN
 				P2_Alarmy[270]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
+				SC_P2_Srobovanie.ResetStep:= TRUE;
+				SC_P2_Srobovanie.Step:= 0;
 			END_IF	
 			
 		120:
@@ -835,12 +834,15 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.Skrutkovacka_M6.Stav_UtahovanieUkoncene THEN
 				P2_Srobovanie.Skrutkovacka_M6.START_Utahovania:= FALSE;
 				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
-				Reports.Skrutkovacky.VyskaSkrutkovania.P2_LavaSkrutkaM6:= UINT_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M6_AktualHodnVysunutia);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_LavaSkrutkaM6:= REAL_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M6_RoundHodnotaREAL);
 				Reports.Skrutkovacky.CasSkrutkovania.P2_LavaSkrutkaM6:= REAL_TO_STRING(CasSrobovania/1000);
 				SC_P2_Srobovanie.ResetStep:= TRUE;
 				SC_P2_Srobovanie.Step:= 123;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN
 				P2_Alarmy[274]:= TRUE;
+				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_LavaSkrutkaM6:= REAL_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M6_RoundHodnotaREAL);
+				Reports.Skrutkovacky.CasSkrutkovania.P2_LavaSkrutkaM6:= REAL_TO_STRING(CasSrobovania/1000);
 				P2_Srobovanie.Skrutkovacka_M6.START_Utahovania:= FALSE;
 				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
 				SC_P2_Srobovanie.ResetStep:= TRUE;
@@ -1002,22 +1004,25 @@ PROGRAM _CYCLIC
 			SC_P2_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P2_Srobovanie.AlarmTime.PT:= T#10s;
 			
-			SC_P2_Srobovanie.AlarmTime.IN:= (P2_Srobovanie.PAR.Skrutkov_M6_AktualHodnVysunutia < 5);
+			SC_P2_Srobovanie.AlarmTime.IN:= (P2_Srobovanie.PAR.Skrutkov_M6_RoundHodnotaREAL < 5);
             
 			IF NOT SC_P2_Srobovanie.Switch1 THEN
 				P2_Srobovanie.OUT.Skrutkovacka_M6_Prisavanie_ON:= TRUE;
 				P2_Srobovanie.OUT.Skrutkovacku_M6_VYSUN:= TRUE;
 				P2_Srobovanie.Skrutkovacka_M6.START_Utahovania:= TRUE;
+				P2_StoperSrobovania.STAV.VyrobaZacala:= TRUE;
 				SC_P2_Srobovanie.Switch1:= TRUE;
 			END_IF
 		
 			
-			IF NOT P2_Srobovanie.Skrutkovacka_M6.Stav_UtahovanieUkoncene AND P2_Srobovanie.PAR.Skrutkov_M6_AktualHodnVysunutia > 10 THEN
+			IF NOT P2_Srobovanie.Skrutkovacka_M6.Stav_UtahovanieUkoncene AND P2_Srobovanie.PAR.Skrutkov_M6_RoundHodnotaREAL > 10 THEN
 				SC_P2_Srobovanie.ResetStep:= TRUE;
 				SC_P2_Srobovanie.Step:= 140;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN
 				P2_Alarmy[270]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;	
+				SC_P2_Srobovanie.ResetStep:= TRUE;
+				SC_P2_Srobovanie.Step:= 0;
 			END_IF	
 		
 			
@@ -1034,7 +1039,7 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.Skrutkovacka_M6.Stav_UtahovanieUkoncene AND NOT P2_Robot.COM_IN.Stav_BusbaryUvolnene THEN
 				P2_Srobovanie.Skrutkovacka_M6.START_Utahovania:= FALSE;
 				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
-				Reports.Skrutkovacky.VyskaSkrutkovania.P2_PravaSkrutkaM6:= UINT_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M6_AktualHodnVysunutia);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_PravaSkrutkaM6:= REAL_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M6_RoundHodnotaREAL);
 				Reports.Skrutkovacky.CasSkrutkovania.P2_PravaSkrutkaM6:= REAL_TO_STRING(CasSrobovania/1000);
 				IF P2_Robot.STAV.PoINIT THEN
 					SC_P2_Srobovanie.ResetStep:= TRUE;
@@ -1045,6 +1050,9 @@ PROGRAM _CYCLIC
 				END_IF	
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN
 				P2_Alarmy[274]:= TRUE;
+				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_PravaSkrutkaM6:= REAL_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M6_RoundHodnotaREAL);
+				Reports.Skrutkovacky.CasSkrutkovania.P2_PravaSkrutkaM6:= REAL_TO_STRING(CasSrobovania/1000);
 				P2_Srobovanie.Skrutkovacka_M6.START_Utahovania:= FALSE;
 				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
 				IF P2_Robot.COM_IN.Stav_ProgramRUN THEN
@@ -1386,6 +1394,7 @@ PROGRAM _CYCLIC
 			IF NOT SC_P2_Srobovanie.Switch1 THEN
 				P2_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= TRUE;
 				P2_Srobovanie.Skrutkovacka_M4.START_Utahovania:= TRUE;
+				P2_StoperSrobovania.STAV.VyrobaZacala:= TRUE;
 				SC_P2_Srobovanie.Switch1:= TRUE;
 			END_IF
 			
@@ -1441,6 +1450,9 @@ PROGRAM _CYCLIC
 				SC_P2_Srobovanie.Step:= 166;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN    
 				P2_Alarmy[272]:= TRUE;
+				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_LavaSkrutkaM4:= REAL_TO_STRING(P2_Srobovanie.ServoManipulOsZ_M4.Status.ActPosition); 
+				Reports.Skrutkovacky.CasSkrutkovania.P2_LavaSkrutkaM4:= REAL_TO_STRING(CasSrobovania/1000);
 				P2_Srobovanie.Skrutkovacka_M4.START_Utahovania:= FALSE;
 				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
 				P2_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= FALSE;
@@ -1766,6 +1778,7 @@ PROGRAM _CYCLIC
 			IF NOT SC_P2_Srobovanie.Switch1 THEN
 				P2_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= TRUE;
 				P2_Srobovanie.Skrutkovacka_M4.START_Utahovania:= TRUE;
+				P2_StoperSrobovania.STAV.VyrobaZacala:= TRUE;
 				SC_P2_Srobovanie.Switch1:= TRUE;
 			END_IF
 			
@@ -1822,6 +1835,9 @@ PROGRAM _CYCLIC
 				SC_P2_Srobovanie.Step:= 186;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN    
 				P2_Alarmy[272]:= TRUE;
+				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_PravaSkrutkaM4:= REAL_TO_STRING(P2_Srobovanie.ServoManipulOsZ_M4.Status.ActPosition); 
+				Reports.Skrutkovacky.CasSkrutkovania.P2_PravaSkrutkaM4:= REAL_TO_STRING(CasSrobovania/1000);
 				P2_Srobovanie.Skrutkovacka_M4.START_Utahovania:= FALSE;
 				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
 				P2_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= FALSE;
@@ -1976,22 +1992,25 @@ PROGRAM _CYCLIC
 			SC_P2_Srobovanie.AlarmTime.PT:= T#5s;
 			
 			
-			SC_P2_Srobovanie.AlarmTime.IN:= (P2_Srobovanie.PAR.Skrutkov_M5_AktualHodnVysunutia < 5);
+			SC_P2_Srobovanie.AlarmTime.IN:= (P2_Srobovanie.PAR.Skrutkov_M5_RoundHodnotaREAL < 5);
             
 			IF NOT SC_P2_Srobovanie.Switch1 THEN
 				P2_Srobovanie.OUT.Skrutkovacka_M5_Prisavanie_ON:= TRUE;
 				P2_Srobovanie.OUT.Skrutkovacku_M5_VYSUN:= TRUE;
 				P2_Srobovanie.Skrutkovacka_M5.START_Utahovania:= TRUE;
+				P2_StoperSrobovania.STAV.VyrobaZacala:= TRUE;
 				SC_P2_Srobovanie.Switch1:= TRUE;
 			END_IF
 		
 			
-			IF NOT P2_Srobovanie.Skrutkovacka_M5.Stav_UtahovanieUkoncene (*AND P2_Srobovanie.PAR.Skrutkov_M5_AktualHodnVysunutia > 10*) THEN
+			IF NOT P2_Srobovanie.Skrutkovacka_M5.Stav_UtahovanieUkoncene AND P2_Srobovanie.PAR.Skrutkov_M5_RoundHodnotaREAL > 10 THEN
 				SC_P2_Srobovanie.ResetStep:= TRUE;
 				SC_P2_Srobovanie.Step:= 210;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN
 				P2_Alarmy[269]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
+				SC_P2_Srobovanie.ResetStep:= TRUE;
+				SC_P2_Srobovanie.Step:= 0;
 			END_IF	
 			
 		210:
@@ -2005,12 +2024,15 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.Skrutkovacka_M5.Stav_UtahovanieUkoncene THEN
 				P2_Srobovanie.Skrutkovacka_M5.START_Utahovania:= FALSE;
 				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
-				Reports.Skrutkovacky.VyskaSkrutkovania.P2_LavaSkrutkaM5:= UINT_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M5_AktualHodnVysunutia);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_LavaSkrutkaM5:= REAL_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M5_RoundHodnotaREAL);
 				Reports.Skrutkovacky.CasSkrutkovania.P2_LavaSkrutkaM5:= REAL_TO_STRING(CasSrobovania/1000);
 				SC_P2_Srobovanie.ResetStep:= TRUE;
 				SC_P2_Srobovanie.Step:= 213;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN
 				P2_Alarmy[273]:= TRUE;
+				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_LavaSkrutkaM5:= REAL_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M5_RoundHodnotaREAL);
+				Reports.Skrutkovacky.CasSkrutkovania.P2_LavaSkrutkaM5:= REAL_TO_STRING(CasSrobovania/1000);
 				P2_Srobovanie.Skrutkovacka_M5.START_Utahovania:= FALSE;
 				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
 				SC_P2_Srobovanie.ResetStep:= TRUE;
@@ -2162,22 +2184,25 @@ PROGRAM _CYCLIC
 			SC_P2_Srobovanie.IdleTime.PT:= T#2s;
 			SC_P2_Srobovanie.AlarmTime.PT:= T#5s;
 			
-			SC_P2_Srobovanie.AlarmTime.IN:= (P2_Srobovanie.PAR.Skrutkov_M5_AktualHodnVysunutia < 5);
+			SC_P2_Srobovanie.AlarmTime.IN:= (P2_Srobovanie.PAR.Skrutkov_M5_RoundHodnotaREAL < 5);
             
 			IF NOT SC_P2_Srobovanie.Switch1 THEN
 				P2_Srobovanie.OUT.Skrutkovacka_M5_Prisavanie_ON:= TRUE;
 				P2_Srobovanie.OUT.Skrutkovacku_M5_VYSUN:= TRUE;
 				P2_Srobovanie.Skrutkovacka_M5.START_Utahovania:= TRUE;
+				P2_StoperSrobovania.STAV.VyrobaZacala:= TRUE;
 				SC_P2_Srobovanie.Switch1:= TRUE;
 			END_IF
 		
 			
-			IF NOT P2_Srobovanie.Skrutkovacka_M5.Stav_UtahovanieUkoncene (*AND P2_Srobovanie.PAR.Skrutkov_M5_AktualHodnVysunutia > 10*) THEN
+			IF NOT P2_Srobovanie.Skrutkovacka_M5.Stav_UtahovanieUkoncene AND P2_Srobovanie.PAR.Skrutkov_M5_RoundHodnotaREAL > 10 THEN
 				SC_P2_Srobovanie.ResetStep:= TRUE;
 				SC_P2_Srobovanie.Step:= 230;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN
 				P2_Alarmy[269]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
+				SC_P2_Srobovanie.ResetStep:= TRUE;
+				SC_P2_Srobovanie.Step:= 0;
 			END_IF	
 			
 		230:
@@ -2191,12 +2216,15 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.Skrutkovacka_M5.Stav_UtahovanieUkoncene THEN
 				P2_Srobovanie.Skrutkovacka_M5.START_Utahovania:= FALSE;
 				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
-				Reports.Skrutkovacky.VyskaSkrutkovania.P2_PravaSkrutkaM5:= UINT_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M5_AktualHodnVysunutia);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_PravaSkrutkaM5:= REAL_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M5_RoundHodnotaREAL);
 				Reports.Skrutkovacky.CasSkrutkovania.P2_PravaSkrutkaM5:= REAL_TO_STRING(CasSrobovania/1000);
 				SC_P2_Srobovanie.ResetStep:= TRUE;
 				SC_P2_Srobovanie.Step:= 232;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN
 				P2_Alarmy[273]:= TRUE;
+				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_PravaSkrutkaM5:= REAL_TO_STRING(P2_Srobovanie.PAR.Skrutkov_M5_RoundHodnotaREAL);
+				Reports.Skrutkovacky.CasSkrutkovania.P2_PravaSkrutkaM5:= REAL_TO_STRING(CasSrobovania/1000);
 				P2_Srobovanie.Skrutkovacka_M5.START_Utahovania:= FALSE;
 				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
 				SC_P2_Srobovanie.ResetStep:= TRUE;
@@ -2523,6 +2551,7 @@ PROGRAM _CYCLIC
 			IF NOT SC_P2_Srobovanie.Switch1 THEN
 				P2_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= TRUE;
 				P2_Srobovanie.Skrutkovacka_M4.START_Utahovania:= TRUE;
+				P2_StoperSrobovania.STAV.VyrobaZacala:= TRUE;
 				SC_P2_Srobovanie.Switch1:= TRUE;
 			END_IF
 			
@@ -2579,6 +2608,9 @@ PROGRAM _CYCLIC
 				SC_P2_Srobovanie.Step:= 256;
 			ELSIF SC_P2_Srobovanie.AlarmTime.Q THEN    
 				P2_Alarmy[272]:= TRUE;
+				CasSrobovania:= TIME_TO_REAL(SC_P2_Srobovanie.IdleTime.ET);
+				Reports.Skrutkovacky.VyskaSkrutkovania.P2_StrednaSkrutkaM4:= REAL_TO_STRING(P2_Srobovanie.ServoManipulOsZ_M4.Status.ActPosition); 
+				Reports.Skrutkovacky.CasSkrutkovania.P2_StrednaSkrutkaM4:= REAL_TO_STRING(CasSrobovania/1000);
 				P2_Srobovanie.Skrutkovacka_M4.START_Utahovania:= FALSE;
 				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= TRUE;
 				P2_Srobovanie.ServoManipulOsZ_M4.Command.MovePosition:= FALSE;
@@ -2807,8 +2839,8 @@ PROGRAM _CYCLIC
 			SC_P2_Srobovanie.AlarmTime.PT:= T#10s;
 			
 			IF P2_Srobovanie.SkrutSet_M4.IN.Podavac_SkrutkaNaVystupe THEN
-				SC_P1_Srobovanie.ResetStep:= TRUE;
-				SC_P1_Srobovanie.Step:= 442;
+				SC_P2_Srobovanie.ResetStep:= TRUE;
+				SC_P2_Srobovanie.Step:= 442;
 			ELSIF P2_Srobovanie.SkrutSet_M4.STAV.ERROR THEN
 				P2_Alarmy[237]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;		
@@ -3305,7 +3337,7 @@ PROGRAM _CYCLIC
 			P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Dcc:= 1;
 			P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Velocity:= P2_Srobovanie.PAR.ManipulOsZ_M4_JoggRychlost/1000;
 			P2_Srobovanie.ServoManipulOsZ_M4.Command.TorqueLimitation:= TRUE;
-			P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Torque:= 1;
+			(*P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Torque:= 1;*)
 			
 			IF P2_Srobovanie.CMD.RR_SkrutkovackaM4_OsZ_DOLE AND NOT P2_Srobovanie.ServoManipulOsZ_M4.Command.Stop THEN
 				P2_Srobovanie.ServoManipulOsZ_M4.Parameters.Position:= 100;
@@ -3326,13 +3358,7 @@ PROGRAM _CYCLIC
             
 					
 			       
-			//Ovládanie vysunutia skrutkovaèky M5//
-			P2_Srobovanie.OUT.Skrutkovacku_M5_VYSUN:= P2_Srobovanie.CMD.RR_SkrutkovackuM5_VYSUN;
-		
-		
-			//Ovládanie vysunutia skrutkovaèky M6//
-			P2_Srobovanie.OUT.Skrutkovacku_M6_VYSUN:= P2_Srobovanie.CMD.RR_SkrutkovackuM6_VYSUN;
-			      
+					      
         
 				
 			//Prisávanie skrutky M4//
@@ -3347,12 +3373,7 @@ PROGRAM _CYCLIC
 			END_IF    
 			
 			
-			//Prisávanie skrutky M6//
-			P2_Srobovanie.OUT.Skrutkovacka_M6_Prisavanie_ON:= P2_Srobovanie.CMD.RR_PrisavanieSkrutkyM6_ON;
-			
-			//Prisávanie skrutky M5//
-			P2_Srobovanie.OUT.Skrutkovacka_M5_Prisavanie_ON:= P2_Srobovanie.CMD.RR_PrisavanieSkrutkyM5_ON;
-			
+					
 			
 			//Èistenie skrutkovaèky M6//
 			IF P2_Srobovanie.CMD.RR_CistenieSkrutkovackyM6 THEN

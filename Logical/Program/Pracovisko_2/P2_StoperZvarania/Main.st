@@ -19,11 +19,32 @@ PROGRAM _CYCLIC
 	IF P2_StoperZvarania.Reset THEN
 		SC_P2_StoperZvarania.Step:= 0;
 		P2_StoperZvarania.Reset:= FALSE;
-	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA AND NOT P2_StoperZvarania.Automat THEN
 		SC_P2_StoperZvarania.Step:= 0;
-	ELSIF NOT P2_StoperZvarania.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
-		SC_P2_StoperZvarania.Step:= 0;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA AND P2_StoperZvarania.Automat THEN
+		P2_Pracovisko.STAV.Porucha_ST5:= TRUE;
 	END_IF	
+	
+	
+	//Ukonèenie komunikácie pri poruche//
+	IF P2_Pracovisko.STAV.Porucha_ST5 AND NOT Triger_0 THEN
+		Triger_0:= TRUE;
+		IF P2_StoperZvarania.STAV.VyrobaZacala THEN
+			Paletka[i].PAR.StavPowerCP:= 'FAIL';
+			Paletka[i].STAV.StavPaletky:= 'NG';
+			P2_StoperZvarania.KoniecCyklu:= TRUE;
+			SC_P2_StoperZvarania.ResetStep:= TRUE;
+			SC_P2_StoperZvarania.Step:= 550;
+		ELSE
+			SC_P2_StoperZvarania.ResetStep:= TRUE;
+			SC_P2_StoperZvarania.Step:= 0;
+		END_IF
+	END_IF	
+	
+	IF NOT P2_Pracovisko.STAV.Porucha_ST5 THEN
+		Triger_0:= FALSE;
+	END_IF
+	
 	
 	
 	CASE SC_P2_StoperZvarania.Step OF 
@@ -36,8 +57,10 @@ PROGRAM _CYCLIC
 			P2_StoperZvarania.KoniecCyklu:= FALSE;
 			P2_StoperZvarania.Manual:= FALSE;
 			P2_StoperZvarania.STAV.PoINIT:= FALSE;
+			P2_StoperZvarania.STAV.VstupnaKamerovaKontrola:= FALSE;
 			P2_StoperZvarania.OUT.ZasunStoper:= FALSE;
 			P2_StoperZvarania.RFID_hlava.PrecitajChipRFID:= FALSE;
+			P2_StoperZvarania.STAV.VyrobaZacala:= FALSE;
 			P2_Zvaranie.COM_IN.Zvaranie_START:= FALSE;
 			P2_Zvaranie.COM_IN.Zatlacanie_START:= FALSE;
 			P2_Cistenie.COM_IN.Cistenie_START:= FALSE;
@@ -92,6 +115,7 @@ PROGRAM _CYCLIC
 			P2_Vizu.ZobrazHL6_ST6:= FALSE;
 			P2_Vizu.ZobrazHL7_ST6:= FALSE;
 			P2_Vizu.ZobrazHL8_ST6:= FALSE;
+			P2_Vizu.ZobrazHL9_ST6:= FALSE;
 			TRCB_P2_Zvaranie_OpatovnyDopyt:= FALSE;
 			TRCB_P2_Zvaranie_PaletkaNG:= FALSE;
 			PocetTrigrovKamery:= 0;
@@ -102,7 +126,8 @@ PROGRAM _CYCLIC
 			P2_StoperZvarania.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P2_StoperSrobovania.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P2_Robot.STAV.Zvaranie_PrebiehaManipulacia:= FALSE;
-					
+			P2_Zvaranie_Taktime.IN.START_MeraniaCasu:= FALSE;
+			P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
             
             
 			IF Safety.STAV.Linka_ZonaCS_AKTIVNA AND
@@ -145,10 +170,8 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#4s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;	
 			
-			IF Linka.KOM_FTP_OFF THEN
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 10;
-			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
+			
+			IF NOT SC_P2_StoperZvarania.Switch1 THEN
 				FTP_CAM11.CMD.VymazFotku:= TRUE;
 				FTP_CAM12.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
@@ -219,6 +242,7 @@ PROGRAM _CYCLIC
 			
 			IF P2_StoperZvarania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky;
+				P2_StoperZvarania.PAR.CisloPaletky:= P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperZvarania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 23;
@@ -246,8 +270,11 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			
-			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				P2_StoperZvarania.STAV.PoINIT:= TRUE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 560;
@@ -284,270 +311,13 @@ PROGRAM _CYCLIC
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 560;
 			ELSE
+				P2_StoperZvarania.STAV.PoINIT:= TRUE;
+				P2_StoperZvarania.STAV.VstupnaKamerovaKontrola:= TRUE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 38;
+				SC_P2_StoperZvarania.Step:= 100;
 			END_IF	
 			
 					
-		38:
-			SC_P2_StoperZvarania.StepName:='38 - Inicializacia - kontrola odoslania fotiek';
-			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;   
-            
-			IF Paletka[i].STAV.OdoslanieFotiek_DONE THEN
-				P2_StoperZvarania.STAV.PoINIT:= TRUE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 550;
-			ELSE
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 40;
-			END_IF	
-            
-         
-		40:
-			SC_P2_StoperZvarania.StepName:='40 - Inicializacia - zacentrovanie paletky';
-			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
-		
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
-				Centrovacku_VYSUN:= TRUE;
-				SC_P2_StoperZvarania.Switch1:= TRUE;
-			END_IF
-		
-			IF P2_StoperZvarania.IN.Centrovanie_VYSUNUTE THEN
-				CAM12.STAV.Results_READY:= FALSE;
-				CAM11.STAV.Results_READY:= FALSE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 45;
-			END_IF	    
-            
-            
-		45:
-			SC_P2_StoperZvarania.StepName:='45 - Inicializacia - kamerova kontrola paletky CAM12'; //CAM 12//
-			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;      
-            
-			IF Linka.P2_Kamery_OFF THEN
-				P2_StoperZvarania.STAV.PoINIT:= TRUE;
-				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 208;
-				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 208;
-				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 407;
-				END_IF   
-			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM12.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
-				CAM12.CMD.Triger:= TRUE;
-				SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
-				SC_P2_StoperZvarania.Switch1:= TRUE;
-			END_IF	
-		
-			IF CAM12.STAV.Results_READY AND CAM12.STAV.Command_AKCEPTOVANY THEN
-				PocetTrigrovKamery:= 0;
-				CAM12.STAV.Results_READY:= FALSE;
-				CAM11.STAV.Results_READY:= FALSE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 50;
-			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
-				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
-				CAM12.STAV.Results_READY:= FALSE;
-				CAM12.CMD.Triger:= FALSE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 48;
-			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
-				P2_Alarmy[297]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST5:= TRUE;
-			END_IF	
-		
-            
-            
-            
-            
-            
-            
-		48:
-			SC_P2_StoperZvarania.StepName:='48 - Inicializacia - cakam na opatovny triger kamery CAM12';
-			SC_P2_StoperZvarania.IdleTime.PT:= T#1s;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;   
-			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
-            
-			IF SC_P2_StoperZvarania.IdleTime.Q THEN
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 45;
-			END_IF
-            
-            
-		50:
-			SC_P2_StoperZvarania.StepName:='50 - Inicializacia - kamerova kontrola PowerCP CAM11';//CAM 11//
-			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
-            
-		
-			IF NOT CAM12.STAV.BUSY THEN
-				CAM12.CMD.Triger:= FALSE;
-				IF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
-					CAM11.CMD.Triger:= TRUE;
-					SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
-					SC_P2_StoperZvarania.Switch1:= TRUE;
-				END_IF
-			END_IF
-		
-			IF CAM11.STAV.Results_READY AND CAM11.STAV.Command_AKCEPTOVANY THEN
-				PocetTrigrovKamery:= 0;
-				CAM11.STAV.Results_READY:= FALSE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 55;
-			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
-				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
-				CAM11.CMD.Triger:= FALSE;
-				CAM11.STAV.Results_READY:= FALSE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 53;
-			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
-				P2_Alarmy[296]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST5:= TRUE;       
-			END_IF	
-			
-            
-                
-            
-            
-            
-		53:
-			SC_P2_StoperZvarania.StepName:='53 - Inicializacia - cakam na opatovny triger kamery CAM11';
-			SC_P2_StoperZvarania.IdleTime.PT:= T#1s;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;   
-			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
-            
-			IF SC_P2_StoperZvarania.IdleTime.Q THEN
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 50;
-			END_IF
-       
-            
-		55:
-			SC_P2_StoperZvarania.StepName:='50 - Inicializacia - kontrola vysledku kamery podla typu modelu';
-			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
-            
-			IF NOT CAM11.STAV.BUSY THEN
-				CAM11.CMD.Triger:= FALSE;
-				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					IF CAM12.RESULT.Paletka.Pritomn_LavyMVcase AND
-						CAM12.RESULT.Paletka.Pritomn_PravyMVcase AND
-						CAM12.RESULT.Paletka.Pritomn_TopCover_4F AND
-						NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
-						NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
-						NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_4F AND
-						CAM11.RESULT.Paletka.Pritomn_PowerCP_4F THEN
-						CAM11.PAR.ResultFotky:= 'PASS';
-						CAM12.PAR.ResultFotky:= 'PASS';
-						SC_P2_StoperZvarania.ResetStep:= TRUE;
-						SC_P2_StoperZvarania.Step:= 58; 
-					ELSE
-						CAM11.PAR.ResultFotky:= 'FAIL';
-						CAM12.PAR.ResultFotky:= 'FAIL';
-						SC_P2_StoperZvarania.ResetStep:= TRUE;
-						SC_P2_StoperZvarania.Step:= 58;
-					END_IF	
-				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					IF CAM12.RESULT.Paletka.Pritomn_LavyMVcase AND
-						CAM12.RESULT.Paletka.Pritomn_PravyMVcase AND
-						CAM12.RESULT.Paletka.Pritomn_TopCover_5H5F AND
-						NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
-						NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
-						NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_5F AND
-						CAM11.RESULT.Paletka.Pritomn_PowerCP_5F THEN
-						CAM11.PAR.ResultFotky:= 'PASS';
-						CAM12.PAR.ResultFotky:= 'PASS';
-						SC_P2_StoperZvarania.ResetStep:= TRUE;
-						SC_P2_StoperZvarania.Step:= 58;
-					ELSE
-						CAM11.PAR.ResultFotky:= 'FAIL';
-						CAM12.PAR.ResultFotky:= 'FAIL';
-						SC_P2_StoperZvarania.ResetStep:= TRUE;
-						SC_P2_StoperZvarania.Step:= 58;
-					END_IF	
-				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					IF CAM12.RESULT.Paletka.Pritomn_LavyMVcase AND
-						CAM12.RESULT.Paletka.Pritomn_PravyMVcase AND
-						CAM12.RESULT.Paletka.Pritomn_TopCover_5H5F AND
-						NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
-						NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
-						NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_5H AND
-						CAM11.RESULT.Paletka.Pritomn_PowerCP_5H THEN
-						CAM11.PAR.ResultFotky:= 'PASS';
-						CAM12.PAR.ResultFotky:= 'PASS';
-						SC_P2_StoperZvarania.ResetStep:= TRUE;
-						SC_P2_StoperZvarania.Step:= 58; 
-					ELSE
-						CAM11.PAR.ResultFotky:= 'FAIL';
-						CAM12.PAR.ResultFotky:= 'FAIL';
-						SC_P2_StoperZvarania.ResetStep:= TRUE;
-						SC_P2_StoperZvarania.Step:= 58;
-					END_IF	
-				END_IF
-			END_IF    
-            
-            
-		58:
-			SC_P2_StoperZvarania.StepName:='58 - Inicializacia - vymazanie adresarov kamier';
-			SC_P2_StoperZvarania.IdleTime.PT:= T#4s;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;	
-			
-			IF Linka.KOM_FTP_OFF THEN
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 60;
-			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
-				FTP_CAM11.CMD.VymazFotku:= TRUE;
-				FTP_CAM12.CMD.VymazFotku:= TRUE;
-				SC_P2_StoperZvarania.Switch1:= TRUE;
-			END_IF	
-			
-			IF FTP_CAM11.STATUS.KomunikaciaUkoncena AND FTP_CAM12.STATUS.KomunikaciaUkoncena THEN
-				FTP_CAM11.CMD.VymazFotku:= FALSE;
-				FTP_CAM12.CMD.VymazFotku:= FALSE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 60;
-			ELSIF FTP_CAM11.STATUS.KomunikaciaError THEN
-				P2_Alarmy[234]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST5:= TRUE;
-			ELSIF FTP_CAM12.STATUS.KomunikaciaError THEN
-				P2_Alarmy[235]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST5:= TRUE;
-			END_IF	
-            
-            
-		60:
-			SC_P2_StoperZvarania.StepName:='60 - Inicializacia - rozhodnutie podla kamerovej kontroly paletky';
-			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
-            
-            
-			IF CAM11.PAR.ResultFotky = 'PASS' AND CAM12.PAR.ResultFotky = 'PASS' THEN
-				P2_StoperZvarania.STAV.PoINIT:= TRUE;
-				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 208;
-				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 208;
-				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 407;
-				END_IF    
-			ELSIF (CAM11.PAR.ResultFotky = 'FAIL' OR CAM12.PAR.ResultFotky = 'FAIL') THEN
-				P2_StoperZvarania.STAV.PoINIT:= TRUE;
-				Paletka[i].PAR.StavPowerCP:= 'FAIL';
-				Paletka[i].STAV.StavPaletky:= 'NG';
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 545;
-			END_IF
-            
-                
 		
 			//********************************************************Automatický režim****************************************************************************//
 		
@@ -561,7 +331,17 @@ PROGRAM _CYCLIC
 			IF P2_StoperZvarania.RFID_hlava.PritomnostPaletky THEN
 				P2_StoperSrobovania.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			END_IF
-                
+            
+			IF NOT SC_P2_StoperZvarania.Switch1 AND P2_StoperZvarania.RFID_hlava.PritomnostPaletky THEN
+				P2_Zvaranie_Taktime.IN.START_MeraniaCasu:= TRUE;
+				P2_Zvaranie_Taktime.IN.ZAPIS_MeraniaCasu:= TRUE;
+				P2_Zvaranie_Taktime.IN.ZAPIS_StratovyCas:= TRUE;
+				Buffer_6.Hodnota:= P2_Zvaranie_Taktime.OUT.StratoveSekundy;
+				Buffer_6.ZapisHodnotu:= TRUE;
+				SC_P2_StoperZvarania.Switch1:= TRUE;
+			END_IF	
+			
+			
 			           
 			IF P2_StoperZvarania.KoniecCyklu THEN
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -588,6 +368,7 @@ PROGRAM _CYCLIC
 					
 			IF P2_StoperZvarania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky;
+				P2_StoperZvarania.PAR.CisloPaletky:= P2_StoperZvarania.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperZvarania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 102;
@@ -615,7 +396,12 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 560;
 			ELSIF Paletka[i].STAV.StavPaletky = 'TEST' AND Paletka[i].STAV.CisloTestovacejStanice = 'ST_6' THEN
@@ -649,19 +435,23 @@ PROGRAM _CYCLIC
 			IF Linka.KOM_Panatrace_OFF THEN
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 120;
-			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND TRCB_P2_Zvaranie_ST6.STATUS.KOM_READY THEN
 				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				Centrovacku_VYSUN:= TRUE;
+				(*P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF 
             
 			IF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 106;
 			ELSIF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaError THEN	
 				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 115;
+				SC_P2_StoperZvarania.Step:= 107;
 			END_IF	
 			
 		106:
@@ -672,26 +462,49 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 106;
-				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
+					SC_P2_StoperZvarania.Step:= 107;
+				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 106;	
+					SC_P2_StoperZvarania.Step:= 108;	
 				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 106;
+					SC_P2_StoperZvarania.Step:= 120;
 				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 106;
-				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
+					SC_P2_StoperZvarania.Step:= 107;
+				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 106;
-				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
+					SC_P2_StoperZvarania.Step:= 107;
+				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 106;
+					SC_P2_StoperZvarania.Step:= 107;
+				ELSE
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 107;
 				END_IF   
 			END_IF	
 			
-			
+		107:
+			SC_P2_StoperZvarania.StepName:='107 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
+            
+            
+            
+			P2_Vizu.ZobrazHL9_ST6:= TRUE;
+            
+			IF TRCB_P2_Zvaranie_OpatovnyDopyt THEN
+				TRCB_P2_Zvaranie_OpatovnyDopyt:= FALSE; 
+				P2_Vizu.ZobrazHL9_ST6:= FALSE;
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 105;
+			ELSIF TRCB_P2_Zvaranie_PaletkaNG THEN
+				TRCB_P2_Zvaranie_PaletkaNG:= FALSE;
+				P2_Vizu.ZobrazHL9_ST6:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 116;
+			END_IF   		
 			
 			
 			
@@ -701,20 +514,22 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 			
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
+			IF NOT SC_P2_StoperZvarania.Switch1 AND TRCB_P2_Zvaranie_ST6.STATUS.KOM_READY THEN
 				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPaletky_TYP1:= TRUE;
-				Centrovacku_VYSUN:= TRUE;
+				(*P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF
 			
 			IF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 110;
 			ELSIF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaError THEN	
 				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 115;
+				SC_P2_StoperZvarania.Step:= 107;
 			END_IF	
 					
 		
@@ -799,6 +614,7 @@ PROGRAM _CYCLIC
 					SC_P2_StoperZvarania.Step:= 130;
 				ELSE   
 					CAM12.STAV.Results_READY:= FALSE;
+					CAM12.STAV.OldRunCounter:= CAM12.STAV.RunCounter;
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 122;
 				END_IF
@@ -811,25 +627,25 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
             
-			IF Linka.P2_Kamery_OFF THEN
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 130;
-			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM12.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
+			IF NOT SC_P2_StoperZvarania.Switch1 AND CAM12.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
 				CAM12.CMD.Triger:= TRUE;
 				SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF	
 		
-			IF CAM12.STAV.Results_READY AND CAM12.STAV.Command_AKCEPTOVANY THEN
+			IF CAM12.STAV.Results_READY AND CAM12.STAV.Command_AKCEPTOVANY AND CAM12.STAV.OldRunCounter <> CAM12.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM12.STAV.Results_READY:= FALSE;
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM12.STAV.OldRunCounter:= CAM12.STAV.RunCounter;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 125;
 			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM12.STAV.Results_READY:= FALSE;
 				CAM12.CMD.Triger:= FALSE;
+				CAM12.STAV.OldRunCounter:= CAM12.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 123;
 			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
@@ -867,15 +683,18 @@ PROGRAM _CYCLIC
 				END_IF
 			END_IF
 		
-			IF CAM11.STAV.Results_READY AND CAM11.STAV.Command_AKCEPTOVANY THEN
+			IF CAM11.STAV.Results_READY AND CAM11.STAV.Command_AKCEPTOVANY AND CAM11.STAV.OldRunCounter <> CAM11.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
+				CAM11.CMD.Triger:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 130;
 			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM11.CMD.Triger:= FALSE;
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 126;
 			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
@@ -907,7 +726,7 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			
-            
+           
 			IF Linka.PAR.ZvolenyModel = '4F'  THEN
 				CAM11.STAV.Results_READY:= FALSE;
 				IF TestovaciKus THEN
@@ -959,8 +778,13 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
-				
-			IF Linka.PAR.ZvolenyModel = '4F' THEN
+			
+			IF Linka.P2_Kamery_OFF THEN
+				CAM11.PAR.ResultFotky:= 'PASS';
+				CAM12.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 203; 
+			ELSIF Linka.PAR.ZvolenyModel = '4F' THEN
 				IF CAM12.RESULT.Paletka.Pritomn_LavyMVcase AND
 					CAM12.RESULT.Paletka.Pritomn_PravyMVcase AND
 					CAM12.RESULT.Paletka.Pritomn_TopCover_4F AND
@@ -981,7 +805,7 @@ PROGRAM _CYCLIC
 			ELSIF Linka.PAR.ZvolenyModel = '5F' THEN	
 				IF CAM12.RESULT.Paletka.Pritomn_LavyMVcase AND
 					CAM12.RESULT.Paletka.Pritomn_PravyMVcase AND
-					CAM12.RESULT.Paletka.Pritomn_TopCover_5H5F AND
+					CAM12.RESULT.Paletka.Pritomn_TopCover_5F AND
 					NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
 					NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
 					NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_5F AND
@@ -1009,24 +833,36 @@ PROGRAM _CYCLIC
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 205;
 			ELSIF (CAM11.PAR.ResultFotky = 'FAIL' OR CAM12.PAR.ResultFotky = 'FAIL') THEN    
-				P2_Vizu.ZobrazHL1_ST6:= TRUE;
-				IF P2_Zvaranie_KAM_Result_OK THEN
-					P2_Zvaranie_KAM_Result_OK:= FALSE;
-					P2_Vizu.ZobrazHL1_ST6:= FALSE;
-					CAM11.PAR.ResultFotky:= 'PASS';
-					CAM12.PAR.ResultFotky:= 'PASS';
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 205;
-				ELSIF P2_Zvaranie_KAM_Result_NG THEN
-					P2_Zvaranie_KAM_Result_NG:= FALSE;
-					P2_Vizu.ZobrazHL1_ST6:= FALSE;
+				IF P2_StoperZvarania.STAV.VstupnaKamerovaKontrola THEN
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 540;    
-				END_IF    
+					SC_P2_StoperZvarania.Step:= 540;
+				ELSE	
+					IF Linka.PAR.ZvolenyModel = '4F' THEN
+						P2_Vizu.ZobrazHL1_ST6:= TRUE;
+					ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+						P2_Vizu.ZobrazHL2_ST6:= TRUE;
+					END_IF	
+					IF P2_Zvaranie_KAM_Result_OK THEN
+						P2_Zvaranie_KAM_Result_OK:= FALSE;
+						P2_Vizu.ZobrazHL1_ST6:= FALSE;
+						P2_Vizu.ZobrazHL2_ST6:= FALSE;
+						CAM11.PAR.ResultFotky:= 'PASS';
+						CAM12.PAR.ResultFotky:= 'PASS';
+						SC_P2_StoperZvarania.ResetStep:= TRUE;
+						SC_P2_StoperZvarania.Step:= 205;
+					ELSIF P2_Zvaranie_KAM_Result_NG THEN
+						P2_Zvaranie_KAM_Result_NG:= FALSE;
+						P2_Vizu.ZobrazHL1_ST6:= FALSE;
+						P2_Vizu.ZobrazHL2_ST6:= FALSE;
+						Paletka[i].PAR.StavPowerCP:= 'FAIL';
+						Paletka[i].STAV.StavPaletky:= 'NG';
+						SC_P2_StoperZvarania.ResetStep:= TRUE;
+						SC_P2_StoperZvarania.Step:= 540;    
+					END_IF    
+				END_IF
 			END_IF
-            
              
 			
 		205:
@@ -1085,6 +921,7 @@ PROGRAM _CYCLIC
 			
 			IF NOT P2_Zvaranie.COM_OUT.Stav_ZvaranieUkoncene THEN
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 210;
 			END_IF	
@@ -1102,15 +939,17 @@ PROGRAM _CYCLIC
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF	
 		
-			IF CAM11.STAV.Results_READY AND CAM11.STAV.Command_AKCEPTOVANY THEN
+			IF CAM11.STAV.Results_READY AND CAM11.STAV.Command_AKCEPTOVANY AND CAM11.STAV.OldRunCounter <> CAM11.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 213;
 			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM11.CMD.Triger:= FALSE;
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 212;
 			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
@@ -1151,7 +990,7 @@ PROGRAM _CYCLIC
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 215;
 				ELSE
-					CAM11.PAR.ResultFotky:= 'FAIL';
+					CAM11.PAR.ResultFotky:= 'PASS';//******************************************
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 215;
 				END_IF
@@ -1230,6 +1069,7 @@ PROGRAM _CYCLIC
 					END_IF    
 				ELSIF CAM11.PAR.ResultFotky = 'FAIL' THEN
 					IF TestovaciKus THEN
+						Paletka[i].PAR.StavPowerCP:= 'FAIL';
 						Paletka[i].STAV.StavPaletky:= 'NG';
 						SC_P2_StoperZvarania.ResetStep:= TRUE;
 						SC_P2_StoperZvarania.Step:= 545;
@@ -1302,6 +1142,7 @@ PROGRAM _CYCLIC
 			
 			IF NOT P2_Cistenie.COM_OUT.Stav_CistenieUkoncene THEN
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 248;
 			END_IF	
@@ -1313,19 +1154,15 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 		
-			IF Linka.P2_Kamery_OFF THEN
-				P2_Robot.COM_OUT.ZmenaGripra_4F5F:= TRUE;
-				P2_Robot.STAV.Zvaranie_PrebiehaManipulacia:= FALSE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 540; 
-			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie  THEN
+			IF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie  THEN
 				CAM11.CMD.Triger:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF	
 		
-			IF CAM11.STAV.Results_READY AND CAM11.STAV.Command_AKCEPTOVANY THEN
+			IF CAM11.STAV.Results_READY AND CAM11.STAV.Command_AKCEPTOVANY AND CAM11.STAV.OldRunCounter <> CAM11.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				P2_Robot.STAV.Zvaranie_PrebiehaManipulacia:= FALSE;
 				P2_Robot.COM_OUT.ZmenaGripra_4F5F:= TRUE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -1334,6 +1171,7 @@ PROGRAM _CYCLIC
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM11.CMD.Triger:= FALSE;
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 249;
 			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
@@ -1365,10 +1203,17 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 		
-			IF NOT CAM11.STAV.BUSY  THEN
+			IF Linka.P2_Kamery_OFF THEN
+				CAM11.CMD.Triger:= FALSE;
+				CAM11.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 255;
+			ELSIF NOT CAM11.STAV.BUSY  THEN
 				CAM11.CMD.Triger:= FALSE;
 				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					IF CAM11.RESULT.PowerCP.Pritomn_TopCover_4F THEN
+					IF CAM11.RESULT.PowerCP.Pritomn_TopCover_4F AND
+						CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
+						CAM11.RESULT.PowerCP.Pritomn_PravyMVcase THEN
 						CAM11.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperZvarania.ResetStep:= TRUE;
 						SC_P2_StoperZvarania.Step:= 255;
@@ -1378,7 +1223,9 @@ PROGRAM _CYCLIC
 						SC_P2_StoperZvarania.Step:= 255;
 					END_IF	
 				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					IF CAM11.RESULT.PowerCP.Pritomn_TopCover_5F THEN
+					IF CAM11.RESULT.PowerCP.Pritomn_TopCover_5F AND
+						CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
+						CAM11.RESULT.PowerCP.Pritomn_PravyMVcase THEN
 						CAM11.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperZvarania.ResetStep:= TRUE;
 						SC_P2_StoperZvarania.Step:= 255;
@@ -1401,15 +1248,22 @@ PROGRAM _CYCLIC
 				
 			IF CAM11.PAR.ResultFotky = 'PASS' THEN
 				Paletka[i].PAR.StavPowerCP:= 'PASS';
+				Paletka[i].STAV.StavPaletky:= 'OK';
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 540;
 			ELSIF CAM11.PAR.ResultFotky = 'FAIL' THEN 
-				P2_Vizu.ZobrazHL5_ST6:= TRUE;
+				IF Linka.PAR.ZvolenyModel = '4F' THEN
+					P2_Vizu.ZobrazHL5_ST6:= TRUE;
+				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+					P2_Vizu.ZobrazHL6_ST6:= TRUE;
+				END_IF	
 				IF P2_Zvaranie_KAM_Result_OK THEN
 					P2_Zvaranie_KAM_Result_OK:= FALSE;
 					CAM11.PAR.ResultFotky:= 'PASS';
 					Paletka[i].PAR.StavPowerCP:= 'PASS';
+					Paletka[i].STAV.StavPaletky:= 'OK';
 					P2_Vizu.ZobrazHL5_ST6:= FALSE;
+					P2_Vizu.ZobrazHL6_ST6:= FALSE;
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 540;
 				ELSIF P2_Zvaranie_KAM_Result_NG THEN
@@ -1417,6 +1271,7 @@ PROGRAM _CYCLIC
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
 					P2_Vizu.ZobrazHL5_ST6:= FALSE;
+					P2_Vizu.ZobrazHL6_ST6:= FALSE;
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 540;      
 				END_IF
@@ -1430,10 +1285,14 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;	
 				
-            
-			IF CAM12.RESULT.Paletka.Pritomn_LavyMVcase AND
+			IF Linka.P2_Kamery_OFF THEN
+				CAM11.PAR.ResultFotky:= 'PASS';
+				CAM12.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 403; 
+			ELSIF CAM12.RESULT.Paletka.Pritomn_LavyMVcase AND
 				CAM12.RESULT.Paletka.Pritomn_PravyMVcase AND
-				CAM12.RESULT.Paletka.Pritomn_TopCover_5H5F AND
+				CAM12.RESULT.Paletka.Pritomn_TopCover_5H AND
 				NOT CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
 				NOT CAM11.RESULT.PowerCP.Pritomn_PravyMVcase AND
 				NOT CAM11.RESULT.PowerCP.Pritomn_TopCover_5H AND
@@ -1461,24 +1320,30 @@ PROGRAM _CYCLIC
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 405;
 			ELSIF (CAM11.PAR.ResultFotky = 'FAIL' OR CAM12.PAR.ResultFotky = 'FAIL') THEN     
-				P2_Vizu.ZobrazHL3_ST6:= TRUE;
-				IF P2_Zvaranie_KAM_Result_OK THEN
-					P2_Zvaranie_KAM_Result_OK:= FALSE;
-					CAM11.PAR.ResultFotky:= 'PASS';
-					CAM12.PAR.ResultFotky:= 'PASS';
-					P2_Vizu.ZobrazHL3_ST6:= FALSE;
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 405;
-				ELSIF P2_Zvaranie_KAM_Result_NG THEN
-					P2_Zvaranie_KAM_Result_NG:= FALSE;
+				IF P2_StoperZvarania.STAV.VstupnaKamerovaKontrola THEN
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
-					P2_Vizu.ZobrazHL3_ST6:= FALSE;
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 540;  
-				END_IF    
-			END_IF		
-			     
+				ELSE	
+					P2_Vizu.ZobrazHL3_ST6:= TRUE;
+					IF P2_Zvaranie_KAM_Result_OK THEN
+						P2_Zvaranie_KAM_Result_OK:= FALSE;
+						CAM11.PAR.ResultFotky:= 'PASS';
+						CAM12.PAR.ResultFotky:= 'PASS';
+						P2_Vizu.ZobrazHL3_ST6:= FALSE;
+						SC_P2_StoperZvarania.ResetStep:= TRUE;
+						SC_P2_StoperZvarania.Step:= 405;
+					ELSIF P2_Zvaranie_KAM_Result_NG THEN
+						P2_Zvaranie_KAM_Result_NG:= FALSE;
+						Paletka[i].PAR.StavPowerCP:= 'FAIL';
+						Paletka[i].STAV.StavPaletky:= 'NG';
+						P2_Vizu.ZobrazHL3_ST6:= FALSE;
+						SC_P2_StoperZvarania.ResetStep:= TRUE;
+						SC_P2_StoperZvarania.Step:= 540;  
+					END_IF    
+				END_IF		
+			END_IF    
               
 			
 			
@@ -1615,6 +1480,7 @@ PROGRAM _CYCLIC
 			
 			IF NOT P2_Zvaranie.COM_OUT.Stav_ZatlacenieUkoncene THEN
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 435;
 			END_IF    
@@ -1626,20 +1492,16 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.IdleTime.PT:= T#5s;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 		
-			IF Linka.P2_Kamery_OFF THEN
-				P2_Robot.COM_OUT.ZmenaGripra_5H:= TRUE;
-				P2_Robot.STAV.Zvaranie_PrebiehaManipulacia:= FALSE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 540; 
-			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
+			IF NOT SC_P2_StoperZvarania.Switch1 AND CAM11.STAV.Command_READY AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Zvaranie THEN
 				CAM11.CMD.Triger:= TRUE;
 				SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF	
 		
-			IF CAM11.STAV.Results_READY AND CAM11.STAV.Command_AKCEPTOVANY THEN
+			IF CAM11.STAV.Results_READY AND CAM11.STAV.Command_AKCEPTOVANY AND CAM11.STAV.OldRunCounter <> CAM11.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				P2_Robot.STAV.Zvaranie_PrebiehaManipulacia:= FALSE;
 				P2_Robot.COM_OUT.ZmenaGripra_5H:= TRUE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -1648,6 +1510,7 @@ PROGRAM _CYCLIC
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM11.CMD.Triger:= FALSE;
 				CAM11.STAV.Results_READY:= FALSE;
+				CAM11.STAV.OldRunCounter:= CAM11.STAV.RunCounter;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 436;
 			ELSIF SC_P2_StoperZvarania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
@@ -1678,9 +1541,17 @@ PROGRAM _CYCLIC
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperZvarania.IdleTime.IN:= TRUE;
 		
-			IF NOT CAM11.STAV.BUSY THEN
+			IF Linka.P2_Kamery_OFF THEN
 				CAM11.CMD.Triger:= FALSE;
-				IF CAM11.RESULT.PowerCP.Pritomn_TopCover_5H THEN
+				CAM11.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 443;
+			ELSIF NOT CAM11.STAV.BUSY THEN
+				CAM11.CMD.Triger:= FALSE;
+				Centrovacku_ZASUN:= TRUE;
+				IF CAM11.RESULT.PowerCP.Pritomn_TopCover_5H AND
+					CAM11.RESULT.PowerCP.Pritomn_LavyMVcase AND
+					CAM11.RESULT.PowerCP.Pritomn_PravyMVcase THEN
 					CAM11.PAR.ResultFotky:= 'PASS';
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 443;
@@ -1701,6 +1572,7 @@ PROGRAM _CYCLIC
 				
 			IF CAM11.PAR.ResultFotky = 'PASS' THEN
 				Paletka[i].PAR.StavPowerCP:= 'PASS';
+				Paletka[i].STAV.StavPaletky:= 'OK';
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 540;
 			ELSIF CAM11.PAR.ResultFotky = 'FAIL' THEN  
@@ -1708,6 +1580,7 @@ PROGRAM _CYCLIC
 				IF P2_Zvaranie_KAM_Result_OK THEN
 					P2_Zvaranie_KAM_Result_OK:= FALSE;
 					Paletka[i].PAR.StavPowerCP:= 'PASS';
+					Paletka[i].STAV.StavPaletky:= 'OK';
 					CAM11.PAR.ResultFotky:= 'PASS';
 					P2_Vizu.ZobrazHL7_ST6:= FALSE;
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
@@ -1724,7 +1597,7 @@ PROGRAM _CYCLIC
 			
 				
 			
-		//*****************************Odoslanie fotiek na server********************************//			
+			//*****************************Odoslanie fotiek na server********************************//			
 		540:
 			SC_P2_StoperZvarania.StepName:='540 - Automaticky Rezim - odoslanie fotky CAM11 a vymazanie fotky CAM12 na server Panasonic';
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
@@ -1743,6 +1616,7 @@ PROGRAM _CYCLIC
                        
 				FTP_CAM11.CMD.OdosliFotku:= TRUE;
 				FTP_CAM12.CMD.VymazFotku:= TRUE;
+				P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P2_StoperZvarania.Switch1:= TRUE;
 			END_IF
            
@@ -1751,6 +1625,7 @@ PROGRAM _CYCLIC
 			IF FTP_CAM11.STATUS.KomunikaciaUkoncena AND FTP_CAM12.STATUS.KomunikaciaUkoncena THEN
 				FTP_CAM11.CMD.OdosliFotku:= FALSE;
 				FTP_CAM12.CMD.VymazFotku:= FALSE;
+				P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				Paletka[i].STAV.OdoslanieFotiek_DONE:= TRUE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 545; 
@@ -1765,7 +1640,7 @@ PROGRAM _CYCLIC
 		
        		
 			
-		//************************Odcentrovanie paletky**********************************//	
+			//************************Odcentrovanie paletky**********************************//	
 		545:
 			SC_P2_StoperZvarania.StepName:='545 - Automaticky Rezim - odcentrovanie paletky';
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
@@ -1784,100 +1659,141 @@ PROGRAM _CYCLIC
 		
 			
 			
-		//**************************Odoslanie dát na server************************************//	
-		
+			//**************************Odoslanie dát na server************************************//	
+	
 		550:
-			SC_P2_StoperZvarania.StepName:='550 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+			SC_P2_StoperZvarania.StepName:='550 - Automaticky Rezim - odoslanie stavu paletky na server';
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#10s;	
+			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			
 			IF Linka.KOM_Panatrace_OFF THEN
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 560;
-			ELSIF NOT SC_P2_StoperZvarania.Switch1 THEN
-				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+			ELSIF NOT SC_P2_StoperZvarania.Switch1 AND TRCB_P2_Zvaranie_ST6.STATUS.KOM_READY THEN
+				TRCB_P2_Zvaranie_ST6.CMD.OdosliStavPaletky_TYP2:= TRUE;
+				(*P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P2_StoperZvarania.Switch1:= TRUE;
-			END_IF 
-            
+			END_IF
+			
+			
 			IF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaUkoncena THEN
-				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				TRCB_P2_Zvaranie_ST6.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 552;
 			ELSIF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaError THEN	
-				P2_Alarmy[236]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST5:= TRUE;
+				TRCB_P2_Zvaranie_ST6.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P2_Zvaranie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 557;
 			END_IF
-		
 			
+		
 		552:
 			SC_P2_StoperZvarania.StepName:='552 - Automaticky Rezim - kontrola odpovede servera';
-			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;		
-			
-			IF NOT TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaUkoncena THEN
-				IF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 552;
-				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 552;	
-				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 552;
-				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 552;
-				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 552;
-				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
-					SC_P2_StoperZvarania.ResetStep:= TRUE;
-					SC_P2_StoperZvarania.Step:= 552;
-				END_IF   
-			END_IF
-		
-		555:
-			SC_P2_StoperZvarania.StepName:='555 - Automaticky Rezim - odoslanie stavu paletky na server';
-			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
-			
-			
-			IF NOT SC_P2_StoperZvarania.Switch1 THEN
-				TRCB_P2_Zvaranie_ST6.CMD.OdosliStavPaletky_TYP2:= TRUE;
-				SC_P2_StoperZvarania.Switch1:= TRUE;
-			END_IF
-			
-			
-			IF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaUkoncena THEN
-				TRCB_P2_Zvaranie_ST6.CMD.OdosliStavPaletky_TYP2:= FALSE;
-				SC_P2_StoperZvarania.ResetStep:= TRUE;
-				SC_P2_StoperZvarania.Step:= 556;
-			ELSIF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaError THEN	
-				TRCB_P2_Zvaranie_ST6.CMD.OdosliStavPaletky_TYP2:= FALSE;
-				P2_Alarmy[236]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST5:= TRUE;
-			END_IF
-			
-		
-		556:
-			SC_P2_StoperZvarania.StepName:='556 - Automaticky Rezim - kontrola odpovede servera';
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
 			
 			IF NOT TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P2_Zvaranie_ST6.OUTPUTS.PovolenieCinnostiNaPaletke = 'OK' THEN
 					Paletka[i].STAV.Komunikacia_DONE:= TRUE;
+					P2_StoperZvarania.STAV.VyrobaZacala:= FALSE;
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 560;
 				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.PovolenieCinnostiNaPaletke = 'NG' THEN
 					Paletka[i].STAV.StavPaletky:= 'NG';
+					P2_StoperZvarania.STAV.VyrobaZacala:= FALSE;
 					SC_P2_StoperZvarania.ResetStep:= TRUE;
 					SC_P2_StoperZvarania.Step:= 560;
 				END_IF
+			END_IF	
+			
+				
+			
+		555:
+			SC_P2_StoperZvarania.StepName:='555 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZvarania.AlarmTime.PT:= T#10s;	
+			
+			
+			IF NOT SC_P2_StoperZvarania.Switch1 AND TRCB_P2_Zvaranie_ST6.STATUS.KOM_READY THEN
+				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				SC_P2_StoperZvarania.Switch1:= TRUE;
+			END_IF 
+			            
+			IF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaUkoncena THEN
+				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 556;
+			ELSIF TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaError THEN	
+				TRCB_P2_Zvaranie_ST6.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 557;
 			END_IF
+		
+			
+		556:
+			SC_P2_StoperZvarania.StepName:='556 - Automaticky Rezim - kontrola odpovede servera';
+			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;		
+			
+			IF NOT TRCB_P2_Zvaranie_ST6.STATUS.KomunikaciaUkoncena THEN
+				IF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 557;
+				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 557;	
+				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 550;
+				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 557;
+				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 557;
+				ELSIF TRCB_P2_Zvaranie_ST6.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 557;
+				ELSE
+					SC_P2_StoperZvarania.ResetStep:= TRUE;
+					SC_P2_StoperZvarania.Step:= 557;
+				END_IF   
+			END_IF
+		
+		
+		
+			
+			
+		557:
+			SC_P2_StoperZvarania.StepName:='557 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperZvarania.AlarmTime.PT:= T#5s;
+            
+            
+            
+			P2_Vizu.ZobrazHL9_ST6:= TRUE;
+            
+			IF TRCB_P2_Zvaranie_OpatovnyDopyt THEN
+				TRCB_P2_Zvaranie_OpatovnyDopyt:= FALSE; 
+				P2_Vizu.ZobrazHL9_ST6:= FALSE;
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 555;
+			ELSIF TRCB_P2_Zvaranie_PaletkaNG THEN
+				TRCB_P2_Zvaranie_PaletkaNG:= FALSE;
+				P2_Vizu.ZobrazHL9_ST6:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				P2_StoperZvarania.STAV.VyrobaZacala:= FALSE;
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 560;
+			END_IF   
+			
+			
+			
 			
 		
-		//***************************Vyvezenie paletky**********************************************//	
+			//***************************Vyvezenie paletky**********************************************//	
 		560:
 			SC_P2_StoperZvarania.StepName:='560 - Automaticky Rezim - cakam na vyvezenie na stoper srobovania bunky 3';
 			SC_P2_StoperZvarania.IdleTime.PT:= T#200ms;
@@ -1885,6 +1801,9 @@ PROGRAM _CYCLIC
 		
             					
 			IF P2_StoperZvarania.KoniecCyklu THEN
+				SC_P2_StoperZvarania.ResetStep:= TRUE;
+				SC_P2_StoperZvarania.Step:= 0;
+			ELSIF P2_Pracovisko.STAV.Porucha_ST5 THEN
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 0;
 			ELSIF ((NOT P3_StoperSrobovania.RFID_hlava.PritomnostPaletky AND SC_P3_StoperSrobovania.Step = 100) OR (P3_StoperSrobovania.OUT.ZasunStoper AND SC_P3_StoperSrobovania.Step = 561)) AND NOT P2_StoperZvarania.STAV.PrebiehaVyvezeniePaletky THEN
@@ -1919,6 +1838,7 @@ PROGRAM _CYCLIC
 				Reports.Kamery.P2_CAM11_KontrolaZvaru:= '';
 				Reports.Kamery.P2_CAM11_KontrolaPowerCP:= '';
 				P2_StoperZvarania.OUT.ZasunStoper:= FALSE;
+				P2_StoperZvarania.STAV.VstupnaKamerovaKontrola:= FALSE;
 				SC_P2_StoperZvarania.ResetStep:= TRUE;
 				SC_P2_StoperZvarania.Step:= 100;
 			ELSIF SC_P2_StoperZvarania.AlarmTime.Q THEN

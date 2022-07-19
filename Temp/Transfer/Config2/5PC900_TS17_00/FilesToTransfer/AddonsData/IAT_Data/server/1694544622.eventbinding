@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP4_Dopravniky">
+    <EventBinding id="AreaPageManualP4_Dopravniky.MomentaryPushButton_JoggOsZ_M3.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_Dopravniky_MomentaryPushButton_JoggOsZ_M3" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestB.OUT.Zdvizku_VYSUN">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_Dopravniky">
+    <EventBinding id="AreaPageManualP4_Dopravniky.MomentaryPushButton_JoggOsZ_M4.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_Dopravniky_MomentaryPushButton_JoggOsZ_M4" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestB.OUT.Zdvizku_VYSUN">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_Dopravniky">
+    <EventBinding id="AreaPageManualP4_Dopravniky.MomentaryPushButton_JoggOsZ_M6.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_Dopravniky_MomentaryPushButton_JoggOsZ_M6" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_Dopravniky">
+    <EventBinding id="AreaPageManualP4_Dopravniky.MomentaryPushButton_JoggOsZ_M7.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_Dopravniky_MomentaryPushButton_JoggOsZ_M7" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_Dopravniky">
+    <EventBinding id="AreaPageManualP4_Dopravniky.MomentaryPushButton_JoggOsZ_M5.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_Dopravniky_MomentaryPushButton_JoggOsZ_M5" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

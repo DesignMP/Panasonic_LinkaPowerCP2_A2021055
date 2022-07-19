@@ -15,11 +15,12 @@
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox6" top="95" left="468" width="430" height="475" zIndex="5" text="Ovladanie otvárania čistenia" backColor="rgba(253, 245, 230, 1)" textColor="rgba(0, 0, 0, 1)" shadow="4px 4px 14px rgba(0, 0, 0, 1)">
       <Widgets>
-        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_ZapniIonizator" top="24" left="124" width="180" height="50" zIndex="0" mouseDownText="Vypni Ionizátor" multiLine="true" text="Zapni Ionizátor" textColor="rgba(0, 0, 0, 1)" fontSize="17px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_ZapniIonizator" top="24" left="124" width="180" height="50" zIndex="0" mouseDownText="Zapni Ionizátor" multiLine="true" text="Vypni Ionizátor" textColor="rgba(0, 0, 0, 1)" fontSize="17px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
         <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_ZapniVzduch" top="100" left="124" width="180" height="50" zIndex="1" mouseDownText="Vypni vzduch" multiLine="true" text="Zapni vzduch" textColor="rgba(0, 0, 0, 1)" fontSize="17px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
         <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_ZapniOdsavanie" top="178" left="124" width="180" height="50" zIndex="2" mouseDownText="Vypni odsávanie" multiLine="true" text="Zapni odsávanie" textColor="rgba(0, 0, 0, 1)" fontSize="17px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
-        <Widget xsi:type="widgets.brease.Label" id="Label13" top="266" left="21" width="195" height="45" zIndex="3" multiLine="true" text="Vákum OK" borderWidth="2px" cornerRadius="5px" backColor="rgba(192, 192, 192, 1)" borderColor="rgba(0, 0, 0, 1)" borderStyle="outset" textColor="rgba(0, 0, 0, 1)" fontSize="14px" bold="true" />
-        <Widget xsi:type="widgets.brease.ImageList" id="ImageList17" top="277" left="182" width="25" height="25" zIndex="4" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="Label13" top="360" left="21" width="195" height="45" zIndex="3" multiLine="true" text="Vákum OK" borderWidth="2px" cornerRadius="5px" backColor="rgba(192, 192, 192, 1)" borderColor="rgba(0, 0, 0, 1)" borderStyle="outset" textColor="rgba(0, 0, 0, 1)" fontSize="14px" bold="true" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageList17" top="369" left="182" width="25" height="25" zIndex="4" imageList="['LEDsiva_24x24.png', 'LEDgreen_24x24.png']" imagePrefix="Media/Pictures/" borderWidth="0px" />
+        <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch_ZapniOdsavanie1" top="255" left="124" width="180" height="50" zIndex="5" mouseDownText="Vypni ofuk" multiLine="true" text="Zapni ofuk" textColor="rgba(0, 0, 0, 1)" fontSize="17px" shadow="4px 4px 10px rgba(62, 79, 92, 0.75)" />
       </Widgets>
     </Widget>
   </Widgets>

@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* SKTcp 1.00.8 */
+/* SKTcp 1.00.9 */
 
 #ifndef _SKTCP_
 #define _SKTCP_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _SKTcp_VERSION
-#define _SKTcp_VERSION 1.00.8
+#define _SKTcp_VERSION 1.00.9
 #endif
 
 #include <bur/plctypes.h>
@@ -20,26 +20,26 @@ extern "C"
 #ifdef _SG3
 		#include "standard.h"
 		#include "AsBrStr.h"
-		#include "FileIO.h"
 		#include "IecCheck.h"
 		#include "sys_lib.h"
 		#include "AsTCP.h"
+		#include "FileIO.h"
 #endif
 #ifdef _SG4
 		#include "standard.h"
 		#include "AsBrStr.h"
-		#include "FileIO.h"
 		#include "IecCheck.h"
 		#include "sys_lib.h"
 		#include "AsTCP.h"
+		#include "FileIO.h"
 #endif
 #ifdef _SGC
 		#include "standard.h"
 		#include "AsBrStr.h"
-		#include "FileIO.h"
 		#include "IecCheck.h"
 		#include "sys_lib.h"
 		#include "AsTCP.h"
+		#include "FileIO.h"
 #endif
 
 
@@ -48,12 +48,10 @@ extern "C"
  #define MAX_CHARACTER 1U
  #define MAX_STRING 5000U
  #define MAX_STRING_MINUS_ONE 4999U
- #define MAX_TRACE_LOGGER_ENTIRES 90U
 #else
  _GLOBAL_CONST unsigned short MAX_CHARACTER;
  _GLOBAL_CONST unsigned short MAX_STRING;
  _GLOBAL_CONST unsigned short MAX_STRING_MINUS_ONE;
- _GLOBAL_CONST unsigned char MAX_TRACE_LOGGER_ENTIRES;
 #endif
 
 
@@ -97,6 +95,7 @@ typedef struct SKTcpClientTraceStatus_Type
 
 typedef struct SKTcpClientTraceParPackInter_Typ
 {	unsigned char start;
+	unsigned short length_b_int;
 	unsigned short length_int;
 	plcstring length_str[6];
 	plcbyte xor;
@@ -119,7 +118,7 @@ typedef struct SKTcpClientTraceParamsPack_Typ
 	plcstring dps4[31];
 	plcstring dps5[31];
 	plcstring operator_id[9];
-	plcstring data_report[4001];
+	plcstring data_report[5001];
 	plcstring result[5];
 } SKTcpClientTraceParamsPack_Typ;
 
@@ -135,10 +134,7 @@ typedef struct SKTcpClientTraceParams_Type
 } SKTcpClientTraceParams_Type;
 
 typedef struct SKTcpClientTraceLogger_Typ
-{	plcstring LastDataRecv[5001];
-	plcstring LastDataSend[5001];
-	plcstring SLOGGER[100][5001];
-	plcstring RLOGGER[100][5001];
+{	unsigned char empty;
 } SKTcpClientTraceLogger_Typ;
 
 typedef struct SKTcpClientSplitter
@@ -163,9 +159,33 @@ typedef struct SKTcpClientSplitter
 	plcbit enableOld;
 } SKTcpClientSplitter_typ;
 
+typedef struct SKTcpLoggerInternal_Typ
+{	unsigned char step;
+	plcstring data[5001];
+	struct FileOpen FileOpen;
+	struct FileClose FileClose;
+	struct FileWrite FileWrite;
+} SKTcpLoggerInternal_Typ;
+
+typedef struct SKTcpLogger
+{
+	/* VAR_INPUT (analog) */
+	unsigned long pDevice;
+	unsigned long pFile;
+	unsigned long pSrc;
+	unsigned char mode;
+	/* VAR (analog) */
+	struct SKTcpLoggerInternal_Typ internal;
+	/* VAR_INPUT (digital) */
+	plcbit enable;
+	plcbit trigger;
+	/* VAR_OUTPUT (digital) */
+	plcbit active;
+	plcbit done;
+} SKTcpLogger_typ;
+
 typedef struct SKTcpClientTraceIntern_Type
 {	unsigned short Step;
-	unsigned long Ident;
 	struct TcpOpen TCP_Open;
 	struct TcpClose TCP_Close;
 	struct TcpClient TCP_Client;
@@ -175,6 +195,7 @@ typedef struct SKTcpClientTraceIntern_Type
 	struct tcpLINGER_typ linger_opt;
 	struct TON TimerRecv;
 	struct TON TimerConn;
+	struct TON TimerIddle;
 	plcbit cmdClose;
 	plcbit cmdSend;
 	plcbit CloseOld;
@@ -182,6 +203,7 @@ typedef struct SKTcpClientTraceIntern_Type
 	plcbit EnableOld;
 	struct SKTcpClientSplitter Splitter;
 	struct TON oneskorenie;
+	struct SKTcpLogger SKTcpLogger;
 } SKTcpClientTraceIntern_Type;
 
 typedef struct SKTcpClientTraceDataSend_Type
@@ -193,6 +215,7 @@ typedef struct SKTcpClientTraceDataSend_Type
 typedef struct SKTcpClientTraceCmd_Type
 {	plcbit Send;
 	plcbit Close;
+	plcbit LoggerOn;
 } SKTcpClientTraceCmd_Type;
 
 typedef struct SKTcpClientTestParPackInter_Type
@@ -247,10 +270,7 @@ typedef struct SKTcpClientTesterParams_Type
 } SKTcpClientTesterParams_Type;
 
 typedef struct SKTcpClientTesterLogger_Typ
-{	plcstring LastDataRecv[2001];
-	plcstring LastDataSend[2001];
-	plcstring SLOGGER[100][2001];
-	plcstring RLOGGER[100][2001];
+{	unsigned char empty;
 } SKTcpClientTesterLogger_Typ;
 
 typedef struct SKTcpClientTesterIntern_Type
@@ -283,55 +303,6 @@ typedef struct SKTcpClientTesterCmd_Type
 	plcbit Close;
 } SKTcpClientTesterCmd_Type;
 
-typedef struct SKTcpClientFtpParamSrc_Typ
-{	unsigned long pDevice;
-	unsigned long pParam;
-	unsigned long pPath;
-} SKTcpClientFtpParamSrc_Typ;
-
-typedef struct SKTcpClientFtpParamDest_Typ
-{	unsigned long pDevice;
-	unsigned long pParam;
-	unsigned long pPath;
-	unsigned long pNewName;
-} SKTcpClientFtpParamDest_Typ;
-
-typedef struct SKTcpClientFtpParam_Typ
-{	struct SKTcpClientFtpParamSrc_Typ src;
-	struct SKTcpClientFtpParamDest_Typ dest;
-} SKTcpClientFtpParam_Typ;
-
-typedef struct SKTcpClientFtpInternalFb_Typ
-{	struct DevLink Devlink_0;
-	struct DevUnlink DevUnlink_0;
-	struct FileInfo FileInfo_0;
-	struct DirInfo DirInfo_0;
-	struct FileRename FileRename_0;
-	struct DirRead DirRead_0;
-	struct FileCopy FileCopy_0;
-	struct FileDelete FileDelete_0;
-} SKTcpClientFtpInternalFb_Typ;
-
-typedef struct SKTcpClientFtpInternal_Typ
-{	struct SKTcpClientFtpInternalFb_Typ fb;
-	struct SKTcpClientSC_Type sc;
-	unsigned long src_handle;
-	unsigned long dest_handle;
-} SKTcpClientFtpInternal_Typ;
-
-typedef struct SKTcpClientFtpStatusSrc_Typ
-{	struct fiDIR_READ_DATA pData;
-} SKTcpClientFtpStatusSrc_Typ;
-
-typedef struct SKTcpClientFtpStatusDest_Typ
-{	unsigned char empty;
-} SKTcpClientFtpStatusDest_Typ;
-
-typedef struct SKTcpClientFtpStatus_Typ
-{	struct SKTcpClientFtpStatusSrc_Typ src;
-	struct SKTcpClientFtpStatusDest_Typ dest;
-} SKTcpClientFtpStatus_Typ;
-
 typedef struct SKTcpClientTester
 {
 	/* VAR_INPUT (analog) */
@@ -354,6 +325,8 @@ typedef struct SKTcpClientTrace
 	struct SKTcpClientTraceCmd_Type Cmd;
 	struct SKTcpClientTraceParams_Type Params;
 	struct SKTcpClientTraceDataSend_Type DataSend;
+	unsigned long pDevice;
+	unsigned long pFile;
 	/* VAR_OUTPUT (analog) */
 	struct SKTcpClientTraceStatus_Type Status;
 	unsigned short FBStatus;
@@ -374,22 +347,6 @@ typedef struct SKTcpClientEdge
 	plcbit Last_State;
 } SKTcpClientEdge_typ;
 
-typedef struct SKTcpClientFTP
-{
-	/* VAR_INPUT (analog) */
-	struct SKTcpClientFtpParam_Typ param;
-	/* VAR_OUTPUT (analog) */
-	struct SKTcpClientFtpStatus_Typ status;
-	unsigned short Errorcode;
-	/* VAR (analog) */
-	struct SKTcpClientFtpInternal_Typ internal;
-	/* VAR_INPUT (digital) */
-	plcbit enable;
-	plcbit send;
-	/* VAR_OUTPUT (digital) */
-	plcbit active;
-} SKTcpClientFTP_typ;
-
 
 
 /* Prototyping of functions and function blocks */
@@ -397,7 +354,7 @@ _BUR_PUBLIC void SKTcpClientSplitter(struct SKTcpClientSplitter* inst);
 _BUR_PUBLIC void SKTcpClientTester(struct SKTcpClientTester* inst);
 _BUR_PUBLIC void SKTcpClientTrace(struct SKTcpClientTrace* inst);
 _BUR_PUBLIC void SKTcpClientEdge(struct SKTcpClientEdge* inst);
-_BUR_PUBLIC void SKTcpClientFTP(struct SKTcpClientFTP* inst);
+_BUR_PUBLIC void SKTcpLogger(struct SKTcpLogger* inst);
 _BUR_PUBLIC unsigned short SKTcpClientNod(unsigned long n);
 _BUR_PUBLIC unsigned char SKTcpClientXor(unsigned char in[5000], unsigned short len);
 _BUR_PUBLIC unsigned char SKTcpClientNewCsvEntry(plcstring* IDstep, plcstring* Description, plcstring* TypeValue, plcstring* MinTol, plcstring* MaxTol, plcstring* Nom, plcstring* MinEle, plcstring* MaxEle, plcstring* Value, plcstring* ValEle, plcstring* Result, unsigned long pData);

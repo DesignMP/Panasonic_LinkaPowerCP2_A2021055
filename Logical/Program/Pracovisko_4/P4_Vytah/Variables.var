@@ -7,4 +7,6 @@ VAR
 	Stav_VlozenaPaletka : BOOL := 0;
 	CasEnable_1 : TON;
 	CasResetServo_1 : TON;
+	ServoZdvihu_AktualPosition_UDINT : UDINT := 0;
+	ServoZdvihu_ZadanaPozicia_UDINT : UDINT := 0;
 END_VAR

@@ -12,4 +12,6 @@ VAR
 	CisloFotky : USINT := 0;
 	CasSrobovania : REAL := 0.0;
 	P2_Maticovacka_5H_Vysunutie : REAL := 0.0;
+	Triger_0 : BOOL := 0;
+	Round_0 : Round;
 END_VAR

@@ -19,4 +19,6 @@ VAR
 	P1_Skrutk_5H_StrednaM5_Vysunutie : REAL := 0.0;
 	P1_Skrutk_5H_LavaM5_Vysunutie : REAL := 0.0;
 	P1_Skrutk_5H_PravaM5_Vysunutie : REAL := 0.0;
+	Triger_0 : BOOL := 0;
+	Round_0 : Round;
 END_VAR

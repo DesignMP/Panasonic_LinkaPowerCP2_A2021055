@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageStavyStanicP2_page2_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:SC_P2_Cistenie.StepName" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageStavyStanicP2_page2" widgetRefId="TextOutput12" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:SC_P2_Zvaranie.StepName" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageStavyStanicP2_page2" widgetRefId="TextOutput5" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

@@ -41,7 +41,7 @@ FUNCTION_BLOCK MaticaSet
 	
 	
 	//*******************************Zapnutie zásobníka keï je prázdna lišta zásobníka*****************//
-	IF CMD.ENABLE AND NOT IN.ZaplnenieListyZasobnika AND NOT OUT.VibropohonZasobnika_RUN AND IN.PodavacMatice_ZASUNUTY THEN
+	IF CMD.ENABLE AND NOT STAV.ERROR AND NOT IN.ZaplnenieListyZasobnika AND NOT OUT.VibropohonZasobnika_RUN AND IN.PodavacMatice_ZASUNUTY THEN
 		OUT.VibropohonZasobnika_RUN:= TRUE;
 	END_IF	
 	

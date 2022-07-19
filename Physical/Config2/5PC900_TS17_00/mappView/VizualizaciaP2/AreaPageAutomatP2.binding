@@ -65,13 +65,45 @@
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.IndexStavu_Dopravnik" attribute="value" />
 			<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="ImageList16" attribute="selectedIndex" />
 		</Binding>
-	<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:Linka.PAR.ZvolenyModel" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="TextOutput_NazovModelu1" attribute="value" />
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:Linka.PAR.ZvolenyModel" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="TextOutput_NazovModelu1" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.IndexStavu_AkumulacnyStoper" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="ImageList17" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_ZakladanieTesnenia_Taktime.OUT.NameranyCas_v_Sekundach" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="NumericOutput_ST1_TaktimeMIN" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Maticovacka_Taktime.OUT.NameranyCas_v_Sekundach" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="NumericOutput_ST2" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Skrutkovanie_Taktime.OUT.NameranyCas_v_Sekundach" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="NumericOutput_ST4" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie_Taktime.OUT.NameranyCas_v_Sekundach" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="NumericOutput_ST6" attribute="value" />
+		</Binding>
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Maticovacka_Taktime.OUT.StratoveSekundy" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="NumericOutput_ST3" attribute="value" />
 </Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.IndexStavu_AkumulacnyStoper" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="ImageList17" attribute="selectedIndex" />
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_ZakladanieTesnenia_Taktime.OUT.StratoveSekundy" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="NumericOutput_ST1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Skrutkovanie_Taktime.OUT.StratoveSekundy" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="NumericOutput_ST5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Zvaranie_Taktime.OUT.StratoveSekundy" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageAutomatP2" widgetRefId="NumericOutput_ST7" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<vdef:Visualization id="Vizu_P1"  xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+<vdef:Visualization id="Vizu_P1" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
   <StartPage pageRefId="PageBootP1" />
   <Pages>
     <Page refId="PageBootP1" />
@@ -40,6 +40,20 @@
     <BindingsSet refId="AreaPageManualP1_Skrutkovanie_page2_binding" />
     <BindingsSet refId="AreaPageManualP1_Skrutkovanie_page3_binding" />
     <BindingsSet refId="AreaPageManualP1_Skrutkovanie_page4_binding" />
+    <BindingsSet refId="AreaHlasenie1_ST1_binding" />
+    <BindingsSet refId="AreaHlasenie2_ST1_binding" />
+    <BindingsSet refId="AreaHlasenie3_ST1_binding" />
+    <BindingsSet refId="AreaHlasenie1_ST2_binding" />
+    <BindingsSet refId="AreaHlasenie2_ST2_binding" />
+    <BindingsSet refId="AreaHlasenie3_ST2_binding" />
+    <BindingsSet refId="AreaHlasenie4_ST2_binding" />
+    <BindingsSet refId="AreaHlasenie5_ST2_binding" />
+    <BindingsSet refId="AreaHlasenie6_ST2_binding" />
+    <BindingsSet refId="AreaHlasenie7_ST2_binding" />
+    <BindingsSet refId="AreaHlasenie8_ST2_binding" />
+    <BindingsSet refId="AreaPageUsers_binding" />
+    <BindingsSet refId="AreaPageStavyStanicP1_binding" />
+    <BindingsSet refId="AreaPageTolerancieSkrutkovaniaP1_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="PataP1_eventbinding" />
@@ -55,6 +69,12 @@
     <EventBindingsSet refId="AreaPageManualP1_Skrutkovanie_page2_eventbinding" />
     <EventBindingsSet refId="AreaPageManualP1_Skrutkovanie_page3_eventbinding" />
     <EventBindingsSet refId="AreaPageManualP1_Skrutkovanie_page4_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie1_ST1_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie2_ST1_eventbinding" />
+    <EventBindingsSet refId="AreaHlasenie3_ST1_eventbinding" />
+    <EventBindingsSet refId="AreaPageUsers_eventbinding" />
+    <EventBindingsSet refId="AreaPageParametreP1_page2_eventbinding" />
+    <EventBindingsSet refId="AreaPageTolerancieSkrutkovaniaP1_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="Hlasenie1_ST1" />
@@ -128,8 +148,8 @@
     <Dialog refId="Hlasenie7_ST10" />
     <Dialog refId="Hlasenie8_ST10" />
     <Dialog refId="Hlasenie9_ST10" />
-    <Dialog refId="LoginDialogP34" />
-    <Dialog refId="TimeDialogP34" />
+    <Dialog refId="Hlasenie10_ST2" />
+    <Dialog refId="Hlasenie15_ST1" />
   </Dialogs>
   <Contents>
     <Content refId="AreaLoginP1" />
@@ -204,6 +224,8 @@
     <Content refId="AreaHlasenie8_ST3" />
     <Content refId="AreaHlasenie8_ST6" />
     <Content refId="AreaHlasenie9_ST3" />
+    <Content refId="AreaHlasenie10_ST2" />
+    <Content refId="AreaHlasenie15_ST1" />
   </Contents>
   <VariablesSets />
   <SnippetsSets>

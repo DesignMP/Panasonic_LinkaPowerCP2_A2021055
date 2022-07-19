@@ -15,8 +15,9 @@ ACTION OvlSkrutkovacichSetov:
 			P3_Srobovanie.CMD.RR_SkrutSetK40_PodajSkrutku:= FALSE;
 			P3_Srobovanie.CMD.RR_SkrutSetK40_Zasobnik_RUN:= FALSE;
 			P3_Srobovanie.CMD.RR_SkrutSetK40_VysunBrzdu:= FALSE;
-			
+			P3_Srobovanie.SkrutSet_K40.Cmd.ManualPresunBrzdu:= FALSE;
 			P3_Srobovanie.STAV.SkrutkaK40_READY:= FALSE;
+			
 			IF SC_P3_Srobovanie.Step <> 0 THEN
 				SC_SkrutkovaciSet_K40.ResetStep:= TRUE;
 				SC_SkrutkovaciSet_K40.Step:= 1;

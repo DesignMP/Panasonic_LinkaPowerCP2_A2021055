@@ -13,4 +13,13 @@ VAR
 	CasResetovaniaServaSrobovaniaOsX : TON;
 	CasResetovaniaServaSrobovaniaOsY : TON;
 	a : INT;
+	CasKontroly_KAM3 : TON;
+	CasKontroly_KAM5 : TON;
+	CasKontroly_ModulyVytahu : TON;
+	CasKontroly_ModulyBunky : TON;
+	CasPoruchyServaSrobovaniaOsZ_M4 : TON;
+	CasPoruchyServaSrobovaniaOsZ_M5 : TON;
+	CasKontrolyVstupBariery : TON := (0);
+	CasKontrolyVystupBariery : TON;
+	TT : BOOL := 0;
 END_VAR

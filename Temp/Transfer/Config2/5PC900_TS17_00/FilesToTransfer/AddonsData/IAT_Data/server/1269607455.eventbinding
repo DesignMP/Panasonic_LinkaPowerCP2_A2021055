@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_11.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_11" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_17.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_17" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_12.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_12" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_18.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_18" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_13.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_13" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_19.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_19" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_26.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_26" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_27.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_27" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_24.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_24" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_25.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_25" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_4.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_4" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_20.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_20" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_30.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_30" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_31.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_31" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_32.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_32" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_5.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_5" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_6.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_6" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_8.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_8" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_21.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_21" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="AreaPageParametreP2_page2">
+    <EventBinding id="AreaPageParametreP2_page2.NumericInput_33.ValueChanged">
+			<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="AreaPageParametreP2_page2_NumericInput_33" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="::AsGlobalPV:P2_UlozPremenne">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+</EventBindingDefinition>

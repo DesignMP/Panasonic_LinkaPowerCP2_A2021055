@@ -2110,8 +2110,6 @@
     <Channel ID="IF1.CycleTimeViolationCount" Description="Number of cycle time violations" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
     <Channel ID="IF1.CycleIdleTime" Description="Unoccupied time during one POWERLINK cycle [µs]" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
     <Channel ID="IF1.CycleCongestionCount" Description="allways 0, available for legacy projects" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
-    <Channel ID="IF1.MinimalLatencyInputMargin" Description="Margin to minimal latency input switch deadline in microseconds" FromVersion="A4.91" Ext="/INFO" Address="0x8000000D" Direction="IN" Type="DINT" Sig_St_Dint="1" />
-    <Channel ID="IF1.FailedMinimalLatencyInputCount" Description="Counts when inputs of stations with optimization for minimal latency were too late" FromVersion="A4.91" Ext="/INFO" Address="0x8000000E" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
   </Module>
   <Module ID="SL1.IF1.ST20" Hardware="X20BC1083" HardwareModuleName="P2_Powerlink" ModuleID="114">
     <Channel ID="ModuleOk" Description="Module status (1 = module present)" FromVersion="C2.87" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />

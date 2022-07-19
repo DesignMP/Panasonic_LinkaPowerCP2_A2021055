@@ -40,6 +40,7 @@ TYPE
 		CasZaplneniaVibrolisty : TON;
 		CasZaplneniaZasobnika : TON;
 		CasVypnTriediacehoVzduchu : TON;
+		CasPredSpustenimZasobnika : TON;
 		IdleTime_200ms : TON;
 		IdleTime_1s : TON;
 		IdleTime_500ms : TON;

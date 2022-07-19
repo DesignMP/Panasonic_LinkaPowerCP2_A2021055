@@ -93,23 +93,23 @@ PROGRAM _CYCLIC
 				SC_P4_Dopravniky.ResetStep:= TRUE;
 				SC_P4_Dopravniky.Step:= 5;
 			ELSE
-				IF NOT P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky AND P4_FunkcnyTestA.IN.Centrovanie_ZASUNUTE THEN
 					P4_FunkcnyTestA.OUT.ZasunStoper:= TRUE;
 				END_IF	
-				IF NOT P4_FunkcnyTestB.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P4_FunkcnyTestB.RFID_hlava.PritomnostPaletky AND P4_FunkcnyTestB.IN.Centrovanie_ZASUNUTE THEN
 					P4_FunkcnyTestB.OUT.ZasunStoper:= TRUE;
 				END_IF
 				IF NOT P4_SpodnyStoper.IN.PritomnostPaletky THEN
 					P4_SpodnyStoper.OUT.ZasunStoper:= TRUE;
 				END_IF
-				IF NOT P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky THEN
+				IF NOT P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky AND P4_ZdvizkaZaFunkcTestA.IN.Zdvizka_StrednaPoloha THEN
 					P4_ZdvizkaZaFunkcTestA.OUT.TlmicPaletky_ZASUN:= FALSE;
 					P4_ZdvizkaZaFunkcTestA.OUT.TlmicPaletky_VYSUN:= TRUE;
 				END_IF	
-				IF NOT P4_ZdvizkaZaFunkcTestB.IN.PritomnostPaletky THEN
+				IF NOT P4_ZdvizkaZaFunkcTestB.IN.PritomnostPaletky AND P4_ZdvizkaZaFunkcTestB.IN.Zdvizka_StrednaPoloha THEN
 					P4_ZdvizkaZaFunkcTestB.OUT.TlmicPaletky_VYSUN:= TRUE;
 				END_IF
-				IF NOT P4_Etiketovacka.RFID_hlava.PritomnostPaletky THEN
+				IF NOT P4_Etiketovacka.RFID_hlava.PritomnostPaletky AND P4_Etiketovacka.IN.Centrovanie_ZASUNUTE THEN
 					P4_Etiketovacka.OUT.ZasunStoper:= TRUE;
 				END_IF
 				SC_P4_Dopravniky.IdleTime.IN:= TRUE;
@@ -159,7 +159,7 @@ PROGRAM _CYCLIC
 				NOT P4_ZdvizkaZaFunkcTestB.Automat AND 
 				NOT P4_Etiketovacka.Automat AND
 				NOT P4_SpodnyStoper.Automat AND
-				NOT P4_Vytah.STAV.PrebiehaVyvezeniePaletky THEN
+				NOT P4_Vytah.Automat THEN
 				SC_P4_Dopravniky.ResetStep:= TRUE;
 				SC_P4_Dopravniky.Step:= 0;
 			END_IF

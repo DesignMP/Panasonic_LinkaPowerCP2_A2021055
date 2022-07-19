@@ -73,5 +73,17 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_PresunZvarania_ENABLE" attribute="value" />
 <Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="Button_SET" attribute="enable" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_ZdvihZvarania_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="MomentaryPushButton_JoggOsZ_M4_HORE" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_ZdvihZvarania_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="MomentaryPushButton_JoggOsZ_M4_DOLE" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_StartSekvencieZvarania_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Zvaranie" widgetRefId="Button_ResetServaOsZ_M5" attribute="enable" />
+</Binding>
 </Bindings>
 </BindingsSet>

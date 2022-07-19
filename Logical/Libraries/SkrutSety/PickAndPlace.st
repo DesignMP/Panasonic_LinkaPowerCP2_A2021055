@@ -8,6 +8,14 @@ FUNCTION_BLOCK PickAndPlace
 	STAV.SkrutkaPripravena:= IN.Podavac_SkrutkaNaVystupe;
 	
 	
+	//*******************************Zapnutie zásobníka keï je prázdna lišta zásobníka*****************//
+	IF EDGEPOS(CMD.ENABLE = TRUE) THEN
+		OUT.TriediaciVzduch_RUN:= TRUE;
+		OUT.VibropohonZasobnika_RUN:= TRUE;
+		OUT.VibropohonListy_RUN:= TRUE;
+	END_IF	
+		
+	
 	//*******************************Ovládanie zhadzovacieho vzduchu pred lištou zásobníka******************************************//
 	Internal.CasZaplneniaZasobnika.IN:= IN.ZaplnenieListyZasobnika AND OUT.VibropohonZasobnika_RUN AND IN.ZaplnenieVibrolisty_MIN AND IN.ZaplnenieVibrolisty_MAX;
 	
@@ -31,7 +39,7 @@ FUNCTION_BLOCK PickAndPlace
 	Internal.CasVypnTriediacehoVzduchu();
 	
 	//*****************************************Vypnutie vibrolišty a zásobníka********************************************************//
-	IF OUT.VibropohonListy_RUN AND
+	IF (OUT.VibropohonListy_RUN OR OUT.VibropohonZasobnika_RUN) AND
 		IN.ZaplnenieVibrolisty_MIN AND
 		IN.ZaplnenieVibrolisty_MAX AND
 		IN.ZaplnenieListyZasobnika AND
@@ -43,12 +51,12 @@ FUNCTION_BLOCK PickAndPlace
 		Internal.CasZaplneniaVibrolisty.IN:= FALSE;
 	END_IF
 	
-	IF OUT.VibropohonListy_RUN AND Internal.CasZaplneniaVibrolisty.Q THEN
+	IF (OUT.VibropohonListy_RUN OR OUT.VibropohonZasobnika_RUN) AND Internal.CasZaplneniaVibrolisty.Q THEN
 		OUT.VibropohonListy_RUN:= FALSE;
 		OUT.VibropohonZasobnika_RUN:= FALSE;
 	END_IF	
 	
-	Internal.CasZaplneniaVibrolisty.PT:= T#1s;
+	Internal.CasZaplneniaVibrolisty.PT:= T#2s;
 	Internal.CasZaplneniaVibrolisty();
 	
 	//***********************************Enable knižnice***************************************//
@@ -134,7 +142,7 @@ FUNCTION_BLOCK PickAndPlace
 			END_IF	
 		
 		15: //Kontrola zaplnenie vibrolisty//
-			IF IN.ZaplnenieVibrolisty_MAX THEN
+			IF IN.ZaplnenieVibrolisty_MAX AND IN.ZaplnenieVibrolisty_MIN AND IN.ZaplnenieListyZasobnika THEN
 				Internal.IdleTime_500ms.IN:= FALSE;
 				Step:= 20;
 			ELSE
@@ -270,7 +278,8 @@ FUNCTION_BLOCK PickAndPlace
 	Internal.IdleTime_1s();
 	Internal.AlarmTime_10s.PT:= T#10s;
 	Internal.AlarmTime_10s();
-	
+	Internal.CasPredSpustenimZasobnika.PT:= T#1s;
+	Internal.CasPredSpustenimZasobnika();
 	
 	
 END_FUNCTION_BLOCK

@@ -59,6 +59,7 @@ typedef struct PickAndPlace_Internal_typ
 {	struct TON CasZaplneniaVibrolisty;
 	struct TON CasZaplneniaZasobnika;
 	struct TON CasVypnTriediacehoVzduchu;
+	struct TON CasPredSpustenimZasobnika;
 	struct TON IdleTime_200ms;
 	struct TON IdleTime_1s;
 	struct TON IdleTime_500ms;
@@ -131,6 +132,8 @@ typedef struct PickAndPlace
 	/* VAR (analog) */
 	struct PickAndPlace_Internal_typ Internal;
 	unsigned char Step;
+	/* VAR (digital) */
+	plcbit zzEdge00000;
 } PickAndPlace_typ;
 
 typedef struct MaticaSet

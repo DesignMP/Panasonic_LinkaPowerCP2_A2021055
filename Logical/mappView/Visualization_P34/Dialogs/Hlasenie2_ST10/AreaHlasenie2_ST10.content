@@ -9,8 +9,8 @@
         <Widget xsi:type="widgets.brease.ImageList" id="ImageList1" top="191" left="338" width="32" height="32" zIndex="3" imageList="['NoButton_48x48.png', 'YesButton_48x48.png']" imagePrefix="Media/Pictures/" cornerRadius="50px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" />
         <Widget xsi:type="widgets.brease.ImageList" id="ImageList2" top="191" left="385" width="32" height="32" zIndex="4" imageList="['NoButton_48x48.png', 'YesButton_48x48.png']" imagePrefix="Media/Pictures/" cornerRadius="50px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" />
         <Widget xsi:type="widgets.brease.ImageList" id="ImageList7" top="145" left="260" width="32" height="32" zIndex="5" imageList="['NoButton_48x48.png', 'YesButton_48x48.png']" imagePrefix="Media/Pictures/" cornerRadius="50px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" />
-        <Widget xsi:type="widgets.brease.ImageList" id="ImageList8" top="276" left="146" width="32" height="32" zIndex="6" imageList="['NoButton_48x48.png', 'YesButton_48x48.png']" imagePrefix="Media/Pictures/" cornerRadius="50px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" />
-        <Widget xsi:type="widgets.brease.Button" id="Button_IgnorujKameru" top="111" left="61" width="150" height="45" zIndex="7" multiLine="true" text="Ignoruj výsledok\nkamery" fontSize="16px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" style="Operate" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_IgnorujKameru" top="111" left="61" width="150" height="45" zIndex="6" multiLine="true" text="Ignoruj výsledok\nkamery" fontSize="16px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" style="Operate" />
+        <Widget xsi:type="widgets.brease.ImageList" id="ImageList8" top="268" left="144" width="32" height="32" zIndex="7" imageList="['YesButton_48x48.png', 'NoButton_48x48.png']" imagePrefix="Media/Pictures/" cornerRadius="50px" shadow="2px 2px 10px rgba(0, 0, 0, 1)" />
       </Widgets>
     </Widget>
   </Widgets>

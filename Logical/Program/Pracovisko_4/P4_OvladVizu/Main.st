@@ -157,6 +157,16 @@ PROGRAM _CYCLIC
 	//Zamknutie tlaËÌtok ovl·dania z·mkov//
 	IF P3_Pracovisko.STAV.Automat THEN
 		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P3:= FALSE;
+	ELSIF P3_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P3:= FALSE;
+	ELSIF P3_Srobovanie.STAV.CistenieSkrutkovackyK40_BUSY THEN	
+		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P3:= FALSE;
+	ELSIF P3_HV_Test.STAV.RR_SekvenciaTestera_BUSY THEN
+		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P3:= FALSE;
+	ELSIF P3_LeakageTestA.STAV.RR_TestovaciaSekvencia_BUSY THEN
+		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P3:= FALSE;
+	ELSIF P3_LeakageTestB.STAV.RR_TestovaciaSekvencia_BUSY THEN
+		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P3:= FALSE;	
 	ELSE
 		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P3:= TRUE;
 	END_IF	
@@ -204,11 +214,182 @@ PROGRAM _CYCLIC
 	
 
 	//TlaËÌtka vypnutia leakage testov//
-	IF P3_Pracovisko.STAV.Automat THEN
-		P34_Vizu.VolbaLeakageTestu_ENABLE:= FALSE;
-	ELSE
+//	IF P3_Pracovisko.STAV.Automat THEN
+//		P34_Vizu.VolbaLeakageTestu_ENABLE:= FALSE;
+//	ELSE
 		P34_Vizu.VolbaLeakageTestu_ENABLE:= TRUE;
+//	END_IF	
+	
+	
+	//RR - TlaËÌtko Ëistenia skrutkovaËky K40//
+	IF P3_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P34_Vizu.TL_VycistiSkrutkovackuK40_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
+		P34_Vizu.TL_VycistiSkrutkovackuK40_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_VycistiSkrutkovackuK40_ENABLE:= FALSE;
+	ELSIF P3_Srobovanie.STAV.CistenieSkrutkovackyK40_BUSY THEN
+		P34_Vizu.TL_VycistiSkrutkovackuK40_ENABLE:= FALSE;
+	ELSIF NOT P3_Pracovisko.STAV.SkrutkovackyZasunute THEN
+		P34_Vizu.TL_VycistiSkrutkovackuK40_ENABLE:= FALSE;
+	ELSIF P3_Srobovanie.CMD.RR_SkrutSetK40_VysunBrzdu THEN
+		P34_Vizu.TL_VycistiSkrutkovackuK40_ENABLE:= FALSE;
+	ELSIF P3_Srobovanie.CMD.RR_SkrutSetK40_Zasobnik_RUN THEN
+		P34_Vizu.TL_VycistiSkrutkovackuK40_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_VycistiSkrutkovackuK40_ENABLE:= TRUE;
+	END_IF
+	
+	
+	//RR - TlaËÌtko polohovania aplik·tora//
+	IF P3_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P34_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
+		P34_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF P3_Srobovanie.STAV.CistenieSkrutkovackyK40_BUSY THEN
+		P34_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSIF NOT P3_Pracovisko.STAV.SkrutkovackyZasunute THEN
+		P34_Vizu.TL_PolohujManipulator_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_PolohujManipulator_ENABLE:= TRUE;
+	END_IF
+	
+	
+	
+	//RR - TlaËÌtko vysunutia skrutkovaËky K40//
+	IF P3_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P34_Vizu.Tl_VysunutieSkrutkovK40_ENABLE:= FALSE;
+	ELSIF P3_Srobovanie.STAV.CistenieSkrutkovackyK40_BUSY THEN
+		P34_Vizu.Tl_VysunutieSkrutkovK40_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
+		P34_Vizu.Tl_VysunutieSkrutkovK40_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.Tl_VysunutieSkrutkovK40_ENABLE:= FALSE;
+	ELSE
+		P34_Vizu.Tl_VysunutieSkrutkovK40_ENABLE:= TRUE;
 	END_IF	
+	
+	
+	
+	//RR - TlaËÌtko vysunutia skrutkovaËky M5//
+	IF P3_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P34_Vizu.TL_OvladaniaVysunSkrutkovM5:= FALSE;
+	ELSIF P3_Srobovanie.STAV.CistenieSkrutkovackyK40_BUSY THEN
+		P34_Vizu.TL_OvladaniaVysunSkrutkovM5:= FALSE;
+	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
+		P34_Vizu.TL_OvladaniaVysunSkrutkovM5:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_OvladaniaVysunSkrutkovM5:= FALSE;
+	ELSE	
+		P34_Vizu.TL_OvladaniaVysunSkrutkovM5:= TRUE;
+	END_IF
+	
+	
+	//RR - Ovl·danie skrutkovacieho setu K40//
+	IF P3_Srobovanie.STAV.CistenieSkrutkovackyK40_BUSY THEN
+		P34_Vizu.TL_OvladSkrutkovSetuK40_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_OvladSkrutkovSetuK40_ENABLE:= TRUE;
+	END_IF	
+
+	//RR - Ovl·danie manipulatora Y//
+	IF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
+		P34_Vizu.TL_OvladManipulatoraY_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_OvladManipulatoraY_ENABLE:= TRUE;
+	END_IF	
+	
+	
+	
+
+	//RR - Ovl·danie HV Testu//
+	IF P3_HV_Test.STAV.RR_SekvenciaTestera_BUSY THEN
+		P34_Vizu.TL_OvladaniaHV_Testu_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_OvladaniaHV_Testu_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_OvladaniaHV_Testu_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_OvladaniaHV_Testu_ENABLE:= TRUE;
+	END_IF
+	
+	//RR - Ovl·danie sekvencie HV Testu//
+	IF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_SekvencieHV_Testu_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_SekvencieHV_Testu_ENABLE:= FALSE;
+	ELSIF NOT P3_HV_Test.RFID_hlava.PritomnostPaletky THEN
+		P34_Vizu.TL_SekvencieHV_Testu_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_SekvencieHV_Testu_ENABLE:= TRUE;
+	END_IF
+	
+	
+	//RR - Ovl·danie Leakage Testu A//
+	IF P3_LeakageTestA.STAV.RR_TestovaciaSekvencia_BUSY THEN
+		P34_Vizu.TL_OvladaniaLeakTestuA_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_OvladaniaLeakTestuA_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_OvladaniaLeakTestuA_ENABLE:= FALSE;
+	ELSE
+		P34_Vizu.TL_OvladaniaLeakTestuA_ENABLE:= TRUE;
+	END_IF	
+	
+	
+	//RR - Testovacia sekvencia Leakage Testu A//
+	IF NOT P3_LeakageTestA.IN.HornyPritlak_ZASUNUTY OR NOT P3_LeakageTestA.IN.Centrovanie_ZASUNUTE THEN
+		P34_Vizu.TL_SekvencieLeakTestuA_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
+		P34_Vizu.TL_SekvencieLeakTestuA_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_SekvencieLeakTestuA_ENABLE:= FALSE;
+	ELSIF P3_LeakageTestA.STAV.RR_TestovaciaSekvencia_BUSY THEN
+		P34_Vizu.TL_SekvencieLeakTestuA_ENABLE:= FALSE;
+	ELSIF NOT P3_LeakageTestA.RFID_hlava.PritomnostPaletky THEN
+		P34_Vizu.TL_SekvencieLeakTestuA_ENABLE:= FALSE;
+	ELSE
+		P34_Vizu.TL_SekvencieLeakTestuA_ENABLE:= TRUE;
+	END_IF	
+	
+	
+	
+	//RR - Ovl·danie Leakage Testu B//
+	IF P3_LeakageTestB.STAV.RR_TestovaciaSekvencia_BUSY THEN
+		P34_Vizu.TL_OvladaniaLeakTestuB_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_OvladaniaLeakTestuB_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_OvladaniaLeakTestuB_ENABLE:= FALSE;
+	ELSE
+		P34_Vizu.TL_OvladaniaLeakTestuB_ENABLE:= TRUE;
+	END_IF	
+	
+	
+	//RR - Testovacia sekvencia Leakage Testu B//
+	IF NOT P3_LeakageTestB.IN.HornyPritlak_ZASUNUTY OR NOT P3_LeakageTestB.IN.Centrovanie_ZASUNUTE THEN
+		P34_Vizu.TL_SekvencieLeakTestuB_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P3_ZonaBunky_AKTIVNA THEN
+		P34_Vizu.TL_SekvencieLeakTestuB_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_SekvencieLeakTestuB_ENABLE:= FALSE;
+	ELSIF P3_LeakageTestB.STAV.RR_TestovaciaSekvencia_BUSY THEN
+		P34_Vizu.TL_SekvencieLeakTestuB_ENABLE:= FALSE;
+	ELSIF NOT P3_LeakageTestB.RFID_hlava.PritomnostPaletky THEN
+		P34_Vizu.TL_SekvencieLeakTestuB_ENABLE:= FALSE;
+	ELSE
+		P34_Vizu.TL_SekvencieLeakTestuB_ENABLE:= TRUE;
+	END_IF	
+	
+	
+	
+
+	
+	
+	
+	
 	
 	
 	//**************************Zamknutie edit·cie parametrov*********************************//
@@ -280,6 +461,9 @@ PROGRAM _CYCLIC
 	ELSE
 		P34_Vizu.IndexStavu_HV_Test:= 0;
 	END_IF	
+	
+		
+	
 	
 	
 	//Zdviûka pred Leakage testom A//
@@ -461,6 +645,12 @@ PROGRAM _CYCLIC
 	//Zamknutie tlaËÌtok ovl·dania z·mkov//
 	IF P4_Pracovisko.STAV.Automat THEN
 		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P4:= FALSE;
+	ELSIF P4_FunkcnyTestA.STAV.RR_SekvenciaTestera_BUSY THEN
+		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P4:= FALSE;
+	ELSIF P4_FunkcnyTestB.STAV.RR_SekvenciaTestera_BUSY THEN
+		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P4:= FALSE;
+	ELSIF P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY THEN
+		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P4:= FALSE;
 	ELSE
 		P34_Vizu.TL_OvladaniaZamkov_ENABLE_P4:= TRUE;
 	END_IF	
@@ -506,14 +696,111 @@ PROGRAM _CYCLIC
 	
 	
 	//TlaËÌtka vypnutia final testov//
-	IF P3_Pracovisko.STAV.Automat THEN
-		P34_Vizu.VolbaFunkcnehoTestu_ENABLE:= FALSE;
-	ELSE
+//	IF P4_Pracovisko.STAV.Automat THEN
+//		P34_Vizu.VolbaFunkcnehoTestu_ENABLE:= FALSE;
+//	ELSE
 		P34_Vizu.VolbaFunkcnehoTestu_ENABLE:= TRUE;
+//	END_IF	
+	
+	
+	//RR - Ovl·danie FunkËnÈho testu A//
+	IF P4_FunkcnyTestA.STAV.RR_SekvenciaTestera_BUSY THEN
+		P34_Vizu.TL_OvladaniaFunkcTestuA_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_OvladaniaFunkcTestuA_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_OvladaniaFunkcTestuA_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_OvladaniaFunkcTestuA_ENABLE:= TRUE;
+	END_IF
+	
+	//RR - Ovl·danie sekvencie FunkËnÈho Testu A//
+	IF NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_SekvencieFunkcTestuA_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_SekvencieFunkcTestuA_ENABLE:= FALSE;
+	ELSIF NOT P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky THEN
+		P34_Vizu.TL_SekvencieFunkcTestuA_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_SekvencieFunkcTestuA_ENABLE:= TRUE;
+	END_IF
+	
+	
+	//RR - Ovl·danie FunkËnÈho testu B//
+	IF P4_FunkcnyTestB.STAV.RR_SekvenciaTestera_BUSY THEN
+		P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_OvladaniaFunkcTestuB_ENABLE:= TRUE;
+	END_IF
+	
+	//RR - Ovl·danie sekvencie FunkËnÈho Testu B//
+	IF NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_SekvencieFunkcTestuB_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_SekvencieFunkcTestuB_ENABLE:= FALSE;
+	ELSIF NOT P4_FunkcnyTestB.RFID_hlava.PritomnostPaletky THEN
+		P34_Vizu.TL_SekvencieFunkcTestuB_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_SekvencieFunkcTestuB_ENABLE:= TRUE;
+	END_IF
+	
+	
+	//RR - Ovl·danie etiketovania//
+	IF P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY THEN
+		P34_Vizu.TL_OvladaniaEtiketovania_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_OvladaniaEtiketovania_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN	
+		P34_Vizu.TL_OvladaniaEtiketovania_ENABLE:= FALSE;
+	ELSE
+		P34_Vizu.TL_OvladaniaEtiketovania_ENABLE:= TRUE;
 	END_IF	
 	
 	
+	//RR - Ovl·danie sekvencie etiketovania//
+	IF NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN	
+		P34_Vizu.TL_SekvencieEtiketovania_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P34_Vizu.TL_SekvencieEtiketovania_ENABLE:= FALSE;
+	ELSIF P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY THEN
+		P34_Vizu.TL_SekvencieEtiketovania_ENABLE:= FALSE;
+	ELSIF P4_Etiketovacka.ServoZdvihuAplikatora.Status.ActPosition > 5 THEN
+		P34_Vizu.TL_SekvencieEtiketovania_ENABLE:= FALSE;
+	ELSIF NOT P4_Etiketovacka.RFID_hlava.PritomnostPaletky THEN
+		P34_Vizu.TL_SekvencieEtiketovania_ENABLE:= FALSE;
+	ELSIF NOT P4_Etiketovacka.IN.Aplikator_OtocenyVZAD THEN
+		P34_Vizu.TL_SekvencieEtiketovania_ENABLE:= FALSE;
+	ELSIF NOT P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
+		P34_Vizu.TL_SekvencieEtiketovania_ENABLE:= FALSE;	
+	ELSE
+		P34_Vizu.TL_SekvencieEtiketovania_ENABLE:= TRUE;
+	END_IF	
 	
+	
+	//RR - TlaËÌtka ovl·dania zdvihu aplik·tora//
+	IF NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN
+		P34_Vizu.TL_ZdvihAplikEtiketovania_ENABLE:= FALSE;
+	ELSE	
+		P34_Vizu.TL_ZdvihAplikEtiketovania_ENABLE:= TRUE;
+	END_IF	
+	
+	//RR - TlaËÌtko v˝tah ËÌtanie paletky//
+	IF P4_Vytah.RFID_hlava.PritomnostPaletky THEN
+		P34_Vizu.Vytah_CitaniePaletky_ENABLE:= TRUE;
+	ELSE	
+		P34_Vizu.Vytah_CitaniePaletky_ENABLE:= FALSE;
+	END_IF	
+	
+	//RR - TlaËÌtko v˝ùah z·pis paletky//
+	IF P4_Vytah.RFID_hlava.PritomnostPaletky THEN
+		P34_Vizu.Vytah_ZapisPaletky_ENABLE:= TRUE;
+	ELSE
+		P34_Vizu.Vytah_ZapisPaletky_ENABLE:= FALSE;
+	END_IF	
 	
 	
 	

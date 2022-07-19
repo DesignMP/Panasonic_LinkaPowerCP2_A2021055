@@ -59,7 +59,7 @@
     <Parameter ID="UserRamSize" Value="10000" />
     <Parameter ID="RemMemDevice" Value="PCI.1.LS182.SRAM" />
     <Parameter ID="RemMemSize" Value="100000" />
-    <Parameter ID="PermanentPvSize" Value="20000" />
+    <Parameter ID="PermanentPvSize" Value="50000" />
     <Parameter ID="RemanentGlobalPvSize" Value="6027" />
     <Parameter ID="VolatileGlobalPvSize" Value="300000" />
     <Parameter ID="RebootReset" Value="1" />
@@ -95,14 +95,170 @@
     <Parameter ID="FileDeviceName7" Value="HDD_Audit" />
     <Parameter ID="FileDevicePath7" Value="F:\Audit" />
     <Group ID="FileDevice8" />
-    <Parameter ID="FileDeviceName8" Value="HDD_Fotky" />
-    <Parameter ID="FileDevicePath8" Value="F:\Fotky" />
-    <Parameter ID="EthernetDefaultGateway" Value="10.128.148.1" />
+    <Parameter ID="FileDeviceName8" Value="CAM1" />
+    <Parameter ID="FileDevicePath8" Value="F:\Fotky\CAM1" />
+    <Group ID="FileDevice9" />
+    <Parameter ID="FileDeviceName9" Value="CAM2" />
+    <Parameter ID="FileDevicePath9" Value="F:\Fotky\CAM2" />
+    <Group ID="FileDevice10" />
+    <Parameter ID="FileDeviceName10" Value="CAM3" />
+    <Parameter ID="FileDevicePath10" Value="F:\Fotky\CAM3" />
+    <Group ID="FileDevice11" />
+    <Parameter ID="FileDeviceName11" Value="CAM4" />
+    <Parameter ID="FileDevicePath11" Value="F:\Fotky\CAM4" />
+    <Group ID="FileDevice12" />
+    <Parameter ID="FileDeviceName12" Value="CAM5" />
+    <Parameter ID="FileDevicePath12" Value="F:\Fotky\CAM5" />
+    <Group ID="FileDevice13" />
+    <Parameter ID="FileDeviceName13" Value="CAM6" />
+    <Parameter ID="FileDevicePath13" Value="F:\Fotky\CAM6" />
+    <Group ID="FileDevice14" />
+    <Parameter ID="FileDeviceName14" Value="CAM7" />
+    <Parameter ID="FileDevicePath14" Value="F:\Fotky\CAM7" />
+    <Group ID="FileDevice15" />
+    <Parameter ID="FileDeviceName15" Value="CAM8" />
+    <Parameter ID="FileDevicePath15" Value="F:\Fotky\CAM8" />
+    <Group ID="FileDevice16" />
+    <Parameter ID="FileDeviceName16" Value="CAM9" />
+    <Parameter ID="FileDevicePath16" Value="F:\Fotky\CAM9" />
+    <Group ID="FileDevice17" />
+    <Parameter ID="FileDeviceName17" Value="CAM10" />
+    <Parameter ID="FileDevicePath17" Value="F:\Fotky\CAM10" />
+    <Group ID="FileDevice18" />
+    <Parameter ID="FileDeviceName18" Value="CAM11" />
+    <Parameter ID="FileDevicePath18" Value="F:\Fotky\CAM11" />
+    <Group ID="FileDevice19" />
+    <Parameter ID="FileDeviceName19" Value="CAM12" />
+    <Parameter ID="FileDevicePath19" Value="F:\Fotky\CAM12" />
+    <Group ID="FileDevice20" />
+    <Parameter ID="FileDeviceName20" Value="CAM13" />
+    <Parameter ID="FileDevicePath20" Value="F:\Fotky\CAM13" />
+    <Group ID="FileDevice21" />
+    <Parameter ID="FileDeviceName21" Value="CAM14" />
+    <Parameter ID="FileDevicePath21" Value="F:\Fotky\CAM14" />
+    <Group ID="FileDevice22" />
+    <Parameter ID="FileDeviceName22" Value="CAM15" />
+    <Parameter ID="FileDevicePath22" Value="F:\Fotky\CAM15" />
+    <Group ID="FileDevice23" />
+    <Parameter ID="FileDeviceName23" Value="CAM16" />
+    <Parameter ID="FileDevicePath23" Value="F:\Fotky\CAM16" />
+    <Group ID="FileDevice24" />
+    <Parameter ID="FileDeviceName24" Value="CAM17" />
+    <Parameter ID="FileDevicePath24" Value="F:\Fotky\CAM17" />
+    <Group ID="FileDevice25" />
+    <Parameter ID="FileDeviceName25" Value="HDD_LOGGER" />
+    <Parameter ID="FileDevicePath25" Value="F:\logger" />
+    <Parameter ID="EthernetDefaultGateway" Value="192.168.131.1" />
+    <Parameter ID="ActivateDns" Value="1" />
+    <Parameter ID="DnsDefaultDomain" Value="trst.prod" />
+    <Parameter ID="DnsServer1" Value="192.168.106.2" />
     <Group ID="FtpUser1" />
     <Parameter ID="FtpUsername1" Value="admin" />
     <Parameter ID="FtpUserPassword1" Value="ECGRQEqr8oWsLYs7yIUsO3V/H6leyvCr8E/NknMgEcE=" />
     <Parameter ID="FtpUserSalt1" Value="bh/c/Lci" />
     <Parameter ID="FTPAccessRight1" Value="0" />
+    <Group ID="FtpUser2" />
+    <Parameter ID="FtpUsername2" Value="cam1" />
+    <Parameter ID="FtpUserPassword2" Value="wMeTUrS/U68UKMsq57Y/wq4gXb5DmeiCzof0CwBKtAk=" />
+    <Parameter ID="FtpUserSalt2" Value="FHNPKr9h" />
+    <Parameter ID="FTPAccessRight2" Value="0" />
+    <Parameter ID="FTPMSpath2" Value="/Fotky/CAM1" />
+    <Group ID="FtpUser3" />
+    <Parameter ID="FtpUsername3" Value="cam2" />
+    <Parameter ID="FtpUserPassword3" Value="bCdEeqOJwXkYWwxmGjFYJgtd0iyLiiubOzAjrQ1MsjM=" />
+    <Parameter ID="FtpUserSalt3" Value="uzOGFg3U" />
+    <Parameter ID="FTPAccessRight3" Value="0" />
+    <Parameter ID="FTPMSpath3" Value="/Fotky/CAM2" />
+    <Group ID="FtpUser4" />
+    <Parameter ID="FtpUsername4" Value="cam3" />
+    <Parameter ID="FtpUserPassword4" Value="M91lTOd115309Qy8VylJHU8dx+6METi6pDz0IRFA0/o=" />
+    <Parameter ID="FtpUserSalt4" Value="8Z0k45OX" />
+    <Parameter ID="FTPAccessRight4" Value="0" />
+    <Parameter ID="FTPMSpath4" Value="/Fotky/CAM3" />
+    <Group ID="FtpUser5" />
+    <Parameter ID="FtpUsername5" Value="cam4" />
+    <Parameter ID="FtpUserPassword5" Value="xVlyyTFgQrQno5ItHyBhI/v6pZB8WCOPvZtQQ0IJtVU=" />
+    <Parameter ID="FtpUserSalt5" Value="AyasT7or" />
+    <Parameter ID="FTPAccessRight5" Value="0" />
+    <Parameter ID="FTPMSpath5" Value="/Fotky/CAM4" />
+    <Group ID="FtpUser6" />
+    <Parameter ID="FtpUsername6" Value="cam5" />
+    <Parameter ID="FtpUserPassword6" Value="NfFoP3P+cbcOSitMoxfvijtvVa84Oyivg0X3GAB/F0Y=" />
+    <Parameter ID="FtpUserSalt6" Value="W1mXrJ70" />
+    <Parameter ID="FTPAccessRight6" Value="0" />
+    <Parameter ID="FTPMSpath6" Value="/Fotky/CAM5" />
+    <Group ID="FtpUser7" />
+    <Parameter ID="FtpUsername7" Value="cam6" />
+    <Parameter ID="FtpUserPassword7" Value="626rvmqYMdvmIQ6hfYAfMsj5ZKfYv/gGBPpt2MBOvPY=" />
+    <Parameter ID="FtpUserSalt7" Value="+joRUQVg" />
+    <Parameter ID="FTPAccessRight7" Value="0" />
+    <Parameter ID="FTPMSpath7" Value="/Fotky/CAM6" />
+    <Group ID="FtpUser8" />
+    <Parameter ID="FtpUsername8" Value="cam7" />
+    <Parameter ID="FtpUserPassword8" Value="fCYZE+lxTdJYjYAJn8CLY9L1mY3RPXNH/c4WTZYMhHQ=" />
+    <Parameter ID="FtpUserSalt8" Value="LiuLWdah" />
+    <Parameter ID="FTPAccessRight8" Value="0" />
+    <Parameter ID="FTPMSpath8" Value="/Fotky/CAM7" />
+    <Group ID="FtpUser9" />
+    <Parameter ID="FtpUsername9" Value="cam8" />
+    <Parameter ID="FtpUserPassword9" Value="tg2nYm5rCnXaPMFIKJ01+CaLnUFaWeneNPjEkqnVbII=" />
+    <Parameter ID="FtpUserSalt9" Value="E4lP23jg" />
+    <Parameter ID="FTPAccessRight9" Value="0" />
+    <Parameter ID="FTPMSpath9" Value="/Fotky/CAM8" />
+    <Group ID="FtpUser10" />
+    <Parameter ID="FtpUsername10" Value="cam9" />
+    <Parameter ID="FtpUserPassword10" Value="bcZ0qzvvItfMbUoL6ZWFGTwwWkSGHWCY1oxdWIkHaaY=" />
+    <Parameter ID="FtpUserSalt10" Value="Fw2SMi0G" />
+    <Parameter ID="FTPAccessRight10" Value="0" />
+    <Parameter ID="FTPMSpath10" Value="/Fotky/CAM9" />
+    <Group ID="FtpUser11" />
+    <Parameter ID="FtpUsername11" Value="cam10" />
+    <Parameter ID="FtpUserPassword11" Value="rvTjMMigDxf0UjDxIG0ss+V0AvgRwF+GGz5x/1rV2vU=" />
+    <Parameter ID="FtpUserSalt11" Value="KJ39r2tc" />
+    <Parameter ID="FTPAccessRight11" Value="0" />
+    <Parameter ID="FTPMSpath11" Value="/Fotky/CAM10" />
+    <Group ID="FtpUser12" />
+    <Parameter ID="FtpUsername12" Value="cam11" />
+    <Parameter ID="FtpUserPassword12" Value="dZYnXYTfTf5VG2wru7GTk5oPfk6efBYgIFS2zSKdheA=" />
+    <Parameter ID="FtpUserSalt12" Value="tBnfnW7f" />
+    <Parameter ID="FTPAccessRight12" Value="0" />
+    <Parameter ID="FTPMSpath12" Value="/Fotky/CAM11" />
+    <Group ID="FtpUser13" />
+    <Parameter ID="FtpUsername13" Value="cam12" />
+    <Parameter ID="FtpUserPassword13" Value="8UnksKLfaBsFvBwH/Omu2juGX4EGXMapCsI5f+ckw04=" />
+    <Parameter ID="FtpUserSalt13" Value="seVIPn4R" />
+    <Parameter ID="FTPAccessRight13" Value="0" />
+    <Parameter ID="FTPMSpath13" Value="/Fotky/CAM12" />
+    <Group ID="FtpUser14" />
+    <Parameter ID="FtpUsername14" Value="cam13" />
+    <Parameter ID="FtpUserPassword14" Value="K39hyXu0h3XN+ztVEbhuW8PjpXzzCLN43fP2dmqpfdU=" />
+    <Parameter ID="FtpUserSalt14" Value="fteI+eLN" />
+    <Parameter ID="FTPAccessRight14" Value="0" />
+    <Parameter ID="FTPMSpath14" Value="/Fotky/CAM13" />
+    <Group ID="FtpUser15" />
+    <Parameter ID="FtpUsername15" Value="cam14" />
+    <Parameter ID="FtpUserPassword15" Value="9egoWor2/GC61sxFluY6ewRtfjwngiqR+ADyBQ00Qd8=" />
+    <Parameter ID="FtpUserSalt15" Value="MWVwHjwK" />
+    <Parameter ID="FTPAccessRight15" Value="0" />
+    <Parameter ID="FTPMSpath15" Value="/Fotky/CAM14" />
+    <Group ID="FtpUser16" />
+    <Parameter ID="FtpUsername16" Value="cam15" />
+    <Parameter ID="FtpUserPassword16" Value="d/vfh6kVtDTyDRMtfCNVVYK4eM6U0d44BI48nf+x8ws=" />
+    <Parameter ID="FtpUserSalt16" Value="Vf76srYU" />
+    <Parameter ID="FTPAccessRight16" Value="0" />
+    <Parameter ID="FTPMSpath16" Value="/Fotky/CAM15" />
+    <Group ID="FtpUser17" />
+    <Parameter ID="FtpUsername17" Value="cam16" />
+    <Parameter ID="FtpUserPassword17" Value="HYiuT9CWBzBJe3docotfsgcNLUrOLwt5CdE9f5xp0dc=" />
+    <Parameter ID="FtpUserSalt17" Value="OCx3kTEQ" />
+    <Parameter ID="FTPAccessRight17" Value="0" />
+    <Parameter ID="FTPMSpath17" Value="/Fotky/CAM16" />
+    <Group ID="FtpUser18" />
+    <Parameter ID="FtpUsername18" Value="cam17" />
+    <Parameter ID="FtpUserPassword18" Value="0UMnxiBL/Sf4Ra8FqaUSpEbRs6lIxr/epPqyQhL4RMk=" />
+    <Parameter ID="FtpUserSalt18" Value="gywvFHjt" />
+    <Parameter ID="FTPAccessRight18" Value="0" />
+    <Parameter ID="FTPMSpath18" Value="/Fotky/CAM17" />
     <Parameter ID="ActivateDtmServer" Value="1" />
     <Parameter ID="ActivateOpcUa" Value="1" />
     <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
@@ -114,8 +270,9 @@
     <Connector Name="IF3">
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
       <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="HostName" Value="br-automation_2" />
       <Parameter ID="Mode" Value="Manual" />
-      <Parameter ID="InternetAddress" Value="10.128.148.3" />
+      <Parameter ID="InternetAddress" Value="192.168.131.3" />
       <Parameter ID="SubnetMask" Value="255.255.255.0" />
       <Parameter ID="ActivateSnmp" Value="2" />
     </Connector>
@@ -170,12 +327,14 @@
     <Parameter ID="Terminal" Value="true" />
     <Parameter ID="Startmode" Value="2" />
     <Parameter ID="Mode" Value="Manual" />
-    <Parameter ID="InternetAddress" Value="10.128.148.11" />
+    <Parameter ID="InternetAddress" Value="192.168.131.11" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
-    <Parameter ID="DefaultGateway" Value="10.128.148.1" />
+    <Parameter ID="DefaultGateway" Value="192.168.131.1" />
     <Parameter ID="TimeZone" Value="145" />
+    <Parameter ID="ActivateBuzzer" Value="1" />
+    <Parameter ID="Buzzerduration" Value="50" />
     <Parameter ID="PasswordVNC" Value="" />
-    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.3:85/index.html?visuId=Vizu_P1" />
+    <Parameter ID="SelectedFavoriteWeb" Value="192.168.131.3:85/index.html?visuId=Vizu_P1" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="PasswordCIFS" Value="" />
     <Parameter ID="PasswordService" Value="" />
@@ -285,12 +444,14 @@
     <Parameter ID="Terminal" Value="true" />
     <Parameter ID="Startmode" Value="2" />
     <Parameter ID="Mode" Value="Manual" />
-    <Parameter ID="InternetAddress" Value="10.128.148.21" />
+    <Parameter ID="InternetAddress" Value="192.168.131.21" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
-    <Parameter ID="DefaultGateway" Value="10.128.148.1" />
+    <Parameter ID="DefaultGateway" Value="192.168.131.1" />
     <Parameter ID="TimeZone" Value="145" />
+    <Parameter ID="ActivateBuzzer" Value="1" />
+    <Parameter ID="Buzzerduration" Value="50" />
     <Parameter ID="PasswordVNC" Value="" />
-    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.3:85/index.html?visuId=Vizu_P2" />
+    <Parameter ID="SelectedFavoriteWeb" Value="192.168.131.3:85/index.html?visuId=Vizu_P2" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="PasswordCIFS" Value="" />
     <Parameter ID="PasswordService" Value="" />
@@ -522,12 +683,14 @@
     <Parameter ID="Terminal" Value="true" />
     <Parameter ID="Startmode" Value="2" />
     <Parameter ID="Mode" Value="Manual" />
-    <Parameter ID="InternetAddress" Value="10.128.148.40" />
+    <Parameter ID="InternetAddress" Value="192.168.131.40" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
-    <Parameter ID="DefaultGateway" Value="10.128.148.1" />
+    <Parameter ID="DefaultGateway" Value="192.168.131.1" />
     <Parameter ID="TimeZone" Value="145" />
+    <Parameter ID="ActivateBuzzer" Value="1" />
+    <Parameter ID="Buzzerduration" Value="50" />
     <Parameter ID="PasswordVNC" Value="" />
-    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.3:85/index.html?visuId=Vizu_P34" />
+    <Parameter ID="SelectedFavoriteWeb" Value="192.168.131.3:85/index.html?visuId=Vizu_P34" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="PasswordCIFS" Value="" />
     <Parameter ID="PasswordService" Value="" />

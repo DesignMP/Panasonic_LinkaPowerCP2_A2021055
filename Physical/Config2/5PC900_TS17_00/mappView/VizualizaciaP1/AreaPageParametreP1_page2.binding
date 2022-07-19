@@ -118,17 +118,145 @@
 			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_37" attribute="enable" />
 		</Binding>
 		
-	<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_16" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_49" attribute="enable" />
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_16" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_49" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
+			<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_48" attribute="enable" />
+		</Binding>
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_Rychl_PredneSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_33" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.EditaciaParametrov_ENABLE" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_48" attribute="enable" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_Mom_PrednejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_32" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_Rychl_ZadnejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_27" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_Mom_ZadnejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_26" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_PozY_SkrutkyDPS_M4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_25" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_PozX_SkrutkyDPS_M4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_8" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob5F_PozY_PrednejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_31" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob5F_PozX_PrednejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_30" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob5F_PozY_ZadnejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_29" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob5F_PozX_ZadnejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_28" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob4F_PozY_PrednejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_24" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob4F_PozX_PrednejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_7" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob4F_PozY_ZadnejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_23" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob4F_PozX_ZadnejSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_6" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_PozY_PravejSkrutkyK30" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_10" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_PozX_PravejSkrutkyK30" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_PozY_LavejSkrutkyK30" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_9" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_PozX_LavejSkrutkyK30" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_ManipSrob_OsZ_M4_Rychlost" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_46" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob_PozZ_OdobratSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_49" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob_PozY_OdobratSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_48" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob_PozX_OdobratSkrutkyM4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_16" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_ManipSrob_OsZ_M4_Dcc" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_43" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_ManipSrob_OsZ_M4_Acc" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_42" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_ManipSrob_OsY_Rychlost" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_41" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_ManipSrob_OsX_Rychlost" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_40" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_ManipSrob_OsXY_Dcc" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_39" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_ManipSrob_OsXY_Acc" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_38" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_ManipSrob_OsXY_Dcc" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_37" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_ManipSrob_OsXY_Acc" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_36" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_Rychl_SkrutkyDPS_M4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_35" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_RemPremenne.P1_Srob45F_Mom_SkrutkyDPS_M4" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageParametreP1_page2" widgetRefId="NumericInput_34" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

@@ -139,6 +139,10 @@ PROGRAM _CYCLIC
 	//Zamknutie tlaèítok ovládania zámkov//
 	IF P1_Pracovisko.STAV.Automat THEN
 		P1_Vizu.TL_OvladaniaZamkov_ENABLE:= FALSE;
+	ELSIF P1_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P1_Vizu.TL_OvladaniaZamkov_ENABLE:= FALSE;
+	ELSIF P1_Srobovanie.STAV.CistenieSkrutkovackyK30_BUSY THEN
+		P1_Vizu.TL_OvladaniaZamkov_ENABLE:= FALSE;
 	ELSE
 		P1_Vizu.TL_OvladaniaZamkov_ENABLE:= TRUE;
 	END_IF	
@@ -341,6 +345,12 @@ PROGRAM _CYCLIC
 		P1_Vizu.TL_OvladSkrutkovSetuK30_ENABLE:= TRUE;
 	END_IF	
 	
+	//RR - Ovládanie manipulatora XY//
+	IF NOT Safety.STAV.P1_ZonaBunky_AKTIVNA THEN
+		P1_Vizu.TL_OvladManipulatoraXY_ENABLE:= FALSE;
+	ELSE	
+		P1_Vizu.TL_OvladManipulatoraXY_ENABLE:= TRUE;
+	END_IF	
 	
 	
 	//**************************Zamknutie editácie parametrov*********************************//

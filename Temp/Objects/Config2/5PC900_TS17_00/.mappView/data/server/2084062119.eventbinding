@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaTimeP34">
+    <EventBinding id="AreaTimeP34.DateTimeInput1.ValueChanged">
+      <Source type="widgets.brease.DateTimeInput.Event" event="ValueChanged" refId="AreaTimeP34_DateTimeInput1" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:Vizu.NastavCasPLC">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaTimeP34">
+    <EventBinding id="AreaTimeP34.DateTimeInput2.ValueChanged">
+      <Source type="widgets.brease.DateTimeInput.Event" event="ValueChanged" refId="AreaTimeP34_DateTimeInput2" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:Vizu.NastavCasPLC">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaTimeP34">
+    <EventBinding id="AreaTimeP34.LogoutButton2.Click">
+      <Source type="widgets.brease.LogoutButton.Event" event="Click" refId="AreaTimeP34_LogoutButton2" />
+      <EventHandler>
+        <Action>
+          <Target type="clientSystem.Action">
+            <Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="TimeDialogP34" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaTimeP34">
+    <EventBinding id="EventBinding_7">
+      <Source type="clientSystem.Event" event="DialogOpened" />
+      <Operand datatype="DATE_AND_TIME" name="actDatum">
+        <ReadTarget type="opcUa.NodeAction.Read" refId="::AsGlobalPV:Vizu.AktualnyCasPLC">
+          <Method type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="widgets.brease.DateTimeInput.Action" refId="AreaTimeP34_DateTimeInput1">
+                <Method type="widgets.brease.DateTimeInput.Action.SetValue"><Parameter name="value" xsi:type="DATE_AND_TIME" value="=actDatum" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="widgets.brease.DateTimeInput.Action" refId="AreaTimeP34_DateTimeInput2">
+                <Method type="widgets.brease.DateTimeInput.Action.SetValue"><Parameter name="value" xsi:type="DATE_AND_TIME" value="=actDatum" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

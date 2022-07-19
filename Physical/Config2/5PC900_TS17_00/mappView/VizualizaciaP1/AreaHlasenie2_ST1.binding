@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaHlasenie2_ST1_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM2.RESULT.Paletka.Pritom_Foamu_Lavy_4F5F" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie2_ST1" widgetRefId="ImageList5" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM2.RESULT.Paletka.Pritom_Busbaru_Spodny_5F" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie2_ST1" widgetRefId="ImageList6" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM2.RESULT.Paletka.Pritom_DPS_4F5F" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie2_ST1" widgetRefId="ImageList4" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM2.RESULT.Paletka.Pritomn_Skeletonu_4F5F" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie2_ST1" widgetRefId="ImageList7" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM2.RESULT.Paletka.Pritom_PowerCP_5F" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie2_ST1" widgetRefId="ImageList8" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM2.RESULT.Paletka.Pritom_Foamu_Pravy_4F5F" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaHlasenie2_ST1" widgetRefId="ImageList9" attribute="selectedIndex" />
+</Binding>
+</Bindings>
+</BindingsSet>

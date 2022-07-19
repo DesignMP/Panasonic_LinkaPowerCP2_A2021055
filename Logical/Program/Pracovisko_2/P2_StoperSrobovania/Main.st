@@ -19,10 +19,30 @@ PROGRAM _CYCLIC
 	IF P2_StoperSrobovania.Reset THEN
 		SC_P2_StoperSrobovania.Step:= 0;
 		P2_StoperSrobovania.Reset:= FALSE;
-	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA AND NOT P2_StoperSrobovania.Automat THEN
 		SC_P2_StoperSrobovania.Step:= 0;
-	ELSIF NOT P2_StoperSrobovania.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
-		SC_P2_StoperSrobovania.Step:= 0;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA AND P2_StoperSrobovania.Automat THEN	
+		P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
+	END_IF	
+	
+	
+	//Ukonèenie komunikácie pri poruche//
+	IF P2_Pracovisko.STAV.Porucha_ST4 AND NOT Triger_0 THEN
+		Triger_0:= TRUE;
+		IF P2_StoperSrobovania.STAV.VyrobaZacala THEN
+			Paletka[i].PAR.StavPowerCP:= 'FAIL';
+			Paletka[i].STAV.StavPaletky:= 'NG';
+			P2_StoperSrobovania.KoniecCyklu:= TRUE;
+			SC_P2_StoperSrobovania.ResetStep:= TRUE;
+			SC_P2_StoperSrobovania.Step:= 550;
+		ELSE
+			SC_P2_StoperSrobovania.ResetStep:= TRUE;
+			SC_P2_StoperSrobovania.Step:= 0;
+		END_IF
+	END_IF	
+	
+	IF NOT P2_Pracovisko.STAV.Porucha_ST4 THEN
+		Triger_0:= FALSE;
 	END_IF	
 	
 	
@@ -35,6 +55,8 @@ PROGRAM _CYCLIC
 			P2_StoperSrobovania.KoniecCyklu:= FALSE;
 			P2_StoperSrobovania.Manual:= FALSE;
 			P2_StoperSrobovania.STAV.PoINIT:= FALSE;
+			P2_StoperSrobovania.STAV.VyrobaZacala:= FALSE;
+			P2_StoperSrobovania.STAV.VstupnaKamerovaKontrola:= FALSE;
 			P2_StoperSrobovania.OUT.ZasunStoper:= FALSE;
 			P2_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 			P2_Srobovanie.COM_IN.Model45F_ZaskrutkujLavuM4:= FALSE;
@@ -75,6 +97,7 @@ PROGRAM _CYCLIC
 			P2_Vizu.ZobrazHL2_ST5:= FALSE;
 			P2_Vizu.ZobrazHL3_ST5:= FALSE;
 			P2_Vizu.ZobrazHL4_ST5:= FALSE;
+			P2_Vizu.ZobrazHL8_ST5:= FALSE;
 			TRCB_P2_Srobov_OpatovnyDopyt:= FALSE;
 			TRCB_P2_Srobov_PaletkaNG:= FALSE;
 			VysunutieSkrutkovacky_OK:= FALSE;
@@ -87,7 +110,8 @@ PROGRAM _CYCLIC
 			P2_AkumulacnyStoper.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P2_Robot.STAV.Srobovanie_PrebiehaManipulacia:= FALSE;
 			DoskrutkovaniePriPoruche:= FALSE;
-			
+			P2_Skrutkovanie_Taktime.IN.START_MeraniaCasu:= FALSE;
+			P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				
 			
 			
@@ -133,10 +157,8 @@ PROGRAM _CYCLIC
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#4s;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
-			IF Linka.KOM_FTP_OFF THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 10;
-			ELSIF NOT SC_P2_StoperSrobovania.Switch1 THEN
+			
+			IF NOT SC_P2_StoperSrobovania.Switch1 THEN
 				FTP_CAM10.CMD.VymazFotku:= TRUE;
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF	
@@ -177,11 +199,7 @@ PROGRAM _CYCLIC
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P2_StoperSrobovania.Switch1 AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie THEN
-				IF Linka.PAR.ZvolenyModel = '5H' THEN
-					P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= TRUE;
-				ELSE
-					P2_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
-				END_IF	
+				P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= TRUE;
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
@@ -242,6 +260,7 @@ PROGRAM _CYCLIC
 			
 			IF P2_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky;
+				P2_StoperSrobovania.PAR.CisloPaletky:= P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 23;
@@ -270,7 +289,12 @@ PROGRAM _CYCLIC
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				P2_StoperSrobovania.STAV.PoINIT:= TRUE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 560;
@@ -310,206 +334,15 @@ PROGRAM _CYCLIC
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 560;
 			ELSE
+				P2_StoperSrobovania.STAV.PoINIT:= TRUE;
+				P2_StoperSrobovania.STAV.VstupnaKamerovaKontrola:= TRUE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 38;
+				SC_P2_StoperSrobovania.Step:= 100;
 			END_IF	
 					
 		
 			
-		38:
-			SC_P2_StoperSrobovania.StepName:='38 - Inicializacia - kontrola odoslania fotiek';
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#5s;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;   
-            
-			IF Paletka[i].STAV.OdoslanieFotiek_DONE THEN
-				P2_StoperSrobovania.STAV.PoINIT:= TRUE;
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 550;
-			ELSE
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 40;
-			END_IF
-            
-            
-		40:
-			SC_P2_StoperSrobovania.StepName:='40 - Inicializacia - zacentrovanie paletky';
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
-		
-			IF NOT SC_P2_StoperSrobovania.Switch1 THEN
-				Centrovacku_VYSUN:= TRUE;
-				SC_P2_StoperSrobovania.Switch1:= TRUE;
-			END_IF
-		
-			IF P2_StoperSrobovania.IN.Centrovanie_VYSUNUTE THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 46;
-			END_IF	   
-            
-      			
-            
-		46:
-			SC_P2_StoperSrobovania.StepName:='45 - Inicializacia - kamerova kontrola paletky CAM10'; //CAM 10//
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#5s;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;   
-            
-           			
-			IF Linka.P2_Kamery_OFF THEN
-				P2_StoperSrobovania.STAV.PoINIT:= TRUE;
-				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 138;
-				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 138;
-				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 358; 
-				END_IF	
-			ELSIF NOT SC_P2_StoperSrobovania.Switch1 AND CAM10.STAV.Command_READY THEN
-				CAM10.CMD.Triger:= TRUE;
-				SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
-				SC_P2_StoperSrobovania.Switch1:= TRUE;
-			END_IF
-			
-			IF CAM10.STAV.Results_READY AND CAM10.STAV.Command_AKCEPTOVANY THEN
-				PocetTrigrovKamery:= 0;
-				CAM10.STAV.Results_READY:= FALSE;
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 50;
-			ELSIF SC_P2_StoperSrobovania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
-				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
-				CAM10.STAV.Results_READY:= FALSE;
-				CAM10.CMD.Triger:= FALSE;
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 48;
-			ELSIF SC_P2_StoperSrobovania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
-				P2_Alarmy[295]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
-			END_IF
-		
-                     
-            
-            
-		48:
-			SC_P2_StoperSrobovania.StepName:='48 - Inicializacia - cakam na opatovny triger kamery CAM10';
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#1s;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
-			
-			SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
-			
-			IF SC_P2_StoperSrobovania.IdleTime.Q THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 46;
-			END_IF	
-			
-			
-			   
-		50:
-			SC_P2_StoperSrobovania.StepName:='50 - Inicializacia - kontrola vysledku kamery podla typu modelu';
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
-            
-			
-			IF NOT CAM10.STAV.BUSY THEN
-				CAM10.CMD.Triger:= FALSE;
-				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					IF CAM10.RESULT.Paletka.Pritomn_Busbarov_4F AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_LavejM4_4F5F AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_LavejSkrutkyM6_4F5F AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_PravejM4_4F5F AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_PravejSkrutkyM6_4F5F THEN
-						CAM10.PAR.ResultFotky:= 'PASS';
-						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 53;
-					ELSE
-						CAM10.PAR.ResultFotky:= 'FAIL';
-						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 53;
-					END_IF
-				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					IF CAM10.RESULT.Paletka.Pritomn_Busbarov_5F AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_LavejM4_4F5F AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_LavejSkrutkyM6_4F5F AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_PravejM4_4F5F AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_PravejSkrutkyM6_4F5F THEN
-						CAM10.PAR.ResultFotky:= 'PASS';
-						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 53;
-					ELSE
-						CAM10.PAR.ResultFotky:= 'FAIL';
-						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 53;
-					END_IF
-				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					IF CAM10.RESULT.Paletka.Pritomn_Busbarov_5H AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_LavejSkrutkyM5_5H AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_PravejSkrutkyM5_5H AND
-						NOT CAM10.RESULT.PowerCP.Pritomn_SkrutkyM4_Filtra_5H THEN
-						CAM10.PAR.ResultFotky:= 'PASS';
-						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 53;
-					ELSE
-						CAM10.PAR.ResultFotky:= 'FAIL';
-						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 53;
-					END_IF  
-				END_IF   
-			END_IF
-			
-			
-		53:
-			SC_P2_StoperSrobovania.StepName:='53 - Inicializacia - vymazanie adresara kamery';
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#4s;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
-			
-			IF Linka.KOM_FTP_OFF THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 55;		
-			ELSIF NOT SC_P2_StoperSrobovania.Switch1 THEN
-				FTP_CAM10.CMD.VymazFotku:= TRUE;
-				SC_P2_StoperSrobovania.Switch1:= TRUE;
-			END_IF	
-			
-				
-			IF FTP_CAM10.STATUS.KomunikaciaUkoncena THEN
-				FTP_CAM10.CMD.VymazFotku:= FALSE;
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 55;
-			ELSIF FTP_CAM10.STATUS.KomunikaciaError THEN
-				P2_Alarmy[232]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
-			END_IF	
-            
-            
-		55:
-			SC_P2_StoperSrobovania.StepName:='55 - Inicializacia - rozhodnutie podla kamerovej kontroly paletky';
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
-            	
-				
-			IF CAM10.PAR.ResultFotky = 'PASS' THEN
-				P2_StoperSrobovania.STAV.PoINIT:= TRUE;
-				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 138;
-				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 138;
-				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 358;  
-				END_IF    
-			ELSIF CAM10.PAR.ResultFotky = 'FAIL' THEN
-				P2_StoperSrobovania.STAV.PoINIT:= TRUE;
-				Paletka[i].PAR.StavPowerCP:= 'FAIL';
-				Paletka[i].STAV.StavPaletky:= 'NG';
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 545;
-			END_IF
-            
-               
-            
+
 			
 					
 			//********************************************************Automatický režim****************************************************************************//
@@ -526,7 +359,18 @@ PROGRAM _CYCLIC
 				P2_Robot.STAV.Srobovanie_PrebiehaManipulacia:= TRUE;
 				P2_AkumulacnyStoper.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			END_IF	
-			           
+			      
+			IF NOT SC_P2_StoperSrobovania.Switch1 AND P2_StoperSrobovania.RFID_hlava.PritomnostPaletky THEN
+				P2_Skrutkovanie_Taktime.IN.START_MeraniaCasu:= TRUE;
+				P2_Skrutkovanie_Taktime.IN.ZAPIS_MeraniaCasu:= TRUE;
+				P2_Skrutkovanie_Taktime.IN.ZAPIS_StratovyCas:= TRUE;
+				Buffer_5.Hodnota:= P2_Skrutkovanie_Taktime.OUT.StratoveSekundy;
+				Buffer_5.ZapisHodnotu:= TRUE;
+				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			END_IF
+			
+			
+			
 			IF P2_StoperSrobovania.KoniecCyklu THEN
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 0;
@@ -550,6 +394,7 @@ PROGRAM _CYCLIC
 					
 			IF P2_StoperSrobovania.RFID_hlava.Stav_CitanieZapis_OK AND P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky;
+				P2_StoperSrobovania.PAR.CisloPaletky:= P2_StoperSrobovania.RFID_hlava.PrecitaneCisloPaletky;
 				P2_StoperSrobovania.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 102;
@@ -584,8 +429,11 @@ PROGRAM _CYCLIC
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
-			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 560;
 			ELSIF Paletka[i].STAV.StavPaletky = 'TEST' AND Paletka[i].STAV.CisloTestovacejStanice = 'ST_5' THEN
@@ -618,19 +466,23 @@ PROGRAM _CYCLIC
 			IF Linka.KOM_Panatrace_OFF THEN
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 120;
-			ELSIF NOT SC_P2_StoperSrobovania.Switch1 THEN
+			ELSIF NOT SC_P2_StoperSrobovania.Switch1 AND TRCB_P2_Srobovanie_ST5.STATUS.KOM_READY THEN
 				TRCB_P2_Srobovanie_ST5.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				Centrovacku_VYSUN:= TRUE;
+				(*P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF 
             
 			IF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P2_Srobovanie_ST5.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 106;
 			ELSIF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaError THEN	
 				TRCB_P2_Srobovanie_ST5.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 115;
+				SC_P2_StoperSrobovania.Step:= 107;
 			END_IF	
 			
 		106:
@@ -641,25 +493,52 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 106;
-				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
+					SC_P2_StoperSrobovania.Step:= 107;
+				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 106;	
+					SC_P2_StoperSrobovania.Step:= 108;	
 				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 106;
+					SC_P2_StoperSrobovania.Step:= 120;
 				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 106;
-				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
+					SC_P2_StoperSrobovania.Step:= 107;
+				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 106;
-				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
+					SC_P2_StoperSrobovania.Step:= 107;
+				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 106;
+					SC_P2_StoperSrobovania.Step:= 107;
+				ELSE
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 107;
 				END_IF   
 			END_IF
 				
+		
+			
+		107:
+			SC_P2_StoperSrobovania.StepName:='107 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
+            
+       
+			P2_Vizu.ZobrazHL8_ST5:= TRUE;
+            
+			IF TRCB_P2_Srobov_OpatovnyDopyt THEN
+				TRCB_P2_Srobov_OpatovnyDopyt:= FALSE; 
+				P2_Vizu.ZobrazHL8_ST5:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 105;
+			ELSIF TRCB_P2_Srobov_PaletkaNG THEN
+				TRCB_P2_Srobov_PaletkaNG:= FALSE;
+				P2_Vizu.ZobrazHL8_ST5:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 116;
+			END_IF   	
+			
+			
 			
 			
 		108:
@@ -669,20 +548,22 @@ PROGRAM _CYCLIC
 			SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
             
             
-			IF NOT SC_P2_StoperSrobovania.Switch1  THEN
+			IF NOT SC_P2_StoperSrobovania.Switch1 AND TRCB_P2_Srobovanie_ST5.STATUS.KOM_READY THEN
 				TRCB_P2_Srobovanie_ST5.CMD.VyziadajStavPaletky_TYP1:= TRUE;
-				Centrovacku_VYSUN:= TRUE;
+				(*P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
 			IF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P2_Srobovanie_ST5.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 110;
 			ELSIF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaError THEN	
 				TRCB_P2_Srobovanie_ST5.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 115;
+				SC_P2_StoperSrobovania.Step:= 107;
 			END_IF	
 			
 			
@@ -751,7 +632,7 @@ PROGRAM _CYCLIC
 			
 		
 		120:
-			SC_P2_StoperSrobovania.StepName:='118 - Automaticky Rezim - zacentrovanie paletky';
+			SC_P2_StoperSrobovania.StepName:='120 - Automaticky Rezim - zacentrovanie paletky';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
@@ -761,11 +642,61 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			IF P2_StoperSrobovania.IN.Centrovanie_VYSUNUTE THEN
+				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 125;
+				SC_P2_StoperSrobovania.Step:= 123;
 			END_IF	
 		
-       
+		123:
+			SC_P2_StoperSrobovania.StepName:='123 - Automaticky Rezim - vstupna kamerova kontrola paletky CAM10';//CAM 10//
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#5s;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+			
+			
+			IF NOT P2_StoperSrobovania.STAV.VstupnaKamerovaKontrola THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 125;
+			ELSIF NOT SC_P2_StoperSrobovania.Switch1 AND CAM10.STAV.Command_READY THEN
+				CAM10.CMD.Triger:= TRUE;
+				SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
+				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			END_IF
+			
+			IF CAM10.STAV.Results_READY AND CAM10.STAV.Command_AKCEPTOVANY AND CAM10.STAV.OldRunCounter <> CAM10.STAV.RunCounter THEN
+				PocetTrigrovKamery:= 0;
+				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 125;
+			ELSIF SC_P2_StoperSrobovania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
+				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
+				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
+				CAM10.CMD.Triger:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 124;    
+			ELSIF SC_P2_StoperSrobovania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
+				P2_Alarmy[295]:= TRUE;
+				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;    
+			END_IF	
+		
+            
+                  
+            
+            
+            
+		124:
+			SC_P2_StoperSrobovania.StepName:='124 - Automaticky Rezim - cakam na opatovny triger kamery CAM10';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#1s;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+            
+			SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
+			
+			IF SC_P2_StoperSrobovania.IdleTime.Q THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 123;
+			END_IF	
             
             
 		125:
@@ -775,23 +706,159 @@ PROGRAM _CYCLIC
 			
             
 			IF Linka.PAR.ZvolenyModel = '4F' THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 138;
+				IF P2_StoperSrobovania.STAV.VstupnaKamerovaKontrola THEN
+					P2_StoperSrobovania.STAV.VstupnaKamerovaKontrola:= FALSE;
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 130;
+				ELSE
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 140;
+				END_IF	
 			ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 138;	
+				IF P2_StoperSrobovania.STAV.VstupnaKamerovaKontrola THEN
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 130;
+				ELSE
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 140;
+				END_IF	
 			ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 358; 
+				IF P2_StoperSrobovania.STAV.VstupnaKamerovaKontrola THEN
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 340;
+				ELSE
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 350; 
+				END_IF	
 			END_IF
             
 		            
 		
 			
 			//******************************************Model 45F*************************************************//			
+	            
+		130:
+			SC_P2_StoperSrobovania.StepName:='130 - Automaticky Rezim - model 45F kontrola vysledku kamery';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+			SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
+			
 		
-		138:
-			SC_P2_StoperSrobovania.StepName:='138 - Automaticky Rezim - model 45F presun manipulatora vpred';
+			IF Linka.P2_Kamery_OFF THEN
+				CAM10.CMD.Triger:= FALSE;
+				CAM10.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 132;
+			ELSIF NOT CAM10.STAV.BUSY THEN
+				CAM10.CMD.Triger:= FALSE;
+				IF CAM10.RESULT.Paletka.Pritomn_Busbarov_45F THEN
+					CAM10.PAR.ResultFotky:= 'PASS';
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 132;
+				ELSE
+					CAM10.PAR.ResultFotky:= 'FAIL';
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 132;
+				END_IF
+			END_IF
+			
+		
+	
+		132:
+			SC_P2_StoperSrobovania.StepName:='132 - Automaticky Rezim - model 45F rozhodnutie podla kamerovej kontroly paletky';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+							
+			IF CAM10.PAR.ResultFotky = 'PASS' THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 135;
+			ELSIF CAM10.PAR.ResultFotky = 'FAIL' THEN
+				Paletka[i].PAR.StavPowerCP:= 'FAIL';
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 540;
+			END_IF
+		
+			
+			
+		135:
+			SC_P2_StoperSrobovania.StepName:='135 - Automaticky Rezim - vymazanie adresara kamery CAM10';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#4s;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+			
+			
+			IF NOT SC_P2_StoperSrobovania.Switch1 THEN
+				FTP_CAM10.CMD.VymazFotku:= TRUE;
+				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			END_IF	
+			
+				
+			IF FTP_CAM10.STATUS.KomunikaciaUkoncena THEN
+				FTP_CAM10.CMD.VymazFotku:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 140;
+			ELSIF FTP_CAM10.STATUS.KomunikaciaError THEN
+				P2_Alarmy[232]:= TRUE;
+				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
+			END_IF	
+				
+			
+			
+			
+			
+			
+			
+			
+		140:
+			SC_P2_StoperSrobovania.StepName:='140 - Automaticky Rezim - model 45F kontrola skrutky M4 v skrutkovacke';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+			
+			IF P2_Srobovanie.IN.Skrutkovacka_M4_Vakum_OK THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 148;
+			ELSE
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 143;
+			END_IF	
+			
+		
+		
+		143:
+			SC_P2_StoperSrobovania.StepName:='143 - Automaticky Rezim - model 45F odobratie skrutky M4 z podavaca';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+		
+			
+			IF NOT SC_P2_StoperSrobovania.Switch1 AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie THEN
+				P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= TRUE;
+				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			END_IF
+			
+			IF P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
+				P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 145;
+			END_IF
+            
+         
+		145:
+			SC_P2_StoperSrobovania.StepName:='145 - Automaticky Rezim - model 45F cakam na zrusenie signalu skrutkovanie ukoncene';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
+			
+			IF NOT P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 140;
+			END_IF		
+			
+			
+			
+			
+			
+			
+		148:
+			SC_P2_StoperSrobovania.StepName:='148 - Automaticky Rezim - model 45F presun manipulatora vpred';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
@@ -803,23 +870,23 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
 				P2_Srobovanie.COM_IN.PresunManipulatora_VPRED:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 139;
+				SC_P2_StoperSrobovania.Step:= 149;
 			END_IF	
 		
-		139:
-			SC_P2_StoperSrobovania.StepName:='139 - Automaticky Rezim - cakam na zrusenie signalu presun manipulatora ukonceny';
+		149:
+			SC_P2_StoperSrobovania.StepName:='149 - Automaticky Rezim - cakam na zrusenie signalu presun manipulatora ukonceny';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
 			IF NOT P2_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny AND NOT P2_Robot.COM_IN.Stav_Busbary4F_Odobrate AND NOT P2_Robot.COM_IN.Stav_Busbary5F_Odobrate THEN
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 140;
+				SC_P2_StoperSrobovania.Step:= 150;
 			END_IF	
 			
 				
 			
-		140:
-			SC_P2_StoperSrobovania.StepName:='140 - Automaticky Rezim - modwel 45F odober vrchne busbary';
+		150:
+			SC_P2_StoperSrobovania.StepName:='150 - Automaticky Rezim - modwel 45F odober vrchne busbary';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
@@ -833,6 +900,9 @@ PROGRAM _CYCLIC
 					P2_Robot.COM_OUT.Odober_Busbary5F:= TRUE;
 				END_IF	
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			ELSIF P2_StoperSrobovania.KoniecCyklu AND P2_Robot.Automat THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 0;
 			END_IF    
             
 			
@@ -840,15 +910,15 @@ PROGRAM _CYCLIC
 				P2_Robot.COM_OUT.Odober_Busbary4F:= FALSE;
 				P2_Robot.COM_OUT.Odober_Busbary5F:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 143;
+				SC_P2_StoperSrobovania.Step:= 153;
 			ELSIF NOT P2_Robot.COM_IN.Stav_ProgramRUN THEN
 				P2_Alarmy[271]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;     
 			END_IF
 			
 			
-		143:
-			SC_P2_StoperSrobovania.StepName:='143 - Automaticky Rezim - modwel 45F poloz vrchne busbary';
+		153:
+			SC_P2_StoperSrobovania.StepName:='153 - Automaticky Rezim - modwel 45F poloz vrchne busbary';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
@@ -868,15 +938,15 @@ PROGRAM _CYCLIC
 				P2_Robot.COM_OUT.Poloz_Busbary4F:= FALSE;
 				P2_Robot.COM_OUT.Poloz_Busbary5F:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 145;
+				SC_P2_StoperSrobovania.Step:= 155;
 			ELSIF NOT P2_Robot.COM_IN.Stav_ProgramRUN THEN
 				P2_Alarmy[271]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;         
 			END_IF
 			
 			
-		145:
-			SC_P2_StoperSrobovania.StepName:='145 - Automaticky Rezim - modwel 45F zaskrutkuj lavu skrutku M6';
+		155:
+			SC_P2_StoperSrobovania.StepName:='155 - Automaticky Rezim - modwel 45F zaskrutkuj lavu skrutku M6';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
@@ -890,12 +960,12 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				P2_Srobovanie.COM_IN.Model45F_ZaskrutkujLavuM6:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 146;
+				SC_P2_StoperSrobovania.Step:= 156;
 			END_IF	
 		
 		
-		146:
-			SC_P2_StoperSrobovania.StepName:='146 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
+		156:
+			SC_P2_StoperSrobovania.StepName:='156 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
@@ -906,17 +976,17 @@ PROGRAM _CYCLIC
 						SC_P2_StoperSrobovania.Step:= 500; 
 					ELSE	
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 150;
+						SC_P2_StoperSrobovania.Step:= 160;
 					END_IF	
 				ELSE	
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 148;
+					SC_P2_StoperSrobovania.Step:= 158;
 				END_IF	
 			END_IF	
 		
 		
-		148:
-			SC_P2_StoperSrobovania.StepName:='148 - Automaticky Rezim - modwel 4F kontrola vysledku zaskrutkovania lavej skrutky M6';
+		158:
+			SC_P2_StoperSrobovania.StepName:='158 - Automaticky Rezim - modwel 4F kontrola vysledku zaskrutkovania lavej skrutky M6';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
@@ -944,12 +1014,12 @@ PROGRAM _CYCLIC
 				IF VysunutieSkrutkovacky_OK THEN
 					Reports.Skrutkovacky.VyslednyReport.P2_LavaSkrutkaM6:= 'PASS';
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 150;
+					SC_P2_StoperSrobovania.Step:= 160;
 				ELSE
 					Reports.Skrutkovacky.VyslednyReport.P2_LavaSkrutkaM6:= 'FAIL';
 					IF P2_Srobov_M6_Result_OFF THEN
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 150;
+						SC_P2_StoperSrobovania.Step:= 160;
 					ELSE 	
 						Paletka[i].PAR.StavPowerCP:= 'FAIL';
 						Paletka[i].STAV.StavPaletky:= 'NG';
@@ -961,7 +1031,7 @@ PROGRAM _CYCLIC
 				Reports.Skrutkovacky.VyslednyReport.P2_LavaSkrutkaM6:= 'FAIL';
 				IF P2_Srobov_M6_Result_OFF THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 150;
+					SC_P2_StoperSrobovania.Step:= 160;
 				ELSE 	
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
@@ -971,8 +1041,8 @@ PROGRAM _CYCLIC
 			END_IF
 		
 		
-		150:
-			SC_P2_StoperSrobovania.StepName:='150 - Automaticky Rezim - modwel 45F zaskrutkuj pravu skrutku M6';
+		160:
+			SC_P2_StoperSrobovania.StepName:='160 - Automaticky Rezim - modwel 45F zaskrutkuj pravu skrutku M6';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
@@ -987,11 +1057,11 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				P2_Srobovanie.COM_IN.Model45F_ZaskrutkujPravuM6:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 151;
+				SC_P2_StoperSrobovania.Step:= 161;
 			END_IF		
 					
-		151:
-			SC_P2_StoperSrobovania.StepName:='151 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
+		161:
+			SC_P2_StoperSrobovania.StepName:='161 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
@@ -1002,17 +1072,17 @@ PROGRAM _CYCLIC
 						SC_P2_StoperSrobovania.Step:= 500; 
 					ELSE
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 155;
+						SC_P2_StoperSrobovania.Step:= 165;
 					END_IF	
 				ELSE	
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 153;
+					SC_P2_StoperSrobovania.Step:= 163;
 				END_IF	
 			END_IF	
 						
 			
-		153:
-			SC_P2_StoperSrobovania.StepName:='151 - Automaticky Rezim - modwel 45F kontrola vysledku zaskrutkovania pravej skrutky M6';
+		163:
+			SC_P2_StoperSrobovania.StepName:='163 - Automaticky Rezim - modwel 45F kontrola vysledku zaskrutkovania pravej skrutky M6';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
@@ -1039,12 +1109,12 @@ PROGRAM _CYCLIC
 				IF VysunutieSkrutkovacky_OK THEN
 					Reports.Skrutkovacky.VyslednyReport.P2_PravaSkrutkaM6:= 'PASS';
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 155;
+					SC_P2_StoperSrobovania.Step:= 165;
 				ELSE
 					Reports.Skrutkovacky.VyslednyReport.P2_PravaSkrutkaM6:= 'FAIL';
 					IF P2_Srobov_M6_Result_OFF THEN
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 155;
+						SC_P2_StoperSrobovania.Step:= 165;
 					ELSE 
 						Paletka[i].PAR.StavPowerCP:= 'FAIL';
 						Paletka[i].STAV.StavPaletky:= 'NG';
@@ -1056,7 +1126,7 @@ PROGRAM _CYCLIC
 				Reports.Skrutkovacky.VyslednyReport.P2_PravaSkrutkaM6:= 'FAIL';
 				IF P2_Srobov_M6_Result_OFF THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 155;
+					SC_P2_StoperSrobovania.Step:= 165;
 				ELSE 
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
@@ -1065,8 +1135,8 @@ PROGRAM _CYCLIC
 				END_IF    
 			END_IF	
 		
-		155:
-			SC_P2_StoperSrobovania.StepName:='155 - Automaticky Rezim - modwel 45F presun manipulatora vpred';
+		165:
+			SC_P2_StoperSrobovania.StepName:='165 - Automaticky Rezim - modwel 45F presun manipulatora vpred';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
@@ -1078,25 +1148,25 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
 				P2_Srobovanie.COM_IN.PresunManipulatora_VPRED:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 156;
+				SC_P2_StoperSrobovania.Step:= 166;
 			END_IF	
 		
 			
-		156:
-			SC_P2_StoperSrobovania.StepName:='156 - Automaticky Rezim - cakam na zrusenie signalu presun manipulatora ukonceny';
+		166:
+			SC_P2_StoperSrobovania.StepName:='166 - Automaticky Rezim - cakam na zrusenie signalu presun manipulatora ukonceny';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
 			IF NOT P2_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny AND NOT P2_Robot.COM_IN.Stav_RobotPoziciaCakania THEN
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 158;
+				SC_P2_StoperSrobovania.Step:= 168;
 			END_IF	
 			
 			
 			
 					
-		158:
-			SC_P2_StoperSrobovania.StepName:='158 - Automaticky Rezim - model 45F vystavenie signalu pre robota chod do cakacej pozicie';
+		168:
+			SC_P2_StoperSrobovania.StepName:='168 - Automaticky Rezim - model 45F vystavenie signalu pre robota chod do cakacej pozicie';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
@@ -1111,12 +1181,12 @@ PROGRAM _CYCLIC
 				P2_Robot.STAV.Srobovanie_PrebiehaManipulacia:= FALSE;
 				P2_Robot.COM_OUT.Presun_CakaciaPozicia:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 160;
+				SC_P2_StoperSrobovania.Step:= 170;
 			END_IF
 			
 		
-		160:
-			SC_P2_StoperSrobovania.StepName:='160 - Automaticky Rezim - modwel 45F zaskrutkuj lavu skrutku M4';
+		170:
+			SC_P2_StoperSrobovania.StepName:='170 - Automaticky Rezim - modwel 45F zaskrutkuj lavu skrutku M4';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
@@ -1130,11 +1200,11 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				P2_Srobovanie.COM_IN.Model45F_ZaskrutkujLavuM4:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 161;
+				SC_P2_StoperSrobovania.Step:= 171;
 			END_IF
 			
-		161:
-			SC_P2_StoperSrobovania.StepName:='161 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
+		171:
+			SC_P2_StoperSrobovania.StepName:='171 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
@@ -1145,18 +1215,18 @@ PROGRAM _CYCLIC
 						SC_P2_StoperSrobovania.Step:= 500; 
 					ELSE
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 165;
+						SC_P2_StoperSrobovania.Step:= 175;
 					END_IF	
 				ELSE	
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 163;
+					SC_P2_StoperSrobovania.Step:= 173;
 				END_IF	
 			END_IF		
 			
 			
 			
-		163:
-			SC_P2_StoperSrobovania.StepName:='163 - Automaticky Rezim - modwel 45F kontrola vysledku zaskrutkovania lavej skrutky M4';
+		173:
+			SC_P2_StoperSrobovania.StepName:='173 - Automaticky Rezim - modwel 45F kontrola vysledku zaskrutkovania lavej skrutky M4';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
@@ -1184,12 +1254,12 @@ PROGRAM _CYCLIC
 				IF VysunutieSkrutkovacky_OK THEN
 					Reports.Skrutkovacky.VyslednyReport.P2_LavaSkrutkaM4:= 'PASS';
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 165;
+					SC_P2_StoperSrobovania.Step:= 175;
 				ELSE
 					Reports.Skrutkovacky.VyslednyReport.P2_LavaSkrutkaM4:= 'FAIL';
 					IF P2_Srobov_M4_Result_OFF THEN
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 165;
+						SC_P2_StoperSrobovania.Step:= 175;
 					ELSE 
 						Paletka[i].PAR.StavPowerCP:= 'FAIL';
 						Paletka[i].STAV.StavPaletky:= 'NG';
@@ -1201,7 +1271,7 @@ PROGRAM _CYCLIC
 				Reports.Skrutkovacky.VyslednyReport.P2_LavaSkrutkaM4:= 'FAIL';
 				IF P2_Srobov_M4_Result_OFF THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 165;
+					SC_P2_StoperSrobovania.Step:= 175;
 				ELSE 
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
@@ -1211,8 +1281,8 @@ PROGRAM _CYCLIC
 			END_IF
 			
 			
-		165:
-			SC_P2_StoperSrobovania.StepName:='165 - Automaticky Rezim - modwel 45F zaskrutkuj pravu skrutku M4';
+		175:
+			SC_P2_StoperSrobovania.StepName:='175 - Automaticky Rezim - modwel 45F zaskrutkuj pravu skrutku M4';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
@@ -1226,13 +1296,13 @@ PROGRAM _CYCLIC
 			IF P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				P2_Srobovanie.COM_IN.Model45F_ZaskrutkujPravuM4:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 166;
+				SC_P2_StoperSrobovania.Step:= 176;
 			END_IF	
 
 			
 			
-		166:
-			SC_P2_StoperSrobovania.StepName:='166 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
+		176:
+			SC_P2_StoperSrobovania.StepName:='176 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
 			
@@ -1243,18 +1313,18 @@ PROGRAM _CYCLIC
 						SC_P2_StoperSrobovania.Step:= 500; 
 					ELSE
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 170;
+						SC_P2_StoperSrobovania.Step:= 180;
 					END_IF	
 				ELSE	
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 168;
+					SC_P2_StoperSrobovania.Step:= 178;
 				END_IF	
 			END_IF			
 			
 			
 			
-		168:
-			SC_P2_StoperSrobovania.StepName:='168 - Automaticky Rezim - modwel 4F kontrola vysledku zaskrutkovania pravej skrutky M4';
+		178:
+			SC_P2_StoperSrobovania.StepName:='178 - Automaticky Rezim - modwel 4F kontrola vysledku zaskrutkovania pravej skrutky M4';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
@@ -1284,12 +1354,12 @@ PROGRAM _CYCLIC
 				IF VysunutieSkrutkovacky_OK THEN
 					Reports.Skrutkovacky.VyslednyReport.P2_PravaSkrutkaM4:= 'PASS';
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 170;
+					SC_P2_StoperSrobovania.Step:= 180;
 				ELSE
 					Reports.Skrutkovacky.VyslednyReport.P2_PravaSkrutkaM4:= 'FAIL';
 					IF P2_Srobov_M4_Result_OFF THEN
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 170;
+						SC_P2_StoperSrobovania.Step:= 180;
 					ELSE  
 						Paletka[i].PAR.StavPowerCP:= 'FAIL';
 						Paletka[i].STAV.StavPaletky:= 'NG';
@@ -1301,7 +1371,7 @@ PROGRAM _CYCLIC
 				Reports.Skrutkovacky.VyslednyReport.P2_PravaSkrutkaM4:= 'FAIL';
 				IF P2_Srobov_M4_Result_OFF THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 170;
+					SC_P2_StoperSrobovania.Step:= 180;
 				ELSE  
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
@@ -1312,65 +1382,51 @@ PROGRAM _CYCLIC
 		
 			
 			
-		170:
-			SC_P2_StoperSrobovania.StepName:='170 - Automaticky Rezim - modwel 45F presun na odobratie skrutky M4 alebo presun manipulatora vzad';
+		180:
+			SC_P2_StoperSrobovania.StepName:='180 - Automaticky Rezim - modwel 45F presun na odobratie skrutky M4 ';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 		
 			IF NOT SC_P2_StoperSrobovania.Switch1 AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie THEN
-				IF Linka.PAR.ZvolenyModel = '5H' THEN
-					P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= TRUE;
-				ELSE
-					P2_Srobovanie.COM_IN.PresunManipulatora_VZAD:= TRUE;
-				END_IF	
+				P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= TRUE;
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
-			IF P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene OR P2_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
+			IF P2_Srobovanie.STAV.ManipulatorNadPodavacmi THEN
 				P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= FALSE;
 				P2_Srobovanie.COM_IN.PresunManipulatora_VZAD:= FALSE;
+				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 171;
+				SC_P2_StoperSrobovania.Step:= 183;
 			END_IF	
 		
 		
-		171:	
-			SC_P2_StoperSrobovania.StepName:='171 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie alebo presun ukonceny';
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
-			
-			IF NOT P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene AND NOT P2_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
-				CAM10.STAV.Results_READY:= FALSE;
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 173;
-			END_IF		
 		
-		
-		173:
-			SC_P2_StoperSrobovania.StepName:='173 - Automaticky Rezim - modwel 45F kamerova kontrola paletky CAM10';//CAM 10//
+		183:
+			SC_P2_StoperSrobovania.StepName:='183 - Automaticky Rezim - modwel 45F kamerova kontrola paletky CAM10';//CAM 10//
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#5s;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
-			IF Linka.P2_Kamery_OFF THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 540;
-			ELSIF NOT SC_P2_StoperSrobovania.Switch1 AND CAM10.STAV.Command_READY THEN
+			IF NOT SC_P2_StoperSrobovania.Switch1 AND CAM10.STAV.Command_READY THEN
 				CAM10.CMD.Triger:= TRUE;
 				SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM10.STAV.Results_READY AND CAM10.STAV.Command_AKCEPTOVANY THEN
+			IF CAM10.STAV.Results_READY AND CAM10.STAV.Command_AKCEPTOVANY AND CAM10.STAV.OldRunCounter <> CAM10.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 175;
+				SC_P2_StoperSrobovania.Step:= 185;
 			ELSIF SC_P2_StoperSrobovania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				CAM10.CMD.Triger:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 174;    
+				SC_P2_StoperSrobovania.Step:= 184;    
 			ELSIF SC_P2_StoperSrobovania.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
 				P2_Alarmy[295]:= TRUE;
 				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;    
@@ -1381,8 +1437,8 @@ PROGRAM _CYCLIC
             
             
             
-		174:
-			SC_P2_StoperSrobovania.StepName:='174 - Automaticky Rezim - modwel 45F cakam na opatovny triger kamery CAM10';
+		184:
+			SC_P2_StoperSrobovania.StepName:='184 - Automaticky Rezim - modwel 45F cakam na opatovny triger kamery CAM10';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#1s;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
             
@@ -1390,36 +1446,41 @@ PROGRAM _CYCLIC
 			
 			IF SC_P2_StoperSrobovania.IdleTime.Q THEN
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 173;
+				SC_P2_StoperSrobovania.Step:= 183;
 			END_IF	
             
-		175:
-			SC_P2_StoperSrobovania.StepName:='175 - Automaticky Rezim - model 45F kontrola vysledku kamery';
+		185:
+			SC_P2_StoperSrobovania.StepName:='185 - Automaticky Rezim - model 45F kontrola vysledku kamery';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
 			
-			IF NOT CAM10.STAV.BUSY THEN
+			IF Linka.P2_Kamery_OFF THEN
+				CAM10.CMD.Triger:= FALSE;
+				CAM10.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 190;
+			ELSIF NOT CAM10.STAV.BUSY THEN
 				CAM10.CMD.Triger:= FALSE;
 				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					IF NOT CAM10.RESULT.Paletka.Pritomn_Busbarov_4F	THEN
+					IF NOT CAM10.RESULT.Paletka.Pritomn_Busbarov_45F THEN
 						CAM10.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 180;
+						SC_P2_StoperSrobovania.Step:= 190;
 					ELSE
 						CAM10.PAR.ResultFotky:= 'FAIL';
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 180;
+						SC_P2_StoperSrobovania.Step:= 190;
 					END_IF
 				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					IF NOT CAM10.RESULT.Paletka.Pritomn_Busbarov_5F	THEN
+					IF NOT CAM10.RESULT.Paletka.Pritomn_Busbarov_45F THEN
 						CAM10.PAR.ResultFotky:= 'PASS';
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 180;
+						SC_P2_StoperSrobovania.Step:= 190;
 					ELSE
 						CAM10.PAR.ResultFotky:= 'FAIL';
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
-						SC_P2_StoperSrobovania.Step:= 180;
+						SC_P2_StoperSrobovania.Step:= 190;
 					END_IF	
 				END_IF
 			END_IF
@@ -1427,8 +1488,8 @@ PROGRAM _CYCLIC
 				
 	
 	
-		180:
-			SC_P2_StoperSrobovania.StepName:='135 - Automaticky Rezim - model 45F rozhodnutie podla kamerovej kontroly paletky';
+		190:
+			SC_P2_StoperSrobovania.StepName:='190 - Automaticky Rezim - model 45F rozhodnutie podla kamerovej kontroly paletky';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 							
@@ -1437,10 +1498,15 @@ PROGRAM _CYCLIC
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 540;
 			ELSIF CAM10.PAR.ResultFotky = 'FAIL' THEN
-				P2_Vizu.ZobrazHL1_ST5:= TRUE;
+				IF Linka.PAR.ZvolenyModel = '4F' THEN
+					P2_Vizu.ZobrazHL1_ST5:= TRUE;
+				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
+					P2_Vizu.ZobrazHL2_ST5:= TRUE;
+				END_IF	
 				IF P2_Srobov_KAM_Result_OK THEN
 					P2_Srobov_KAM_Result_OK:= FALSE;
 					P2_Vizu.ZobrazHL1_ST5:= FALSE;
+					P2_Vizu.ZobrazHL2_ST5:= FALSE;
 					Paletka[i].PAR.StavPowerCP:= 'PASS';
 					CAM10.PAR.ResultFotky:= 'PASS';
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
@@ -1448,6 +1514,7 @@ PROGRAM _CYCLIC
 				ELSIF P2_Srobov_KAM_Result_NG THEN
 					P2_Srobov_KAM_Result_NG:= FALSE;    
 					P2_Vizu.ZobrazHL1_ST5:= FALSE;
+					P2_Vizu.ZobrazHL2_ST5:= FALSE;
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
@@ -1459,6 +1526,126 @@ PROGRAM _CYCLIC
 	
 			
 			//********************************************Model 5H**************************************************************//	
+		
+		340:
+			SC_P2_StoperSrobovania.StepName:='340 - Automaticky Rezim - model 5H kontrola vysledku kamery';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+			SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
+			
+			IF Linka.P2_Kamery_OFF THEN
+				CAM10.CMD.Triger:= FALSE;
+				CAM10.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 343;
+			ELSIF NOT CAM10.STAV.BUSY  THEN
+				CAM10.CMD.Triger:= FALSE;
+				IF CAM10.RESULT.Paletka.Pritomn_Busbarov_5H THEN
+					CAM10.PAR.ResultFotky:= 'PASS';
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 343;
+				ELSE
+					CAM10.PAR.ResultFotky:= 'FAIL';
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 343;
+				END_IF
+			END_IF
+			
+				
+					
+        	
+	
+		343:
+			SC_P2_StoperSrobovania.StepName:='343 - Automaticky Rezim - model 5H rozhodnutie podla kamerovej kontroly paletky';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+			
+			
+			IF CAM10.PAR.ResultFotky = 'PASS' THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 345;
+			ELSIF CAM10.PAR.ResultFotky = 'FAIL' THEN
+				Paletka[i].PAR.StavPowerCP:= 'FAIL';
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 540;    
+			END_IF
+		
+			
+			
+					
+		345:
+			SC_P2_StoperSrobovania.StepName:='345 - Automaticky Rezim - vymazanie adresara kamery CAM10';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#4s;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+			
+			
+			IF NOT SC_P2_StoperSrobovania.Switch1 THEN
+				FTP_CAM10.CMD.VymazFotku:= TRUE;
+				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			END_IF	
+			
+				
+			IF FTP_CAM10.STATUS.KomunikaciaUkoncena THEN
+				FTP_CAM10.CMD.VymazFotku:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 350;
+			ELSIF FTP_CAM10.STATUS.KomunikaciaError THEN
+				P2_Alarmy[232]:= TRUE;
+				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
+			END_IF	
+			
+			
+			
+			
+			
+			
+			
+			
+		350:
+			SC_P2_StoperSrobovania.StepName:='350 - Automaticky Rezim - model 5H kontrola skrutky M4 v skrutkovacke';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+			
+			IF P2_Srobovanie.IN.Skrutkovacka_M4_Vakum_OK THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 358;
+			ELSE
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 353;
+			END_IF	
+			
+		
+		
+		353:
+			SC_P2_StoperSrobovania.StepName:='353 - Automaticky Rezim - model 5H odobratie skrutky M4 z podavaca';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
+		
+			
+			IF NOT SC_P2_StoperSrobovania.Switch1 AND P2_Robot.COM_IN.Stav_RobotBezpPozicia_Srobovanie THEN
+				P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= TRUE;
+				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			END_IF
+			
+			IF P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
+				P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 355;
+			END_IF
+            
+         
+		355:
+			SC_P2_StoperSrobovania.StepName:='353 - Automaticky Rezim - model 5H cakam na zrusenie signalu skrutkovanie ukoncene';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
+			
+			IF NOT P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 350;
+			END_IF		
+			
+		
 		
 		358:
 			SC_P2_StoperSrobovania.StepName:='358 - Automaticky Rezim - model 5H presun manipulatora vpred a odobratie vrchnych busbarov';
@@ -1526,6 +1713,9 @@ PROGRAM _CYCLIC
 			IF NOT SC_P2_StoperSrobovania.Switch1 AND NOT P2_Robot.COM_IN.Stav_Busbary5H_Odobrate THEN
 				P2_Robot.COM_OUT.Poloz_Busbary5H:= TRUE;
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			ELSIF P2_StoperSrobovania.KoniecCyklu AND NOT P2_Robot.Automat THEN
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 0;
 			END_IF	
 			
 			IF P2_Robot.COM_IN.Stav_Busbary5H_Polozene THEN
@@ -1833,6 +2023,8 @@ PROGRAM _CYCLIC
 						SC_P2_StoperSrobovania.Step:= 385;
 					ELSE
 						Reports.Skrutkovacky.VyslednyReport.P2_PravaSkrutkaM5:= 'FAIL';
+						Paletka[i].PAR.StavPowerCP:= 'FAIL';
+						Paletka[i].STAV.StavPaletky:= 'NG';
 						SC_P2_StoperSrobovania.ResetStep:= TRUE;
 						SC_P2_StoperSrobovania.Step:= 500;
 					END_IF    
@@ -1917,47 +2109,36 @@ PROGRAM _CYCLIC
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
-			IF P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
+			IF P2_Srobovanie.STAV.ManipulatorNadPodavacmi THEN
 				P2_Srobovanie.COM_IN.OdoberSkrutku_M4:= FALSE;
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 391;
-			END_IF	
-		
-		
-		391:
-			SC_P2_StoperSrobovania.StepName:='391 - Automaticky Rezim - cakam na zrusenie signalu skrutkovanie ukoncene';
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
-			
-			IF NOT P2_Srobovanie.COM_OUT.Stav_SkrutkovanieUkoncene THEN
 				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 393;
 			END_IF	
 		
-		
+			
 		393:
 			SC_P2_StoperSrobovania.StepName:='393 - Automaticky Rezim - modwel 5H kamerova kontrola paletky CAM10';//CAM 10//
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#5s;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			
-			IF Linka.P2_Kamery_OFF THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 540;
-			ELSIF NOT SC_P2_StoperSrobovania.Switch1 AND CAM10.STAV.Command_READY THEN
+			IF NOT SC_P2_StoperSrobovania.Switch1 AND CAM10.STAV.Command_READY THEN
 				CAM10.CMD.Triger:= TRUE;
 				SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM10.STAV.Results_READY AND CAM10.STAV.Command_AKCEPTOVANY THEN
+			IF CAM10.STAV.Results_READY AND CAM10.STAV.Command_AKCEPTOVANY AND CAM10.STAV.OldRunCounter <> CAM10.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 395;
 			ELSIF SC_P2_StoperSrobovania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				CAM10.CMD.Triger:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 394;
@@ -1990,7 +2171,12 @@ PROGRAM _CYCLIC
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
 			
-			IF NOT CAM10.STAV.BUSY  THEN
+			IF Linka.P2_Kamery_OFF THEN
+				CAM10.CMD.Triger:= FALSE;
+				CAM10.PAR.ResultFotky:= 'PASS';
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 400;
+			ELSIF NOT CAM10.STAV.BUSY  THEN
 				CAM10.CMD.Triger:= FALSE;
 				IF NOT CAM10.RESULT.Paletka.Pritomn_Busbarov_5H THEN
 					CAM10.PAR.ResultFotky:= 'PASS';
@@ -2118,6 +2304,7 @@ PROGRAM _CYCLIC
 			
 			IF NOT P2_Srobovanie.COM_OUT.Stav_PresunManipulUkonceny THEN
 				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 508;
 			END_IF	
@@ -2128,17 +2315,15 @@ PROGRAM _CYCLIC
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;
 			SC_P2_StoperSrobovania.IdleTime.IN:= TRUE;
 			
-			IF Linka.P2_Kamery_OFF THEN
-				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 540;
-			ELSIF NOT SC_P2_StoperSrobovania.Switch1 AND CAM10.STAV.Command_READY THEN
+			IF NOT SC_P2_StoperSrobovania.Switch1 AND CAM10.STAV.Command_READY THEN
 				CAM10.CMD.Triger:= TRUE;
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF
 						
-			IF CAM10.STAV.Results_READY AND CAM10.STAV.Command_AKCEPTOVANY THEN
+			IF CAM10.STAV.Results_READY AND CAM10.STAV.Command_AKCEPTOVANY AND CAM10.STAV.OldRunCounter <> CAM10.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				CAM10.PAR.ResultFotky:= 'FAIL';
 				CAM10.CMD.Triger:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
@@ -2146,6 +2331,7 @@ PROGRAM _CYCLIC
 			ELSIF SC_P2_StoperSrobovania.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM10.STAV.Results_READY:= FALSE;
+				CAM10.STAV.OldRunCounter:= CAM10.STAV.RunCounter;
 				CAM10.CMD.Triger:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 510;
@@ -2190,12 +2376,14 @@ PROGRAM _CYCLIC
 				FTP_CAM10.INPUTS.Result:= CAM6.PAR.ResultFotky;
 				Reports.Kamery.P2_CAM10_KontrolaPaletky:= CAM10.PAR.ResultFotky;
 				FTP_CAM10.CMD.OdosliFotku:= TRUE;
+				P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF
             	
 			
 			IF FTP_CAM10.STATUS.KomunikaciaUkoncena THEN
 				FTP_CAM10.CMD.OdosliFotku:= FALSE;
+				P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				Paletka[i].STAV.OdoslanieFotiek_DONE:= TRUE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 545;
@@ -2226,16 +2414,62 @@ PROGRAM _CYCLIC
 		
 				
 			//**********************Odoslanie dát na server************************************//		
-		
 		550:
-			SC_P2_StoperSrobovania.StepName:='550 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+			SC_P2_StoperSrobovania.StepName:='550 - Automaticky Rezim - odoslanie stavu paletky na server';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#10s;	
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#10s;
 			
 			IF Linka.KOM_Panatrace_OFF THEN
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 560;
-			ELSIF NOT SC_P2_StoperSrobovania.Switch1 THEN
+			ELSIF NOT SC_P2_StoperSrobovania.Switch1 AND TRCB_P2_Srobovanie_ST5.STATUS.KOM_READY THEN
+				TRCB_P2_Srobovanie_ST5.CMD.OdosliStavPaletky_TYP2:= TRUE;
+				(*P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
+				SC_P2_StoperSrobovania.Switch1:= TRUE;
+			END_IF
+			
+			
+			IF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaUkoncena THEN
+				TRCB_P2_Srobovanie_ST5.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 552;
+			ELSIF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaError THEN
+				TRCB_P2_Srobovanie_ST5.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P2_Skrutkovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 557;
+			END_IF
+			
+			
+		
+		552:
+			SC_P2_StoperSrobovania.StepName:='552 - Automaticky Rezim - kontrola odpovede servera';
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#10s;
+			
+			IF NOT TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaUkoncena THEN
+				IF TRCB_P2_Srobovanie_ST5.OUTPUTS.PovolenieCinnostiNaPaletke = 'OK' THEN
+					Paletka[i].STAV.Komunikacia_DONE:= TRUE;
+					P2_StoperSrobovania.STAV.VyrobaZacala:= FALSE;
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 560;
+				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.PovolenieCinnostiNaPaletke = 'NG' THEN
+					Paletka[i].STAV.StavPaletky:= 'NG';
+					P2_StoperSrobovania.STAV.VyrobaZacala:= FALSE;
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 560;
+				END_IF	
+			END_IF
+			
+			
+			
+		555:
+			SC_P2_StoperSrobovania.StepName:='555 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#10s;	
+			
+			IF NOT SC_P2_StoperSrobovania.Switch1 AND TRCB_P2_Srobovanie_ST5.STATUS.KOM_READY THEN
 				TRCB_P2_Srobovanie_ST5.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P2_StoperSrobovania.Switch1:= TRUE;
 			END_IF 
@@ -2243,80 +2477,70 @@ PROGRAM _CYCLIC
 			IF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P2_Srobovanie_ST5.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 552;
+				SC_P2_StoperSrobovania.Step:= 556;
 			ELSIF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaError THEN	
-				P2_Alarmy[233]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
+				TRCB_P2_Srobovanie_ST5.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 557;
 			END_IF
 		
 			
-		552:
-			SC_P2_StoperSrobovania.StepName:='552 - Automaticky Rezim - kontrola odpovede servera';
+		556:
+			SC_P2_StoperSrobovania.StepName:='556 - Automaticky Rezim - kontrola odpovede servera';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
 			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;		
 			
 			IF NOT TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 552;
-				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
+					SC_P2_StoperSrobovania.Step:= 557;
+				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 552;	
+					SC_P2_StoperSrobovania.Step:= 557;	
 				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 552;
+					SC_P2_StoperSrobovania.Step:= 550;
 				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 552;
-				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
+					SC_P2_StoperSrobovania.Step:= 557;
+				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 552;
-				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
+					SC_P2_StoperSrobovania.Step:= 557;
+				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
 					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 552;
+					SC_P2_StoperSrobovania.Step:= 557;
+				ELSE
+					SC_P2_StoperSrobovania.ResetStep:= TRUE;
+					SC_P2_StoperSrobovania.Step:= 557;
 				END_IF   
 			END_IF
 		
-		
-		555:
-			SC_P2_StoperSrobovania.StepName:='555 - Automaticky Rezim - odoslanie stavu paletky na server';
+				
+		557:
+			SC_P2_StoperSrobovania.StepName:='557 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
 			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#10s;
-			
-			
-			IF NOT SC_P2_StoperSrobovania.Switch1 THEN
-				TRCB_P2_Srobovanie_ST5.CMD.OdosliStavPaletky_TYP2:= TRUE;
-				SC_P2_StoperSrobovania.Switch1:= TRUE;
-			END_IF
-			
-			
-			IF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaUkoncena THEN
-				TRCB_P2_Srobovanie_ST5.CMD.OdosliStavPaletky_TYP2:= FALSE;
+			SC_P2_StoperSrobovania.AlarmTime.PT:= T#5s;	
+            
+       
+			P2_Vizu.ZobrazHL8_ST5:= TRUE;
+            
+			IF TRCB_P2_Srobov_OpatovnyDopyt THEN
+				TRCB_P2_Srobov_OpatovnyDopyt:= FALSE; 
+				P2_Vizu.ZobrazHL8_ST5:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
-				SC_P2_StoperSrobovania.Step:= 556;
-			ELSIF TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaError THEN
-				P2_Alarmy[233]:= TRUE;
-				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
-			END_IF
+				SC_P2_StoperSrobovania.Step:= 555;
+			ELSIF TRCB_P2_Srobov_PaletkaNG THEN
+				TRCB_P2_Srobov_PaletkaNG:= FALSE;
+				P2_Vizu.ZobrazHL8_ST5:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				P2_StoperSrobovania.STAV.VyrobaZacala:= FALSE;
+				SC_P2_StoperSrobovania.ResetStep:= TRUE;
+				SC_P2_StoperSrobovania.Step:= 560;
+			END_IF   
 			
 			
-		
-		556:
-			SC_P2_StoperSrobovania.StepName:='553 - Automaticky Rezim - kontrola odpovede servera';
-			SC_P2_StoperSrobovania.IdleTime.PT:= T#200ms;
-			SC_P2_StoperSrobovania.AlarmTime.PT:= T#10s;
 			
-			IF NOT TRCB_P2_Srobovanie_ST5.STATUS.KomunikaciaUkoncena THEN
-				IF TRCB_P2_Srobovanie_ST5.OUTPUTS.PovolenieCinnostiNaPaletke = 'OK' THEN
-					Paletka[i].STAV.Komunikacia_DONE:= TRUE;
-					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 560;
-				ELSIF TRCB_P2_Srobovanie_ST5.OUTPUTS.PovolenieCinnostiNaPaletke = 'NG' THEN
-					Paletka[i].STAV.StavPaletky:= 'NG';
-					SC_P2_StoperSrobovania.ResetStep:= TRUE;
-					SC_P2_StoperSrobovania.Step:= 560;
-				END_IF	
-			END_IF
+			
 			
 		
 			//***************************Vyvezenie paletky**********************************************//	
@@ -2332,8 +2556,7 @@ PROGRAM _CYCLIC
 			IF P2_StoperSrobovania.KoniecCyklu THEN
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 0;
-			ELSIF P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania THEN
-				P2_Pracovisko.STAV.Porucha_ST4:= TRUE;
+			ELSIF P2_Pracovisko.STAV.Porucha_ST4 THEN
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 0;
 			ELSIF ((NOT P2_StoperZvarania.RFID_hlava.PritomnostPaletky AND SC_P2_StoperZvarania.Step = 100) OR (P2_StoperZvarania.OUT.ZasunStoper AND SC_P2_StoperZvarania.Step = 561)) AND NOT P2_StoperSrobovania.STAV.PrebiehaVyvezeniePaletky THEN
@@ -2424,6 +2647,8 @@ PROGRAM _CYCLIC
 				Reports.Skrutkovacky.VyskaSkrutkovania.P2_StrednaSkrutkaM4:= '';
 				Reports.Kamery.P2_CAM10_KontrolaPaletky:= '';
 				P2_StoperSrobovania.OUT.ZasunStoper:= FALSE;
+				P2_Srobovanie.COM_OUT.Stav_PoruchaSkrutkovania:= FALSE;
+				P2_StoperSrobovania.STAV.VstupnaKamerovaKontrola:= FALSE;
 				SC_P2_StoperSrobovania.ResetStep:= TRUE;
 				SC_P2_StoperSrobovania.Step:= 100;
 			ELSIF SC_P2_StoperSrobovania.AlarmTime.Q THEN

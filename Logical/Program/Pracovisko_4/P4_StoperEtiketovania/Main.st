@@ -3,7 +3,7 @@ PROGRAM _INIT
 	
 	//Init parametre serva zdvihu aplikatora//
 	P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Override:= 100;
-	P4_Etiketovacka.PAR.ZdvihAplikatora_JoggRychlost:= 0.1;
+	P4_Etiketovacka.PAR.ZdvihAplikatora_JoggRychlost:= 5;
 	P4_Etiketovacka.ServoZdvihuAplikatora.Command.TorqueLimitation:= TRUE;
 	P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Torque:= 1.0;
 	 
@@ -29,7 +29,8 @@ PROGRAM _CYCLIC
 		P4_Etiketovacka.ServoZdvihuAplikatora.Command.PowerON:= FALSE;
 	END_IF	
 	
-	
+	//Zaokrúhlenie aktuálnej pozície serva zdvihu//
+	ServoZdvihu_AktualPosition_UDINT:= REAL_TO_UDINT(P4_Etiketovacka.ServoZdvihuAplikatora.Status.ActPosition);
 	
 	
 	//Reset poruchy serva//
@@ -51,11 +52,32 @@ PROGRAM _CYCLIC
 		SC_P4_Etiketovacka.Step:= 0;
 		P4_Etiketovacka.ServoZdvihuAplikatora.Command.ErrReset:= TRUE;
 		P4_Etiketovacka.Reset:= FALSE;
-	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA AND NOT P4_Etiketovacka.Automat THEN
 		SC_P4_Etiketovacka.Step:= 0;
-	ELSIF NOT P4_Etiketovacka.Manual AND NOT Safety.STAV.P4_ZonaBunky_AKTIVNA THEN	
-		SC_P4_Etiketovacka.Step:= 0;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA AND P4_Etiketovacka.Automat THEN
+		P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
 	END_IF	
+	
+	
+	//Ukonèenie komunikácie pri poruche//
+	IF P4_Pracovisko.STAV.Porucha_ST5 AND NOT Triger_0 THEN
+		Triger_0:= TRUE;
+		IF P4_Etiketovacka.STAV.VyrobaZacala THEN
+			Paletka[i].PAR.StavPowerCP:= 'FAIL';
+			Paletka[i].STAV.StavPaletky:= 'NG';
+			P4_Etiketovacka.KoniecCyklu:= TRUE;
+			SC_P4_Etiketovacka.ResetStep:= TRUE;
+			SC_P4_Etiketovacka.Step:= 550;
+		ELSE
+			SC_P4_Etiketovacka.ResetStep:= TRUE;
+			SC_P4_Etiketovacka.Step:= 0;
+		END_IF
+	END_IF	
+	
+	IF NOT P4_Pracovisko.STAV.Porucha_ST5 THEN
+		Triger_0:= FALSE;
+	END_IF
+	
 	
 	
 	CASE SC_P4_Etiketovacka.Step OF 
@@ -69,6 +91,8 @@ PROGRAM _CYCLIC
 			P4_Etiketovacka.KoniecCyklu:= FALSE;
 			P4_Etiketovacka.Manual:= FALSE;
 			P4_Etiketovacka.STAV.PoINIT:= FALSE;
+			P4_Etiketovacka.STAV.VyrobaZacala:= FALSE;
+			P4_Etiketovacka.STAV.VstupnaKamerovaKontrola:= FALSE;
 			P4_Etiketovacka.OUT.ZasunStoper:= FALSE;
 			P4_Etiketovacka.OUT.Centrovanie_VYSUN:= FALSE;
 			P4_Etiketovacka.OUT.Centrovanie_ZASUN:= TRUE;
@@ -93,11 +117,12 @@ PROGRAM _CYCLIC
 			P4_Etiketovacka.CMD.RR_ZdvihAplikatora_HORE:= FALSE;
 			P4_Etiketovacka.CMD.RR_NalepEtiketu:= FALSE;
 			P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY:= FALSE;
+			P4_Etiketovacka.CMD.RR_VysunCentrovanie:= FALSE;
+			P4_Etiketovacka.CMD.RR_PrisavanieEtikety:= FALSE;
 			
 			CAM14.CMD.Triger:= FALSE;
 			CAM14.STAV.Results_READY:= FALSE;
-			FTP_CAM14.CMD.OdosliFotku:= FALSE;
-			FTP_CAM14.CMD.VymazFotku:= FALSE;
+			
 			CAM15.CMD.Triger:= FALSE;
 			CAM15.STAV.Results_READY:= FALSE;
 			FTP_CAM15.CMD.OdosliFotku:= FALSE;
@@ -110,12 +135,13 @@ PROGRAM _CYCLIC
 			TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
 			
 					
-            P4_Etiketov_KAM_Result_Ignoruj:= FALSE;
+			P4_Etiketov_KAM_Result_Ignoruj:= FALSE;
 			P4_Etiketov_KAM_Result_OK:= FALSE;
 			P4_Etiketov_KAM_Result_NG:= FALSE;
 			P34_Vizu.ZobrazHL1_ST9:= FALSE;
 			P34_Vizu.ZobrazHL2_ST9:= FALSE;
 			P34_Vizu.ZobrazHL3_ST9:= FALSE;
+			P34_Vizu.ZobrazHL4_ST9:= FALSE;
 			TRCB_P4_Etiketov_OpatovnyDopyt:= FALSE;
 			TRCB_P4_Etiketov_PaletkaNG:= FALSE;
 			PocetTrigrovKamery:= 0;
@@ -126,6 +152,8 @@ PROGRAM _CYCLIC
 			P4_Etiketovacka.STAV.Etiketa_ZhodaQRkodu_OK:= FALSE;
 			P4_Etiketovacka.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P4_ZdvizkaZaFunkcTestA.STAV.PrebiehaVyvezeniePaletky:= FALSE;
+			P4_Etiketovanie_Taktime.IN.START_MeraniaCasu:= FALSE;
+			P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 			
 			Tlaciaren.CMD.VytlacEtiketu:= FALSE;
 			
@@ -154,7 +182,7 @@ PROGRAM _CYCLIC
 			END_IF
 			
 		
-		//********************************************************Inicializácia****************************************************************************//
+			//********************************************************Inicializácia****************************************************************************//
 	
 		2:
 			SC_P4_Etiketovacka.StepName:='2 - Inicializacia - cakam na spustenie inicializacie';
@@ -176,10 +204,7 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#4s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 			
-			IF Linka.KOM_FTP_OFF THEN
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 5;
-			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF NOT SC_P4_Etiketovacka.Switch1 THEN
 				FTP_CAM15.CMD.VymazFotku:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
@@ -253,14 +278,14 @@ PROGRAM _CYCLIC
 			
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P34_RemPremenne.P4_Etiketovacka_PozOdoberEtikety;
-			
+			ServoZdvihu_ZadanaPozicia_UDINT:= REAL_TO_UDINT(P34_RemPremenne.P4_Etiketovacka_PozOdoberEtikety);
 			
 			IF NOT SC_P4_Etiketovacka.Switch1 THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
 				
-			IF EDGEPOS(P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition) THEN
+			IF P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition AND (ServoZdvihu_AktualPosition_UDINT = ServoZdvihu_ZadanaPozicia_UDINT) THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 15;
@@ -314,6 +339,7 @@ PROGRAM _CYCLIC
 			
 			IF P4_Etiketovacka.RFID_hlava.Stav_CitanieZapis_OK AND P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky;
+				P4_Etiketovacka.PAR.CisloPaletky:= P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky;
 				P4_Etiketovacka.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 23;
@@ -340,8 +366,11 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 			
-			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				P4_Etiketovacka.STAV.PoINIT:= TRUE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 560;
@@ -380,153 +409,16 @@ PROGRAM _CYCLIC
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 560;
 			ELSE
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 38;
-			END_IF	
-		
-		38:
-			SC_P4_Etiketovacka.StepName:='38 - Inicializacia - kontrola odoslania fotiek';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#5s;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;   
-            
-			IF Paletka[i].STAV.OdoslanieFotiek_DONE THEN
 				P4_Etiketovacka.STAV.PoINIT:= TRUE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 550;
-			ELSE
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 40;
-			END_IF	
-		
-		40:
-			SC_P4_Etiketovacka.StepName:='40 - Inicializacia - zacentrovanie paletky';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-		
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
-				Centrovacku_VYSUN:= TRUE;
-				SC_P4_Etiketovacka.Switch1:= TRUE;
-			END_IF
-		
-			IF P4_Etiketovacka.IN.Centrovanie_VYSUNUTE THEN
-				CAM15.STAV.Results_READY:= FALSE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 45;
-			END_IF	 
-		
-		
-		
-		45:
-            
-			SC_P4_Etiketovacka.StepName:='45 - Inicializacia - kamerova kontrola nalepenej etikety CAM15';//CAM 15//
-			SC_P4_Etiketovacka.IdleTime.PT:= T#5s;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-            
-			IF Linka.P4_Kamery_OFF THEN
-				P4_Etiketovacka.STAV.PoINIT:= TRUE;
+				P4_Etiketovacka.STAV.VstupnaKamerovaKontrola:= TRUE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 100;
-			ELSIF NOT SC_P4_Etiketovacka.Switch1 AND CAM15.STAV.Command_READY THEN
-				CAM15.CMD.Triger:= TRUE;
-				SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
-				SC_P4_Etiketovacka.Switch1:= TRUE;
-			END_IF
-			
-			
-			IF CAM15.STAV.Results_READY AND CAM15.STAV.Command_AKCEPTOVANY THEN
-				PocetTrigrovKamery:= 0;
-				CAM15.STAV.Results_READY:= FALSE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 50;
-			ELSIF SC_P4_Etiketovacka.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
-				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
-				CAM15.CMD.Triger:= FALSE;
-				CAM15.STAV.Results_READY:= FALSE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 48;
-			ELSIF SC_P4_Etiketovacka.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
-				P34_Alarmy[454]:= TRUE;
-				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
-			END_IF
-		
-		
-		48:
-			SC_P4_Etiketovacka.StepName:='48 - Inicializacia - cakam na opatovny triger kamery CAM15';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#1s;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-            
-			SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
-            
-			IF SC_P4_Etiketovacka.IdleTime.Q THEN
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 45;
-			END_IF
-		
-		50:
-			SC_P4_Etiketovacka.StepName:='50 - Inicializacia - kontrola vysledku kamery';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-            
-            
-			IF NOT CAM15.STAV.BUSY  THEN
-				CAM15.CMD.Triger:= FALSE;
-				IF CAM15.RESULT.Pritomn_Etikety THEN
-					CAM15.PAR.ResultFotky:= 'PASS';
-					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 53;
-				ELSE
-					CAM15.PAR.ResultFotky:= 'FAIL';
-					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 53;
-				END_IF
-			END_IF
-		
-		
-		53:
-			SC_P4_Etiketovacka.StepName:='53 - Inicializacia - vymazanie adresara kamery CAM15';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#4s;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-			
-			IF Linka.KOM_FTP_OFF THEN
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 55;
-			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
-				FTP_CAM15.CMD.VymazFotku:= TRUE;
-				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
-							
-			IF FTP_CAM15.STATUS.KomunikaciaUkoncena THEN
-				FTP_CAM15.CMD.VymazFotku:= FALSE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 55;
-			ELSIF FTP_CAM15.STATUS.KomunikaciaError THEN
-				P34_Alarmy[434]:= TRUE;
-				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
-			END_IF	
-            
-                 
-		55:
-			SC_P4_Etiketovacka.StepName:='55 - Inicializacia - rozhodnutie podla kamerovej kontroly paletky';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-            	
-				
-			IF CAM15.PAR.ResultFotky = 'PASS' THEN
-				P4_Etiketovacka.STAV.PoINIT:= TRUE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 100;
-			ELSIF CAM15.PAR.ResultFotky = 'FAIL' THEN
-				P4_Etiketovacka.STAV.PoINIT:= TRUE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 100;
-			END_IF    
-   
-         
-			
-         
+		
+  
 		
 			
-		//********************************************************Automatický režim****************************************************************************//
+			//********************************************************Automatický režim****************************************************************************//
 	
 		100:  
 			SC_P4_Etiketovacka.StepName:='100 - Automaticky Rezim - cakam na príchod paletky na stoper';
@@ -545,7 +437,15 @@ PROGRAM _CYCLIC
 			IF P4_Etiketovacka.RFID_hlava.PritomnostPaletky THEN
 				P4_ZdvizkaZaFunkcTestA.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			END_IF
-                
+            
+			IF NOT SC_P4_Etiketovacka.Switch1 AND P4_Etiketovacka.RFID_hlava.PritomnostPaletky THEN
+				P4_Etiketovanie_Taktime.IN.START_MeraniaCasu:= TRUE;
+				P4_Etiketovanie_Taktime.IN.ZAPIS_MeraniaCasu:= TRUE;
+				P4_Etiketovanie_Taktime.IN.ZAPIS_StratovyCas:= TRUE;
+				Buffer_13.Hodnota:= P4_Etiketovanie_Taktime.OUT.StratoveSekundy;
+				Buffer_13.ZapisHodnotu:= TRUE;
+				SC_P4_Etiketovacka.Switch1:= TRUE;
+			END_IF	
 			           
 			IF P4_Etiketovacka.KoniecCyklu AND NOT P4_ZdvizkaZaFunkcTestA.Automat THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
@@ -572,6 +472,7 @@ PROGRAM _CYCLIC
 					
 			IF P4_Etiketovacka.RFID_hlava.Stav_CitanieZapis_OK AND P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky;
+				P4_Etiketovacka.PAR.CisloPaletky:= P4_Etiketovacka.RFID_hlava.PrecitaneCisloPaletky;
 				P4_Etiketovacka.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 102;
@@ -599,7 +500,11 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 560;
 			ELSIF Paletka[i].STAV.StavPaletky = 'TEST' AND Paletka[i].STAV.CisloTestovacejStanice = 'ST_9' THEN
@@ -631,19 +536,23 @@ PROGRAM _CYCLIC
 			IF Linka.KOM_Panatrace_OFF THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 118;
-			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 AND TRCB_P4_Etiketovacka_ST9.STATUS.KOM_READY THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				Centrovacku_VYSUN:= TRUE;
+				(*P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF 
-            
+			            
 			IF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 106;
 			ELSIF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaError THEN	
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 115;
+				SC_P4_Etiketovacka.Step:= 107;
 			END_IF	
 			
 		106:
@@ -654,24 +563,52 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 106;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
+					SC_P4_Etiketovacka.Step:= 107;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 106;	
+					SC_P4_Etiketovacka.Step:= 108;	
 				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 106;
+					SC_P4_Etiketovacka.Step:= 118;
 				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 106;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
+					SC_P4_Etiketovacka.Step:= 107;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 106;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
+					SC_P4_Etiketovacka.Step:= 107;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 106;
+					SC_P4_Etiketovacka.Step:= 107;
+				ELSE
+					SC_P4_Etiketovacka.ResetStep:= TRUE;
+					SC_P4_Etiketovacka.Step:= 107;
 				END_IF   
 			END_IF	
+		
+			
+		107:
+			SC_P4_Etiketovacka.StepName:='107 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;		
+            
+			P34_Vizu.ZobrazHL4_ST9:= TRUE;
+            
+			IF TRCB_P4_Etiketov_OpatovnyDopyt THEN
+				TRCB_P4_Etiketov_OpatovnyDopyt:= FALSE; 
+				P34_Vizu.ZobrazHL4_ST9:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 105;
+			ELSIF TRCB_P4_Etiketov_PaletkaNG THEN
+				TRCB_P4_Etiketov_PaletkaNG:= FALSE;
+				P34_Vizu.ZobrazHL4_ST9:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 116;
+			END_IF   	
+			
+			
+			
+			
 			
 		108:
 			SC_P4_Etiketovacka.StepName:='108 - Automaticky Rezim - vyziadanie stavu paletky zo servera, zacentrovanie paletky'; 
@@ -680,20 +617,22 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
 			
                         
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF NOT SC_P4_Etiketovacka.Switch1 AND TRCB_P4_Etiketovacka_ST9.STATUS.KOM_READY THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPaletky_TYP1:= TRUE;
-				Centrovacku_VYSUN:= TRUE;
+				(*P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF
 			
 			IF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 110;
 			ELSIF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaError THEN	
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 115;
+				SC_P4_Etiketovacka.Step:= 107;
 			END_IF				
 						
 		
@@ -709,6 +648,9 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena AND P4_Etiketovacka.IN.Centrovanie_VYSUNUTE THEN
 				IF TRCB_P4_Etiketovacka_ST9.OUTPUTS.PovolenieCinnostiNaPaletke = 'OK' THEN
 					IF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = 'PRD;ST9' THEN
+						P4_Etiketovacka.OUT.OfukEtikety_ON:= TRUE;
+						P4_Etiketovacka.OUT.PrisavanieEtikety_OFF:= FALSE;
+						P4_Etiketovacka.OUT.PrisavanieEtikety_ON:= TRUE;
 						SC_P4_Etiketovacka.ResetStep:= TRUE;
 						SC_P4_Etiketovacka.Step:= 118;
 					ELSE
@@ -762,7 +704,7 @@ PROGRAM _CYCLIC
 				SC_P4_Etiketovacka.Step:= 560;
 			END_IF			
 	
-	//Štart aplikovania etikety//		
+			//Štart aplikovania etikety//		
             
 		118:
 			SC_P4_Etiketovacka.StepName:='118 - Automaticky Rezim - zacentrovanie paletky ';
@@ -776,8 +718,9 @@ PROGRAM _CYCLIC
 		
 			IF P4_Etiketovacka.IN.Centrovanie_VYSUNUTE THEN
 				P4_Etiketovacka.OUT.PritlakPowerCP_VYSUN:= TRUE;
+				CAM14.STAV.OldRunCounter:= CAM14.STAV.RunCounter;
 				CAM14.STAV.Results_READY:= FALSE;
-				IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
+				IF P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 124;
 				ELSE	
@@ -793,25 +736,25 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#5s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
-			IF Linka.P4_Kamery_OFF THEN
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 124;
-			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF NOT SC_P4_Etiketovacka.Switch1 THEN
 				CAM14.CMD.Triger:= TRUE;
 				P4_Etiketovacka.STAV.PowerCP_ZhodaQRkodu_OK:= FALSE;
+				CAM14.RESULT.PowerCP.PrecitanyQRkod_PowerCP:= '';
 				SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM14.STAV.Results_READY THEN
+			IF CAM14.STAV.Results_READY AND CAM14.STAV.OldRunCounter <> CAM14.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM14.STAV.Results_READY:= FALSE;
+				CAM14.STAV.OldRunCounter:= CAM14.STAV.RunCounter;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 122;
 			ELSIF SC_P4_Etiketovacka.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM14.CMD.Triger:= FALSE;
 				CAM14.STAV.Results_READY:= FALSE;
+				CAM14.STAV.OldRunCounter:= CAM14.STAV.RunCounter;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 121;
 			ELSIF SC_P4_Etiketovacka.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
@@ -837,11 +780,16 @@ PROGRAM _CYCLIC
 			
 		122:
 			SC_P4_Etiketovacka.StepName:='122 - Automaticky Rezim - kontrola vysledku kamery';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
+			SC_P4_Etiketovacka.IdleTime.PT:= T#300ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 			SC_P4_Etiketovacka.IdleTime.IN:= TRUE;
-				
-			IF NOT CAM14.STAV.BUSY AND SC_P4_Etiketovacka.IdleTime.Q THEN
+			
+			IF Linka.P4_Kamery_OFF THEN
+				CAM14.CMD.Triger:= FALSE;
+				CAM14.PAR.ResultFotky:= 'PASS';
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 123;
+			ELSIF NOT CAM14.STAV.BUSY AND SC_P4_Etiketovacka.IdleTime.Q THEN
 				CAM14.CMD.Triger:= FALSE;
 				IF CAM14.RESULT.PowerCP.CitanieQRkodu_PowerCP_OK THEN
 					IF Paletka[i].PAR.QRkodPowerCP = CAM14.RESULT.PowerCP.PrecitanyQRkod_PowerCP THEN
@@ -857,6 +805,7 @@ PROGRAM _CYCLIC
 					END_IF
 				ELSE
 					CAM14.PAR.ResultFotky:= 'FAIL';
+					P4_Etiketovacka.STAV.PowerCP_ZhodaQRkodu_OK:= FALSE;
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 123;
 				END_IF
@@ -884,6 +833,9 @@ PROGRAM _CYCLIC
 					P34_Vizu.ZobrazHL1_ST9:= FALSE;
 					Paletka[i].PAR.StavPowerCP:= 'FAIL';
 					Paletka[i].STAV.StavPaletky:= 'NG';
+					P4_Etiketovacka.OUT.OfukEtikety_ON:= FALSE;
+					P4_Etiketovacka.OUT.PrisavanieEtikety_OFF:= TRUE;
+					P4_Etiketovacka.OUT.PrisavanieEtikety_ON:= FALSE;
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 540;
 				END_IF	
@@ -899,7 +851,7 @@ PROGRAM _CYCLIC
 			P4_Etiketovacka.OUT.OfukEtikety_ON:= TRUE;
 			P4_Etiketovacka.OUT.PrisavanieEtikety_OFF:= FALSE;
 			P4_Etiketovacka.OUT.PrisavanieEtikety_ON:= TRUE;
-			IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
+			IF P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 138;
 			ELSIF Linka.KOM_Panatrace_OFF THEN
@@ -918,16 +870,18 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#10s;	
 			
-			
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF Linka.KOM_Panatrace_OFF THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 138;
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF 
-            
+			            
 			IF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 127;
+				SC_P4_Etiketovacka.Step:= 128;
 			ELSIF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaError THEN	
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
 				P34_Alarmy[409]:= TRUE;
@@ -942,32 +896,58 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 127;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
+					SC_P4_Etiketovacka.Step:= 130;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 127;	
+					SC_P4_Etiketovacka.Step:= 100;	
 				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 127;
+					SC_P4_Etiketovacka.Step:= 130;
 				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 127;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
+					SC_P4_Etiketovacka.Step:= 129;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 127;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
+					SC_P4_Etiketovacka.Step:= 129;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 127;
+					SC_P4_Etiketovacka.Step:= 129;
+				ELSE
+					SC_P4_Etiketovacka.ResetStep:= TRUE;
+					SC_P4_Etiketovacka.Step:= 129;
 				END_IF   
 			END_IF	
 		
+			
+		129:
+			SC_P4_Etiketovacka.StepName:='129 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;		
+            
+			P34_Vizu.ZobrazHL4_ST9:= TRUE;
+            
+			IF TRCB_P4_Etiketov_OpatovnyDopyt THEN
+				TRCB_P4_Etiketov_OpatovnyDopyt:= FALSE; 
+				P34_Vizu.ZobrazHL4_ST9:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 127;
+			ELSIF TRCB_P4_Etiketov_PaletkaNG THEN
+				TRCB_P4_Etiketov_PaletkaNG:= FALSE;
+				P34_Vizu.ZobrazHL4_ST9:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				P4_Etiketovacka.STAV.VyrobaZacala:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 560;
+			END_IF   	
+			
 		130:
 			SC_P4_Etiketovacka.StepName:='130 - Automaticky Rezim - vyziadanie serioveho cisla etikety zo servera';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#10s;	
 			
 				
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			IF NOT SC_P4_Etiketovacka.Switch1 AND TRCB_P4_Etiketovacka_ST9.STATUS.KOM_READY THEN
+				SerioveCisloEtikety:= '';
 				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajCisloEtikety_TYP0:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
@@ -1049,10 +1029,10 @@ PROGRAM _CYCLIC
 				P4_Etiketovacka.OUT.OfukEtikety_ON:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 145;
-//			ELSIF SC_P4_Etiketovacka.AlarmTime.Q THEN
-//				P4_Etiketovacka.OUT.OfukEtikety_ON:= FALSE;
-//				P34_Alarmy[431]:= TRUE;
-//				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
+				//			ELSIF SC_P4_Etiketovacka.AlarmTime.Q THEN
+				//				P4_Etiketovacka.OUT.OfukEtikety_ON:= FALSE;
+				//				P34_Alarmy[431]:= TRUE;
+				//				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
 			END_IF
 		
 			
@@ -1065,7 +1045,7 @@ PROGRAM _CYCLIC
 				P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
 			END_IF
 			
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= 250;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= 255;
 			
 			
 			IF NOT SC_P4_Etiketovacka.Switch1 AND P4_Etiketovacka.IN.Aplikator_OtocenyVZAD AND P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
@@ -1073,7 +1053,7 @@ PROGRAM _CYCLIC
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF	
 				
-			IF EDGEPOS(P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition) THEN
+			IF P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition AND (ServoZdvihu_AktualPosition_UDINT = 255) THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 148;
@@ -1110,10 +1090,13 @@ PROGRAM _CYCLIC
 			
 			IF Linka.PAR.ZvolenyModel = '4F' THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P34_RemPremenne.P4_Etiketovacka_PozEtikety_4F;
+				ServoZdvihu_ZadanaPozicia_UDINT:= REAL_TO_UDINT(P34_RemPremenne.P4_Etiketovacka_PozEtikety_4F);
 			ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P34_RemPremenne.P4_Etiketovacka_PozEtikety_5F;
+				ServoZdvihu_ZadanaPozicia_UDINT:= REAL_TO_UDINT(P34_RemPremenne.P4_Etiketovacka_PozEtikety_5F);
 			ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P34_RemPremenne.P4_Etiketovacka_PozEtikety_5H;
+				ServoZdvihu_ZadanaPozicia_UDINT:= REAL_TO_UDINT(P34_RemPremenne.P4_Etiketovacka_PozEtikety_5H);
 			END_IF	
 				
 			IF NOT SC_P4_Etiketovacka.Switch1 AND P4_Etiketovacka.IN.Aplikator_OtocenyVPRED AND P4_Etiketovacka.IN.Aplikator_ZASUNUTY THEN
@@ -1141,6 +1124,8 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			IF P4_Etiketovacka.IN.Aplikator_VYSUNUTY OR SC_P4_Etiketovacka.IdleTime.Q THEN
+				P4_Etiketovacka.STAV.VyrobaZacala:= TRUE;
+				Paletka[i].STAV.NalepenieEtikety_DONE:= TRUE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 162;
 			END_IF	
@@ -1234,7 +1219,7 @@ PROGRAM _CYCLIC
 				P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P34_RemPremenne.P4_Etiketov_RychlZdvihuAplikat/1000;
 			END_IF
 			
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= 250;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= 255;
 			
 			
 			IF NOT SC_P4_Etiketovacka.Switch1 THEN
@@ -1288,7 +1273,8 @@ PROGRAM _CYCLIC
 			IF P4_Etiketovacka.ServoZdvihuAplikatora.Status.InPosition THEN
 				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
 				CAM15.STAV.Results_READY:= FALSE;
-				IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
+				CAM15.STAV.OldRunCounter:= CAM15.STAV.RunCounter;
+				IF P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 545;
 				ELSE	
@@ -1311,15 +1297,17 @@ PROGRAM _CYCLIC
 			END_IF
 			
 			
-			IF CAM15.STAV.Results_READY AND CAM15.STAV.Command_AKCEPTOVANY THEN
+			IF CAM15.STAV.Results_READY AND CAM15.STAV.Command_AKCEPTOVANY AND CAM15.STAV.OldRunCounter <> CAM15.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM15.STAV.Results_READY:= FALSE;
+				CAM15.STAV.OldRunCounter:= CAM15.STAV.RunCounter;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 193;
 			ELSIF SC_P4_Etiketovacka.IdleTime.Q AND PocetTrigrovKamery < 5 THEN
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM15.CMD.Triger:= FALSE;
 				CAM15.STAV.Results_READY:= FALSE;
+				CAM15.STAV.OldRunCounter:= CAM15.STAV.RunCounter;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 192;
 			ELSIF SC_P4_Etiketovacka.IdleTime.Q AND PocetTrigrovKamery >= 5 THEN
@@ -1351,8 +1339,7 @@ PROGRAM _CYCLIC
 				CAM15.CMD.Triger:= FALSE;
 				IF CAM15.RESULT.CitanieQRkodu_Etikety_OK AND
 					CAM15.RESULT.Pritomn_LogoBMV AND
-					CAM15.RESULT.Pritomn_LogoPanasonic AND
-					CAM15.RESULT.Pritomn_Etikety THEN
+					CAM15.RESULT.Pritomn_LogoPanasonic THEN
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 194;
 				ELSE
@@ -1375,7 +1362,7 @@ PROGRAM _CYCLIC
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 198;
 			ELSE
-				CAM15.PAR.ResultFotky:= 'PASS';//FAIL
+				CAM15.PAR.ResultFotky:= 'FAIL';
 				P4_Etiketovacka.STAV.Etiketa_ZhodaQRkodu_OK:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 198;
@@ -1413,7 +1400,7 @@ PROGRAM _CYCLIC
 			
 			
 			
-		//******************************Odoslanie fotiek na server***************************************//		
+			//******************************Odoslanie fotiek na server***************************************//		
 		
 		540:
 			SC_P4_Etiketovacka.StepName:='540 - Automaticky Rezim - odoslanie fotiek na server Panasonic';
@@ -1429,8 +1416,8 @@ PROGRAM _CYCLIC
 				FTP_CAM15.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
 				FTP_CAM15.INPUTS.Result:= CAM15.PAR.ResultFotky;
 				Reports.Kamery.P4_CAM15_KontrolaPaletky:= CAM15.PAR.ResultFotky;
-			           
 				FTP_CAM15.CMD.OdosliFotku:= TRUE;
+				P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF
             
@@ -1440,6 +1427,7 @@ PROGRAM _CYCLIC
 			IF FTP_CAM15.STATUS.KomunikaciaUkoncena THEN
 				FTP_CAM15.CMD.OdosliFotku:= FALSE;
 				Paletka[i].STAV.OdoslanieFotiek_DONE:= TRUE;
+				P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 545; 
 			ELSIF FTP_CAM15.STATUS.KomunikaciaError THEN
@@ -1450,7 +1438,7 @@ PROGRAM _CYCLIC
 			
 			
 			
-		//*************************Odcentrovanie paletky*********************************************//		
+			//*************************Odcentrovanie paletky*********************************************//		
 		545:
 			SC_P4_Etiketovacka.StepName:='545 - Automaticky Rezim - odcentrovanie paletky';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
@@ -1463,8 +1451,7 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			IF P4_Etiketovacka.IN.Centrovanie_ZASUNUTE THEN
-				IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
-					P4_Etiketovacka.CMD.RR_NalepEtiketu:= FALSE;
+				IF P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY THEN
 					P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY:= FALSE;
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 700;
@@ -1477,85 +1464,40 @@ PROGRAM _CYCLIC
 		
 			
 			
-		//*******************************Odoslanie dát na server*******************************//		
+			//*******************************Odoslanie dát na server*******************************//		
 		
 		550:
-			SC_P4_Etiketovacka.StepName:='550 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+			SC_P4_Etiketovacka.StepName:='550 - Automaticky Rezim - odoslanie dat na server';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#10s;	
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 			
 			IF Linka.KOM_Panatrace_OFF THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 560;
-			ELSIF NOT SC_P4_Etiketovacka.Switch1 THEN
-				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
-				SC_P4_Etiketovacka.Switch1:= TRUE;
-			END_IF 
-            
-			IF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
-				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 552;
-			ELSIF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaError THEN	
-				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
-				P34_Alarmy[409]:= TRUE;
-				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
-			END_IF	
-			
-		552:
-			SC_P4_Etiketovacka.StepName:='552 - Automaticky Rezim - kontrola odpovede servera';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;		
-			
-			IF NOT TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
-				IF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
-					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 552;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
-					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 552;	
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
-					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 552;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
-					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 552;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
-					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 552;
-				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
-					SC_P4_Etiketovacka.ResetStep:= TRUE;
-					SC_P4_Etiketovacka.Step:= 552;
-				END_IF   
-			END_IF	
-		
-		555:
-			SC_P4_Etiketovacka.StepName:='555 - Automaticky Rezim - odoslanie dat na server';
-			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
-			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
-			
-			
-			IF NOT SC_P4_Etiketovacka.Switch1 THEN
+			ELSIF NOT SC_P4_Etiketovacka.Switch1 AND TRCB_P4_Etiketovacka_ST9.STATUS.KOM_READY THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.OdosliStavPaletky_TYP2:= TRUE;
+				(*P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P4_Etiketovacka.Switch1:= TRUE;
 			END_IF
 			
 			
 			IF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
 				TRCB_P4_Etiketovacka_ST9.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 556;
+				SC_P4_Etiketovacka.Step:= 552;
 			ELSIF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaError THEN	
 				TRCB_P4_Etiketovacka_ST9.CMD.OdosliStavPaletky_TYP2:= FALSE;
-				P34_Alarmy[409]:= TRUE;
-				P4_Pracovisko.STAV.Porucha_ST5:= TRUE;
+				P4_Etiketovanie_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 557;
 			END_IF
 			
 		            
             
 			
-		556:
-			SC_P4_Etiketovacka.StepName:='556 - Automaticky Rezim - kontrola odpovede servera';
+		552:
+			SC_P4_Etiketovacka.StepName:='552 - Automaticky Rezim - kontrola odpovede servera';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 			
@@ -1563,17 +1505,100 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P4_Etiketovacka_ST9.OUTPUTS.PovolenieCinnostiNaPaletke = 'OK' THEN
 					Paletka[i].STAV.Komunikacia_DONE:= TRUE;
+					P4_Etiketovacka.STAV.VyrobaZacala:= FALSE;
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 560;
 				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.PovolenieCinnostiNaPaletke = 'NG' THEN
 					Paletka[i].STAV.StavPaletky:= 'NG';
+					P4_Etiketovacka.STAV.VyrobaZacala:= FALSE;
 					SC_P4_Etiketovacka.ResetStep:= TRUE;
 					SC_P4_Etiketovacka.Step:= 560;
 				END_IF	
-			END_IF
+			END_IF	
+			
+			
+			
+		555:
+			SC_P4_Etiketovacka.StepName:='555 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#10s;	
+			
+		
+			IF NOT SC_P4_Etiketovacka.Switch1 AND TRCB_P4_Etiketovacka_ST9.STATUS.KOM_READY THEN
+				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				SC_P4_Etiketovacka.Switch1:= TRUE;
+			END_IF 
+			            
+			IF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
+				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 556;
+			ELSIF TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaError THEN	
+				TRCB_P4_Etiketovacka_ST9.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 557;
+			END_IF	
+			
+		556:
+			SC_P4_Etiketovacka.StepName:='556 - Automaticky Rezim - kontrola odpovede servera';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;		
+			
+			IF NOT TRCB_P4_Etiketovacka_ST9.STATUS.KomunikaciaUkoncena THEN
+				IF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
+					SC_P4_Etiketovacka.ResetStep:= TRUE;
+					SC_P4_Etiketovacka.Step:= 557;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
+					SC_P4_Etiketovacka.ResetStep:= TRUE;
+					SC_P4_Etiketovacka.Step:= 557;	
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
+					SC_P4_Etiketovacka.ResetStep:= TRUE;
+					SC_P4_Etiketovacka.Step:= 550;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
+					SC_P4_Etiketovacka.ResetStep:= TRUE;
+					SC_P4_Etiketovacka.Step:= 557;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
+					SC_P4_Etiketovacka.ResetStep:= TRUE;
+					SC_P4_Etiketovacka.Step:= 557;
+				ELSIF TRCB_P4_Etiketovacka_ST9.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
+					SC_P4_Etiketovacka.ResetStep:= TRUE;
+					SC_P4_Etiketovacka.Step:= 557;
+				ELSE
+					SC_P4_Etiketovacka.ResetStep:= TRUE;
+					SC_P4_Etiketovacka.Step:= 557;
+				END_IF   
+			END_IF	
 		
 		
-		//***************************Vyvezenie paletky**********************************************//	
+		
+		
+			
+			
+		557:
+			SC_P4_Etiketovacka.StepName:='557 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P4_Etiketovacka.IdleTime.PT:= T#200ms;
+			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;		
+            
+			P34_Vizu.ZobrazHL4_ST9:= TRUE;
+            
+			IF TRCB_P4_Etiketov_OpatovnyDopyt THEN
+				TRCB_P4_Etiketov_OpatovnyDopyt:= FALSE; 
+				P34_Vizu.ZobrazHL4_ST9:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 555;
+			ELSIF TRCB_P4_Etiketov_PaletkaNG THEN
+				TRCB_P4_Etiketov_PaletkaNG:= FALSE;
+				P34_Vizu.ZobrazHL4_ST9:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				P4_Etiketovacka.STAV.VyrobaZacala:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 560;
+			END_IF   	
+			
+			
+			
+			
+			//***************************Vyvezenie paletky**********************************************//	
 		
 		560:
 			SC_P4_Etiketovacka.StepName:='560 - Automaticky Rezim - cakam na vyvezenie na stoper vytahu';
@@ -1584,7 +1609,10 @@ PROGRAM _CYCLIC
 		   
 			IF P4_Etiketovacka.KoniecCyklu THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 0;		
+				SC_P4_Etiketovacka.Step:= 0;
+			ELSIF P4_Pracovisko.STAV.Porucha_ST5 THEN
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 0;
 			ELSIF NOT P4_Vytah.RFID_hlava.PritomnostPaletky AND SC_P4_Vytah.Step = 100 AND NOT P4_Vytah.IN.PrechodDopravnika AND NOT P4_Etiketovacka.STAV.PrebiehaVyvezeniePaletky  THEN
 				P4_Etiketovacka.OUT.ZasunStoper:= TRUE;
 				P4_Etiketovacka.STAV.PrebiehaVyvezeniePaletky:= TRUE;
@@ -1599,8 +1627,7 @@ PROGRAM _CYCLIC
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#10s;
 			
 			
-			SC_P4_Etiketovacka.IdleTime.IN:= NOT P4_Etiketovacka.RFID_hlava.PritomnostPaletky;
-			SC_P4_Etiketovacka.AlarmTime.IN:= P4_Etiketovacka.RFID_hlava.PritomnostPaletky;
+			SC_P4_Etiketovacka.AlarmTime.IN:= NOT P4_Vytah.RFID_hlava.PritomnostPaletky;
 			
 			IF NOT P4_Etiketovacka.RFID_hlava.PritomnostPaletky THEN
 				TestovaciKus:= FALSE;
@@ -1610,6 +1637,10 @@ PROGRAM _CYCLIC
 				Paletka[i].STAV.OdoslanieFotiek_DONE:= FALSE;
 				Reports.Kamery.P4_CAM15_KontrolaPaletky:= '';
 				P4_Etiketovacka.OUT.ZasunStoper:= FALSE;
+				P4_Etiketovacka.STAV.VstupnaKamerovaKontrola:= FALSE;
+			END_IF	
+			
+			IF P4_Vytah.RFID_hlava.PritomnostPaletky AND NOT P4_Etiketovacka.OUT.ZasunStoper AND NOT P4_Etiketovacka.RFID_hlava.PritomnostPaletky THEN
 				SC_P4_Etiketovacka.ResetStep:= TRUE;
 				SC_P4_Etiketovacka.Step:= 100;
 			ELSIF SC_P4_Etiketovacka.AlarmTime.Q THEN
@@ -1620,39 +1651,69 @@ PROGRAM _CYCLIC
           		
 		
 		
-		//*******************************************************Manuálny režim*******************************************************************************//
+			//*******************************************************Manuálny režim*******************************************************************************//
 		700:
 			SC_P4_Etiketovacka.StepName:='700 - Manualny Rezim';
 			SC_P4_Etiketovacka.IdleTime.PT:= T#8s;
 			SC_P4_Etiketovacka.AlarmTime.PT:= T#5s;
 		
 		
-			//Parametre serva pre jogging//
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Jog.Acc:= 1;
-			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Jog.Velocity:= P4_Etiketovacka.PAR.ZdvihAplikatora_JoggRychlost;
+			//Ovládanie zdvihu etiketovania//
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Acc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Dcc:= 1;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Velocity:= P4_Etiketovacka.PAR.ZdvihAplikatora_JoggRychlost/1000;
 			P4_Etiketovacka.ServoZdvihuAplikatora.Command.TorqueLimitation:= TRUE;
-		
-		
-		
-			//Ovládanie zdvihu aplikátora//
-			IF P4_Etiketovacka.CMD.RR_ZdvihAplikatora_DOLE AND P4_Etiketovacka.ServoZdvihuAplikatora.Status.ActPosition < 200 THEN
-				P4_Etiketovacka.ServoZdvihuAplikatora.Command.JogNeg:= FALSE;
-				P4_Etiketovacka.ServoZdvihuAplikatora.Command.JogPos:= TRUE;
-			ELSIF P4_Etiketovacka.CMD.RR_ZdvihAplikatora_HORE AND P4_Etiketovacka.ServoZdvihuAplikatora.Status.ActPosition > 5 THEN
-				P4_Etiketovacka.ServoZdvihuAplikatora.Command.JogPos:= FALSE;	
-				P4_Etiketovacka.ServoZdvihuAplikatora.Command.JogNeg:= TRUE;
+			P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Torque:= 1.5;
+			
+			IF P4_Etiketovacka.CMD.RR_ZdvihAplikatora_DOLE AND NOT P4_Etiketovacka.ServoZdvihuAplikatora.Command.Stop THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= 300;
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= TRUE;
+			ELSIF P4_Etiketovacka.CMD.RR_ZdvihAplikatora_HORE AND NOT P4_Etiketovacka.ServoZdvihuAplikatora.Command.Stop THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Parameters.Position:= P34_RemPremenne.P4_Etiketovacka_PozOdoberEtikety;
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= TRUE;
 			ELSE
-				P4_Etiketovacka.ServoZdvihuAplikatora.Command.JogNeg:= FALSE;
-				P4_Etiketovacka.ServoZdvihuAplikatora.Command.JogPos:= FALSE;
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.MovePosition:= FALSE;
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.Stop:= TRUE;
+			END_IF	
+					
+			IF P4_Etiketovacka.ServoZdvihuAplikatora.Command.Stop AND P4_Etiketovacka.ServoZdvihuAplikatora.Status.StandStill THEN
+				P4_Etiketovacka.ServoZdvihuAplikatora.Command.Stop:= FALSE;
+			END_IF	
+			
+			
+		
+		
+		
+			//Spustenie sekvencie nalepenia etikety//
+			IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
+				P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY:= TRUE;
+				P4_Etiketovacka.CMD.RR_VysunCentrovanie:= FALSE;
+				P4_Etiketovacka.CMD.RR_PrisavanieEtikety:= FALSE;
+				SC_P4_Etiketovacka.ResetStep:= TRUE;
+				SC_P4_Etiketovacka.Step:= 118;
+				P4_Etiketovacka.CMD.RR_NalepEtiketu:= FALSE;
 			END_IF	
 		
 		
 		
-		//Spustenie sekvencie nalepenia etikety//
-			IF P4_Etiketovacka.CMD.RR_NalepEtiketu THEN
-				P4_Etiketovacka.STAV.RR_SekvenciaEtiketovania_BUSY:= TRUE;
-				SC_P4_Etiketovacka.ResetStep:= TRUE;
-				SC_P4_Etiketovacka.Step:= 118;
+		
+			//Ovládanie zdvižky//
+			IF P4_Etiketovacka.CMD.RR_VysunCentrovanie THEN
+				P4_Etiketovacka.OUT.Centrovanie_ZASUN:= FALSE;
+				P4_Etiketovacka.OUT.Centrovanie_VYSUN:= TRUE;
+			ELSE 
+				P4_Etiketovacka.OUT.Centrovanie_ZASUN:= TRUE;
+				P4_Etiketovacka.OUT.Centrovanie_VYSUN:= FALSE;
+			END_IF	
+		
+		
+			//Prisávanie etikety//
+			IF P4_Etiketovacka.CMD.RR_PrisavanieEtikety THEN
+				P4_Etiketovacka.OUT.PrisavanieEtikety_OFF:= FALSE;
+				P4_Etiketovacka.OUT.PrisavanieEtikety_ON:= TRUE;
+			ELSE	
+				P4_Etiketovacka.OUT.PrisavanieEtikety_OFF:= TRUE;
+				P4_Etiketovacka.OUT.PrisavanieEtikety_ON:= FALSE;
 			END_IF	
 		
 		

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP4_FunkcnyTestB">
+    <EventBinding id="AreaPageManualP4_FunkcnyTestB.MomentaryPushButton_JoggOsY_VPRED.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_FunkcnyTestB_MomentaryPushButton_JoggOsY_VPRED" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.HorneKontakty_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.HorneKontakty_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_FunkcnyTestB">
+    <EventBinding id="AreaPageManualP4_FunkcnyTestB.MomentaryPushButton_JoggOsY_VZAD.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_FunkcnyTestB_MomentaryPushButton_JoggOsY_VZAD" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.HorneKontakty_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.HorneKontakty_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_FunkcnyTestB">
+    <EventBinding id="AreaPageManualP4_FunkcnyTestB.MomentaryPushButton_JoggOsY_VZAD1.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_FunkcnyTestB_MomentaryPushButton_JoggOsY_VZAD1" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.SpodneKontakty_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.SpodneKontakty_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP4_FunkcnyTestB">
+    <EventBinding id="AreaPageManualP4_FunkcnyTestB.MomentaryPushButton_JoggOsY_VPRED1.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP4_FunkcnyTestB_MomentaryPushButton_JoggOsY_VPRED1" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.SpodneKontakty_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.SpodneKontakty_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

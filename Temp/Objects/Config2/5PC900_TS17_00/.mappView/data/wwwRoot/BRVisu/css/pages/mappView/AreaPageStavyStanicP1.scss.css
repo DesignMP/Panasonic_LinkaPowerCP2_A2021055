@@ -189,8 +189,12 @@
   z-index: 3;
 }
 
+#AreaPageStavyStanicP1_TextOutput1 {
+  background-color: dimgray;
+}
+
 #AreaPageStavyStanicP1_TextOutput1 span {
-  color: black;
+  color: white;
 }
 
 #AreaPageStavyStanicP1_TextOutput1 {
@@ -298,6 +302,14 @@
 }
 
 #AreaPageStavyStanicP1_TextOutput2 {
+  background-color: dimgray;
+}
+
+#AreaPageStavyStanicP1_TextOutput2 span {
+  color: white;
+}
+
+#AreaPageStavyStanicP1_TextOutput2 {
   font-size: 12px;
 }
 
@@ -399,6 +411,14 @@
 
 #AreaPageStavyStanicP1_TextOutput3 {
   z-index: 7;
+}
+
+#AreaPageStavyStanicP1_TextOutput3 {
+  background-color: dimgray;
+}
+
+#AreaPageStavyStanicP1_TextOutput3 span {
+  color: white;
 }
 
 #AreaPageStavyStanicP1_TextOutput3 {
@@ -506,6 +526,14 @@
 }
 
 #AreaPageStavyStanicP1_TextOutput4 {
+  background-color: dimgray;
+}
+
+#AreaPageStavyStanicP1_TextOutput4 span {
+  color: white;
+}
+
+#AreaPageStavyStanicP1_TextOutput4 {
   font-size: 12px;
 }
 
@@ -607,6 +635,14 @@
 
 #AreaPageStavyStanicP1_TextOutput5 {
   z-index: 11;
+}
+
+#AreaPageStavyStanicP1_TextOutput5 {
+  background-color: dimgray;
+}
+
+#AreaPageStavyStanicP1_TextOutput5 span {
+  color: white;
 }
 
 #AreaPageStavyStanicP1_TextOutput5 {
@@ -714,6 +750,14 @@
 }
 
 #AreaPageStavyStanicP1_TextOutput6 {
+  background-color: dimgray;
+}
+
+#AreaPageStavyStanicP1_TextOutput6 span {
+  color: white;
+}
+
+#AreaPageStavyStanicP1_TextOutput6 {
   font-size: 12px;
 }
 
@@ -815,6 +859,14 @@
 
 #AreaPageStavyStanicP1_TextOutput7 {
   z-index: 15;
+}
+
+#AreaPageStavyStanicP1_TextOutput7 {
+  background-color: dimgray;
+}
+
+#AreaPageStavyStanicP1_TextOutput7 span {
+  color: white;
 }
 
 #AreaPageStavyStanicP1_TextOutput7 {

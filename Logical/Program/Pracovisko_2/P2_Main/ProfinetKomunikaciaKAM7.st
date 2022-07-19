@@ -1,5 +1,6 @@
 
 ACTION ProfinetKomunikaciaKAM7: 
+	//Control unit CAM5//
 
 	
 		
@@ -29,11 +30,12 @@ ACTION ProfinetKomunikaciaKAM7:
 		CAM7.STAV.Results_READY:= TRUE;
 	END_IF
 	
+	//Run counter kamery//
+	Convert_0.IN_Byte0:= CAM7.STAV.RunCounter_Byte1;
+	Convert_0.IN_Byte1:= CAM7.STAV.RunCounter_Byte0;
 	
-	
-	
-	
-	
+	CAM7.STAV.RunCounter:= Convert_0.OUT_UINT;
+	Convert_0();
 	
 	
 	

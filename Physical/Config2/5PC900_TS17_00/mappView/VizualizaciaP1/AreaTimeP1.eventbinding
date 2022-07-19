@@ -31,5 +31,31 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="EventBinding_5">
+      <Source xsi:type="clientSystem.Event" event="DialogOpened" />
+      <Operand datatype="DATE_AND_TIME" name="actDatum">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:Vizu.AktualnyCasPLC">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.DateTimeInput.Action" contentRefId="AreaTimeP1" widgetRefId="DateTimeInput1">
+                <Method xsi:type="widgets.brease.DateTimeInput.Action.SetValue" value="=actDatum" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.DateTimeInput.Action" contentRefId="AreaTimeP1" widgetRefId="DateTimeInput2">
+                <Method xsi:type="widgets.brease.DateTimeInput.Action.SetValue" value="=actDatum" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

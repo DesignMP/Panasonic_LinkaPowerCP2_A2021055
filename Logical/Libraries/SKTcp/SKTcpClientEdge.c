@@ -13,7 +13,7 @@
 	extern "C"
 	{
 #endif
-	#include "SKTcp.h"
+#include "SKTcp.h"
 #ifdef __cplusplus
 	};
 #endif
@@ -22,8 +22,8 @@
 void SKTcpClientEdge(struct SKTcpClientEdge* inst)
 {
 	
- inst->Q = ( ! inst->CLK == inst->Last_State) ;
+	inst->Q = ( ! inst->CLK == inst->Last_State) ;
  
- inst->Last_State = inst->CLK;
+	inst->Last_State = inst->CLK;
  
 }

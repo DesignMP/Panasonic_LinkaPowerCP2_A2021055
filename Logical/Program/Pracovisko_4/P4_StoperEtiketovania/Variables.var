@@ -14,6 +14,8 @@ VAR
 	SC_OvlVysunutiaAplikatora : SequenceControlTyp := (0);
 	VysunAplikator_VPRED : BOOL := FALSE;
 	VysunAplikator_VZAD : BOOL := FALSE;
+	ServoZdvihu_AktualPosition_UDINT : UDINT := 0;
+	ServoZdvihu_ZadanaPozicia_UDINT : UDINT := 0;
 END_VAR
 (************Ovládanie Komunikácie s tlaèiaròou*******************)
 VAR
@@ -27,4 +29,5 @@ VAR
 	Etiketa : Etiketa_typ := (0);
 	CasEnable_1 : TON;
 	CasResetServo_1 : TON;
+	Triger_0 : BOOL := 0;
 END_VAR

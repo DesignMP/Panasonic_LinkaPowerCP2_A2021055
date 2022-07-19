@@ -1,14 +1,15 @@
 
 ACTION ProfinetKomunikaciaKAM8: 
+	//Smart kamera//
 
 
-	CAM8.STAV.READY;
+	CAM8.STAV.READY:= P2_Pracovisko.IN.SmartKamera8_KomOK;
 	
 	//Vstupy pre kameru//
 	CAM8.Profinet_PLC_OUTPUTS[0].0:= CAM8.CMD.Triger;
 	
 	//Výstupy z kamery//
-	CAM8.STAV.SWITCH:= CAM8.Profinet_PLC_INPUTS[10].0;
+	CAM8.STAV.SWITCH:= CAM8.Profinet_PLC_INPUTS[12].0;
 	
 	
 	//Výsledky kamery//
@@ -23,5 +24,16 @@ ACTION ProfinetKomunikaciaKAM8:
 	IF EDGE(CAM8.STAV.SWITCH)THEN
 		CAM8.STAV.Results_READY:= TRUE;
 	END_IF
+	
+	//Run counter kamery//
+	Convert_1.IN_Byte0:= CAM8.STAV.RunCounter_Byte1;
+	Convert_1.IN_Byte1:= CAM8.STAV.RunCounter_Byte0;
+	
+	CAM8.STAV.RunCounter:= Convert_1.OUT_UINT;
+	Convert_1();
+	
+	
+	
+	
 	
 END_ACTION

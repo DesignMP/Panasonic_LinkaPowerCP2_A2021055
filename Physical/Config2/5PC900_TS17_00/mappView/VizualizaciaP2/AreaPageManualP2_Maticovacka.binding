@@ -21,14 +21,8 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.OUT.ZasunStoper" attribute="value" />
 <Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ToggleSwitch_Stoper" attribute="value" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.CMD.RR_Maticovacku_VYSUN" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ToggleSwitch_VysunutieSkrutkovackyK30" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.PAR.Maticov_M4_AktualHodnVysunutia" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="NumericOutput2" attribute="value" />
-</Binding>
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.IN.Maticovacka_M4_ZASUNUTA" attribute="value" />
 <Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ImageList11" attribute="selectedIndex" />
@@ -41,10 +35,7 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.SkrutSet_MaticaM4.CMD.RR_VysunPodavacMatic" attribute="value" />
 <Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ToggleSwitch_PrisavanieSkrutkyK31" attribute="value" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.CMD.RR_PrisavanieMaticeM4_ON" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ToggleSwitch_PrisavanieSkrutkyK30" attribute="value" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.SkrutSet_MaticaM4.STAV.PodanieMatice_BUSY" attribute="value" />
 <Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ImageList12" attribute="selectedIndex" />
@@ -85,6 +76,22 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.SkrutSet_MaticaM4.IN.Oddelovac_SnimPrechoduMatice" attribute="value" />
 <Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ImageList32" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.OUT.Maticovacka_M4_Prisavanie_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ToggleSwitch_PrisavanieSkrutkyK30" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.OUT.Maticovacku_M4_VYSUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ToggleSwitch_VysunutieSkrutkovackyK30" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_StoperMaticovacky.PAR.Maticov_M4_RoundHodnotaREAL" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="NumericOutput2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Vizu.TL_VysunutiaMaticovacM4_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Maticovacka" widgetRefId="ToggleSwitch_VysunutieSkrutkovackyK30" attribute="enable" />
 </Binding>
 </Bindings>
 </BindingsSet>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="AreaPageManualP3_LeakageB_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="AreaPageManualP3_LeakageB.MomentaryPushButton_JoggOsY_VPRED.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="AreaPageManualP3_LeakageB" widgetRefId="MomentaryPushButton_JoggOsY_VPRED" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P3_LeakageTestB.CMD.RR_HornyPritlak_VYSUN">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageManualP3_LeakageB.MomentaryPushButton_JoggOsY_VZAD.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="AreaPageManualP3_LeakageB" widgetRefId="MomentaryPushButton_JoggOsY_VZAD" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P3_LeakageTestB.CMD.RR_HornyPritlak_ZASUN">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaPageManualP3_LeakageB.Button_ResetServaOsY.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaPageManualP3_LeakageB" widgetRefId="Button_ResetServaOsY" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P3_LeakageTestB.CMD.RR_TestovaciaSekvencia_START">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

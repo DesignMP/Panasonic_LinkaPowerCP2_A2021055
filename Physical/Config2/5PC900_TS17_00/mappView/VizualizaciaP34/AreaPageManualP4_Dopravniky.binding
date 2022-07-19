@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageManualP4_Dopravniky_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.IN.Zdvizka_SpodnaPoloha" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList34" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.IN.Zdvizka_StrednaPoloha" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList35" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.IN.Zdvizka_HornaPoloha" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList33" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.IN.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList27" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.IN.TlmicPaletky_ZASUNUTY" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList28" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_Dopravniky.OUT.PriecnyDopravnik_VPRED" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ToggleSwitch_PrednyDopravnik2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestB.IN.Zdvizka_StrednaPoloha" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList32" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestB.IN.Zdvizka_HornaPoloha" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList30" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestB.IN.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList26" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestA.RFID_hlava.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList18" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestA.IN.Centrovanie_ZASUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList17" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestA.IN.Centrovanie_VYSUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList16" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestA.CMD.RR_VysunCentrovanie" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ToggleSwitch_ZasunStoperPoz8" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.RFID_hlava.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList21" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.Centrovanie_ZASUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList20" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.IN.Centrovanie_VYSUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList19" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.OUT.ZasunStoper" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ToggleSwitch_Stoper2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestB.CMD.RR_VysunCentrovanie" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ToggleSwitch_ZasunStoperPoz9" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_Dopravniky.OUT.PrednyDopravnikBunky_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ToggleSwitch_PrednyDopravnik" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_Dopravniky.OUT.ZadnyDopravnikBunky_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ToggleSwitch_HornyDopravnik1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_Etiketovacka.CMD.RR_VysunCentrovanie" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ToggleSwitch_ZasunStoperPoz10" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_Etiketovacka.OUT.ZasunStoper" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ToggleSwitch_Stoper3" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_Etiketovacka.RFID_hlava.PritomnostPaletky" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList24" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_Etiketovacka.IN.Centrovanie_VYSUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList22" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_Etiketovacka.IN.Centrovanie_ZASUNUTE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ImageList23" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_FunkcnyTestA.OUT.ZasunStoper" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="ToggleSwitch_Stoper1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestB.OUT.TlmicPaletky_VYSUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="MomentaryPushButton_JoggOsZ_M9" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P4_ZdvizkaZaFunkcTestA.OUT.TlmicPaletky_VYSUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP4_Dopravniky" widgetRefId="MomentaryPushButton_JoggOsZ_M8" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

@@ -34,6 +34,7 @@ TYPE
 		EditaciaHesla_ENABLE : BOOL;
 		EditaciaKarty_ENABLE : BOOL;
 		TL_UlozUzivatela_ENABLE : BOOL;
+		TL_VymazUzivatela_ENABLE : BOOL;
 		TlacitkoPrihlasenie_ENABLE : BOOL;
 		Stav_ExistujuciUzivatel : BOOL;
 		Stav_ChybajuceDataUzivatela : BOOL;

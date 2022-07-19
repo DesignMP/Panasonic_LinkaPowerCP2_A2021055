@@ -3,7 +3,7 @@ PROGRAM _INIT
 	
 	//Init parametre serva zdvihu v˝ùahu//
 	P4_Vytah.ServoZdvihuVytahu.Parameters.Override:= 100;
-	P4_Vytah.PAR.Zdvih_JoggRychlost:= 0.1;
+	P4_Vytah.PAR.Zdvih_JoggRychlost:= 5;
 	P4_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= TRUE;
 	P4_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.0;
  
@@ -31,7 +31,8 @@ PROGRAM _CYCLIC
 	END_IF	
 	
 	
-
+	//Zaokr˙hlenie aktu·lnej pozÌcie serva zdvihu//
+	ServoZdvihu_AktualPosition_UDINT:= REAL_TO_UDINT(P4_Vytah.ServoZdvihuVytahu.Status.ActPosition);
 	
 	
 	
@@ -70,8 +71,6 @@ PROGRAM _CYCLIC
 		P4_Vytah.ServoZdvihuVytahu.Command.ErrReset:= TRUE;
 		P4_Vytah.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
-		SC_P4_Vytah.Step:= 0;
-	ELSIF NOT P4_Vytah.Manual AND NOT Safety.STAV.P4_ZonaVytahu_AKTIVNA THEN
 		SC_P4_Vytah.Step:= 0;
 	END_IF	
 	
@@ -118,6 +117,7 @@ PROGRAM _CYCLIC
 			P34_Vizu.ZobrazHL7_ST10:= FALSE;
 			P34_Vizu.ZobrazHL8_ST10:= FALSE;
 			P34_Vizu.ZobrazHL9_ST10:= FALSE;
+			P34_Vizu.ZobrazHL10_ST10:= FALSE;
 			P4_Vytah_KAM_Result_Ignoruj:= FALSE;
 			P4_Vytah_KAM_Result_OK:= FALSE;
 			P4_Vytah_KAM_Result_NG:= FALSE;
@@ -129,9 +129,10 @@ PROGRAM _CYCLIC
 			CisloFotky:= 0;
 			TestovaciKus:= FALSE;
 			Stav_VlozenaPaletka:= FALSE;
-			
+			P4_Vytah_Taktime.IN.START_MeraniaCasu:= FALSE;
 			P4_Etiketovacka.STAV.PrebiehaVyvezeniePaletky:= FALSE;
 			P4_Vytah.STAV.PrebiehaVyvezeniePaletky:= FALSE;
+			P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
             
 			
 			IF Safety.STAV.P4_ZonaVytahu_AKTIVNA AND
@@ -178,11 +179,7 @@ PROGRAM _CYCLIC
 			
 			P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
             
-			IF Linka.KOM_FTP_OFF THEN
-				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
-				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 4;
-			ELSIF NOT SC_P4_Vytah.Switch1 THEN
+			IF NOT SC_P4_Vytah.Switch1 THEN
 				FTP_CAM16.CMD.VymazFotku:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF	
@@ -283,6 +280,7 @@ PROGRAM _CYCLIC
 			
 			IF P4_Vytah.RFID_hlava.Stav_CitanieZapis_OK AND P4_Vytah.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_Vytah.RFID_hlava.PrecitaneCisloPaletky;
+				P4_Vytah.PAR.CisloPaletky:= P4_Vytah.RFID_hlava.PrecitaneCisloPaletky;
 				P4_Vytah.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 20;
@@ -310,8 +308,12 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.PT:= T#200ms;
 			SC_P4_Vytah.AlarmTime.PT:= T#5s;
 			
-			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				P4_Vytah.STAV.PoINIT:= TRUE;
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				P4_Vytah.STAV.PoINIT:= TRUE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 130;
@@ -366,8 +368,7 @@ PROGRAM _CYCLIC
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= P34_RemPremenne.P4_Vytah_Zdvih_Dcc;
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			
-			
-						
+									
 			IF P4_Vytah.KoniecCyklu AND NOT P4_Etiketovacka.Automat THEN
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 0;
@@ -391,6 +392,14 @@ PROGRAM _CYCLIC
 		
 			SC_P4_Vytah.IdleTime.IN:= P4_Vytah.RFID_hlava.PritomnostPaletky;
 			
+			IF NOT SC_P4_Vytah.Switch2 AND P4_Vytah.RFID_hlava.PritomnostPaletky THEN
+				P4_Vytah_Taktime.IN.START_MeraniaCasu:= TRUE;
+				P4_Vytah_Taktime.IN.ZAPIS_MeraniaCasu:= TRUE;
+				P4_Vytah_Taktime.IN.ZAPIS_StratovyCas:= TRUE;
+				Buffer_14.Hodnota:= P4_Vytah_Taktime.OUT.StratoveSekundy;
+				Buffer_14.ZapisHodnotu:= TRUE;
+				SC_P4_Vytah.Switch2:= TRUE;
+			END_IF
 		    
             
 			IF NOT SC_P4_Vytah.Switch1 THEN
@@ -425,6 +434,7 @@ PROGRAM _CYCLIC
 					
 			IF P4_Vytah.RFID_hlava.Stav_CitanieZapis_OK AND P4_Vytah.RFID_hlava.PrecitaneCisloPaletky <> 0 THEN
 				i:= P4_Vytah.RFID_hlava.PrecitaneCisloPaletky;
+				P4_Vytah.PAR.CisloPaletky:= P4_Vytah.RFID_hlava.PrecitaneCisloPaletky;
 				P4_Vytah.RFID_hlava.PrecitajChipRFID:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 108;
@@ -440,13 +450,8 @@ PROGRAM _CYCLIC
 			IF i<> 0 THEN
 				P4_Vytah.PAR.CisloPaletky_STRING:= USINT_TO_STRING(i);
 				Paletka[i].PAR.CisloPaletky:= USINT_TO_STRING(i);
-				IF Stav_VlozenaPaletka THEN
-					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 130;
-				ELSE    
-					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 110;
-				END_IF	
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 110;
 			ELSE
 				P34_Alarmy[418]:= TRUE;
 				P4_Pracovisko.STAV.Porucha_ST6:= TRUE;
@@ -458,8 +463,11 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.PT:= T#200ms;
 			SC_P4_Vytah.AlarmTime.PT:= T#5s;
 			
-			
-			IF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
+			IF Paletka[i].STAV.StavPaletky = '' THEN
+				Paletka[i].STAV.StavPaletky:= 'NG';
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 560;
+			ELSIF Paletka[i].STAV.StavPaletky = 'PRECH' THEN
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 130;
 			ELSIF Paletka[i].STAV.StavPaletky = 'TEST' THEN
@@ -494,7 +502,7 @@ PROGRAM _CYCLIC
 				P34_Vizu.ZobrazHL7_ST10:= FALSE;
 				P4_Vytah.CMD.Banner_LED_OFF:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 113;
+				SC_P4_Vytah.Step:= 112;
 			ELSE
 				P4_Vytah.Banner.IN.CyanLED_ON:= Blikac500ms;
 				P34_Vizu.ZobrazHL7_ST10:= TRUE;
@@ -502,35 +510,42 @@ PROGRAM _CYCLIC
 			END_IF    
 		
 		
-		113:
-			SC_P4_Vytah.StepName:='113 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+		112:
+			SC_P4_Vytah.StepName:='112 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
 			SC_P4_Vytah.IdleTime.PT:= T#200ms;
 			SC_P4_Vytah.AlarmTime.PT:= T#10s;	
 			
 			P4_Vytah.Banner.IN.ModraRotujucaLED_ON:= TRUE;
 			
 			IF Linka.KOM_Panatrace_OFF THEN
+				CAM16.STAV.Results_READY:= FALSE;
+				CAM16.STAV.OldRunCounter:= CAM16.STAV.RunCounter;
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 118;
-			ELSIF NOT SC_P4_Vytah.Switch1 THEN
+			ELSIF NOT SC_P4_Vytah.Switch1 AND TRCB_P4_Vytah_ST10.STATUS.KOM_READY THEN
 				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				(*P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF 
             
 			IF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena THEN
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 113;
+			ELSIF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaError THEN	
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
+				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 114;
-			ELSIF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaError THEN	
-				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
-				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 117;
 			END_IF	
 		
 		
-		114:
-			SC_P4_Vytah.StepName:='114 - Automaticky Rezim - kontrola odpovede servera';
+		113:
+			SC_P4_Vytah.StepName:='113 - Automaticky Rezim - kontrola odpovede servera';
 			SC_P4_Vytah.IdleTime.PT:= T#200ms;
 			SC_P4_Vytah.AlarmTime.PT:= T#5s;		
 			
@@ -538,24 +553,51 @@ PROGRAM _CYCLIC
 				IF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
 					SC_P4_Vytah.ResetStep:= TRUE;
 					SC_P4_Vytah.Step:= 114;
-				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
+				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
 					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 114;	
+					SC_P4_Vytah.Step:= 115;	
 				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
+					CAM16.STAV.OldRunCounter:= CAM16.STAV.RunCounter;
+					CAM16.STAV.Results_READY:= FALSE;
 					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 114;
+					SC_P4_Vytah.Step:= 118;
 				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
 					SC_P4_Vytah.ResetStep:= TRUE;
 					SC_P4_Vytah.Step:= 114;
-				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
+				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
 					SC_P4_Vytah.ResetStep:= TRUE;
 					SC_P4_Vytah.Step:= 114;
-				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
+				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 114;
+				ELSE
 					SC_P4_Vytah.ResetStep:= TRUE;
 					SC_P4_Vytah.Step:= 114;
 				END_IF   
 			END_IF
 		
+		114:
+			SC_P4_Vytah.StepName:='114 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P4_Vytah.IdleTime.PT:= T#200ms;
+			SC_P4_Vytah.AlarmTime.PT:= T#5s;
+            
+			P34_Vizu.ZobrazHL10_ST10:= TRUE;
+            
+			IF TRCB_P4_Vytah_OpatovnyDopyt THEN
+				TRCB_P4_Vytah_OpatovnyDopyt:= FALSE; 
+				P34_Vizu.ZobrazHL10_ST10:= FALSE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 112;
+			ELSIF TRCB_P4_Vytah_PaletkaNG THEN
+				TRCB_P4_Vytah_PaletkaNG:= FALSE;
+				P34_Vizu.ZobrazHL10_ST10:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 130;
+			END_IF   	
+			
+			
+			
 		
 		115:
 			SC_P4_Vytah.StepName:='115 - Automaticky Rezim - vyziadanie stavu paletky zo servera'; 
@@ -564,21 +606,24 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.IN:= TRUE;
 		
 			            
-			IF NOT SC_P4_Vytah.Switch1 THEN
+			IF NOT SC_P4_Vytah.Switch1 AND TRCB_P4_Vytah_ST10.STATUS.KOM_READY THEN
 				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPaletky_TYP1:= TRUE;
+				(*P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF
 			
 			IF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena THEN
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 116;
 			ELSIF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaError THEN	
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPaletky_TYP1:= FALSE;
+				P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 117;
+				SC_P4_Vytah.Step:= 114;
 			END_IF	
 			
 		
@@ -591,6 +636,7 @@ PROGRAM _CYCLIC
 			IF NOT TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena THEN
 				IF TRCB_P4_Vytah_ST10.OUTPUTS.PovolenieCinnostiNaPaletke = 'OK' THEN
 					CAM16.STAV.Results_READY:= FALSE;
+					CAM16.STAV.OldRunCounter:= CAM16.STAV.RunCounter;
 					SC_P4_Vytah.ResetStep:= TRUE;
 					SC_P4_Vytah.Step:= 118;
 				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.PovolenieCinnostiNaPaletke = 'NG' THEN
@@ -611,7 +657,7 @@ PROGRAM _CYCLIC
 				TRCB_P4_Vytah_OpatovnyDopyt:= FALSE; 
 				P34_Vizu.ZobrazHL9_ST10:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 113;
+				SC_P4_Vytah.Step:= 112;
 			ELSIF TRCB_P4_Vytah_PaletkaNG THEN
 				TRCB_P4_Vytah_PaletkaNG:= FALSE;
 				P34_Vizu.ZobrazHL9_ST10:= FALSE;
@@ -628,19 +674,16 @@ PROGRAM _CYCLIC
             
 			P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
             
-			IF Linka.P4_Kamery_OFF THEN
-				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
-				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 122;
-			ELSIF NOT SC_P4_Vytah.Switch1 AND CAM16.STAV.Command_READY THEN
+			IF NOT SC_P4_Vytah.Switch1 AND CAM16.STAV.Command_READY THEN
 				CAM16.CMD.Triger:= TRUE;
 				SC_P4_Vytah.IdleTime.IN:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM16.STAV.Results_READY AND CAM16.STAV.Command_AKCEPTOVANY THEN
+			IF CAM16.STAV.Results_READY AND CAM16.STAV.Command_AKCEPTOVANY AND CAM16.STAV.OldRunCounter <> CAM16.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM16.STAV.Results_READY:= FALSE;
+				CAM16.STAV.OldRunCounter:= CAM16.STAV.RunCounter;
 				CAM16.CMD.Triger:= FALSE;
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				SC_P4_Vytah.ResetStep:= TRUE;
@@ -649,6 +692,7 @@ PROGRAM _CYCLIC
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM16.CMD.Triger:= FALSE;
 				CAM16.STAV.Results_READY:= FALSE;
+				CAM16.STAV.OldRunCounter:= CAM16.STAV.RunCounter;
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 119;
@@ -678,42 +722,25 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.PT:= T#1s;
 			SC_P4_Vytah.AlarmTime.PT:= T#5s;  
             
-            
-			IF NOT CAM16.STAV.BUSY THEN
+			IF Linka.P4_Kamery_OFF THEN
+				CAM16.CMD.Triger:= FALSE;
+				CAM16.PAR.ResultFotky:= 'PASS';
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 121;
+			ELSIF NOT CAM16.STAV.BUSY THEN
 				CAM16.CMD.Triger:= FALSE;
 				IF Linka.PAR.ZvolenyModel = '4F' THEN
-					IF CAM16.RESULT.PowerCP.PritomnostSkrutky_K40 AND
-						CAM16.RESULT.PowerCP.PritomnostSkrutky_M5 THEN
-						CAM16.PAR.ResultFotky:= 'PASS';
-						SC_P4_Vytah.ResetStep:= TRUE;
-						SC_P4_Vytah.Step:= 121;
-					ELSE
-						CAM16.PAR.ResultFotky:= 'FAIL';
-						SC_P4_Vytah.ResetStep:= TRUE;
-						SC_P4_Vytah.Step:= 121;
-					END_IF
+					CAM16.PAR.ResultFotky:= 'PASS';
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 121;
 				ELSIF Linka.PAR.ZvolenyModel = '5F' THEN
-					IF CAM16.RESULT.PowerCP.PritomnostSkrutky_K40 AND
-						CAM16.RESULT.PowerCP.PritomnostSkrutky_M5 THEN
-						CAM16.PAR.ResultFotky:= 'PASS';
-						SC_P4_Vytah.ResetStep:= TRUE;
-						SC_P4_Vytah.Step:= 121;
-					ELSE
-						CAM16.PAR.ResultFotky:= 'FAIL';
-						SC_P4_Vytah.ResetStep:= TRUE;
-						SC_P4_Vytah.Step:= 121;
-					END_IF 
+					CAM16.PAR.ResultFotky:= 'PASS';
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 121;
 				ELSIF Linka.PAR.ZvolenyModel = '5H' THEN
-					IF CAM16.RESULT.PowerCP.PritomnostSkrutky_K40 THEN
-						CAM16.PAR.ResultFotky:= 'PASS';
-						SC_P4_Vytah.ResetStep:= TRUE;
-						SC_P4_Vytah.Step:= 121;
-					ELSE
-						CAM16.PAR.ResultFotky:= 'PASS';
-						(*CAM16.PAR.ResultFotky:= 'FAIL';*)
-						SC_P4_Vytah.ResetStep:= TRUE;
-						SC_P4_Vytah.Step:= 121;
-					END_IF    
+					CAM16.PAR.ResultFotky:= 'PASS';
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 121;
 				END_IF
 			END_IF
             
@@ -765,8 +792,8 @@ PROGRAM _CYCLIC
 				FTP_CAM16.INPUTS.IndexFotky:= USINT_TO_STRING(CisloFotky);
 				FTP_CAM16.INPUTS.Result:= CAM11.PAR.ResultFotky;
 				Reports.Kamery.P4_CAM16_KontrolaPaletky:= CAM11.PAR.ResultFotky;
-                      
 				FTP_CAM16.CMD.OdosliFotku:= TRUE;
+				P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF
             
@@ -774,6 +801,7 @@ PROGRAM _CYCLIC
 			IF FTP_CAM16.STATUS.KomunikaciaUkoncena THEN
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				FTP_CAM16.CMD.OdosliFotku:= FALSE;
+				P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				Paletka[i].STAV.OdoslanieFotiek_DONE:= TRUE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 123;
@@ -783,71 +811,22 @@ PROGRAM _CYCLIC
 			END_IF	
 		
 		
-		
 		123:
-			SC_P4_Vytah.StepName:='123 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
-			SC_P4_Vytah.IdleTime.PT:= T#200ms;
-			SC_P4_Vytah.AlarmTime.PT:= T#10s;	
-			
-			P4_Vytah.Banner.IN.ModraRotujucaLED_ON:= TRUE;
-			
-			IF Linka.KOM_Panatrace_OFF THEN
-				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
-				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 130;
-			ELSIF NOT SC_P4_Vytah.Switch1 THEN
-				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
-				SC_P4_Vytah.Switch1:= TRUE;
-			END_IF 
-            
-			IF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena THEN
-				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
-				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 124;
-			ELSIF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaError THEN	
-				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
-				P34_Alarmy[415]:= TRUE;
-				P4_Pracovisko.STAV.Porucha_ST6:= TRUE;
-			END_IF	
-		
-		
-		124:
-			SC_P4_Vytah.StepName:='124 - Automaticky Rezim - kontrola odpovede servera';
-			SC_P4_Vytah.IdleTime.PT:= T#200ms;
-			SC_P4_Vytah.AlarmTime.PT:= T#5s;		
-			
-			IF NOT TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena THEN
-				IF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
-					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 124;
-				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '1;Scanning' THEN
-					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 124;	
-				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
-					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 124;
-				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
-					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 124;
-				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '4;OFF' THEN
-					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 124;
-				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '5;Bussy' THEN
-					SC_P4_Vytah.ResetStep:= TRUE;
-					SC_P4_Vytah.Step:= 124;
-				END_IF   
-			END_IF
-		
-		
-		125:
-			SC_P4_Vytah.StepName:='125 - Automaticky Rezim - odoslanie stavu paletky na server';
+			SC_P4_Vytah.StepName:='123 - Automaticky Rezim - odoslanie stavu paletky na server';
 			SC_P4_Vytah.IdleTime.PT:= T#500ms;
 			SC_P4_Vytah.AlarmTime.PT:= T#5s;
 			SC_P4_Vytah.IdleTime.IN:= TRUE;
 			
-			            
-			IF NOT SC_P4_Vytah.Switch1 THEN
+			P4_Vytah.Banner.IN.ModraRotujucaLED_ON:= TRUE;
+			
+			
+			IF Linka.KOM_Panatrace_OFF THEN
+				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 130;	
+			ELSIF NOT SC_P4_Vytah.Switch1 AND TRCB_P4_Vytah_ST10.STATUS.KOM_READY THEN
 				TRCB_P4_Vytah_ST10.CMD.OdosliStavPaletky_TYP2:= TRUE;
+				(*P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= TRUE;*)
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF 
            
@@ -856,15 +835,18 @@ PROGRAM _CYCLIC
 			IF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena THEN
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				TRCB_P4_Vytah_ST10.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 126;
+				SC_P4_Vytah.Step:= 124;
 			ELSIF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaError THEN	
-				P34_Alarmy[415]:= TRUE;
-				P4_Pracovisko.STAV.Porucha_ST6:= TRUE;
+				TRCB_P4_Vytah_ST10.CMD.OdosliStavPaletky_TYP2:= FALSE;
+				P4_Vytah_Taktime.IN.START_MeraniaStratovehoCasu:= FALSE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 127;
 			END_IF
 			
-		126:
-			SC_P4_Vytah.StepName:='126 - Automaticky Rezim - kontrola odpovede servera';
+		124:
+			SC_P4_Vytah.StepName:='124 - Automaticky Rezim - kontrola odpovede servera';
 			SC_P4_Vytah.IdleTime.PT:= T#200ms;
 			SC_P4_Vytah.AlarmTime.PT:= T#5s;
 			
@@ -878,7 +860,89 @@ PROGRAM _CYCLIC
 					SC_P4_Vytah.ResetStep:= TRUE;
 					SC_P4_Vytah.Step:= 130;
 				END_IF	
+			END_IF	
+			
+	
+			
+		
+		125:
+			SC_P4_Vytah.StepName:='125 - Automaticky Rezim - vyziadanie stavu komunikacie zo serverom'; 
+			SC_P4_Vytah.IdleTime.PT:= T#200ms;
+			SC_P4_Vytah.AlarmTime.PT:= T#10s;	
+			
+			P4_Vytah.Banner.IN.ModraRotujucaLED_ON:= TRUE;
+		
+			IF NOT SC_P4_Vytah.Switch1 AND TRCB_P4_Vytah_ST10.STATUS.KOM_READY THEN
+				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= TRUE;
+				SC_P4_Vytah.Switch1:= TRUE;
+			END_IF 
+			            
+			IF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena THEN
+				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 126;
+			ELSIF TRCB_P4_Vytah_ST10.STATUS.KomunikaciaError THEN	
+				TRCB_P4_Vytah_ST10.CMD.VyziadajStavPanatrace_TYP4:= FALSE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 127;
+			END_IF	
+		
+		
+		126:
+			SC_P4_Vytah.StepName:='126 - Automaticky Rezim - kontrola odpovede servera';
+			SC_P4_Vytah.IdleTime.PT:= T#200ms;
+			SC_P4_Vytah.AlarmTime.PT:= T#5s;		
+			
+			IF NOT TRCB_P4_Vytah_ST10.STATUS.KomunikaciaUkoncena THEN
+				IF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '0;Generating' THEN
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 127;
+				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '1;Request' THEN
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 127;	
+				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '2;Report' THEN
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 123;
+				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '3;Wedding' THEN
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 127;
+				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '4;Status' THEN
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 127;
+				ELSIF TRCB_P4_Vytah_ST10.OUTPUTS.DruhCinnostiNaPaletke = '5;' THEN
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 127;
+				ELSE
+					SC_P4_Vytah.ResetStep:= TRUE;
+					SC_P4_Vytah.Step:= 127;
+				END_IF   
 			END_IF
+		
+		
+			
+		127:
+			SC_P4_Vytah.StepName:='127 - Automaticky Rezim - rozhodnutie obsluhy po chybe komunikacie s Panatrace';
+			SC_P4_Vytah.IdleTime.PT:= T#200ms;
+			SC_P4_Vytah.AlarmTime.PT:= T#5s;
+            
+			P34_Vizu.ZobrazHL10_ST10:= TRUE;
+            
+			IF TRCB_P4_Vytah_OpatovnyDopyt THEN
+				TRCB_P4_Vytah_OpatovnyDopyt:= FALSE; 
+				P34_Vizu.ZobrazHL10_ST10:= FALSE;
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 125;
+			ELSIF TRCB_P4_Vytah_PaletkaNG THEN
+				TRCB_P4_Vytah_PaletkaNG:= FALSE;
+				P34_Vizu.ZobrazHL10_ST10:= FALSE;
+				Paletka[i].STAV.StavPaletky := 'NG';
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 130;
+			END_IF   		
+			
+			
+			
+		
 		
 		
 		130:
@@ -899,6 +963,7 @@ PROGRAM _CYCLIC
 			ELSIF NOT P4_SpodnyStoper.IN.ZaplnenieDopravnika AND P4_Vytah.RFID_hlava.PritomnostPaletky AND Safety.STAV.P4_Vytah_Bariera_AKTIVNA AND P4_Vytah.Banner.OUT.Stlaceny  THEN
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
 				CAM16.STAV.Results_READY:= FALSE;
+				CAM16.STAV.OldRunCounter:= CAM16.STAV.RunCounter;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 133;
 			ELSIF NOT P4_Vytah.RFID_hlava.PritomnostPaletky THEN
@@ -915,21 +980,18 @@ PROGRAM _CYCLIC
 		
 			P4_Vytah.Banner.IN.ModraLED_ON:= TRUE;
 		
-			IF Linka.P4_Kamery_OFF THEN
-				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;	
-				SC_P4_Vytah.ResetStep:= TRUE;
-				SC_P4_Vytah.Step:= 560;
-			ELSIF NOT SC_P4_Vytah.Switch1 AND CAM16.STAV.Command_READY THEN
+			IF NOT SC_P4_Vytah.Switch1 AND CAM16.STAV.Command_READY THEN
 				CAM16.CMD.Triger:= TRUE;
 				SC_P4_Vytah.IdleTime.IN:= TRUE;
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF
 			
-			IF CAM16.STAV.Results_READY AND CAM16.STAV.Command_AKCEPTOVANY THEN
+			IF CAM16.STAV.Results_READY AND CAM16.STAV.Command_AKCEPTOVANY AND CAM16.STAV.OldRunCounter <> CAM16.STAV.RunCounter THEN
 				PocetTrigrovKamery:= 0;
 				CAM16.STAV.Results_READY:= FALSE;
+				CAM16.STAV.OldRunCounter:= CAM16.STAV.RunCounter;
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;	
-				IF NOT Linka.STAV.VyprazdnenieLinky THEN
+				IF NOT Linka.PAR.VyprazdnenieLinky THEN
 					SC_P4_Vytah.ResetStep:= TRUE;
 					SC_P4_Vytah.Step:= 135;
 				ELSE
@@ -940,6 +1002,7 @@ PROGRAM _CYCLIC
 				PocetTrigrovKamery:= PocetTrigrovKamery + 1;
 				CAM16.CMD.Triger:= FALSE;
 				CAM16.STAV.Results_READY:= FALSE;
+				CAM16.STAV.OldRunCounter:= CAM16.STAV.RunCounter;
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;	
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 134;
@@ -972,8 +1035,12 @@ PROGRAM _CYCLIC
 			SC_P4_Vytah.IdleTime.IN:= TRUE;
 				
             			
-			
-			IF NOT CAM16.STAV.BUSY THEN
+			IF Linka.P4_Kamery_OFF THEN
+				CAM16.CMD.Triger:= FALSE;
+				CAM16.PAR.ResultFotky:= 'PASS';
+				SC_P4_Vytah.ResetStep:= TRUE;
+				SC_P4_Vytah.Step:= 138;
+			ELSIF NOT CAM16.STAV.BUSY THEN
 				CAM16.CMD.Triger:= FALSE;
 				IF Linka.PAR.ZvolenyModel = '4F' THEN
 					IF CAM16.RESULT.Paletka.Pritomn_Busbarov_4F AND
@@ -1088,7 +1155,7 @@ PROGRAM _CYCLIC
 			
 			
 			IF NOT SC_P4_Vytah.Switch1 THEN
-				IF Linka.STAV.VyprazdnenieLinky THEN
+				IF Linka.PAR.VyprazdnenieLinky THEN
 					P34_Vizu.ZobrazHL4_ST10:= TRUE;
 				ELSIF Linka.PAR.ZvolenyModel = '4F' THEN
 					P34_Vizu.ZobrazHL1_ST10:= TRUE;
@@ -1156,6 +1223,7 @@ PROGRAM _CYCLIC
 				Paletka[i].STAV.LeakageTest_Ukonceny:= FALSE;
 				Paletka[i].STAV.QRkodFiltraPriradeny:= FALSE;
 				Paletka[i].STAV.Zvaranie_Ukoncene:= FALSE;
+				Paletka[i].STAV.NalepenieEtikety_DONE:= FALSE;
 				CisloFotky:= 0;
 				Reports.Kamery.P4_CAM16_KontrolaPaletky:= '';
 				P4_Vytah.CMD.Banner_LED_OFF:= TRUE;
@@ -1179,18 +1247,18 @@ PROGRAM _CYCLIC
 			
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Velocity:= P34_RemPremenne.P4_Vytah_RychlostZdvihu/1000;
 			P4_Vytah.ServoZdvihuVytahu.Parameters.Position:= P34_RemPremenne.P4_Vytah_PoziciaVykladania;
-			
+			ServoZdvihu_ZadanaPozicia_UDINT:= REAL_TO_UDINT(P34_RemPremenne.P4_Vytah_PoziciaVykladania);
 			
 			P4_Vytah.Banner.IN.OranzovaLED_ON:= Blikac1s;		
 					
 			IF NOT SC_P4_Vytah.Switch1 AND SC_P4_Vytah.IdleTime.Q THEN
 				P4_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
+				P34_Vizu.ZobrazHL6_ST10:= FALSE;
 				SC_P4_Vytah.Switch1:= TRUE;
 			END_IF
 				
-			IF EDGEPOS(P4_Vytah.ServoZdvihuVytahu.Status.InPosition) THEN
+			IF P4_Vytah.ServoZdvihuVytahu.Status.InPosition AND (ServoZdvihu_AktualPosition_UDINT = ServoZdvihu_ZadanaPozicia_UDINT) THEN
 				P4_Vytah.ServoZdvihuVytahu.Command.MovePosition:= FALSE;
-				P34_Vizu.ZobrazHL6_ST10:= FALSE;
 				SC_P4_Vytah.ResetStep:= TRUE;
 				SC_P4_Vytah.Step:= 565;
 			END_IF	
@@ -1279,21 +1347,26 @@ PROGRAM _CYCLIC
 				
 		
 		
-			//Parametre serva pre jogging//
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Jog.Acc:= 50;
-			P4_Vytah.ServoZdvihuVytahu.Parameters.Jog.Velocity:= P4_Vytah.PAR.Zdvih_JoggRychlost;
+			//Ovl·danie zdvihu v˝ùahu//
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Acc:= 10;
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Dcc:= 50;
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Velocity:= P4_Vytah.PAR.Zdvih_JoggRychlost/1000;
 			P4_Vytah.ServoZdvihuVytahu.Command.TorqueLimitation:= TRUE;
+			P4_Vytah.ServoZdvihuVytahu.Parameters.Torque:= 1.5;
 			
-			
-			IF P4_Vytah.CMD.RR_ZdvihVytahu_DOLE AND P4_Vytah.ServoZdvihuVytahu.Status.ActPosition > P34_RemPremenne.P4_Vytah_PoziciaVykladania THEN
-				P4_Vytah.ServoZdvihuVytahu.Command.JogPos:= FALSE;
-				P4_Vytah.ServoZdvihuVytahu.Command.JogNeg:= TRUE;
-			ELSIF P4_Vytah.CMD.RR_ZdvihVytahu_HORE AND P4_Vytah.ServoZdvihuVytahu.Status.ActPosition < P34_RemPremenne.P4_Vytah_PoziciaNakladania THEN
-				P4_Vytah.ServoZdvihuVytahu.Command.JogNeg:= FALSE;
-				P4_Vytah.ServoZdvihuVytahu.Command.JogPos:= TRUE;
+			IF P4_Vytah.CMD.RR_ZdvihVytahu_DOLE AND NOT P4_Vytah.ServoZdvihuVytahu.Command.Stop THEN
+				P4_Vytah.ServoZdvihuVytahu.Parameters.Position:= P34_RemPremenne.P4_Vytah_PoziciaVykladania;
+				P4_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
+			ELSIF P4_Vytah.CMD.RR_ZdvihVytahu_HORE AND NOT P4_Vytah.ServoZdvihuVytahu.Command.Stop THEN
+				P4_Vytah.ServoZdvihuVytahu.Parameters.Position:= P34_RemPremenne.P4_Vytah_PoziciaNakladania;
+				P4_Vytah.ServoZdvihuVytahu.Command.MovePosition:= TRUE;
 			ELSE
-				P4_Vytah.ServoZdvihuVytahu.Command.JogNeg:= FALSE;
-				P4_Vytah.ServoZdvihuVytahu.Command.JogPos:= FALSE;
+				P4_Vytah.ServoZdvihuVytahu.Command.MovePosition:= FALSE;
+				P4_Vytah.ServoZdvihuVytahu.Command.Stop:= TRUE;
+			END_IF	
+					
+			IF P4_Vytah.ServoZdvihuVytahu.Command.Stop AND P4_Vytah.ServoZdvihuVytahu.Status.StandStill THEN
+				P4_Vytah.ServoZdvihuVytahu.Command.Stop:= FALSE;
 			END_IF	
 			
         
@@ -1309,7 +1382,15 @@ PROGRAM _CYCLIC
 				P4_Vytah.OUT.DopravnikChod_VZAD:= FALSE;
 			END_IF    
         
+			//»Ìtanie a z·pis na paletku//
+			IF P4_Vytah.RFID_hlava.PrecitajChipRFID AND (P4_Vytah.RFID_hlava.Stav_CitanieZapis_OK OR P4_Vytah.RFID_hlava.Stav_CitanieZapis_NG) THEN
+				P4_Vytah.PAR.RR_PrecitaneCisloPaletky:= P4_Vytah.RFID_hlava.PrecitaneCisloPaletky;
+				P4_Vytah.RFID_hlava.PrecitajChipRFID:= FALSE;
+			END_IF		
 		
+			IF P4_Vytah.RFID_hlava.ZapisNaChipRFID AND (P4_Vytah.RFID_hlava.Stav_CitanieZapis_OK OR P4_Vytah.RFID_hlava.Stav_CitanieZapis_NG) THEN
+				P4_Vytah.RFID_hlava.ZapisNaChipRFID:= FALSE;
+			END_IF	
 		
 		
 		

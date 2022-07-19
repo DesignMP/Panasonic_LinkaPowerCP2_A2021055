@@ -7,7 +7,7 @@ ACTION IOLinkKomunikacia:
 	
 	
 	//Ovládanie bannera//
-	P2_StoperZaklTesnenia.Banner.IN.Blikac100ms:= Blikac100ms;
+	P2_StoperZaklTesnenia.Banner.IN.Blikac100ms:= Blikac500ms;
 	P2_StoperZaklTesnenia.Banner();
 	
 	

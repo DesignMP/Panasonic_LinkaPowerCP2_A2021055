@@ -8,7 +8,7 @@ ACTION IOLinkKomunikacia:
 	
 	
 	//Ovládanie bannera//
-	P4_Vytah.Banner.IN.Blikac100ms:= Blikac100ms;
+	P4_Vytah.Banner.IN.Blikac100ms:= Blikac500ms;
 	P4_Vytah.Banner();
 	
 	

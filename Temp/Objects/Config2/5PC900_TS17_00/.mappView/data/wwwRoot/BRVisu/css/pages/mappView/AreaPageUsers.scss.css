@@ -732,7 +732,11 @@
 }
 
 #AreaPageUsers_ToggleButton_Prihlasenie.checked:not(.disabled):not(.active) span {
-  color: #ff8000;
+  color: black;
+}
+
+#AreaPageUsers_ToggleButton_Prihlasenie.checked:not(.disabled):not(.active) {
+  background-image: linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%);
 }
 
 #AreaPageUsers_Image1 {

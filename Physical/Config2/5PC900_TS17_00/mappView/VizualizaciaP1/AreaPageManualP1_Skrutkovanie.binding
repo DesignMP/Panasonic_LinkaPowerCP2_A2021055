@@ -78,5 +78,21 @@
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.IN.ManipulOsY_LimSnimac_NEG" attribute="value" />
 			<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie" widgetRefId="ImageList16" attribute="selectedIndex" />
 		</Binding>
-	</Bindings>
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_OvladManipulatoraXY_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie" widgetRefId="MomentaryPushButton_JoggOsX_VZAD" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_OvladManipulatoraXY_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie" widgetRefId="MomentaryPushButton_JoggOsY_VPRED" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_OvladManipulatoraXY_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie" widgetRefId="MomentaryPushButton_JoggOsX_VPRED" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_OvladManipulatoraXY_ENABLE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie" widgetRefId="MomentaryPushButton_JoggOsY_VZAD" attribute="enable" />
+</Binding>
+</Bindings>
 </BindingsSet>

@@ -32,9 +32,9 @@
     <Parameter ID="Startmode" Value="2" />
     <Parameter ID="ShowBootlogoWeb" Value="0" />
     <Parameter ID="Mode" Value="Manual" />
-    <Parameter ID="InternetAddress" Value="10.128.148.11" />
+    <Parameter ID="InternetAddress" Value="192.168.131.11" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
-    <Parameter ID="DefaultGateway" Value="10.128.148.1" />
+    <Parameter ID="DefaultGateway" Value="192.168.131.1" />
     <Parameter ID="ActivateDns" Value="1" />
     <Parameter ID="DnsDefaultDomain" Value="DnsSuffix" />
     <Parameter ID="DnsFromDhcp" Value="1" />
@@ -47,13 +47,16 @@
     <Parameter ID="GifOffsetX" Value="0" Type="UDINT" />
     <Parameter ID="GifOffsetY" Value="0" Type="UDINT" />
     <Parameter ID="GifDelayMs" Value="0" Type="UDINT" />
-    <Parameter ID="ActivateBuzzer" Value="0" />
+    <Parameter ID="ActivateBuzzer" Value="1" />
+    <Parameter ID="Buzzersource" Value="1" />
+    <Parameter ID="Buzzerfrequency" Value="500" Type="UINT" />
+    <Parameter ID="Buzzerduration" Value="50" Type="UINT" />
     <Parameter ID="ActivateOpenService" Value="1" />
     <Parameter ID="PasswordVNCEncrypt" Value="0" />
     <Parameter ID="ActivateRFBext" Value="0" />
     <Parameter ID="ConnMonVNC" Value="0" />
     <Parameter ID="LocalScaling" Value="0" />
-    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.3:85/index.html?visuId=Vizu_P1" />
+    <Parameter ID="SelectedFavoriteWeb" Value="192.168.131.3:85/index.html?visuId=Vizu_P1" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="DisablePinchZoom" Value="0" />
     <Parameter ID="EnableViewportOvrd" Value="0" />
@@ -82,9 +85,9 @@
     <Parameter ID="Startmode" Value="2" />
     <Parameter ID="ShowBootlogoWeb" Value="0" />
     <Parameter ID="Mode" Value="Manual" />
-    <Parameter ID="InternetAddress" Value="10.128.148.21" />
+    <Parameter ID="InternetAddress" Value="192.168.131.21" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
-    <Parameter ID="DefaultGateway" Value="10.128.148.1" />
+    <Parameter ID="DefaultGateway" Value="192.168.131.1" />
     <Parameter ID="ActivateDns" Value="1" />
     <Parameter ID="DnsDefaultDomain" Value="DnsSuffix" />
     <Parameter ID="DnsFromDhcp" Value="1" />
@@ -97,13 +100,16 @@
     <Parameter ID="GifOffsetX" Value="0" Type="UDINT" />
     <Parameter ID="GifOffsetY" Value="0" Type="UDINT" />
     <Parameter ID="GifDelayMs" Value="0" Type="UDINT" />
-    <Parameter ID="ActivateBuzzer" Value="0" />
+    <Parameter ID="ActivateBuzzer" Value="1" />
+    <Parameter ID="Buzzersource" Value="1" />
+    <Parameter ID="Buzzerfrequency" Value="500" Type="UINT" />
+    <Parameter ID="Buzzerduration" Value="50" Type="UINT" />
     <Parameter ID="ActivateOpenService" Value="1" />
     <Parameter ID="PasswordVNCEncrypt" Value="0" />
     <Parameter ID="ActivateRFBext" Value="0" />
     <Parameter ID="ConnMonVNC" Value="0" />
     <Parameter ID="LocalScaling" Value="0" />
-    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.3:85/index.html?visuId=Vizu_P2" />
+    <Parameter ID="SelectedFavoriteWeb" Value="192.168.131.3:85/index.html?visuId=Vizu_P2" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="DisablePinchZoom" Value="0" />
     <Parameter ID="EnableViewportOvrd" Value="0" />
@@ -132,9 +138,9 @@
     <Parameter ID="Startmode" Value="2" />
     <Parameter ID="ShowBootlogoWeb" Value="0" />
     <Parameter ID="Mode" Value="Manual" />
-    <Parameter ID="InternetAddress" Value="10.128.148.40" />
+    <Parameter ID="InternetAddress" Value="192.168.131.40" />
     <Parameter ID="Subnetmask" Value="255.255.255.0" />
-    <Parameter ID="DefaultGateway" Value="10.128.148.1" />
+    <Parameter ID="DefaultGateway" Value="192.168.131.1" />
     <Parameter ID="ActivateDns" Value="1" />
     <Parameter ID="DnsDefaultDomain" Value="DnsSuffix" />
     <Parameter ID="DnsFromDhcp" Value="1" />
@@ -147,13 +153,16 @@
     <Parameter ID="GifOffsetX" Value="0" Type="UDINT" />
     <Parameter ID="GifOffsetY" Value="0" Type="UDINT" />
     <Parameter ID="GifDelayMs" Value="0" Type="UDINT" />
-    <Parameter ID="ActivateBuzzer" Value="0" />
+    <Parameter ID="ActivateBuzzer" Value="1" />
+    <Parameter ID="Buzzersource" Value="1" />
+    <Parameter ID="Buzzerfrequency" Value="500" Type="UINT" />
+    <Parameter ID="Buzzerduration" Value="50" Type="UINT" />
     <Parameter ID="ActivateOpenService" Value="1" />
     <Parameter ID="PasswordVNCEncrypt" Value="0" />
     <Parameter ID="ActivateRFBext" Value="0" />
     <Parameter ID="ConnMonVNC" Value="0" />
     <Parameter ID="LocalScaling" Value="0" />
-    <Parameter ID="SelectedFavoriteWeb" Value="10.128.148.3:85/index.html?visuId=Vizu_P34" />
+    <Parameter ID="SelectedFavoriteWeb" Value="192.168.131.3:85/index.html?visuId=Vizu_P34" />
     <Parameter ID="BrowserVKeyboard" Value="0" />
     <Parameter ID="DisablePinchZoom" Value="0" />
     <Parameter ID="EnableViewportOvrd" Value="0" />
@@ -3343,7 +3352,7 @@
     <Parameter ID="ConfigFile" Value="X20IF10E1_1.dtm" />
     <Parameter ID="ConfigModule" Value="asnxdb1" />
     <Parameter ID="CycleTime" Value="4000" Type="UDINT" />
-    <Parameter ID="ConfigUID" Value="3246857891" Type="UDINT" />
+    <Parameter ID="ConfigUID" Value="3535847798" Type="UDINT" />
   </Module>
   <Module ID="SL1.IF1.ST20.SS1.IF1.NETX" Hardware="NETX" />
   <Module ID="SL1.IF1.ST20.SS1.IF1.NETX.BUS" Hardware="X20IF10E1-1">
@@ -16863,7 +16872,7 @@
     <Parameter ID="ConfigFile" Value="X20IF10E1_1b.dtm" />
     <Parameter ID="ConfigModule" Value="asnxdb2" />
     <Parameter ID="CycleTime" Value="4000" Type="UDINT" />
-    <Parameter ID="ConfigUID" Value="1134137667" Type="UDINT" />
+    <Parameter ID="ConfigUID" Value="793491414" Type="UDINT" />
   </Module>
   <Module ID="SL1.IF1.ST30.SS1.IF1.NETX" Hardware="NETX" />
   <Module ID="SL1.IF1.ST30.SS1.IF1.NETX.BUS" Hardware="X20IF10E1-1">
@@ -34426,7 +34435,7 @@
     <Parameter ID="ConfigFile" Value="5ACPCI_XPNM_00.dtm" />
     <Parameter ID="ConfigModule" Value="asnxdb3" />
     <Parameter ID="CycleTime" Value="4000" Type="UDINT" />
-    <Parameter ID="ConfigUID" Value="3605165741" Type="UDINT" />
+    <Parameter ID="ConfigUID" Value="1504546031" Type="UDINT" />
   </Module>
   <Module ID="SL2.IF1.NETX" Hardware="NETX" />
   <Module ID="SL2.IF1.NETX.BUS" Hardware="5ACPCI.XPNM-00">

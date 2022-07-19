@@ -3,8 +3,6 @@ ACTION VytvorenieEtikety:
 
 	//*********************************************Vyèítanie parametrov etikety zo servera*******************************************************//
 	
-	SerioveCisloEtikety:= 'T598454420120P32120001323091112';
-
 	brsstrcpy(ADR(VstupnePoleUSINT),ADR(SerioveCisloEtikety)); //Skopirovanie vstupnej spravy do pola
     
     

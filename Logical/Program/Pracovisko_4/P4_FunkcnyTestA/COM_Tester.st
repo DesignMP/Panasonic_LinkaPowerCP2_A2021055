@@ -2,9 +2,9 @@
 ACTION COM_Tester: 
 
 	//Parametre komunikácie//
-    memcpy(ADR(SKTcpClientTester_0.Params.IPaddrServ),ADR('192.168.122.252'),SIZEOF('192.168.122.252'));
+    memcpy(ADR(SKTcpClientTester_0.Params.IPaddrServ),ADR('192.168.128.252'),SIZEOF('192.168.128.252'));
     (*memcpy(ADR(SKTcpClientTester_0.Params.IPaddrServ),ADR('127.0.0.1'),SIZEOF('127.0.0.1'));*)
-    SKTcpClientTester_0.Params.IPportClient := 1032;
+    SKTcpClientTester_0.Params.IPportClient := P4_FunkcnyTestA.PAR.CisloPortuKlienta;
     SKTcpClientTester_0.Params.IPportServ := 1030;
     SKTcpClientTester_0.Params.RecvTimeout := 10000;
     strcpy(ADR(SKTcpClientTester_0.Params.Packet.data),ADR(dataStr));
@@ -23,7 +23,8 @@ ACTION COM_Tester:
             SC_OvlTesteraFT.StepName:= '0 - Nulovanie';
             SKTcpClientTester_0.Enable:= TRUE;
             SKTcpClientTester_0.Cmd.Send:= FALSE;
-            P4_FunkcnyTestA.STAV.TestovanieUkoncene:= FALSE;
+			P4_FunkcnyTestA.STAV.TestovanieUkoncene:= FALSE;
+			P4_FunkcnyTestA.STAV.TesterNeodpoveda:= FALSE;
             PocetDopytovNaTester:= 0;
             SC_OvlTesteraFT.ResetStep:= TRUE;
             SC_OvlTesteraFT.Step:= 1;
@@ -50,7 +51,8 @@ ACTION COM_Tester:
             SKTcpClientTester_0.Params.Packet.type:= 0;
             SKTcpClientTester_0.Params.Packet.workplace:= 49;
             SKTcpClientTester_0.Params.Packet.id:= 1;
-            SKTcpClientTester_0.Cmd.Send:= TRUE;
+            SKTcpClientTester_0.Cmd.Close:= FALSE;
+			SKTcpClientTester_0.Cmd.Send:= TRUE;
            
                 
             IF SKTcpClientTester_0.Cmd.Send AND NOT SKTcpClientTester_0.Status.staReceived AND NOT SKTcpClientTester_0.Status.staError THEN
@@ -58,13 +60,15 @@ ACTION COM_Tester:
                 SC_OvlTesteraFT.Step:= 13;
             ELSIF SC_OvlTesteraFT.AlarmTime.Q AND (SKTcpClientTester_0.Status.staReceived OR SKTcpClientTester_0.Status.staError) THEN    
                 PocetDopytovNaTester:= PocetDopytovNaTester + 1;
-                SC_OvlTesteraFT.ResetStep:= TRUE;
+				SKTcpClientTester_0.Cmd.Send:= FALSE;
+				SKTcpClientTester_0.Cmd.Close:= TRUE;
+				SC_OvlTesteraFT.ResetStep:= TRUE;
                 SC_OvlTesteraFT.Step:= 12;
             END_IF	
 		
         12:
             SC_OvlTesteraFT.StepName:= '12 - Dopyt na stav testera - cakam na opatovny dopyt na tester';
-            SC_OvlTesteraFT.IdleTime.PT:= T#300ms;
+            SC_OvlTesteraFT.IdleTime.PT:= T#800ms;
             SC_OvlTesteraFT.AlarmTime.PT:= T#5s;    
             SC_OvlTesteraFT.IdleTime.IN:= TRUE;
             SKTcpClientTester_0.Cmd.Send:= FALSE;
@@ -76,7 +80,7 @@ ACTION COM_Tester:
                 END_IF
             ELSE
                 P4_FunkcnyTestA.STAV.Vysledok_FV_Testu:= 'NG';
-                P4_FunkcnyTestA.STAV.TestovanieUkoncene:= TRUE;
+                P4_FunkcnyTestA.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraFT.ResetStep:= TRUE;
                 SC_OvlTesteraFT.Step:= 100;
             END_IF    
@@ -89,7 +93,7 @@ ACTION COM_Tester:
             
         13:
             SC_OvlTesteraFT.StepName:= '13 - Odpoved na stav testera - typ 0';
-            SC_OvlTesteraFT.IdleTime.PT:= T#300ms;
+            SC_OvlTesteraFT.IdleTime.PT:= T#800ms;
             SC_OvlTesteraFT.AlarmTime.PT:= T#10s;
             SC_OvlTesteraFT.IdleTime.IN:= TRUE;
 			
@@ -99,21 +103,23 @@ ACTION COM_Tester:
                 SC_OvlTesteraFT.ResetStep:= TRUE;
                 SC_OvlTesteraFT.Step:= 15;
             ELSIF SKTcpClientTester_0.Status.staReceived AND SKTcpClientTester_0.Status.DataRecv[2]= 0 AND SKTcpClientTester_0.Status.DataRecv[5]= 1 THEN	
-                SKTcpClientTester_0.Cmd.Send:= FALSE;
+				SKTcpClientTester_0.Cmd.Send:= FALSE;
+				SKTcpClientTester_0.Cmd.Close:= TRUE;
                 IF SC_OvlTesteraFT.IdleTime.Q THEN
                     SC_OvlTesteraFT.ResetStep:= TRUE;
                     SC_OvlTesteraFT.Step:= 10;
                 END_IF    
             ELSIF SKTcpClientTester_0.Status.staReceived AND SKTcpClientTester_0.Status.DataRecv[2]= 0 AND SKTcpClientTester_0.Status.DataRecv[5]= 0 THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
-                IF SC_OvlTesteraFT.IdleTime.Q THEN
+                SKTcpClientTester_0.Cmd.Close:= TRUE;
+				IF SC_OvlTesteraFT.IdleTime.Q THEN
                     SC_OvlTesteraFT.ResetStep:= TRUE;
                     SC_OvlTesteraFT.Step:= 10;
                 END_IF  
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
                 P4_FunkcnyTestA.STAV.Vysledok_FV_Testu:= 'NG';
-                P4_FunkcnyTestA.STAV.TestovanieUkoncene:= TRUE;
+                P4_FunkcnyTestA.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraFT.ResetStep:= TRUE;
                 SC_OvlTesteraFT.Step:= 100;
             END_IF
@@ -128,8 +134,8 @@ ACTION COM_Tester:
             SKTcpClientTester_0.Params.Packet.type:= 1;
             SKTcpClientTester_0.Params.Packet.workplace:= 49;
             SKTcpClientTester_0.Params.Packet.id:= 1;
-            dataStr:= Paletka[i].PAR.QRkodPowerCP;
-            SKTcpClientTester_0.Cmd.Send:= TRUE;
+			dataStr:= Paletka[i].PAR.QRkodPowerCP;
+		    SKTcpClientTester_0.Cmd.Send:= TRUE;
             
 				
             IF SKTcpClientTester_0.Cmd.Send AND NOT SKTcpClientTester_0.Status.staReceived AND NOT SKTcpClientTester_0.Status.staError THEN
@@ -164,7 +170,7 @@ ACTION COM_Tester:
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
                 P4_FunkcnyTestA.STAV.Vysledok_FV_Testu:= 'NG';
-                P4_FunkcnyTestA.STAV.TestovanieUkoncene:= TRUE;
+                P4_FunkcnyTestA.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraFT.ResetStep:= TRUE;
                 SC_OvlTesteraFT.Step:= 100;
             END_IF
@@ -213,7 +219,7 @@ ACTION COM_Tester:
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
                 P4_FunkcnyTestA.STAV.Vysledok_FV_Testu:= 'NG';
-                P4_FunkcnyTestA.STAV.TestovanieUkoncene:= TRUE;
+                P4_FunkcnyTestA.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraFT.ResetStep:= TRUE;
                 SC_OvlTesteraFT.Step:= 100;
             END_IF
@@ -271,7 +277,7 @@ ACTION COM_Tester:
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
                 P4_FunkcnyTestA.STAV.Vysledok_FV_Testu:= 'NG';
-                P4_FunkcnyTestA.STAV.TestovanieUkoncene:= TRUE;
+                P4_FunkcnyTestA.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraFT.ResetStep:= TRUE;
                 SC_OvlTesteraFT.Step:= 100;
             END_IF
@@ -314,7 +320,9 @@ ACTION COM_Tester:
                 SC_OvlTesteraFT.Step:= 100;
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
-                SC_OvlTesteraFT.ResetStep:= TRUE;
+				P4_FunkcnyTestA.STAV.Vysledok_FV_Testu:= 'NG';
+				P4_FunkcnyTestA.STAV.TesterNeodpoveda:= TRUE;
+				SC_OvlTesteraFT.ResetStep:= TRUE;
                 SC_OvlTesteraFT.Step:= 100;
             END_IF
 			

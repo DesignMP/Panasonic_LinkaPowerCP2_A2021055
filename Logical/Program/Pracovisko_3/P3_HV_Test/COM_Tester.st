@@ -2,8 +2,8 @@
 ACTION COM_Tester: 
 	
 	//Parametre komunikácie//
-    memcpy(ADR(SKTcpClientTester_0.Params.IPaddrServ),ADR('192.168.122.251'),SIZEOF('192.168.122.251'));
-    SKTcpClientTester_0.Params.IPportClient := 1031;
+    memcpy(ADR(SKTcpClientTester_0.Params.IPaddrServ),ADR('192.168.128.251'),SIZEOF('192.168.128.251'));
+    SKTcpClientTester_0.Params.IPportClient := P3_HV_Test.PAR.CisloPortuKlienta;
     SKTcpClientTester_0.Params.IPportServ := 1030;
     SKTcpClientTester_0.Params.RecvTimeout := 10000;
     strcpy(ADR(SKTcpClientTester_0.Params.Packet.data),ADR(dataStr));
@@ -25,7 +25,8 @@ ACTION COM_Tester:
             SC_OvlTesteraHV.StepName:= '0 - Nulovanie';
             SKTcpClientTester_0.Enable:= TRUE;
             SKTcpClientTester_0.Cmd.Send:= FALSE;
-            P3_HV_Test.STAV.TestovanieUkoncene:= FALSE;
+			P3_HV_Test.STAV.TestovanieUkoncene:= FALSE;
+			P3_HV_Test.STAV.TesterNeodpoveda:= FALSE;
             PocetDopytovNaTester:= 0;
             SC_OvlTesteraHV.ResetStep:= TRUE;
             SC_OvlTesteraHV.Step:= 1;
@@ -54,7 +55,8 @@ ACTION COM_Tester:
             SKTcpClientTester_0.Params.Packet.type:= 0;
             SKTcpClientTester_0.Params.Packet.workplace:= 46;
             SKTcpClientTester_0.Params.Packet.id:= 1;
-            SKTcpClientTester_0.Cmd.Send:= TRUE;
+            SKTcpClientTester_0.Cmd.Close:= FALSE;
+			SKTcpClientTester_0.Cmd.Send:= TRUE;
             
 			
             IF SKTcpClientTester_0.Cmd.Send AND NOT SKTcpClientTester_0.Status.staReceived AND NOT SKTcpClientTester_0.Status.staError THEN
@@ -62,13 +64,15 @@ ACTION COM_Tester:
                 SC_OvlTesteraHV.Step:= 13;
             ELSIF SC_OvlTesteraHV.AlarmTime.Q AND (SKTcpClientTester_0.Status.staReceived OR SKTcpClientTester_0.Status.staError) THEN    
                 PocetDopytovNaTester:= PocetDopytovNaTester + 1;
-                SC_OvlTesteraHV.ResetStep:= TRUE;
+				SKTcpClientTester_0.Cmd.Send:= FALSE;
+				SKTcpClientTester_0.Cmd.Close:= TRUE;
+				SC_OvlTesteraHV.ResetStep:= TRUE;
                 SC_OvlTesteraHV.Step:= 12;
             END_IF	
 		
         12:
             SC_OvlTesteraHV.StepName:= '12 - Dopyt na stav testera - cakam na opatovny dopyt na tester';
-            SC_OvlTesteraHV.IdleTime.PT:= T#300ms;
+            SC_OvlTesteraHV.IdleTime.PT:= T#800ms;
             SC_OvlTesteraHV.AlarmTime.PT:= T#5s;    
             SC_OvlTesteraHV.IdleTime.IN:= TRUE;
             SKTcpClientTester_0.Cmd.Send:= FALSE;
@@ -80,7 +84,7 @@ ACTION COM_Tester:
                 END_IF
             ELSE
                 P3_HV_Test.STAV.Vysledok_HV_Testu:= 'NG';
-                P3_HV_Test.STAV.TestovanieUkoncene:= TRUE;
+                P3_HV_Test.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraHV.ResetStep:= TRUE;
                 SC_OvlTesteraHV.Step:= 100;
             END_IF    
@@ -89,7 +93,7 @@ ACTION COM_Tester:
             
         13:
             SC_OvlTesteraHV.StepName:= '13 - Odpoved na stav testera - typ 0';
-            SC_OvlTesteraHV.IdleTime.PT:= T#500ms;
+            SC_OvlTesteraHV.IdleTime.PT:= T#800ms;
             SC_OvlTesteraHV.AlarmTime.PT:= T#10s;
             SC_OvlTesteraHV.IdleTime.IN:= TRUE;
 			
@@ -100,20 +104,22 @@ ACTION COM_Tester:
                 SC_OvlTesteraHV.Step:= 15;
             ELSIF SKTcpClientTester_0.Status.staReceived AND SKTcpClientTester_0.Status.DataRecv[2]= 0 AND SKTcpClientTester_0.Status.DataRecv[5]= 1 THEN	
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
-                IF SC_OvlTesteraHV.IdleTime.Q THEN
+                SKTcpClientTester_0.Cmd.Close:= TRUE;
+				IF SC_OvlTesteraHV.IdleTime.Q THEN
                     SC_OvlTesteraHV.ResetStep:= TRUE;
                     SC_OvlTesteraHV.Step:= 10;
                 END_IF    
             ELSIF SKTcpClientTester_0.Status.staReceived AND SKTcpClientTester_0.Status.DataRecv[2]= 0 AND SKTcpClientTester_0.Status.DataRecv[5]= 0 THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
-                IF SC_OvlTesteraHV.IdleTime.Q THEN
+                SKTcpClientTester_0.Cmd.Close:= TRUE;
+				IF SC_OvlTesteraHV.IdleTime.Q THEN
                     SC_OvlTesteraHV.ResetStep:= TRUE;
                     SC_OvlTesteraHV.Step:= 10;
                 END_IF 
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
                 P3_HV_Test.STAV.Vysledok_HV_Testu:= 'NG';
-                P3_HV_Test.STAV.TestovanieUkoncene:= TRUE;
+                P3_HV_Test.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraHV.ResetStep:= TRUE;
                 SC_OvlTesteraHV.Step:= 100;
             END_IF
@@ -128,8 +134,8 @@ ACTION COM_Tester:
             SKTcpClientTester_0.Params.Packet.type:= 1;
             SKTcpClientTester_0.Params.Packet.workplace:= 46;
             SKTcpClientTester_0.Params.Packet.id:= 1;
-            dataStr:= Paletka[i].PAR.QRkodPowerCP;
-            SKTcpClientTester_0.Cmd.Send:= TRUE;
+			dataStr:= Paletka[i].PAR.QRkodPowerCP;
+	        SKTcpClientTester_0.Cmd.Send:= TRUE;
            
 			
             IF SKTcpClientTester_0.Cmd.Send AND NOT SKTcpClientTester_0.Status.staReceived AND NOT SKTcpClientTester_0.Status.staError THEN
@@ -165,7 +171,7 @@ ACTION COM_Tester:
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
                 P3_HV_Test.STAV.Vysledok_HV_Testu:= 'NG';
-                P3_HV_Test.STAV.TestovanieUkoncene:= TRUE;
+                P3_HV_Test.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraHV.ResetStep:= TRUE;
                 SC_OvlTesteraHV.Step:= 100;
             END_IF
@@ -214,7 +220,7 @@ ACTION COM_Tester:
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
                 P3_HV_Test.STAV.Vysledok_HV_Testu:= 'NG';
-                P3_HV_Test.STAV.TestovanieUkoncene:= TRUE;
+                P3_HV_Test.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraHV.ResetStep:= TRUE;
                 SC_OvlTesteraHV.Step:= 100;
             END_IF
@@ -272,7 +278,7 @@ ACTION COM_Tester:
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
                 P3_HV_Test.STAV.Vysledok_HV_Testu:= 'NG';
-                P3_HV_Test.STAV.TestovanieUkoncene:= TRUE;
+                P3_HV_Test.STAV.TesterNeodpoveda:= TRUE;
                 SC_OvlTesteraHV.ResetStep:= TRUE;
                 SC_OvlTesteraHV.Step:= 100;
             END_IF
@@ -319,7 +325,9 @@ ACTION COM_Tester:
                 SC_OvlTesteraHV.Step:= 100;
             ELSIF SKTcpClientTester_0.Status.staError THEN
                 SKTcpClientTester_0.Cmd.Send:= FALSE;
-                SC_OvlTesteraHV.ResetStep:= TRUE;
+                P3_HV_Test.STAV.Vysledok_HV_Testu:= 'NG';
+				P3_HV_Test.STAV.TesterNeodpoveda:= TRUE;
+				SC_OvlTesteraHV.ResetStep:= TRUE;
                 SC_OvlTesteraHV.Step:= 100;
             END_IF
 			

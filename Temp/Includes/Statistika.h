@@ -17,12 +17,15 @@ extern "C"
 /* Datatypes and datatypes of function blocks */
 typedef struct Statistika_IN_typ
 {	plcbit START_MeraniaCasu;
+	plcbit START_MeraniaStratovehoCasu;
 	plcbit ZAPIS_MeraniaCasu;
+	plcbit ZAPIS_StratovyCas;
 	unsigned short TaskovaTrieda_ms;
 	plcbit RESET_CelkovehoCasu;
 	plcbit RESET_HistorieMeraniCasu;
 	plcbit RESET_PoctuKusov;
 	plcbit RESET_CelkovehoPoctuKusov;
+	plcbit RESET_StratovehoCasu;
 	plcbit PriratajKus_OK;
 	plcbit PriratajKus_NG;
 } Statistika_IN_typ;
@@ -33,22 +36,18 @@ typedef struct Statistika_OUT_typ
 	float NameranyCas_v_Hodinach;
 	float PriemernyCas_v_Sekundach;
 	float PriemernyCas_v_Minutach;
-	plcbit Stav_ZapisCasu_DONE;
-	plcbit Stav_RESET_CelkCasu_DONE;
-	plcbit Stav_RESET_HistorieMerani_DONE;
+	float StratoveSekundy;
+	float StratoveMinuty;
+	float StratoveHodiny;
 	float HistoriaMerani_v_Sekundach[15];
 	float HistoriaMerani_v_Minutach[15];
 	float HistoriaMerani_v_Hodinach[15];
 	float CelkovyPocetNameranychSekund;
 	float CelkovyPocetNameranychMinut;
 	float CelkovyPocetNameranychHodin;
-	plcbit Stav_PriratanieKusu_OK_DONE;
-	plcbit Stav_PriratanieKusu_NG_DONE;
 	unsigned long PocetKusov_OK;
 	unsigned long PocetKusov_NG;
 	unsigned long CelkovyPocetKusov;
-	plcbit Stav_RESET_PoctuKusov_DONE;
-	plcbit Stav_RESET_CelkPoctuKusov_DONE;
 } Statistika_OUT_typ;
 
 typedef struct Statistika_VAR_typ
@@ -71,6 +70,12 @@ typedef struct Statistika_VAR_typ
 	float Priemer_SucetSekund_REAL;
 	float Priemer_SucetMinut_REAL;
 	float Priemer_SucetHodin_REAL;
+	unsigned short StratoveMilisekundy;
+	unsigned short StratoveSekundy;
+	unsigned short StratoveMinuty;
+	unsigned short StratoveHodiny;
+	float CelkoveStratoveMilisekundy_REAL;
+	float CelkoveStratoveSekundy_REAL;
 } Statistika_VAR_typ;
 
 typedef struct Taktime

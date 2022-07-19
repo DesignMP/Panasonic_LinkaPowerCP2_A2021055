@@ -21,6 +21,27 @@ PROGRAM _CYCLIC
 	
 	
 	
+	//**********************************Zobrazenie upozornenia na kontrolu skrutiek na stanici 5 skrutkovania***********************************//
+	IF EDGEPOS(Linka.PAR.ZvolenyModel = '4F')THEN
+		P2_Vizu.ZobrazHL5_ST5:= TRUE;
+		P2_Vizu.ZobrazHL6_ST5:= FALSE;
+		P2_Vizu.ZobrazHL7_ST5:= FALSE;
+	END_IF
+	
+	IF EDGEPOS(Linka.PAR.ZvolenyModel = '5F')THEN
+		P2_Vizu.ZobrazHL5_ST5:= FALSE;
+		P2_Vizu.ZobrazHL6_ST5:= TRUE;
+		P2_Vizu.ZobrazHL7_ST5:= FALSE;
+	END_IF
+	
+	IF EDGEPOS(Linka.PAR.ZvolenyModel = '5H')THEN
+		P2_Vizu.ZobrazHL5_ST5:= FALSE;
+		P2_Vizu.ZobrazHL6_ST5:= FALSE;
+		P2_Vizu.ZobrazHL7_ST5:= TRUE;
+	END_IF
+	
+	
+	
 	//Zmeny farieb tlaèítok ovládania zámkov//
 	//Zadné dvere //
 	IF P2_Pracovisko.STAV.ZadneDvereZamknute AND P2_Pracovisko.IN.ZadneDvereLS_PritomnostAdaptera AND P2_Pracovisko.IN.ZadneDverePS_PritomnostAdaptera THEN
@@ -145,6 +166,14 @@ PROGRAM _CYCLIC
 	//Zamknutie tlaèítok ovládania zámkov//
 	IF P2_Pracovisko.STAV.Automat THEN
 		P2_Vizu.TL_OvladaniaZamkov_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.RR_Polohovanie_BUSY THEN
+		P2_Vizu.TL_OvladaniaZamkov_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM5_BUSY THEN	
+		P2_Vizu.TL_OvladaniaZamkov_ENABLE:= FALSE;
+	ELSIF P2_Srobovanie.STAV.CistenieSkrutkovackyM6_BUSY THEN	
+		P2_Vizu.TL_OvladaniaZamkov_ENABLE:= FALSE;	
+	ELSIF P2_Zvaranie.STAV.RR_SekvenciaZvarania_BUSY THEN
+		P2_Vizu.TL_OvladaniaZamkov_ENABLE:= FALSE;
 	ELSE
 		P2_Vizu.TL_OvladaniaZamkov_ENABLE:= TRUE;
 	END_IF	
@@ -197,6 +226,13 @@ PROGRAM _CYCLIC
 		P2_Vizu.TL_RezimManual_ENABLE:= FALSE;
 	ELSE
 		P2_Vizu.TL_RezimManual_ENABLE:= TRUE;
+	END_IF	
+	
+	//RR - Tlaèítko vysunutia maticovaèky//
+	IF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.TL_VysunutiaMaticovacM4_ENABLE:= FALSE;
+	ELSE	
+		P2_Vizu.TL_VysunutiaMaticovacM4_ENABLE:= TRUE;
 	END_IF	
 	
 	//RR - Tlaèítko èistenia skrutkovaèky M6//
@@ -324,6 +360,16 @@ PROGRAM _CYCLIC
 		P2_Vizu.TL_OvladSkrutkovSetuM5_ENABLE:= TRUE;
 	END_IF	
 	
+	//RR - Ovládanie manipulatora XY//
+	IF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.TL_OvladManipulatoraXY_ENABLE:= FALSE;
+	ELSE	
+		P2_Vizu.TL_OvladManipulatoraXY_ENABLE:= TRUE;
+	END_IF	
+	
+	
+	
+	
 	
 	//RR - Ovládanie presunu zvárania//
 	IF P2_Zvaranie.STAV.RR_SekvenciaZvarania_BUSY THEN
@@ -332,6 +378,25 @@ PROGRAM _CYCLIC
 		P2_Vizu.TL_PresunZvarania_ENABLE:= FALSE;
 	ELSE
 		P2_Vizu.TL_PresunZvarania_ENABLE:= TRUE;
+	END_IF	
+	
+	//RR - Spustenie sekvencie zvárania//
+	IF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.TL_StartSekvencieZvarania_ENABLE:= FALSE;
+	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
+		P2_Vizu.TL_StartSekvencieZvarania_ENABLE:= FALSE;
+	ELSE	
+		P2_Vizu.TL_StartSekvencieZvarania_ENABLE:= TRUE;
+	END_IF
+	
+	
+	//RR - Ovládanie zdvihu zvárania//
+	IF NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
+		P2_Vizu.TL_ZdvihZvarania_ENABLE:= FALSE;
+	ELSIF NOT P2_StoperZvarania.RFID_hlava.PritomnostPaletky THEN
+		P2_Vizu.TL_ZdvihZvarania_ENABLE:= FALSE;
+	ELSE
+		P2_Vizu.TL_ZdvihZvarania_ENABLE:= TRUE;
 	END_IF	
 	
 	

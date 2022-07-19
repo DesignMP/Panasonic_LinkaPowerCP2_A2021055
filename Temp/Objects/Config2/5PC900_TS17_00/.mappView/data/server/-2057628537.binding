@@ -2,12 +2,6 @@
 <BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
   <Content id="AreaHlasenie2_ST9">
     <Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM15.RESULT.Pritomn_Etikety" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-			<Target xsi:type="brease" refId="AreaHlasenie2_ST9_ImageList1" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
-		</Binding>
-  </Content>
-  <Content id="AreaHlasenie2_ST9">
-    <Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:CAM15.RESULT.Pritomn_LogoPanasonic" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 			<Target xsi:type="brease" refId="AreaHlasenie2_ST9_ImageList4" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 		</Binding>

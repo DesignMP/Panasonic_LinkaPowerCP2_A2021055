@@ -2,6 +2,8 @@
 <BindingsSet id="HlavickaP1_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Bindings>
 		
+	
+		
 			
 		<!--Zobrazenie varningov pracoviska v hlavičke-->
 		<Binding mode="oneWay">

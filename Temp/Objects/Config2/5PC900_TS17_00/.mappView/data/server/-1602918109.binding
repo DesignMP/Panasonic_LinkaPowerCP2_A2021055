@@ -72,4 +72,10 @@
 <Target xsi:type="brease" refId="HlavickaP2_ButtonZadneDvere" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
 </Binding>
   </Content>
+  <Content id="HlavickaP2">
+    <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Vizu.AktualnyCasPLC" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<Target xsi:type="brease" refId="HlavickaP2_DateTimeOutput1" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+</Binding>
+  </Content>
 </BindingDefinition>

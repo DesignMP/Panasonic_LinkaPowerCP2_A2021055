@@ -29,6 +29,7 @@ TYPE
 		ZobrazHL12_ST1 : BOOL;
 		ZobrazHL13_ST1 : BOOL;
 		ZobrazHL14_ST1 : BOOL; (*ST1 - Nieje prihl·sen˝ oper·tor*)
+		ZobrazHL15_ST1 : BOOL; (*ST1 - Panatrace neodpoved·*)
 		ZobrazHL1_ST2 : BOOL;
 		ZobrazHL2_ST2 : BOOL;
 		ZobrazHL3_ST2 : BOOL;
@@ -38,6 +39,7 @@ TYPE
 		ZobrazHL7_ST2 : BOOL;
 		ZobrazHL8_ST2 : BOOL;
 		ZobrazHL9_ST2 : BOOL; (*ST2 - Odpoved panatrace NG*)
+		ZobrazHL10_ST2 : BOOL; (*ST2 - Panatrace neodpoved·*)
 		TL_PrednyZamok_Farba : WSTRING[80];
 		TL_ZadnyZamok_Farba : WSTRING[80];
 		TL_ZamkniPrednyZamok : BOOL;
@@ -63,6 +65,7 @@ TYPE
 		Tl_VysunutieSkrutkovK30_ENABLE : BOOL;
 		TL_OvladaniaVysunSkrutkovM4_M5 : BOOL;
 		TL_OvladSkrutkovSetuK30_ENABLE : BOOL;
+		TL_OvladManipulatoraXY_ENABLE : BOOL;
 		Srobovanie_OvlManipOsX_ENABLE : BOOL;
 		Srobovanie_OvlManipOsY_ENABLE : BOOL;
 		EditaciaParametrov_ENABLE : BOOL;
@@ -100,12 +103,16 @@ TYPE
 		TL_VycistiSkrutkovackuM6_ENABLE : BOOL;
 		TL_VycistiSkrutkovackuM5_ENABLE : BOOL;
 		TL_PolohujManipulator_ENABLE : BOOL;
+		TL_VysunutiaMaticovacM4_ENABLE : BOOL;
 		Tl_VysunutieSkrutkovM6_ENABLE : BOOL;
 		Tl_VysunutieSkrutkovM5_ENABLE : BOOL;
 		TL_OvladaniaVysunSkrutkovM4 : BOOL;
+		TL_OvladManipulatoraXY_ENABLE : BOOL;
 		TL_OvladSkrutkovSetuM6_ENABLE : BOOL;
 		TL_OvladSkrutkovSetuM5_ENABLE : BOOL;
 		TL_PresunZvarania_ENABLE : BOOL;
+		TL_ZdvihZvarania_ENABLE : BOOL;
+		TL_StartSekvencieZvarania_ENABLE : BOOL;
 		EditaciaParametrov_ENABLE : BOOL;
 		ZaklTesnenia_OvlZdvihu_ENABLE : BOOL;
 		ZaklTesnenia_OvlZostupu_ENABLE : BOOL;
@@ -140,21 +147,28 @@ TYPE
 		ZobrazHL12_ST3 : BOOL; (*ST3 - Oper·tor nieje prihl·sen˝*)
 		ZobrazHL13_ST3 : BOOL; (*ST3 - Odpoved panatrace je NG*)
 		ZobrazHL14_ST3 : BOOL; (*ST3 - Odober PowerCP z paletky a vloû do öuplÌka*)
+		ZobrazHL15_ST3 : BOOL; (*ST3 - Panatrace neodpoved·*)
 		ZobrazHL1_ST4 : BOOL;
 		ZobrazHL2_ST4 : BOOL;
 		ZobrazHL3_ST4 : BOOL; (*ST4 -Odpoved panatrace je NG*)
+		ZobrazHL4_ST4 : BOOL; (*ST4 - Panatrace neodpoved·*)
 		ZobrazHL1_ST5 : BOOL;
 		ZobrazHL2_ST5 : BOOL;
 		ZobrazHL3_ST5 : BOOL;
 		ZobrazHL4_ST5 : BOOL; (*ST5 - Odpoved panatrace je NG*)
-		ZobrazHL1_ST6 : BOOL; (*ST3 - Ch˝baj˙ci material na paletke 4F *)
-		ZobrazHL2_ST6 : BOOL; (*ST3 - Ch˝baj˙ci material na paletke 5F*)
-		ZobrazHL3_ST6 : BOOL; (*ST3 - Ch˝baj˙ci material na paletke 5H*)
-		ZobrazHL4_ST6 : BOOL; (*ST3 - Skontroluj prÌtomnosù alebo QR kÛd filtra 5H*)
-		ZobrazHL5_ST6 : BOOL; (*ST3 - V zakladaËi ch˝ba Power CP !!!*)
-		ZobrazHL6_ST6 : BOOL; (*ST3 - V zakladaËi ch˝ba tesnenie !!!*)
-		ZobrazHL7_ST6 : BOOL; (*ST3 - Zle zaloûenÈ tesnenie na Power CP*)
+		ZobrazHL5_ST5 : BOOL; (*ST5 - Model 4F kontrola skrutiek M4 s komaxitom*)
+		ZobrazHL6_ST5 : BOOL; (*ST5 - Model 5F kontrola skrutiek M4 s komaxitom*)
+		ZobrazHL7_ST5 : BOOL; (*ST5 - Model 5H kontrola skrutiek M4 bez komaxitu*)
+		ZobrazHL8_ST5 : BOOL; (*ST5 - Panatrace neodpoved·*)
+		ZobrazHL1_ST6 : BOOL; (*ST6 - Ch˝baj˙ci material na paletke 4F *)
+		ZobrazHL2_ST6 : BOOL; (*ST6 - Ch˝baj˙ci material na paletke 5F*)
+		ZobrazHL3_ST6 : BOOL; (*ST6 - Ch˝baj˙ci material na paletke 5H*)
+		ZobrazHL4_ST6 : BOOL; (*ST6 - Skontroluj prÌtomnosù alebo QR kÛd filtra 5H*)
+		ZobrazHL5_ST6 : BOOL; (*ST6 - V zakladaËi ch˝ba Power CP !!!*)
+		ZobrazHL6_ST6 : BOOL; (*ST6 - V zakladaËi ch˝ba tesnenie !!!*)
+		ZobrazHL7_ST6 : BOOL; (*ST6 - Zle zaloûenÈ tesnenie na Power CP*)
 		ZobrazHL8_ST6 : BOOL; (*ST6 - Odpoved panatrace je NG*)
+		ZobrazHL9_ST6 : BOOL; (*ST6 - Panatrace neodpoved·*)
 		IndexStavu_Dopravnik : USINT;
 		IndexStavu_SpodnyStoper : USINT;
 		IndexStavu_StoperZakladacaTesn : USINT;
@@ -173,11 +187,15 @@ TYPE
 		GoPage : STRING[80] := 'PageBootP34';
 		TL_RezimAutomat : BOOL;
 		ZobrazHL1_ST7 : BOOL; (*ST7 - Odpoved panatrace je NG*)
+		ZobrazHL2_ST7 : BOOL; (*ST7 - Panatrace neodpoved·*)
 		ZobrazHL1_ST8 : BOOL; (*ST8A - Odpoved panatrace je NG*)
 		ZobrazHL2_ST8 : BOOL; (*ST8B - Odpoved panatrace je NG*)
+		ZobrazHL3_ST8 : BOOL; (*ST8A - Panatrace neodpoved·*)
+		ZobrazHL4_ST8 : BOOL; (*ST8B - Panatrace neodpoved·*)
 		ZobrazHL1_ST9 : BOOL;
 		ZobrazHL2_ST9 : BOOL;
 		ZobrazHL3_ST9 : BOOL; (*ST9 - Odpoved panatrace je NG*)
+		ZobrazHL4_ST9 : BOOL; (*ST9 - Panatrace neodpoved·*)
 		ZobrazHL1_ST10 : BOOL; (*ST10 - Ch˝baj˙ci material na paletke 4F *)
 		ZobrazHL2_ST10 : BOOL; (*ST10 - Ch˝baj˙ci material na paletke 5F*)
 		ZobrazHL3_ST10 : BOOL; (*ST10 - Ch˝baj˙ci material na paletke 5H*)
@@ -187,6 +205,10 @@ TYPE
 		ZobrazHL7_ST10 : BOOL; (*ST10 - Nieje prihlaseny operator*)
 		ZobrazHL8_ST10 : BOOL;
 		ZobrazHL9_ST10 : BOOL; (*ST10 - Odpoved panatrace je NG*)
+		ZobrazHL10_ST10 : BOOL; (*ST10 - Panatrace neodpoved·*)
+		ZobrazHL1_HVtest : BOOL; (*HV tester neodpoved·*)
+		ZobrazHL1_FinalTestA : BOOL; (*Final tester neodpoved·*)
+		ZobrazHL1_FinalTestB : BOOL; (*Final tester neodpoved·*)
 		TL_ResetCS : BOOL;
 		IndexStavu_DopravnikP3 : USINT;
 		IndexStavu_SpodnyStoperP3 : USINT;
@@ -224,13 +246,27 @@ TYPE
 		TL_StartAutomat_ENABLE_P4 : BOOL;
 		TL_KoniecCyklu_ENABLE_P4 : BOOL;
 		TL_STOP_ENABLE_P4 : BOOL;
-		LeakageTestA_Testovanie_ENABLE : BOOL;
-		LeakageTestB_Testovanie_ENABLE : BOOL;
-		LeakageTestA_RR_ENABLE : BOOL;
-		LeakageTestB_RR_ENABLE : BOOL;
-		FunkcnyTestA_Testovanie_ENABLE : BOOL;
-		FunkcnyTestB_Testovanie_ENABLE : BOOL;
-		Etiketovacka_Testovanie_ENABLE : BOOL;
+		TL_VycistiSkrutkovackuK40_ENABLE : BOOL;
+		TL_PolohujManipulator_ENABLE : BOOL;
+		Tl_VysunutieSkrutkovK40_ENABLE : BOOL;
+		TL_OvladaniaVysunSkrutkovM5 : BOOL;
+		TL_OvladManipulatoraY_ENABLE : BOOL;
+		TL_OvladSkrutkovSetuK40_ENABLE : BOOL;
+		TL_SekvencieHV_Testu_ENABLE : BOOL;
+		TL_OvladaniaHV_Testu_ENABLE : BOOL;
+		TL_SekvencieLeakTestuA_ENABLE : BOOL;
+		TL_OvladaniaLeakTestuA_ENABLE : BOOL;
+		TL_SekvencieLeakTestuB_ENABLE : BOOL;
+		TL_OvladaniaLeakTestuB_ENABLE : BOOL;
+		TL_SekvencieFunkcTestuA_ENABLE : BOOL;
+		TL_OvladaniaFunkcTestuA_ENABLE : BOOL;
+		TL_SekvencieFunkcTestuB_ENABLE : BOOL;
+		TL_OvladaniaFunkcTestuB_ENABLE : BOOL;
+		TL_SekvencieEtiketovania_ENABLE : BOOL;
+		TL_OvladaniaEtiketovania_ENABLE : BOOL;
+		TL_ZdvihAplikEtiketovania_ENABLE : BOOL;
+		Vytah_CitaniePaletky_ENABLE : BOOL;
+		Vytah_ZapisPaletky_ENABLE : BOOL;
 		Srobovanie_OvlManipOsY_ENABLE : BOOL;
 		VolbaLeakageTestu_ENABLE : BOOL;
 		VolbaFunkcnehoTestu_ENABLE : BOOL;
@@ -247,9 +283,6 @@ TYPE
 		WarningsP3_Index : USINT;
 		WarningsP4_Farba : WSTRING[80];
 		WarningsP4_Index : USINT;
-		TL_OvladanieVytahu_ENABLE : BOOL;
-		TL_HomingVytahu_ENABLE : BOOL;
-		TL_OvlZdvihuAplikEtikety_ENABLE : BOOL;
 		TL_VyprazdnenieLinky_ENABLE : BOOL;
 	END_STRUCT;
 	Vizu_typ : 	STRUCT 
@@ -286,7 +319,7 @@ TYPE
 		LeakageTest_Ukonceny : BOOL;
 		FunkcnyTest_Ukonceny : BOOL;
 		QRkodFiltraPriradeny : BOOL;
-		VytlacenieEtikety_DONE : BOOL;
+		NalepenieEtikety_DONE : BOOL;
 		OdoslanieFotiek_DONE : BOOL;
 		Komunikacia_DONE : BOOL;
 		CisloEtiketyVyziadane : BOOL;
@@ -603,6 +636,7 @@ TYPE
 		Manual : BOOL;
 		Reset : BOOL;
 		KoniecCyklu : BOOL;
+		ZberFotiek : BOOL;
 		KOM_Panatrace_OFF : BOOL;
 		KOM_FTP_OFF : BOOL;
 		P1_Kamery_OFF : BOOL;
@@ -770,6 +804,7 @@ TYPE
 	END_STRUCT;
 	P1_Vytah_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
+		CisloPaletky : USINT;
 		IndexFotky : USINT;
 		StaryQRkod_PowerCP : STRING[30];
 		StaryQRkod_DPS_4F5F : STRING[32];
@@ -872,10 +907,13 @@ TYPE
 	P1_StoperSrobovania_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
 		IndexFotky : USINT;
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P1_StoperSrobovania_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
 		PrebiehaVyvezeniePaletky : BOOL;
+		VstupnaKamerovaKontrola : BOOL;
+		VyrobaZacala : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -906,7 +944,6 @@ TYPE
 		SkrutSet_M4 : PickAndPlace;
 	END_STRUCT;
 	P1_Srobovanie_CMD_typ : 	STRUCT 
-		RR_SkrutkovackuK30_VYSUN : BOOL;
 		RR_Manipulator_OsX_VPRAVO : BOOL;
 		RR_Manipulator_OsX_VLAVO : BOOL;
 		RR_Manipulator_OsY_VPRED : BOOL;
@@ -919,7 +956,6 @@ TYPE
 		RR_PrisavanieSkrutkyM5_OFF : BOOL;
 		RR_PrisavanieSkrutkyM4_ON : BOOL;
 		RR_PrisavanieSkrutkyM4_OFF : BOOL;
-		RR_PrisavanieSkrutkyK30_ON : BOOL;
 		RR_CistenieSkrutkovackyK30 : BOOL;
 		RR_SkrutSetK30_Zasobnik_RUN : BOOL;
 		RR_SkrutSetK30_PodajSkrutku : BOOL;
@@ -975,6 +1011,7 @@ TYPE
 		RR_IndexPolohovaniaManipulatora : USINT;
 		RR_TypModelu : STRING[2];
 		Skrutkov_K30_AktualHodnVysunutia : UINT; (*IO-Link snÌmaË*)
+		Skrutkov_K30_RoundHodnotaREAL : REAL;
 		ManipulOsX_AktualnaPozicia : REAL;
 		ManipulOsY_AktualnaPozicia : REAL;
 		ManipulOsZ_M5_AktualnaPozicia : REAL;
@@ -1405,6 +1442,7 @@ TYPE
 		CisloPaletky_STRING : STRING[2];
 		IndexFotky : USINT;
 		StaryQRkod_Filtra5H : STRING[32];
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P2_StoperZaklTesnenia_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -1480,9 +1518,7 @@ TYPE
 		SkrutSet_MaticaM4 : MaticaSet;
 	END_STRUCT;
 	P2_StoperMaticovacky_CMD_typ : 	STRUCT 
-		RR_Maticovacku_VYSUN : BOOL;
 		RR_VysunCentrovanie : BOOL;
-		RR_PrisavanieMaticeM4_ON : BOOL;
 	END_STRUCT;
 	P2_StoperMaticovacky_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*IS2_1*)
@@ -1502,8 +1538,10 @@ TYPE
 		CisloPaletky_STRING : STRING[2];
 		IndexFotky : USINT;
 		Maticov_M4_AktualHodnVysunutia : UINT; (*IO-Link snÌmaË*)
+		Maticov_M4_RoundHodnotaREAL : REAL;
 		MaticeM4_AtlasCopcoInputs : ARRAY[0..7]OF UDINT;
 		MaticeM4_AtlasCopcoOutputs : ARRAY[0..7]OF UDINT;
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P2_StoperMaticovacky_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -1520,6 +1558,8 @@ TYPE
 		Uhol_ToleranciaMAX : UDINT;
 		Uhol_ToleranciaMIN_REAL : REAL;
 		Uhol_ToleranciaMIN : UDINT;
+		VstupnaKamerovaKontrola : BOOL;
+		VyrobaZacala : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -1581,10 +1621,13 @@ TYPE
 	P2_StoperSrobovania_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
 		IndexFotky : USINT;
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P2_StoperSrobovania_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
 		PrebiehaVyvezeniePaletky : BOOL;
+		VstupnaKamerovaKontrola : BOOL;
+		VyrobaZacala : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -1614,16 +1657,12 @@ TYPE
 		SkrutSet_M6 : ScrewLoading;
 	END_STRUCT;
 	P2_Srobovanie_CMD_typ : 	STRUCT 
-		RR_SkrutkovackuM6_VYSUN : BOOL;
-		RR_SkrutkovackuM5_VYSUN : BOOL;
 		RR_Manipulator_OsX_VPRAVO : BOOL;
 		RR_Manipulator_OsX_VLAVO : BOOL;
 		RR_Manipulator_OsY_VPRED : BOOL;
 		RR_Manipulator_OsY_VZAD : BOOL;
 		RR_SkrutkovackaM4_OsZ_HORE : BOOL;
 		RR_SkrutkovackaM4_OsZ_DOLE : BOOL;
-		RR_PrisavanieSkrutkyM6_ON : BOOL;
-		RR_PrisavanieSkrutkyM5_ON : BOOL;
 		RR_PrisavanieSkrutkyM4_ON : BOOL;
 		RR_PrisavanieSkrutkyM4_OFF : BOOL;
 		RR_CistenieSkrutkovackyM6 : BOOL;
@@ -1676,7 +1715,9 @@ TYPE
 	P2_Srobovanie_PAR_typ : 	STRUCT 
 		ManipulOsZ_M4_AktualnaPozicia : REAL;
 		Skrutkov_M5_AktualHodnVysunutia : UINT; (*IO-Link snÌmaË*)
+		Skrutkov_M5_RoundHodnotaREAL : REAL;
 		Skrutkov_M6_AktualHodnVysunutia : UINT; (*IO-Link snÌmaË*)
+		Skrutkov_M6_RoundHodnotaREAL : REAL;
 		ManipulOsX_AktualnaPozicia : REAL;
 		ManipulOsY_AktualnaPozicia : REAL;
 		RR_IndexPolohovaniaManipulatora : USINT;
@@ -1958,10 +1999,13 @@ TYPE
 	P2_StoperZvarania_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
 		IndexFotky : USINT;
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P2_StoperZvarania_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
 		PrebiehaVyvezeniePaletky : BOOL;
+		VstupnaKamerovaKontrola : BOOL;
+		VyrobaZacala : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -2050,7 +2094,7 @@ TYPE
 		Ionizator_Alarm3 : BOOL;
 	END_STRUCT;
 	P2_Cistenie_OUT_typ : 	STRUCT 
-		Ionizator_ON : BOOL; (*YV060_VT2*)
+		Ionizator_OFF : BOOL; (*YV060_VT2*)
 		VzduchPreIonizator_ON : BOOL;
 		Dvere_ZATVOR : BOOL;
 		Dvere_OTVOR : BOOL;
@@ -2284,10 +2328,13 @@ TYPE
 	P3_StoperSrobovania_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
 		IndexFotky : USINT;
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P3_StoperSrobovania_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
 		PrebiehaVyvezeniePaletky : BOOL;
+		VstupnaKamerovaKontrola : BOOL;
+		VyrobaZacala : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -2318,10 +2365,8 @@ TYPE
 		RR_Manipulator_OsY_VZAD : BOOL;
 		RR_M45F_PresunNaPozSkrutkov : BOOL;
 		RR_M5H_PresunNaPozSkrutkov : BOOL;
-		RR_PrisavanieSkrutkyK40_ON : BOOL;
 		RR_PrisavanieSkrutkyM5_ON : BOOL;
 		RR_PrisavanieSkrutkyM5_OFF : BOOL;
-		RR_SkrutkovackuK40_VYSUN : BOOL;
 		RR_SkrutkovackaM5_OsZ_HORE : BOOL;
 		RR_SkrutkovackaM5_OsZ_DOLE : BOOL;
 		RR_CistenieSkrutkovackyK40 : BOOL;
@@ -2360,6 +2405,7 @@ TYPE
 	END_STRUCT;
 	P3_Srobovanie_PAR_typ : 	STRUCT 
 		Skrutkov_K40_AktualHodnVysunutia : UINT; (*IO-Link snÌmaË*)
+		Skrutkov_K40_RoundHodnotaREAL : REAL;
 		ManipulOsY_AktualnaPozicia : REAL;
 		ManipulOsZ_M5_AktualnaPozicia : REAL;
 		RR_IndexPolohovaniaManipulatora : USINT;
@@ -2372,7 +2418,8 @@ TYPE
 	END_STRUCT;
 	P3_Srobovanie_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
-		Vysledok_Srobovania : STRING[2]; (*OK alebo NG*)
+		Vysledok_SrobovaniaK40 : STRING[2]; (*OK alebo NG*)
+		Vysledok_SrobovaniaM5 : STRING[2]; (*OK alebo NG*)
 		RR_Polohovanie_BUSY : BOOL;
 		K40_DosiahnutyMoment_REAL : REAL;
 		K40_DosiahnutyMoment : UDINT;
@@ -2428,10 +2475,11 @@ TYPE
 		KoniecCyklu : BOOL;
 	END_STRUCT;
 	P3_HV_Test_CMD_typ : 	STRUCT 
-		RR_OtvorTester : BOOL;
 		RR_ZatvorTester : BOOL;
 		StartTestovania : BOOL;
 		RR_VysunCentrovanie : BOOL;
+		RR_VysunPruzenieKontaktov : BOOL;
+		OpatovnyTest : BOOL;
 	END_STRUCT;
 	P3_HV_Test_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*MS3_12*)
@@ -2457,15 +2505,19 @@ TYPE
 	END_STRUCT;
 	P3_HV_Test_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
+		CisloPortuKlienta : UINT;
 	END_STRUCT;
 	P3_HV_Test_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
 		PrebiehaVyvezeniePaletky : BOOL;
 		TestovanieUkoncene : BOOL;
+		TesterNeodpoveda : BOOL;
 		Vysledok_HV_Testu : STRING[2]; (*OK alebo NG*)
 		NameranyCas_InitTestera : TIME;
 		NameranyCas_PoslanieQRkodu : TIME;
 		NameranyCas_CelkovyCasTestovania : TIME;
+		RR_SekvenciaTestera_BUSY : BOOL;
+		PaletkaOznacena_NG : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -2552,8 +2604,8 @@ TYPE
 		KoniecCyklu : BOOL;
 	END_STRUCT;
 	P3_LeakageTestA_CMD_typ : 	STRUCT 
-		RR_OtvorTester : BOOL;
-		RR_ZatvorTester : BOOL;
+		RR_HornyPritlak_VYSUN : BOOL;
+		RR_HornyPritlak_ZASUN : BOOL;
 		RR_VysunSpodneKopito : BOOL;
 		RR_TestovaciaSekvencia_START : BOOL;
 		RR_VysunCentrovanie : BOOL;
@@ -2586,6 +2638,7 @@ TYPE
 		CisloPaletky_STRING : STRING[2];
 		PrecitanyVyrovnavaciTlak : UINT; (*IO-Link snÌmaË*)
 		PreratanyVyrovnavaciTlak_Bar : REAL;
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P3_LeakageTestA_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -2611,11 +2664,11 @@ TYPE
 		KoniecCyklu : BOOL;
 	END_STRUCT;
 	P3_LeakageTestB_CMD_typ : 	STRUCT 
-		RR_OtvorTester : BOOL;
-		RR_ZatvorTester : BOOL;
 		RR_VysunSpodneKopito : BOOL;
 		RR_TestovaciaSekvencia_START : BOOL;
 		RR_VysunCentrovanie : BOOL;
+		RR_HornyPritlak_VYSUN : BOOL;
+		RR_HornyPritlak_ZASUN : BOOL;
 	END_STRUCT;
 	P3_LeakageTestB_IN_typ : 	STRUCT 
 		NapajanieTestera_OK : BOOL;
@@ -2645,6 +2698,7 @@ TYPE
 		CisloPaletky_STRING : STRING[2];
 		PrecitanyVyrovnavaciTlak : UINT; (*IO-Link snÌmaË*)
 		PreratanyVyrovnavaciTlak_Bar : REAL;
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P3_LeakageTestB_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -2901,9 +2955,10 @@ TYPE
 	END_STRUCT;
 	P4_FunkcnyTestA_CMD_typ : 	STRUCT 
 		RR_ZatvorTester : BOOL;
-		RR_OtvorTester : BOOL;
 		StartTestovania : BOOL;
 		RR_VysunCentrovanie : BOOL;
+		RR_VysunPruzenieKontaktov : BOOL;
+		OpatovnyTest : BOOL;
 	END_STRUCT;
 	P4_FunkcnyTestA_IN_typ : 	STRUCT 
 		HorneKontakty_VYSUNUTE : BOOL; (*MS4_2*)
@@ -2930,6 +2985,7 @@ TYPE
 	END_STRUCT;
 	P4_FunkcnyTestA_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
+		CisloPortuKlienta : UINT;
 	END_STRUCT;
 	P4_FunkcnyTestA_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -2937,6 +2993,9 @@ TYPE
 		PrebiehaVyvezeniePaletky : BOOL;
 		Tester_ON : BOOL;
 		TestovanieUkoncene : BOOL;
+		TesterNeodpoveda : BOOL;
+		RR_SekvenciaTestera_BUSY : BOOL;
+		PaletkaOznacena_NG : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -2957,9 +3016,10 @@ TYPE
 	END_STRUCT;
 	P4_FunkcnyTestB_CMD_typ : 	STRUCT 
 		RR_ZatvorTester : BOOL;
-		RR_OtvorTester : BOOL;
 		StartTestovania : BOOL;
 		RR_VysunCentrovanie : BOOL;
+		RR_VysunPruzenieKontaktov : BOOL;
+		OpatovnyTest : BOOL;
 	END_STRUCT;
 	P4_FunkcnyTestB_IN_typ : 	STRUCT 
 		HorneKontakty_VYSUNUTE : BOOL; (*MS4_8*)
@@ -2986,6 +3046,7 @@ TYPE
 	END_STRUCT;
 	P4_FunkcnyTestB_PAR_typ : 	STRUCT 
 		CisloPaletky_STRING : STRING[2];
+		CisloPortuKlienta : UINT;
 	END_STRUCT;
 	P4_FunkcnyTestB_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -2993,6 +3054,9 @@ TYPE
 		PrebiehaVyvezeniePaletky : BOOL;
 		Tester_ON : BOOL;
 		TestovanieUkoncene : BOOL;
+		TesterNeodpoveda : BOOL;
+		RR_SekvenciaTestera_BUSY : BOOL;
+		PaletkaOznacena_NG : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -3084,6 +3148,7 @@ TYPE
 		RR_ZdvihAplikatora_DOLE : BOOL;
 		RR_NalepEtiketu : BOOL;
 		RR_VysunCentrovanie : BOOL;
+		RR_PrisavanieEtikety : BOOL;
 	END_STRUCT;
 	P4_Etiketovacka_IN_typ : 	STRUCT 
 		Centrovanie_VYSUNUTE : BOOL; (*IS4_13*)
@@ -3116,6 +3181,7 @@ TYPE
 		IndexFotky : USINT;
 		CisloPaletky_STRING : STRING[2];
 		ZdvihAplikatora_JoggRychlost : REAL;
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P4_Etiketovacka_STAV_typ : 	STRUCT 
 		PoINIT : BOOL;
@@ -3123,6 +3189,8 @@ TYPE
 		PowerCP_ZhodaQRkodu_OK : BOOL;
 		Etiketa_ZhodaQRkodu_OK : BOOL;
 		RR_SekvenciaEtiketovania_BUSY : BOOL;
+		VstupnaKamerovaKontrola : BOOL;
+		VyrobaZacala : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -3166,6 +3234,8 @@ TYPE
 		CisloPaletky_STRING : STRING[2];
 		IndexFotky : USINT;
 		Zdvih_JoggRychlost : REAL;
+		RR_PrecitaneCisloPaletky : USINT;
+		CisloPaletky : USINT;
 	END_STRUCT;
 	P4_Vytah_STAV_typ : 	STRUCT 
 		PrebiehaVyvezeniePaletky : BOOL;
@@ -3281,6 +3351,7 @@ TYPE
 	KOM_Server_STATUS_typ : 	STRUCT 
 		KomunikaciaUkoncena : BOOL;
 		KomunikaciaError : BOOL;
+		KOM_READY : BOOL;
 	END_STRUCT;
 END_TYPE
 
@@ -3572,31 +3643,6 @@ TYPE
 	END_STRUCT;
 END_TYPE
 
-(***************Posielanie fotiek na server**********************)
-
-TYPE
-	FTP_Kamery_typ : 	STRUCT 
-		CMD : FTP_Kamery_CMD_typ;
-		INPUTS : FTP_Kamery_INPUTS_typ;
-		STATUS : FTP_Kamery_STATUS_typ;
-	END_STRUCT;
-	FTP_Kamery_CMD_typ : 	STRUCT 
-		OdosliFotku : BOOL;
-		VymazFotku : BOOL;
-	END_STRUCT;
-	FTP_Kamery_INPUTS_typ : 	STRUCT 
-		QRkodPowerCP : STRING[30]; (*Master number*)
-		Result : STRING[5]; (*PASS alebo FAIL*)
-		IndexFotky : STRING[2];
-	END_STRUCT;
-	FTP_Kamery_STATUS_typ : 	STRUCT 
-		KomunikaciaUkoncena : BOOL;
-		KomunikaciaError : BOOL;
-		CisloPoruchy : USINT;
-		AdresarPrazdny : BOOL;
-	END_STRUCT;
-END_TYPE
-
 (****************Kamerove kontroly**************************)
 
 TYPE
@@ -3625,9 +3671,14 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM1_Results_typ : 	STRUCT 
 		ZalozenieTesnenia_OK : BOOL;
+		NepritomnostTesnenia : BOOL;
 	END_STRUCT;
 	CAM2_typ : 	STRUCT  (*P1_ST1_Vytah - kontrola kusov na paletke //CAM1//*)
 		CMD : CAM2_Commands_typ;
@@ -3654,6 +3705,10 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM2_Results_typ : 	STRUCT 
 		Paletka : CAM2_Paletka_typ;
@@ -3698,6 +3753,10 @@ TYPE
 		READY : BOOL;
 		OLD_SWITCH : BOOL;
 		Results_READY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM3_Results_typ : 	STRUCT 
 		Paletka : CAM3_Paletka_typ;
@@ -3735,6 +3794,10 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM4_Results_typ : 	STRUCT 
 		Paletka : CAM4_Paletka_typ;
@@ -3752,7 +3815,7 @@ TYPE
 		Pritomn_Pinu6_KrytDPS_4F5F : BOOL;
 		Pritom_DPS_4F5F : BOOL;
 	END_STRUCT;
-	CAM5_typ : 	STRUCT  (*P1_ST1_Vytah - kontrola QR kÛdu PowerCP*)
+	CAM5_typ : 	STRUCT  (*P1_ST1_Vytah - kontrola QR kÛdu PowerCP//Smart kamera//*)
 		CMD : CAM5_Commands_typ;
 		PAR : CAM5_Parametre_typ;
 		STAV : CAM5_Status_typ;
@@ -3775,6 +3838,10 @@ TYPE
 		READY : BOOL;
 		OLD_SWITCH : BOOL;
 		Results_READY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM5_Results_typ : 	STRUCT 
 		Paletka : CAM5_Paletka_typ;
@@ -3787,7 +3854,7 @@ TYPE
 	CAM5_Paletka_typ : 	STRUCT 
 		New_Member : USINT;
 	END_STRUCT;
-	CAM6_typ : 	STRUCT  (*P1_ST2_StoperSkrutkovania - Kontrola paletky*)
+	CAM6_typ : 	STRUCT  (*P1_ST2_StoperSkrutkovania - Kontrola paletky //CAM3//*)
 		CMD : CAM6_Commands_typ;
 		PAR : CAM6_Parametre_typ;
 		STAV : CAM6_Status_typ;
@@ -3812,6 +3879,10 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM6_Results_typ : 	STRUCT 
 		Paletka : CAM6_Paletka_typ;
@@ -3822,24 +3893,19 @@ TYPE
 		Nepritom_PravyFoam_4F5F : BOOL;
 		Pritom_LavejSkrutkyK30 : BOOL;
 		Pritom_PravejSkrutkyK30 : BOOL;
-		Pritom_SkrutkyDPS_4F5F : BOOL;
-		Nepritom_ZadnejSkrutkyM4_4F : BOOL;
-		Nepritom_ZadnejSkrutkyM4_5F : BOOL;
-		Nepritom_PrednejSkrutkyM4_4F : BOOL;
-		Nepritom_PrednejSkrutkyM4_5F : BOOL;
-		Pritom_LavejSkrutkyM5_5H : BOOL;
-		Pritom_PravejSkrutkyM5_5H : BOOL;
-		Pritom_StrednejSkrutkyM5_5H : BOOL;
 	END_STRUCT;
 	CAM6_Paletka_typ : 	STRUCT 
+		Pritom_PowerCP_5H : BOOL;
+		Pritom_PowerCP_4F : BOOL;
+		Pritom_PowerCP_5F : BOOL;
+		Pritom_DPS_45F : BOOL;
 		Pritom_SpodnychBusbarov_5H : BOOL;
-		Pritom_KrytuBusbarov_5H : BOOL;
 		Pritom_SpodnyBusbar_5F : BOOL;
 		Pritom_SpodnyBusbar_4F : BOOL;
 		Pritom_LavyFoam_4F5F : BOOL;
 		Pritom_PravyFoam_4F5F : BOOL;
 	END_STRUCT;
-	CAM7_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola paletky*)
+	CAM7_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola Power CP a QR kÛdu filtra //CAM5//*)
 		CMD : CAM7_Commands_typ;
 		PAR : CAM7_Parametre_typ;
 		STAV : CAM7_Status_typ;
@@ -3865,12 +3931,16 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM7_Results_typ : 	STRUCT 
 		CitanieQRkodu_Filtra5H_OK : BOOL;
 		PrecitanyQRkod_Filtra5H : STRING[32];
 	END_STRUCT;
-	CAM8_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola spodnÈho QR kÛdu Power CP*)
+	CAM8_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola spodnÈho QR kÛdu Power CP //Smart kamera//*)
 		CMD : CAM8_Commands_typ;
 		PAR : CAM8_Parametre_typ;
 		STAV : CAM8_Status_typ;
@@ -3893,6 +3963,10 @@ TYPE
 		READY : BOOL;
 		OLD_SWITCH : BOOL;
 		Results_READY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM8_Results_typ : 	STRUCT 
 		Paletka : CAM8_Paletka_typ;
@@ -3905,7 +3979,7 @@ TYPE
 	CAM8_Paletka_typ : 	STRUCT 
 		New_Member : USINT;
 	END_STRUCT;
-	CAM9_typ : 	STRUCT  (*P2_ST2_StoperMaticovacky - Kontrola paletky*)
+	CAM9_typ : 	STRUCT  (*P2_ST2_StoperMaticovacky - Kontrola paletky //Smart kamera//*)
 		CMD : CAM9_Commands_typ;
 		PAR : CAM9_Parametre_typ;
 		STAV : CAM9_Status_typ;
@@ -3927,19 +4001,23 @@ TYPE
 		READY : BOOL;
 		OLD_SWITCH : BOOL;
 		Results_READY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM9_Results_typ : 	STRUCT 
 		Paletka : CAM9_Paletka_typ;
 		PowerCP : CAM9_PowerCP_typ;
 	END_STRUCT;
 	CAM9_PowerCP_typ : 	STRUCT 
-		NepritomMatice : BOOL;
+		PritomMatice : BOOL;
 		PritomnBusbaru_5H : BOOL;
 	END_STRUCT;
 	CAM9_Paletka_typ : 	STRUCT 
 		New_Member : USINT;
 	END_STRUCT;
-	CAM10_typ : 	STRUCT  (*P2_ST3_StoperSkrutkovania - Kontrola paletky*)
+	CAM10_typ : 	STRUCT  (*P2_ST3_StoperSkrutkovania - Kontrola paletky //CAM7//*)
 		CMD : CAM10_Commands_typ;
 		PAR : CAM10_Parametre_typ;
 		STAV : CAM10_Status_typ;
@@ -3964,29 +4042,26 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM10_Results_typ : 	STRUCT 
 		Paletka : CAM10_Paletka_typ;
 		PowerCP : CAM10_PowerCP_typ;
 	END_STRUCT;
 	CAM10_PowerCP_typ : 	STRUCT 
-		Pritomn_LavejSkrutkyM6_4F5F : BOOL;
-		Pritomn_PravejSkrutkyM6_4F5F : BOOL;
-		Pritomn_LavejM4_4F5F : BOOL;
-		Pritomn_PravejM4_4F5F : BOOL;
-		Pritomn_SkrutkyM4_Filtra_5H : BOOL;
-		Pritomn_LavejSkrutkyM5_5H : BOOL;
-		Pritomn_PravejSkrutkyM5_5H : BOOL;
+		New_Member : USINT;
 	END_STRUCT;
 	CAM10_Paletka_typ : 	STRUCT 
-		Pritomn_Busbarov_5F : BOOL;
-		Pritomn_Busbarov_4F : BOOL;
+		Pritomn_Busbarov_45F : BOOL;
 		Pritomn_Busbarov_5H : BOOL;
 		Pritomn_PowerCP_5H : BOOL;
 		Pritomn_PowerCP_4F : BOOL;
 		Pritomn_PowerCP_5F : BOOL;
 	END_STRUCT;
-	CAM11_typ : 	STRUCT  (*P2_ST4_StoperZvarania - Kontrola pravÈho MV case*)
+	CAM11_typ : 	STRUCT  (*P2_ST4_StoperZvarania - Kontrola pravÈho MV case //CAM8//*)
 		CMD : CAM11_Commands_typ;
 		PAR : CAM11_Parametre_typ;
 		STAV : CAM11_Status_typ;
@@ -4011,13 +4086,16 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM11_Results_typ : 	STRUCT 
 		Paletka : CAM11_Paletka_typ;
 		PowerCP : CAM11_PowerCP_typ;
 	END_STRUCT;
 	CAM11_Paletka_typ : 	STRUCT 
-		New_Member : USINT;
 		Pritomn_PowerCP_4F : BOOL;
 		Pritomn_PowerCP_5F : BOOL;
 		Pritomn_PowerCP_5H : BOOL;
@@ -4031,7 +4109,7 @@ TYPE
 		Pritomn_TopCover_5F : BOOL;
 		Pritomn_TopCover_5H : BOOL;
 	END_STRUCT;
-	CAM12_typ : 	STRUCT  (*P2_ST4_StoperZvarania - Kontrola lavÈho MV case a Power CP*)
+	CAM12_typ : 	STRUCT  (*P2_ST4_StoperZvarania - Kontrola lavÈho MV case a Power CP //CAM9//*)
 		CMD : CAM12_Commands_typ;
 		PAR : CAM12_Parametre_typ;
 		STAV : CAM12_Status_typ;
@@ -4056,21 +4134,26 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM12_Results_typ : 	STRUCT 
 		Paletka : CAM12_Paletka_typ;
 		PowerCP : CAM12_PowerCP_typ;
 	END_STRUCT;
 	CAM12_Paletka_typ : 	STRUCT 
-		Pritomn_TopCover_5H5F : BOOL;
+		Pritomn_TopCover_5H : BOOL;
 		Pritomn_TopCover_4F : BOOL;
+		Pritomn_TopCover_5F : BOOL;
 		Pritomn_LavyMVcase : BOOL;
 		Pritomn_PravyMVcase : BOOL;
 	END_STRUCT;
 	CAM12_PowerCP_typ : 	STRUCT 
 		New_Member : USINT;
 	END_STRUCT;
-	CAM13_typ : 	STRUCT  (*P3_ST1_StoperSkrutkovania - Kontrola paletky*)
+	CAM13_typ : 	STRUCT  (*P3_ST1_StoperSkrutkovania - Kontrola paletky //Kamerov· kontrola zruöen·//*)
 		CMD : CAM13_Commands_typ;
 		PAR : CAM13_Parametre_typ;
 		STAV : CAM13_Status_typ;
@@ -4095,12 +4178,16 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM13_Results_typ : 	STRUCT 
 		Pritomn_SkrutkyK40_TopCover_4F5F : BOOL;
 		Pritomn_SkrutkyM5_TopCover : BOOL;
 	END_STRUCT;
-	CAM14_typ : 	STRUCT  (*P4_ST3_StoperEtiketovania - kontrola QR kodu na Power CP*)
+	CAM14_typ : 	STRUCT  (*P4_ST3_StoperEtiketovania - kontrola QR kodu na Power CP //Smart kamera//*)
 		CMD : CAM14_Commands_typ;
 		PAR : CAM14_Parametre_typ;
 		STAV : CAM14_Status_typ;
@@ -4123,6 +4210,10 @@ TYPE
 		READY : BOOL;
 		OLD_SWITCH : BOOL;
 		Results_READY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM14_Results_typ : 	STRUCT 
 		Paletka : CAM14_Paletka_typ;
@@ -4135,7 +4226,7 @@ TYPE
 	CAM14_Paletka_typ : 	STRUCT 
 		New_Member : USINT;
 	END_STRUCT;
-	CAM15_typ : 	STRUCT  (*P4_ST3_StoperEtiketovania - kontrola nalepenej etikety*)
+	CAM15_typ : 	STRUCT  (*P4_ST3_StoperEtiketovania - kontrola nalepenej etikety //CAM10//*)
 		CMD : CAM15_Commands_typ;
 		PAR : CAM15_Parametre_typ;
 		STAV : CAM15_Status_typ;
@@ -4161,6 +4252,10 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM15_Results_typ : 	STRUCT 
 		Pritomn_Etikety : BOOL;
@@ -4169,7 +4264,7 @@ TYPE
 		CitanieQRkodu_Etikety_OK : BOOL;
 		PrecitanyQRkod_Etikety : STRING[31];
 	END_STRUCT;
-	CAM16_typ : 	STRUCT  (*P4_ST4_Vytah - kontrola paletky*)
+	CAM16_typ : 	STRUCT  (*P4_ST4_Vytah - kontrola paletky //CAM11//*)
 		CMD : CAM16_Commands_typ;
 		PAR : CAM16_Parametre_typ;
 		STAV : CAM16_Status_typ;
@@ -4194,6 +4289,10 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM16_Results_typ : 	STRUCT 
 		New_Member : USINT;
@@ -4210,10 +4309,9 @@ TYPE
 		PrazdnaPaletka : BOOL;
 	END_STRUCT;
 	CAM16_PowerCP_typ : 	STRUCT 
-		PritomnostSkrutky_K40 : BOOL;
-		PritomnostSkrutky_M5 : BOOL;
+		New_Member : USINT;
 	END_STRUCT;
-	CAM17_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola Power CP a QR kÛdu filtra*)
+	CAM17_typ : 	STRUCT  (*P2_ST1_StoperZaklTesnenia - Kontrola paletky //CAM6//*)
 		CMD : CAM17_Commands_typ;
 		PAR : CAM17_Parametre_typ;
 		STAV : CAM17_Status_typ;
@@ -4239,6 +4337,10 @@ TYPE
 		Command_READY : BOOL;
 		Command_ERROR : BOOL;
 		Command_AKCEPTOVANY : BOOL;
+		RunCounter : UINT;
+		OldRunCounter : UINT;
+		RunCounter_Byte0 : USINT;
+		RunCounter_Byte1 : USINT;
 	END_STRUCT;
 	CAM17_Results_typ : 	STRUCT 
 		Paletka : CAM17_Paletka_typ;
@@ -4259,11 +4361,55 @@ TYPE
 		Pritomn_PowerCP_4F : BOOL;
 		Pritomn_PowerCP_5F : BOOL;
 		Pritomn_PowerCP_5H : BOOL;
-		PoziciaBusbarov4F5F_OK : BOOL;
-		PoziciaBusbarov5H_OK : BOOL;
+		PrazdnaPoziciaTopCoveru : BOOL;
 	END_STRUCT;
 	ControlUnit_typ : 	STRUCT  (*Riadiaci systÈm pre kamery*)
 		Profinet_PLC_INPUTS : ARRAY[0..1]OF USINT;
 		Stav_READY : BOOL;
+	END_STRUCT;
+END_TYPE
+
+(*******************Devlink*****************************)
+
+TYPE
+	StrukturaNovehoNazvuAdresara_typ : 	STRUCT 
+		LINKA : STRING[11]; (*N·zov linky PowerCP*)
+		PRACOVISKO : STRING[10]; (*ST1,ST2,ST3 .......*)
+		ROK : STRING[10]; (*YYYY*)
+		DATUM : STRING[10]; (*YYYY_MM_SS*)
+	END_STRUCT;
+	StrukturaNovehoNazvuSuboru_typ : 	STRUCT 
+		DATUM : STRING[10]; (*YYYY_MM_DD*)
+		CAS : STRING[8]; (*HH_MM_SS*)
+		SERIAL : STRING[30]; (*KÛd modelu*)
+		INDEX : STRING[2]; (*1,2,3 ......*)
+		RESULT : STRING[5]; (*PASS alebo FAIL*)
+		Pripona : STRING[5]; (*.jpg*)
+	END_STRUCT;
+END_TYPE
+
+(***************Posielanie fotiek na server**********************)
+
+TYPE
+	FTP_Kamery_typ : 	STRUCT 
+		CMD : FTP_Kamery_CMD_typ;
+		INPUTS : FTP_Kamery_INPUTS_typ;
+		STATUS : FTP_Kamery_STATUS_typ;
+	END_STRUCT;
+	FTP_Kamery_CMD_typ : 	STRUCT 
+		OdosliFotku : BOOL;
+		VymazFotku : BOOL;
+	END_STRUCT;
+	FTP_Kamery_INPUTS_typ : 	STRUCT 
+		QRkodPowerCP : STRING[30]; (*Master number*)
+		Result : STRING[5]; (*PASS alebo FAIL*)
+		IndexFotky : STRING[2];
+	END_STRUCT;
+	FTP_Kamery_STATUS_typ : 	STRUCT 
+		KomunikaciaUkoncena : BOOL;
+		KomunikaciaError : BOOL;
+		PopisPoruchy : STRING[300];
+		AdresarPrazdny : BOOL;
+		VymazanieAdresaraKamery_BUSY : BOOL;
 	END_STRUCT;
 END_TYPE

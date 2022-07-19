@@ -81,7 +81,7 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.4:= P1_Vytah.OUT.OsvetlenieVytahu_ON;
 	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.5:= P1_Pracovisko.OUT.Osvetlenie_CAM4_ON;
 	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.6:= P1_Pracovisko.OUT.Osvetlenie_CAM6_ON;
-	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.7 := P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.ZapniVibromotor;
+	P1_Pracovisko.COM_Weidmuller.AB1_9_8DO.7 := P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.ZapniVibromotor; (*SkrutkSet_K30.OUT.VibropohonZasobnika_RUN;*)
 	
 		
 	//**********Karta AB 1.10 8DO***************//
@@ -141,14 +141,14 @@ PROGRAM _CYCLIC
 	
 	
 	//************Modul DI 1.3 8DI**************//
-	P1_Srobovanie.SkrutSet_K30.IN.VibracnyHrniec.PritomnostSkrutiekVHrnci := P1_Pracovisko.COM_Festo.DI1_3_8DI[0];
-	P1_Srobovanie.SkrutSet_K30.IN.VibracnyHrniec.VibracnaListaZaplnena := P1_Pracovisko.COM_Festo.DI1_3_8DI[1];
-	P1_Srobovanie.SkrutSet_K30.IN.Brzda.PreletSkrutky := P1_Pracovisko.COM_Festo.DI1_3_8DI[2];
-	P1_Srobovanie.SkrutSet_K30.IN.Brzda.SkrutkaPritomnaVBrzde := P1_Pracovisko.COM_Festo.DI1_3_8DI[3];
-	P1_Srobovanie.SkrutSet_K30.IN.Brzda.ZakladnaPoloha := P1_Pracovisko.COM_Festo.DI1_3_8DI[4];
-	P1_Srobovanie.SkrutSet_K30.IN.Brzda.PodajSkrutku  := P1_Pracovisko.COM_Festo.DI1_3_8DI[5];
-	P1_Srobovanie.SkrutSet_K30.IN.VibracnyHrniec.PreletovySnimac  := P1_Pracovisko.COM_Festo.DI1_3_8DI[6];
-	P1_Srobovanie.IN.Skrutkovacka_K30_ZASUNUTA := P1_Pracovisko.COM_Festo.DI1_3_8DI[7];
+	P1_Srobovanie.SkrutSet_K30.IN.VibracnyHrniec.PritomnostSkrutiekVHrnci := P1_Pracovisko.COM_Festo.DI1_3_8DI[0];   (*SkrutkSet_K30.IN.ZasobnikSkrutiekPrazdny*)
+	P1_Srobovanie.SkrutSet_K30.IN.VibracnyHrniec.VibracnaListaZaplnena := P1_Pracovisko.COM_Festo.DI1_3_8DI[1]; (*SkrutkSet_K30.IN.ZaplnenieListyZasobnika*)
+	P1_Srobovanie.SkrutSet_K30.IN.Brzda.PreletSkrutky := P1_Pracovisko.COM_Festo.DI1_3_8DI[2]; (*SkrutkSet_K30.IN.PreletSnimacPredSkrutkovackou*)
+	P1_Srobovanie.SkrutSet_K30.IN.Brzda.SkrutkaPritomnaVBrzde := P1_Pracovisko.COM_Festo.DI1_3_8DI[3]; (*SkrutkSet_K30.IN.PreletSnimacPredBrzdou*)
+	P1_Srobovanie.SkrutSet_K30.IN.Brzda.ZakladnaPoloha := P1_Pracovisko.COM_Festo.DI1_3_8DI[4]; //Brzda je zasunutá, vstup skrutky do brzdy     (*SkrutkSet_K30.IN.BrzdaZASUNUTA*)
+	P1_Srobovanie.SkrutSet_K30.IN.Brzda.PodajSkrutku  := P1_Pracovisko.COM_Festo.DI1_3_8DI[5]; //Brzda je vysunuta, výstup skrutky s brzdy      (*SkrutkSet_K30.IN.BrzdaVYSUNUTA*)
+	P1_Srobovanie.SkrutSet_K30.IN.VibracnyHrniec.PreletovySnimac  := P1_Pracovisko.COM_Festo.DI1_3_8DI[6];  (*SkrutkSet_K30.IN.PreletSnimacZaOddelovacom*)
+	P1_Srobovanie.IN.Skrutkovacka_K30_ZASUNUTA := P1_Pracovisko.COM_Festo.DI1_3_8DI[7];   (*SkrutkSet_K30.IN.SkrutkovackaZASUNUTA*)
 	
 	
 	
@@ -319,8 +319,8 @@ PROGRAM _CYCLIC
 	
 	//*********Modul DS 1.2 IO link Port 0 - Snímaè vysunutia skrutkovaèky K30****************//
 	//Inputs//
-	Convert_0.IN_Byte0:= P1_Pracovisko.COM_Festo.DS1_2_Port0_IN[0];
-	Convert_0.IN_Byte1:= P1_Pracovisko.COM_Festo.DS1_2_Port0_IN[1];
+	Convert_0.IN_Byte1:= P1_Pracovisko.COM_Festo.DS1_2_Port0_IN[0];
+	Convert_0.IN_Byte0:= P1_Pracovisko.COM_Festo.DS1_2_Port0_IN[1];
 	
 	P1_Srobovanie.PAR.Skrutkov_K30_AktualHodnVysunutia:= Convert_0.OUT_UINT;
 	Convert_0();
@@ -354,22 +354,22 @@ PROGRAM _CYCLIC
 	P1_Pracovisko.COM_VentilovyTerminal[1].7 :=P1_Srobovanie.SkrutSet_M4.OUT.OtocPodavac_NaVystup;
 	
 	//16-23
-	P1_Pracovisko.COM_VentilovyTerminal[2].0 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek;
-	P1_Pracovisko.COM_VentilovyTerminal[2].1 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.TiedenieSkrutiek;
-	P1_Pracovisko.COM_VentilovyTerminal[2].2 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.OddelovacVysunut;
+	P1_Pracovisko.COM_VentilovyTerminal[2].0 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.PrerusenieZasobovaniaSkrutiek;  (*SkrutkSet_K30.OUT.ZhadzovaciVzduch_RUN*)
+	P1_Pracovisko.COM_VentilovyTerminal[2].1 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.TiedenieSkrutiek;                (*SkrutkSet_K30.OUT.TriediaciVzduch_RUN*)
+	P1_Pracovisko.COM_VentilovyTerminal[2].2 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.OddelovacVysunut;                  (*SkrutkSet_K30.OUT.OddelovacSkrutiek_VYSUN *)
 	P1_Pracovisko.COM_VentilovyTerminal[2].3 ;
-	P1_Pracovisko.COM_VentilovyTerminal[2].4 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.VzduchNastreleniaSkrutky;
+	P1_Pracovisko.COM_VentilovyTerminal[2].4 :=P1_Srobovanie.SkrutSet_K30.OUT.VibracnyHrniec.VzduchNastreleniaSkrutky;         (*SkrutkSet_K30.OUT.NastrelSkrutkuDoBrzdy*)
 	P1_Pracovisko.COM_VentilovyTerminal[2].5;
 	P1_Pracovisko.COM_VentilovyTerminal[2].6 :=P1_Srobovanie.OUT.Skrutkovacka_K30_Prisavanie_ON;
 	P1_Pracovisko.COM_VentilovyTerminal[2].7 :=P1_Srobovanie.OUT.Skrutkovacka_K30_Odvzdusn_ON;
 	
 	//24-31
-	P1_Pracovisko.COM_VentilovyTerminal[3].0:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.PodajSkrutku;
-	P1_Pracovisko.COM_VentilovyTerminal[3].1:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.ZakladnaPoloha;
-	P1_Pracovisko.COM_VentilovyTerminal[3].2:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.OdsavanieNecistot;
-	P1_Pracovisko.COM_VentilovyTerminal[3].3:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.NastrelenieSkrutky;
-	P1_Pracovisko.COM_VentilovyTerminal[3].4:=P1_Srobovanie.SkrutSet_M5.OUT.ZhadzovaciVzduch_RUN;
-	P1_Pracovisko.COM_VentilovyTerminal[3].5:=P1_Srobovanie.SkrutSet_M5.OUT.TriediaciVzduch_RUN;
+	P1_Pracovisko.COM_VentilovyTerminal[3].0:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.PodajSkrutku; //Vysuò brzdu                 (*SkrutkSet_K30.OUT.Brzdu_VYSUN*)
+	P1_Pracovisko.COM_VentilovyTerminal[3].1:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.ZakladnaPoloha; //Zasun brzdu                (*SkrutkSet_K30.OUT.Brzdu_ZASUN*)
+	P1_Pracovisko.COM_VentilovyTerminal[3].2:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.OdsavanieNecistot;							(*SkrutkSet_K30.OUT.OdsavanieBrzdy_RUN*)
+	P1_Pracovisko.COM_VentilovyTerminal[3].3:=P1_Srobovanie.SkrutSet_K30.OUT.Brzda.NastrelenieSkrutky;                  		(*SkrutkSet_K30.OUT.NastrelSkrutkuDoSkrutkovacky*)
+	P1_Pracovisko.COM_VentilovyTerminal[3].4:=P1_Srobovanie.SkrutSet_M5.OUT.ZhadzovaciVzduch_RUN;         
+	P1_Pracovisko.COM_VentilovyTerminal[3].5:=P1_Srobovanie.SkrutSet_M5.OUT.TriediaciVzduch_RUN;                            
 	P1_Pracovisko.COM_VentilovyTerminal[3].6:=P1_Srobovanie.SkrutSet_M5.OUT.OtocPodavac_NaVstup;
 	P1_Pracovisko.COM_VentilovyTerminal[3].7:=P1_Srobovanie.SkrutSet_M5.OUT.OtocPodavac_NaVystup;
 	

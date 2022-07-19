@@ -88,7 +88,7 @@ PROGRAM _CYCLIC
 		
 			SC_P1_SpodnyStoper.IdleTime.IN:= P1_SpodnyStoper.IN.PritomnostPaletky;
 			
-			IF P1_SpodnyStoper.KoniecCyklu AND NOT P1_Vytah.Automat THEN
+			IF P1_SpodnyStoper.KoniecCyklu AND SC_P1_Vytah.Step <> 103 AND SC_P1_Vytah.Step <> 105 THEN
 				SC_P1_SpodnyStoper.ResetStep:= TRUE;
 				SC_P1_SpodnyStoper.Step:= 0;
 			ELSIF SC_P1_SpodnyStoper.IdleTime.Q THEN
@@ -102,7 +102,7 @@ PROGRAM _CYCLIC
 			SC_P1_SpodnyStoper.IdleTime.PT:= T#200ms;
 			SC_P1_SpodnyStoper.AlarmTime.PT:= T#5s;
 			
-			IF P1_SpodnyStoper.KoniecCyklu AND NOT P1_Vytah.Automat THEN
+			IF P1_SpodnyStoper.KoniecCyklu AND SC_P1_Vytah.Step <> 103 AND SC_P1_Vytah.Step <> 105 THEN
 				SC_P1_SpodnyStoper.ResetStep:= TRUE;
 				SC_P1_SpodnyStoper.Step:= 0;
 			ELSIF SC_P1_Vytah.Step = 105 AND NOT P1_Vytah.RFID_hlava.PritomnostPaletky THEN  

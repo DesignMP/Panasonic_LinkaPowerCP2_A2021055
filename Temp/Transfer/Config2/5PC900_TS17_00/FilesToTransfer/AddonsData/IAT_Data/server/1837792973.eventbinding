@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP3_LeakageA">
+    <EventBinding id="AreaPageManualP3_LeakageA.Button_ResetServaOsY.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="AreaPageManualP3_LeakageA_Button_ResetServaOsY" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_LeakageTestA.CMD.RR_TestovaciaSekvencia_START">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_LeakageA">
+    <EventBinding id="AreaPageManualP3_LeakageA.MomentaryPushButton_JoggOsY_VZAD.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_LeakageA_MomentaryPushButton_JoggOsY_VZAD" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_LeakageTestA.CMD.RR_HornyPritlak_ZASUN">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_LeakageA">
+    <EventBinding id="AreaPageManualP3_LeakageA.MomentaryPushButton_JoggOsY_VPRED.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_LeakageA_MomentaryPushButton_JoggOsY_VPRED" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_LeakageTestA.CMD.RR_HornyPritlak_VYSUN">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

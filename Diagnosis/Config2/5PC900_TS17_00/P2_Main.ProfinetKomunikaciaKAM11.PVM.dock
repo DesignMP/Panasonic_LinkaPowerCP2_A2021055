@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_Main 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=2 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=32 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                    CAM11                                CAM11_typ    0 "                                                               *"    0   24    1    0    0    1         
                                      CMD                       CAM11_Commands_typ    0 "                                                               *"    1   24    1    0    0    1         
@@ -7,7 +7,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                              OdosliFotku                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                               VymazFotku                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                      PAR                      CAM11_Parametre_typ    0 "                                                               *"    1   24    1    0    0    1         
-                             ResultFotky                                STRING[5]    0 "                                                              ''"    2    9    6    1    0    0         
+                             ResultFotky                                STRING[5]    0 "                                                          'PASS'"    2    9    6    1    0    0         
                                     STAV                         CAM11_Status_typ    0 "                                                               *"    1   24    1    0    0    1         
                                     BUSY                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                   SWITCH                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
@@ -17,16 +17,20 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                            Command_READY                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
                            Command_ERROR                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                      Command_AKCEPTOVANY                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                              RunCounter                                     UINT    0 "                                                            6086"    2    6    1   10    0    0         
+                           OldRunCounter                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+                        RunCounter_Byte0                                    USINT    1 "                                                              23"    2    5    1   10    0    0         
+                        RunCounter_Byte1                                    USINT    1 "                                                             198"    2    5    1   10    0    0         
                                   RESULT                        CAM11_Results_typ    0 "                                                               *"    1   24    1    0    0    1         
                                  Paletka                        CAM11_Paletka_typ    0 "                                                               *"    2   24    1    0    0    1         
                       Pritomn_PowerCP_4F                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                       Pritomn_PowerCP_5F                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                       Pritomn_PowerCP_5H                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                                  PowerCP                        CAM11_PowerCP_typ    0 "                                                               *"    2   24    1    0    0    1         
-                      Pritomn_LavyMVcase                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                     Pritomn_PravyMVcase                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                  LavyBusbar_Zvaranie_OK                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                 PravyBusbar_Zvaranie_OK                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                      Pritomn_LavyMVcase                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                     Pritomn_PravyMVcase                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                  LavyBusbar_Zvaranie_OK                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                 PravyBusbar_Zvaranie_OK                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                      Pritomn_TopCover_4F                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
                      Pritomn_TopCover_5F                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                     Pritomn_TopCover_5H                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                     Pritomn_TopCover_5H                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         

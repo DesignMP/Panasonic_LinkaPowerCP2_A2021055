@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="AreaHlasenie1_HVtest_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="AreaHlasenie1_HVtest.Button_OpatovnyTest.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaHlasenie1_HVtest" widgetRefId="Button_OpatovnyTest" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P3_HV_Test.CMD.OpatovnyTest">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="AreaHlasenie1_HVtest.Button_OznacPaletkuNG.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AreaHlasenie1_HVtest" widgetRefId="Button_OznacPaletkuNG" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:P3_HV_Test.STAV.PaletkaOznacena_NG">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

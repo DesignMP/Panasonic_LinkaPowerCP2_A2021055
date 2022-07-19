@@ -3,10 +3,7 @@
 	<Bindings>
 		
 
-		<Binding mode="oneWay">
-			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.PAR.Skrutkov_K30_AktualHodnVysunutia" attribute="value" />
-			<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page2" widgetRefId="NumericOutput2" attribute="value" />
-		</Binding>
+		
 		<Binding mode="oneWay">
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Vizu.TL_VycistiSkrutkovackuK30_ENABLE" attribute="value" />
 			<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page2" widgetRefId="Button_CistenieSkrutkovackyK30" attribute="enable" />
@@ -105,13 +102,19 @@
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.ServoManipulOsZ_M5.Status.Ready" attribute="value" />
 			<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page2" widgetRefId="ImageList17" attribute="selectedIndex" />
 		</Binding>
-	<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_SkrutkovackuK30_VYSUN" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page2" widgetRefId="ToggleSwitch_VysunutieSkrutkovackyK30" attribute="value" />
+	
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.OUT.Skrutkovacka_K30_Prisavanie_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page2" widgetRefId="ToggleSwitch_PrisavanieSkrutkyK30" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.CMD.RR_PrisavanieSkrutkyK30_ON" attribute="value" />
-<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page2" widgetRefId="ToggleSwitch_PrisavanieSkrutkyK30" attribute="value" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.OUT.Skrutkovacku_K30_VYSUN" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page2" widgetRefId="ToggleSwitch_VysunutieSkrutkovackyK30" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P1_Srobovanie.PAR.Skrutkov_K30_RoundHodnotaREAL" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP1_Skrutkovanie_page2" widgetRefId="NumericOutput2" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

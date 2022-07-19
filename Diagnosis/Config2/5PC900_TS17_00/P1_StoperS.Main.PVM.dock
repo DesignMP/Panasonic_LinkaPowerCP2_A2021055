@@ -1,9 +1,9 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P1_StoperS 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=143 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=900 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                   SC_P1_StoperSrobovania                       SequenceControlTyp    0 "                                                               *"    0   24    1    0    0    1         
-                                    Step                                     UINT    0 "                                                               1"    1    6    1   10    0    0         
-                                 Paletka                       Paletka_typ[0..30]    0 "                                                               *"    0   24   31    0    0    1         
+                                    Step                                     UINT    0 "                                                               *"    1    6    1   10    0    0         
+                                 Paletka                       Paletka_typ[0..30]    0 "                                                               *"    0   24   31    0    0    0         
                               Paletka[0]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
                                      PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
                             CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
@@ -23,7 +23,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -46,7 +46,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -69,7 +69,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -92,7 +92,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -115,7 +115,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -138,33 +138,33 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                              Paletka[6]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    1         
-                                     PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    1         
-                            CisloPaletky                                STRING[2]    0 "                                                             '6'"    3    9    3    1    0    0         
-                            QRkodPowerCP                               STRING[30]    0 "                                                              ''"    3    9   31    1    0    0         
-                          QRkodFiltra_5H                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                        QRkodFiltra_4F5F                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                            ID_Operatora                               STRING[80]    0 "                                                            'E2'"    3    9   81    1    0    0         
-                             StavPowerCP                                STRING[4]    0 "                                                              ''"    3    9    5    1    0    0         
-                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    1         
-                             StavPaletky                               STRING[10]    0 "                                                            'OK'"    3    9   11    1    0    0         
-                               TypModelu                                STRING[5]    0 "                                                              ''"    3    9    6    1    0    0         
-                               KodModelu                               STRING[32]    0 "                                                              ''"    3    9   33    1    0    0         
-                  CisloTestovacejStanice                               STRING[20]    0 "                                                              ''"    3    9   21    1    0    0         
-                  CisloRevorkovejStanice                               STRING[20]    0 "                                                              ''"    3    9   21    1    0    0         
-                       Zvaranie_Ukoncene                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        HV_Test_Ukonceny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    LeakageTest_Ukonceny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    FunkcnyTest_Ukonceny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    QRkodFiltraPriradeny                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    OdoslanieFotiek_DONE                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        Komunikacia_DONE                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                   CisloEtiketyVyziadane                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                              Paletka[6]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
+                                     PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
+                            CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
+                            QRkodPowerCP                               STRING[30]    0 "                                                               *"    3    9   31    1    0    0         
+                          QRkodFiltra_5H                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                        QRkodFiltra_4F5F                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                            ID_Operatora                               STRING[80]    0 "                                                               *"    3    9   81    1    0    0         
+                             StavPowerCP                                STRING[4]    0 "                                                               *"    3    9    5    1    0    0         
+                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    0         
+                             StavPaletky                               STRING[10]    0 "                                                               *"    3    9   11    1    0    0         
+                               TypModelu                                STRING[5]    0 "                                                               *"    3    9    6    1    0    0         
+                               KodModelu                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                  CisloTestovacejStanice                               STRING[20]    0 "                                                               *"    3    9   21    1    0    0         
+                  CisloRevorkovejStanice                               STRING[20]    0 "                                                               *"    3    9   21    1    0    0         
+                       Zvaranie_Ukoncene                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        HV_Test_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                               Paletka[7]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
                                      PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
                             CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
@@ -184,7 +184,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -207,7 +207,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -230,7 +230,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -253,7 +253,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -276,19 +276,19 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                             Paletka[12]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    1         
-                                     PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    1         
+                             Paletka[12]                              Paletka_typ    0 "                                                               *"    1   24    1    0    0    0         
+                                     PAR                          Paletka_PAR_typ    0 "                                                               *"    2   24    1    0    0    0         
                             CisloPaletky                                STRING[2]    0 "                                                               *"    3    9    3    1    0    0         
                             QRkodPowerCP                               STRING[30]    0 "                                                               *"    3    9   31    1    0    0         
                           QRkodFiltra_5H                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
                         QRkodFiltra_4F5F                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
                             ID_Operatora                               STRING[80]    0 "                                                               *"    3    9   81    1    0    0         
                              StavPowerCP                                STRING[4]    0 "                                                               *"    3    9    5    1    0    0         
-                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    1         
+                                    STAV                         Paletka_STAV_typ    0 "                                                               *"    2   24    1    0    0    0         
                              StavPaletky                               STRING[10]    0 "                                                               *"    3    9   11    1    0    0         
                                TypModelu                                STRING[5]    0 "                                                               *"    3    9    6    1    0    0         
                                KodModelu                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
@@ -299,7 +299,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -322,7 +322,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -345,7 +345,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -368,7 +368,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -391,7 +391,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -414,7 +414,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -437,7 +437,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -460,7 +460,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -483,7 +483,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -506,7 +506,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -529,7 +529,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -552,7 +552,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -575,7 +575,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -598,7 +598,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -621,7 +621,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -644,7 +644,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -667,7 +667,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -690,7 +690,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -713,8 +713,217 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                     LeakageTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     FunkcnyTest_Ukonceny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     QRkodFiltraPriradeny                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                  VytlacenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   NalepenieEtikety_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                     OdoslanieFotiek_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                         Komunikacia_DONE                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    CisloEtiketyVyziadane                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                       i                                    USINT    0 "                                                               *"    0    5    1   10    1    0         
+                                Buffer_1                       UkladaciBuffer_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                    Pole                             REAL[0..100]    0 "                                                               *"    1    8  101    0    0    0         
+                                 Pole[0]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 Pole[1]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 Pole[2]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 Pole[3]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 Pole[4]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 Pole[5]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 Pole[6]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 Pole[7]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 Pole[8]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 Pole[9]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[10]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[11]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[12]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[13]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[14]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[15]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[16]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[17]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[18]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[19]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[20]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[21]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[22]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[23]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[24]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[25]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[26]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[27]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[28]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[29]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[30]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[31]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[32]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[33]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[34]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[35]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[36]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[37]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[38]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[39]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[40]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[41]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[42]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[43]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[44]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[45]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[46]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[47]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[48]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[49]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[50]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[51]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[52]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[53]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[54]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[55]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[56]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[57]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[58]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[59]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[60]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[61]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[62]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[63]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[64]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[65]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[66]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[67]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[68]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[69]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[70]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[71]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[72]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[73]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[74]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[75]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[76]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[77]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[78]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[79]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[80]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[81]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[82]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[83]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[84]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[85]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[86]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[87]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[88]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[89]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[90]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[91]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[92]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[93]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[94]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[95]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[96]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[97]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[98]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Pole[99]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                               Pole[100]                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                   Index                                     UINT    0 "                                                               *"    1    6    1   10    0    0         
+                            ZapisHodnotu                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                            ResetBufferu                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                 Hodnota                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                 P1_Skrutkovanie_Taktime                                  Taktime    0 "                                                               *"    0   24    1    0    0    1         
+                                      IN                        Statistika_IN_typ    0 "                                                               *"    1   24    1    0    0    1         
+                       START_MeraniaCasu                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+             START_MeraniaStratovehoCasu                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                       ZAPIS_MeraniaCasu                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                       ZAPIS_StratovyCas                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        TaskovaTrieda_ms                                     UINT    0 "                                                               4"    2    6    1   10    0    0         
+                     RESET_CelkovehoCasu                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                RESET_HistorieMeraniCasu                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        RESET_PoctuKusov                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+               RESET_CelkovehoPoctuKusov                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                    RESET_StratovehoCasu                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          PriratajKus_OK                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          PriratajKus_NG                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                     OUT                       Statistika_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
+                 NameranyCas_v_Sekundach                                     REAL    0 "                                                         882.848"    2    8    1   10    0    0         
+                  NameranyCas_v_Minutach                                     REAL    0 "                                                      14.7141333"    2    8    1   10    0    0         
+                  NameranyCas_v_Hodinach                                     REAL    0 "                                                     0.245235547"    2    8    1   10    0    0         
+                PriemernyCas_v_Sekundach                                     REAL    0 "                                                      144.572525"    2    8    1   10    0    0         
+                 PriemernyCas_v_Minutach                                     REAL    0 "                                                        2.409542"    2    8    1   10    0    0         
+                         StratoveSekundy                                     REAL    0 "                                                           2.832"    2    8    1   10    0    0         
+                          StratoveMinuty                                     REAL    0 "                                                          0.0472"    2    8    1   10    0    0         
+                          StratoveHodiny                                     REAL    0 "                                                    0.0007866667"    2    8    1   10    0    0         
+              HistoriaMerani_v_Sekundach                              REAL[0..14]    0 "                                                               *"    2    8   15    0    0    0         
+           HistoriaMerani_v_Sekundach[0]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Sekundach[1]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Sekundach[2]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Sekundach[3]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Sekundach[4]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Sekundach[5]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Sekundach[6]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Sekundach[7]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Sekundach[8]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Sekundach[9]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+          HistoriaMerani_v_Sekundach[10]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+          HistoriaMerani_v_Sekundach[11]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+          HistoriaMerani_v_Sekundach[12]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+          HistoriaMerani_v_Sekundach[13]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+          HistoriaMerani_v_Sekundach[14]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+               HistoriaMerani_v_Minutach                              REAL[0..14]    0 "                                                               *"    2    8   15    0    0    0         
+            HistoriaMerani_v_Minutach[0]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Minutach[1]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Minutach[2]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Minutach[3]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Minutach[4]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Minutach[5]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Minutach[6]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Minutach[7]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Minutach[8]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Minutach[9]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Minutach[10]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Minutach[11]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Minutach[12]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Minutach[13]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Minutach[14]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+               HistoriaMerani_v_Hodinach                              REAL[0..14]    0 "                                                               *"    2    8   15    0    0    0         
+            HistoriaMerani_v_Hodinach[0]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Hodinach[1]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Hodinach[2]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Hodinach[3]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Hodinach[4]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Hodinach[5]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Hodinach[6]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Hodinach[7]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Hodinach[8]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            HistoriaMerani_v_Hodinach[9]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Hodinach[10]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Hodinach[11]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Hodinach[12]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Hodinach[13]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+           HistoriaMerani_v_Hodinach[14]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+            CelkovyPocetNameranychSekund                                     REAL    0 "                                                      111737.453"    2    8    1   10    0    0         
+             CelkovyPocetNameranychMinut                                     REAL    0 "                                                      1862.28918"    2    8    1   10    0    0         
+             CelkovyPocetNameranychHodin                                     REAL    0 "                                                      31.0382023"    2    8    1   10    0    0         
+                           PocetKusov_OK                                    UDINT    0 "                                                               0"    2    7    1   10    0    0         
+                           PocetKusov_NG                                    UDINT    0 "                                                               0"    2    7    1   10    0    0         
+                       CelkovyPocetKusov                                    UDINT    0 "                                                               0"    2    7    1   10    0    0         
+                                  IntVAR                       Statistika_VAR_typ    0 "                                                               *"    1   24    1    0    0    0         
+                NameraneMilisekundy_REAL                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                    NameraneSekundy_REAL                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                     NameraneMinuty_REAL                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                     NameraneHodiny_REAL                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                             Milisekundy                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                                 Sekundy                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                                  Minuty                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                                  Hodiny                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                          CelkoveSekundy                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                           CelkoveMinuty                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                           CelkoveHodiny                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                                       i                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                       a                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                       b                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                       c                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                       d                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                Priemer_SucetSekund_REAL                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                 Priemer_SucetMinut_REAL                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                 Priemer_SucetHodin_REAL                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                     StratoveMilisekundy                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                         StratoveSekundy                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                          StratoveMinuty                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                          StratoveHodiny                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+         CelkoveStratoveMilisekundy_REAL                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+             CelkoveStratoveSekundy_REAL                                     REAL    0 "                                                               *"    2    8    1   10    0    0         

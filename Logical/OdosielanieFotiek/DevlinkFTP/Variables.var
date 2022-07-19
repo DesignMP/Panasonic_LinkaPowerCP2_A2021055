@@ -1,0 +1,6 @@
+VAR
+	SC_DevlinkFTP : SequenceControlTyp := (0);
+	ID_Adresara : UDINT;
+	DevLink_0 : DevLink;
+	DevUnlink_0 : DevUnlink;
+END_VAR

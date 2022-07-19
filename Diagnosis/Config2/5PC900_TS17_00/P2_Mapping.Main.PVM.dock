@@ -1,7 +1,18 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=P2_Mapping 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=3 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=12 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                  Safety                               Safety_typ    0 "                                                               *"    0   24    1    0    0    1         
-                                     OUT                           Safety_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
-                           Linka_ResetCS                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                       P2_ResetZonyBunky                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                P2_Robot                             P2_Robot_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     PAR                         P2_Robot_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
+          Griper_Busbary5H_HodnOtvorenia                                     UINT    0 "                                                           32766"    2    6    1   10    0    0         
+                           P2_Srobovanie                        P2_Srobovanie_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     PAR                    P2_Srobovanie_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
+         Skrutkov_M5_AktualHodnVysunutia                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+         Skrutkov_M6_AktualHodnVysunutia                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+                    P2_StoperMaticovacky                 P2_StoperMaticovacky_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     PAR             P2_StoperMaticovacky_PAR_typ    0 "                                                               *"    1   24    1    0    0    1         
+          Maticov_M4_AktualHodnVysunutia                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+                             P2_Cistenie                          P2_Cistenie_typ    0 "                                                               *"    0   24    1    0    0    1         
+                                     OUT                      P2_Cistenie_OUT_typ    0 "                                                               *"    1   24    1    0    0    1         
+                   VzduchPreIonizator_ON                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            Odsavanie_ON                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        OdsavanieOfuk_ON                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         

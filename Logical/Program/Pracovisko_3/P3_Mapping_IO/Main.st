@@ -395,8 +395,8 @@ PROGRAM _CYCLIC
 	
 	//*********Modul DS 3.2 IO link Port 2 - Snímaè vysunutia skrutkovaèky K40****************//
 	//Inputs//
-	Convert_0.IN_Byte0:= P3_Pracovisko.COM_Festo.DS3_2_Port2_IN[0];
-	Convert_0.IN_Byte1:= P3_Pracovisko.COM_Festo.DS3_2_Port2_IN[1];
+	Convert_0.IN_Byte1:= P3_Pracovisko.COM_Festo.DS3_2_Port2_IN[0];
+	Convert_0.IN_Byte0:= P3_Pracovisko.COM_Festo.DS3_2_Port2_IN[1];
 	
 	P3_Srobovanie.PAR.Skrutkov_K40_AktualHodnVysunutia:= Convert_0.OUT_UINT;
 	Convert_0();

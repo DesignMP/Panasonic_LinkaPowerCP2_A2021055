@@ -18,7 +18,7 @@ PROGRAM _CYCLIC
 	END_IF	
 	
 	
-	 //**************************************Ukonèenie cyklu pracoviska****************************************************//
+	//**************************************Ukonèenie cyklu pracoviska****************************************************//
 	IF P3_Pracovisko.KoniecCyklu THEN
 		IF P3_Dopravniky.Automat THEN
 			P3_Dopravniky.KoniecCyklu:= TRUE;
@@ -59,303 +59,300 @@ PROGRAM _CYCLIC
     
 	//************************************Ukonèenie cyklu pri poruche*****************************************//
 	//ST1 - Šrobovanie//
-//	IF P3_Pracovisko.STAV.Porucha_ST1 THEN
-//		IF P3_Dopravniky.Automat THEN
-//			P3_Dopravniky.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_SpodnyStoper.Automat THEN
-//			P3_SpodnyStoper.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_StoperSrobovania.Automat THEN
-//			P3_StoperSrobovania.Reset:= TRUE;
-//		END_IF
-//		IF P3_Srobovanie.Automat THEN
-//			P3_Srobovanie.Reset:= TRUE;
-//		END_IF
-//		IF P3_HV_Test.Automat THEN
-//			P3_HV_Test.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestA.Automat THEN
-//			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestB.Automat THEN
-//			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_LeakageTestA.Automat THEN
-//			P3_LeakageTestA.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_LeakageTestB.Automat THEN
-//			P3_LeakageTestB.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_ZdvizkaZaLeakTestA.Automat THEN
-//			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaZaLeakTestB.Automat THEN
-//			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//	END_IF
+	IF P3_Pracovisko.STAV.Porucha_ST1 THEN
+		IF P3_Dopravniky.Automat THEN
+			P3_Dopravniky.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_SpodnyStoper.Automat THEN
+			P3_SpodnyStoper.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_Srobovanie.Automat THEN
+			P3_Srobovanie.Reset:= TRUE;
+		END_IF
+		IF P3_HV_Test.Automat THEN
+			P3_HV_Test.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestA.Automat THEN
+			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestB.Automat THEN
+			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_LeakageTestA.Automat THEN
+			P3_LeakageTestA.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_LeakageTestB.Automat THEN
+			P3_LeakageTestB.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_ZdvizkaZaLeakTestA.Automat THEN
+			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaZaLeakTestB.Automat THEN
+			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+	END_IF
      
 	//ST2 - HV test//
-//	IF P3_Pracovisko.STAV.Porucha_ST2 THEN
-//		IF P3_Dopravniky.Automat THEN
-//			P3_Dopravniky.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_SpodnyStoper.Automat THEN
-//			P3_SpodnyStoper.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_StoperSrobovania.Automat THEN
-//			P3_StoperSrobovania.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_Srobovanie.Automat THEN
-//			P3_Srobovanie.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_HV_Test.Automat THEN
-//			P3_HV_Test.Reset:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestA.Automat THEN
-//			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestB.Automat THEN
-//			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_LeakageTestA.Automat THEN
-//			P3_LeakageTestA.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_LeakageTestB.Automat THEN
-//			P3_LeakageTestB.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_ZdvizkaZaLeakTestA.Automat THEN
-//			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaZaLeakTestB.Automat THEN
-//			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//	END_IF	
+	IF P3_Pracovisko.STAV.Porucha_ST2 THEN
+		IF P3_Dopravniky.Automat THEN
+			P3_Dopravniky.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_SpodnyStoper.Automat THEN
+			P3_SpodnyStoper.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_StoperSrobovania.Automat THEN
+			P3_StoperSrobovania.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_Srobovanie.Automat THEN
+			P3_Srobovanie.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_HV_Test.Automat THEN
+			P3_HV_Test.Reset:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestA.Automat THEN
+			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestB.Automat THEN
+			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_LeakageTestA.Automat THEN
+			P3_LeakageTestA.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_LeakageTestB.Automat THEN
+			P3_LeakageTestB.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_ZdvizkaZaLeakTestA.Automat THEN
+			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaZaLeakTestB.Automat THEN
+			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+	END_IF	
     
 	
 	//ST3 - Zdvižka pred Leakage testom A//
-//	IF P3_Pracovisko.STAV.Porucha_ST3 THEN
-//		IF P3_Dopravniky.Automat THEN
-//			P3_Dopravniky.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_SpodnyStoper.Automat THEN
-//			P3_SpodnyStoper.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_StoperSrobovania.Automat THEN
-//			P3_StoperSrobovania.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_Srobovanie.Automat THEN
-//			P3_Srobovanie.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_HV_Test.Automat THEN
-//			P3_HV_Test.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestA.Automat THEN
-//			P3_ZdvizkaPredLeakTestA.Reset:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestB.Automat THEN
-//			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_LeakageTestA.Automat THEN
-//			P3_LeakageTestA.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_LeakageTestB.Automat THEN
-//			P3_LeakageTestB.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_ZdvizkaZaLeakTestA.Automat THEN
-//			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaZaLeakTestB.Automat THEN
-//			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//	END_IF 
+	IF P3_Pracovisko.STAV.Porucha_ST3 THEN
+		IF P3_Dopravniky.Automat THEN
+			P3_Dopravniky.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_SpodnyStoper.Automat THEN
+			P3_SpodnyStoper.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_StoperSrobovania.Automat THEN
+			P3_StoperSrobovania.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_Srobovanie.Automat THEN
+			P3_Srobovanie.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_HV_Test.Automat THEN
+			P3_HV_Test.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestA.Automat THEN
+			P3_ZdvizkaPredLeakTestA.Reset:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestB.Automat THEN
+			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_LeakageTestA.Automat THEN
+			P3_LeakageTestA.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_LeakageTestB.Automat THEN
+			P3_LeakageTestB.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_ZdvizkaZaLeakTestA.Automat THEN
+			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaZaLeakTestB.Automat THEN
+			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+	END_IF 
 	
 	
 	//ST4 - Zdvižka pred Leakage testom B//
-//	IF P3_Pracovisko.STAV.Porucha_ST4 THEN
-//		IF P3_Dopravniky.Automat THEN
-//			P3_Dopravniky.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_SpodnyStoper.Automat THEN
-//			P3_SpodnyStoper.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_StoperSrobovania.Automat THEN
-//			P3_StoperSrobovania.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_Srobovanie.Automat THEN
-//			P3_Srobovanie.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_HV_Test.Automat THEN
-//			P3_HV_Test.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestA.Automat THEN
-//			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestB.Automat THEN
-//			P3_ZdvizkaPredLeakTestB.Reset:= TRUE;
-//		END_IF
-//		IF P3_LeakageTestA.Automat THEN
-//			P3_LeakageTestA.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_LeakageTestB.Automat THEN
-//			P3_LeakageTestB.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_ZdvizkaZaLeakTestA.Automat THEN
-//			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaZaLeakTestB.Automat THEN
-//			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//	END_IF 
+	IF P3_Pracovisko.STAV.Porucha_ST4 THEN
+		IF P3_Dopravniky.Automat THEN
+			P3_Dopravniky.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_SpodnyStoper.Automat THEN
+			P3_SpodnyStoper.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_StoperSrobovania.Automat THEN
+			P3_StoperSrobovania.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_Srobovanie.Automat THEN
+			P3_Srobovanie.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_HV_Test.Automat THEN
+			P3_HV_Test.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestA.Automat THEN
+			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestB.Automat THEN
+			P3_ZdvizkaPredLeakTestB.Reset:= TRUE;
+		END_IF
+		IF P3_LeakageTestA.Automat THEN
+			P3_LeakageTestA.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_LeakageTestB.Automat THEN
+			P3_LeakageTestB.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_ZdvizkaZaLeakTestA.Automat THEN
+			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaZaLeakTestB.Automat THEN
+			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+	END_IF 
     
 	
 	//ST5 - Leakage test A//
-//	IF P3_Pracovisko.STAV.Porucha_ST5 THEN
-//		IF P3_Dopravniky.Automat THEN
-//			P3_Dopravniky.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_SpodnyStoper.Automat THEN
-//			P3_SpodnyStoper.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_StoperSrobovania.Automat THEN
-//			P3_StoperSrobovania.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_Srobovanie.Automat THEN
-//			P3_Srobovanie.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_HV_Test.Automat THEN
-//			P3_HV_Test.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestA.Automat THEN
-//			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestB.Automat THEN
-//			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_LeakageTestA.Automat THEN
-//			P3_LeakageTestA.Reset:= TRUE; 
-//		END_IF 
-//		IF P3_LeakageTestB.Automat THEN
-//			P3_LeakageTestB.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_ZdvizkaZaLeakTestA.Automat THEN
-//			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaZaLeakTestB.Automat THEN
-//			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//	END_IF 
+	IF P3_Pracovisko.STAV.Porucha_ST5 THEN
+		IF P3_Dopravniky.Automat THEN
+			P3_Dopravniky.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_SpodnyStoper.Automat THEN
+			P3_SpodnyStoper.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_StoperSrobovania.Automat THEN
+			P3_StoperSrobovania.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_Srobovanie.Automat THEN
+			P3_Srobovanie.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_HV_Test.Automat THEN
+			P3_HV_Test.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestA.Automat THEN
+			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestB.Automat THEN
+			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_LeakageTestA.Automat THEN
+			P3_LeakageTestA.Reset:= TRUE; 
+		END_IF 
+		IF P3_LeakageTestB.Automat THEN
+			P3_LeakageTestB.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_ZdvizkaZaLeakTestA.Automat THEN
+			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaZaLeakTestB.Automat THEN
+			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+	END_IF 
 	
 	//ST6 - Leakage test B//
-//	IF P3_Pracovisko.STAV.Porucha_ST6 THEN
-//		IF P3_Dopravniky.Automat THEN
-//			P3_Dopravniky.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_SpodnyStoper.Automat THEN
-//			P3_SpodnyStoper.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_StoperSrobovania.Automat THEN
-//			P3_StoperSrobovania.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_Srobovanie.Automat THEN
-//			P3_Srobovanie.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_HV_Test.Automat THEN
-//			P3_HV_Test.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestA.Automat THEN
-//			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestB.Automat THEN
-//			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_LeakageTestA.Automat THEN
-//			P3_LeakageTestA.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_LeakageTestB.Automat THEN
-//			P3_LeakageTestB.Reset:= TRUE; 
-//		END_IF 
-//		IF P3_ZdvizkaZaLeakTestA.Automat THEN
-//			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaZaLeakTestB.Automat THEN
-//			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//	END_IF 
+	IF P3_Pracovisko.STAV.Porucha_ST6 THEN
+		IF P3_Dopravniky.Automat THEN
+			P3_Dopravniky.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_SpodnyStoper.Automat THEN
+			P3_SpodnyStoper.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_StoperSrobovania.Automat THEN
+			P3_StoperSrobovania.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_Srobovanie.Automat THEN
+			P3_Srobovanie.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_HV_Test.Automat THEN
+			P3_HV_Test.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestA.Automat THEN
+			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestB.Automat THEN
+			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_LeakageTestA.Automat THEN
+			P3_LeakageTestA.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_LeakageTestB.Automat THEN
+			P3_LeakageTestB.Reset:= TRUE; 
+		END_IF 
+		IF P3_ZdvizkaZaLeakTestA.Automat THEN
+			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaZaLeakTestB.Automat THEN
+			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+	END_IF 
 	
 	//ST7 - Zdvižka za Leakage testom A//
-//	IF P3_Pracovisko.STAV.Porucha_ST7 THEN
-//		IF P3_Dopravniky.Automat THEN
-//			P3_Dopravniky.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_SpodnyStoper.Automat THEN
-//			P3_SpodnyStoper.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_StoperSrobovania.Automat THEN
-//			P3_StoperSrobovania.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_Srobovanie.Automat THEN
-//			P3_Srobovanie.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_HV_Test.Automat THEN
-//			P3_HV_Test.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestA.Automat THEN
-//			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestB.Automat THEN
-//			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_LeakageTestA.Automat THEN
-//			P3_LeakageTestA.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_LeakageTestB.Automat THEN
-//			P3_LeakageTestB.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_ZdvizkaZaLeakTestA.Automat THEN
-//			P3_ZdvizkaZaLeakTestA.Reset:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaZaLeakTestB.Automat THEN
-//			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//	END_IF 
+	IF P3_Pracovisko.STAV.Porucha_ST7 THEN
+		IF P3_Dopravniky.Automat THEN
+			P3_Dopravniky.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_SpodnyStoper.Automat THEN
+			P3_SpodnyStoper.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_StoperSrobovania.Automat THEN
+			P3_StoperSrobovania.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_Srobovanie.Automat THEN
+			P3_Srobovanie.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_HV_Test.Automat THEN
+			P3_HV_Test.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestA.Automat THEN
+			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestB.Automat THEN
+			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_LeakageTestA.Automat THEN
+			P3_LeakageTestA.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_LeakageTestB.Automat THEN
+			P3_LeakageTestB.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_ZdvizkaZaLeakTestA.Automat THEN
+			P3_ZdvizkaZaLeakTestA.Reset:= TRUE;
+		END_IF
+		IF P3_ZdvizkaZaLeakTestB.Automat THEN
+			P3_ZdvizkaZaLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+	END_IF 
 	
 	//ST8 - Zdvižka za Leakage testom B//
-//	IF P3_Pracovisko.STAV.Porucha_ST8 THEN
-//		IF P3_Dopravniky.Automat THEN
-//			P3_Dopravniky.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_SpodnyStoper.Automat THEN
-//			P3_SpodnyStoper.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_StoperSrobovania.Automat THEN
-//			P3_StoperSrobovania.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_Srobovanie.Automat THEN
-//			P3_Srobovanie.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_HV_Test.Automat THEN
-//			P3_HV_Test.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestA.Automat THEN
-//			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaPredLeakTestB.Automat THEN
-//			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_LeakageTestA.Automat THEN
-//			P3_LeakageTestA.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_LeakageTestB.Automat THEN
-//			P3_LeakageTestB.KoniecCyklu:= TRUE; 
-//		END_IF 
-//		IF P3_ZdvizkaZaLeakTestA.Automat THEN
-//			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
-//		END_IF
-//		IF P3_ZdvizkaZaLeakTestB.Automat THEN
-//			P3_ZdvizkaZaLeakTestB.Reset:= TRUE;
-//		END_IF
-//	END_IF 
+	IF P3_Pracovisko.STAV.Porucha_ST8 THEN
+		IF P3_Dopravniky.Automat THEN
+			P3_Dopravniky.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_SpodnyStoper.Automat THEN
+			P3_SpodnyStoper.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_StoperSrobovania.Automat THEN
+			P3_StoperSrobovania.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_Srobovanie.Automat THEN
+			P3_Srobovanie.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_HV_Test.Automat THEN
+			P3_HV_Test.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestA.Automat THEN
+			P3_ZdvizkaPredLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaPredLeakTestB.Automat THEN
+			P3_ZdvizkaPredLeakTestB.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_LeakageTestA.Automat THEN
+			P3_LeakageTestA.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_LeakageTestB.Automat THEN
+			P3_LeakageTestB.KoniecCyklu:= TRUE; 
+		END_IF 
+		IF P3_ZdvizkaZaLeakTestA.Automat THEN
+			P3_ZdvizkaZaLeakTestA.KoniecCyklu:= TRUE;
+		END_IF
+		IF P3_ZdvizkaZaLeakTestB.Automat THEN
+			P3_ZdvizkaZaLeakTestB.Reset:= TRUE;
+		END_IF
+	END_IF 
 	
 	//*********************************Status prebieha ukonèenie cyklu********************************************//
 	IF P3_Dopravniky.KoniecCyklu OR
@@ -635,23 +632,23 @@ PROGRAM _CYCLIC
 	END_IF
 	
 	//Zvuková signalizácia//
-//	IF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST1) THEN
-//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST2) THEN
-//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST3) THEN
-//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST4) THEN
-//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;	
-//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST5) THEN
-//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST6) THEN
-//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST7) THEN
-//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST8) THEN
-//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
-//	END_IF
+	//	IF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST1) THEN
+	//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+	//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST2) THEN
+	//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+	//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST3) THEN
+	//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+	//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST4) THEN
+	//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;	
+	//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST5) THEN
+	//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+	//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST6) THEN
+	//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+	//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST7) THEN
+	//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+	//	ELSIF EDGEPOS(P3_Pracovisko.STAV.Porucha_ST8) THEN
+	//		P3_Pracovisko.OUT.Majak_Hukacka_ON:= Blikac500ms;
+	//	END_IF
     
 	
 	

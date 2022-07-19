@@ -20,8 +20,6 @@ PROGRAM _CYCLIC
 		P2_AkumulacnyStoper.Reset:= FALSE;
 	ELSIF NOT Safety.STAV.Linka_ZonaCS_AKTIVNA THEN
 		SC_P2_AkumulacnyStoper.Step:= 0;
-	ELSIF NOT P2_AkumulacnyStoper.Manual AND NOT Safety.STAV.P2_ZonaBunky_AKTIVNA THEN
-		SC_P2_AkumulacnyStoper.Step:= 0;
 	END_IF
 	
 	
@@ -119,7 +117,7 @@ PROGRAM _CYCLIC
 			IF P2_AkumulacnyStoper.KoniecCyklu THEN
 				SC_P2_AkumulacnyStoper.ResetStep:= TRUE;
 				SC_P2_AkumulacnyStoper.Step:= 0;
-			ELSIF ((NOT P2_StoperSrobovania.RFID_hlava.PritomnostPaletky AND SC_P2_StoperSrobovania.Step = 100) OR (P2_StoperSrobovania.OUT.ZasunStoper AND SC_P2_StoperSrobovania.Step = 561)) AND NOT P2_AkumulacnyStoper.STAV.PrebiehaVyvezeniePaletky THEN
+			ELSIF ((NOT P2_StoperSrobovania.RFID_hlava.PritomnostPaletky AND SC_P2_StoperSrobovania.Step = 100) OR (P2_StoperSrobovania.OUT.ZasunStoper AND SC_P2_StoperSrobovania.Step = 561)) AND NOT P2_AkumulacnyStoper.STAV.PrebiehaVyvezeniePaletky AND NOT TEST THEN
 				SC_P2_AkumulacnyStoper.ResetStep:= TRUE;
 				SC_P2_AkumulacnyStoper.Step:= 105;
 			ELSIF NOT P2_AkumulacnyStoper.IN.PritomnostPaletky THEN

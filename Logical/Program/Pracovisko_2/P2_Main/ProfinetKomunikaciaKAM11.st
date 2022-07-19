@@ -1,5 +1,7 @@
 
 ACTION ProfinetKomunikaciaKAM11: 
+	
+	//Control Unit CAM 8//
 
 	//Vstupy pre kameru//
 	CAM11.Profinet_PLC_OUTPUTS[0].3:= CAM11.CMD.Triger;
@@ -29,6 +31,27 @@ ACTION ProfinetKomunikaciaKAM11:
 	//Stav výsledky READY//
 	IF EDGE(CAM11.STAV.SWITCH)THEN
 		CAM11.STAV.Results_READY:= TRUE;
+		CAM11_PocetFotiek:= CAM11_PocetFotiek + 1;
 	END_IF
+	
+	//Vymazanie adresára kamery//
+	IF EDGEPOS(CAM11_PocetFotiek > 50) THEN
+		FTP_CAM11.CMD.VymazFotku:= TRUE;
+		FTP_CAM11.STATUS.VymazanieAdresaraKamery_BUSY:= TRUE;
+	END_IF
+	
+	IF (FTP_CAM11.STATUS.KomunikaciaUkoncena OR FTP_CAM11.STATUS.KomunikaciaError) AND FTP_CAM11.STATUS.VymazanieAdresaraKamery_BUSY THEN
+		FTP_CAM11.CMD.VymazFotku:= FALSE;
+		FTP_CAM11.STATUS.VymazanieAdresaraKamery_BUSY:= FALSE;
+	END_IF	
+	
+	
+	//Run counter kamery//
+	Convert_4.IN_Byte0:= CAM11.STAV.RunCounter_Byte1;
+	Convert_4.IN_Byte1:= CAM11.STAV.RunCounter_Byte0;
+	
+	CAM11.STAV.RunCounter:= Convert_4.OUT_UINT;
+	Convert_4();
+	
 	
 END_ACTION

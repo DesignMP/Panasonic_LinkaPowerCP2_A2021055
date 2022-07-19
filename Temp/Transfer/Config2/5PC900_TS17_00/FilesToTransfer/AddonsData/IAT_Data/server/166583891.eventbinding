@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M3.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M3" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestB.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestB.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M4.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M4" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestB.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestB.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M2.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M2" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestB.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestB.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M4_HORE.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M4_HORE" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M1.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M1" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M4_DOLE.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M4_DOLE" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaPredLeakTestA.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M6.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M6" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestB.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestB.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M7.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M7" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestB.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestB.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M5.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M5" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestB.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestB.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M9.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M9" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestA.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestA.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M10.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M10" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestA.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestA.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="AreaPageManualP3_Dopravniky">
+    <EventBinding id="AreaPageManualP3_Dopravniky.MomentaryPushButton_JoggOsZ_M8.Click">
+      <Source type="widgets.brease.MomentaryPushButton.Event" event="Click" refId="AreaPageManualP3_Dopravniky_MomentaryPushButton_JoggOsZ_M8" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestA.OUT.Zdvizku_VYSUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="opcUa.NodeAction" refId="::AsGlobalPV:P3_ZdvizkaZaLeakTestA.OUT.Zdvizku_ZASUN">
+                <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

@@ -13,7 +13,7 @@
 	extern "C"
 	{
 #endif
-	#include "SKTcp.h"
+#include "SKTcp.h"
 #ifdef __cplusplus
 	};
 #endif
@@ -22,10 +22,10 @@
 unsigned short SKTcpClientNod(unsigned long n)
 {
 
- unsigned int count = 0;
+	unsigned int count = 0;
 
- while (n != 0) { n /= 10; ++count; }
+	while (n != 0) { n /= 10; ++count; }
 
- return count;
+	return count;
 
 }

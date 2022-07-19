@@ -15,4 +15,5 @@ VAR
 	PocetOpakovaniTestu : USINT := 0;
 	TestovaciKus : BOOL := 0;
 	OpakovanyTest : BOOL := 0;
+	Triger_0 : BOOL := 0;
 END_VAR

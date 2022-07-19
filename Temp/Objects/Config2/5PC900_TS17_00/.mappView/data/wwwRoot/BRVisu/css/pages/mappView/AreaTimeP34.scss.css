@@ -1,0 +1,614 @@
+#AreaTimeP34_Rectangle1 {
+  top: 0px;
+  position: absolute;
+}
+
+#AreaTimeP34_Rectangle1 {
+  left: 0px;
+  position: absolute;
+}
+
+#AreaTimeP34_Rectangle1 {
+  width: 500px;
+}
+
+#AreaTimeP34_Rectangle1 {
+  height: 350px;
+}
+
+#AreaTimeP34_Rectangle1 {
+  z-index: 0;
+}
+
+#AreaTimeP34_Rectangle1 {
+  border-width: 2px;
+}
+
+#AreaTimeP34_Rectangle1 {
+  background-color: #99b4d1;
+}
+
+#AreaTimeP34_Image1 {
+  top: 10px;
+  position: absolute;
+}
+
+#AreaTimeP34_Image1 {
+  left: 20px;
+  position: absolute;
+}
+
+#AreaTimeP34_Image1 {
+  width: 60px;
+}
+
+#AreaTimeP34_Image1 {
+  height: 60px;
+}
+
+#AreaTimeP34_Image1 {
+  z-index: 1;
+}
+
+#AreaTimeP34_Line1 {
+  z-index: 2;
+}
+
+#AreaTimeP34_Line1 line {
+  stroke: white;
+}
+
+#AreaTimeP34_Line1 line {
+  stroke-width: 3px;
+}
+
+#AreaTimeP34_Label1 {
+  top: 15px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label1 {
+  left: 130px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label1 {
+  width: 300px;
+}
+
+#AreaTimeP34_Label1 {
+  height: 50px;
+}
+
+#AreaTimeP34_Label1 {
+  z-index: 3;
+}
+
+#AreaTimeP34_Label1 span {
+  color: black;
+}
+
+#AreaTimeP34_Label1 {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#AreaTimeP34_Label1 {
+  font-size: 22px;
+}
+
+#AreaTimeP34_Label1 {
+  font-weight: bold;
+}
+
+#AreaTimeP34_DateTimeInput_Cas {
+  top: 130px;
+  position: absolute;
+}
+
+#AreaTimeP34_DateTimeInput_Cas {
+  left: 160px;
+  position: absolute;
+}
+
+#AreaTimeP34_DateTimeInput_Cas {
+  width: 260px;
+}
+
+#AreaTimeP34_DateTimeInput_Cas {
+  height: 40px;
+}
+
+#AreaTimeP34_DateTimeInput_Cas {
+  z-index: 4;
+}
+
+#AreaTimeP34_DateTimeInput_Cas:not(.disabled):not(.active) {
+  border-width: 3px;
+}
+
+#AreaTimeP34_DateTimeInput_Cas:not(.active):not(.disabled) {
+  border-color: #474747;
+}
+
+#AreaTimeP34_DateTimeInput_Cas:not(.active):not(.disabled) span {
+  color: black;
+}
+
+#AreaTimeP34_DateTimeInput_Cas {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaTimeP34_DateTimeInput_Cas {
+  font-size: 20px;
+}
+
+#AreaTimeP34_DateTimeInput_Cas {
+  box-shadow: 4px 1px 3px #474747;
+}
+
+#AreaTimeP34_Label2 {
+  width: 80px;
+}
+
+#AreaTimeP34_Label2 {
+  height: 30px;
+}
+
+#AreaTimeP34_Label2 {
+  top: 135px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label2 {
+  left: 50px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label2 {
+  z-index: 5;
+}
+
+#AreaTimeP34_Label2 span {
+  color: black;
+}
+
+#AreaTimeP34_Label2 {
+  font-size: 20px;
+}
+
+#AreaTimeP34_Label2 {
+  font-weight: bold;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1 {
+  top: 200px;
+  position: absolute;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1 {
+  left: 160px;
+  position: absolute;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1 {
+  width: 260px;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1 {
+  height: 40px;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1 {
+  z-index: 6;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1:not(.disabled):not(.active) {
+  border-width: 3px;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1:not(.active):not(.disabled) {
+  border-color: #474747;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1:not(.active):not(.disabled) span {
+  color: black;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1 {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1 {
+  font-size: 20px;
+}
+
+#AreaTimeP34_DateTimeInput_Cas1 {
+  box-shadow: 4px 1px 3px #474747;
+}
+
+#AreaTimeP34_Label3 {
+  width: 80px;
+}
+
+#AreaTimeP34_Label3 {
+  height: 30px;
+}
+
+#AreaTimeP34_Label3 {
+  top: 205px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label3 {
+  left: 50px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label3 {
+  z-index: 7;
+}
+
+#AreaTimeP34_Label3 span {
+  color: black;
+}
+
+#AreaTimeP34_Label3 {
+  font-size: 20px;
+}
+
+#AreaTimeP34_Label3 {
+  font-weight: bold;
+}
+
+#AreaTimeP34_LogoutButton_Exit {
+  top: 280px;
+  position: absolute;
+}
+
+#AreaTimeP34_LogoutButton_Exit {
+  left: 175px;
+  position: absolute;
+}
+
+#AreaTimeP34_LogoutButton_Exit {
+  width: 150px;
+}
+
+#AreaTimeP34_LogoutButton_Exit {
+  height: 40px;
+}
+
+#AreaTimeP34_LogoutButton_Exit {
+  z-index: 8;
+}
+
+#AreaTimeP34_LogoutButton_Exit {
+  border-radius: 10px;
+}
+
+#AreaTimeP34_LogoutButton_Exit:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
+#AreaTimeP34_Rectangle2 {
+  top: 0px;
+  position: absolute;
+}
+
+#AreaTimeP34_Rectangle2 {
+  left: 0px;
+  position: absolute;
+}
+
+#AreaTimeP34_Rectangle2 {
+  width: 500px;
+}
+
+#AreaTimeP34_Rectangle2 {
+  height: 350px;
+}
+
+#AreaTimeP34_Rectangle2 {
+  z-index: 9;
+}
+
+#AreaTimeP34_Rectangle2 {
+  border-width: 2px;
+}
+
+#AreaTimeP34_Rectangle2 {
+  background-color: #99b4d1;
+}
+
+#AreaTimeP34_Line2 {
+  z-index: 10;
+}
+
+#AreaTimeP34_Line2 line {
+  stroke: white;
+}
+
+#AreaTimeP34_Line2 line {
+  stroke-width: 3px;
+}
+
+#AreaTimeP34_Label5 {
+  width: 80px;
+}
+
+#AreaTimeP34_Label5 {
+  height: 30px;
+}
+
+#AreaTimeP34_Label5 {
+  top: 135px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label5 {
+  left: 24px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label5 {
+  z-index: 11;
+}
+
+#AreaTimeP34_Label5 span {
+  color: black;
+}
+
+#AreaTimeP34_Label5 {
+  font-size: 20px;
+}
+
+#AreaTimeP34_Label5 {
+  font-weight: bold;
+}
+
+#AreaTimeP34_Label6 {
+  width: 80px;
+}
+
+#AreaTimeP34_Label6 {
+  height: 30px;
+}
+
+#AreaTimeP34_Label6 {
+  top: 197px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label6 {
+  left: 24px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label6 {
+  z-index: 12;
+}
+
+#AreaTimeP34_Label6 span {
+  color: black;
+}
+
+#AreaTimeP34_Label6 {
+  font-size: 20px;
+}
+
+#AreaTimeP34_Label6 {
+  font-weight: bold;
+}
+
+#AreaTimeP34_Label4 {
+  height: 30px;
+}
+
+#AreaTimeP34_Label4 {
+  top: 22px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label4 {
+  left: 125px;
+  position: absolute;
+}
+
+#AreaTimeP34_Label4 {
+  width: 250px;
+}
+
+#AreaTimeP34_Label4 {
+  z-index: 13;
+}
+
+#AreaTimeP34_Label4 span {
+  color: black;
+}
+
+#AreaTimeP34_Label4 {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#AreaTimeP34_Label4 {
+  font-size: 20px;
+}
+
+#AreaTimeP34_Label4 {
+  font-weight: bold;
+}
+
+#AreaTimeP34_Image2 {
+  top: 8px;
+  position: absolute;
+}
+
+#AreaTimeP34_Image2 {
+  left: 24px;
+  position: absolute;
+}
+
+#AreaTimeP34_Image2 {
+  width: 60px;
+}
+
+#AreaTimeP34_Image2 {
+  height: 58px;
+}
+
+#AreaTimeP34_Image2 {
+  z-index: 14;
+}
+
+#AreaTimeP34_Image2 {
+  box-shadow: 2px 2px 10px black;
+}
+
+#AreaTimeP34_DateTimeInput1 {
+  width: 250px;
+}
+
+#AreaTimeP34_DateTimeInput1 {
+  top: 130px;
+  position: absolute;
+}
+
+#AreaTimeP34_DateTimeInput1 {
+  left: 125px;
+  position: absolute;
+}
+
+#AreaTimeP34_DateTimeInput1 {
+  height: 35px;
+}
+
+#AreaTimeP34_DateTimeInput1 {
+  z-index: 15;
+}
+
+#AreaTimeP34_DateTimeInput1:not(.disabled):not(.active) {
+  border-width: 2px 4px 2px 2px;
+}
+
+#AreaTimeP34_DateTimeInput1.active:not(.disabled) span {
+  color: black;
+}
+
+#AreaTimeP34_DateTimeInput1:not(.active):not(.disabled) span {
+  color: black;
+}
+
+#AreaTimeP34_DateTimeInput1 {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaTimeP34_DateTimeInput1 {
+  font-size: 20px;
+}
+
+#AreaTimeP34_DateTimeInput1 {
+  box-shadow: 4px 4px 8px black;
+}
+
+#AreaTimeP34_DateTimeInput2 {
+  width: 250px;
+}
+
+#AreaTimeP34_DateTimeInput2 {
+  top: 192px;
+  position: absolute;
+}
+
+#AreaTimeP34_DateTimeInput2 {
+  left: 125px;
+  position: absolute;
+}
+
+#AreaTimeP34_DateTimeInput2 {
+  height: 35px;
+}
+
+#AreaTimeP34_DateTimeInput2 {
+  z-index: 16;
+}
+
+#AreaTimeP34_DateTimeInput2:not(.disabled):not(.active) {
+  border-width: 2px 4px 2px 2px;
+}
+
+#AreaTimeP34_DateTimeInput2.active:not(.disabled) span {
+  color: black;
+}
+
+#AreaTimeP34_DateTimeInput2:not(.active):not(.disabled) span {
+  color: black;
+}
+
+#AreaTimeP34_DateTimeInput2 {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaTimeP34_DateTimeInput2 {
+  font-size: 20px;
+}
+
+#AreaTimeP34_DateTimeInput2 {
+  box-shadow: 4px 4px 8px black;
+}
+
+#AreaTimeP34_LogoutButton2 {
+  top: 276px;
+  position: absolute;
+}
+
+#AreaTimeP34_LogoutButton2 {
+  left: 175px;
+  position: absolute;
+}
+
+#AreaTimeP34_LogoutButton2 {
+  width: 150px;
+}
+
+#AreaTimeP34_LogoutButton2 {
+  height: 40px;
+}
+
+#AreaTimeP34_LogoutButton2 {
+  z-index: 17;
+}
+
+#AreaTimeP34_LogoutButton2 {
+  border-radius: 10px;
+}
+
+#AreaTimeP34_LogoutButton2:not(.disabled):not(.active):not(.checked) span {
+  color: black;
+}
+
+#AreaTimeP34_LogoutButton2 {
+  justify-content: center;
+  text-align: center;
+}
+
+#AreaTimeP34_LogoutButton2:not(.active):not(.checked) {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaTimeP34_LogoutButton2.disabled.active {
+  box-shadow: 4px 4px 14px black;
+}
+
+#AreaTimeP34_LogoutButton2.disabled.checked {
+  box-shadow: 4px 4px 14px black;
+}

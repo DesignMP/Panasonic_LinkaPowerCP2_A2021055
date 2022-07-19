@@ -72,7 +72,7 @@ PROGRAM _CYCLIC
 	
 	
 	//************Karta AB 2.10 8DO***************//
-	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.0 := P2_Cistenie.OUT.Ionizator_ON;
+	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.0 := P2_Cistenie.OUT.Ionizator_OFF;
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.1 := P2_Zvaranie.OUT.Zvaracka_START;
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.2 := P2_Zvaranie.OUT.Zvaracka_RESET;
 	P2_Pracovisko.COM_Weidmuller.AB2_10_8DO.3 := P2_Dopravniky.OUT.DopravnikBunky_ON;
@@ -263,8 +263,8 @@ PROGRAM _CYCLIC
 	
 	//*************Modul DS 2.1 IO link Port 1 - Snímaè vysunutia skrutkovaèky M5*********************//
 	//Inputs//
-	Convert_0.IN_Byte0:= P2_Pracovisko.COM_Festo.DS2_1_Port1_IN[0];
-	Convert_0.IN_Byte1:= P2_Pracovisko.COM_Festo.DS2_1_Port1_IN[1];
+	Convert_0.IN_Byte1:= P2_Pracovisko.COM_Festo.DS2_1_Port1_IN[0];
+	Convert_0.IN_Byte0:= P2_Pracovisko.COM_Festo.DS2_1_Port1_IN[1];
 	
 	P2_Srobovanie.PAR.Skrutkov_M5_AktualHodnVysunutia:= Convert_0.OUT_UINT;
 	Convert_0();
@@ -273,8 +273,8 @@ PROGRAM _CYCLIC
 	
 	//*************Modul DS 2.1 IO link Port 2 - Snímaè vysunutia skrutkovaèky M6*********************//
 	//Inputs//
-	Convert_1.IN_Byte0:= P2_Pracovisko.COM_Festo.DS2_1_Port2_IN[0];
-	Convert_1.IN_Byte1:= P2_Pracovisko.COM_Festo.DS2_1_Port2_IN[1];
+	Convert_1.IN_Byte1:= P2_Pracovisko.COM_Festo.DS2_1_Port2_IN[0];
+	Convert_1.IN_Byte0:= P2_Pracovisko.COM_Festo.DS2_1_Port2_IN[1];
 	
 	P2_Srobovanie.PAR.Skrutkov_M6_AktualHodnVysunutia:= Convert_1.OUT_UINT;
 	Convert_1();
@@ -318,7 +318,7 @@ PROGRAM _CYCLIC
 			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
 			P2_Robot.IN.Griper45F_DrziBusbary:= FALSE;
 			P2_Robot.IN.Griper45F_Zatvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 22000 THEN	
+		ELSIF P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia > 21000 AND P2_Robot.PAR.Griper_Busbary45F_HodnOtvorenia < 31000 THEN	
 			P2_Robot.IN.Griper45F_Otvoreny:= FALSE;
 			P2_Robot.IN.Griper45F_Zatvoreny:= FALSE;
 			P2_Robot.IN.Griper45F_DrziBusbary:= TRUE;
@@ -343,11 +343,11 @@ PROGRAM _CYCLIC
 			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
 			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
 			P2_Robot.IN.Griper5H_Otvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 49000 THEN	
+		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 50000 THEN	
 			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
 			P2_Robot.IN.Griper5H_DrziBusbary:= FALSE;
 			P2_Robot.IN.Griper5H_Zatvoreny:= TRUE;
-		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 19900 THEN	
+		ELSIF P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia > 21000 AND P2_Robot.PAR.Griper_Busbary5H_HodnOtvorenia < 34000 THEN	
 			P2_Robot.IN.Griper5H_Otvoreny:= FALSE;
 			P2_Robot.IN.Griper5H_Zatvoreny:= FALSE;
 			P2_Robot.IN.Griper5H_DrziBusbary:= TRUE;
@@ -531,8 +531,8 @@ PROGRAM _CYCLIC
 	
 	//*************Modul DS 2.3 IO link Port 1 - Snímaè vysunutia maticovaèky M4*********************//
 	//Inputs//
-	Convert_3.IN_Byte0:= P2_Pracovisko.COM_Festo.DS2_3_Port1_IN[0];
-	Convert_3.IN_Byte1:= P2_Pracovisko.COM_Festo.DS2_3_Port1_IN[1];
+	Convert_3.IN_Byte1:= P2_Pracovisko.COM_Festo.DS2_3_Port1_IN[0];
+	Convert_3.IN_Byte0:= P2_Pracovisko.COM_Festo.DS2_3_Port1_IN[1];
 	
 	P2_StoperMaticovacky.PAR.Maticov_M4_AktualHodnVysunutia:= Convert_3.OUT_UINT;
 	Convert_3();

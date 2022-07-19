@@ -93,6 +93,7 @@ FUNCTION_BLOCK ScrewLoading
 			END_IF
 		
 			IF IN.Brzda.PodajSkrutku=1 AND IN.Brzda.ZakladnaPoloha=0 THEN
+				OUT.Brzda.OdsavanieNecistot:=1;
 				Internal.Brzda.T_PresunBrzdy.IN:=0;
 				Internal.Brzda.T_PreletSkrutky.IN:=1;
 				OUT.Brzda.NastrelenieSkrutky:=1;

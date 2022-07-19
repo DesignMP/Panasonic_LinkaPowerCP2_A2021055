@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AreaPageManualP2_Cistenie_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Cistenie.OUT.Odsavanie_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Cistenie" widgetRefId="ToggleSwitch_ZapniOdsavanie" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Cistenie.OUT.VzduchPreIonizator_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Cistenie" widgetRefId="ToggleSwitch_ZapniVzduch" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Cistenie.IN.Vakum_OK" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Cistenie" widgetRefId="ImageList17" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Cistenie.IN.Dvere_ZATVORENE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Cistenie" widgetRefId="ImageList19" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Cistenie.IN.Dvere_OTVORENE" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Cistenie" widgetRefId="ImageList18" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Cistenie.OUT.Ionizator_OFF" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Cistenie" widgetRefId="ToggleSwitch_ZapniIonizator" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:P2_Cistenie.OUT.OdsavanieOfuk_ON" attribute="value" />
+<Target xsi:type="brease" contentRefId="AreaPageManualP2_Cistenie" widgetRefId="ToggleSwitch_ZapniOdsavanie1" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

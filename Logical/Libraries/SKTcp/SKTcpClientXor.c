@@ -13,20 +13,20 @@
 	extern "C"
 	{
 #endif
-	#include "SKTcp.h"
+#include "SKTcp.h"
 #ifdef __cplusplus
 	};
 #endif
 
 /* SKTcpClientXor */
-unsigned char SKTcpClientXor(unsigned char in[4999], unsigned short len)
+unsigned char SKTcpClientXor(unsigned char in[MAX_STRING_MINUS_ONE], unsigned short len)
 {
 
- unsigned char xor_byte = 0; 
- unsigned int tI = 0;
+	unsigned char xor_byte = 0; 
+	unsigned short tI = 0;
 
- for (tI = 0; tI < len; tI++) xor_byte = xor_byte ^ in[tI];
+	for (tI = 0; tI < len; tI++) xor_byte = xor_byte ^ in[tI];
 
- return xor_byte;
+	return xor_byte;
 	
 }
